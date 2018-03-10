@@ -1,0 +1,5 @@
+Django==1.11.4
+#coverage==4.4.1
+#flake8==3.4.1
+#coveralls
+
