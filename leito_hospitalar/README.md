@@ -1,1 +1,0 @@
-# Gestão de Internações cirúrgicas

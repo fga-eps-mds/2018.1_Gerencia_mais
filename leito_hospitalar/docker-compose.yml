@@ -17,5 +17,5 @@ services:
       - ./frontend:/frontend
     ports: 
       - 3000:3000
-    command: bash -c 'cd /frontend && npm install &&  npm install -g create-react-app && npm run eject && npm run start'    
+    command: bash -c 'cd /frontend && npm install &&  npm install -g create-react-app && npm run start'    
     #npm install --save-dev babel-preset-es2015 babel-preset-stage-3
