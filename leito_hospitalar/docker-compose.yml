@@ -1,11 +1,20 @@
 version: '3'
 services:
-  django:
+  backend: 
     build: .
-    image: projeto-leito:dev
+    image: django:2.0.3
     volumes:
-      - ./:/code
+      - ./backend:/backend
     ports:
       - 8000:8000
-    tty: true
-    command: /bin/bash -l -c 'python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0:8000'
+    tty: true  
+    command: bash -c 'cd /backend && python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0:8000'
+    
+  frontend:
+    image: node:8.1
+    volumes:
+      - ./frontend:/frontend
+    ports: 
+      - 3000:3000
+    command: bash -c 'cd /frontend && npm install &&  npm install -g create-react-app && npm run start'    
+    #npm install --save-dev babel-preset-es2015 babel-preset-stage-3
