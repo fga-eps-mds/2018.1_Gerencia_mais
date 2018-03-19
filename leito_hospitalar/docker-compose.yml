@@ -3,7 +3,6 @@ version: '3'
 services:
   backend: 
     build: .
-    image: django:2.0.3
     volumes:
       - ./:/code
     ports:
@@ -12,7 +11,6 @@ services:
     command: /bin/bash -l -c 'pip install django-webpack-loader && python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0:8000'  
     depends_on:
       - frontend 
-
   frontend:
     image: node:8.1
     volumes:
