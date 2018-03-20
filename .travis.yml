@@ -7,7 +7,3 @@ install:
   - pip3 install -r leito_hospitalar/requirements.txt
 script:
   - nosetests
-branch:
-  only:
-    - master
-    - development
