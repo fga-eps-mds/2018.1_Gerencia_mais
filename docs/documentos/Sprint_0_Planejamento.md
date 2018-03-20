@@ -1,6 +1,24 @@
-## Resumo da Sprint
+## Planejamento da Sprint 0
 
-## 1 - Criação da equipe
+## Sumário
+
+1. [Informações básicas](#1---informações-básicas)
+1. [Criação da equipe](#2---criação-da-equipe)
+1. [Escolha do Projeto](#3---escolha-do-projeto)
+1. [Coleta de dados da equipe](#4---coleta-de-dados-da-equipe)
+1. [Instruções e aplicação de Dojos](#5---instruções-e-aplicação-de-dojos)
+
+## 1 - Informações básicas
+
+| | |
+|:--:|:--:|
+|**Número da sprint**|0|
+|**Data de início**|05/03/2017|
+|**Data de término**|10/03/2017|
+|**Duração**|6 dias|
+|**Pontos planejados**|0|
+
+## 2 - Criação da equipe
 
 * Equipe de MDS
 
@@ -23,20 +41,20 @@
 |130136026|Ulysses Bernard Mendes Lara|[ulyssesBML](https://github.com/ulyssesBML)
 
 
-## 2 - Escolha do Projeto
+## 3 - Escolha do Projeto
 
 A escolha do projeto foi realizada através de propostas elaboradas
-pelos membros do grupo onde a preferência foi, Gestão de Leitos BI, Gestão de Internações cirúrgicas e
-Dr. Down onde foi decidido pela professora Carla que o grupo iria realizar o projeto de ***Gestão de Internações cirúrgica*** .
+pelos membros do grupo onde as preferência foram os temas, Gestão de Leitos BI, Gestão de Internações cirúrgicas e
+Dr. Down. Foi decidido pela professora Carla que o grupo iria realizar o projeto ***Gestão de Internações cirúrgicas*** .
 
-## 3 - Coleta de dados da equipe
+## 4 - Coleta de dados da equipe
 
-Para se ter um conhecimento inicial da equipe foi elaborada planilhas na plataforma do Google Drive. Sendo elas:
-* [Quadro de conhecimento.](https://docs.google.com/spreadsheets/d/1fNQmOeoAltHpSGarwxmZBXuMAbLzR_Fa2ekMhY0nggQ/edit#gid=1936616833)
-* [Quadro de disponibilidade.](https://docs.google.com/spreadsheets/d/1dSie2oFdQXGltc_yiEvS-KziUV7vOhFRKDMaLQSLfJ0/edit#gid=603157261)
-* [Quadro de horas trabalhadas.]()
+Para se ter um conhecimento inicial da equipe foram elaborada planilhas, que servirão para acompanhar o crescimento do membros, na plataforma do Google Drive. São elas:
+* [Quadro de conhecimento.](https://github.com/fga-gpp-mds/2018.2_Gestao_de_Internacoes_Cirurgicas_GIC/blob/docs/docs/documentos/imagens/sprint0/conhecimento_Inicial.png)
+* [Quadro de disponibilidade.](https://github.com/fga-gpp-mds/2018.2_Gestao_de_Internacoes_Cirurgicas_GIC/blob/docs/docs/documentos/imagens/sprint0/quadro_de_disponibilidade.pdf)
+* [Quadro de horas trabalhadas.](https://github.com/fga-gpp-mds/2018.2_Gestao_de_Internacoes_Cirurgicas_GIC/blob/docs/docs/documentos/imagens/sprint0/planilha_de_horas_trabalhadas.pdf)
 
-## 4 -Instruções e aplicação de Dojos
+## 5 -Instruções e aplicação de Dojos
 
 Com as informações obtidas através do quadro de conhecimento foi planejado e executado
 dojos para equipe de MDS sobre possíveis ferramentas utilizadas
