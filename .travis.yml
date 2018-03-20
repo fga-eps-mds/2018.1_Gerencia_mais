@@ -1,0 +1,13 @@
+language: python
+python:
+  - 3.6
+env:
+  - DJANGO_VERSION = 2.0.3
+install:
+  - pip3 install -r leito_hospitalar/requirements.txt
+script:
+  - nosetests
+branch:
+  only:
+    - master
+    - development
