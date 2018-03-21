@@ -24,7 +24,7 @@ install:
   - docker-compose version
 before_script:
   - cd leito_hospitalar
-  - docker-compose -f leito_hospitalar/docker-compose.yml up --build -d
+  - sudo docker-compose -f leito_hospitalar/docker-compose.yml up --build
 script:
   - nosetests
 after_script:
