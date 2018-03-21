@@ -1,9 +1,33 @@
 language: python
+services:
+  - docker
 python:
   - 3.6
 env:
   - DJANGO_VERSION = 2.0.3
+  - DOCKER_COMPOSE_VERSION=1.4.2
+before_install:
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
 install:
-  - pip3 install -r leito_hospitalar/requirements.txt
+  - >
+    curl -sSL "https://get.docker.com/gpg" |
+     sudo -E apt-key add -
+  - >
+    echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" |
+     sudo tee -a /etc/apt/sources.list
+  - sudo apt-get update
+  - >
+    sudo apt-get -o Dpkg::Options::="--force-confdef" \
+     -o Dpkg::Options::="--force-confold" --assume-yes install docker-engine
+  - docker version
+  - sudo pip install docker-compose
+  - docker-compose version
+before_script:
+  - docker-compose up --build -d
 script:
   - nosetests
+after_script:
+  - docker-compose down
