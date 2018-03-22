@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Plano de Gerenciamento de Qualidade
 
 ## Sumário
@@ -10,6 +11,9 @@
 1. [Monitoramento e Controle](#4---monitoramento-e-controle)
   1. [Ferramentas](#41---ferramentas)
 1. [Referências](#5---referencias)
+=======
+# Plano de Gerenciamento de Qualidade
+>>>>>>> 3edbce57d32f4075acfb0a45c2a0b532a5751b22
 
 ## Histórico  de Revisões
 
@@ -22,12 +26,20 @@
 | 15/03/2018           | 0.5 | técnicas| Caio Gabriel |
 | 19/03/2018            |0.6 | Ferramentas | João Gabriel |
 
+<<<<<<< HEAD
 ## 1 - Introdução
+=======
+## 1. Introdução
+>>>>>>> 3edbce57d32f4075acfb0a45c2a0b532a5751b22
 
 <p> De acordo com o PMBOK, o gerenciamento da qualidade do projeto inclui os processos e as atividades que determinam as políticas de qualidade, os objetivos e as responsabilidades, de modo que o projeto satisfaça às necessidades para as quais foi empreendido. O gerenciamento da qualidade do projeto trabalha para garantir que os requisitos do projeto, incluindo os requisitos do produto, sejam cumpridos e validados. Desse modo, este documento tem como objetivo planejar a aplicação de técnicas de medição para garantir a qualidade do produto final. </p>
 <p>Para a realização de uma medição efetiva, a escolha das ferramentas e técnica é de grande importância, visto que, durante o desenvolvimento do projeto são essas escolhas que definirão o nível de qualidade do produto. Dessa maneira, algumas técnicas serão identificadas neste documento e de acordo com o escopo do projeto, algumas serão selecionadas para uso.</p>
 
+<<<<<<< HEAD
 ## 2 - O que é qualidade de software?
+=======
+## 2. O que é qualidade de software?
+>>>>>>> 3edbce57d32f4075acfb0a45c2a0b532a5751b22
 
 <p>A qualidade de software pode ser entendida como a conformidade do produto com os requisitos propostos. Para Roger Pressman, "Qualidade de software é a conformidade com requisitos funcionais e de desempenho explicitamente declarados, padrões de desenvolvimento explicitamente documentados e características implícitas, que são esperadas em todo software desenvolvido profissionalmente" (PRESSMAN, 2002).</p>
 <p>A ISO 9126, mais especificamente a NBR 13596, padronizar a avaliação da qualidade do software. Ela categoriza os atributos de qualidade de software em seis características: Funcionalidade, confiabilidade, usabilidade, eficiência, manutenibilidade e portabilidade.</p>
@@ -36,7 +48,11 @@ IMAGEM
 
 <p>Ou seja, uma definição é atribuída para cada característica e para cada subcaracterística do software que influencia a característica de qualidade.</p>
 
+<<<<<<< HEAD
 ## 3 - Planejamento
+=======
+## 3. Planejamento
+>>>>>>> 3edbce57d32f4075acfb0a45c2a0b532a5751b22
 <p>Para que a equipe faça efetivas medições, de acordo com os padrões de qualidade de corpos de conhecimentos e de normas, a seleção de técnicas e métricas são muito importantes para o projeto. Desse modo, nessa parte do documento serão apresentadas técnicas que aparentam ser úteis para o gerenciamento de qualidade. </p>
 
 ### 3.1 Técnicas
