@@ -41,13 +41,13 @@ ___
 ## <a name="2"></a> 2. Posicionamento
 
 ### <a name="2.1"></a> 2.1 Oportunidade de Negócio
-<p> Atualmente, o sistema de saúde no DF tem alguns problemas sobre o gerenciamento de recursos nos hospitais. Problemas que vão desde má distribuição de equipamentos à alocação disfuncional de funcionários. </p>
+<p> Atualmente, o sistema de saúde no DF tem alguns problemas sobre o gerenciamento de recursos nos hospitais públicos. Problemas que vão desde má distribuição de equipamentos à alocação disfuncional de funcionários. </p>
 <p>Isso se dá ao fato do sistema utilizado nesses hopitais estar bastante ultrapassado e defasado, o que o torna não confiável e pouco prático. Além disso, é de dificil manutenção e não amigável com o usuário, tornando bastante dificil ensinar novos servidores a utilizá-lo.</p>   
 
 <p>Este projeto visa oferecer uma melhora significativa nesse sistema, para que fique mais fácil e prática a alocação correta,no DF, tanto de equipamentos e outros recursos, quanto de profissionais da saúde capazes de resolver problemas onde for preciso.</p>
 
 ### <a name="2.1"></a> 2.2 Descrição do Problema
-Os servidores de hospitais tem que, manualmente, fazer uma tabela de horarios para os profissionais de saúde, o que demanda muito tempo e tem forte possiblidade de haver enganos. Além disso, a distribuição de recursos é negativamente afetada, já que são muitas informações para poucas pessoas que lidam com elas.
+Os servidores dos hospitais tem que, manualmente, fazer uma tabela de horarios para os profissionais de saúde, o que demanda muito tempo e tem forte possiblidade de haver enganos. Além disso, a distribuição de recursos é negativamente afetada, já que são muitas informações para poucas pessoas que lidam com elas.
 
 ## <a name="3"></a> 3. Descrição da Parte Interessada e dos Usuários
 
