@@ -1,4 +1,7 @@
 # Gestão de Internações cirúrgicas
+<p align="center">
+  <a href="https://travis-ci.org/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC"><img src="https://travis-ci.org/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC.svg?branch=master" alt="Build"></a>
+</p>
 
 
 ## Sobre o projeto
@@ -57,6 +60,12 @@ Primeiramente é necessário ter o docker instalado, caso não tenha acesse o [I
 
 ## Rodando a aplicação
 
+Para rodar a aplicação, entre na pasta do projeto em que está localizado o __docker-compose__ e digite no terminal:
+
+```
+  docker-compose up -d
+```
+Espere até que todos os serviços estejam disponíveis, acesse a página inicial do projeto com o seguinte endereço: https://localhost:8000
 
 
 
