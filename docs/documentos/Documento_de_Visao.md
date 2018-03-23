@@ -4,7 +4,7 @@
 |21/03/2018|0.1|adição dos primeiros passos do documento de visão| Victor  	|
 |21/03/2018   	|0.2   	|construção do escopo do documento de visão| Victor  	|
 |21/03/2018|0.3|adição dos perfis dos envolvidos   	|Guilherme Aguiar   	|   	|
-|21/03/2018|0.4|adição do Posicionamento | Caio César , Victor |
+|22/03/2018|0.4|adição do Posicionamento | Caio César , Victor |
 
 # Sumário
 1. [Introdução]()
@@ -47,7 +47,7 @@ Isso se dá ao fato do sistema utilizado nesses hopitais estar bastante ultrapas
 Este projeto visa oferecer uma melhora significativa nesse sistema, para que fique mais fácil e prática a alocação correta,no DF, tanto de equipamentos e outros recursos, quanto de profissionais da saúde capazes de resolver problemas onde for preciso.
 
 ### <a name="2.1"></a> 2.2 Descrição do Problema
-Os servidores de hospitais tem que, manualmente, fazer uma tabela de horarios para os profissionais de saúde, o que demanda muito tempo e tem forte possiblidade de haver enganos.
+Os servidores de hospitais tem que, manualmente, fazer uma tabela de horarios para os profissionais de saúde, o que demanda muito tempo e tem forte possiblidade de haver enganos. Além disso, a distribuição de recursos é negativamente afetada, já que são muitas informações para poucas pessoas que lidam com elas.
 
 ## <a name="3"></a> 3. Descrição da Parte Interessada e dos Usuários
 
