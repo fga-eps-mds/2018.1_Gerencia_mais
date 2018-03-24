@@ -1,10 +1,11 @@
 # Controle de versão:
 |Data|Versão|Descrição|Autor|
 |--- |---   |---      |---  |
-|21/03/2018|0.1|adição dos primeiros passos do documento de visão| Victor  	|
-|21/03/2018   	|0.2   	|construção do escopo do documento de visão| Victor  	|
-|21/03/2018|0.3|adição dos perfis dos envolvidos   	|Guilherme Aguiar   	|   	|
-|22/03/2018|0.4|adição do Posicionamento | Caio César , Victor |
+|21/03/2018|0.1|adição dos primeiros passos do documento de visão| Victor|
+|21/03/2018|0.2|construção do escopo do documento de visão| Victor|
+|21/03/2018|0.3|adição dos perfis dos envolvidos|Guilherme Aguiar |
+|22/03/2018|0.4|adição do Posicionamento|Caio César, Victor|
+|22/03/2018|0.5|adição do topico 1 do sumário a Introdução|Victor,Caio|
 
 # Sumário
 1. [Introdução]()
@@ -38,6 +39,38 @@
   * 6.4 [Restrições de Uso]()
 
 ___
+## <a name="1"></a>1.  Introdução
+### <a name="1.1"></a>1.1. Propósito
+<p>Este documento tem a finalidade de apresentar uma visão geral sobre o webapp GIC ,definindo sua proposta característica, utilidade e requisitos do sistema</p>
+
+### <a name="1.2"></a>1.2. Escopo
+<p>Este projeto tem como objetivo central auxiliar o gerenciamento de servidores, recursos médicos e recursos físicos do Hospital Regional do Gama.</p>
+
+### <a name="1.3"></a>1.3. Definições, acrônimos e abreviações
+  * FGA - Faculdade do Gama (UnB)
+  * UnB - Universidade de Brasília
+  * EPS - Engenharia de Projeto de Software
+  * Servidores - A quem compete prescrever medicamentos, exames e recomendações de saúde.
+  * Recursos médicos - equipamentos tais como seringas, luvas, remédios.
+  * Recursos físicos - salas de consulta, salas de cirurgia.
+
+### <a name="1.4"></a>1.4 Referências
+  * IBM Knowledge Center - Documento de Visão: A estrutura de tópicos do documento de visão. Disponível em: https://www.ibm.com/support/knowledgecenter/pt-br/SSWMEQ_3.0.1/com.ibm.rational.rrm.help.doc/topics/r_vision_doc.htm. Acesso em: 21 mar. 2018;
+  * FREIRE, Thiago; OLIVEIRA, Rodrigo; MORENO, Augusto; NASCIMENTO, Josué; AUGUSTO, Marcelo. Projeto WikiLegis: Documento de Visão. Disponível em: https://github.com/fga-gpp-mds/2016.2-WikiLegis/wiki. Acesso em 21 mar. 2018;
+  * SILVA, Ana; DINIZ, Arthur; OLIVEIRA, Bruna; SILVA, Guilherme; LACERDA, GuilhermE. Projeto Trezentos: Documento de Visão. Disponível em: https://github.com/fga-gpp-mds/2017.1-Trezentos/wiki. Acesso em 21 mar. 2018;
+  * BATISTA, Matheus; ARAÚJO, Igor; WILLER, Guilherme; OLIVEIRA, Vinícius; BARCELOS, Filipe; SOUSA, André. Projeto Escola X: Documento de Visão. Disponível em: https://github.com/fga-gpp-mds/2017.1-Escola-X/wiki. Acesso em 21 mar. 2018;
+  * BORGES, Felipe; HIROSHI, Lucas; MARQUES, Guilherme; KISHIMA, Lucas; NASCIMENTO, Mateus; MARTINS, Michel; MARIA, Natália; Projeto Receituário Médico: Documento de Visão. Disponível em:
+  https://github.com/fga-gpp-mds/2017.2-Receituario-Medico/wiki/Documento-de-Vis%C3%A3o . Acesso em 21 mar. 2018.
+
+### <a name="1.5"></a> 1.5. Visão geral
+<p> Neste documento estão descritos os detalhes do planejamento da construção do *webapp* GIC. O documento apresentara o objetivo dessa proposta de desenvolvimento que auxiliará os profissionais do hospital a gerenciar seus recursos humanos e físicos bem como dificultar possiveis erros de escala de servidores. E está dividido em:</p>
+
+  * *Posicionamento*: descreve o problema e a oportunidade de Negócio;
+  * *Descrição da Parte Interessada e dos Usuários*: descreve o perfil dos interessados no Projeto;
+  * *Visão Geral do Produto*: descreve uma visualização de alto nível do *webapp* bem como as capacidades do produto, interfaces e configurações;
+  * *Recursos do Produto*: Descreve os recursos do produto
+  * *Restrições*:descreve as restrições de design, restrições externas, como requisitos operacionais ou regulamentares;
+
 ## <a name="2"></a> 2. Posicionamento
 
 ### <a name="2.1"></a> 2.1 Oportunidade de Negócio
