@@ -7,7 +7,8 @@
 |22/03/2018|0.4|adição do Posicionamento|Caio César, Victor|
 |22/03/2018|0.5|adição do tópico 1 do sumário a Introdução|Victor, Caio|
 |23/03/2018|0.6|adição do tópico 4 do sumário a Visão Geral do Produto|Victor|
-|24/03/2018|0.7|adição do tópico 5 do sumário o Recursos do Produto| Victor |
+|24/03/2018|0.7|adição do tópico 5 do sumário os Recursos do Produto| Victor |
+|24/03/2018|0.8|adição do tópico 8 do sumário as Restrições e correção de bug de interface|Victor|
 
 # Sumário
 1. [Introdução]()
@@ -132,12 +133,10 @@ ___
 ___
 
 ## <a name = "4" ></a> 4. Visão Geral do Produto
-<p> O *webapp* tem como funcionalidade principal auxiliar a visualização e organização dos recursos físicos, servidores e arranjo espacial do HRG.
-</p>
 
-<p>
+ O *webapp* tem como funcionalidade principal auxiliar a visualização e organização dos recursos físicos, servidores e arranjo espacial do HRG.
+
 As informações que serão captadas do banco de dados serão divididas em três partes:
-</p>
 
   * *Gestão de servidores:* terá a função de gerenciar a questão das escalas dos servidores do HRG de forma a não haver conflito de horários e mostrar de forma mais coesa e limpa as informações de escala como com quem ele estará trabalhando aquele dia, quantas pessoas estão naquele período do dia (manhã, tarde ou noite), quem está de ferias naquele tempo.
   <br></br>
@@ -148,9 +147,8 @@ As informações que serão captadas do banco de dados serão divididas em três
 
 ###  <a name ="4.1"> </a> 4.1. Perspectiva do Produto
 
-<p>
 O aplicativo tem por expectativa atender de forma ótima as a gestão dentro do hospital facilitando assim a organização interna, assim otimizando e acelerando o atendimento dentro do hospital, também otmizando o tempo do servidor que está na escala no dia, pois a boa gestão fará ele não perder tempo em dúvida de qual consultório ele estará no dia.
-</p>
+
 
 ### <a name="4.2"></a> 4.2. Resumo dos Recursos
 
@@ -177,3 +175,18 @@ ___
 |RF10|Cadastrar produtos para gerenciar controle de estoque no HRG|alta|
 |RF11|Mostrar quantidade de matérial do hospital|alta|
 |RF12|Mostrar perfil do servidor|Muito baixa|
+
+___
+## <a name="6"></a>6. Restrições
+
+### <a name ="6.1">6.1 Restrições de Design
+O design será refinado de forma simples, porém bela que seja intuitivo de forma a não precisar de muito treinamento para fazer o uso do *webapp*.
+
+### <a name="6.2"></a>6.2 Restrições de Implementação
+O sistema será desenvolvido utilizando a linguagem Python e o framework Django. Além disso, o sistema será desenvolvido com base no modelo de arquitetura conhecido como MTV que é considerada uma variação do MVC. Porém ao invés de utilizar o template do Djando irá ser feitas os templates em outro framework chamado react.
+
+### <a name="6.3"></a>6.3 Restrições de Segurança
+O sigilo no caso do *webapp* é limitado no sentido agenda do servidor e o paciente. Desse modo apenas os profissionais que terão contato com a planilha de platão que poderão ver com quem os servidores estarão, que sala ocuparam e que tipo de recursos físico estarão faltando para ele e para o HRG.
+
+### <a name="6.4"></a>6.4 Restrições de uso
+Para utilizar do *webapp* o usuário terá que está em um dispositivo que tenha acesso a internet e que tenha um navegador compatível com o sistema do app. Caso o usuário não tenha os pré-requisitos para usar o app terá de aparecer uma página de erro pertinente a esse caso.
