@@ -12,10 +12,10 @@
 
 ## 🐳 Guia de Uso do Docker
 
-### Instalação
+* ### Instalação
 Primeiramente é necessário ter o docker instalado, caso não tenha acesse o [Instalação docker](https://docs.docker.com/engine/installation/linux/docker-ce/). Após feito isso, instale o [Docker-compose](https://docs.docker.com/compose/install/).
 
-### Comandos básicos 
+* ### Comandos básicos 
 
  &emsp;&emsp; Para a utilização do ambiente em background, basta dar o comando abaixo e ele irá ligar o container:
  
@@ -61,7 +61,7 @@ Primeiramente é necessário ter o docker instalado, caso não tenha acesse o [I
  ```
  Para acessar o [bash](https://www.gnu.org/software/bash/) do container, substitua "comandos" por "bash".
 
-## Rodando a aplicação
+* ## Rodando a aplicação
 
 Para rodar a aplicação, entre na pasta do projeto em que está localizado o __docker-compose__ e digite no terminal:
 
