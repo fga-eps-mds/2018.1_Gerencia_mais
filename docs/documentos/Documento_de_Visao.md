@@ -8,7 +8,7 @@
 |22/03/2018|0.5|adição do tópico 1 do sumário a Introdução|Victor, Caio|
 |23/03/2018|0.6|adição do tópico 4 do sumário a Visão Geral do Produto|Victor|
 |24/03/2018|0.7|adição do tópico 5 do sumário os Recursos do Produto| Victor |
-|24/03/2018|0.8|adição do tópico 8 do sumário as Restrições e correção de bug de interface|Victor|
+|24/03/2018|0.8|adição do tópico 6 do sumário as Restrições e correção de bug de interface|Victor|
 
 # Sumário
 1. [Introdução](#1)
