@@ -94,3 +94,4 @@ IMAGEM
 ### 5. Referências
 <p>Engenharia de Software - 5ª Edição. Roger S. Pressman. Ano: 2002</p>
 <p>Guia PMBOK 5a. ed. - EUA: Project Management Institute, 2013</p>
+<p>Engenharia de software - Qualidade de produto - NBR ISO/IEC 9126-1</p>
