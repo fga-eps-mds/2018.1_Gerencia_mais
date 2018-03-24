@@ -7,6 +7,7 @@
 |22/03/2018|0.4|adição do Posicionamento|Caio César, Victor|
 |22/03/2018|0.5|adição do tópico 1 do sumário a Introdução|Victor, Caio|
 |23/03/2018|0.6|adição do tópico 4 do sumário a Visão Geral do Produto|Victor|
+|24/03/2018|0.7|adição do tópico 5 do sumário o Recursos do Produto| Victor |
 
 # Sumário
 1. [Introdução]()
@@ -133,24 +134,46 @@ ___
 ## <a name = "4" ></a> 4. Visão Geral do Produto
 <p> O *webapp* tem como funcionalidade principal auxiliar a visualização e organização dos recursos físicos, servidores e arranjo espacial do HRG.
 </p>
-<p>As informações que serão captadas do banco de dados serão divididas em três partes:</p>
+
+<p>
+As informações que serão captadas do banco de dados serão divididas em três partes:
+</p>
+
   * *Gestão de servidores:* terá a função de gerenciar a questão das escalas dos servidores do HRG de forma a não haver conflito de horários e mostrar de forma mais coesa e limpa as informações de escala como com quem ele estará trabalhando aquele dia, quantas pessoas estão naquele período do dia (manhã, tarde ou noite), quem está de ferias naquele tempo.
   <br></br>
   * *Gestão de recursos físicos:* terá a função de mostrar o status do armazenamento de recursos como seringas, agulhas, remédio.
   <br></br>
-  * *Gestão de arranjo físico:*  terá a função de mostrar aos servidores em questão e aos administradores de logística do hospital as salas ocupadas, as salas livres e as salas que estão inválidas.
-  </p>
+  * *Gestão de arranjo físico:*  terá a função de mostrar aos servidores em questão e aos administradores de logística do hospital as salas ocupadas, as salas livres e as salas que estão inválidas
 
-### <a name ="4.1"> </a> 4.1 Perspectiva do Produto
+
+###  <a name ="4.1"> </a> 4.1. Perspectiva do Produto
 
 <p>
 O aplicativo tem por expectativa atender de forma ótima as a gestão dentro do hospital facilitando assim a organização interna, assim otimizando e acelerando o atendimento dentro do hospital, também otmizando o tempo do servidor que está na escala no dia, pois a boa gestão fará ele não perder tempo em dúvida de qual consultório ele estará no dia.
 </p>
 
-### <a name="4.2"></a> 4.2 Resumo dos Recursos
+### <a name="4.2"></a> 4.2. Resumo dos Recursos
 
 |Benefício para o cliente|Recursos de suporte|
 |-----                   |-----              |
 |Organiza a escala de servidores|O *webapp*, através dos dados do bando, mostra a escala levando alguns critérios e mostrando a quantidade de horas que ele terá que trabalhar naquela semana para cumprir a meta atual de horas semanais|
 |Organiza a quantidade de recursos|O *webapp*, através do banco de dados, irá mostrar a quantidade de matérial na farmácia do hospital e irá informar quando está acabando|
 |Organiza o arrajo insumo físico do hospital|O *webapp*, através do banco de dados, irá mostrar quais salas do hospital estão disponíveis naquele momento do plantão do servidor|
+
+___
+
+## <a name = "5"></a>5. Recursos do produto
+|ID |Descrição|Prioridade|
+|---|---      |---       |
+|RF01|Cadastrar horário de plantão|alta|
+|RF02|Cadastrar carga horária do servidor|alta|
+|RF03|Cadastrar férias do servidor|alta|
+|RF04|Mostrar planilha de horas totais trabalhadas|alta|
+|RF05|Mostrar servidores de plantão|alta|
+|RF06|Mostrar quantidade de servidores por período do dia|alta|
+|RF07|Cadastrar salas ou consultórios|alta|
+|RF08|Gerenciar controle de salas ocupadas e não ocupadas|alta|
+|RF09|Mostrar quantidade de salas desocupadas|alta|
+|RF10|Cadastrar produtos para gerenciar controle de estoque no HRG|alta|
+|RF11|Mostrar quantidade de matérial do hospital|alta|
+|RF12|Mostrar perfil do servidor|Muito baixa|
