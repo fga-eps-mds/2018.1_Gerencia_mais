@@ -3,12 +3,13 @@
 |--- |---   |---      |---  |
 |21/03/2018|0.1|adição dos primeiros passos do documento de visão| Victor|
 |21/03/2018|0.2|construção do escopo do documento de visão| Victor|
-|21/03/2018|0.3|adição dos perfis dos envolvidos|Guilherme Aguiar |
+|22/03/2018|0.3|adição dos perfis dos envolvidos|Guilherme Aguiar |
 |22/03/2018|0.4|adição do Posicionamento|Caio César, Victor|
 |22/03/2018|0.5|adição do tópico 1 do sumário a Introdução|Victor, Caio|
 |23/03/2018|0.6|adição do tópico 4 do sumário a Visão Geral do Produto|Victor|
 |24/03/2018|0.7|adição do tópico 5 do sumário os Recursos do Produto| Victor |
 |24/03/2018|0.8|adição do tópico 6 do sumário as Restrições e correção de bug de interface|Victor|
+|24/03/2018|0.9|adição de três subtópicos da descrição da parte interessada e dos usuários| Guilherme Aguiar
 
 # Sumário
 1. [Introdução](#1)
@@ -104,6 +105,17 @@ ___
 
 ## <a name="3"></a> 3. Descrição da Parte Interessada e dos Usuários
 
+### <a name="3.1"></a> 3.1 Resumo dos Usuários
+
+| Nome | Descrição |
+| ---- |---------- |
+| Administrador da Plataforma| Pessoa que vai efetuar devidos ajustes no quadro de horários, realizando efetivamente o controle de jornada dos funcionários do hospital, assim como a organização dos equipamentos hospitalares e infraestrutura. |
+| Servidor | Pessoa que terá seus turnos de trabalhos organizados no na aplicação. |
+
+### <a name="3.2"></a> 3.2 Ambiente dos Usuários
+
+O software será uma plataforma web responsiva, isto é, seu layout se adapta automaticamente ao dispositivo do usuário, desde que possua um browser compatível e conexão com a internet.
+
 ### <a name="3.3"></a> 3.3 Perfis dos Envolvidos
 
 #### <a name="3.3.1"></a> 3.3.1 Equipe de Gestão do Projeto
@@ -129,6 +141,17 @@ ___
 | __Critérios de Sucesso__ | Entregar a aplicação de software de acordo com o que foi requisitado pelo cliente e pela equipe de gestores. |
 | __Envolvimento__ | Alto |
 | __ Comentários/Problemas__ | . |
+
+### <a name="3.4"></a> 3.4 Perfis dos Usuários
+
+| | |
+| -------------- | ------- |
+| __Representantes__ | Servidores responsáveis pelo gerenciamento da plataforma |
+| __Tipo__  | Funcionário que tenha conhecimento para exercer as responsabilidades e permissão para atuar.  |
+| __Responsabilidades__ | Efetuar devidos ajustes no quadro de horários, realizando efetivamente o controle de jornada dos funcionários do hospital, assim como a organização dos equipamentos hospitalares. |
+| __Critérios de Sucesso__ | Gerenciar os turnos dos funcionários e ordenamento dos equipamentos hospitalares com êxito. |
+| __Envolvimento__ | Alto |
+| __ Comentários/Problemas__ | Possível sobrecarga de atividades para o administrador. |
 
 ___
 
