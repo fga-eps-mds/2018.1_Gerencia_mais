@@ -10,6 +10,7 @@
 |24/03/2018|0.7|adição do tópico 5 do sumário os Recursos do Produto| Victor |
 |24/03/2018|0.8|adição do tópico 6 do sumário as Restrições e correção de bug de interface|Victor|
 |24/03/2018|0.9|adição de três subtópicos da descrição da parte interessada e dos usuários| Guilherme Aguiar
+|25/03/2018|1.0|adição do subtópico 3.5 sobre a parte interessada do usuário| Adrielly Rodrigues
 
 # Sumário
 1. [Introdução](#1)
@@ -152,6 +153,13 @@ O software será uma plataforma web responsiva, isto é, seu layout se adapta au
 | __Critérios de Sucesso__ | Gerenciar os turnos dos funcionários e ordenamento dos equipamentos hospitalares com êxito. |
 | __Envolvimento__ | Alto |
 | __ Comentários/Problemas__ | Possível sobrecarga de atividades para o administrador. |
+
+### <a name = "3.5"></a> 3.5 Principais necessidades dos Usuários ou dos Envolvidos
+|Necessidade |Prioridade|Preocupações|Solução Atual|Solução Proposta|
+|---         |---       |---         |---          |---             |
+|Gerir a escala de servidores|Alta|O conflito de horários gerado pela falta de informação sobre a escala dos servidores|Programa datado e planilhas no excel emparelhado com trakcare|Uma plataforma *webapp* que gerencie a escala horária dos servidores, mostrando o status atual, quem está trabalhando, de folga, de férias
+|Gerir a quantidade de instrumentos hospitalares|Alta|A falta de conhecimento dos servidores ao número de instrumentos hospitalares|Programa datado e planilhas no excel emparelhado com trakcare|Uma plataforma *webapp* que gerencie e permita aos servidores visualizar o status de disponibilidade dos recursos hospitalares
+|Gerir os arranjos físicos do hospital|Alta|A falta de conhecimento dos servidores ao status dos arranjos físicos| . |Uma plataforma *webapp* que gerencie e permita aos servidores visualizar o status dos arranjos físicos 
 
 ___
 
