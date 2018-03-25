@@ -11,6 +11,7 @@
 |24/03/2018|0.8|adição do tópico 6 do sumário as Restrições e correção de bug de interface|Victor|
 |24/03/2018|0.9|adição de três subtópicos da descrição da parte interessada e dos usuários| Guilherme Aguiar
 |25/03/2018|1.0|adição do subtópico 3.5 sobre a parte interessada do usuário| Adrielly Rodrigues
+|25/03/2018|1.1|adição do subtópico 3.6 sobre alternativas e concorrências| Adrielly Rodrigues
 
 # Sumário
 1. [Introdução](#1)
@@ -99,7 +100,7 @@ ___
 
 <p>Este projeto visa oferecer uma melhora significativa nesse sistema, para que fique mais fácil e prática a alocação correta,no DF, tanto de equipamentos e outros recursos, quanto de profissionais da saúde capazes de resolver problemas onde for preciso.</p>
 
-### <a name="2.1"></a> 2.2 Descrição do Problema
+### <a name="2.2"></a> 2.2 Descrição do Problema
 Os servidores dos hospitais tem que, manualmente, fazer uma tabela de horarios para os profissionais de saúde, o que demanda muito tempo e tem forte possiblidade de haver enganos. Além disso, a distribuição de recursos é negativamente afetada, já que são muitas informações para poucas pessoas que lidam com elas.
 
 ___
@@ -157,9 +158,14 @@ O software será uma plataforma web responsiva, isto é, seu layout se adapta au
 ### <a name = "3.5"></a> 3.5 Principais necessidades dos Usuários ou dos Envolvidos
 |Necessidade |Prioridade|Preocupações|Solução Atual|Solução Proposta|
 |---         |---       |---         |---          |---             |
-|Gerir a escala de servidores|Alta|O conflito de horários gerado pela falta de informação sobre a escala dos servidores|Programa datado e planilhas no excel emparelhado com trakcare|Uma plataforma *webapp* que gerencie a escala horária dos servidores, mostrando o status atual, quem está trabalhando, de folga, de férias
-|Gerir a quantidade de instrumentos hospitalares|Alta|A falta de conhecimento dos servidores ao número de instrumentos hospitalares|Programa datado e planilhas no excel emparelhado com trakcare|Uma plataforma *webapp* que gerencie e permita aos servidores visualizar o status de disponibilidade dos recursos hospitalares
-|Gerir os arranjos físicos do hospital|Alta|A falta de conhecimento dos servidores ao status dos arranjos físicos| . |Uma plataforma *webapp* que gerencie e permita aos servidores visualizar o status dos arranjos físicos 
+|Gerir a escala de servidores|Alta|O conflito de horários gerado pela falta de informação sobre a escala dos servidores|Programa datado e planilhas no excel emparelhado com trakcare|Uma plataforma *webapp* que gerencie a escala horária dos servidores, mostrando o status atual, quem está trabalhando, de folga, de férias|
+|Gerir a quantidade de instrumentos hospitalares|Alta|A falta de conhecimento dos servidores ao número de instrumentos hospitalares|Programa datado e planilhas no excel emparelhado com trakcare|Uma plataforma *webapp* que gerencie e permita aos servidores visualizar o status de disponibilidade dos recursos hospitalares|
+|Gerir os arranjos físicos do hospital|Alta|A falta de conhecimento dos servidores ao status dos arranjos físicos| . |Uma plataforma *webapp* que gerencie e permita aos servidores visualizar o status dos arranjos físicos|
+
+### <a name = "3.6"></a>3.6 Alternativas e Concorrências
+
+
+Após pesquisas sobre concorrência, não foi encontrado nenhuma aplicação web ou aplicação mobile que se assemelha ao software proposto, sendo encontrado apenas softwares médicos com o intuito de auxiliar clínicas pequenas na gestão de atendimentos, e prontuários. 
 
 ___
 
