@@ -6,7 +6,7 @@
 1. [O que é qualidade de software?](#2---o-que-é-qualidade-de-software?)
 1. [Planejamento](#3---planejamento)
   1. [Técnicas](#31---técnicas)
-  1. [Custo de Qualidade(CDQ)](#32---custo-de-qualidade(cdq)
+  1. [Custo de Qualidade(CDQ)](#32---custo-de-qualidade(cdq))
 1. [Monitoramento e Controle](#4---monitoramento-e-controle)
   1. [Ferramentas](#41---ferramentas)
 1. [Referências](#5---referencias)
