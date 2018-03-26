@@ -15,7 +15,7 @@ Por não haver um escopo e Coach definidos, será passado aos membros da equipe 
 responsáveis por implementar um software utilizando as mesmas tecnologias que serão utilizadas no projeto "Gestão de Internações cirúrgicas".
 
 
-### **Backlog da Sprint**
+### 🔵 **Backlog da Sprint**
 
 | Issue | Responsável | Username |     
 |-----------------------|-------------|------------|     
