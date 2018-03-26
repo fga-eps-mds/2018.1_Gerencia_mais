@@ -101,7 +101,24 @@ ___
 <p>Este projeto visa oferecer uma melhora significativa nesse sistema, para que fique mais fácil e prática a alocação correta,no DF, tanto de equipamentos e outros recursos, quanto de profissionais da saúde capazes de resolver problemas onde for preciso.</p>
 
 ### <a name="2.2"></a> 2.2 Descrição do Problema
-Os servidores dos hospitais tem que, manualmente, fazer uma tabela de horarios para os profissionais de saúde, o que demanda muito tempo e tem forte possiblidade de haver enganos. Além disso, a distribuição de recursos é negativamente afetada, já que são muitas informações para poucas pessoas que lidam com elas.
+
+| | |
+| -------------- | ------- |
+| __O problema é__ | ter que preencher manualmente a tabela de horários dos médicos |
+| __que afeta__ | os servidores do hospital, os médicos e os pacientes |
+| __cujos impactos são__ | demanda muito grande de tempo, desorganização, distribuição de carga horária pouco eficiente |
+| __e uma boa solução seria__ | sistema mais eficiente e automatizado para a distribuição de horários |
+
+### <a name="2.3"></a> 2.3 Instrução de Posição do Produto
+
+| | |
+| -------------- | ------- |
+| __Para__ | os funcionários e médicos dos hospitais |
+| __que__ | necessitam de uma ferramenta melhor de controle e gerenciamento das cargas horárias dos médicos|
+| __o__ | nosso projeto é uma aplicação web |
+| __que__ | faz gerenciamento e automazação do quadro de horas dos médicos, mantendo uma melhor distribuição desses médicos nos devidos horários |
+| __diferente do__ | método atual, que é feito manualmente|
+| __nosso produto__ | é uma alternativa funcional para o problema existente|
 
 ___
 
