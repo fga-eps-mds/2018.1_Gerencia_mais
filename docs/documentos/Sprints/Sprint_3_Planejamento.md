@@ -14,7 +14,7 @@
 |**Data de início**|24/03/2018|
 |**Data de término**|31/03/2018|
 |**Duração**|7 dias|
-|**Pontos planejados**|27|
+|**Pontos planejados**|37|
 
 ## 2 - Papéis
 
@@ -23,7 +23,7 @@
 |**Product Owner**|Izabela Cristina|[@izacristina]()|
 |**Tracker**|Ulysses|[@UlyssesBML]()|
 |**Scrum Master**|Ulysses|[@UlyssesBML]()|
-|DevOps|Eduardo Junio|[@Eduardojvl]()|
+|DevOps|Eduardo Junio|[@Eduardojvr](https://github.com/Eduardojvr)|
 |DevOps|Caio Gabriel|[@CaioGabrielAraujo]()|
 |Arquiteto|Rafael Bragança|[@rafaelbrg](https://github.com/rafaelbrg)|
 |Coringa|João Gabriel|[@joaosaliba]()|
@@ -37,7 +37,7 @@
 
 O pareamento abaixo foi definido baseado no [quadro de conhecimentos](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/master/docs/documentos/imagens/sprint0/conhecimento_Inicial.png) a fim de garantir o cumprimento da US durante a *sprint*. Focamos em colocar pessoas com maior conhecimento com pessoas que possuem menor conhecimento, a fim de distribuir e equalizar o nível da equipe.
 
-![pareamento]()
+![pareamento](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/is46_sprint3_planejamento/docs/documentos/imagens/Sprint3/Pareamento.jpg)
 
 ## 4 - Histórias planejadas
 
