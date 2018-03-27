@@ -11,4 +11,3 @@ Use checkbox para tarefas inseridas em um mesmo contexto, exemplo:
 Title: Organizar repositório        
 - [ ] Criar pasta de documentos
 - [ ] Organizar wiki
-

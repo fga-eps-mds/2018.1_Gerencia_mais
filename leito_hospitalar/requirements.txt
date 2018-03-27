@@ -1,5 +1,9 @@
 django==2.0.3
-#coverage==4.4.1
-#flake8==3.4.1
-#coveralls
+coverage==4.4.1
+flake8==3.4.1
+pytest
+#codeclimate
+#randon
+#duplication
+coveralls
 
