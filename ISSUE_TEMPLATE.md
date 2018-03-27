@@ -11,3 +11,7 @@ Use checkbox para tarefas inseridas em um mesmo contexto, exemplo:
 Title: Organizar repositório        
 - [ ] Criar pasta de documentos
 - [ ] Organizar wiki
+
+* ### Critério de Aceitação
+- [ ] Descrição do primeiro critério
+- [ ] Descrição do segundo critério
