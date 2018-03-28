@@ -67,3 +67,21 @@ ___
 * BORGES, Felipe; HIROSHI, Lucas; MARQUES, Guilherme; KISHIMA, Lucas; NASCIMENTO, Mateus; MARTINS, Michel; MARIA, Natália; Projeto Receituário Médico: Documento de Arquitetura. Disponível em: https://github.com/fga-gpp-mds/2017.2-Receituario-Medico/wiki/Documento-de-Arquitetura. Acesso em 27 mar. 2018.
 
 ### <a name="1.5"></a>1.5 Visão Geral
+
+## <a name="2"></a>2. Representação da Arquitetura
+No projeto será adotado um modelo de camadas chamado MVC (model , view, controller). Dessa maneira implementando cada uma dessas camadas proporciona aos desenvolvedores uma manutenção mais fácil e o maior reaproveitamento de classes em partes do projeto no futuro. Esse modelo é muito adotado em projetos web assim como em projetos que demandão uma grande manutabilidade nos seus códigos. A seguir estão as funções de cada uma das camadas do modelo seguido.
+  - *Model*: É responsável pela gerência de dados, as lógicas e as regras de negócios relacionado ao bando de dados do sistema da aplicação.
+
+  - *View*: É responsável pela interface gráfica do sistema assim sendo a parte da aplicação que terá contato direto com o usuário da aplicação.
+
+  - *Controller*: Responsável por receber as requisições que o usuário fez na view e controla assim as ações dentro da aplicação relacionadas a requições feitas. A controller é a intermediadora entre a view e a model. Nessa camada todas as requisções feitas são convertidas em ações que irão interagir entre sí na maioria das vezes elas são feitas pela model para view ou da view para a model.
+
+No framework usado para realizar o nosso *webapp*, que é o Django, é baseado no modelo anterios porém sua estrutura tem algumas alterações. O Django usa o modelo MVT (model , view, template). A seguir será explicado mais sobre  o funcionamento desses pacotes.
+*  *Model*: É a camada onde é definido as ações com o banco de dados da aplicação, nela também são feitas a escrita, leitura e a validação das informações do fluxo de dados. Sendo assim a model é onde controla tudo do banco de dados na aplicação bem como suas regras e comportamento.
+
+* *Template*: Template é a camada que faz o papel da view no modelo anterior, ou seja, nela que o usúario irá interagir. O nosso caso do projeto trocamos a camada da view padrão do Django e adicionamos outro framework chamado react feito pelo facebook para fins de interface gráfica nesse caso usamos uma API Rest framework para transformar as informações da aplicação para um json que será usado no react para criar a interface do projeto.
+
+  - *View*: A view no caso do Djando faz o papel da controller uma fez que ela é que faz a interação entre a model e a template. Neste caso as ações que ocorrerão no template serão passadas pelo Rest framework para o react que também fará o papel intermediário entre model e template.
+
+  ![alt text][logo]
+  [logo]:https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/tree/docs/docs/documentos/imagens/Documento_de_arquitetura/snippod-boilerplate-stack.png
