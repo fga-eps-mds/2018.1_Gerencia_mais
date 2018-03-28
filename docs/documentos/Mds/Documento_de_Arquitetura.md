@@ -68,6 +68,9 @@ ___
 
 ### <a name="1.5"></a>1.5 Visão Geral
 
+
+____
+
 ## <a name="2"></a>2. Representação da Arquitetura
 No projeto será adotado um modelo de camadas chamado MVC (model , view, controller). Dessa maneira implementando cada uma dessas camadas proporciona aos desenvolvedores uma manutenção mais fácil e o maior reaproveitamento de classes em partes do projeto no futuro. Esse modelo é muito adotado em projetos web assim como em projetos que demandão uma grande manutabilidade nos seus códigos. A seguir estão as funções de cada uma das camadas do modelo seguido.
   - *Model*: É responsável pela gerência de dados, as lógicas e as regras de negócios relacionado ao bando de dados do sistema da aplicação.
@@ -81,7 +84,12 @@ No framework usado para realizar o nosso *webapp*, que é o Django, é baseado n
 
 * *Template*: Template é a camada que faz o papel da view no modelo anterior, ou seja, nela que o usúario irá interagir. O nosso caso do projeto trocamos a camada da view padrão do Django e adicionamos outro framework chamado react feito pelo facebook para fins de interface gráfica nesse caso usamos uma API Rest framework para transformar as informações da aplicação para um json que será usado no react para criar a interface do projeto.
 
-  - *View*: A view no caso do Djando faz o papel da controller uma fez que ela é que faz a interação entre a model e a template. Neste caso as ações que ocorrerão no template serão passadas pelo Rest framework para o react que também fará o papel intermediário entre model e template.
+- *View*: A view no caso do Djando faz o papel da controller uma fez que ela é que faz a interação entre a model e a template. Neste caso as ações que ocorrerão no template serão passadas pelo Rest framework para o react que também fará o papel intermediário entre model e template.
 
-  ![alt text][logo]
-  [logo]:https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/tree/docs/docs/documentos/imagens/Documento_de_arquitetura/snippod-boilerplate-stack.png
+
+  ![Documento de Arquitetura][logo]
+
+  [logo]:../imagens/Documento_de_arquitetura/snippod-boilerplate-stack.png "Documento de Arquitetura"
+  Figura 1- Diagrama do um MTV com react, retirado no site em 27/03/2018.
+
+  ___
