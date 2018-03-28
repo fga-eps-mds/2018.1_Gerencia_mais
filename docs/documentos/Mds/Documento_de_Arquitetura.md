@@ -1,8 +1,9 @@
 # Controle de versão:
-|Data|Versão|Descrição|Autor|
-|--- |---   |---      |---  |
-|21/03/2018|0.1|Abertura do Documento| Guilherme Aguiar|
-|27/03/2018|0.2|Adição do Tópico 1| Adrielly Rodrigues|
+|Data         |Versão|Descrição                              |Autor               |
+|---          |---   |---                                    |---                 |
+|21/03/2018   |0.1   |Abertura do Documento                  | Guilherme Aguiar   |
+|27/03/2018   |0.2   |Adição do Tópico 1                     | Adrielly Rodrigues |
+|27/03/2018   |0.3   |Adição do tópico 2 com imagens         | Victor             |
 
 
 # Sumário
