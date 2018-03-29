@@ -24,7 +24,7 @@
 
 ## 1. Introdução
 
-Esse documento possui o objetivo de apresentar as características iniciais do projeto GIC, possibilitando uma visão prévia, descrevendo pontos importantes do projeto apresentados pelos * stakeholders *.
+Esse documento possui o objetivo de apresentar as características iniciais do projeto GIC, possibilitando uma visão prévia e  descrevendo pontos importantes do projeto apresentados pelos clientes .
 
 ## 2. Descrição do Projeto
 
