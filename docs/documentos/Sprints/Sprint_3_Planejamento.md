@@ -14,7 +14,7 @@
 |**Data de início**|24/03/2018|
 |**Data de término**|31/03/2018|
 |**Duração**|7 dias|
-|**Pontos planejados**|37|
+|**Pontos planejados**|39|
 
 ## 2 - Papéis
 
@@ -58,3 +58,4 @@ A seguir temos as histórias planejadas para a *sprint* 3. Essas foram pontuadas
 |[US05](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/issues/40)|Eu, como usuário desejo visualizar o quadro de disponibilidade médica para que posso conferir o quadro horário semanal ou mensal.(FRONTEND) |8|João Vitor e Ulysses|
 |[US06](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/issues/41)|Eu, como usuário desejo visualizar o quadro de disponibilidade médica para que posso conferir o quadro horário semanal ou mensal.(BACKEND) |8|Adrielly e Victor Hugo|
 |[US07](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/issues/41)|Eu, como administrador desejo alterar o status de disponibilidade do médico para caso algum médico entre de férias/licesa seja mostrado.(FRONTEND) |5|Caio Beleza e Guilherme Aguiar|
+|[TS01](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/issues/5)| Eu, como desenvolvedor desejo elaborar protótipos de baixa fidelidade para validar funcionalidades com os clientes.| MDS|
