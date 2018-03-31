@@ -10,16 +10,39 @@ class GridCell extends Component {
     super();
     this.state = {"line":props.line,"column":props.column};
   }
+
+    resolveButton(line,column){
+      /*
+        change this url to project API's url.
+        line == periods
+        column == days of the week
+      */
+      fetch("https://randomuser.me/api/?results=50&nat=us,dk,fr,br")
+      .then(response => response.json())
+      .then(parsedJSON =>parsedJSON.results)
+      .then(contacts => this.setState({
+        contacts
+      }))
+      .catch(error => console.log("error to get data " + error));
+    };
+
   render(){
     return(
-      <td>
+      <td onClick = {()=> this.resolveButton(this.props.line,this.props.column)}>
       <Popup
-      trigger={<button className="button"> Open Modal </button>}
+      trigger={<button className="btn btn-outline-secondary">Servidores</button>}
       modal
       closeOnDocumentClick
       >
       <div className="popupShape">
-      <span> {this.props.resolveButton(this.state.line,this.state.column)} </span>
+        <div className="pre-scrollable">
+          {
+            this.state.contacts != null ? this.state.contacts.map(user =>
+              <div><span>{user.name.first + " " + user.name.last}</span><br></br></div>
+            )
+            : null
+          }
+        </div>
       </div>
       </Popup>
       </td>
@@ -32,25 +55,22 @@ export default class ScheduleTable extends Component {
       super();
       this.state={"popup":0};
     }
-    resolveButton(line,column){
-      return ("servidor joao carlos da silva gomes pereira matricula xxxxxxx    servidor joao carlos da silva gomes pereira matricula xxxxxxx    servidor joao carlos da silva gomes pereira matricula xxxxxxx    servidor joao carlos da silva gomes pereira matricula xxxxxxx    servidor joao carlos da silva gomes pereira matricula xxxxxxx      servidor joao carlos da silva gomes pereira matricula xxxxxxx      servidor joao carlos da silva gomes pereira matricula xxxxxxx    servidor joao carlos dasilva gomes pereira matricula xxxxxxx    servidor joao carlos da silva gomes pereira matricula xxxxxxx  servidor joao carlos da silva gomes pereira matricula xxxxxxx");
 
-
-    };
 
     TableList(number){
       var lists=[];
+      var periods = ["manhã","tarde","noite"];
       for(var cont = 0;cont <= number; cont++){
         lists.push(
         <tr>
-        <td></td>
-        <GridCell resolveButton={this.resolveButton.bind(this)} line={cont} column={0}></GridCell>
-        <GridCell resolveButton={this.resolveButton.bind(this)} line={cont} column={1}></GridCell>
-        <GridCell resolveButton={this.resolveButton.bind(this)} line={cont} column={2}></GridCell>
-        <GridCell resolveButton={this.resolveButton.bind(this)} line={cont} column={3}></GridCell>
-        <GridCell resolveButton={this.resolveButton.bind(this)} line={cont} column={4}></GridCell>
-        <GridCell resolveButton={this.resolveButton.bind(this)} line={cont} column={5}></GridCell>
-        <GridCell resolveButton={this.resolveButton.bind(this)} line={cont} column={6}></GridCell>
+        <td><h3>{periods[cont]}</h3></td>
+        <GridCell line={cont} column={0}></GridCell>
+        <GridCell line={cont} column={1}></GridCell>
+        <GridCell line={cont} column={2}></GridCell>
+        <GridCell line={cont} column={3}></GridCell>
+        <GridCell line={cont} column={4}></GridCell>
+        <GridCell line={cont} column={5}></GridCell>
+        <GridCell line={cont} column={6}></GridCell>
         </tr>
         )
       }
