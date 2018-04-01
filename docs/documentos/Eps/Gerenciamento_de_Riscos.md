@@ -16,7 +16,7 @@ Gerenciar os riscos é indispensável em um projeto de desenvolvimento de softwa
 Os riscos de um projeto devem ser monitorados e controlados, para que haja a garantia que nenhum risco inviabilize a execução do projeto,por essa razão é de vital importância um papel que de conta que coordene a gestão dos riscos no caso do projeto *** Gestão de Internações Cirúrgicas *** o responsável por esse monitoramento é o *** Scrum Master *** da equipe, onde este tem o dever de detectá los e fornecer meios de solucioná los.
 
 ## 3 Estrutura Analitica de Riscos  
-![ear.png]()
+![EAR.png](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/3d40e169aa03541f696b2847436d64e9db36908e/docs/documentos/imagens/Gerenciamento_de_Riscos/EAR.png)
 
 ### 3.1 Técnico
 |Categoria|Descrição|
