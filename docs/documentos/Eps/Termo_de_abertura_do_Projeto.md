@@ -43,7 +43,7 @@ O GIC, tem como objetivo gerir os médicos do Distrito Federal, de acordo com su
 
 ## 5. Requisitos de Alto Nível
 
-A aplicaço será desenvolvida para plataformas web. Requisitos de alto nível são apresentados abaixo:
+A aplicação será desenvolvida para plataformas web. Requisitos de alto nível são apresentados abaixo:
 * A aplicação apresentará visual simples e de fácil navegação, de forma que os usuário tenham uma maior precisão e rapidez no acesso às funcionalidades;
 * Os médicos e funcionários administrativos terão acesso aos quadros de horários;
 * A aplicação deverá apresentar a quantidade de médicos que estarão trabalhando em cada período do dia;
@@ -64,7 +64,7 @@ Para funcionamento e acesso às funcionalidades, algumas premissas devem ser sat
 **Risco** | **Medidas preventivas**|
 --------|-------------|
 Não adaptação às tecnologias utilizadas|Dojos (aulas e treinamentos)
-Falta de definição do escopo|Treinamentos e exercícios alternavos para desenvolvimento das habilidade nas tecnologias necessárias para o desenvolvimento do projeto
+Falta de definição do escopo|Treinamentos e exercícios alternativos para desenvolvimento das habilidades nas tecnologias necessárias para o desenvolvimento do projeto
 Desnivelamento dos membros da equipe de desenvolvimento|Pareamentos 
 Choque de horários entre os membros do projeto|Reuniões de planejamento por hangouts, dailies via telegram em dias que há menos da metade dos membros de cada equipe (MDS e EPS) e reunião de sprint todo sábado das 08:00 às 12:00
 Falta de conhecimento dos membros responsáveis pelo DevOps| Cursos e estudos extras (além das 10 horas semanais)
@@ -85,7 +85,7 @@ Além das duas entregas principais, há entregas ao final de cada ciclo de desen
 
 **Artefato**|**Finalidade**|**Valor médio por unidade (R$)**|**Quantidade/mês**|**Valor mensal**|**Valor final   (4 meses)**|
 -----|----|----|----|-----|------|
-Notebooks e desktops|Ferramenta para desenvolvimento e auxílio no gerênciamento do projeto|R$2.830,00|N/A|N/A|R$28.300,00|
+Notebooks e desktops|Ferramenta para desenvolvimento e auxílio no gerenciamento do projeto|R$2.830,00|N/A|N/A|R$28.300,00|
 Energia|Alimentação dos notebooks e desktops|R$13,16(por membro)|10|R$131,60|R$526,40|
 Internet(25mb)|Desenvolvimento e planejamento do projeto | R$109,80 (por membro)|10|R$1.098,00(mês)|R$4.392,00|
 Total| R$ 33.218.40
@@ -98,7 +98,7 @@ Total| R$ 33.218.40
 
 De acordo com o [guia do calouro](http://www.unb2.unb.br/administracao/decanatos/deg/downloads/index/guiacalouro.pdf), uma disciplina de 4 créditos possui cerca de 60 horas de aulas distribuidas ao longo do semestre, o que nos leva ao cálculo de que cada crédito equivale a 15 horas```(60/4) = 15```, temos então que no período de 1 (um) ano são gastos aproximadamente R$36,17 por hora com cada aluno ```(R$26.040,00/(15*48))```.
 
-<p align="justify">Consideraremos que cada membro dedicará cerca de 10 horas semanais para o desenvolvimento do projeto, 4 horas semanais dedicadas às aulas das disciplinas de Métodos de Desenvolvimento de Software (MDS) e Engenharia de Produto de Software(EPS), 1 (uma) hora dedicada as dailies e mais 4 horas dedicadas à realização das reuniões de sprint. Dessa forma totalizamos 19 horas semanais dedicadas ao projeto.</p>
+<p align="justify">Consideraremos que cada membro dedicará cerca de 10 horas semanais para o desenvolvimento do projeto, 4 horas semanais dedicadas às aulas das disciplinas de Métodos de Desenvolvimento de Software (MDS) e Engenharia de Produto de Software(EPS), 1 (uma) hora dedicada às dailies e mais 4 horas dedicadas à realização das reuniões de sprint. Dessa forma totalizamos 19 horas semanais dedicadas ao projeto.</p>
 
 
 **Papéis**|**Quantidade de membros**|**Valor gasto por hora com as disciplinas(apenas MDS e EPS)**|**Horas semanais**|**Total de semanas trabalhadas**|**Total gasto**|
@@ -152,6 +152,3 @@ Rafael Bragança|Arquitetura
 Guia do Calouro. Disponível em http://www.unb2.unb.br/administracao/decanatos/deg/downloads/index/guiacalouro.pdf . Acesso em 28/03/2017
 
 Relatório de Gestão UnB. Disponível em http://www.dpo.unb.br/index.php?option=com_phocadownload&view=category&download=558:relatorio-2016&id=1:relatorio-de-gestao&Itemid=675. Acesso em 28/03/2017
-
-
-
