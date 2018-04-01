@@ -51,32 +51,34 @@ Os riscos de um projeto devem ser monitorados e controlados, para que haja a gar
 Para que seja realizado a análise dos riscos será feita a divisão desses em duas categorias os positivos e os negativos.
 
 ### 4.1 Template para registro de risco.
-|*** ID ***|*** Descrição ***|Categoria EAR|Subcategoria EAR|
-|-----|----|---|---------|--------|
-||||||
+
+|ID|Descrição|Categoria EAR|Subcategoria EAR|
+|-----|----|---|---------|
+||||
 
 ### 4.2 Template para análise de risco
-|*** ID ***|*** Descrição ***|Probabilidade| Impacto|Prioridade|
-|----|----|---|----|---|-------|
-|||||||
 
-Sendo descrito após a tabela como será realizado o *** monitoramento *** e a *** resposta *** para o risco.
+|ID|Descrição|Probabilidade| Impacto|Prioridade|Estrategia|
+|----|----|---|----|---|-------|
+||||||||
+
+Sendo descrito após a tabela como será realizado o ***monitoramento*** e a ***resposta*** para o risco.
 
 ### 4.3 Probabilidade, Impacto e Prioridade.
 
 O grau de probabilidade, impacto e prioridade irá ser feito de acordo com as tabelas abaixo:
 
-* *** Probabilidade ***
+* ***Probabilidade***
 
 |Impacto|Intervalo|
 |-------|---------|
-|*** Muito Baixo ***| Menor que 20%|
-|*** Baixo ***|entre 21% a 40%|
-|*** Médio ***|entre 41% a 60%|
-|*** Alto ***|entre 61% a 80%|
-|*** Muito Alto ***|acima de 80%|
+|***Muito Baixo***| Menor que 20%|
+|***Baixo***|entre 21% a 40%|
+|***Médio***|entre 41% a 60%|
+|***Alto***|entre 61% a 80%|
+|***Muito Alto***|acima de 80%|
 
-* *** Impacto ***
+* ***Impacto***
 
 |Impacto|Intervalo|
 |-------|---------|
@@ -86,25 +88,25 @@ O grau de probabilidade, impacto e prioridade irá ser feito de acordo com as ta
 |*** Alto ***|entre 51% a 60%|
 |*** Muito Alto ***|acima de 60%|
 
-* *** Prioridade ***
+* ***Prioridade***
 
 |Probabilidade/Impacto|Muito Baixo|Baixo|Médio|Alta|Muito Alta|
 |---------------|---------|----------|
-|*** Muito Baixo ***|1|2|3|4|5|
-|*** Baixo ***|2|4|6|8|10|
-|*** Médio ***|3|6|9|12|15|
-|*** Alto ***|4|8|12|16|20|
-|*** Muito Alto ***|5|10|15|20|25|
+|***Muito Baixo***|1|2|3|4|5|
+|***Baixo***|2|4|6|8|10|
+|***Médio***|3|6|9|12|15|
+|***Alto***|4|8|12|16|20|
+|***Muito Alto***|5|10|15|20|25|
 
 
 
 |Impacto|Intervalo|
 |-------|---------|
-|*** Muito Baixo ***| entre 1 e 4|
-|*** Baixo ***|entre 5 e 9|
-|*** Médio ***|entre 10 e 14|
-|*** Alto ***|entre 15 e 19|
-|*** Muito Alto ***|acima de 19|
+|***Muito Baixo***| entre 1 e 4|
+|***Baixo***|entre 5 e 9|
+|***Médio***|entre 10 e 14|
+|***Alto***|entre 15 e 19|
+|***Muito Alto***|acima de 19|
 
 ## 5 Planejamento de Resposta aos Riscos
 
@@ -114,16 +116,16 @@ A resposta aos riscos será dividida em duas partes as dos riscos negativos e do
 
 |Estratégias|Descrição|
 |------------|----------|
-|*** Prevenir ***|É uma estratégia utilizada para eliminar ou diminuir impacto de um possível risco mudando o algum ponto do projeto correlacionado com o risco.|
-|*** Transferir *** |É uma estratégias que passa a responsabilidade de gerenciamento do risco para outra parte, porém não o elimina.|
-|*** Mitigar *** |É uma estratégia utilizada para reduzir a probabilidade do risco ocorrer.|
-|*** Aceitar *** |Aceitar é uma estratégia em que a equipe de gerenciamento tem reconhecimento do risco porém decide não realizar alguma para que prevenir outro riscos.|
+|***Prevenir***|É uma estratégia utilizada para eliminar ou diminuir impacto de um possível risco mudando o algum ponto do projeto correlacionado com o risco.|
+|***Transferir*** |É uma estratégias que passa a responsabilidade de gerenciamento do risco para outra parte, porém não o elimina.|
+|***Mitigar*** |É uma estratégia utilizada para reduzir a probabilidade do risco ocorrer.|
+|***Aceitar*** |Aceitar é uma estratégia em que a equipe de gerenciamento tem reconhecimento do risco porém decide não realizar alguma para que prevenir outro riscos.|
 
 ### 5.2 Riscos Positivos
 
 |Estratégia|Descrição|
 |---------|---------|
-|*** Explorar *** |Essa estratégia é utilizada para que o benefício seja concretizado.|
-|*** Melhorar *** |Essa estratégia é utilizada para  elevar a probabilidade de riscos positivos.|
-|*** Compartilhar *** |Essa estratégia ocorre quando se compartilha o risco com terceiros para que possa tirar melhor proveito do benefício.|
-|*** Aceitar *** |Essa estratégia ocorre quando aceita-se o risco mas não há esforço para tentar repetir o risco.|
+|***Explorar*** |Essa estratégia é utilizada para que o benefício seja concretizado.|
+|***Melhorar*** |Essa estratégia é utilizada para  elevar a probabilidade de riscos positivos.|
+|***Compartilhar*** |Essa estratégia ocorre quando se compartilha o risco com terceiros para que possa tirar melhor proveito do benefício.|
+|***Aceitar*** |Essa estratégia ocorre quando aceita-se o risco mas não há esforço para tentar repetir o risco.|
