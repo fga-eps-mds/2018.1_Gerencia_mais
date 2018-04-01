@@ -13,7 +13,7 @@ Gerenciar os riscos é indispensável em um projeto de desenvolvimento de softwa
 
 ### 2.1 Responsabilidades
 
-Os riscos de um projeto devem ser monitorados e controlados, para que haja a garantia que nenhum risco inviabilize a execução do projeto,por essa razão é de vital importância um papel que de conta que coordene a gestão dos riscos no caso do projeto *** Gestão de Internações Cirúrgicas *** o responsável por esse monitoramento é o *** Scrum Master *** da equipe, onde este tem o dever de detectá los e fornecer meios de solucioná los.
+Os riscos de um projeto devem ser monitorados e controlados, para que haja a garantia que nenhum risco inviabilize a execução do projeto,por essa razão é de vital importância um papel que de conta que coordene a gestão dos riscos no caso do projeto ***Gestão de Internações Cirúrgicas*** o responsável por esse monitoramento é o ***Scrum Master*** da equipe, onde este tem o dever de detectá los e fornecer meios de solucioná los.
 
 ## 3 Estrutura Analitica de Riscos  
 ![EAR.png](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/3d40e169aa03541f696b2847436d64e9db36908e/docs/documentos/imagens/Gerenciamento_de_Riscos/EAR.png)
@@ -82,16 +82,16 @@ O grau de probabilidade, impacto e prioridade irá ser feito de acordo com as ta
 
 |Impacto|Intervalo|
 |-------|---------|
-|*** Muito Baixo ***| Menor que 10%|
-|*** Baixo ***|entre 11% a 30%|
-|*** Médio ***|entre 31% a 50%|
-|*** Alto ***|entre 51% a 60%|
-|*** Muito Alto ***|acima de 60%|
+|***Muito Baixo***| Menor que 10%|
+|***Baixo***|entre 11% a 30%|
+|***Médio***|entre 31% a 50%|
+|***Alto***|entre 51% a 60%|
+|***Muito Alto***|acima de 60%|
 
 * ***Prioridade***
 
 |Probabilidade/Impacto|Muito Baixo|Baixo|Médio|Alta|Muito Alta|
-|---------------|---------|----------|
+|---------------|---------|----------|---------|-----------|-----------|
 |***Muito Baixo***|1|2|3|4|5|
 |***Baixo***|2|4|6|8|10|
 |***Médio***|3|6|9|12|15|
