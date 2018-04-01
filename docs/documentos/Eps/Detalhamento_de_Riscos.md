@@ -91,7 +91,7 @@ O integrante de arquitetura da equipe de EPs verificará constantemente a integr
 
 Será elaborada correções arquiteturais por parte da equipe de EPs.
 
-***RN05 ***
+***RN05***
 
 |ID|Descrição|Probabilidade| Impacto|Prioridade|Estrategia|
 |----|----|---|----|---|-------|
@@ -170,7 +170,7 @@ Um membro de EPs auxiliará nos serviços do membro ausente.
 
 
 
-***RP01 ***
+***RP01***
 
 |ID |Descrição|Probabilidade| Impacto|Prioridade|Estrategia|
 |----|----|---|----|---|-------|
