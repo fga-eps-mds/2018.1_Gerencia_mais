@@ -9,29 +9,25 @@ import DoctorAPI from '../api.js'
 import {Carousel} from 'react-bootstrap';
 
 
-export default class DoctorForm extends Component {
+
+
+export default class DoctorStatus extends Component {
   constructor(props) {
     super(props);
     this.state = {
       name: '',
       id: '',
-      entry_date: '',
-      entry_time: '',
-      departure_date: '',
-      departure_time: '',
+      status:'' ,
+      comments: '',
       formErrors: {name: '', id: '', entry_date: '', entry_time: '', departure_date: '', departure_time: ''},
       name_valid: false,
       id_valid: false,
-      entry_date_valid: false,
-      entry_time_valid: false,
-      departure_date_valid: false,
-      departure_time_valid: false,
       form_valid: false,
       api: [
-        {reg_name: 'Paulo', reg_ids: '1', status:true},
-        {reg_name: 'Sabino', reg_ids: '2', status:true},
-        {reg_name: 'Marcos', reg_ids: '3', status:true},
-        {reg_name: 'Valquiria', reg_ids: '4', status:true},
+        {reg_name: 'Paulo', reg_ids: '1', status:true, comments:''},
+        {reg_name: 'Sabino', reg_ids: '2', status:true, comments:''},
+        {reg_name: 'Marcos', reg_ids: '3', status:true, comments:''},
+        {reg_name: 'Valquiria', reg_ids: '4', status:true, comments:''},
       ],
     }
   }
@@ -139,24 +135,6 @@ export default class DoctorForm extends Component {
     this.setState({formValid: this.state.name_valid});
   }
 
-  sendInfo(){
-    var name = document.getElementById("nameID").value;
-    var id = document.getElementById("idID").value;
-    var entry_date = document.getElementById("edID").value;
-    var entry_time = document.getElementById("etID").value;
-    var departure_date = document.getElementById("ddID").value;
-    var departure_time = document.getElementById("dtID").value;
-    var info = new Array();
-    info.push(name);
-    info.push(id);
-    info.push(entry_date);
-    info.push(entry_time);
-    info.push(departure_date);
-    info.push(departure_time);
-    var dictstring = JSON.stringify(info);
-    console.log(dictstring);
-  }
-
 
   render(){
     return(
@@ -165,7 +143,7 @@ export default class DoctorForm extends Component {
         <div className="top-space espaco espaco-acima">
           <div class="form-style-5">
             <form>
-              <h3>Cadastro de horário de médicos</h3>
+              <h3>Alterar Status do Médico</h3>
               <fieldset>
               <legend><span class="number">1</span> Nome</legend>
               <input id="nameID" type="text" name="name" value={this.state.name} placeholder="Digite o nome aqui"
@@ -173,18 +151,16 @@ export default class DoctorForm extends Component {
               <legend><span class="number">2</span> Numero de Identificação</legend>
               <input id="idID" type="text" name="id" value={this.state.id} placeholder="Digite o numero aqui"
                 onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span class="number">3</span>Data de Entrada</legend>
-              <input id="edID" type="date" name="entry_date" value={this.state.entry_date}
-                onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span class="number">4</span>Horário de Entrada</legend>
-              <input id="etID" type="time" name="entry_time" value={this.state.entry_time} placeholder="Digite o numero aqui"
-                onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span class="number">5</span>Data de Saída</legend>
-              <input id="ddID" type="date" name="departure_date" value={this.state.departure_date}
-                onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span class="number">6</span>Horário de Saída</legend>
-              <input id="dtID" type="time" name="departure_time" value={this.state.departure_time} placeholder="Digite o numero aqui"
-                onChange={(event) => this.handleUserInput(event)}/>
+              <legend><span class="number">3</span> Status</legend>
+              <input id="stsID" type="radio" name="status" value={this.state.status = true}
+                onChange={(event) => this.handleUserInput(event)}/> Disponível <br></br>
+              <input id="stnID" type="radio" name="status" value={this.state.status = false}
+                  onChange={(event) => this.handleUserInput(event)}/> Indisponível <br></br>
+                Descrição: (Opcional)
+              <textarea name='comments' value={this.state.comments} rows="4" cols="50"
+               onChange={(event) => this.handleUserInput(event)}
+              >
+              </textarea>
               <legend><FormErrors formErrors={this.state.formErrors} /></legend>
               </fieldset>
               <input type="submit" value="Apply"
