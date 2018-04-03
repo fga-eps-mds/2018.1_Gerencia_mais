@@ -12,3 +12,6 @@ Title: Organizar repositório
 - [ ] Criar pasta de documentos
 - [ ] Organizar wiki
 
+* ### Critério de Aceitação
+- [ ] Descrição do primeiro critério
+- [ ] Descrição do segundo critério
