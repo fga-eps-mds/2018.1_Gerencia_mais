@@ -25,7 +25,8 @@ SECRET_KEY = 'd11s(4=#89dpk1&vk*8j-94f!k(*uql2(ki5o=i69+^eqh821x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['gicsaude.herokuapp.com', '*']
+ALLOWED_HOSTS = []
+
 
 # Application definition
 
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'leito_hospitalar.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "build"), ],
+        'DIRS': [os.path.join(BASE_DIR, "templates"), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,11 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-  os.path.join(BASE_DIR, 'build/static'),
-]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
 
 WEBPACK_LOADER = {
     'DEFAULT': {
@@ -132,4 +129,3 @@ WEBPACK_LOADER = {
             'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.dev.json'),
         }
 }
-

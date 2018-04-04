@@ -9,6 +9,21 @@ import DoctorAPI from '../api.js'
 import {Carousel} from 'react-bootstrap';
 
 
+const DoctorsAPI = {
+  doctors: [
+    {id:0, name: "Fabio"},
+    {id:1, name: "Joao"},
+    {id:10, name: "Alonso"},
+    {id:11, name: "Sara"},
+    {id:100, name: "Vinicius"},
+  ],
+  all: function() {return this.doctors},
+  get: function(id){
+    const isDoctor = p => p.number === id
+    return this.doctors.find(isDoctor)
+  }
+}
+
 export default class DoctorForm extends Component {
   constructor(props) {
     super(props);
@@ -27,12 +42,8 @@ export default class DoctorForm extends Component {
       departure_date_valid: false,
       departure_time_valid: false,
       form_valid: false,
-      api: [
-        {reg_name: 'Paulo', reg_ids: '1', status:true},
-        {reg_name: 'Sabino', reg_ids: '2', status:true},
-        {reg_name: 'Marcos', reg_ids: '3', status:true},
-        {reg_name: 'Valquiria', reg_ids: '4', status:true},
-      ],
+      registered_names: ['Paulo','Pablo','Paula','Pedro'],
+      registered_ids: ['1','2','3','4','5'],
     }
   }
 
@@ -50,89 +61,43 @@ export default class DoctorForm extends Component {
     let fieldValidationErrors = this.state.formErrors;
     let name_valid = this.state.name_valid;
     let id_valid = this.state.id_valid;
-    // let entry_date_ =  this.state.entry_date;
-    // let departure_date_valid = this.state.departure_date_valid;
-    let name = this.state.name;
-    let id = this.state.id;
-    let api = this.state.api;
+    let registered_names = this.state.registered_names;
+    let registered_ids = this.state.registered_ids;
+
     switch(fieldName) {
       case 'name':
-        for(var nn = 0; nn < api.length; nn++){
-          if(api[nn].reg_name.toLowerCase() == value.toLowerCase()){
+      // name_valid = /\d/.test(value)
+        for(var i in registered_names){
+          if(registered_names[i] == value){
             name_valid = true;
             break;
           }else {
             name_valid = false;
           }
         }
-        if(id){
-          if(name_valid == true){
-            console.log(api[nn].reg_ids);
-            console.log(id);
-            if(api[nn].reg_ids != id){
-              name_valid = false;
-              id_valid = false;
-              console.log('false');
-            }
-            else{
-              name_valid = true;
-              id_valid = true;
-              console.log('true');
-            }
-          }
-          fieldValidationErrors.id = id_valid ? '' : 'Erro: Id não correspondente' ;
-        }
-        fieldValidationErrors.name = name_valid ? '' : 'Erro: Nome não correspondente' ;
+        fieldValidationErrors.name = name_valid ? '' : 'Nome nao encontrado: ' ;
+
         this.setState({formErrors: fieldValidationErrors,
                         name_valid: name_valid,
-                        id_valid: id_valid,
                       }, this.validateForm);
         break;
 
         case 'id':
-          for(var nn = 0; nn < api.length;  nn++){
-            if(api[nn].reg_ids == value){
+          for(var i in registered_ids){
+            if(registered_ids[i] == value){
               id_valid = true;
               break;
             }else {
               id_valid = false;
             }
           }
-          if(name){
-            if(id_valid == true){
-              console.log(api[nn].reg_name);
-              console.log(name);
-              if(api[nn].reg_name.toLowerCase() != name.toLowerCase()){
-                name_valid = false;
-                id_valid = false;
-                console.log('false');
-              }
-              else{
-                name_valid = true;
-                id_valid = true;
-                console.log('true');
-              }
-               fieldValidationErrors.name = name_valid ? '' : 'Erro: Nome não correspondente' ;
-            }
-          }
-          fieldValidationErrors.id = id_valid ? '' : 'Erro: Id não correspondente' ;
-          this.setState({formErrors: fieldValidationErrors,
-                          name_valid: name_valid,
-                          id_valid: id_valid,
-                        }, this.validateForm);
-        break;
+          fieldValidationErrors.id = id_valid ? '' : 'Id nao encontrado: ' ;
 
-        // case 'departure_date':
-        //   if(value > entry_date){
-        //     departure_date_valid = true;
-        //   }else{
-        //     departure_date_valid = false;
-        //   }
-        //   fieldValidationErrors.id = id_valid ? '' : 'Erro: Data de saída menor que a data de entrada' ;
-        //   this.setState({formErrors: fieldValidationErrors,
-        //                   departure_date_valid: departure_date_valid,
-        //                 }, this.validateForm);
-      }
+    this.setState({formErrors: fieldValidationErrors,
+                    id_valid: id_valid,
+                  }, this.validateForm);
+  }
+  console.log(name_valid);
   }
 
   validateForm() {
@@ -140,6 +105,7 @@ export default class DoctorForm extends Component {
   }
 
   sendInfo(){
+    console.log('entrou');
     var name = document.getElementById("nameID").value;
     var id = document.getElementById("idID").value;
     var entry_date = document.getElementById("edID").value;
@@ -153,8 +119,11 @@ export default class DoctorForm extends Component {
     info.push(entry_time);
     info.push(departure_date);
     info.push(departure_time);
+    console.log(info);
     var dictstring = JSON.stringify(info);
     console.log(dictstring);
+    var fs = require('fs');
+    fs.writeFile("thing.json", dictstring);
   }
 
 
@@ -165,13 +134,15 @@ export default class DoctorForm extends Component {
         <div className="top-space espaco espaco-acima">
           <div class="form-style-5">
             <form>
+
               <h3>Cadastro de horário de médicos</h3>
+              <p>{DoctorsAPI.doctors.name}</p>
               <fieldset>
               <legend><span class="number">1</span> Nome</legend>
               <input id="nameID" type="text" name="name" value={this.state.name} placeholder="Digite o nome aqui"
                 onChange={(event) => this.handleUserInput(event)}/>
               <legend><span class="number">2</span> Numero de Identificação</legend>
-              <input id="idID" type="text" name="id" value={this.state.id} placeholder="Digite o numero aqui"
+              <input id="idID" type="number" name="id" value={this.state.id} placeholder="Digite o numero aqui"
                 onChange={(event) => this.handleUserInput(event)}/>
               <legend><span class="number">3</span>Data de Entrada</legend>
               <input id="edID" type="date" name="entry_date" value={this.state.entry_date}
@@ -179,16 +150,15 @@ export default class DoctorForm extends Component {
               <legend><span class="number">4</span>Horário de Entrada</legend>
               <input id="etID" type="time" name="entry_time" value={this.state.entry_time} placeholder="Digite o numero aqui"
                 onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span class="number">5</span>Data de Saída</legend>
+              <legend><span class="number">3</span>Data de Saída</legend>
               <input id="ddID" type="date" name="departure_date" value={this.state.departure_date}
                 onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span class="number">6</span>Horário de Saída</legend>
+              <legend><span class="number">5</span>Horário de Saída</legend>
               <input id="dtID" type="time" name="departure_time" value={this.state.departure_time} placeholder="Digite o numero aqui"
                 onChange={(event) => this.handleUserInput(event)}/>
               <legend><FormErrors formErrors={this.state.formErrors} /></legend>
               </fieldset>
               <input type="submit" value="Apply"
-                disabled={!this.state.formValid}
                 onClick={this.sendInfo}/>
             </form>
             </div>
