@@ -15,7 +15,6 @@ class App extends Component {
       <Route exact path="/scheduletable" component={ScheduleTable} />
       <Route path='/form' component={DoctorForm}/>
       <Route path='/status' component={DoctorStatus}/>
-
       <Route component={NotFound} />
     </Switch>
     </BrowserRouter>
