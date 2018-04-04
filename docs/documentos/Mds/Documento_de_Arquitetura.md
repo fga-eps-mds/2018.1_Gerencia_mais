@@ -94,3 +94,8 @@ No framework usado para realizar o nosso *webapp*, que é o Django, é baseado n
   Figura 1- Diagrama do um MTV com react, retirado no site em 27/03/2018.
 
   ___
+
+## <a name="6"></a>6.  Desempenho
+Nosso software vai manipular informações relacionadas aos médicos do hospital regional do Gama, logo a quantidade de dados que devemos processar é mediana, logo o sistema não deverá ter dificuldade na manipulação dos dados. O desempenho dependerá também do aparelho que o sistema será usado e pelo navegador.
+
+___
