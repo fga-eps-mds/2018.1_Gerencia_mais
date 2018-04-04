@@ -5,8 +5,10 @@ coverage==4.4.1
 flake8==3.4.1
 django-webpack-loader
 pytest
+djangorestframework
+markdown
+django-filter 
 #codeclimate
 #randon
 #duplication
 coveralls
-
