@@ -4,7 +4,8 @@
 |21/03/2018   |0.1   |Abertura do Documento                  | Guilherme Aguiar   |
 |27/03/2018   |0.2   |Adição do Tópico 1                     | Adrielly Rodrigues |
 |27/03/2018   |0.3   |Adição do tópico 2 com imagens         | Victor             |
-
+|03/04/2018   |0.4   |Adição do tópico 6                     | Guilherme Aguiar   |
+|03/04/2018   |0.5   |Adição do tópico 7                     | Guilherme Aguiar   |
 
 # Sumário
 1. [Introdução](#1)
@@ -99,3 +100,7 @@ No framework usado para realizar o nosso *webapp*, que é o Django, é baseado n
 Nosso software vai manipular informações relacionadas aos médicos do hospital regional do Gama, logo a quantidade de dados que devemos processar é mediana, logo o sistema não deverá ter dificuldade na manipulação dos dados. O desempenho dependerá também do aparelho que o sistema será usado e pelo navegador.
 
 ___
+
+## <a name="7"></a>7.  Qualidade
+
+O padrão de arquitetura MTC organiza as camadas da aplicação de forma que elas se tornem mais independentes, proporcionando aos desenvolvedores uma manutenção mais fácil e o maior reaproveitamento de classes em partes do projeto no futuro. O uso do React proporciona uma grande reusabilidade dos componentes, evitando problemas de repetição no código, apesar de que a reusabilidade não pode ser obtida apenas por meio de tecnologia, ela exige processos implementados de forma consistente entre as equipes e compromisso em todos os níveis de uma organização.
