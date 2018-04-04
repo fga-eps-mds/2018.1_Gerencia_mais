@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 //import {Link} from 'react-router-dom';
 import '../css/bootstrap.css';
-import '../css/HomePage.css';
 import NavBar from '../components/NavBar';
-import Footer from '../components/Footer'
 import {Carousel} from 'react-bootstrap';
 
 class HomeCarousel extends Component{
@@ -37,33 +35,28 @@ class HomeCarousel extends Component{
     }
 }
 
-
-
 export default class HomePage extends Component {
     render() {
 	return (
-	    <div className="top-space fundo">
+	    <div>
 	      <NavBar></NavBar>
-          <div className="container">
-         	<div className="row">
-         		<div className="col-lg-12">
-         			<div className="content espaco">
-         				<h1>Gestão de Internações Cirúrgicas</h1>
-         				<h3 className='whitewash'>Aplicação web destinada á gerenciar de servidores de hospitais publicos do distrito federal.</h3>
-         			</div>
-         		</div>
-         	</div>
-         </div>
-
-         <p></p>
-         <p></p>
-         <p></p>
-         <p></p>
-         <Footer></Footer>
+	      <HomeCarousel></HomeCarousel>
 
 
+	      <section className="py-5 bg-light">
+		<div className="container">
+		  <h1>Gestão de Internações Cirúrgica</h1>
+		  <p>Aplicação web destinada á gerencia de servidores de hospitais publicos do distrito federal.</p>
+		</div>
+	      </section>
+
+	      <footer className="py-5 bg-dark">
+		<div className="container">
+		  <p className="m-0 text-center text-white">Copyright &copy; GIC 2018</p>
+		</div>
+	      </footer>
 	    </div>
-
+	    
 	);
     }
 }

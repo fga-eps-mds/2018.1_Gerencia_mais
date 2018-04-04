@@ -25,7 +25,7 @@ SECRET_KEY = 'd11s(4=#89dpk1&vk*8j-94f!k(*uql2(ki5o=i69+^eqh821x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['gicsaude.herokuapp.com', '127.0.0.1:8000']
+ALLOWED_HOSTS = ['gicsaude.herokuapp.com', '*']
 
 # Application definition
 
