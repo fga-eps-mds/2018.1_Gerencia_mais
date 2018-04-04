@@ -14,7 +14,7 @@ export default class NavBar extends Component {
       		  <span className="navbar-toggler-icon"></span>
       		</button>
       		<div className="collapse navbar-collapse" id="navbarResponsive">
-      		  <ul className="nav navbar-nav uls">
+      		  <ul className="nav navbar-nav">
               <li className="nav-item">
       		      <a className="nav-link " href="">Home</a>
       		    </li>

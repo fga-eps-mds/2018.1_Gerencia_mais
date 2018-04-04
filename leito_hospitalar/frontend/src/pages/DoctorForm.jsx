@@ -147,12 +147,14 @@ export default class DoctorForm extends Component {
     var departure_date = document.getElementById("ddID").value;
     var departure_time = document.getElementById("dtID").value;
     var info = new Array();
-    info.push(name);
-    info.push(id);
-    info.push(entry_date);
-    info.push(entry_time);
-    info.push(departure_date);
-    info.push(departure_time);
+    var element = {};
+    element.name = name;
+    element.id = id;
+    element.entry_date = entry_date;
+    element.entry_time = entry_time;
+    element.departure_date = departure_date;
+    element.departure_time = departure_time;
+    info.push(element);
     var dictstring = JSON.stringify(info);
     console.log(dictstring);
   }
