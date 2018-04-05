@@ -14,7 +14,7 @@
 |**Data de início**|02/03/2018|
 |**Data de término**|07/03/2018|
 |**Duração**|6 dias|
-|**Pontos planejados**|19|
+|**Pontos planejados**|22|
 |**Dívidas Técnicas**|0|
 
 ## 2 - Papéis
