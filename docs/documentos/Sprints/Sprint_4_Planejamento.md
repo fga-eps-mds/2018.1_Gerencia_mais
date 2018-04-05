@@ -38,7 +38,7 @@
 
 O pareamento abaixo foi definido baseado no [quadro de conhecimentos](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/master/docs/documentos/imagens/sprint0/conhecimento_Inicial.png) a fim de garantir o cumprimento das Histórias de Usuário durante a *sprint*. Focamos em colocar pessoas com maior conhecimento com pessoas que possuem menor conhecimento, a fim de distribuir e equalizar o nível da equipe.
 
-![pareamento](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/is69_Sprint_4_planejamento/docs/documentos/imagens/Sprint4/Pareamento.jpg)
+![pareamento](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/e27cdf31468bd9a952e1992a47f953b6f54436ab/docs/documentos/imagens/Sprint4/Pareamento.png)
 
 ## 4 - Histórias planejadas
 
