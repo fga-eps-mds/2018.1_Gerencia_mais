@@ -10,7 +10,9 @@
 </p>
 
 
-## Sobre o projeto
+## ℹ️ Sobre o projeto
+<p align="justify">Projeto desenvolvido durante as disciplinas de Engenharia de Produto de Software e Métodos de Desenvolvimento de Software da Universidade de Brasília, campus Gama.</p>
+<p align="justify">O principal objetivo do projeto é oferecer uma forma de melhor alocar os médicos, de acordo com a necessidade do público. Com isso trazendo atendimentos mais efetivos, e uma melhor organização do quadro médico, fazendo com que os mesmos possam se organizar de uma forma melhor, a fim de cumprir as horas de trabalho de forma mais eficiente.</p>
 
 
 ## 🐳 Guia de Uso do Docker
