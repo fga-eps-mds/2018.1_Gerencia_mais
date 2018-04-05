@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from '../components/NavBar';
-import {Table,Button} from 'react-bootstrap';
+import {Table,Button,ButtonToolbar,ToggleButtonGroup,ToggleButton} from 'react-bootstrap';
 import Popup from "reactjs-popup";
 import "../css/popup.css";
 import "../css/bootstrap.min.css";
@@ -53,7 +53,7 @@ class GridCell extends Component {
 export default class ScheduleTable extends Component {
     constructor(){
       super();
-      this.state={"popup":0};
+      this.state={"content":"Selecione uma opcao"};
     }
 
 
@@ -76,30 +76,54 @@ export default class ScheduleTable extends Component {
       }
     return lists;
     }
+    changeTable(isMonth){
+      if(isMonth){
+        var content = (<h1>Tabela Mensal</h1>)
+      }
+      else {
+        var content = (
+          <Table striped bordered condensed hover>
+           <thead>
+               <tr>
+                <th>Horário</th>
+                 <th>Domingo</th>
+                 <th>Segunda</th>
+                 <th>Terça</th>
+                 <th>Quarta</th>
+                 <th>Quinta</th>
+                 <th>Sexta</th>
+                 <th>Sábado</th>
+               </tr>
+           </thead>
+          <tbody>
+       {this.TableList(2)}
+
+           </tbody>
+         </Table>
+        )
+
+      }
+      this.setState({"content":content})
+    }
+
+    componentDidMount(){
+      this.changeTable(false)
+    }
 
     render() {
+
 	return (
 	    <div>
 	      <NavBar></NavBar>
 	      <h1 style={{marginTop:"70px"}}>Quadro de Horários</h1>
-        <Table striped bordered condensed hover>
-         <thead>
-     <tr>
-      <th>Horário</th>
-       <th>Domingo</th>
-       <th>Segunda</th>
-       <th>Terça</th>
-       <th>Quarta</th>
-       <th>Quinta</th>
-       <th>Sexta</th>
-       <th>Sábado</th>
-     </tr>
-         </thead>
-         <tbody>
-     {this.TableList(2)}
 
-         </tbody>
-       </Table>
+        <ButtonToolbar>
+            <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
+              <ToggleButton value={1} onClick={()=>this.changeTable(false)}>Semanal</ToggleButton>
+              <ToggleButton value={2} onClick={()=>this.changeTable(true)}>Mensal</ToggleButton>
+            </ToggleButtonGroup>
+        </ButtonToolbar>
+        {this.state.content}
 
 	    </div>
 	);
