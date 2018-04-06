@@ -1,7 +1,6 @@
-# 🔵 Gestão de Internações cirúrgicas
-
-<p align="center"><a href="image" target="_blank"><img width="300"src="https://i.imgur.com/eOFPRnA.png"></a></p>
+<p align="center"><a href="image" target="_blank"><img width="400"src="https://i.imgur.com/loKF0Dp.png"></a></p>
 <p align="center">
+ 
   <a href="https://travis-ci.org/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC"><img src="https://travis-ci.org/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC.svg?branch=master" alt="Build"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
   <a href="https://codeclimate.com/github/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/maintainability"><img src="https://api.codeclimate.com/v1/badges/10ad033f2a465e9a297f/maintainability" /></a>
@@ -78,6 +77,14 @@ Para rodar a aplicação, entre na pasta do projeto em que está localizado o __
   docker-compose up -d
 ```
 Espere até que todos os serviços estejam disponíveis, acesse a página inicial do projeto com o seguinte endereço: https://localhost:8000
+
+## 🌎 Acessando a aplicacão
+
+<p align="justify">O gerencia mais possui dois ambientes, ambiente de homologação que é usado para testar e verificar se as funcionalidade implementadas mantêm o ambiente estável e o ambiente de produção, onde apresentamos as novas funcionalidades verificadas e validadas aos clientes. Os dois ambiente podem ser acessados através dos endereços apresentados abaixo:</p>
+
+* Ambiente de homologação: https://gicsaude.herokuapp.com/
+
+* Ambiente de produção: https://gerenciamais.herokuapp.com/
 
 
 
