@@ -6,8 +6,12 @@
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
   <a href="https://codeclimate.com/github/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/maintainability"><img src="https://api.codeclimate.com/v1/badges/10ad033f2a465e9a297f/maintainability" /></a>
   <a href='https://coveralls.io/github/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC?branch=master'><img src='https://coveralls.io/repos/github/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/badge.svg?branch=master' alt='Coverage Status' /></a>
-
+    <a href=''><img src='https://img.shields.io/npm/v/npm.svg' alt='Npm-version' /></a>
+    <a href='https://www.python.org/'><img src='https://img.shields.io/badge/Made%20with-Python-1f425f.svg' alt='python' /></a>
+   <a href='https://i.imgur.com/1eUkAob.jpg'><img src='https://i.imgur.com/1eUkAob.jpg' alt='python' /></a>
 </p>
+
+
 
 
 ## ℹ️ Sobre o projeto
