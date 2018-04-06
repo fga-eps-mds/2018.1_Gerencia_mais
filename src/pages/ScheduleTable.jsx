@@ -4,6 +4,8 @@ import {Table,Button,ButtonToolbar,ToggleButtonGroup,ToggleButton} from 'react-b
 import Popup from "reactjs-popup";
 import "../css/popup.css";
 import "../css/bootstrap.min.css";
+import InfiniteCalendar from 'react-infinite-calendar';
+import 'react-infinite-calendar/styles.css';
 
 class GridCell extends Component {
   constructor(props){
@@ -53,7 +55,7 @@ class GridCell extends Component {
 export default class ScheduleTable extends Component {
     constructor(){
       super();
-      this.state={"content":"Selecione uma opcao"};
+      this.state={"content":"Selecione uma opcao", "popup":""};
     }
 
 
@@ -76,10 +78,41 @@ export default class ScheduleTable extends Component {
       }
     return lists;
     }
+
+    resolveButtonMonth(){
+      var popup = (
+        <Popup
+        trigger={<button className="btn btn-outline-primary">Relatorio Diario</button>}
+        modal
+        closeOnDocumentClick
+        >
+        <div className="popupShape">
+          <div className="pre-scrollable">
+            {
+              this.state.contacts != null ? this.state.contacts.map(user =>
+                <div><span>{user.name.first + " " + user.name.last}</span><br></br></div>
+              )
+              : null
+            }
+          </div>
+        </div>
+        </Popup>
+      )
+      this.setState({"component":this.changeTable(true), "popup":popup})
+    }
+
     changeTable(isMonth){
       if(isMonth){
-        var content = (<h1>Tabela Mensal</h1>)
-      }
+          var content = (
+            <div style={{marginTop:"25px", marginLeft:"220px"}}>
+              <InfiniteCalendar displayOptions={{
+                                  layout: 'landscape'
+                                    }}
+                                    width={600}
+                                    height={350} onSelect={()=>this.resolveButtonMonth()}/>
+            </div>
+          )
+    }
       else {
         var content = (
           <Table striped bordered condensed hover>
@@ -113,7 +146,7 @@ export default class ScheduleTable extends Component {
     render() {
 
 	return (
-	    <div>
+	  <div>
 	      <NavBar></NavBar>
 	      <h1 style={{marginTop:"70px"}}>Quadro de Horários</h1>
 
@@ -121,10 +154,16 @@ export default class ScheduleTable extends Component {
             <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
               <ToggleButton value={1} onClick={()=>this.changeTable(false)}>Semanal</ToggleButton>
               <ToggleButton value={2} onClick={()=>this.changeTable(true)}>Mensal</ToggleButton>
+              <div style={{marginLeft:"625px"}}>
+              {this.state.popup}
+              </div>
             </ToggleButtonGroup>
         </ButtonToolbar>
-        {this.state.content}
-
+        <div className = "row">
+          <div className = "col-sn-8">
+            {this.state.content}
+          </div>
+        </div>
 	    </div>
 	);
     }
