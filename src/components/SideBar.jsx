@@ -1,38 +1,25 @@
-import {Navbar, Nav, NavItem, Button, Glyphicon} from 'react-bootstrap';
+import React, { Component } from 'react';
+//import {Link} from 'react-router-dom';
+import '../css/bootstrap.css';
+import '../css/SideBar.css';
 
-import React, {Component} from 'react';
+export default class SideNav extends Component {
+    render(){
+	return(
 
-import Sidebar from 'react-bootstrap-sidebar';
-
-export default class Example extends Component {
-
-    constructor(props) {
-        super(props);
-
-        this.state = {
-          isVisible: false,
-        };
-    }
-
-    updateModal(isVisible) {
-    	this.state.isVisible = isVisible;
-      this.forceUpdate();
-    }
-
-    render() {
-        return (
-              <div>
-                  <Button bsStyle="primary" onClick={ () => this.updateModal(true) }><Glyphicon glyph="menu-hamburger"/></Button>
-                  <Sidebar side='left' isVisible={ this.state.isVisible } onHide={ () => this.updateModal(false) }>
-                    <Nav>
-                      <NavItem href="#">Link 1</NavItem>
-                      <NavItem href="#">Link 2</NavItem>
-                      <NavItem href="#">Link 3</NavItem>
-                      <NavItem href="#">Link 4</NavItem>
-                    </Nav>
-                  </Sidebar>
-              </div>
-        );
+<div id="wrapper" class="active">
+      <div id="sidebar-wrapper">
+      <ul id="sidebar_menu" class="sidebar-nav">
+           <li class="sidebar-brand"><a id="menu-toggle" href="#"><span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
+      </ul>
+        <ul class="sidebar-nav" id="sidebar">
+          <li><a href="/doctorform">Cadastrar horários</a></li>
+          <li><a href="/scheduletable">Visualizar tabela de horários</a></li>
+          <li><a href="/doctorstatus">Alterar disponibilidade</a></li>
+          <li><a href="/updateschedule">Atualizar horário</a></li>
+        </ul>
+      </div>
+    </div>
+	);
     }
 }
- 
