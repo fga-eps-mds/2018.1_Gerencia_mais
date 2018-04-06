@@ -17,5 +17,5 @@ services:
       - ./:/code
     ports: 
       - 3000:3000
-    command: bash -c 'cd /code/ && npm install &&  npm install -g create-react-app && cd /code/ && npm run start '    
+    command: bash -c 'cd /code/ && npm install &&  npm install -g create-react-app && npm install -g bower && cd /code/ && npm run start '    
     
