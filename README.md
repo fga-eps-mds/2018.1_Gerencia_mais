@@ -78,7 +78,7 @@ Para rodar a aplicação, entre na pasta do projeto em que está localizado o __
 ```
 Espere até que todos os serviços estejam disponíveis, acesse a página inicial do projeto com o seguinte endereço: https://localhost:8000
 
-## 🌎 Acessando a aplicacão
+## 🌎 Acessando a aplicação
 
 <p align="justify">O gerencia mais possui dois ambientes, ambiente de homologação que é usado para testar e verificar se as funcionalidade implementadas mantêm o ambiente estável e o ambiente de produção, onde apresentamos as novas funcionalidades verificadas e validadas aos clientes. Os dois ambiente podem ser acessados através dos endereços apresentados abaixo:</p>
 
