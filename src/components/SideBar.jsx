@@ -1,25 +1,19 @@
+import { slide as Menu } from 'react-burger-menu'
 import React, { Component } from 'react';
-//import {Link} from 'react-router-dom';
-import '../css/bootstrap.css';
-import '../css/SideBar.css';
+import '../css/SideBar.css'
+export default class SideBar extends React.Component {
+  showSettings (event) {
+    event.preventDefault();
+  }
 
-export default class SideNav extends Component {
-    render(){
-	return(
-
-<div id="wrapper" class="active">
-      <div id="sidebar-wrapper">
-      <ul id="sidebar_menu" class="sidebar-nav">
-           <li class="sidebar-brand"><a id="menu-toggle" href="#"><span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
-      </ul>
-        <ul class="sidebar-nav" id="sidebar">
-          <li><a href="/doctorform">Cadastrar horários</a></li>
-          <li><a href="/scheduletable">Visualizar tabela de horários</a></li>
-          <li><a href="/doctorstatus">Alterar disponibilidade</a></li>
-          <li><a href="/updateschedule">Atualizar horário</a></li>
-        </ul>
-      </div>
-    </div>
-	);
-    }
+  render () {
+    return (
+      <Menu>
+        <a className="btn btn-secondary" href="/doctorform">Cadastrar horários</a>
+        <a className="btn btn-secondary" href="/scheduletable">Visualizar tabela de horários</a>
+        <a className="btn btn-secondary" href="/doctorstatus">Alterar status de disponibilidade de médicos</a>
+        <a className="btn btn-secondary" href="/updateschedule">Atualizar horário</a>
+      </Menu>
+    );
+  }
 }

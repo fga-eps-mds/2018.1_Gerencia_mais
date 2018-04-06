@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from '../components/NavBar';
-import SideNav from '../components/SideBar';
+import SideBar from '../components/SideBar';
 import {ListGroup,ListGroupItem} from 'react-bootstrap';
 import "../css/bootstrap.min.css";
 
@@ -11,9 +11,8 @@ export default class Dashboard extends Component {
     render() {
 	return (
 	    <div>
-        <SideNav></SideNav>
-	      <NavBar></NavBar>
 
+	      <NavBar></NavBar>
 	      <h1>Menu</h1>
           <ListGroup>
               <a href="/doctorform" className="btn btn-secondary">Cadastrar horários</a>
