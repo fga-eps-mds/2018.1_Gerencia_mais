@@ -8,6 +8,8 @@ pytest
 djangorestframework
 markdown
 django-filter 
+django-scheduler
+django-bower
 #codeclimate
 #randon
 #duplication
