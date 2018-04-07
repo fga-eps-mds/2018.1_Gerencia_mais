@@ -40,8 +40,6 @@ INSTALLED_APPS = [
     'webpack_loader',
     'doctorhour',
     'rest_framework',
-    'schedule',
-    'djangobower',
 ]
 
 MIDDLEWARE = [
@@ -75,18 +73,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'leito_hospitalar.wsgi.application'
 
 
-STATICFILES_FINDERS = [
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'djangobower.finders.BowerFinder',
-    ]
-
-BOWER_INSTALLED_APPS = [
-    'jquery',
-    'jquery-ui',
-    'bootstrap',
-    'fullcalendar'
-]
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
