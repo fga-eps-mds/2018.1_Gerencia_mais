@@ -13,7 +13,7 @@
 6. [Restrições](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/is3_Termo_de_abertura_de_Projeto_TAP/docs/documentos/Eps/Termo_de_abertura_do_Projeto.md#6-restri%C3%A7%C3%B5es)
 7. [Riscos](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/is3_Termo_de_abertura_de_Projeto_TAP/docs/documentos/Eps/Termo_de_abertura_do_Projeto.md#7-riscos)
 8. [Cronograma e marcos](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/is3_Termo_de_abertura_de_Projeto_TAP/docs/documentos/Eps/Termo_de_abertura_do_Projeto.md#8-cronograma-e-marcos)
-9. [Orçamento](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/is3_Termo_de_abertura_de_Projeto_TAP/docs/documentos/Eps/Termo_de_abertura_do_Projeto.md#9-resumo-do-or%C3%A7amento)
+9. [Orçamento](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/is3_Termo_de_abertura_de_Projeto_TAP/docs/documentos/Eps/Termo_de_abertura_do_Projeto.md#9-Or%C3%A7amento)
     - 9.1. [Estimação de Custos](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/is3_Termo_de_abertura_de_Projeto_TAP/docs/documentos/Eps/Termo_de_abertura_do_Projeto.md#91-recursos-f%C3%ADsicos-e-servi%C3%A7os)
     - 9.2. [Determinação do Orçamento](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/is3_Termo_de_abertura_de_Projeto_TAP/docs/documentos/Eps/Termo_de_abertura_do_Projeto.md#92-recursos-humanos)
     - 9.3. [Resumo de gastos](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/is3_Termo_de_abertura_de_Projeto_TAP/docs/documentos/Eps/Termo_de_abertura_do_Projeto.md#93-resumo-de-gastos)
@@ -145,6 +145,7 @@ Custo RH Release 1 = 7* 10 * 10 * 37,35 = R$ 26.145,00
 |Internet|R$1004,90|
 |Energia|R$263,2|
 |TOTAL| R$53713,10 |
+
 R$53713,10 + 10%(Taxa de risco) = R$59084,41
 
 
