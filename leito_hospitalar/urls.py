@@ -14,5 +14,5 @@ urlpatterns = [
     path('schedule/',include('schedule.urls')),
     url(r'^(?P<username>[\w.@+-]+)/$', TemplateView.as_view(template_name="index.html")),
     path('doctor/',include('doctorhour.urls')),
-    #re_path('.*', TemplateView.as_view(template_name='index.html')),
+    re_path('.*', TemplateView.as_view(template_name='index.html')),
 ]
