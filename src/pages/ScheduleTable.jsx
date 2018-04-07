@@ -55,7 +55,7 @@ class GridCell extends Component {
 export default class ScheduleTable extends Component {
     constructor(){
       super();
-      this.state={"content":"Selecione uma opcao", "popup":""};
+      this.state={"content":"Selecione uma opcao", "popup":"", "contacts":""};
     }
 
 
@@ -78,6 +78,18 @@ export default class ScheduleTable extends Component {
       }
     return lists;
     }
+
+    fetchData(){
+
+      fetch("https://randomuser.me/api/?results=50&nat=us,dk,fr,br")
+      .then(response => response.json())
+      .then(parsedJSON =>parsedJSON.results)
+      .then(contacts => this.setState({
+        contacts
+      }))
+      .catch(error => console.log("error to get data " + error));
+    }
+
 
     resolveButtonMonth(){
       var popup = (
@@ -105,7 +117,7 @@ export default class ScheduleTable extends Component {
       if(isMonth){
           var content = (
             <div style={{marginTop:"25px", marginLeft:"220px"}}>
-              <InfiniteCalendar displayOptions={{
+              <InfiniteCalendar onSelect={this.fetchData()} displayOptions={{
                                   layout: 'landscape'
                                     }}
                                     width={600}
@@ -148,20 +160,24 @@ export default class ScheduleTable extends Component {
 	return (
 	  <div>
 	      <NavBar></NavBar>
-	      <h1 style={{marginTop:"70px"}}>Quadro de Horários</h1>
+        <div className="container" style={{marginTop:"70px", marginLeft:"120px", marginRight:"120px"}}>
+          <div className="jumbotron mt-3">
+    	      <h1 style={{marginTop:"70px"}}>Quadro de Horários</h1>
 
-        <ButtonToolbar>
-            <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
-              <ToggleButton value={1} onClick={()=>this.changeTable(false)}>Semanal</ToggleButton>
-              <ToggleButton value={2} onClick={()=>this.changeTable(true)}>Mensal</ToggleButton>
-              <div style={{marginLeft:"625px"}}>
-              {this.state.popup}
+            <ButtonToolbar>
+                <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
+                  <ToggleButton className="btn btn-outline-primary" value={1} onClick={()=>this.changeTable(false)}>Semanal</ToggleButton>
+                  <ToggleButton className="btn btn-outline-primary" value={2} onClick={()=>this.changeTable(true)}>Mensal</ToggleButton>
+                    <div style={{marginLeft:"625px"}}>
+                      {this.state.popup}
+                    </div>
+                </ToggleButtonGroup>
+            </ButtonToolbar>
+            <div className = "row">
+              <div className = "col-sn-8">
+                {this.state.content}
               </div>
-            </ToggleButtonGroup>
-        </ButtonToolbar>
-        <div className = "row">
-          <div className = "col-sn-8">
-            {this.state.content}
+            </div>
           </div>
         </div>
 	    </div>
