@@ -13,9 +13,9 @@
 6. [Restrições](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/is3_Termo_de_abertura_de_Projeto_TAP/docs/documentos/Eps/Termo_de_abertura_do_Projeto.md#6-restri%C3%A7%C3%B5es)
 7. [Riscos](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/is3_Termo_de_abertura_de_Projeto_TAP/docs/documentos/Eps/Termo_de_abertura_do_Projeto.md#7-riscos)
 8. [Cronograma e marcos](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/is3_Termo_de_abertura_de_Projeto_TAP/docs/documentos/Eps/Termo_de_abertura_do_Projeto.md#8-cronograma-e-marcos)
-9. [Resumo do Orçamento](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/is3_Termo_de_abertura_de_Projeto_TAP/docs/documentos/Eps/Termo_de_abertura_do_Projeto.md#9-resumo-do-or%C3%A7amento)
-    - 9.1. [Recursos físicos e serviços](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/is3_Termo_de_abertura_de_Projeto_TAP/docs/documentos/Eps/Termo_de_abertura_do_Projeto.md#91-recursos-f%C3%ADsicos-e-servi%C3%A7os)
-    - 9.2. [Recursos Humanos](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/is3_Termo_de_abertura_de_Projeto_TAP/docs/documentos/Eps/Termo_de_abertura_do_Projeto.md#92-recursos-humanos)
+9. [Orçamento](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/is3_Termo_de_abertura_de_Projeto_TAP/docs/documentos/Eps/Termo_de_abertura_do_Projeto.md#9-Or%C3%A7amento)
+    - 9.1. [Estimação de Custos](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/is3_Termo_de_abertura_de_Projeto_TAP/docs/documentos/Eps/Termo_de_abertura_do_Projeto.md#91-recursos-f%C3%ADsicos-e-servi%C3%A7os)
+    - 9.2. [Determinação do Orçamento](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/is3_Termo_de_abertura_de_Projeto_TAP/docs/documentos/Eps/Termo_de_abertura_do_Projeto.md#92-recursos-humanos)
     - 9.3. [Resumo de gastos](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/is3_Termo_de_abertura_de_Projeto_TAP/docs/documentos/Eps/Termo_de_abertura_do_Projeto.md#93-resumo-de-gastos)
 10. [Lista das partes interessadas](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/is3_Termo_de_abertura_de_Projeto_TAP/docs/documentos/Eps/Termo_de_abertura_do_Projeto.md#10-lista-das-partes-interessadas)
 11. [Requisitos para aprovação do projeto](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/is3_Termo_de_abertura_de_Projeto_TAP/docs/documentos/Eps/Termo_de_abertura_do_Projeto.md#11-requisitos-para-a-aprova%C3%A7%C3%A3o-do-projeto)
@@ -28,7 +28,7 @@ Esse documento possui o objetivo de apresentar as características iniciais do p
 
 ## 2. Descrição do Projeto
 
-O GIC, tem como objetivo gerir os médicos do Distrito Federal, de acordo com sua especialidade, necessidade do público e o quadro de disponibilidade do médico em questão. 
+O GIC, tem como objetivo gerir os médicos do Distrito Federal, de acordo com sua especialidade, necessidade do público e o quadro de disponibilidade do médico em questão.
 
 ## 3. Propósito e Justificativa do Projeto
 
@@ -65,54 +65,105 @@ Para funcionamento e acesso às funcionalidades, algumas premissas devem ser sat
 --------|-------------|
 Não adaptação às tecnologias utilizadas|Dojos (aulas e treinamentos)
 Falta de definição do escopo|Treinamentos e exercícios alternativos para desenvolvimento das habilidades nas tecnologias necessárias para o desenvolvimento do projeto
-Desnivelamento dos membros da equipe de desenvolvimento|Pareamentos 
+Desnivelamento dos membros da equipe de desenvolvimento|Pareamentos
 Choque de horários entre os membros do projeto|Reuniões de planejamento por hangouts, dailies via telegram em dias que há menos da metade dos membros de cada equipe (MDS e EPS) e reunião de sprint todo sábado das 08:00 às 12:00
 Falta de conhecimento dos membros responsáveis pelo DevOps| Cursos e estudos extras (além das 10 horas semanais)
 
 ## 8. Cronograma e marcos
 
-Todo o desenvolvimento do projeto durante as disciplinas de Métodos de desenvolvimento de software (MDS) e Engenharia de produto de software (EPS) possuem dois pontos principais de entrega (releases). 
+Todo o desenvolvimento do projeto durante as disciplinas de Métodos de desenvolvimento de software (MDS) e Engenharia de produto de software (EPS) possuem dois pontos principais de entrega (releases).
 
 A primeira release, marcada para o dia 19/04/2018, consiste na entrega parcial do produto em funcionamento. A segunda release, marcada para o dia xx/xx/xx, consiste na entrega final do produto em funcionamento.
 
 Além das duas entregas principais, há entregas ao final de cada ciclo de desenvolvimento (sprints) que possuem duração de 1 (uma) semana cada.
 
-## 9. Resumo do Orçamento
+## 9. Orçamento
 
-### 9.1. Recursos físicos e serviços
+O gerenciamento dos custos do projeto preocupa-se efetivamente com o custo dos recursos necessários
+para finalizar as atividades de um projeto. Desse modo, tendo como objetivo o controle dos custos do projeto, iremos utilizar algumas estimativas e compará-las.
 
-<p align="justify">Para o resumo do orçamento de recursos físicos e serviços, levou-se em consideração os artefatos relacionados ao desenvolvimento como: computadores, internet e  energia. A tabela abaixo apresenta os valores calculados a partir dos pontos apresentados.</p>
+O primeiro passo do planejamento é definir quais serão as entradas do plano de gerenciamento de custo. No casso do projeto GIC, serão utilizados os seguintes artefatos:
 
-**Artefato**|**Finalidade**|**Valor médio por unidade (R$)**|**Quantidade/mês**|**Valor mensal**|**Valor final   (4 meses)**|
------|----|----|----|-----|------|
-Notebooks e desktops|Ferramenta para desenvolvimento e auxílio no gerenciamento do projeto|R$2.830,00|N/A|N/A|R$28.300,00|
-Energia|Alimentação dos notebooks e desktops|R$13,16(por membro)|10|R$131,60|R$526,40|
-Internet(25mb)|Desenvolvimento e planejamento do projeto | R$109,80 (por membro)|10|R$1.098,00(mês)|R$4.392,00|
-Total| R$ 33.218.40
-
-<p align="justify">Obs: Para o cálculo da energia, levou-se em consideração que cada indivíduo envolvido no projeto trabalhará cerca de 10 horas semanais (no mínimo), que nos leva a 1,43 horas diárias X 28 dias por semana por um período de 4 meses, onde cada notebook/desktop consome cerca de 100 Wh. Considerou-se a atual tarifa obrigatória de iluminação pública (R$9,16).</p>
-
-### 9.2. Recursos humanos
-
-<p align="justify">De acordo com o relatório de gestão de custos da Universidade de Brasília (UnB) realizado em 2016, um aluno de Engenharia de software custa R$ 26.040,00 por ano, levando em consideração a duração do curso que é de 5 (cinco) anos e que para formar o aluno deve obter 240 créditos, chegamos a média de 24 créditos por semestre e 48 créditos anuais.</p>
-
-De acordo com o [guia do calouro](http://www.unb2.unb.br/administracao/decanatos/deg/downloads/index/guiacalouro.pdf), uma disciplina de 4 créditos possui cerca de 60 horas de aulas distribuidas ao longo do semestre, o que nos leva ao cálculo de que cada crédito equivale a 15 horas```(60/4) = 15```, temos então que no período de 1 (um) ano são gastos aproximadamente R$36,17 por hora com cada aluno ```(R$26.040,00/(15*48))```.
-
-<p align="justify">Consideraremos que cada membro dedicará cerca de 10 horas semanais para o desenvolvimento do projeto, 4 horas semanais dedicadas às aulas das disciplinas de Métodos de Desenvolvimento de Software (MDS) e Engenharia de Produto de Software(EPS), 1 (uma) hora dedicada às dailies e mais 4 horas dedicadas à realização das reuniões de sprint. Dessa forma totalizamos 19 horas semanais dedicadas ao projeto.</p>
+#### Termo de abertura do projeto
+Segundo o PMBOK, o termo de abertura do projeto fornece um resumo sobre o orçamento e a partir disso os custos do projeto serão definidos mais detalhadamente. O termo de abertura do projeto também define os requisitos de aprovação do projeto que influenciarão o gerenciamento dos custos do projeto.
 
 
-**Papéis**|**Quantidade de membros**|**Valor gasto por hora com as disciplinas(apenas MDS e EPS)**|**Horas semanais**|**Total de semanas trabalhadas**|**Total gasto**|
----|--|--|--|--|----|
-Desenvolvedores (MDS)|5|R$36,17|19|16|R$54.978.40|
-Gerência (EPS)|5|R$36,17|19|16|R$54.978.40|
-Coach|1|R$36,17|2|16|R$1.157,44|
-Total| R$111.114,24
+#### Fatores ambientais da organização
+Os fatores ambientais da organização são toda e quaisquer condições que não estejam no controle da equipe, podendo afetar o percurso do projeto . Eles serão utilizados para explicar algumas discrepâncias, desavença ou incorpatibilidade do projeto. Como por exemplo o tempo de trabalho definido de cada integrante da equipe para uma semana de trabalho.
 
-### 9.3. Resumo de gastos
 
-**Recursos físicos e serviços**|**Recursos humanos**|**Total**|
--|-|-|
-R$ 33.218.40| R$111.114,24| R$144.332,64|
+### 9.1 Estimação de Custos
+Nesta etapa de estimação de custos será levantado uma estimativa dos recursos necessários para que os processos do projeto sejam finalizados. Primeiramente será levantado alguns custos simples para que se possa ser feita a estimação. Os custos que serão levantados serão da equipe de desenvolvimento, equipe de gerenciamento, recursos de trabalho(hardware), entre outros custos.
+
+1. **Desenvolvedores :**
+Integrantes da disciplina de Métodos de Desenvolvimento de Software, que serão responsaveis pelo desenvolvimento do projeto GIC.
+  * De acordo com o Relatório de Gestão Acadêmica da UNB do ano 2016 o custo ANUAL de um aluno de graduação da FGA é de R$26000,00.
+
+2. **Gerência :**
+Integrantes da disciplina de Engenharia de Produto de Software, que serão responsaveis pelo gerenciamento da equipe de desenvolvimento do projeto GIC.
+  * Do mesmo modo, com o Relatório de Gestão Acadêmica da UNB do ano 2016 o custo ANUAL de um aluno de graduação da FGA é de R$26000,00.
+
+3. **Equipamento :**
+Máquinas que serão utilizadas pela equipe de desenvolvedores e gerência.
+  * Valor médio em unidade é igual a R$ R$2630,00.
+
+4. **Internet :**
+Média de preço de uma internet com velocidade de 20mbps é de R$104,90
+
+5. **Energia :**
+Para o cálculo da energia, levou-se em consideração que cada indivíduo envolvido no projeto trabalhará cerca de 10 horas semanais (no mínimo), que nos leva a 1,43 horas diárias X 28 dias por semana por um período de 4 meses, onde cada notebook/desktop consome cerca de 100 Wh. Considerou-se a atual tarifa obrigatória de iluminação pública (R$9,16).
+
+### 9.2 Determinação de Orçamento
+Com base nos custos mencionados no tópico acima é possível inferir um orcamento total do projeto. No entanto antes de configurar o proximo quadro de orçamentos, é preciso que estime o valor por hora dos recursos humanos do projeto (equipe de gerência e desenvolvedores.)
+
+#### Calculo do RH
+Primeiramente é possível inferir que todos os alunos participantes desta disciplia cursam Engenharia de Software, no qual, é exigido 232 créditos no fluxo novo para que um aluno possa se formar. Pode ser considerado também que cada crédito corresponde geralmente a 15 horas/aula. Desse modo, para se calcular o custo para um aluno se formar é preciso multiplicar o valor de custo anual por 5, que é o tempo teóricamente necessário para se formar. De acordo com os dados já presentes na seção 2, o custo para um aluno se formar é de 5 * R$26000,00, totalizando R$130000,00. Dessa forma, se multiplicarmo o número necessario para se formar, que é de 232 cŕedito, por 15horas/aula, iremos obter as horas necessárias para que o aluno se forme. A partir daí, 232 créditos * 15 horas/aula é igual a 3480 horas totais para que um aluno se forme. Sendo assim, para finalizar o calculo, se dividirmos o custo total de formação pela quantidade de horas necessárias obtemos o custo da hora do aluno da FGA-UnB, R$130000,00 / 3480 que é igual a R$37,35.
+
+O projeto ocorrerá em um período total de 14 semanas (Release 1 e Release 2). E de acordo com a disciplina, cada integrante deverá comprometer 10 horas semanais para trabalhar no projeto. Desse modo, será necessário 140 horas de trabalho. Sendo assim, cada integrante do projeto irá custar 140 horas * R$37,35/hora, que é igual a R$5229,00.
+
+| Recurso | Quantidade | Valor do recurso/Unidade de medida | Cálculo | Valor total |
+|---------------------------|-----------------------|------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|
+| Equipe de Desenvolvedores | 5 Desenvolvedores | R$37,35 (reais/hora) | Pode ser visto na sessão [Cálculo de Recursos humanos](Calculado no parágrafo anterior) | Valor Total = 5(integrantes) * 37,35(custo/hora) = R$ 186,75/hora |
+| Equipe de Gerentes | 5 Gerentes | R$37,35 (reais/hora) | Pode ser visto na sessão [Cálculo de Recursos humanos](Calculado no parágrafo anterior)|Valor Total = 5(integrantes) * 37,35(custo/hora) = R$ 186,75/hora | | Valor Total = 5(integrantes) * 16,80(custo/hora) = R$ 84,00/hora |
+| Computadores | 10 Máquinas estimadas | R$ 2630,00 | (Quantidade de usuários) * (Preço médio da máquina) | Valor Total = 2630 * 10 = R$26300,00 |
+| Internet | 1 rede contratada | R$ 104.90/mês | Não aplicável | Valor Total = 104,90 |
+| Energia | 10(membros) | R$ R$131,60 |  | Valor Total = R$263,2/Release |
+
+Custo  = (Semanas) * (Horas por semana) * (Números de integrantes) * (Preço da hora por integrante)
+Dessa maneira, conseguimos obter o custo do projeto dentro de um determinado período de tempo do projeto. Desse modo, para a primeira Release, que tem suas datas estabelecidas no cronograma, terá o custo representado na tabela abaixo:
+
+
+
+### 9.3 Resumo de gastos
+#### Release 1
+Custo RH Release 1 = 7* 10 * 10 * 37,35 = R$ 26.145,00
+
+|Recurso|Custo|
+|---------------------------|-----------------------|
+|Recursos Humanos|R$26145,00|
+|Computadores|R$26300,00|
+|Internet|R$1004,90|
+|Energia|R$263,2|
+|TOTAL| R$53713,10 |
+
+R$53713,10 + 10%(Taxa de risco) = R$59084,41
+
+
+
+
+#### Release 2
+|Recurso|Custo|
+|---------------------------|-----------------------|
+|Recursos Humanos|R$26.145,00|
+|Internet|R$1004,90|
+|Energia|R$263,2|
+|TOTAL| R$27413,1 |
+
+R$27413,1 + 10%(Taxa de risco) = R$30154.41
+
+
+A estimativa total do projeto segue a lógica. Custo da Release 1 + Custo da Release 2
+R$59084,41 + R$30154.41 = R$89238.82
 
 ## 10. Lista das Partes Interessadas
 
@@ -124,13 +175,13 @@ R$ 33.218.40| R$111.114,24| R$144.332,64|
   - Caio Araújo
   - João Saliba
   - Rafael Bragança
-  
+
 * **Equipe de desenvolvimento**
   - Victor Hugo Dias Coelho
   - Adrielly Rodrigues
   - Guilherme
   - Caio César Beleza
-  
+
 
 ## 11. Requisitos para a aprovação do projeto
 
