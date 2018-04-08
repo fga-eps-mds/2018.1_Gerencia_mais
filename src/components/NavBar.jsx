@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 //import {Link} from 'react-router-dom';
 import '../css/bootstrap.css';
 import '../css/NavBar.css';
+import SideBar from './SideBar';
 
 
 export default class NavBar extends Component {
     render(){
 	return(
     <nav className="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
+      <SideBar></SideBar>
       	      <div className="container-fluid">
       		<strong><a className='navbar-brand title' href="">GIC</a></strong>
       		<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
