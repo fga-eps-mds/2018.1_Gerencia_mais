@@ -8,6 +8,8 @@ pytest
 djangorestframework
 markdown
 django-filter 
+django-scheduler
+python-dateutil==1.5.0
 #codeclimate
 #randon
 #duplication
