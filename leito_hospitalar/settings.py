@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'webpack_loader',
     'doctorhour',
     'rest_framework',
+    'schedule',
 ]
 
 MIDDLEWARE = [

@@ -1,5 +1,5 @@
 .title {
-  padding-left: 160px;
+  padding-left: 5%;
   font-size: 25px;
 }
 .uls {
@@ -7,4 +7,7 @@
 }
 .navbar-right {
   padding-left: 1000px;
+}
+.topicos {
+  font-size: 20px;
 }
