@@ -21,6 +21,7 @@ class CalendarManager(models.Manager):
     >>> user1 = User(username='tony')
     >>> user1.save()
     """
+
     def get_calendar_for_object(self, obj, distinction=''):
         """
         This function gets a calendar for an object.  It should only return one

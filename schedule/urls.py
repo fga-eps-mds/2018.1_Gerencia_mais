@@ -12,43 +12,44 @@ from schedule.views import (
 )
 
 urlpatterns = [
-    url(r'^$', ListView.as_view(model=Calendar), name='calendar_list'),
+    # See all calendars
+    # url(r'^$', ListView.as_view(model=Calendar), name='calendar_list'),
 
-    url(r'^calendar/year/(?P<calendar_slug>[-\w]+)/$',
+    url(r'^(?P<calendar_slug>calendario-medico)/$',
         CalendarByPeriodsView.as_view(template_name='schedule/calendar_year.html'),
         name='year_calendar',
         kwargs={'period': Year}),
 
-    url(r'^calendar/tri_month/(?P<calendar_slug>[-\w]+)/$',
+    url(r'^(?P<calendar_slug>calendario-medico)/three_month/$',
         CalendarByPeriodsView.as_view(template_name='schedule/calendar_tri_month.html'),
         name='tri_month_calendar',
         kwargs={'period': Month}),
 
-    url(r'^calendar/compact_month/(?P<calendar_slug>[-\w]+)/$',
+    url(r'^(?P<calendar_slug>calendario-medico)/compact_month/$',
         CalendarByPeriodsView.as_view(template_name='schedule/calendar_compact_month.html'),
         name='compact_calendar',
         kwargs={'period': Month}),
 
-    url(r'^calendar/month/(?P<calendar_slug>[-\w]+)/$',
+    url(r'^(?P<calendar_slug>calendario-medico)/month/$',
         CalendarByPeriodsView.as_view(template_name='schedule/calendar_month.html'),
         name='month_calendar',
         kwargs={'period': Month}),
 
-    url(r'^calendar/week/(?P<calendar_slug>[-\w]+)/$',
+    url(r'^(?P<calendar_slug>calendario-medico)/week/$',
         CalendarByPeriodsView.as_view(template_name='schedule/calendar_week.html'),
         name='week_calendar',
         kwargs={'period': Week}),
 
-    url(r'^calendar/daily/(?P<calendar_slug>[-\w]+)/$',
+    url(r'^(?P<calendar_slug>calendario-medico)/daily/$',
         CalendarByPeriodsView.as_view(template_name='schedule/calendar_day.html'),
         name='day_calendar',
         kwargs={'period': Day}),
 
-    url(r'^calendar/(?P<calendar_slug>[-\w]+)/$',
+    url(r'^(?P<calendar_slug>calendario-medico)/home/$',
         CalendarView.as_view(),
         name='calendar_home',
         ),
-    url(r'^fullcalendar/(?P<calendar_slug>[-\w]+)/$',
+    url(r'^(?P<calendar_slug>calendario-medico)/fullcalendar/$',
         FullCalendarView.as_view(),
         name='fullcalendar'),
 
@@ -67,13 +68,13 @@ urlpatterns = [
         name='delete_event'),
 
     # urls for already persisted occurrences
-    url(r'^occurrence/(?P<event_id>\d+)/(?P<occurrence_id>\d+)/$',
+    url(r'^(?P<calendar_slug>calendario-medico)/occurrence/(?P<event_id>\d+)/(?P<occurrence_id>\d+)/$',
         OccurrenceView.as_view(),
         name='occurrence'),
-    url(r'^occurrence/cancel/(?P<event_id>\d+)/(?P<occurrence_id>\d+)/$',
+    url(r'^(?P<calendar_slug>calendario-medico)/occurrence/cancel/(?P<event_id>\d+)/(?P<occurrence_id>\d+)/$',
         CancelOccurrenceView.as_view(),
         name='cancel_occurrence'),
-    url(r'^occurrence/edit/(?P<event_id>\d+)/(?P<occurrence_id>\d+)/$',
+    url(r'^(?P<calendar_slug>calendario-medico)/occurrence/edit/(?P<event_id>\d+)/(?P<occurrence_id>\d+)/$',
         EditOccurrenceView.as_view(),
         name='edit_occurrence'),
 

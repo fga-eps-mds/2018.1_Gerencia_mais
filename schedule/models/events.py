@@ -52,10 +52,16 @@ class Event(models.Model):
     This model stores meta data for a date.  You can relate this data to many
     other models.
     '''
-    start = models.DateTimeField(_("start"), db_index=True)
-    end = models.DateTimeField(_("end"), db_index=True, help_text=_("The end time must be later than the start time."))
-    title = models.CharField(_("title"), max_length=255)
-    description = models.TextField(_("description"), blank=True)
+    color_event = models.CharField(_("Cor do evento"), blank=True, max_length=10)
+    start = models.DateTimeField(_("Inicio"), db_index=True)
+    end = models.DateTimeField(_("Fim"), db_index=True, help_text=_("O horário de término deve ser posterior ao horário de início."))
+    title = models.CharField(_("Nome"), max_length=255)
+    hospital = models.CharField(_("Hospital"), max_length=100)
+    registration = models. CharField(_("Matrícula"), max_length=50)
+    CPF = models.CharField(_("CPF"), max_length=100)
+    description = models.TextField(_("Descrição"), blank=True)
+    created_on = models.DateTimeField(_("Criado em"), auto_now_add=True)
+    updated_on = models.DateTimeField(_("Atualizado em"), auto_now=True)
     creator = models.ForeignKey(
         django_settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
@@ -63,8 +69,6 @@ class Event(models.Model):
         blank=True,
         verbose_name=_("creator"),
         related_name='creator')
-    created_on = models.DateTimeField(_("created on"), auto_now_add=True)
-    updated_on = models.DateTimeField(_("updated on"), auto_now=True)
     rule = models.ForeignKey(
         Rule,
         on_delete=models.CASCADE,
@@ -72,13 +76,12 @@ class Event(models.Model):
         blank=True,
         verbose_name=_("rule"),
         help_text=_("Select '----' for a one time only event."))
-    end_recurring_period = models.DateTimeField(_("end recurring period"), null=True, blank=True, db_index=True,
-                                                help_text=_("This date is ignored for one time only events."))
+    end_recurring_period = models.DateTimeField(_("Período Final Recorrente"), null=True, blank=True, db_index=True,
+                                                help_text=_("Esta data é ignorada apenas para eventos únicos."))
     calendar = models.ForeignKey(
         Calendar,
         on_delete=models.CASCADE,
-        verbose_name=_("calendar"))
-    color_event = models.CharField(_("Color event"), blank=True, max_length=10)
+        verbose_name=_("Calendário"))
     objects = EventManager()
 
     class Meta(object):
