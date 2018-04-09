@@ -5,7 +5,6 @@ import '../css/DoctorForm.css';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer'
 import FormErrors from '../components/FormErrors'
-import DoctorAPI from '../api.js'
 import {Carousel} from 'react-bootstrap';
 
 
