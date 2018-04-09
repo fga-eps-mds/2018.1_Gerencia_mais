@@ -2,8 +2,8 @@
 {% load i18n %}
 
 {% block body %}
-<h1>{% trans "Delete" %}</h1>
-{% trans "Are you sure that you really want to cancel this occurrence?" %}
+<h1>{% trans "Deletar" %}</h1>
+{% trans "Você tem certeza que deseja cancelar a ocorrência ?" %}
 
 <form action="" method="post">{% csrf_token %}
   <h2>{{ occurrence.title }}</h2>
@@ -11,7 +11,7 @@
   <strong>From</strong> {{ start_date }}
   <strong>to</strong> {{ end_date }}<br>
   {% endblocktrans %}
-  <input type="submit" value="Confirm">
-  <input type="submit" name="cancel" value="Cancel">
+  <input type="submit" value="Confirmar">
+  <input type="submit" name="cancel" value="Cancelar">
 </form>
 {% endblock %}

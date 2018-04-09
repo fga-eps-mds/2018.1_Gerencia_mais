@@ -6,13 +6,13 @@
 {% include "schedule/_dialogs.html" %}
 <div class="row row-centered">
   <a class="btn btn-primary gradient" href="{% url "week_calendar" calendar.slug %}{% querystring_for_date period.start 3 %}">
-    {% trans "Week" %}
+    {% trans "Semana" %}
   </a>
   <a class="btn btn-primary gradient" href="{% url "month_calendar" calendar.slug %}{% querystring_for_date period.start 2 %}">
-    {% trans "Month" %}
+    {% trans "Mês" %}
   </a>
   <a class="btn btn-primary gradient" href="{% url "year_calendar" calendar.slug %}{% querystring_for_date period.start 1 %}">
-    {% trans "Year" %}
+    {% trans "Ano" %}
   </a>
 </div>
 <div class="row row-centered">

@@ -7,10 +7,10 @@
 
 <div class="row row-centered">
   <a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date period.start 2 %}">
-    {% trans "Month" %}
+    {% trans "Mês" %}
   </a>
   <a href="{% url "year_calendar" calendar.slug %}{% querystring_for_date period.start 1 %}">
-    {% trans "Year" %}
+    {% trans "Ano" %}
   </a>
 </div>
 
@@ -19,7 +19,7 @@
     {% prevnext "week_calendar" calendar period "\W\e\ek W, M Y" %}
     <div class="now">
       <a href="{% url "week_calendar" calendar.slug %}">
-        {% trans "This week" %}
+        {% trans "Esse mês" %}
       </a>
     </div>
 </div>
