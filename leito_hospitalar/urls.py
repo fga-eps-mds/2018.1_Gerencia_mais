@@ -13,6 +13,8 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls')),
     path('schedule/',include('schedule.urls')),
     url(r'^(?P<username>[\w.@+-]+)/$', TemplateView.as_view(template_name="index.html")),
+    url(r'^$', TemplateView.as_view(template_name="index.html")),
     path('doctor/',include('doctorhour.urls')),
-    re_path('.*', TemplateView.as_view(template_name='index.html')),
+    re_path(r'^(?P<username>[\w.@+-]+)/$', TemplateView.as_view(template_name='index.html')),
+    re_path(r'^$', TemplateView.as_view(template_name="index.html")),
 ]
