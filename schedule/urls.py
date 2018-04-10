@@ -1,19 +1,21 @@
 from django.conf.urls import url
+from django.urls import path
 from django.views.generic.list import ListView
-
 from schedule.feeds import CalendarICalendar, UpcomingEventsFeed
 from schedule.models import Calendar
 from schedule.periods import Day, Month, Week, Year
+from rest_framework import generics
 from schedule.views import (
     CalendarByPeriodsView, CalendarView, CancelOccurrenceView, CreateEventView,
     CreateOccurrenceView, DeleteEventView, EditEventView, EditOccurrenceView,
     EventView, FullCalendarView, OccurrencePreview, OccurrenceView,
-    api_move_or_resize_by_code, api_occurrences, api_select_create,
+    api_move_or_resize_by_code, api_occurrences, api_select_create,ListCalendar
 )
 
 urlpatterns = [
     # See all calendars
     # url(r'^$', ListView.as_view(model=Calendar), name='calendar_list'),
+    path('api/',ListCalendar.as_view()),
 
     url(r'^(?P<calendar_slug>calendario-medico)/$',
         CalendarByPeriodsView.as_view(template_name='schedule/calendar_year.html'),

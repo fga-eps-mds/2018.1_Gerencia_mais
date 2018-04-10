@@ -11,8 +11,9 @@ class App extends Component {
     <BrowserRouter>
     <Switch>
       <Route exact path="/" component={HomePage} />
-      <Route exact path="/DoctorForm" component={DoctorForm} />
-      <Route exact path="/DoctorStatus" component={DoctorStatus} />
+      <Route exact path="/form" component={DoctorForm}/>
+      <Route exact path="/status" component={DoctorStatus}/>
+
       <Route component={NotFound} />
     </Switch>
     </BrowserRouter>

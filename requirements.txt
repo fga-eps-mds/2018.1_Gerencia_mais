@@ -7,9 +7,9 @@ django-webpack-loader
 pytest
 djangorestframework
 markdown
-django-filter 
+django-filter
 django-scheduler
-django-bower
+django-cors-headers
 #codeclimate
 #randon
 #duplication

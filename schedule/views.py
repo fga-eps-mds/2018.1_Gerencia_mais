@@ -1,5 +1,8 @@
 import datetime
-
+from django.http import JsonResponse
+from schedule.models.calendars import Calendar
+from .serializer import CalendarSerializer
+from django.views.decorators.csrf import csrf_exempt
 import dateutil.parser
 import pytz
 from django.conf import settings
@@ -18,7 +21,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import (
     CreateView, DeleteView, ModelFormMixin, ProcessFormView, UpdateView,
 )
-
+from rest_framework import generics
 from schedule.forms import EventForm, OccurrenceForm
 from schedule.models import Calendar, Event, Occurrence
 from schedule.periods import weekday_names
@@ -31,6 +34,17 @@ from schedule.utils import (
     check_occurrence_permissions, coerce_date_dict,
 )
 
+class ListCalendar(generics.ListCreateAPIView):
+    queryset = Calendar.objects.all()
+    serializer_class = CalendarSerializer
+
+
+def get_rest_list(request,):
+    """Return Json list of all Calendars"""
+    if request.method == "GET":
+        rest_list = Calendar.objects.order_by('-title')
+        serializer = CalendarSerializer(rest_list,many=True)
+        return JsonResponse(serializer.data, safe = False)
 
 class CalendarViewPermissionMixin(object):
     @classmethod

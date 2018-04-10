@@ -4,7 +4,7 @@ import '../css/bootstrap.css';
 import '../css/DoctorForm.css';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer'
-import FormErrors from '../components/FormErrors'
+//import FormErrors from '../components/FormErrors'
 import {Carousel} from 'react-bootstrap';
 
 
@@ -14,23 +14,18 @@ export default class DoctorStatus extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      id: '',
-      status:'' ,
-      comments: '',
-      formErrors: {name: '', id: '', entry_date: '', entry_time: '', departure_date: '', departure_time: ''},
-      name_valid: false,
-      id_valid: false,
-      form_valid: false,
-      api: [
-        {reg_name: 'Paulo', reg_ids: '1', status:true, comments:''},
-        {reg_name: 'Sabino', reg_ids: '2', status:true, comments:''},
-        {reg_name: 'Marcos', reg_ids: '3', status:true, comments:''},
-        {reg_name: 'Valquiria', reg_ids: '4', status:true, comments:''},
-      ],
+      todos:[]
     }
   }
-
+  async componentDidMount() {
+      try {
+        const res = await fetch('http://127.0.0.1:8000/schedule/api/');
+        const todos = await res.json();
+        this.setState({todos});
+      } catch (e) {
+        console.log(e);
+      }
+    }
 
   handleUserInput (e) {
     const name = e.target.name;
@@ -140,17 +135,22 @@ export default class DoctorStatus extends Component {
       <div>
       <NavBar></NavBar>
         <div className="top-space espaco espaco-acima">
-          <div class="form-style-5">
+          <div className="form-style-5">
             <form>
+            {this.state.todos.map(item => (
+              <div key={item.id}>
+                <h2>{item.name}</h2>
+              </div>
+            ))}
               <h3>Alterar Status do Médico</h3>
               <fieldset>
-              <legend><span class="number">1</span> Nome</legend>
+              <legend><span className="number">1</span> Nome</legend>
               <input id="nameID" type="text" name="name" value={this.state.name} placeholder="Digite o nome aqui"
                 onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span class="number">2</span> Numero de Identificação</legend>
+              <legend><span className="number">2</span> Numero de Identificação</legend>
               <input id="idID" type="text" name="id" value={this.state.id} placeholder="Digite o numero aqui"
                 onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span class="number">3</span> Status</legend>
+              <legend><span className="number">3</span> Status</legend>
               <input id="stsID" type="radio" name="status" value={this.state.status = true}
                 onChange={(event) => this.handleUserInput(event)}/> Disponível <br></br>
               <input id="stnID" type="radio" name="status" value={this.state.status = false}
@@ -160,7 +160,7 @@ export default class DoctorStatus extends Component {
                onChange={(event) => this.handleUserInput(event)}
               >
               </textarea>
-              <legend><FormErrors formErrors={this.state.formErrors} /></legend>
+              <legend>  </legend>
               </fieldset>
               <input type="submit" value="Apply"
                 disabled={!this.state.formValid}
