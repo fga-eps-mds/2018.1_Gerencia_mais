@@ -1,7 +1,9 @@
 import datetime
 from django.http import JsonResponse
 from schedule.models.calendars import Calendar
-from .serializer import CalendarSerializer
+from schedule.models.events import Event
+from schedule.models.rules import Rule
+from .serializer import CalendarSerializer, EventSerializer, RuleSerializer
 from django.views.decorators.csrf import csrf_exempt
 import dateutil.parser
 import pytz
@@ -37,6 +39,14 @@ from schedule.utils import (
 class ListCalendar(generics.ListCreateAPIView):
     queryset = Calendar.objects.all()
     serializer_class = CalendarSerializer
+
+class ListEvent(generics.ListCreateAPIView):
+    queryset = Event.objects.all()
+    serializer_class = EventSerializer
+
+class ListRule(generics.ListCreateAPIView):
+    queryset = Rule.objects.all()
+    serializer_class = RuleSerializer
 
 
 def get_rest_list(request,):

@@ -9,13 +9,18 @@ from schedule.views import (
     CalendarByPeriodsView, CalendarView, CancelOccurrenceView, CreateEventView,
     CreateOccurrenceView, DeleteEventView, EditEventView, EditOccurrenceView,
     EventView, FullCalendarView, OccurrencePreview, OccurrenceView,
-    api_move_or_resize_by_code, api_occurrences, api_select_create,ListCalendar
+    api_move_or_resize_by_code, api_occurrences, api_select_create,ListCalendar,
+    ListEvent, ListRule,
 )
 
 urlpatterns = [
     # See all calendars
     # url(r'^$', ListView.as_view(model=Calendar), name='calendar_list'),
-    path('api/',ListCalendar.as_view()),
+
+    # API serializers
+    path('api-calendar/',ListCalendar.as_view()),
+    path('api-event/', ListEvent.as_view()),
+    path('api-rule/', ListRule.as_view()),
 
     url(r'^(?P<calendar_slug>calendario-medico)/$',
         CalendarByPeriodsView.as_view(template_name='schedule/calendar_year.html'),

@@ -59,6 +59,7 @@ class Event(models.Model):
     hospital = models.CharField(_("Hospital"), max_length=100)
     registration = models. CharField(_("Matrícula"), max_length=50)
     CPF = models.CharField(_("CPF"), max_length=100)
+    status = models.BooleanField()
     description = models.TextField(_("Descrição"), blank=True)
     created_on = models.DateTimeField(_("Criado em"), auto_now_add=True)
     updated_on = models.DateTimeField(_("Atualizado em"), auto_now=True)
