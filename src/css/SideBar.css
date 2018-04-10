@@ -68,6 +68,14 @@ li a:active,
   text-decoration: none;
 }
 
+img {
+  height: 120px;
+  width: 120px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
 /* .sub_icon
 {
     float:left;

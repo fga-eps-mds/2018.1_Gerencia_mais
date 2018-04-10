@@ -9,7 +9,7 @@ export default class SideBar extends React.Component {
   render () {
     return (
       <Menu>
-
+        <img src ="https://cdn3.iconfinder.com/data/icons/medcare/512/Stethoscope-256.png" align="middle"/>
         <li><a href="/DoctorForm"><span class="sub_icon glyphicon glyphicon-plus"></span>  Cadastrar médico</a></li>
         <li><a href="/ScheduleTable"><span class="sub_icon glyphicon glyphicon-calendar "></span>  Visualizar tabela</a></li>
         <li><a  href="/DoctorStatus"><span class="sub_icon glyphicon glyphicon-sort "></span>  Alterar status</a></li>
@@ -18,4 +18,3 @@ export default class SideBar extends React.Component {
     );
   }
 }
-//glyphicon-sort

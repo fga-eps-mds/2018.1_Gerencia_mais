@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import NavBar from '../components/NavBar';
+import SideBar from '../components/SideBar';
+import Footer from '../components/Footer';
 import {Table,Button} from 'react-bootstrap';
 import Popup from "reactjs-popup";
 import "../css/popup.css";
 import "../css/bootstrap.min.css";
+import "../css/ScheduleTable.css";
 
 class GridCell extends Component {
   constructor(props){
@@ -30,7 +33,7 @@ class GridCell extends Component {
     return(
       <td onClick = {()=> this.resolveButton(this.props.line,this.props.column)}>
       <Popup
-      trigger={<button className="btn btn-outline-secondary">Servidores</button>}
+      trigger={<button className="btn btn-success botaum">Servidores</button>}
       modal
       closeOnDocumentClick
       >
@@ -59,7 +62,20 @@ export default class ScheduleTable extends Component {
 
     TableList(number){
       var lists=[];
-      var periods = ["manhã","tarde","noite"];
+      var periods = [
+      "06:00-08:00",
+      "08:00-10:00",
+      "10:00-12:00",
+      "12:00-14:00",
+      "14:00-16:00",
+      "16:00-18:00",
+      "18:00-20:00",
+      "20:00-22:00",
+      "22:00-00:00",
+      "00:00-02:00",
+      "02:00-04:00",
+      "04:00-06:00"
+      ];
       for(var cont = 0;cont <= number; cont++){
         lists.push(
         <tr>
@@ -81,8 +97,9 @@ export default class ScheduleTable extends Component {
 	return (
 	    <div>
 	      <NavBar></NavBar>
-	      <h1 style={{marginTop:"70px"}}>Quadro de Horários</h1>
-        <Table striped bordered condensed hover>
+        <SideBar></SideBar>
+	      <h1>Quadro de Horários</h1>
+        <Table className="fspfb" striped bordered condensed hover>
          <thead>
      <tr>
       <th>Horário</th>
@@ -96,11 +113,11 @@ export default class ScheduleTable extends Component {
      </tr>
          </thead>
          <tbody>
-     {this.TableList(2)}
+     {this.TableList(11)}
 
          </tbody>
        </Table>
-
+       <Footer></Footer>
 	    </div>
 	);
     }

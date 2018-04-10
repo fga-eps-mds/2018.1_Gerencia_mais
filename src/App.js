@@ -5,6 +5,9 @@ import NotFound from "./pages/NotFound";
 import Dashboard from "./pages/Dashboard";
 import DoctorForm from "./pages/DoctorForm";
 import DoctorStatus from "./pages/DoctorStatus";
+import ScheduleTable from "./pages/ScheduleTable";
+
+
 
 
 class App extends Component {
@@ -15,6 +18,7 @@ class App extends Component {
       <Route exact path="/" component={HomePage} />
       <Route exact path="/DoctorForm" component={DoctorForm} />
       <Route exact path="/DoctorStatus" component={DoctorStatus} />
+      <Route exact path="/ScheduleTable" component={ScheduleTable} />
       <Route component={NotFound} />
     </Switch>
     </BrowserRouter>

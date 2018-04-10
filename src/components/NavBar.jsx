@@ -17,7 +17,7 @@ export default class NavBar extends Component {
        <div className="collapse navbar-collapse" id="navbarSupportedContent">
          <ul className="navbar-nav mr-auto">
            <li className="nav-item active divider-vertical">
-             <a className="nav-link topicos active title" href="#">Home <span className="sr-only">(current)</span></a>
+             <a className="nav-link topicos active title" href="/">Home <span className="sr-only">(current)</span></a>
            </li>
            <li className="nav-item divider-vertical">
              <a className="nav-link topicos title " href="#">Login</a>
