@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import '../css/bootstrap.css';
 import '../css/DoctorForm.css';
 import NavBar from '../components/NavBar';
+import SideBar from '../components/SideBar';
 import Footer from '../components/Footer'
 import FormErrors from '../components/FormErrors'
 import {Carousel} from 'react-bootstrap';
@@ -139,6 +140,7 @@ export default class DoctorStatus extends Component {
     return(
       <div>
       <NavBar></NavBar>
+      <SideBar></SideBar>
         <div className="top-space espaco espaco-acima">
           <div class="form-style-5">
             <form>

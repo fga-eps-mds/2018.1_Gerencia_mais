@@ -8,36 +8,24 @@ import SideBar from './SideBar';
 export default class NavBar extends Component {
     render(){
 	return(
-    <nav className="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
-      <SideBar></SideBar>
-      	      <div className="container-fluid">
-      		<strong><a className='navbar-brand title' href="">GIC</a></strong>
-      		<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      		  <span className="navbar-toggler-icon"></span>
-      		</button>
-      		<div className="collapse navbar-collapse" id="navbarResponsive">
-      		  <ul className="nav navbar-nav uls">
-              <li className="nav-item">
-      		      <a className="nav-link " href="">Home</a>
-      		    </li>
-      		    <li className="nav-item">
-      		      <a className="nav-link " href="">Sobre</a>
-      		    </li>
-      		    <li className="nav-item">
-      		      <a className="nav-link" href="#">Contato</a>
-      		    </li>
-      		  </ul>
-            <ul className="nav navbar-nav navbar-right">
-              <li className="nav-item">
-      		      <a className="nav-link " href="">Entrar</a>
-      		    </li>
-      		    <li className="nav-item">
-      		      <a className="nav-link " href="">Cadastrar</a>
-      		    </li>
-      		  </ul>
-      		</div>
-      	      </div>
+      <nav className="navbar navbar-expand-sm navbar-dark new-bg-dark fixed-top">
+       <a className=" navbar-right" href="#">Gerencia Mais</a>
+       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span className="navbar-toggler-icon"></span>
+       </button>
+
+       <div className="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul className="navbar-nav mr-auto">
+           <li className="nav-item active divider-vertical">
+             <a className="nav-link topicos active title" href="#">Home <span className="sr-only">(current)</span></a>
+           </li>
+           <li className="nav-item divider-vertical">
+             <a className="nav-link topicos title " href="#">Login</a>
+           </li>
+         </ul>
+       </div>
       </nav>
+
 
 
 
