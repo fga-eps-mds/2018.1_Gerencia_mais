@@ -288,3 +288,7 @@ class TestViewAPI(TestCase):
     def test_contains_expected_fields(self):
         data = self.serializer.data
         self.assertEqual(set(['title', 'updated_on', 'hospital', 'calendar', 'created_on', 'rule', 'end', 'color_event', 'registration', 'status', 'description', 'end_recurring_period', 'CPF', 'start', 'creator', 'id']),set(data.keys()))
+
+    # def test_fields_content(self):
+    #     data = self.serializer.data
+    #     self.assertEqual(data['title'],self.event_attr['title'])
