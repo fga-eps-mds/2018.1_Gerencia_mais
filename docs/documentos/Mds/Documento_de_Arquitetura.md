@@ -6,7 +6,7 @@
 |27/03/2018   |0.3   |Adição do tópico 2 com imagens         | Victor             |
 |03/04/2018   |0.4   |Adição do tópico 6                     | Guilherme Aguiar   |
 |03/04/2018   |0.5   |Adição do tópico 7                     | Guilherme Aguiar   |
-
+| 11/04/2018 | 0.6 | Adição do tópico 4 | Guilherme Aguiar |
 # Sumário
 1. [Introdução](#1)
   * 1.1 [Finalidade](#1.1)
@@ -96,6 +96,27 @@ No framework usado para realizar o nosso *webapp*, que é o Django, é baseado n
 
   ___
 
+
+## <a name="4"></a>4.  Visão de Casos de Uso
+Nosso software vai manipular informações relacionadas aos médicos do hospital regional do Gama, logo a quantidade de dados que devemos processar é mediana, logo o sistema não deverá ter dificuldade na manipulação dos dados. O desempenho dependerá também do aparelho que o sistema será usado e pelo navegador.
+
+## <a name="4.1"></a>4.1  Atores
+| Ator| Descrição |
+|-|-|
+| Administrador da Plataforma (Servidor) | O administrador da plataforma será capaz de acessar as funcionalidades do aplicativo web. Eles farão o cadastro de médicos na tabela, podendo alterar seu status a qualquer momento e também visualizar a tabela. |
+
+## <a name="4.2"></a>4.2  Diagrama de Casos de Uso
+![Image of Yaktocat](https://i.imgur.com/tqp3Swb.png)
+
+## <a name="4.3"></a>4.3  Descrições de Casos de Uso
+| Caso de Uso | Descrição |
+| - | - |
+| UC01 - Cadastrar médico na tabela de horários |  Este caso de uso permite ao administrador cadastrar um médico presente na api e todos os dados requisitados na tabela de horários para visualização posterior. |
+| UC02 - Atualizar horário do médico |    Este caso permite administrador atualizar uma informação previamente informada. |
+| UC03 - Atualizar status do médico | Este caso permite ao administrador atualizar o status de disponibilidade do médico. |
+| UC04 - Visualizar tabela | Este caso permite ao administrador visualizar a tabela de horários de acordo com os dados passados anteriormente. |
+| UC05 - Realizar Login | Este caso permite ao administrador a realização de login e logout, ou seja, permite a entrada e saída do sistema. |
+  ___
 ## <a name="6"></a>6.  Desempenho
 Nosso software vai manipular informações relacionadas aos médicos do hospital regional do Gama, logo a quantidade de dados que devemos processar é mediana, logo o sistema não deverá ter dificuldade na manipulação dos dados. O desempenho dependerá também do aparelho que o sistema será usado e pelo navegador.
 
