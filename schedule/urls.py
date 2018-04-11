@@ -1,7 +1,6 @@
 from django.conf.urls import url
 from django.urls import path
 from django.views.generic.list import ListView
-from schedule.feeds import CalendarICalendar, UpcomingEventsFeed
 from schedule.models import Calendar
 from schedule.periods import Day, Month, Week, Year
 from rest_framework import generics
@@ -22,41 +21,43 @@ urlpatterns = [
     path('api-event/', ListEvent.as_view()),
     path('api-rule/', ListRule.as_view()),
 
-    url(r'^(?P<calendar_slug>calendario-medico)/$',
+    url(r'^$', ListView.as_view(model=Calendar), name='calendar_list'),
+
+    url(r'^calendar/year/(?P<calendar_slug>[-\w]+)/$',
         CalendarByPeriodsView.as_view(template_name='schedule/calendar_year.html'),
         name='year_calendar',
         kwargs={'period': Year}),
 
-    url(r'^(?P<calendar_slug>calendario-medico)/three_month/$',
+    url(r'^calendar/tri_month/(?P<calendar_slug>[-\w]+)/$',
         CalendarByPeriodsView.as_view(template_name='schedule/calendar_tri_month.html'),
         name='tri_month_calendar',
         kwargs={'period': Month}),
 
-    url(r'^(?P<calendar_slug>calendario-medico)/compact_month/$',
+    url(r'^calendar/compact_month/(?P<calendar_slug>[-\w]+)/$',
         CalendarByPeriodsView.as_view(template_name='schedule/calendar_compact_month.html'),
         name='compact_calendar',
         kwargs={'period': Month}),
 
-    url(r'^(?P<calendar_slug>calendario-medico)/month/$',
+    url(r'^calendar/month/(?P<calendar_slug>[-\w]+)/$',
         CalendarByPeriodsView.as_view(template_name='schedule/calendar_month.html'),
         name='month_calendar',
         kwargs={'period': Month}),
 
-    url(r'^(?P<calendar_slug>calendario-medico)/week/$',
+    url(r'^calendar/week/(?P<calendar_slug>[-\w]+)/$',
         CalendarByPeriodsView.as_view(template_name='schedule/calendar_week.html'),
         name='week_calendar',
         kwargs={'period': Week}),
 
-    url(r'^(?P<calendar_slug>calendario-medico)/daily/$',
+    url(r'^calendar/daily/(?P<calendar_slug>[-\w]+)/$',
         CalendarByPeriodsView.as_view(template_name='schedule/calendar_day.html'),
         name='day_calendar',
         kwargs={'period': Day}),
 
-    url(r'^(?P<calendar_slug>calendario-medico)/home/$',
+    url(r'^calendar/(?P<calendar_slug>[-\w]+)/$',
         CalendarView.as_view(),
         name='calendar_home',
         ),
-    url(r'^(?P<calendar_slug>calendario-medico)/fullcalendar/$',
+    url(r'^fullcalendar/(?P<calendar_slug>[-\w]+)/$',
         FullCalendarView.as_view(),
         name='fullcalendar'),
 
@@ -75,13 +76,13 @@ urlpatterns = [
         name='delete_event'),
 
     # urls for already persisted occurrences
-    url(r'^(?P<calendar_slug>calendario-medico)/occurrence/(?P<event_id>\d+)/(?P<occurrence_id>\d+)/$',
+    url(r'^occurrence/(?P<event_id>\d+)/(?P<occurrence_id>\d+)/$',
         OccurrenceView.as_view(),
         name='occurrence'),
-    url(r'^(?P<calendar_slug>calendario-medico)/occurrence/cancel/(?P<event_id>\d+)/(?P<occurrence_id>\d+)/$',
+    url(r'^occurrence/cancel/(?P<event_id>\d+)/(?P<occurrence_id>\d+)/$',
         CancelOccurrenceView.as_view(),
         name='cancel_occurrence'),
-    url(r'^(?P<calendar_slug>calendario-medico)/occurrence/edit/(?P<event_id>\d+)/(?P<occurrence_id>\d+)/$',
+    url(r'^occurrence/edit/(?P<event_id>\d+)/(?P<occurrence_id>\d+)/$',
         EditOccurrenceView.as_view(),
         name='edit_occurrence'),
 
@@ -96,9 +97,9 @@ urlpatterns = [
         CreateOccurrenceView.as_view(),
         name='edit_occurrence_by_date'),
 
-    # feed urls
-    url(r'^feed/calendar/upcoming/(?P<calendar_id>\d+)/$', UpcomingEventsFeed(), name='upcoming_events_feed'),
-    url(r'^ical/calendar/(.*)/$', CalendarICalendar(), name='calendar_ical'),
+    # # feed urls
+    # url(r'^feed/calendar/upcoming/(?P<calendar_id>\d+)/$', UpcomingEventsFeed(), name='upcoming_events_feed'),
+    # url(r'^ical/calendar/(.*)/$', CalendarICalendar(), name='calendar_ical'),
 
     # api urls
     url(r'^api/occurrences', api_occurrences, name='api_occurrences'),

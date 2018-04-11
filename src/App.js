@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
 import DoctorForm from "./pages/DoctorForm";
 import DoctorStatus from "./pages/DoctorStatus";
+import ScheduleTable from "./pages/ScheduleTable";
 
 class App extends Component {
   render() {
@@ -13,7 +14,7 @@ class App extends Component {
       <Route exact path="/" component={HomePage} />
       <Route exact path="/form" component={DoctorForm}/>
       <Route exact path="/status" component={DoctorStatus}/>
-
+      <Route exact path="/calendar" component={ScheduleTable}/>
       <Route component={NotFound} />
     </Switch>
     </BrowserRouter>

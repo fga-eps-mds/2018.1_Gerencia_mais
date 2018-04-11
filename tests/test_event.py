@@ -11,8 +11,9 @@ from schedule.models import Calendar, Event, EventRelation, Rule
 
 
 class TestEvent(TestCase):
-    def __create_event(self, title, start, end, cal):
+    def __create_event(self, title, start, end, cal, status):
         return Event.objects.create(
+	    status = status,
             title=title,
             start=start,
             end=end,
@@ -91,13 +92,15 @@ class TestEvent(TestCase):
             'Edge case event test one',
             datetime.datetime(2013, 1, 5, 8, 0, tzinfo=pytz.utc),
             datetime.datetime(2013, 1, 5, 9, 0, tzinfo=pytz.utc),
-            cal
+            cal,
+            status = None,
         )
         event_two = self.__create_event(
             'Edge case event test two',
             datetime.datetime(2013, 1, 5, 9, 0, tzinfo=pytz.utc),
             datetime.datetime(2013, 1, 5, 12, 0, tzinfo=pytz.utc),
-            cal
+            cal,
+            status = None,
         )
         occurrences_two = event_two.get_occurrences(
             datetime.datetime(2013, 1, 5, 9, 0, tzinfo=pytz.utc),
@@ -257,7 +260,8 @@ class TestEvent(TestCase):
             'Non recurring event test get_occurrence',
             start,
             start + datetime.timedelta(hours=1),
-            cal)
+            cal,
+            status = None,)
         occurrence = event.get_occurrence(start)
         self.assertEqual(occurrence.start, start)
 
@@ -268,7 +272,8 @@ class TestEvent(TestCase):
             'Non recurring event test get_occurrence',
             start,
             start + datetime.timedelta(hours=1),
-            cal)
+            cal,
+            status = None,)
         occurrences = list(event.occurrences_after())
         self.assertEqual(len(occurrences), 1)
         self.assertEqual(occurrences[0].start, start)
@@ -341,7 +346,8 @@ class TestEvent(TestCase):
             'event test',
             datetime.datetime(2013, 1, 5, 8, 0, tzinfo=pytz.utc),
             datetime.datetime(2013, 1, 5, 9, 0, tzinfo=pytz.utc),
-            cal
+            cal,
+            status = None,
         )
         events = list(Event.objects.get_for_object(user, 'owner', inherit=False))
         self.assertEqual(len(events), 0)

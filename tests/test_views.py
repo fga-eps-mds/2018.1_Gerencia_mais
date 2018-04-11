@@ -8,7 +8,8 @@ from django.http import Http404
 from django.test import TestCase, override_settings
 from django.urls import reverse
 from django.utils import timezone
-
+from schedule.models import Calendar, CalendarRelation, Event, Rule
+from schedule.serializer import EventSerializer
 from schedule.models.calendars import Calendar
 from schedule.models.events import Event, Occurrence
 from schedule.models.rules import Rule
@@ -30,12 +31,6 @@ class TestViews(TestCase):
             rule=self.rule,
             calendar=self.calendar,
         )
-
-    @override_settings(USE_TZ=False)
-    def test_timezone_off(self):
-        url = reverse('day_calendar', kwargs={'calendar_slug': self.calendar.slug})
-        response = self.client.get(url)
-        self.assertEqual(response.status_code, 200)
 
 
 class TestViewUtils(TestCase):
@@ -113,77 +108,14 @@ class TestUrls(TestCase):
     fixtures = ['schedule.json']
     highest_event_id = 7
 
-    def test_calendar_view(self):
-        response = self.client.get(
-            reverse("year_calendar", kwargs={"calendar_slug": 'example'}), {})
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.context[0]["calendar"].name, "Example Calendar")
-
-    def test_calendar_month_view(self):
-        response = self.client.get(
-            reverse("month_calendar", kwargs={"calendar_slug": 'example'}), {'year': 2000, 'month': 11})
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.context[0]["calendar"].name, "Example Calendar")
-        month = response.context[0]["period"]
-        self.assertEqual((month.start, month.end),
-                         (datetime.datetime(2000, 11, 1, 0, 0, tzinfo=pytz.utc),
-                          datetime.datetime(2000, 12, 1, 0, 0, tzinfo=pytz.utc)))
-
     def test_event_creation_anonymous_user(self):
         response = self.client.get(reverse("calendar_create_event", kwargs={"calendar_slug": 'example'}))
         self.assertEqual(response.status_code, 302)
-
-    def test_event_creation_authenticated_user(self):
-        self.client.login(username="admin", password="admin")
-        response = self.client.get(reverse("calendar_create_event", kwargs={"calendar_slug": 'example'}))
-
-        self.assertEqual(response.status_code, 200)
-
-        response = self.client.post(
-            reverse("calendar_create_event", kwargs={"calendar_slug": 'example'}),
-            {'description': 'description',
-             'title': 'title',
-             'end_recurring_period_1': '10:22:00', 'end_recurring_period_0': '2008-10-30',
-             'end_recurring_period_2': 'AM',
-             'end_1': '10:22:00', 'end_0': '2008-10-30', 'end_2': 'AM',
-             'start_0': '2008-10-30', 'start_1': '09:21:57', 'start_2': 'AM'})
-        self.assertEqual(response.status_code, 302)
-
-        highest_event_id = self.highest_event_id
-        highest_event_id += 1
-        response = self.client.get(reverse("event", kwargs={"event_id": highest_event_id}))
-        self.assertEqual(response.status_code, 200)
-
-    def test_view_event(self):
-        response = self.client.get(reverse("event", kwargs={"event_id": 1}))
-        self.assertEqual(response.status_code, 200)
 
     def test_delete_event_anonymous_user(self):
         # Only logged-in users should be able to delete, so we're redirected
         response = self.client.get(reverse("delete_event", kwargs={"event_id": 1}))
         self.assertEqual(response.status_code, 302)
-
-    def test_delete_event_authenticated_user(self):
-        self.client.login(username="admin", password="admin")
-        # Load the deletion page
-        response = self.client.get(reverse("delete_event", kwargs={"event_id": 1}))
-        self.assertEqual(response.status_code, 200)
-        if USE_FULLCALENDAR:
-            self.assertEqual(
-                response.context['next'],
-                reverse('fullcalendar', args=[Event.objects.get(id=1).calendar.slug]))
-        else:
-            self.assertEqual(
-                response.context['next'],
-                reverse('day_calendar', args=[Event.objects.get(id=1).calendar.slug]))
-
-        # Delete the event
-        response = self.client.post(reverse("delete_event", kwargs={"event_id": 1}))
-        self.assertEqual(response.status_code, 302)
-
-        # Since the event is now deleted, we get a 404
-        response = self.client.get(reverse("delete_event", kwargs={"event_id": 1}))
-        self.assertEqual(response.status_code, 404)
 
     def test_occurrences_api_returns_the_expected_occurrences(self):
         # create a calendar and event
@@ -329,17 +261,30 @@ class TestUrls(TestCase):
         self.assertEqual(expected, res)
         res = check_next_url(None)
         self.assertEqual(expected, res)
+class TestViewAPI(TestCase):
+    def setUp(self):
+        calendar = Calendar(name = 'Test Calendar')
+        calendar.save()
+        self.event_attr = {
+            'id':1,
+            'title': 'victor',
+            'start': datetime.datetime(2013, 1, 5, 8, 0, tzinfo=pytz.utc),
+            'end': datetime.datetime(2013, 1, 5, 9, 0, tzinfo=pytz.utc),
+            'status': None,
+            'calendar': calendar
+        }
 
-    @override_settings(SITE_ID=1)
-    def test_feed_link(self):
-        feed_url = reverse('upcoming_events_feed', kwargs={'calendar_id': 1})
-        response = self.client.get(feed_url)
-        self.assertEqual(response.status_code, 200)
-        expected_feed = 'http://example.com/feed/calendar/upcoming/1/'
-        self.assertTrue(expected_feed in response.content.decode('utf8'))
+        self.serializer_data = {
+            'id':0,
+            'title':'joão',
+            'start': datetime.datetime(2013, 1, 5, 8, 0, tzinfo=pytz.utc),
+            'end': datetime.datetime(2013, 1, 5, 9, 0, tzinfo=pytz.utc),
+            'status':None,
+            'calendar': calendar
+        }
+        self.event = Event.objects.create(**self.event_attr)
+        self.serializer = EventSerializer(instance=self.event)
 
-    def test_calendar_view_home(self):
-        calendar_view_url = reverse('calendar_home', kwargs={'calendar_slug': 'example'})
-        response = self.client.get(calendar_view_url)
-        self.assertEqual(response.status_code, 200)
-        self.assertTrue('<a href="/feed/calendar/upcoming/1/">Feed</a>' in response.content.decode('utf8'))
+    def test_contains_expected_fields(self):
+        data = self.serializer.data
+        self.assertEqual(set(['title', 'updated_on', 'hospital', 'calendar', 'created_on', 'rule', 'end', 'color_event', 'registration', 'status', 'description', 'end_recurring_period', 'CPF', 'start', 'creator', 'id']),set(data.keys()))
