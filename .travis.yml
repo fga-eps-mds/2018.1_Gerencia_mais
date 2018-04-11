@@ -15,5 +15,6 @@ before_install:
 before_script:
   - sudo docker-compose -f docker-compose.yml up --d
 script:
+  - coverage run -m django test --settings=tests.settings
   - docker-compose down
 
