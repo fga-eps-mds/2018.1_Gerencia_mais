@@ -1,4 +1,8 @@
+sudo: required
+
 language: python
+python:
+  - "3.6.4"
 services:
   - docker
 before_install:
@@ -6,21 +10,10 @@ before_install:
   - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
   - sudo apt-get update
   - sudo apt-get -y install docker-ce
-sudo: required
-install:
-  - >
-    curl -sSL "https://get.docker.com/gpg" |
-     sudo -E apt-key add -
-  - >
-    echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" |
-     sudo tee -a /etc/apt/sources.list
-  - sudo apt-get update
-  - docker version
   - sudo pip install docker-compose
-  - docker-compose version
+  - pip install -r requirements.txt
 before_script:
   - sudo docker-compose -f docker-compose.yml up --d
 script:
-  - nosetests
-after_script:
   - docker-compose down
+
