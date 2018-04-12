@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Route, Switch, BrowserRouter} from 'react-router-dom';
 import HomePage from "./pages/HomePage";
+import ScheduleTable from "./pages/ScheduleTable";
 import NotFound from "./pages/NotFound";
 import DoctorForm from "./pages/DoctorForm";
 import DoctorStatus from "./pages/DoctorStatus";
