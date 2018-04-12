@@ -6,3 +6,10 @@ include =
 
 omit =
     /
+    schedule/templatetags/scheduletags.py
+    schedule/views.py
+    schedule/widgets.py
+    schedule/utils.py
+    schedule/forms.py
+    schedule/settings.py
+    schedule/periods.py
