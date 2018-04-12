@@ -3,9 +3,7 @@ import {Route, Switch, BrowserRouter} from 'react-router-dom';
 import HomePage from "./pages/HomePage";
 import ScheduleTable from "./pages/ScheduleTable";
 import NotFound from "./pages/NotFound";
-import DoctorForm from "./pages/DoctorForm";
-import DoctorStatus from "./pages/DoctorStatus";
-import ScheduleTable from "./pages/ScheduleTable";
+import Dashboard from "./pages/Dashboard";
 
 class App extends Component {
   render() {
@@ -13,9 +11,8 @@ class App extends Component {
     <BrowserRouter>
     <Switch>
       <Route exact path="/" component={HomePage} />
-      <Route exact path="/form" component={DoctorForm}/>
-      <Route exact path="/status" component={DoctorStatus}/>
-      <Route exact path="/calendar" component={ScheduleTable}/>
+      <Route exact path="/scheduletable" component={ScheduleTable} />
+      <Route exact path="/dashboard" component={Dashboard} />
       <Route component={NotFound} />
     </Switch>
     </BrowserRouter>

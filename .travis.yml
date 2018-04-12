@@ -24,3 +24,13 @@ script:
 
 after_success:
   - coveralls
+
+after_script:
+  - docker-compose down
+
+deploy:
+  provider: heroku
+  api_key: 0c8b9e98-a72b-4e0a-b091-568f4d4186e0
+  app:
+    development: gicsaude
+    master: gerenciamais

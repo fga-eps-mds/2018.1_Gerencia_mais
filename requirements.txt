@@ -10,7 +10,6 @@ markdown
 django-filter
 django-scheduler
 django-cors-headers
-python-dateutil==1.5.0
 #codeclimate
 #randon
 #duplication
