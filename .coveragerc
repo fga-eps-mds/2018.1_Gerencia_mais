@@ -1,0 +1,8 @@
+[run]
+include =
+    schedule/*
+    leito_hospitalar/*
+    tests/*
+
+omit =
+    /
