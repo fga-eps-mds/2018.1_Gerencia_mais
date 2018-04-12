@@ -8,6 +8,8 @@
     <a href=''><img src='https://img.shields.io/npm/v/npm.svg' alt='Npm-version' /></a>
     <a href='https://www.python.org/'><img src='https://img.shields.io/badge/Made%20with-Python-1f425f.svg' alt='python' /></a>
    <a href='https://i.imgur.com/1eUkAob.jpg'><img src='https://i.imgur.com/1eUkAob.jpg' alt='python' /></a>
+   <a href='https://coveralls.io/github/fga-gpp-mds/2018.1_Gerencia_mais?branch=is64_Integrar_Frontend_e_Backend'><img src='https://coveralls.io/repos/github/fga-gpp-mds/2018.1_Gerencia_mais/badge.svg?branch=is64_Integrar_Frontend_e_Backend' alt='Coverage Status' /></a>
+
 </p>
 
 
