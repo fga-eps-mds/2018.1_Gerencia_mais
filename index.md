@@ -6,7 +6,6 @@ layout: default
 ---
 
 
-<p align="center">
   <p align="center"><img src="s"https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/logo/logo.png" width="400"></p>
 
   <a href="https://travis-ci.org/fga-gpp-mds/2018.1_Gerencia_mais"><img src="https://travis-ci.org/fga-gpp-mds/2018.1_Gerencia_mais.svg?branch=master" alt="Build"></a>
