@@ -7,9 +7,10 @@ django-webpack-loader
 pytest
 djangorestframework
 markdown
-django-filter 
+django-filter
 django-scheduler
-python-dateutil==1.5.0
+django-cors-headers
+python-dateutil
 #codeclimate
 #randon
 #duplication

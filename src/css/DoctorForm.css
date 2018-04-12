@@ -87,7 +87,6 @@
     position: relative;
     display: block;
     padding: 19px 39px 18px 39px;
-    color: #FFF;
     margin: 0 auto;
     background: #1abc9c;
     font-size: 18px;
@@ -102,6 +101,10 @@
 .form-style-5 input[type="button"]:hover
 {
     background: #109177;
+}
+.form {
+  color:black;
+  background-color: black;
 }
 .espaco-acima {
   padding-top: 100px;
