@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'webpack_loader',
     'rest_framework',
     'schedule',
+    'tests',
+    'django.contrib.sites',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [

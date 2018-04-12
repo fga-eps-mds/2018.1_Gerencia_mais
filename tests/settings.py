@@ -39,14 +39,12 @@ INSTALLED_APPS = [
     'webpack_loader',
     'rest_framework',
     'schedule',
-    'corsheaders',
     'tests',
     'django.contrib.sites',
     'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.BrokenLinkEmailsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -59,10 +57,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'schedule.urls'
-
-CORS_ORIGIN_WHITELIST = [
-    'localhost:3000',
-]
 
 TEMPLATES = [
     {
