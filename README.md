@@ -34,7 +34,9 @@
 </a><a href="image" target="_blank"><img width="100"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/selenium-test-automation.png"></a>
 </a><a href="image" target="_blank"><img width="100"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/telegram.gif"></a>
 </a><a href="image" target="_blank"><img width="100"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/zenhub.jpg"></a>
- </a><a href="image" target="_blank"><img width="100"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/coveralls-logo.png"></a>
+ </a>
+ <a href="image" target="_blank"><img width="100"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/ColourContrastAnalyserPortable_128.png"></a>
+ <a href="image" target="_blank"><img width="100"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/coveralls-logo.png"></a>
 
 ## 🐳 Guia de Uso do Docker
 
