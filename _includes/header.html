@@ -1,8 +1,59 @@
 <header>
 
+<style>
+.navbar {
+  margin-bottom: 0;
+  background-color: #1abc9c;
+  z-index: 9999;
+  border: 0;
+  font-size: 12px !important;
+  line-height: 1.42857143 !important;
+  letter-spacing: 4px;
+  border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+  color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+  color: #1abc9c !important;
+  background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  color: #fff !important;
+}
+
+.navbar-brand-centered {
+  position: absolute;
+  left: 50%;
+  display: block;
+  width: 160px;
+  text-align: center;
+  background-color: transparent;
+}
+.navbar>.container .navbar-brand-centered,
+.navbar>.container-fluid .navbar-brand-centered {
+  margin-left: -80px;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- navbar -->
   <nav class="navbar navbar-inverse">
-  <div class="container">
+  <div style="padding-top:0"class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -23,7 +74,7 @@
           <li class="active">
           {% else %}
           <li><a href="{{ site.baseurl }}/about">About</a></li>
-          <li><a href="{{ site.baseurl }}/doc">Documentação</a></li>
+          <li><a href="{{ site.baseurl }}/doc" style="width: 160px;">Documentação</a></li>
         {% endif %}
 
 
