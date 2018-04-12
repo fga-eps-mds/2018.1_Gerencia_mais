@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>代码校验工具 SublimeLinter 的安装与使用</title>
+	<meta name="description" content="代码校验工具 sublimeLinter 的安装与使用，jshint 的安装与使用，JavaScript 语法检查校验，JavaScript 语法提示">
+
+	<link rel="canonical" href="http://localhost:8001/2018.1_Gerencia_mais/sublime/2015/03/26/sublimeLinter.html">
+	<link rel="alternate" type="application/rss+xml" title="Gerencia mais" href="http://localhost:8001/2018.1_Gerencia_mais/feed.xml" />
+
+	<!-- <link rel="stylesheet" href="/2018.1_Gerencia_mais/css/main.css"> -->
+
+	<link rel="stylesheet" type="text/css" href="https://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/fontawesome/4.2.0/css/font-awesome.min.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="/2018.1_Gerencia_mais/static/css/bootstrap.min.css"> -->
+
+
+	<link rel="stylesheet" type="text/css" href="/2018.1_Gerencia_mais/static/css/index.css">
+
+	<!-- <script type="text/javascript" src="/2018.1_Gerencia_mais/static/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="/2018.1_Gerencia_mais/static/js/bootstrap.min.js"></script> -->
+
+	<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="/2018.1_Gerencia_mais/static/js/index.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="https://apps.bdimg.com/libs/highlight.js/8.4/styles/monokai_sublime.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/highlight.js/8.4/styles/railscasts.min.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/highlight.js/8.4/styles/monokai.min.css"> -->
+	<!-- <script type="text/javascript" src="http://apps.bdimg.com/libs/highlight.js/8.4/languages/dos.min.js"></script> -->
+	<script type="text/javascript" src="https://apps.bdimg.com/libs/highlight.js/8.4/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?b636473d6ffa17615f94e5db1459ea81";
+	  var s = document.getElementsByTagName("script")[0];
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<style>
+body{padding-top:30px;}
+
+.btn-outlined {
+    border-radius: 0;
+    -webkit-transition: all 0.3s;
+       -moz-transition: all 0.3s;
+            transition: all 0.3s;
+}
+.btn-outlined.btn-primary {
+    background: none;
+    border: 3px solid #428bca;
+    color: #428bca;
+}
+.btn-outlined.btn-primary:hover,
+.btn-outlined.btn-primary:active {
+    color: #FFF;
+    background: #428bca;
+    border-color: #428bca:
+}
+
+.btn-outlined.btn-success {
+    background: none;
+    border: 3px solid #5cb85c;
+    color: #5cb85c;
+}
+.btn-outlined.btn-success:hover,
+.btn-outlined.btn-success:active {
+    color: #FFF;
+    background: #47a447;
+}
+
+.btn-outlined.btn-info {
+    background: none;
+    border: 3px solid #5bc0de;
+    color: #5bc0de;
+}
+.btn-outlined.btn-info:hover,
+.btn-outlined.btn-info:active {
+    color: #FFF;
+    background: #39b3d7;
+}
+
+.btn-outlined.btn-warning {
+    background: none;
+    border: 3px solid #f0ad4e;
+    color: #f0ad4e;
+}
+.btn-outlined.btn-warning:hover,
+.btn-outlined.btn-warning:active {
+    color: #FFF;
+    background: #ed9c28;
+}
+
+.btn-outlined.btn-danger {
+    background: none;
+    border: 3px solid #d9534f;
+    color: #d9534f;
+}
+.btn-outlined.btn-danger:hover,
+.btn-outlined.btn-danger:active {
+    color: #FFF;
+    background: #d2322d;
+}
+</style>
+</head>
+
+
+ <!--  <body data-spy="scroll" data-target="#myAffix"> -->
+  <body>
+
+    <header>
+
+<!-- navbar -->
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/2018.1_Gerencia_mais/">Gerencia mais</a>
+
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-left">
+
+
+        
+          <li><a href="/2018.1_Gerencia_mais/about">About</a></li>
+          <li><a href="/2018.1_Gerencia_mais/doc">Documentação</a></li>
+        
+
+
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+</header>
+
+
+
+    <div id="main" class="container main">
+      <div class="post-area post">
+        <article class="page-content">
+            <div class="row">
+  <div id="myArticle" class="col-sm-9">
+    <div class="post-area post">
+      <header>
+        <h1>代码校验工具 SublimeLinter 的安装与使用</h1>
+        <p>Mar 26, 2015</p>
+      </header>
+      <hr>
+      <article>
+        <ul id="markdown-toc">
+  <li><a href="#序" id="markdown-toc-序">序</a></li>
+  <li><a href="#安装-sublimelinter" id="markdown-toc-安装-sublimelinter">安装 SublimeLinter</a></li>
+  <li><a href="#javascript-语法检查" id="markdown-toc-javascript-语法检查">JavaScript 语法检查</a>    <ul>
+      <li><a href="#安装-sublimelinter-jshint" id="markdown-toc-安装-sublimelinter-jshint">安装 SublimeLinter-jshint</a></li>
+      <li><a href="#安装-nodejs-和-jshint" id="markdown-toc-安装-nodejs-和-jshint">安装 nodeJS 和 jshint</a></li>
+    </ul>
+  </li>
+  <li><a href="#css-语法检查" id="markdown-toc-css-语法检查">css 语法检查</a>    <ul>
+      <li><a href="#安装-sublimelinter-csslint" id="markdown-toc-安装-sublimelinter-csslint">安装 SublimeLinter-csslint</a></li>
+      <li><a href="#在-nodejs-下安装-csslint" id="markdown-toc-在-nodejs-下安装-csslint">在 nodeJS 下安装 csslint</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="序">序</h2>
+
+<p>本文我将讲述一下 SublimeLinter 的安装过程。 <br />
+其组件 jshint 的安装与使用。 <br />
+其组件 csslint 的安装与使用。 <br />
+我将基于 <a href="http://sublimetext.com/3">Sublime Text 3</a> 来安装。 <br />
+使用 Sublime Text 2 的用户阅读本文是没有帮助的。</p>
+
+<p>SublimeLinter 是 Sublime 的插件，它的作用是检查代码语法是否有错误，并提示。习惯了 IDE 下写代码的人一定需要一款在 Sublime 上类似的语法检查工具。下面我们开始。</p>
+
+<hr />
+
+<h2 id="安装-sublimelinter">安装 SublimeLinter</h2>
+
+<p>如同其他插件一样使用 Package Control 来安装。</p>
+
+<ol>
+  <li>按下 <code class="highlighter-rouge">Ctrl+Shift+p</code> 进入 Command Palette</li>
+  <li>输入<code class="highlighter-rouge">install</code>进入 Package Control: Install Package</li>
+  <li>输入<code class="highlighter-rouge">SublimeLinter</code>。进行安装.</li>
+</ol>
+
+<p><img src="http://7q5cdt.com1.z0.glb.clouddn.com/SublimeLinter-sublimeLinter.jpg" alt="SublimeLinter" /></p>
+
+<p>安装完成后可以看到这样一段话：</p>
+
+<pre><code class="markdown">Welcome to SublimeLinter, a linter framework for Sublime Text 3.
+ 
+                  * * * IMPORTANT! * * *
+
+         SublimeLinter 3 is NOT a drop-in replacement for
+        earlier versions.
+
+         Linters *NOT* included with SublimeLinter 3, 
+         they must be installed separately.
+ 
+         The settings are different.
+ 
+                 * * * READ THE DOCS! * * *
+ 
+ Otherwise you will never know how to install linters, nor will
+ you know about all of the great new features in SublimeLinter 3.
+ 
+ For complete documentation on how to install and use SublimeLinter,
+ please see:
+ 
+ http://www.sublimelinter.com</code></pre>
+
+<p>可以看到具体的 Linters 组件<strong>不</strong>被包含在 SublimeLinter 3 中，所以我们要额外独立安装组件。 <br />
+可以针对不同的语言安装不同的组件。</p>
+
+<hr />
+
+<h2 id="javascript-语法检查">JavaScript 语法检查</h2>
+
+<p>SublimeLinter-jshint 是基于 nodeJS 下的 jshint 的插件，实际上 SublimeLinter-jshint 调用了 nodeJS 中 jshint 的接口来进行语法检查的。</p>
+
+<hr />
+
+<h3 id="安装-sublimelinter-jshint">安装 SublimeLinter-jshint</h3>
+
+<p>为了让 JavaScript 代码有语法检查，我们安装 SublimeLinter-jshint <br />
+同样的方法，我们安装 SublimeLinter-jshint</p>
+
+<ol>
+  <li>按下 <code class="highlighter-rouge">Ctrl+Shift+p</code> 进入 Command Palette</li>
+  <li>输入<code class="highlighter-rouge">install</code>进入 Package Control: Install Package</li>
+  <li>输入<code class="highlighter-rouge">SublimeLinter-jshint</code>。进行安装.</li>
+</ol>
+
+<p>如下图</p>
+
+<p><img src="http://7q5cdt.com1.z0.glb.clouddn.com/SublimeLinter-jshint.jpg" alt="SublimeLinter-jshint" /></p>
+
+<p>安装完成后我们可以看到下面的一段话</p>
+
+<pre><code class="markdown">SublimeLinter-jshint
+  -------------------------------
+  This linter plugin for SublimeLinter provides an interface to jshint.
+  
+  ** IMPORTANT! **
+  
+  Before this plugin will activate, you *must*
+  follow the installation instructions here:
+  
+  https://github.com/SublimeLinter/SublimeLinter-jshint
+</code></pre>
+
+<hr />
+
+<h3 id="安装-nodejs-和-jshint">安装 nodeJS 和 jshint</h3>
+
+<p>在插件开始工作之前，我们必须再看一下上述插件的<a href="https://github.com/SublimeLinter/SublimeLinter-jshint">安装说明</a> <br />
+通过 <a href="https://github.com/SublimeLinter/SublimeLinter-jshint">SublimeLinter-jshint 的说明</a> 我们可以看到，这个组件依赖于 nodeJS 下的 jshint，所以我们安装 nodeJS 环境和 nodeJS 下的 jshint。</p>
+
+<ol>
+  <li>安装 <a href="https://nodejs.org/">Node.js</a></li>
+  <li>通过 npm 安装<code class="highlighter-rouge">jshint</code></li>
+</ol>
+
+<p>在命令行下输入如下代码，完成安装</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install -g jshint
+</code></pre></div></div>
+
+<p>安装完成后命令行中出现如下的信息</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\Users\Administrator\AppData\Roaming\npm\jshint -&gt; C:\Users\Administrator\AppData\Roaming\npm\node_modules\jshint\bin\jshint
+jshint@2.6.3 C:\Users\Administrator\AppData\Roaming\npm\node_modules\jshint
+├── strip-json-comments@1.0.2
+├── underscore@1.6.0
+├── exit@0.1.2
+├── shelljs@0.3.0
+├── console-browserify@1.1.0 (date-now@0.1.4)
+├── htmlparser2@3.8.2 (domelementtype@1.3.0, entities@1.0.0, domhandler@2.3.0, readable-stream@1.1.13, domutils@1.5.1)
+├── minimatch@1.0.0 (sigmund@1.0.0, lru-cache@2.5.0)
+└── cli@0.6.6 (glob@3.2.11)
+</code></pre></div></div>
+
+<p>可以查看 jshint 版本，已确认安装完成。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\Users\Administrator&gt;jshint -v
+jshint v2.6.3
+</code></pre></div></div>
+
+<p>现在，恭喜你，我们使用 Sublime 编辑 JavaScript 文件，就会有语法检查了！</p>
+
+<p>在编辑过程中，会有如下提示</p>
+
+<p><img src="http://7q5cdt.com1.z0.glb.clouddn.com/SublimeLinter-jshint-test.jpg" alt="SublimeLinter-jshint-test" /></p>
+
+<p>点击提示点后，Sublime 状态栏也会有相应的说明</p>
+
+<p><img src="http://7q5cdt.com1.z0.glb.clouddn.com/SublimeLinter-jshint-test2.jpg" alt="SublimeLinter-jshint-test2" /></p>
+
+<hr />
+
+<h2 id="css-语法检查">css 语法检查</h2>
+
+<p>与 jshint 同理，SublimeLinter-csslint 也是基于 nodeJS 下的 csslint 的插件，实际上 SublimeLinter-csslint 调用了 nodeJS 中 csslint 的接口来进行语法检查的。</p>
+
+<hr />
+
+<h3 id="安装-sublimelinter-csslint">安装 SublimeLinter-csslint</h3>
+
+<p>同样的方法。</p>
+
+<ol>
+  <li>按下 <code class="highlighter-rouge">Ctrl+Shift+p</code> 进入 Command Palette</li>
+  <li>输入<code class="highlighter-rouge">install</code>进入 Package Control: Install Package</li>
+  <li>输入<code class="highlighter-rouge">SublimeLinter-csslint</code>。进行安装.</li>
+</ol>
+
+<p>如下图</p>
+
+<p><img src="http://7q5cdt.com1.z0.glb.clouddn.com/SublimeLinter-csslint.jpg" alt="SublimeLinter-csslint" /></p>
+
+<p>安装完成后我们可以看到下面的一段话</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SublimeLinter-csslint
+-------------------------------
+This linter plugin for SublimeLinter provides an interface to csslint.
+
+** IMPORTANT! **
+
+Before this plugin will activate, you *must*
+follow the installation instructions here:
+
+https://github.com/SublimeLinter/SublimeLinter-csslint
+</code></pre></div></div>
+
+<p>在使用插件之前，必须遵循上述网址中的<a href="https://github.com/SublimeLinter/SublimeLinter-csslint">安装说明</a></p>
+
+<hr />
+
+<h3 id="在-nodejs-下安装-csslint">在 nodeJS 下安装 csslint</h3>
+
+<p>进入上述的 GitHub 地址，csslint 的说明页。我们知道了和 jshint 一样，csslint 也是基于 nodeJS 下的 csslint 来使用的。</p>
+
+<p>这里安装 nodeJS 过程省略。 <br />
+只需用 npm 安装 csslint 即可。</p>
+
+<p>在命令行中输入</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install -g csslint   
+</code></pre></div></div>
+
+<p>安装完成后命令行中出现如下的信息</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\Users\Administrator\AppData\Roaming\npm\csslint -&gt; C:\Users\Administrator\AppData\Roaming\npm\node_modules\csslint\cli.js
+csslint@0.10.0 C:\Users\Administrator\AppData\Roaming\npm\node_modules\csslint
+└── parserlib@0.2.5
+</code></pre></div></div>
+
+<p>可以查看 csslint 版本，已确认安装完成。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\Users\Administrator&gt;csslint --version
+v0.10.0
+</code></pre></div></div>
+
+<p>现在，恭喜你，我们使用 Sublime 编辑 css 文件，就会有语法检查了！</p>
+
+<p>在编辑过程中，会有如下提示</p>
+
+<p><img src="http://7q5cdt.com1.z0.glb.clouddn.com/SublimeLinter-csslint-test.jpg" alt="SublimeLinter-csslint-test" /></p>
+
+<p>点击提示点后，Sublime 状态栏也会有相应的说明</p>
+
+<p><img src="http://7q5cdt.com1.z0.glb.clouddn.com/SublimeLinter-csslint-test2.jpg" alt="SublimeLinter-csslint-test2" /></p>
+
+      </article>
+      <hr>
+      <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a><a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a></div>
+      <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+    </div>
+    <div class="post-area post comment">
+      <!-- 多说评论框 start -->
+      
+      <div class="ds-thread" data-thread-key="/sublime/2015/03/26/sublimeLinter" data-title="代码校验工具 SublimeLinter 的安装与使用" data-url="gaohaoyang.github.io/sublime/2015/03/26/sublimeLinter.html"></div>
+      
+      <!-- 多说评论框 end -->
+    </div>
+  </div>
+
+  <div id="content" class="col-sm-3">
+    <!-- <div id="myAffix" class="shadow-bottom-center hidden-xs" data-spy="affix" data-offset-top="0" data-offset-bottom="-20"> -->
+    <div id="myAffix" class="shadow-bottom-center hidden-xs" >
+      <div class="categories-list-header">
+        Content
+      </div>
+      <div class="content-text"></div>
+    </div>
+  </div>
+</div>
+        </article>
+      </div>
+    </div>
+
+
+
+    <footer class="">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        
+        
+          <span>&copy; 2015 Gaohaoyang</span>
+          <span class="point"> · </span>
+          <span>Designed by <a href="https://github.com/Gaohaoyang">HyG</a></span>
+
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"hygblog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  <script type="text/javascript">
+    function addBlankTargetForLinks () {
+      $('a[href^="http"]').each(function(){
+          $(this).attr('target', '_blank');
+      });
+    }
+    $(document).bind('DOMNodeInserted', function(event) {
+      addBlankTargetForLinks();
+    });
+  </script>
+  </body>
+</html>

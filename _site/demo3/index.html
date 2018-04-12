@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Documentos de Engenharia de Produto de Software</title>
+	<meta name="description" content="">
+
+	<link rel="canonical" href="http://localhost:8001/2018.1_Gerencia_mais/demo3/">
+	<link rel="alternate" type="application/rss+xml" title="Gerencia mais" href="http://localhost:8001/2018.1_Gerencia_mais/feed.xml" />
+
+	<!-- <link rel="stylesheet" href="/2018.1_Gerencia_mais/css/main.css"> -->
+
+	<link rel="stylesheet" type="text/css" href="https://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/fontawesome/4.2.0/css/font-awesome.min.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="/2018.1_Gerencia_mais/static/css/bootstrap.min.css"> -->
+
+
+	<link rel="stylesheet" type="text/css" href="/2018.1_Gerencia_mais/static/css/index.css">
+
+	<!-- <script type="text/javascript" src="/2018.1_Gerencia_mais/static/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="/2018.1_Gerencia_mais/static/js/bootstrap.min.js"></script> -->
+
+	<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="/2018.1_Gerencia_mais/static/js/index.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="https://apps.bdimg.com/libs/highlight.js/8.4/styles/monokai_sublime.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/highlight.js/8.4/styles/railscasts.min.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/highlight.js/8.4/styles/monokai.min.css"> -->
+	<!-- <script type="text/javascript" src="http://apps.bdimg.com/libs/highlight.js/8.4/languages/dos.min.js"></script> -->
+	<script type="text/javascript" src="https://apps.bdimg.com/libs/highlight.js/8.4/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?b636473d6ffa17615f94e5db1459ea81";
+	  var s = document.getElementsByTagName("script")[0];
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+<style>
+body{padding-top:30px;}
+
+.btn-outlined {
+    border-radius: 0;
+    -webkit-transition: all 0.3s;
+       -moz-transition: all 0.3s;
+            transition: all 0.3s;
+}
+.btn-outlined.btn-primary {
+    background: none;
+    border: 3px solid #428bca;
+    color: #428bca;
+}
+.btn-outlined.btn-primary:hover,
+.btn-outlined.btn-primary:active {
+    color: #FFF;
+    background: #428bca;
+    border-color: #428bca:
+}
+
+.btn-outlined.btn-success {
+    background: none;
+    border: 3px solid #5cb85c;
+    color: #5cb85c;
+}
+.btn-outlined.btn-success:hover,
+.btn-outlined.btn-success:active {
+    color: #FFF;
+    background: #47a447;
+}
+
+.btn-outlined.btn-info {
+    background: none;
+    border: 3px solid #5bc0de;
+    color: #5bc0de;
+}
+.btn-outlined.btn-info:hover,
+.btn-outlined.btn-info:active {
+    color: #FFF;
+    background: #39b3d7;
+}
+
+.btn-outlined.btn-warning {
+    background: none;
+    border: 3px solid #f0ad4e;
+    color: #f0ad4e;
+}
+.btn-outlined.btn-warning:hover,
+.btn-outlined.btn-warning:active {
+    color: #FFF;
+    background: #ed9c28;
+}
+
+.btn-outlined.btn-danger {
+    background: none;
+    border: 3px solid #d9534f;
+    color: #d9534f;
+}
+.btn-outlined.btn-danger:hover,
+.btn-outlined.btn-danger:active {
+    color: #FFF;
+    background: #d2322d;
+}
+</style>
+</head>
+
+
+ <!--  <body data-spy="scroll" data-target="#myAffix"> -->
+  <body>
+
+    <header>
+
+<!-- navbar -->
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/2018.1_Gerencia_mais/">Gerencia mais</a>
+
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-left">
+
+
+        
+          <li><a href="/2018.1_Gerencia_mais/about">About</a></li>
+          <li><a href="/2018.1_Gerencia_mais/doc">Documentação</a></li>
+        
+
+
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+</header>
+
+
+
+    <div id="main" class="container main">
+      <div class="post-area post">
+        <article class="page-content">
+            <div style="margin:50px" class="post-area post">
+    <header>
+        <h1>Documentos de Engenharia de Produto de Software</h1>
+    </header>
+    <hr>
+    <article class="page-content">
+        		<div id="fall">
+			<ul>
+
+				<li>
+					<a href="/2018.1_Gerencia_mais/documentos/Eps/Termo_de_abertura_do_Projeto.html">
+
+					</a>
+					<div class="head">
+						<a href="/2018.1_Gerencia_mais/documentos/Eps/Termo_de_abertura_do_Projeto.html">
+							Termo de Abertura de Projeto
+						</a>
+					</div>
+					<div class="description">
+						<p></p>
+						Esse documento possui o objetivo de apresentar as características iniciais do projeto GIC.
+					</div>
+				</li>
+				<li>
+					<a href="/2018.1_Gerencia_mais/documentos/Eps/Detalhamento_de_Riscos.html">
+						<img src="">
+					</a>
+					<div class="head">
+						<a href="/2018.1_Gerencia_mais/documentos/Eps/Detalhamento_de_Riscos.html">
+							Detalhamento de Riscos
+						</a>
+					</div>
+					<div class="description">
+						<p></p>
+						<p></p>
+					</div>
+				</li>
+				<li>
+					<a href="/2018.1_Gerencia_mais/documentos/Eps/Documento_GCS.html">
+						<img src="">
+					</a>
+					<div class="head">
+						<a href="/2018.1_Gerencia_mais/documentos/Eps/Documento_GCS.html">
+							Documento de GCS
+						</a>
+					</div>
+					<div class="description">
+						<p></p>
+						O documento de gerenciamento de configuração de software tem como objetivo definir ferramentas e estilos organizacionais para o projeto.
+					</div>
+				</li>
+
+			</ul>
+
+			<ul>
+
+				<li>
+					<a href="/2018.1_Gerencia_mais/documentos/Eps/Modelo_de_Elicitacao_de_Requisitos.html">
+						<img src="">
+					</a>
+					<div class="head">
+						<a href="/2018.1_Gerencia_mais/documentos/Eps/Modelo_de_Elicitacao_de_Requisitos.html">
+							Modelo de Elicitacao de Requisitos
+						</a>
+					</div>
+					<div class="description">
+						<p></p>
+						O gerenciamento de requisitos focará em garantir a qualidade dos requisitos (funcionais e não funcionais).
+					</div>
+				</li>
+				<li>
+					<a href="/2018.1_Gerencia_mais/documentos/Eps/Plano_de_Gerenciamento_de_Qualidade.html">
+						<img src="">
+					</a>
+					<div class="head">
+						<a href="/2018.1_Gerencia_mais/documentos/Eps/Plano_de_Gerenciamento_de_Qualidade.html">
+							Plano de Gerenciamento de Qualidade
+						</a>
+					</div>
+					<div class="description">
+						<p></p>
+						O gerenciamento da qualidade do projeto inclui os processos e as atividades que determinam as políticas de qualidade, os objetivos e as responsabilidades, de modo que o projeto satisfaça às necessidades para as quais foi empreendido.
+					</div>
+				</li>
+
+			</ul>
+			<ul>
+
+				<li>
+					<a href="/2018.1_Gerencia_mais/documentos/Eps/Gerenciamento_de_Riscos.html">
+
+					</a>
+					<div class="head">
+						<a href="/2018.1_Gerencia_mais/documentos/Eps/Gerenciamento_de_Riscos.html">
+							Gerenciamento de Riscos
+						</a>
+					</div>
+					<div class="description">
+						<p></p>
+Esse documento tem a finalidade de descrever como será feito o gerenciamento de riscos no projeto.
+					</div>
+				</li>
+				<li>
+					<a href="/2018.1_Gerencia_mais/documentos/Eps/Metodologia.html">
+
+					</a>
+					<div class="head">
+						<a href="/2018.1_Gerencia_mais/documentos/Eps/Metodologia.html">
+							Metodologia
+						</a>
+					</div>
+					<div class="description">
+						<p></p>
+						Para o desenvolvimento do projeto Gestão de Internações Cirúrgicas, foi adotada a metodologia de desenvolvimento Scrum, porém com a utilização de algumas adaptações que se enquadram nas práticas DevOps de desenvolvimento de software.
+					</div>
+				</li>
+
+
+
+			</ul>
+
+
+		</div>
+
+    </article>
+</div>
+<div class="post-area post comment">
+
+    <div class="ds-thread" data-thread-key="" data-title="Documentos de Engenharia de Produto de Software" data-url="gaohaoyang.github.io/demo3/"></div>
+
+</div>
+
+        </article>
+      </div>
+    </div>
+
+
+
+    <footer class="">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        
+        
+          <span>&copy; 2015 Gaohaoyang</span>
+          <span class="point"> · </span>
+          <span>Designed by <a href="https://github.com/Gaohaoyang">HyG</a></span>
+
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"hygblog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  <script type="text/javascript">
+    function addBlankTargetForLinks () {
+      $('a[href^="http"]').each(function(){
+          $(this).attr('target', '_blank');
+      });
+    }
+    $(document).bind('DOMNodeInserted', function(event) {
+      addBlankTargetForLinks();
+    });
+  </script>
+  </body>
+</html>
