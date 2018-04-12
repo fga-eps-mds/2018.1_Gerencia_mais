@@ -14,7 +14,14 @@ before_install:
   - pip install -r requirements.txt
 before_script:
   - sudo docker-compose -f docker-compose.yml up --d
+
+
 script:
+  - python manage.py makemigrations --noinput
+  - python manage.py migrate --noinput
   - coverage run -m django test --settings=tests.settings
   - docker-compose down
+
+after_success:
+  - coveralls
 

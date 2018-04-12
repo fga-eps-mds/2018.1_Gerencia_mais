@@ -1,1 +1,1 @@
-# Gestão de Internações cirúrgicas
+<a href='https://coveralls.io/github/fga-gpp-mds/2018.1_Gerencia_mais?branch=is64_Integrar_Frontend_e_Backend'><img src='https://coveralls.io/repos/github/fga-gpp-mds/2018.1_Gerencia_mais/badge.svg?branch=is64_Integrar_Frontend_e_Backend' alt='Coverage Status' /></a>
