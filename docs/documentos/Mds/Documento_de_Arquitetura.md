@@ -7,6 +7,7 @@
 |03/04/2018   |0.4   |Adição do tópico 6                     | Guilherme Aguiar   |
 |03/04/2018   |0.5   |Adição do tópico 7                     | Guilherme Aguiar   |
 | 11/04/2018 | 0.6 | Adição do tópico 4 | Guilherme Aguiar |
+|11/04/2018   |0.7   |Adição do tópico 3                     | Caio César Beleza   |
 # Sumário
 1. [Introdução](#1)
   * 1.1 [Finalidade](#1.1)
@@ -95,6 +96,17 @@ No framework usado para realizar o nosso *webapp*, que é o Django, é baseado n
   Figura 1- Diagrama do um MTV com react, retirado no site em 27/03/2018.
 
   ___
+
+  ## <a name="3"></a>3. Metas e Restrições da arquitetura
+  ### <a name="3.1"></a>3.1 Metas
+  O sistema a ser desenvolvido deve ter uma interface amigável ao usuário, responder as requisições em poucos segundos, além de seguir um padrão de arquitetura que ajude na manutenabilidade do software.
+
+  ### <a name="3.2"></a>3.2 Restrições
+  Este sistema será desenvolvido ultilizando o framework Django 2.0.3, que tem como base a linguagem de programação python. Além disso, será utilizado o React 16.2.0, que estará voltado ao frontend da nossa aplicação.
+  O sistema será suportado por navegadores web tais como Mozilla Firefox e Google Chrome.
+
+
+
 
 
 ## <a name="4"></a>4.  Visão de Casos de Uso
