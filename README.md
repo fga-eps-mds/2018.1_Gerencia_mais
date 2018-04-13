@@ -18,6 +18,9 @@
 <p align="justify">Projeto desenvolvido durante as disciplinas de Engenharia de Produto de Software e Métodos de Desenvolvimento de Software da Universidade de Brasília, campus Gama.</p>
 <p align="justify">O principal objetivo do projeto é oferecer uma forma de melhor alocar os médicos, de acordo com a necessidade do público. Com isso trazendo atendimentos mais efetivos, e uma melhor organização do quadro médico, fazendo com que os mesmos possam se organizar de uma forma melhor, a fim de cumprir as horas de trabalho de forma mais eficiente.</p>
 
+Gostou do projeto e gostria de contribuir? Acesse [Contribua](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/CONTRIBUTING.md) e saiba como fazer parte.
+
+
 ## 💻 Tecnologias
 
 <p><a href="image" target="_blank"><img width="100"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/TravisCI-Mascot-1.png"></a><a href="image" target="_blank"><img width="100"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/codeclimate.jpg"></a><a href="image" target="_blank"><img width="100"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/css-logo-400x400.png"></a>
@@ -97,6 +100,32 @@ Para rodar a aplicação, entre na pasta do projeto em que está localizado o __
   docker-compose up -d
 ```
 Espere até que todos os serviços estejam disponíveis, acesse a página inicial do projeto com o seguinte endereço: https://localhost:8000
+
+## 📊 Rodando os testes
+
+Para conferir a cobertura de testes, siga os passos abaixo:
+
+__1º No terminal digite:__
+```Terminal
+  coverage run -m django test --settings=tests.settings 
+```
+Isso fará com que os testes sejam executados.
+
+obs: Para funcionar, é necessário estar na raiz do projeto.
+
+__2º No terminal digite:__
+```Terminal
+  coverage report
+```
+Esse comando irá gerar um relatório contendo as porcentagens da cobertura de testes em cada módulo e a cobertura total.
+
+Obs: Para funcionar, é necessário ter realizado o passo anterior.
+
+__3º No terminal digite (opcional):__
+```Terminal
+  coverage html
+```
+Esse comando irá gerar uma pasta contendo um arquivo html(index.html) que apresenta a cobertura de testes.
 
 ## 🌎 Acessando a aplicação
 
