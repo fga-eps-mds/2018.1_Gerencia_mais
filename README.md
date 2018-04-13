@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <p align="center"><a href="image" target="_blank"><img width="600"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/logo/logo.png"></a></p>
 <p align="center">
  
@@ -106,9 +105,3 @@ Espere até que todos os serviços estejam disponíveis, acesse a página inicia
 * Ambiente de homologação: https://gicsaude.herokuapp.com/
 
 * Ambiente de produção: https://gerenciamais.herokuapp.com/
-
-
-
-=======
-<a href='https://coveralls.io/github/fga-gpp-mds/2018.1_Gerencia_mais?branch=is64_Integrar_Frontend_e_Backend'><img src='https://coveralls.io/repos/github/fga-gpp-mds/2018.1_Gerencia_mais/badge.svg?branch=is64_Integrar_Frontend_e_Backend' alt='Coverage Status' /></a>
->>>>>>> ca088bdb1272aa33c9ba3e0a473861c3f2ac2144
