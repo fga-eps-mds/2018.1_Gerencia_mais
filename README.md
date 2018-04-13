@@ -1,4 +1,4 @@
-<p align="center"><a href="image" target="_blank"><img width="600"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/logo/logo.png"></a></p>
+<p align="center"><a href="image" target="_blank"><img width="600"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/logo/logo.jpg"></a></p>
 <p align="center">
  
   <a href="https://travis-ci.org/fga-gpp-mds/2018.1_Gerencia_mais"><img src="https://travis-ci.org/fga-gpp-mds/2018.1_Gerencia_mais.svg?branch=master" alt="Build"></a>
