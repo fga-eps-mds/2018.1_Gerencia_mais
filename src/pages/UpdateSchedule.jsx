@@ -3,11 +3,9 @@ import React, { Component } from 'react';
 import '../css/bootstrap.css';
 import '../css/DoctorForm.css';
 import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
-import SideBar from '../components/SideBar';
-import FormErrors from '../components/FormErrors';
+import Footer from '../components/Footer'
+import FormErrors from '../components/FormErrors'
 import {Carousel} from 'react-bootstrap';
-
 
 export default class UpdateSchedule extends Component {
   constructor(props) {
@@ -27,7 +25,7 @@ export default class UpdateSchedule extends Component {
       new_departure_date_valid: false,
       new_departure_time_valid: false,
       form_valid: false,
-      }
+    }
   }
 
 
@@ -144,14 +142,17 @@ export default class UpdateSchedule extends Component {
     return(
       <div>
       <NavBar></NavBar>
-      <SideBar></SideBar>
-        <div className="top-space espaco espaco-acima">
+      <div className="top-space espaco espaco-acima">
           <div class="form-style-5">
             <form>
-              <h3>Atualizar horário de médicos</h3>
+              <h3>Atualização de horário de médicos</h3>
               <fieldset>
-              <legend><span class="number">1</span> Nome: </legend>
-              <legend><span class="number">2</span> Numero de Identificação: </legend>
+              <legend><span class="number">1</span> Nome</legend>
+              <input id="nameID" type="text" name="name" value={this.state.name} placeholder="Digite o nome aqui"
+                onChange={(event) => this.handleUserInput(event)}/>
+              <legend><span class="number">2</span> Numero de Identificação</legend>
+              <input id="idID" type="text" name="id" value={this.state.id} placeholder="Digite o numero aqui"
+                onChange={(event) => this.handleUserInput(event)}/>
               <legend><span class="number">3</span>Nova Data de Entrada</legend>
               <input id="edID" type="date" name="new_entry_date" value={this.state.new_entry_date}
                 onChange={(event) => this.handleUserInput(event)}/>
