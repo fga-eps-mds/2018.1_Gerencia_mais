@@ -4,7 +4,7 @@ De acordo com PMBOK, um plano de gerenciamento serve para determinar as formas d
 
 
 ## 2- Objetivo
-Definiremos nesse documento os recursos de comunicação que serão utilizados ao Facilitando a comunicação longo do projeto. A fim de reduzir os riscos relacionados à comunicação, assim como delimitar nosso objetivos e prioridas, deixando todos (MDS e EPS) alinhados.
+Definiremos nesse documento os recursos de comunicação que serão utilizados facilitando a comunicação ao longo do projeto. A fim de reduzir os riscos relacionados à comunicação, assim como delimitar nosso objetivos e prioridas, deixando todos (MDS e EPS) alinhados.
 
 ## 3- Ferramentas de comunicação
 | Ferramenta | Nome | Utilidade |
