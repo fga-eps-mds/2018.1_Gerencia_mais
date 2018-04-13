@@ -1,0 +1,17 @@
+django==2.0.3
+gunicorn==19.7.1
+whitenoise==3.3.1
+coverage==4.4.1
+flake8==3.4.1
+django-webpack-loader
+pytest
+djangorestframework
+markdown
+django-filter
+django-scheduler
+django-cors-headers
+python-dateutil
+#codeclimate
+#randon
+#duplication
+coveralls
