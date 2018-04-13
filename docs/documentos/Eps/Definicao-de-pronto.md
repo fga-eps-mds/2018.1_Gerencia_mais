@@ -3,10 +3,10 @@
 Neste documento será definido quando uma determinada tarefa tem o carater de ser chamada de pronta, quais são os pontos necessários para cada a serem cumpridos para que a mesma seja aceita como **Pronto**.
 
 ### História
-Um história de usuário (US- user history), será considerada pronto quando a funcionalidade estiver feita, e testada com cobertura de código que foi previamente delimitada em 95%(testes unitários e funcionais), e a docomuntação do projeto caso haja necessidade de atualização deve ter o aval do **Product Owner**(PO).
+Um história de usuário (US- user history), será considerada pronto quando a funcionalidade estiver feita, e testada com cobertura de código que foi previamente delimitada a ser maior ou igual a 95%(testes unitários e funcionais), e a docomuntação do projeto caso haja necessidade de atualização deve ter o aval do **Product Owner**(PO).
 
 ### Feature
-Uma Feature será cosniderada como Pronta, quando todas as suas histórias referentes estiverem também definidas como pronto, e as mesma mantendo a cobertura de códido em 95%.
+Uma Feature será cosniderada como Pronta, quando todas as suas histórias referentes estiverem também definidas como pronto, e as mesma mantendo a cobertura de códido maior ou igual a 95%.
 
 ### Sprint
 
