@@ -1,10 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Coustard|Encode+Sans');
 .title {
-  padding-left: 100px;
-  font-size: 25px;
+  margin-left: 15%;
+  font-size: 20px;
+  font-family: 'Coustard', sans-serif;
+}
+.title:hover {
+  background-color: #389e8e;
 }
 .uls {
   padding-left: 50px;
 }
 .navbar-right {
-  padding-left: 1000px;
+  font-family: 'Coustard', sans-serif;
+  font-size: 2.5em;
+  margin-left: 16%;
+  padding-right: 20px;
+}
+.navbar-right:hover {
+  text-decoration: none;
+}
+.navbar-right:active {
+  color:white;
+}
+.navbar-right:link {
+  color:white;
+}
+.navbar-right:visited {
+  color:white;
 }

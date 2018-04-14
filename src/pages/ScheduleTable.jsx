@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import NavBar from '../components/NavBar';
-import {Table,Button,ButtonToolbar,ToggleButtonGroup,ToggleButton} from 'react-bootstrap';
+import SideBar from '../components/SideBar';
+import Footer from '../components/Footer';
 import Popup from "reactjs-popup";
+import "../css/ScheduleTable.css";
+import {Table,Button,ButtonToolbar,ToggleButtonGroup,ToggleButton} from 'react-bootstrap';
 import "../css/popup.css";
 import "../css/bootstrap.min.css";
 import InfiniteCalendar from 'react-infinite-calendar';
@@ -32,7 +35,7 @@ class GridCell extends Component {
     return(
       <td onClick = {()=> this.resolveButton(this.props.line,this.props.column)}>
       <Popup
-      trigger={<button className="btn btn-outline-secondary">Servidores</button>}
+      trigger={<button className="btn btn-success botaum">Servidores</button>}
       modal
       closeOnDocumentClick
       >
@@ -61,7 +64,20 @@ export default class ScheduleTable extends Component {
 
     TableList(number){
       var lists=[];
-      var periods = ["manhã","tarde","noite"];
+      var periods = [
+      "06:00-08:00",
+      "08:00-10:00",
+      "10:00-12:00",
+      "12:00-14:00",
+      "14:00-16:00",
+      "16:00-18:00",
+      "18:00-20:00",
+      "20:00-22:00",
+      "22:00-00:00",
+      "00:00-02:00",
+      "02:00-04:00",
+      "04:00-06:00"
+      ];
       for(var cont = 0;cont <= number; cont++){
         lists.push(
         <tr>
@@ -121,31 +137,46 @@ export default class ScheduleTable extends Component {
                                   layout: 'landscape'
                                     }}
                                     width={600}
-                                    height={350} onSelect={()=>this.resolveButtonMonth()}/>
+                                height={350} onSelect={()=>this.resolveButtonMonth()}
+		  theme={{
+		      selectionColor: '#1abc9c',
+		      textColor: {
+			  default: '#333',
+			  active: '#FFF'
+		      },
+		      weekdayColor: '#1abc9c',
+		      headerColor: '#1abc9c',
+		      floatingNav: {
+			  background: 'rgba(81, 67, 138, 0.96)',
+			  color: '#FFF',
+			  chevron: '#FFA726'
+		      }
+   }}/>
             </div>
           )
     }
       else {
         var content = (
-          <Table striped bordered condensed hover>
-           <thead>
-               <tr>
-                <th>Horário</th>
-                 <th>Domingo</th>
-                 <th>Segunda</th>
-                 <th>Terça</th>
-                 <th>Quarta</th>
-                 <th>Quinta</th>
-                 <th>Sexta</th>
-                 <th>Sábado</th>
-               </tr>
-           </thead>
-          <tbody>
-       {this.TableList(2)}
 
-           </tbody>
-         </Table>
-        )
+<Table className="wallpaper" striped bordered condensed hover>
+         <thead>
+     <tr>
+      <th>Horário</th>
+       <th>Domingo</th>
+       <th>Segunda</th>
+       <th>Terça</th>
+       <th>Quarta</th>
+       <th>Quinta</th>
+       <th>Sexta</th>
+       <th>Sábado</th>
+     </tr>
+         </thead>
+         <tbody>
+     {this.TableList(11)}
+
+         </tbody>
+       </Table>
+       )
 
       }
       this.setState({"content":content})
@@ -159,9 +190,11 @@ export default class ScheduleTable extends Component {
 
 	return (
 	  <div>
-	      <NavBar></NavBar>
-        <div className="container" style={{marginTop:"70px", marginLeft:"120px", marginRight:"120px"}}>
-          <div className="jumbotron mt-3">
+	    <NavBar></NavBar>
+            <SideBar></SideBar>
+	    <h1>Quadro de Horários</h1>
+        <div className="container" style={{marginTop:"70px", marginLeft:"120px"}}>
+          <div className="jumbotron">
     	      <h1 style={{marginTop:"70px"}}>Quadro de Horários</h1>
 
             <ButtonToolbar>
@@ -173,13 +206,11 @@ export default class ScheduleTable extends Component {
                     </div>
                 </ToggleButtonGroup>
             </ButtonToolbar>
-            <div className = "row">
-              <div className = "col-sn-8">
+	    
                 {this.state.content}
-              </div>
-            </div>
           </div>
         </div>
+       <Footer></Footer>
 	    </div>
 	);
     }

@@ -11,22 +11,27 @@ import {Carousel} from 'react-bootstrap';
 
 
 
-export default class DoctorStatus extends Component {
+export default class LoginPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todos:[]
+      name: '',
+      id: '',
+      status:'' ,
+      comments: '',
+      formErrors: {name: '', id: '', entry_date: '', entry_time: '', departure_date: '', departure_time: ''},
+      name_valid: false,
+      id_valid: false,
+      form_valid: false,
+      api: [
+        {reg_name: 'Paulo', reg_ids: '1', status:true, comments:''},
+        {reg_name: 'Sabino', reg_ids: '2', status:true, comments:''},
+        {reg_name: 'Marcos', reg_ids: '3', status:true, comments:''},
+        {reg_name: 'Valquiria', reg_ids: '4', status:true, comments:''},
+      ],
     }
   }
-  async componentDidMount() {
-      try {
-        const res = await fetch('http://127.0.0.1:8000/schedule/api-event/?format=json');
-        const todos = await res.json();
-        this.setState({todos});
-      } catch (e) {
-        console.log(e);
-      }
-    }
+
 
   handleUserInput (e) {
     const name = e.target.name;
@@ -113,9 +118,17 @@ export default class DoctorStatus extends Component {
                         }, this.validateForm);
         break;
 
-    default:
-	break;
-    }
+        // case 'departure_date':
+        //   if(value > entry_date){
+        //     departure_date_valid = true;
+        //   }else{
+        //     departure_date_valid = false;
+        //   }
+        //   fieldValidationErrors.id = id_valid ? '' : 'Erro: Data de saída menor que a data de entrada' ;
+        //   this.setState({formErrors: fieldValidationErrors,
+        //                   departure_date_valid: departure_date_valid,
+        //                 }, this.validateForm);
+      }
   }
 
   validateForm() {
@@ -129,53 +142,19 @@ export default class DoctorStatus extends Component {
       <NavBar></NavBar>
       <SideBar></SideBar>
         <div className="top-space espaco espaco-acima">
-          <div className="form-style-5">
+          <div class="form-style-5">
             <form>
-	  {/*
-	      <table>
-                <thead>
-                <tr>
-                <th>Nome</th>
-                <th>Hospital</th>
-                <th>Matrícula</th>
-                <th>CPF</th>
-                <th>Descrição</th>
-                </tr>
-                </thead>
-                {this.state.todos.map(item => (
-                <tbody>
-                <tr key={item.id} className="success">
-                 <td>{item.title}</td>
-                 <td>{item.hospital}</td>
-                 <td>{item.registration}</td>
-                 <td>{item.CPF}</td>
-                 <td>{item.description}</td>
-                </tr>
-              </tbody>
-              ))}
-        </table>
-	   */}
-              <h3>Alterar Status do Médico</h3>
+              <h3>Login</h3>
               <fieldset>
-              <legend><span className="number">1</span> Nome</legend>
-              <input id="nameID" type="text" name="name" value={this.state.name} placeholder="Digite o nome aqui"
+              <legend><span class="number">1</span> Username</legend>
+              <input id="nameID" type="text" name="name" value={this.state.name} placeholder="Digite o username aqui"
                 onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span className="number">2</span> Numero de Identificação</legend>
-              <input id="idID" type="text" name="id" value={this.state.id} placeholder="Digite o numero aqui"
+              <legend><span class="number">2</span> Senha</legend>
+              <input className="form-control" id="idID" type="password" name="id" value={this.state.id} placeholder="Digite a senha aqui"
                 onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span className="number">3</span> Status</legend>
-              <input id="stsID" type="radio" name="status" value={this.state.status = true}
-                onChange={(event) => this.handleUserInput(event)}/> Disponível <br></br>
-              <input id="stnID" type="radio" name="status" value={this.state.status = false}
-                  onChange={(event) => this.handleUserInput(event)}/> Indisponível <br></br>
-                Descrição: (Opcional)
-              <textarea name='comments' value={this.state.comments} rows="4" cols="50"
-               onChange={(event) => this.handleUserInput(event)}
-              >
-              </textarea>
-              <legend>  </legend>
+              <legend><FormErrors formErrors={this.state.formErrors} /></legend>
               </fieldset>
-              <input type="submit" value="Apply"
+              <input type="submit" value="Entrar"
                 disabled={!this.state.formValid}
                 onClick={this.sendInfo}/>
             </form>

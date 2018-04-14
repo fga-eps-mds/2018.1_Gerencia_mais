@@ -4,19 +4,7 @@ import '../css/bootstrap.css';
 import '../css/NavBar.css';
 
 
-export default class NavBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {}
-  }
-  setNavBar(logged){
-    if (logged) {
-        return <a onClick={()=>this.setNavBar(true)} className="nav-link topicos title active" href="/">Sair</a>
-    } else {
-        return <a className="nav-link topicos title active" href="/LoginPage">Login</a>
-
-    }
-  }
+export default class NavBarLogged extends Component {
     render(){
 	return(
       <nav className="navbar navbar-expand-sm navbar-dark new-bg-dark fixed-top">
@@ -31,19 +19,8 @@ export default class NavBar extends Component {
              <a className="nav-link topicos active title" href="/">Home</a>
            </li>
            <li className="nav-item divider-vertical">
-             {this.setNavBar(false)}
+             <a onClick={logged = false} className="nav-link topicos title active" href="/">Sair</a>
            </li>
          </ul>
        </div>
       </nav>
-
-
-
-
-
-
-
-
-	);
-    }
-}
