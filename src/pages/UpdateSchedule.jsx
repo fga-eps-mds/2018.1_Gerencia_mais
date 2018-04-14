@@ -36,7 +36,6 @@ export default class UpdateSchedule extends Component {
     }
   }
 
-
   handleUserInput (e) {
     const name = e.target.name;
     const value = e.target.value;
@@ -127,43 +126,179 @@ export default class UpdateSchedule extends Component {
     this.setState({formValid: this.state.name_valid});
   }
 
-    render(){
+    sendInfo(){
+    var name = document.getElementById("nameID").value;
+    var id = document.getElementById("idID").value;
+    var new_entry_date = document.getElementById("edID").value;
+    var new_entry_time = document.getElementById("etID").value;
+    var new_departure_date = document.getElementById("ddID").value;
+    var new_departure_time = document.getElementById("dtID").value;
+    var info = new Array();
+    info.push(name);
+    info.push(id);
+    info.push(new_entry_date);
+    info.push(new_entry_time);
+    info.push(new_departure_date);
+    info.push(new_departure_time);
+    var dictstring = JSON.stringify(info);
+    console.log(dictstring);
+  }
+
+
+  render(){
     return(
       <div>
       <NavBar></NavBar>
-      <SideBar></SideBar>
-        <div className="top-space espaco espaco-acima">
+      <div className="top-space espaco espaco-acima">
           <div class="form-style-5">
             <form>
-              <h3>Atualizar horário de médicos</h3>
+              <h3>Atualização de horário de médicos</h3>
               <fieldset>
-              <legend><span class="number">1</span> Nome: </legend>
-              <legend><span class="number">2</span> Numero de Identificação: </legend>
+              <legend><span class="number">1</span> Nome</legend>
+              <input id="nameID" type="text" name="name" value={this.state.name} placeholder="Digite o nome aqui"
+                onChange={(event) => this.handleUserInput(event)}/>
+              <legend><span class="number">2</span> Numero de Identificação</legend>
+              <input id="idID" type="text" name="id" value={this.state.id} placeholder="Digite o numero aqui"
+                onChange={(event) => this.handleUserInput(event)}/>
               <legend><span class="number">3</span>Nova Data de Entrada</legend>
               <input id="edID" type="date" name="new_entry_date" value={this.state.new_entry_date}
                 onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span class="number">4</span>Novo Horário de Entrada</legend>
-              <input id="etID" type="time" name="new_entry_time" value={this.state.new_entry_time} placeholder="Digite o numero aqui"
-                onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span class="number">5</span>Nova Data de Saída</legend>
-              <input id="ddID" type="date" name="new_departure_date" value={this.state.new_departure_date}
-                onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span class="number">6</span>Novo Horário de Saída</legend>
-              <input id="dtID" type="time" name="new_departure_time" value={this.state.new_departure_time} placeholder="Digite o numero aqui"
-                onChange={(event) => this.handleUserInput(event)}/>
-              <legend><FormErrors formErrors={this.state.formErrors} /></legend>
-              </fieldset>
-              <input type="submit" value="Apply"
-                disabled={!this.state.formValid}
-                onClick={this.Apply}/>
-            </form>
+                          <legend><span class="number">4</span>Novo Horário</legend>
+                    <table id="t01" className="tabelatamanho">
+                    <tr>
+                      <th>Horário</th>
+                      <th>Dom</th>
+                      <th>Seg</th>
+                      <th>Ter</th>
+                      <th>Qua</th>
+                      <th>Qui</th>
+                      <th>Sex</th>
+                      <th>Sab</th>
+                    </tr>
+                    <tr>
+                      <td>06:00-08:00</td>
+                      <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                      <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                      <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                      <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                      <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                      <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                      <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                    </tr>
+                    <tr>
+                      <td>10:00-12:00</td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                    </tr>
+                    <tr>
+                      <td>12:00-14:00</td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                    </tr>
+                    <tr>
+                      <td>14:00-16:00</td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                    </tr>
+                    <tr>
+                      <td>16:00-18:00</td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                    </tr>
+                    <tr>
+                      <td>18:00-20:00</td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                    </tr>
+                    <tr>
+                      <td>20:00-22:00</td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                    </tr>
+                    <tr>
+                      <td>22:00-00:00</td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                    </tr>
+                    <tr>
+                      <td>00:00-02:00</td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                    </tr>
+                    <tr>
+                      <td>02:00-04:00</td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                    </tr>
+                    <tr>
+                      <td>04:00-06:00</td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                        <td><input type="checkbox" name="vehicle" value="Bike"/></td>
+                    </tr>
+                  </table>
+                  <legend><FormErrors formErrors={this.state.formErrors} /></legend>
+                  </fieldset>
+                  <input type="submit" value="Apply"
+                    disabled={!this.state.formValid}
+                    onClick={this.sendInfo}/>
+                </form>
+                </div>
             </div>
-        </div>
-        <Footer ></Footer>
-      </div>
+            <Footer ></Footer>
+          </div>
 
 
-    );
+        );
 
-  }
-}
+      }
+    }
