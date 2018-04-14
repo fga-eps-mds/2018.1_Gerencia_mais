@@ -25,9 +25,15 @@ export default class UpdateSchedule extends Component {
       new_departure_date_valid: false,
       new_departure_time_valid: false,
       form_valid: false,
-    }
-  }
 
+    api: [
+      {reg_name: 'Paulo', reg_ids: '1', status:true},
+      {reg_name: 'Sabino', reg_ids: '2', status:true},
+      {reg_name: 'Marcos', reg_ids: '3', status:true},
+      {reg_name: 'Valquiria', reg_ids: '4', status:true},
+    ],
+  }
+}
 
   handleUserInput (e) {
     const name = e.target.name;
