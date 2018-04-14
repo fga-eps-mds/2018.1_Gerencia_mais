@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import '../css/bootstrap.css';
 import '../css/DoctorForm.css';
 import NavBar from '../components/NavBar';
-import SideBar from '../components/SideBar';
 import Footer from '../components/Footer'
 import FormErrors from '../components/FormErrors'
 import {Carousel} from 'react-bootstrap';
@@ -11,22 +10,27 @@ import {Carousel} from 'react-bootstrap';
 
 
 
-export default class DoctorStatus extends Component {
+export default class DoctorForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todos:[]
+      name: '',
+      id: '',
+      new_entry_date: '',
+      new_entry_time: '',
+      new_departure_date: '',
+      new_departure_time: '',
+      formErrors: {name: '', id: '', new_entry_date: '', new_entry_time: '', new_departure_date: '', new_departure_time: ''},
+      name_valid: false,
+      id_valid: false,
+      new_entry_date_valid: false,
+      new_entry_time_valid: false,
+      new_departure_date_valid: false,
+      new_departure_time_valid: false,
+      form_valid: false,
     }
   }
-  async componentDidMount() {
-      try {
-        const res = await fetch('http://127.0.0.1:8000/schedule/api-event/?format=json');
-        const todos = await res.json();
-        this.setState({todos});
-      } catch (e) {
-        console.log(e);
-      }
-    }
+
 
   handleUserInput (e) {
     const name = e.target.name;
@@ -41,8 +45,6 @@ export default class DoctorStatus extends Component {
     let fieldValidationErrors = this.state.formErrors;
     let name_valid = this.state.name_valid;
     let id_valid = this.state.id_valid;
-    // let entry_date_ =  this.state.entry_date;
-    // let departure_date_valid = this.state.departure_date_valid;
     let name = this.state.name;
     let id = this.state.id;
     let api = this.state.api;
@@ -113,13 +115,29 @@ export default class DoctorStatus extends Component {
                         }, this.validateForm);
         break;
 
-    default:
-	break;
-    }
+      }
   }
 
   validateForm() {
     this.setState({formValid: this.state.name_valid});
+  }
+
+  sendInfo(){
+    var name = document.getElementById("nameID").value;
+    var id = document.getElementById("idID").value;
+    var new_entry_date = document.getElementById("edID").value;
+    var new_entry_time = document.getElementById("etID").value;
+    var new_departure_date = document.getElementById("ddID").value;
+    var new_departure_time = document.getElementById("dtID").value;
+    var info = new Array();
+    info.push(name);
+    info.push(id);
+    info.push(new_entry_date);
+    info.push(new_entry_time);
+    info.push(new_departure_date);
+    info.push(new_departure_time);
+    var dictstring = JSON.stringify(info);
+    console.log(dictstring);
   }
 
 
@@ -127,53 +145,26 @@ export default class DoctorStatus extends Component {
     return(
       <div>
       <NavBar></NavBar>
-      <SideBar></SideBar>
-        <div className="top-space espaco espaco-acima">
-          <div className="form-style-5">
+      <div className="top-space espaco espaco-acima">
+          <div class="form-style-5">
             <form>
-	  {/*
-	      <table>
-                <thead>
-                <tr>
-                <th>Nome</th>
-                <th>Hospital</th>
-                <th>Matrícula</th>
-                <th>CPF</th>
-                <th>Descrição</th>
-                </tr>
-                </thead>
-                {this.state.todos.map(item => (
-                <tbody>
-                <tr key={item.id} className="success">
-                 <td>{item.title}</td>
-                 <td>{item.hospital}</td>
-                 <td>{item.registration}</td>
-                 <td>{item.CPF}</td>
-                 <td>{item.description}</td>
-                </tr>
-              </tbody>
-              ))}
-        </table>
-	   */}
-              <h3>Alterar Status do Médico</h3>
+              <h3>Atualização de horário de médicos</h3>
               <fieldset>
-              <legend><span className="number">1</span> Nome</legend>
-              <input id="nameID" type="text" name="name" value={this.state.name} placeholder="Digite o nome aqui"
+              <legend><span class="number">1</span> Nome: </legend>
+              <legend><span class="number">2</span> Numero de Identificação: </legend>
+              <legend><span class="number">3</span>Nova Data de Entrada</legend>
+              <input id="edID" type="date" name="new_entry_date" value={this.state.new_entry_date}
                 onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span className="number">2</span> Numero de Identificação</legend>
-              <input id="idID" type="text" name="id" value={this.state.id} placeholder="Digite o numero aqui"
+              <legend><span class="number">4</span>Novo Horário de Entrada</legend>
+              <input id="etID" type="time" name="new_entry_time" value={this.state.new_entry_time} placeholder="Digite o numero aqui"
                 onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span className="number">3</span> Status</legend>
-              <input id="stsID" type="radio" name="status" value={this.state.status = true}
-                onChange={(event) => this.handleUserInput(event)}/> Disponível <br></br>
-              <input id="stnID" type="radio" name="status" value={this.state.status = false}
-                  onChange={(event) => this.handleUserInput(event)}/> Indisponível <br></br>
-                Descrição: (Opcional)
-              <textarea name='comments' value={this.state.comments} rows="4" cols="50"
-               onChange={(event) => this.handleUserInput(event)}
-              >
-              </textarea>
-              <legend>  </legend>
+              <legend><span class="number">5</span>Nova Data de Saída</legend>
+              <input id="ddID" type="date" name="new_departure_date" value={this.state.new_departure_date}
+                onChange={(event) => this.handleUserInput(event)}/>
+              <legend><span class="number">6</span>Novo Horário de Saída</legend>
+              <input id="dtID" type="time" name="new_departure_time" value={this.state.new_departure_time} placeholder="Digite o numero aqui"
+                onChange={(event) => this.handleUserInput(event)}/>
+              <legend><FormErrors formErrors={this.state.formErrors} /></legend>
               </fieldset>
               <input type="submit" value="Apply"
                 disabled={!this.state.formValid}
