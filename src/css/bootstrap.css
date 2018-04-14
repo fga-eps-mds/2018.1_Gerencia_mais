@@ -2572,8 +2572,8 @@ fieldset:disabled a.btn {
 
 .btn-success {
   color: #fff;
-  background-color: #28a745;
-  border-color: #28a745;
+  background-color: #1abc9c;
+  border-color: #1abc9c;
 }
 
 .btn-success:hover {
@@ -3966,13 +3966,7 @@ tbody.collapse.show {
 }
 
 .navbar-brand {
-  display: inline-block;
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
-  margin-right: 1rem;
-  font-size: 1.25rem;
-  line-height: inherit;
-  white-space: nowrap;
+
 }
 
 .navbar-brand:hover, .navbar-brand:focus {
@@ -6146,7 +6140,11 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #343a40 !important;
+  background-color: #15dbad !important;
+}
+
+.new-bg-dark {
+  background-color: #37b495;
 }
 
 a.bg-dark:hover, a.bg-dark:focus,
@@ -6156,7 +6154,7 @@ button.bg-dark:focus {
 }
 
 .espaco{
-  padding-bottom: 300px;
+  padding-bottom: 200px;
 }
 
 .bg-white {

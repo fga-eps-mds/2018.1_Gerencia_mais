@@ -3,9 +3,11 @@ import React, { Component } from 'react';
 import '../css/bootstrap.css';
 import '../css/DoctorForm.css';
 import NavBar from '../components/NavBar';
-import Footer from '../components/Footer'
-import FormErrors from '../components/FormErrors'
+import Footer from '../components/Footer';
+import SideBar from '../components/SideBar';
+import FormErrors from '../components/FormErrors';
 import {Carousel} from 'react-bootstrap';
+
 
 export default class UpdateSchedule extends Component {
   constructor(props) {
@@ -25,15 +27,14 @@ export default class UpdateSchedule extends Component {
       new_departure_date_valid: false,
       new_departure_time_valid: false,
       form_valid: false,
-
-    api: [
-      {reg_name: 'Paulo', reg_ids: '1', status:true},
-      {reg_name: 'Sabino', reg_ids: '2', status:true},
-      {reg_name: 'Marcos', reg_ids: '3', status:true},
-      {reg_name: 'Valquiria', reg_ids: '4', status:true},
-    ],
+      api: [
+        {reg_name: 'Paulo', reg_ids: '1', status:true},
+        {reg_name: 'Sabino', reg_ids: '2', status:true},
+        {reg_name: 'Marcos', reg_ids: '3', status:true},
+        {reg_name: 'Valquiria', reg_ids: '4', status:true},
+      ],
+    }
   }
-}
 
   handleUserInput (e) {
     const name = e.target.name;
@@ -125,7 +126,7 @@ export default class UpdateSchedule extends Component {
     this.setState({formValid: this.state.name_valid});
   }
 
-  sendInfo(){
+    sendInfo(){
     var name = document.getElementById("nameID").value;
     var id = document.getElementById("idID").value;
     var new_entry_date = document.getElementById("edID").value;
