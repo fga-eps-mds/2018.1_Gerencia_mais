@@ -8,6 +8,7 @@
 |03/04/2018   |0.5   |Adição do tópico 7                     | Guilherme Aguiar   |
 | 11/04/2018 | 0.6 | Adição do tópico 4 | Guilherme Aguiar |
 |11/04/2018   |0.7   |Adição do tópico 3                     | Caio César Beleza   |
+|11/04/2018 | 0.8 | Adição do subtópico 1.5 e correção no tópico 2 | Guilherme Aguiar |
 # Sumário
 1. [Introdução](#1)
   * 1.1 [Finalidade](#1.1)
@@ -70,19 +71,35 @@ ___
 * BORGES, Felipe; HIROSHI, Lucas; MARQUES, Guilherme; KISHIMA, Lucas; NASCIMENTO, Mateus; MARTINS, Michel; MARIA, Natália; Projeto Receituário Médico: Documento de Arquitetura. Disponível em: https://github.com/fga-gpp-mds/2017.2-Receituario-Medico/wiki/Documento-de-Arquitetura. Acesso em 27 mar. 2018.
 
 ### <a name="1.5"></a>1.5 Visão Geral
+Este documento é dividido nas seguintes secções:
+
+*    __Introdução__: Apresentação da finalidade e organização do documento.
+
+*    __Representação de Arquitetura__: Demonstra a arquitetura que usaremos no sistema.
+
+*      __Restrições e Metas de Arquitetura__: Mostra os requisitos de usabilidade do software o os objetivos que impactam significativamente a aplicação.
+
+
+*    __Visão de Casos de Uso__: Mostra todos casos de uso da aplicação.
+
+*    __Visão Geral__: Apresenta como será implementado a arquitetura no sistema e partes importantes do projeto do ponto de vista da arquitetura e da modelagem do design.
+
+*    __Desempenho__: Descreve as características da aplicação que impactam no desempenho.
+
+*    __Qualidade__: Descreve como a escolha da arquitetura do software contribui para os recursos da aplicação.
 
 
 ____
 
 ## <a name="2"></a>2. Representação da Arquitetura
-No projeto será adotado um modelo de camadas chamado MVC (model , view, controller). Dessa maneira implementando cada uma dessas camadas proporciona aos desenvolvedores uma manutenção mais fácil e o maior reaproveitamento de classes em partes do projeto no futuro. Esse modelo é muito adotado em projetos web assim como em projetos que demandão uma grande manutabilidade nos seus códigos. A seguir estão as funções de cada uma das camadas do modelo seguido.
+O modelo de arquitetura MVC (model , view, controller) proporciona aos desenvolvedores uma manutenção mais fácil e o maior reaproveitamento de classes em partes do projeto no futuro. Esse modelo é muito adotado em projetos web assim como em projetos que demandão uma grande manutabilidade nos seus códigos. A seguir estão as funções de cada uma das camadas do modelo:
   - *Model*: É responsável pela gerência de dados, as lógicas e as regras de negócios relacionado ao bando de dados do sistema da aplicação.
 
   - *View*: É responsável pela interface gráfica do sistema assim sendo a parte da aplicação que terá contato direto com o usuário da aplicação.
 
   - *Controller*: Responsável por receber as requisições que o usuário fez na view e controla assim as ações dentro da aplicação relacionadas a requições feitas. A controller é a intermediadora entre a view e a model. Nessa camada todas as requisções feitas são convertidas em ações que irão interagir entre sí na maioria das vezes elas são feitas pela model para view ou da view para a model.
 
-No framework usado para realizar o nosso *webapp*, que é o Django, é baseado no modelo anterios porém sua estrutura tem algumas alterações. O Django usa o modelo MVT (model , view, template). A seguir será explicado mais sobre  o funcionamento desses pacotes.
+O framework usado como backend do Nosso *webapp*, o Django, é baseado no modelo anterior porém sua estrutura tem algumas alterações. O Django usa o modelo MVT (model , view, template). A seguir será explicado mais sobre  o funcionamento desses pacotes:
 *  *Model*: É a camada onde é definido as ações com o banco de dados da aplicação, nela também são feitas a escrita, leitura e a validação das informações do fluxo de dados. Sendo assim a model é onde controla tudo do banco de dados na aplicação bem como suas regras e comportamento.
 
 * *Template*: Template é a camada que faz o papel da view no modelo anterior, ou seja, nela que o usúario irá interagir. O nosso caso do projeto trocamos a camada da view padrão do Django e adicionamos outro framework chamado react feito pelo facebook para fins de interface gráfica nesse caso usamos uma API Rest framework para transformar as informações da aplicação para um json que será usado no react para criar a interface do projeto.
