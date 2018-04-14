@@ -27,22 +27,7 @@ export default class HomePage extends Component {
          	</div>
          </div>
 
-         <div className="container espaco">
-           <div className="row">
-             <div className="col-lg-4"><img className="image" src ="http://www.guiabocasanta.com.br/wp-content/uploads/2015/03/HospitalUnimep.jpg" align="middle"/>
-              <h2 className='content aumentabemmenos whitewash'>Titulo Interessante</h2>
-              <h3 className=' aumentamenosainda whitewash'>Uma descrição bem interessante que não é um placeholder.</h3>
-             </div>
-             <div className="col-lg-4"><img className="image" src ="http://www.guiabocasanta.com.br/wp-content/uploads/2015/03/HospitalUnimep.jpg" align="middle"/>
-              <h2 className='content aumentabemmenos whitewash'>Titulo Interessante</h2>
-              <h3 className=' aumentamenosainda whitewash'>Uma descrição bem interessante que não é um placeholder.</h3>
-             </div>
-             <div className="col-lg-4"><img className="image" src ="http://www.guiabocasanta.com.br/wp-content/uploads/2015/03/HospitalUnimep.jpg" align="middle"/>
-              <h2 className='content aumentabemmenos whitewash'>Titulo Interessante</h2>
-              <h3 className=' aumentamenosainda whitewash'>Uma descrição bem interessante que não é um placeholder.</h3>
-             </div>
-           </div>
-         </div>
+
 
          <Footer></Footer>
 
@@ -53,3 +38,19 @@ export default class HomePage extends Component {
 	);
     }
 }
+// <div className="container espaco">
+//   <div className="row">
+//     <div className="col-lg-4"><img className="image" src ="http://www.guiabocasanta.com.br/wp-content/uploads/2015/03/HospitalUnimep.jpg" align="middle"/>
+//      <h2 className='content aumentabemmenos whitewash'>Titulo Interessante</h2>
+//      <h3 className=' aumentamenosainda whitewash'>Uma descrição bem interessante que não é um placeholder.</h3>
+//     </div>
+//     <div className="col-lg-4"><img className="image" src ="http://www.guiabocasanta.com.br/wp-content/uploads/2015/03/HospitalUnimep.jpg" align="middle"/>
+//      <h2 className='content aumentabemmenos whitewash'>Titulo Interessante</h2>
+//      <h3 className=' aumentamenosainda whitewash'>Uma descrição bem interessante que não é um placeholder.</h3>
+//     </div>
+//     <div className="col-lg-4"><img className="image" src ="http://www.guiabocasanta.com.br/wp-content/uploads/2015/03/HospitalUnimep.jpg" align="middle"/>
+//      <h2 className='content aumentabemmenos whitewash'>Titulo Interessante</h2>
+//      <h3 className=' aumentamenosainda whitewash'>Uma descrição bem interessante que não é um placeholder.</h3>
+//     </div>
+//   </div>
+// </div>
