@@ -149,6 +149,7 @@ export default class UpdateSchedule extends Component {
     return(
       <div>
       <NavBar></NavBar>
+      <SideBar></SideBar>
       <div className="top-space espaco espaco-acima">
           <div class="form-style-5">
             <form>
