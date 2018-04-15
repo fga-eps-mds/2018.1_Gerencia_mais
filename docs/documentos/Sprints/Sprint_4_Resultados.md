@@ -1,6 +1,6 @@
 
 
-# ✅ Resultados da Sprint 2
+# ✅ Resultados da Sprint 4
 
 ## Sumário
 
@@ -26,14 +26,14 @@
 ![Quadro de horas trabalhadas MDS.](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/docs/docs/documentos/imagens/sprint2/tabela-horas-MDS-sprint2.png)
 ![Gráfico de horas trabalhadas MDS.](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/docs/docs/documentos/imagens/sprint2/grafico-horas-MDS-sprint2.png)
 
-Obs: As horas trabalhadas pela equipe de mds é descrita pela linha "Semana 2".
+Obs: As horas trabalhadas pela equipe de mds é descrita pela linha "Semana 4".
 
 ### 🔵 Quadro e gráfico de horas trabalhadas EPS
 
 ![Quadro de horas trabalhadas EPS.]()
 ![Gráfico de horas trabalhadas EPS.]()
 
-Obs: As horas trabalhadas pela equipe de EPS é descrita pela linha "Semana 2".
+Obs: As horas trabalhadas pela equipe de EPS é descrita pela linha "Semana 4".
 
 ## 3 - Tarefas
 
