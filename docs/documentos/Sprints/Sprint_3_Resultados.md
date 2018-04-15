@@ -1,6 +1,6 @@
 
 
-# ✅ Resultados da Sprint 2
+# ✅ Resultados da Sprint 3
 
 ## Sumário
 
@@ -12,7 +12,7 @@
 
 | | |
 |:--:|:--:|
-|**Número da sprint**|2|
+|**Número da sprint**|3|
 |**Data de início**|24/03/2017|
 |**Data de término**|31/03/2017|
 |**Duração**|7 dias|
