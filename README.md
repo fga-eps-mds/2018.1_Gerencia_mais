@@ -23,9 +23,11 @@ Gostou do projeto e gostria de contribuir? Acesse [Contribua](https://github.com
 
 ## 📈 Monitoramento de serviços
 
-<p align="justify">Nosso servidor de produção é monitorado constantemente, você pode visualizar em tempo real o consumo de recursos como: cpu, memória entre outros dados clique na imagem abaixo.</p>
+<p align="justify">Nosso servidor de produção é monitorado constantemente, você pode visualizar em tempo real o consumo de recursos como: cpu, memória entre outros dados. Clique na imagem abaixo.</p>
 
 <p><a href="https://app.datadoghq.com/dash/host/457413069?live=true&from_ts=1523759448318&to_ts=1523763048318&page=0&is_auto=false&tile_size=l&abstraction_level=1&aggregate_up=false&per_page=30&use_date_happened=true&display_timeline=false" target="_blank"><img width="900"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/monitor.gif"></a></p>
+
+Obs: O serviço ainda está sendo configurado.
 <br>
 
 
