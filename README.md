@@ -14,14 +14,22 @@
 </p>
 
 
-
-
 ## ℹ️ Sobre o projeto
 <p align="justify">Projeto desenvolvido durante as disciplinas de Engenharia de Produto de Software e Métodos de Desenvolvimento de Software da Universidade de Brasília, campus Gama.</p>
 <p align="justify">O principal objetivo do projeto é oferecer uma forma de melhor alocar os médicos, de acordo com a necessidade do público. Com isso trazendo atendimentos mais efetivos, e uma melhor organização do quadro médico, fazendo com que os mesmos possam se organizar de uma forma melhor, a fim de cumprir as horas de trabalho de forma mais eficiente.</p>
 
 Gostou do projeto e gostria de contribuir? Acesse [Contribua](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/CONTRIBUTING.md) e saiba como fazer parte.
+<br>
 
+## 📈 Monitoramento de serviços
+
+<p align="justify">Nosso servidor de produção é monitorado constantemente, você pode visualizar em tempo real o consumo de recursos como: cpu, memória entre outros dados clique na imagem abaixo.</p>
+
+<p><a href="https://app.datadoghq.com/dash/host/457413069?live=true&from_ts=1523759448318&to_ts=1523763048318&page=0&is_auto=false&tile_size=l&abstraction_level=1&aggregate_up=false&per_page=30&use_date_happened=true&display_timeline=false" target="_blank"><img width="900"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/monitor.gif"></a></p>
+<br>
+
+
+<br>
 
 ## 💻 Tecnologias
 
@@ -41,6 +49,7 @@ Gostou do projeto e gostria de contribuir? Acesse [Contribua](https://github.com
 </a><a href="image" target="_blank"><img width="100"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/zenhub.jpg"></a>
  </a>
  <a href="image" target="_blank"><img width="100"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/ColourContrastAnalyserPortable_128.png"></a>
+ <a href="image" target="_blank"><img width="150"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/datadog.png"></a>
  <a href="image" target="_blank"><img width="100"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/coveralls-logo.png"></a>
 
 ## 🐳 Guia de Uso do Docker
