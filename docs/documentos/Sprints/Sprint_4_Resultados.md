@@ -40,7 +40,7 @@ Obs: As horas trabalhadas pela equipe de EPS é descrita pela linha "Semana 4".
 ***Technical Stories***
 
 |ID|História|Pontos|Responsáveis|status|
-|:-:|:-----:|:----:|:----------:|
+|:-:|:-----:|:----:|:----------:|:-------:|
 |[#06](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/6)|TS07 - Elaborar prototipo de alta fidelidade|3|João e Caio Beleza|Aceito|
 |[#27](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/27)|TS09 - Configurar deploy contínuo|13|Eduardo Junior|Aceito|
 |[#64](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/64)|TS11 - Eu como desenvolvedor desejo Integrar frontend com o backend para que seja corrigido falhas de compatibilidade.|8|Guilherme Aguiar e Victor Hugo|Aceito|
