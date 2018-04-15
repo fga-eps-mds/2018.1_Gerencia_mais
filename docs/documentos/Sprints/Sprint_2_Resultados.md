@@ -40,6 +40,7 @@ Obs: As horas trabalhadas pela equipe de EPS é descrita pela linha "Semana 2".
 |----|-----|------------------|-----|
 |[#26](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/issues/26)|Integração contínua (travis)|Caio Gabriel|Concluído|
 |[#24](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/issues/24)|Modificar docker para integrar Django e React|Eduardo Júnio|Concluído|
+|[#15](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/15)|Dojo de React|Ulysses Lara|Concluído|
 
 
 * Resultados
