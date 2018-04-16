@@ -54,6 +54,8 @@ Obs: O serviço ainda está sendo configurado.
  <a href="image" target="_blank"><img width="150"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/datadog.png"></a>
  <a href="image" target="_blank"><img width="100"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/coveralls-logo.png"></a>
 
+<br>
+
 ## 🐳 Guia de Uso do Docker
 
 * ### Instalação
@@ -147,3 +149,24 @@ Esse comando irá gerar uma pasta contendo um arquivo html(index.html) que apres
 * Ambiente de homologação: https://gicsaude.herokuapp.com/
 
 * Ambiente de produção: https://gerenciamais.herokuapp.com/
+
+<br>
+
+### 👤 Equipe de EPS
+
+
+<a href='https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/time/eduardo'><img width="130" src='https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/time/eduardo' alt='python' /></a>. <a href='https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/time/ulysses'><img width="130" src='https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/time/ulysses' alt='python' /></a>
+<a href='https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/time/caio'><img width="130" src='https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/time/caio' alt='python' /></a>
+<a href='https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/time/saliba'><img width="130" src='https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/time/saliba' alt='python' /></a>
+<a href='https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/time/rafael'><img width="130" src='https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/time/rafael' alt='python' /></a>
+
+
+
+### 👤 Equipe de MDS
+
+<a href='https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/time/victor'><img width="130" src='https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/time/victor' alt='python' /></a>
+<a href='https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/time/caiomds'><img width="130" src='https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/time/caiomds' alt='python' /></a>
+<a href='https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/time/guilherme'><img width="130" src='https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/time/guilherme' alt='python' /></a>
+<a href='https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/time/joao'><img width="130" src='https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/time/joao' alt='python' /></a>
+<a href='https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/time/adryelly'><img width="130" src='https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/time/adryelly' alt='python' /></a>
+
