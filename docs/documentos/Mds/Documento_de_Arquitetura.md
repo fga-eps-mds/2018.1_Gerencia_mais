@@ -9,7 +9,8 @@
 | 11/04/2018 | 0.6 | Adição do tópico 4 | Guilherme Aguiar |
 |11/04/2018   |0.7   |Adição do tópico 3                     | Caio César Beleza   |
 |11/04/2018 | 0.8 | Adição do subtópico 1.5 e correção no tópico 2 | Guilherme Aguiar |
-|15/04/2018   |1.1   |Adição de especificações do tópico 2   | Victor|
+|15/04/2018 | 0.9 | Adição do tópico 5 | João Vitor |
+|15/04/2018 | 1.1   | Adição de mais especificações do tópico 2| Victor |
 # Sumário
 1. [Introdução](#1)
   * 1.1 [Finalidade](#1.1)
@@ -147,6 +148,18 @@ Nosso software vai manipular informações relacionadas aos médicos do hospital
 | UC03 - Atualizar status do médico | Este caso permite ao administrador atualizar o status de disponibilidade do médico. |
 | UC04 - Visualizar tabela | Este caso permite ao administrador visualizar a tabela de horários de acordo com os dados passados anteriormente. |
 | UC05 - Realizar Login | Este caso permite ao administrador a realização de login e logout, ou seja, permite a entrada e saída do sistema. |
+  ___
+## <a name="5"></a>5.  Visão Lógica
+
+## <a name="5.1"></a>5.1  Visão Geral
+As principais classes do ponto de vista da arquitetura do software e as implementações das funcionalidades são divididas pacotes que representam as camadas do modelo MTV, no caso, com o react substituindo o template padrão do Django. A divisão em pacotes está representada no diagrama abaixo.
+
+## <a name="5.2"></a>5.2  Visão de Implantação
+Visão geral da aplicação do ponto de vista de pacotes e aplicativos dentro da arquitetura do sistema.
+
+![Documento de Arquitetura][diag]
+
+[diag]:../imagens/Documento_de_arquitetura/PackageDiagram.png "Documento de Arquitetura"
   ___
 ## <a name="6"></a>6.  Desempenho
 Nosso software vai manipular informações relacionadas aos médicos do hospital regional do Gama, logo a quantidade de dados que devemos processar é mediana, logo o sistema não deverá ter dificuldade na manipulação dos dados. O desempenho dependerá também do aparelho que o sistema será usado e pelo navegador.
