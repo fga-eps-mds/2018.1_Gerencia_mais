@@ -43,9 +43,10 @@ Obs: As horas trabalhadas pela equipe de EPS é descrita pela linha "Semana 2".
 |[#15](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/15)|Dojo de React|Ulysses Lara|Concluído|
 
 
-* Resultados
 
 ## 4 - Retrospectiva da Sprint
 ![Retrospectiva](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/docs/docs/documentos/imagens/sprint2/retrospectiva.png)
 
+##5 - Riscos
 
+Na Sprint 2 o risco relevante ao escopo percistiu no projeto, para reduzir seu impacto continuou-se com a mesma estrategia realizada na sprint 1, de focar em aspectos independentes do escopo.

@@ -71,3 +71,9 @@ Obs: As horas trabalhadas pela equipe de EPS é descrita pela linha "Semana 2".
 
 ## 4 - Retrospectiva da Sprint
 ![Retrospectiva]()
+
+## 5 - Riscos
+
+***conhecimento***
+
+Nessa Sprint o risco de conhecimento do time se mostrou desfavorável ao desenvolvimento do projeto, a solução tomada para reduzir foi adicionar um membro de EPS para o desenvolvimento, pareando com membros de MDS para difundir o conhecimento.

@@ -49,4 +49,6 @@ Obs: As horas trabalhadas pela equipe de EPS é descrita pela linha "Semana 1".
 ## 4 - Retrospectiva da Sprint
 ![Retrospectiva](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/docs/docs/documentos/imagens/sprint1/Retrospectiva_sprint_1.jpg)
 
+## 5 - Riscos 
 
+Nessa sprint houve a ocorrencia do risco de falta de escopo que prejudicou o time em como iniciar o projeto, para que esse risco não causa-se grande impacto no projeto foi dado prioridade a atividades que não eram dependentes do escopo.  

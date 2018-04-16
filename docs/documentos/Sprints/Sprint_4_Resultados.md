@@ -55,7 +55,12 @@ Obs: As horas trabalhadas pela equipe de EPS é descrita pela linha "Semana 4".
 |[#66](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/66)|US10 - Eu como usuário desejo visualizar uma sidebar para que seja aprimorado a navegabilidade do site.|3|João Vitor e Caio Beleza|Aceito|
 
 
-* Resultados
 
 ## 4 - Retrospectiva da Sprint
 ![Retrospectiva]()
+
+## 5 - Riscos
+
+***conhecimento***
+
+Nessa Sprint o risco de conhecimento como na sprint anterior se mostrou desfavorável ao desenvolvimento do projeto, a solução tomada para reduzir foi adicionar um membro de EPS para o desenvolvimento, pareando com membros de MDS para difundir o conhecimento.
