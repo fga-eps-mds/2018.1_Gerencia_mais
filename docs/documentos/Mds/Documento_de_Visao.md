@@ -1,19 +1,20 @@
 # Controle de versão:
 |Data|Versão|Descrição|Autor|
 |--- |---   |---      |---  |
-|21/03/2018|0.1|adição dos primeiros passos do documento de visão| Victor|
-|21/03/2018|0.2|construção do escopo do documento de visão| Victor|
-|22/03/2018|0.3|adição dos perfis dos envolvidos|Guilherme Aguiar |
-|22/03/2018|0.4|adição do Posicionamento|Caio César, Victor|
-|22/03/2018|0.5|adição do tópico 1 do sumário a Introdução|Victor, Caio|
-|23/03/2018|0.6|adição do tópico 4 do sumário a Visão Geral do Produto|Victor|
-|24/03/2018|0.7|adição do tópico 5 do sumário os Recursos do Produto| Victor |
-|24/03/2018|0.8|adição do tópico 6 do sumário as Restrições e correção de bug de interface|Victor|
-|24/03/2018|0.9|adição de três subtópicos da descrição da parte interessada e dos usuários| Guilherme Aguiar
-|25/03/2018|1.0|adição do subtópico 3.5 sobre a parte interessada do usuário| Adrielly Rodrigues
-|25/03/2018|1.1|adição do subtópico 3.6 sobre alternativas e concorrências| Adrielly Rodrigues
+|21/03/2018|0.1|Adição dos primeiros passos do documento de visão| Victor|
+|21/03/2018|0.2|Construção do escopo do documento de visão| Victor|
+|22/03/2018|0.3|Adição dos perfis dos envolvidos|Guilherme Aguiar |
+|22/03/2018|0.4|Adição do Posicionamento|Caio César, Victor|
+|22/03/2018|0.5|Adição do tópico 1 do sumário a Introdução|Victor, Caio|
+|23/03/2018|0.6|Adição do tópico 4 do sumário a Visão Geral do Produto|Victor|
+|24/03/2018|0.7|Adição do tópico 5 do sumário os Recursos do Produto| Victor |
+|24/03/2018|0.8|Adição do tópico 6 do sumário as Restrições e correção de bug de interface|Victor|
+|24/03/2018|0.9|Adição de três subtópicos da descrição da parte interessada e dos usuários| Guilherme Aguiar
+|25/03/2018|1.0|Adição do subtópico 3.5 sobre a parte interessada do usuário| Adrielly Rodrigues
+|25/03/2018|1.1|Adição do subtópico 3.6 sobre alternativas e concorrências| Adrielly Rodrigues
 |16/04/2018|1.2|Correção de escopo| Victor   |
 |26/04/2018|1.3|Modificação do subtópico 3.5| Adrielly Rodrigues
+|26/04/2018|1.4|Correção ortográfica| Adrielly Rodrigues
 
 # Sumário
 1. [Introdução](#1)
@@ -48,10 +49,10 @@
 ___
 ## <a name="1"></a>1.  Introdução
 ### <a name="1.1"></a>1.1. Propósito
-<p>Este documento tem a finalidade de apresentar uma visão geral sobre o webapp GM (Gerencia Mais) ,definindo sua proposta característica, utilidade e requisitos do sistema.</p>
+<p> Este documento tem a finalidade de apresentar uma visão geral sobre o webapp GM (Gerencia Mais), definindo sua proposta característica, utilidade e requisitos do sistema.</p>
 
 ### <a name="1.2"></a>1.2. Escopo
-<p>Este projeto tem como objetivo central auxiliar o gerenciamento de servidores do Hospital Regional do Gama.</p>
+<p> Este projeto tem como objetivo central auxiliar o gerenciamento de servidores do Hospital Regional do Gama.</p>
 
 ### <a name="1.3"></a>1.3. Definições, acrônimos e abreviações
   * FGA - Faculdade do Gama (UnB).
@@ -63,10 +64,6 @@ ___
   * Servidores - A quem compete prescrever medicamentos, exames e recomendações de saúde.
 <br></br>
  * GM - Gerencia Mais.
-<br></br>
-  * Recursos médicos - equipamentos tais como seringas, luvas, remédios.
-<br></br>
-  * Recursos físicos - salas de consulta, salas de cirurgia.
 <br></br>
   * HRG - Hospital Regional do Gama.
 
@@ -85,25 +82,25 @@ ___
 ### <a name="1.5"></a> 1.5. Visão geral
 <p> Neste documento estão descritos os detalhes do planejamento da construção do *webapp* GM. O documento apresentara o objetivo dessa proposta de desenvolvimento que auxiliará os profissionais do hospital a gerenciar seus recursos humanos para dificultar possíveis erros de escala de servidores. E está dividido em:</p>
 
-  * *Posicionamento*: descreve o problema e a oportunidade de Negócio;
+  * *Posicionamento*: Descreve o problema e a oportunidade de Negócio;
 <br></br>
-  * *Descrição da Parte Interessada e dos Usuários*: descreve o perfil dos interessados no Projeto;
+  * *Descrição da Parte Interessada e dos Usuários*: Descreve o perfil dos interessados no Projeto;
 <br></br>
-  * *Visão Geral do Produto*: descreve uma visualização de alto nível do *webapp* bem como as capacidades do produto, interfaces e configurações;
+  * *Visão Geral do Produto*: Descreve uma visualização de alto nível do *webapp* bem como as capacidades do produto, interfaces e configurações;
 <br></br>
   * *Recursos do Produto*: Descreve os recursos do produto
 <br></br>
-  * *Restrições*:descreve as restrições de design, restrições externas, como requisitos operacionais ou regulamentares;
+  * *Restrições*: Descreve as restrições de design, restrições externas, como requisitos operacionais ou regulamentares;
 ___
 
 ## <a name="2"></a> 2. Posicionamento
 
 ### <a name="2.1"></a> 2.1 Oportunidade de Negócio
 <p> Atualmente, o sistema de saúde no DF tem alguns problemas sobre o gerenciamento de recursos nos hospitais públicos. Problemas que vão desde má distribuição de equipamentos à alocação disfuncional de funcionários. </p>
-<p>Isso se dá ao fato do sistema utilizado nesses hopitais estar bastante ultrapassado e defasado, o que o torna não confiável e pouco prático. Além disso, é de dificil manutenção e não amigável com o usuário, tornando bastante dificil ensinar novos servidores a utilizá-lo.</p>   
+<p> Isso se dá ao fato do sistema utilizado nesses hopitais estar bastante ultrapassado e defasado, o que o torna não confiável e pouco prático. Além disso, é de dificil manutenção e não amigável com o usuário, tornando bastante dificil ensinar novos servidores a utilizá-lo.</p>   
 
-<p>Este projeto visa oferecer uma melhora significativa nesse sistema, para que fique mais fácil e prática a alocação correta,no DF, de profissionais da saúde capazes de resolver problemas onde for preciso.</p>
-
+<p> Este projeto visa oferecer uma melhora significativa nesse sistema, para que fique mais simples e prática a alocação apropriada de profissionais da saúde de maneira satisfatória para o HRG.</p>
+ 
 ### <a name="2.2"></a> 2.2 Descrição do Problema
 
 | | |
@@ -117,8 +114,8 @@ ___
 
 | | |
 | -------------- | ------- |
-| __Para__ | os funcionários e médicos dos hospitais |
-| __que__ | necessitam de uma ferramenta melhor de controle e gerenciamento das cargas horárias dos médicos|
+| __Para__ | os funcionários e médicos do hospital |
+| __que__ | necessitam de uma ferramenta mais adequada para o controle e gerenciamento das cargas horárias dos médicos|
 | __o__ | nosso projeto é uma aplicação web |
 | __que__ | faz gerenciamento e automazação do quadro de horas dos médicos, mantendo uma melhor distribuição desses médicos nos devidos horários |
 | __diferente do__ | método atual, que é feito manualmente|
@@ -132,7 +129,7 @@ ___
 
 | Nome | Descrição |
 | ---- |---------- |
-| Administrador da Plataforma| Pessoa que vai efetuar devidos ajustes no quadro de horários, realizando efetivamente o controle de jornada dos funcionários do hospital, assim como a organização dos equipamentos hospitalares e infraestrutura. |
+| Administrador da Plataforma| Pessoa que vai efetuar devidos ajustes no quadro de horários, realizando efetivamente o controle de jornada dos funcionários do hospital.|
 | Servidor | Pessoa que terá seus turnos de trabalhos organizados no na aplicação. |
 
 ### <a name="3.2"></a> 3.2 Ambiente dos Usuários
@@ -194,43 +191,43 @@ ___
 
 As informações que serão captadas do banco de dados será dividida em:
 
-  * *Gestão de servidores:* terá a função de gerenciar a questão das escalas dos servidores do HRG de forma a não haver conflito de horários e mostrar de forma mais coesa e limpa as informações de escala como com quem ele estará trabalhando aquele dia, quantas pessoas estão naquele período do dia (manhã, tarde ou noite), quem está de ferias naquele tempo.
+  * *Gestão de servidores:* Terá a função de gerenciar a questão das escalas dos servidores do HRG de forma a não haver conflito de horários e mostrar de forma mais coesa e limpa as informações de escala como com quem ele estará trabalhando aquele dia, quantas pessoas estão naquele período do dia (manhã, tarde ou noite), quem está de ferias naquele tempo.
 
 
 ###  <a name ="4.1"> </a> 4.1. Perspectiva do Produto
 
-O aplicativo tem por expectativa atender de forma ótima as a gestão dentro do hospital facilitando assim a organização interna, assim otimizando e acelerando o atendimento dentro do hospital, também otmizando o tempo do servidor que está na escala no dia, pois a boa gestão fará ele não perder tempo em dúvida de qual consultório ele estará no dia.
+O aplicativo tem por expectativa atender de forma ótima as a gestão dentro do hospital facilitando assim a organização interna, assim otimizando e acelerando o atendimento dentro do hospital, também otimizando o tempo do servidor que está na escala no dia, pois a boa gestão fará ele não perder tempo em dúvida de qual consultório ele estará no dia.
 
 
 ### <a name="4.2"></a> 4.2. Resumo dos Recursos
 
 |Benefício para o cliente|Recursos de suporte|
 |-----                   |-----              |
-|Organiza a escala de servidores|O *webapp*, através dos dados do bando, mostra a escala levando alguns critérios e mostrando a quantidade de horas que ele terá que trabalhar naquela semana para cumprir a meta atual de horas semanais|
+|Organiza a escala de servidores|O *webapp*, através dos dados do bando, mostra a escala levando alguns critérios e mostrando a quantidade de horas que ele terá que trabalhar naquela semana para cumprir a meta atual de horas semanais.|
 ___
 
 ## <a name = "5"></a>5. Recursos do produto
 |ID |Descrição|Prioridade|
 |---|---      |---       |
-|RF01|Cadastrar horário de plantão|alta|
-|RF02|Cadastrar carga horária do servidor|alta|
-|RF03|Cadastrar férias do servidor|alta|
-|RF04|Mostrar planilha de horas totais trabalhadas|alta|
-|RF05|Mostrar servidores de plantão|alta|
-|RF06|Mostrar quantidade de servidores por período do dia|alta|
+|RF01|Cadastrar horário de plantão|Alta|
+|RF02|Cadastrar carga horária do servidor|Alta|
+|RF03|Cadastrar férias do servidor|Alta|
+|RF04|Mostrar planilha de horas totais trabalhadas|Alta|
+|RF05|Mostrar servidores de plantão|Alta|
+|RF06|Mostrar quantidade de servidores por período do dia|Alta|
 |RF12|Mostrar perfil do servidor|Muito baixa|
 
 ___
 ## <a name="6"></a>6. Restrições
 
 ### <a name ="6.1">6.1 Restrições de Design
-O design será refinado de forma simples, porém bela que seja intuitivo de forma a não precisar de muito treinamento para fazer o uso do *webapp*.
+O design será refinado de forma simples, para que o uso do *webapp* seja intuitivo, de modo que não necessite de um treinamento intensido para ser utilizado.
 
 ### <a name="6.2"></a>6.2 Restrições de Implementação
 O sistema será desenvolvido utilizando a linguagem Python e o framework Django. Além disso, o sistema será desenvolvido com base no modelo de arquitetura conhecido como MTV que é considerada uma variação do MVC. Porém ao invés de utilizar o template do Djando irá ser feitas os templates em outro framework chamado react.
 
 ### <a name="6.3"></a>6.3 Restrições de Segurança
-O sigilo no caso do *webapp* é limitado no sentido agenda do servidor e o paciente. Desse modo apenas os profissionais que terão contato com a planilha de platão que poderão ver com quem os servidores estarão.
+O sigilo no caso do *webapp* é limitado para os servidores. Desse modo apenas os servidores terão contato a planilha de horários, plantões, folgas e férias.
 
 ### <a name="6.4"></a>6.4 Restrições de uso
 Para utilizar do *webapp* o usuário terá que está em um dispositivo que tenha acesso a internet e que tenha um navegador compatível com o sistema do app. Caso o usuário não tenha os pré-requisitos para usar o app terá de aparecer uma página de erro pertinente a esse caso.
