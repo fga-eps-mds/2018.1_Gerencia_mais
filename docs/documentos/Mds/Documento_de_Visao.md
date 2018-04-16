@@ -12,6 +12,7 @@
 |24/03/2018|0.9|adição de três subtópicos da descrição da parte interessada e dos usuários| Guilherme Aguiar
 |25/03/2018|1.0|adição do subtópico 3.5 sobre a parte interessada do usuário| Adrielly Rodrigues
 |25/03/2018|1.1|adição do subtópico 3.6 sobre alternativas e concorrências| Adrielly Rodrigues
+|16/04/2018|1.2|Correção de escopo| Victor   |
 
 # Sumário
 1. [Introdução](#1)
@@ -46,10 +47,10 @@
 ___
 ## <a name="1"></a>1.  Introdução
 ### <a name="1.1"></a>1.1. Propósito
-<p>Este documento tem a finalidade de apresentar uma visão geral sobre o webapp GIC ,definindo sua proposta característica, utilidade e requisitos do sistema</p>
+<p>Este documento tem a finalidade de apresentar uma visão geral sobre o webapp GM (Gerencia Mais) ,definindo sua proposta característica, utilidade e requisitos do sistema.</p>
 
 ### <a name="1.2"></a>1.2. Escopo
-<p>Este projeto tem como objetivo central auxiliar o gerenciamento de servidores, recursos médicos e recursos físicos do Hospital Regional do Gama.</p>
+<p>Este projeto tem como objetivo central auxiliar o gerenciamento de servidores do Hospital Regional do Gama.</p>
 
 ### <a name="1.3"></a>1.3. Definições, acrônimos e abreviações
   * FGA - Faculdade do Gama (UnB).
@@ -59,6 +60,8 @@ ___
   * EPS - Engenharia de Projeto de Software.
 <br></br>
   * Servidores - A quem compete prescrever medicamentos, exames e recomendações de saúde.
+<br></br>
+ * GM - Gerencia Mais.
 <br></br>
   * Recursos médicos - equipamentos tais como seringas, luvas, remédios.
 <br></br>
@@ -79,7 +82,7 @@ ___
   https://github.com/fga-gpp-mds/2017.2-Receituario-Medico/wiki/Documento-de-Vis%C3%A3o . Acesso em 21 mar. 2018.
 
 ### <a name="1.5"></a> 1.5. Visão geral
-<p> Neste documento estão descritos os detalhes do planejamento da construção do *webapp* GIC. O documento apresentara o objetivo dessa proposta de desenvolvimento que auxiliará os profissionais do hospital a gerenciar seus recursos humanos e físicos bem como dificultar possiveis erros de escala de servidores. E está dividido em:</p>
+<p> Neste documento estão descritos os detalhes do planejamento da construção do *webapp* GM. O documento apresentara o objetivo dessa proposta de desenvolvimento que auxiliará os profissionais do hospital a gerenciar seus recursos humanos para dificultar possíveis erros de escala de servidores. E está dividido em:</p>
 
   * *Posicionamento*: descreve o problema e a oportunidade de Negócio;
 <br></br>
@@ -98,7 +101,7 @@ ___
 <p> Atualmente, o sistema de saúde no DF tem alguns problemas sobre o gerenciamento de recursos nos hospitais públicos. Problemas que vão desde má distribuição de equipamentos à alocação disfuncional de funcionários. </p>
 <p>Isso se dá ao fato do sistema utilizado nesses hopitais estar bastante ultrapassado e defasado, o que o torna não confiável e pouco prático. Além disso, é de dificil manutenção e não amigável com o usuário, tornando bastante dificil ensinar novos servidores a utilizá-lo.</p>   
 
-<p>Este projeto visa oferecer uma melhora significativa nesse sistema, para que fique mais fácil e prática a alocação correta,no DF, tanto de equipamentos e outros recursos, quanto de profissionais da saúde capazes de resolver problemas onde for preciso.</p>
+<p>Este projeto visa oferecer uma melhora significativa nesse sistema, para que fique mais fácil e prática a alocação correta,no DF, de profissionais da saúde capazes de resolver problemas onde for preciso.</p>
 
 ### <a name="2.2"></a> 2.2 Descrição do Problema
 
@@ -182,21 +185,17 @@ O software será uma plataforma web responsiva, isto é, seu layout se adapta au
 ### <a name = "3.6"></a>3.6 Alternativas e Concorrências
 
 
-Após pesquisas sobre concorrência, não foi encontrado nenhuma aplicação web ou aplicação mobile que se assemelha ao software proposto, sendo encontrado apenas softwares médicos com o intuito de auxiliar clínicas pequenas na gestão de atendimentos, e prontuários. 
+Após pesquisas sobre concorrência, não foi encontrado nenhuma aplicação web ou aplicação mobile que se assemelha ao software proposto, sendo encontrado apenas softwares médicos com o intuito de auxiliar clínicas pequenas na gestão de atendimentos, e prontuários.
 
 ___
 
 ## <a name = "4" ></a> 4. Visão Geral do Produto
 
- O *webapp* tem como funcionalidade principal auxiliar a visualização e organização dos recursos físicos, servidores e arranjo espacial do HRG.
+ O *webapp* tem como funcionalidade principal auxiliar a visualização e organização dos servidores do HRG.
 
-As informações que serão captadas do banco de dados serão divididas em três partes:
+As informações que serão captadas do banco de dados será dividida em:
 
   * *Gestão de servidores:* terá a função de gerenciar a questão das escalas dos servidores do HRG de forma a não haver conflito de horários e mostrar de forma mais coesa e limpa as informações de escala como com quem ele estará trabalhando aquele dia, quantas pessoas estão naquele período do dia (manhã, tarde ou noite), quem está de ferias naquele tempo.
-  <br></br>
-  * *Gestão de recursos físicos:* terá a função de mostrar o status do armazenamento de recursos como seringas, agulhas, remédio.
-  <br></br>
-  * *Gestão de arranjo físico:*  terá a função de mostrar aos servidores em questão e aos administradores de logística do hospital as salas ocupadas, as salas livres e as salas que estão inválidas
 
 
 ###  <a name ="4.1"> </a> 4.1. Perspectiva do Produto
@@ -209,9 +208,6 @@ O aplicativo tem por expectativa atender de forma ótima as a gestão dentro do 
 |Benefício para o cliente|Recursos de suporte|
 |-----                   |-----              |
 |Organiza a escala de servidores|O *webapp*, através dos dados do bando, mostra a escala levando alguns critérios e mostrando a quantidade de horas que ele terá que trabalhar naquela semana para cumprir a meta atual de horas semanais|
-|Organiza a quantidade de recursos|O *webapp*, através do banco de dados, irá mostrar a quantidade de matérial na farmácia do hospital e irá informar quando está acabando|
-|Organiza o arrajo insumo físico do hospital|O *webapp*, através do banco de dados, irá mostrar quais salas do hospital estão disponíveis naquele momento do plantão do servidor|
-
 ___
 
 ## <a name = "5"></a>5. Recursos do produto
@@ -223,11 +219,6 @@ ___
 |RF04|Mostrar planilha de horas totais trabalhadas|alta|
 |RF05|Mostrar servidores de plantão|alta|
 |RF06|Mostrar quantidade de servidores por período do dia|alta|
-|RF07|Cadastrar salas ou consultórios|alta|
-|RF08|Gerenciar controle de salas ocupadas e não ocupadas|alta|
-|RF09|Mostrar quantidade de salas desocupadas|alta|
-|RF10|Cadastrar produtos para gerenciar controle de estoque no HRG|alta|
-|RF11|Mostrar quantidade de matérial do hospital|alta|
 |RF12|Mostrar perfil do servidor|Muito baixa|
 
 ___
@@ -240,7 +231,7 @@ O design será refinado de forma simples, porém bela que seja intuitivo de form
 O sistema será desenvolvido utilizando a linguagem Python e o framework Django. Além disso, o sistema será desenvolvido com base no modelo de arquitetura conhecido como MTV que é considerada uma variação do MVC. Porém ao invés de utilizar o template do Djando irá ser feitas os templates em outro framework chamado react.
 
 ### <a name="6.3"></a>6.3 Restrições de Segurança
-O sigilo no caso do *webapp* é limitado no sentido agenda do servidor e o paciente. Desse modo apenas os profissionais que terão contato com a planilha de platão que poderão ver com quem os servidores estarão, que sala ocuparam e que tipo de recursos físico estarão faltando para ele e para o HRG.
+O sigilo no caso do *webapp* é limitado no sentido agenda do servidor e o paciente. Desse modo apenas os profissionais que terão contato com a planilha de platão que poderão ver com quem os servidores estarão.
 
 ### <a name="6.4"></a>6.4 Restrições de uso
 Para utilizar do *webapp* o usuário terá que está em um dispositivo que tenha acesso a internet e que tenha um navegador compatível com o sistema do app. Caso o usuário não tenha os pré-requisitos para usar o app terá de aparecer uma página de erro pertinente a esse caso.
