@@ -11,6 +11,7 @@
 |11/04/2018 | 0.8 | Adição do subtópico 1.5 e correção no tópico 2 | Guilherme Aguiar |
 |15/04/2018 | 0.9 | Adição do tópico 5 | João Vitor |
 |15/04/2018 | 1.1   | Adição de mais especificações do tópico 2| Victor |
+|15/04/2018 |1.2  |Mudança do nome do projeto| Victor |
 # Sumário
 1. [Introdução](#1)
   * 1.1 [Finalidade](#1.1)
@@ -38,7 +39,7 @@ ___
 ## <a name="1"></a>1.  Introdução
 
 ### <a name="1.1"></a>1.1. Finalidade
-<p>Neste documento será apresentada a visão arquitetônica sobre a aplicação webapp de Gestão de Intervenções Cirurgicas - GIC, com a finalidade de elucidar, explicar e formalizar como será modelada a arquitetura do software, tendo como base diferentes características do projeto para justificar as decisões tomadas pelos desenvolvedores.<p>
+<p>Neste documento será apresentada a visão arquitetônica sobre a aplicação webapp de Gerencia mais- GM, com a finalidade de elucidar, explicar e formalizar como será modelada a arquitetura do software, tendo como base diferentes características do projeto para justificar as decisões tomadas pelos desenvolvedores.<p>
 
 ### <a name="1.2"></a>1.2. Escopo
 <p> Este documento tem como objetivo documentar a arquitetura a ser implementada no software, guiando os desenvolvedores na construção do projeto que auxilia o gerenciamento de servidores, recursos médicos e recursos físicos do Hospital Regional do Gama - HRG.  <p>
@@ -50,7 +51,7 @@ ___
 <br></br>
 * EPS - Engenharia de Projeto de Software.
 <br></br>
-* GIC - Gestão de Intervenções Cirurgicas.
+* GM - Gerencia Mais
 <br></br>
 * Servidores - A quem compete prescrever medicamentos, exames e recomendações de saúde.
 <br></br>
