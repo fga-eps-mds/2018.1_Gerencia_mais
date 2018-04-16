@@ -15,6 +15,7 @@
 |16/04/2018|1.2|Correção de escopo| Victor   |
 |26/04/2018|1.3|Modificação do subtópico 3.5| Adrielly Rodrigues
 |26/04/2018|1.4|Correção ortográfica| Adrielly Rodrigues
+|26/04/2018|1.5|Algumas alterações| Adrielly Rodrigues
 
 # Sumário
 1. [Introdução](#1)
@@ -80,7 +81,7 @@ ___
   https://github.com/fga-gpp-mds/2017.2-Receituario-Medico/wiki/Documento-de-Vis%C3%A3o . Acesso em 21 mar. 2018.
 
 ### <a name="1.5"></a> 1.5. Visão geral
-<p> Neste documento estão descritos os detalhes do planejamento da construção do *webapp* GM. O documento apresentara o objetivo dessa proposta de desenvolvimento que auxiliará os profissionais do hospital a gerenciar seus recursos humanos para dificultar possíveis erros de escala de servidores. E está dividido em:</p>
+<p> Neste documento estão descritos os detalhes do planejamento da construção do *webapp* GM. O documento apresentara o objetivo dessa proposta de desenvolvimento que auxiliará os profissionais do hospital a controlar seus recursos para impossibiliar possíveis erros de escala de servidores. E está dividido em:</p>
 
   * *Posicionamento*: Descreve o problema e a oportunidade de Negócio;
 <br></br>
@@ -144,8 +145,8 @@ O software será uma plataforma web responsiva, isto é, seu layout se adapta au
 | -------------- | ------- |
 | __Representantes__ | Ulysses Bernard, Joao Saliba, Rafael Bragança, Eduardo Junio, Caio Araújo. |
 | __Descrição__      | Gestores do projeto.    |
-| __Tipo__  | Grupo de alunos da Universidade de Brasília que estão matriculados na matéria Gestão de Portfólio de Projeto. |
-| __Responsabilidades__ | Gerenciar a equipe visando a entrega da ferramenta web, proposta de acordo com o objetivo e recomendações entregues por eles. |
+| __Tipo__  | Grupo de alunos da Universidade de Brasília que estão matriculados na matéria Engenharia de Projeto de Software. |
+| __Responsabilidades__ | Acompanhar a equipe visando a entrega da ferramenta web, proposta de acordo com o objetivo e recomendações entregues por eles. |
 | __Critérios de Sucesso__ | Orientar o grupo de forma que todos os desenvolvedores tenham um conhecimento equivalente acerca das tecnologias necessárias. Seguiar as estratégias de planejamento de software visando a entrega, dentro do prazo, da aplicação requesitada. |
 | __Envolvimento__ | Alto. |
 | __ Comentários/Problemas__ |. |
@@ -169,7 +170,7 @@ O software será uma plataforma web responsiva, isto é, seu layout se adapta au
 | __Representantes__ | Servidores responsáveis pelo gerenciamento da plataforma |
 | __Tipo__  | Funcionário que tenha conhecimento para exercer as responsabilidades e permissão para atuar.  |
 | __Responsabilidades__ | Efetuar devidos ajustes no quadro de horários, realizando efetivamente o controle de jornada dos funcionários do hospital. |
-| __Critérios de Sucesso__ | Gerenciar os turnos dos funcionários com êxito. |
+| __Critérios de Sucesso__ | Administrar os turnos dos funcionários com êxito. |
 | __Envolvimento__ | Alto |
 | __ Comentários/Problemas__ | Possível sobrecarga de atividades para o administrador. |
 
@@ -191,7 +192,7 @@ ___
 
 As informações que serão captadas do banco de dados será dividida em:
 
-  * *Gestão de servidores:* Terá a função de gerenciar a questão das escalas dos servidores do HRG de forma a não haver conflito de horários e mostrar de forma mais coesa e limpa as informações de escala como com quem ele estará trabalhando aquele dia, quantas pessoas estão naquele período do dia (manhã, tarde ou noite), quem está de ferias naquele tempo.
+  * *Gestão de servidores:* Terá a função de coordenar a questão das escalas dos servidores do HRG de forma a não haver conflito de horários e mostrar de forma mais coesa e limpa as informações de escala como com quem ele estará trabalhando aquele dia, quantas pessoas estão naquele período do dia (manhã, tarde ou noite), quem está de ferias naquele tempo.
 
 
 ###  <a name ="4.1"> </a> 4.1. Perspectiva do Produto
