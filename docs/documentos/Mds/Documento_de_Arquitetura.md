@@ -9,6 +9,7 @@
 | 11/04/2018 | 0.6 | Adição do tópico 4 | Guilherme Aguiar |
 |11/04/2018   |0.7   |Adição do tópico 3                     | Caio César Beleza   |
 |11/04/2018 | 0.8 | Adição do subtópico 1.5 e correção no tópico 2 | Guilherme Aguiar |
+|15/04/2018   |1.1   |Adição de especificações do tópico 2   | Victor|
 # Sumário
 1. [Introdução](#1)
   * 1.1 [Finalidade](#1.1)
@@ -99,10 +100,11 @@ O modelo de arquitetura MVC (model , view, controller) proporciona aos desenvolv
 
   - *Controller*: Responsável por receber as requisições que o usuário fez na view e controla assim as ações dentro da aplicação relacionadas a requições feitas. A controller é a intermediadora entre a view e a model. Nessa camada todas as requisções feitas são convertidas em ações que irão interagir entre sí na maioria das vezes elas são feitas pela model para view ou da view para a model.
 
-O framework usado como backend do Nosso *webapp*, o Django, é baseado no modelo anterior porém sua estrutura tem algumas alterações. O Django usa o modelo MVT (model , view, template). A seguir será explicado mais sobre  o funcionamento desses pacotes:
-*  *Model*: É a camada onde é definido as ações com o banco de dados da aplicação, nela também são feitas a escrita, leitura e a validação das informações do fluxo de dados. Sendo assim a model é onde controla tudo do banco de dados na aplicação bem como suas regras e comportamento.
+O framework usado como backend do nosso *webapp*, o Django, é baseado no modelo anterior porém sua estrutura tem algumas alterações. O Django usa o modelo MVT (model , view, template) que será adotado no projeto, mas na parte do template será substituída por outro framework , do facebook, chamado React para fazer a interface gráfica e para a comunicação entre os frameworks será usado o rest-framework para serialização dos dados. A parte das models será alimentada por outra API com o objetivo de extrair informações a respeito dos médicos já cadastrados no Trackcare (software usado atualmente para as escalas dos hospitais). A seguir será explicado mais sobre  o funcionamento dos pacotes do Django bem como a interação deles com as API's do projeto e o React:
 
-* *Template*: Template é a camada que faz o papel da view no modelo anterior, ou seja, nela que o usúario irá interagir. O nosso caso do projeto trocamos a camada da view padrão do Django e adicionamos outro framework chamado react feito pelo facebook para fins de interface gráfica nesse caso usamos uma API Rest framework para transformar as informações da aplicação para um json que será usado no react para criar a interface do projeto.
+*  *Model*: É a camada onde é definido as ações com o banco de dados da aplicação, nela também são feitas a escrita, leitura e a validação das informações do fluxo de dados. Sendo assim a model é onde controla tudo do banco de dados na aplicação bem como suas regras e comportamento. Essa camada será alimentada com a API do Trackcare para que possamos trabalhar com as informações dos médicos já cadastrados nos sistemas dos hospitais.
+
+* *Template*: Template é a camada que faz o papel da view no modelo anterior, ou seja, nela que o usúario irá interagir. O nosso caso do projeto trocamos a camada do template padrão do Django e adicionamos outro framework chamado react feito pelo facebook para fins de interface gráfica nesse caso usamos uma API Rest framework para transformar as informações da aplicação para um json que será usado no react para criar a interface do projeto.
 
 - *View*: A view no caso do Djando faz o papel da controller uma fez que ela é que faz a interação entre a model e a template. Neste caso as ações que ocorrerão no template serão passadas pelo Rest framework para o react que também fará o papel intermediário entre model e template.
 
