@@ -150,6 +150,15 @@ __3º No terminal digite (opcional):__
 ```
 Esse comando irá gerar uma pasta contendo um arquivo html(index.html) que apresenta a cobertura de testes.
 
+##  ℹ️ Deploy
+
+<p align="justify">O deploy da aplicação é feito de forma automatizada por meio da integração contínua (Travis CI) que é responsável por verificar a cobertura de teste ,que não pode ser inferior a 95% , e realizar o deploy junto ao servidor de hospedagem Heroku. Na configuração da integração incluimos os ambientes de homologação e produção que são descritos logo em seguida.
+
+- Deploy ambiente de homologação: Para esse ambiente, usamos a brach __development__. O deploy ocorre de forma automatizada. toda vez que alguma alteração é feita nessa branch, que tem como filtro os testes implementados durante o desenvolvimento.
+- Deploy ambiente de produção: Quando lançada uma nova versão estável do sistema, um novo deploy é realizado de forma automatizada. Para isso usamos a brach __master__, onde a nova versão devidamente testada e obedecendo os critérios de qualidade estabelecidos no [Plano de qualidade](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/Eps/Plano_de_Gerenciamento_de_Qualidade.md) é entregue aos clientes de forma contínua.
+ No tópico a seguir apresentamos os dois ambientes usados para validação e entrega ao cliente.
+</p>
+
 ## 🌎 Acessando a aplicação
 
 <p align="justify">O gerencia mais possui dois ambientes, ambiente de homologação que é usado para testar e verificar se as funcionalidade implementadas mantêm o ambiente estável e o ambiente de produção, onde apresentamos as novas funcionalidades verificadas e validadas aos clientes. Os dois ambiente podem ser acessados através dos endereços apresentados abaixo:</p>
