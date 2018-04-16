@@ -179,8 +179,6 @@ O software será uma plataforma web responsiva, isto é, seu layout se adapta au
 |Necessidade |Prioridade|Preocupações|Solução Atual|Solução Proposta|
 |---         |---       |---         |---          |---             |
 |Gerir a escala de servidores|Alta|O conflito de horários gerado pela falta de informação sobre a escala dos servidores|Programa datado e planilhas no excel emparelhado com trakcare|Uma plataforma *webapp* que gerencie a escala horária dos servidores, mostrando o status atual, quem está trabalhando, de folga, de férias|
-|Gerir a quantidade de instrumentos hospitalares|Alta|A falta de conhecimento dos servidores ao número de instrumentos hospitalares|Programa datado e planilhas no excel emparelhado com trakcare|Uma plataforma *webapp* que gerencie e permita aos servidores visualizar o status de disponibilidade dos recursos hospitalares|
-|Gerir os arranjos físicos do hospital|Alta|A falta de conhecimento dos servidores ao status dos arranjos físicos| . |Uma plataforma *webapp* que gerencie e permita aos servidores visualizar o status dos arranjos físicos|
 
 ### <a name = "3.6"></a>3.6 Alternativas e Concorrências
 
