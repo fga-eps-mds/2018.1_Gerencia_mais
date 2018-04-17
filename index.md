@@ -69,5 +69,98 @@ Obs: O serviço ainda está sendo configurado.
 
 </p>
 
+## 🐳 Guia de Uso do Docker
+
+* ### Instalação
+Primeiramente é necessário ter o docker instalado, caso não tenha acesse o [Instalação docker](https://docs.docker.com/engine/installation/linux/docker-ce/). Após feito isso, instale o [Docker-compose](https://docs.docker.com/compose/install/).
+
+* ### Comandos básicos
+
+ &emsp;&emsp; Para a utilização do ambiente em background, basta dar o comando abaixo e ele irá ligar o container:
+
+ ```terminal
+  docker-compose up -d
+ ```
+ &emsp;&emsp; Caso queira utilizar o ambiente com logs:
+
+ ```terminal
+  docker-compose up
+ ```
+ &emsp;&emsp; Para a visualização dos logs quando em modo de execução background, use o comando abaixo:
+
+ ```terminal
+  docker-compose logs -f
+ ```
+
+ &emsp;&emsp; Para pausar o container:
+
+  ```terminal
+  docker-compose stop
+ ```
+ &emsp;&emsp; E para religar um container parado use o comando:
+
+ ```terminal
+  docker-compose start
+ ```
+
+ &emsp;&emsp; Para listar os containers que estão em execução:
+
+ ```terminal
+  docker ps
+ ```
+ &emsp;&emsp; Para listar todos os containers já executados na sua máquina:
+
+ ```terminal
+  docker ps -a
+ ```
+ &emsp;&emsp; Para executar comandos dentro do container:
+
+ ```terminal
+  docker-compose exec -it  "id do container"  "comandos"
+ ```
+ Para acessar o [bash](https://www.gnu.org/software/bash/) do container, substitua "comandos" por "bash".
+
+* ## Rodando a aplicação
+
+Para rodar a aplicação, entre na pasta do projeto em que está localizado o __docker-compose__ e digite no terminal:
+
+```
+  docker-compose up -d
+```
+Espere até que todos os serviços estejam disponíveis, acesse a página inicial do projeto com o seguinte endereço: https://localhost:8000
+
+## 📊 Rodando os testes
+
+Para conferir a cobertura de testes, siga os passos abaixo:
+
+__1º No terminal digite:__
+```Terminal
+  coverage run -m django test --settings=tests.settings
+```
+Isso fará com que os testes sejam executados.
+
+obs: Para funcionar, é necessário estar na raiz do projeto.
+
+__2º No terminal digite:__
+```Terminal
+  coverage report
+```
+Esse comando irá gerar um relatório contendo as porcentagens da cobertura de testes em cada módulo e a cobertura total.
+
+Obs: Para funcionar, é necessário ter realizado o passo anterior.
+
+__3º No terminal digite (opcional):__
+```Terminal
+  coverage html
+```
+Esse comando irá gerar uma pasta contendo um arquivo html(index.html) que apresenta a cobertura de testes.
+
+## 🌎 Acessando a aplicação
+
+<p align="justify">O gerencia mais possui dois ambientes, ambiente de homologação que é usado para testar e verificar se as funcionalidade implementadas mantêm o ambiente estável e o ambiente de produção, onde apresentamos as novas funcionalidades verificadas e validadas aos clientes. Os dois ambiente podem ser acessados através dos endereços apresentados abaixo:</p>
+
+* Ambiente de homologação: https://gicsaude.herokuapp.com/
+
+* Ambiente de produção: https://gerenciamais.herokuapp.com/
 
 <br>

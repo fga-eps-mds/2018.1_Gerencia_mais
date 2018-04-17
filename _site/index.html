@@ -270,6 +270,102 @@ body{
 
 </p>
 
+<h2 id="-guia-de-uso-do-docker">🐳 Guia de Uso do Docker</h2>
+
+<ul>
+  <li>
+    <h3 id="instalação">Instalação</h3>
+    <p>Primeiramente é necessário ter o docker instalado, caso não tenha acesse o <a href="https://docs.docker.com/engine/installation/linux/docker-ce/">Instalação docker</a>. Após feito isso, instale o <a href="https://docs.docker.com/compose/install/">Docker-compose</a>.</p>
+  </li>
+  <li>
+    <h3 id="comandos-básicos">Comandos básicos</h3>
+  </li>
+</ul>
+
+<p>   Para a utilização do ambiente em background, basta dar o comando abaixo e ele irá ligar o container:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">  docker-compose up -d
+</span></code></pre></div></div>
+<p>   Caso queira utilizar o ambiente com logs:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">  docker-compose up
+</span></code></pre></div></div>
+<p>   Para a visualização dos logs quando em modo de execução background, use o comando abaixo:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">  docker-compose logs -f
+</span></code></pre></div></div>
+
+<p>   Para pausar o container:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">  docker-compose stop
+</span></code></pre></div></div>
+<p>   E para religar um container parado use o comando:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">  docker-compose start
+</span></code></pre></div></div>
+
+<p>   Para listar os containers que estão em execução:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">  docker ps
+</span></code></pre></div></div>
+<p>   Para listar todos os containers já executados na sua máquina:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">  docker ps -a
+</span></code></pre></div></div>
+<p>   Para executar comandos dentro do container:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">  docker-compose exec -it  "id do container"  "comandos"
+</span></code></pre></div></div>
+<p>Para acessar o <a href="https://www.gnu.org/software/bash/">bash</a> do container, substitua “comandos” por “bash”.</p>
+
+<ul>
+  <li>
+    <h2 id="rodando-a-aplicação">Rodando a aplicação</h2>
+  </li>
+</ul>
+
+<p>Para rodar a aplicação, entre na pasta do projeto em que está localizado o <strong>docker-compose</strong> e digite no terminal:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  docker-compose up -d
+</code></pre></div></div>
+<p>Espere até que todos os serviços estejam disponíveis, acesse a página inicial do projeto com o seguinte endereço: https://localhost:8000</p>
+
+<h2 id="-rodando-os-testes">📊 Rodando os testes</h2>
+
+<p>Para conferir a cobertura de testes, siga os passos abaixo:</p>
+
+<p><strong>1º No terminal digite:</strong></p>
+<pre><code class="language-Terminal">  coverage run -m django test --settings=tests.settings
+</code></pre>
+<p>Isso fará com que os testes sejam executados.</p>
+
+<p>obs: Para funcionar, é necessário estar na raiz do projeto.</p>
+
+<p><strong>2º No terminal digite:</strong></p>
+<pre><code class="language-Terminal">  coverage report
+</code></pre>
+<p>Esse comando irá gerar um relatório contendo as porcentagens da cobertura de testes em cada módulo e a cobertura total.</p>
+
+<p>Obs: Para funcionar, é necessário ter realizado o passo anterior.</p>
+
+<p><strong>3º No terminal digite (opcional):</strong></p>
+<pre><code class="language-Terminal">  coverage html
+</code></pre>
+<p>Esse comando irá gerar uma pasta contendo um arquivo html(index.html) que apresenta a cobertura de testes.</p>
+
+<h2 id="-acessando-a-aplicação">🌎 Acessando a aplicação</h2>
+
+<p align="justify">O gerencia mais possui dois ambientes, ambiente de homologação que é usado para testar e verificar se as funcionalidade implementadas mantêm o ambiente estável e o ambiente de produção, onde apresentamos as novas funcionalidades verificadas e validadas aos clientes. Os dois ambiente podem ser acessados através dos endereços apresentados abaixo:</p>
+
+<ul>
+  <li>
+    <p>Ambiente de homologação: https://gicsaude.herokuapp.com/</p>
+  </li>
+  <li>
+    <p>Ambiente de produção: https://gerenciamais.herokuapp.com/</p>
+  </li>
+</ul>
+
 <p><br /></p>
 
         </article>
