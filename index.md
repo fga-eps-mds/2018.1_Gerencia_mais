@@ -64,8 +64,11 @@ Obs: O serviço ainda está sendo configurado.
 <img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/telegram.gif" width="124">
 <img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/zenhub.jpg" width="94">
 <img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/ColourContrastAnalyserPortable_128.png" width="95">
-<img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/datadog.png" width="95">
+<br>
+</p>
+<p align="center">
 <img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/coveralls-logo.png" width="200">
+<img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/datadog.png" width="150">
 
 </p>
 
