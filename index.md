@@ -5,7 +5,8 @@
 layout: default
 ---
 
-<p align="center"><img src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/logo/logo.jpg" class="rounded" alt="Gerencia Mais"/></p>
+<p align="center">
+<img src="{{ site.baseurl }}/documentos/imagens/logo/logo.png" alt=""></p>
 
 
 
@@ -35,12 +36,38 @@ layout: default
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__Homologação__   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __Produção__  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Heroku App Status](http://heroku-shields.herokuapp.com/gicsaude)](https://gicsaude.herokuapp.com) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Heroku App Status](http://heroku-shields.herokuapp.com/gerenciamais)](https://gerenciamais.herokuapp.com)
 
-<img src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/monitor.gif" title="this slowpoke moves" />
+<img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/monitor.gif" title="this slowpoke moves" />
 
 
 
 Obs: O serviço ainda está sendo configurado.
+
+## 💻 Tecnologias
+
+<p align="center">
+<img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/TravisCI-Mascot-1.png" width="105">
+<img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/codeclimate.jpg" width="100">
+<img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/css-logo-400x400.png" width="105">
+<img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/docker.gif" width="85">
+<img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/drive.gif" width="105">
+<img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/github.gif" width="125">
+<img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/heroku.svg" width="68">
+<img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/html.png" width="105">
+<img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/nodejs.png" width="105">
+<img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/pytest.png" width="105"></p>
 <br>
+<p align="center">
+<img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/python-django.png" width="105">
+<img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/react.png" width="134">
+<img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/restfram.png" width="214">
+<img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/selenium-test-automation.png" width="95">
+<img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/telegram.gif" width="124">
+<img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/zenhub.jpg" width="94">
+<img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/ColourContrastAnalyserPortable_128.png" width="95">
+<img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/datadog.png" width="95">
+<img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/coveralls-logo.png" width="200">
+
+</p>
 
 
 <br>
