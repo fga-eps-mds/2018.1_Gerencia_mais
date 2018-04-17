@@ -21,7 +21,7 @@ Gostou do projeto e gostria de contribuir? Acesse [Contribua](https://github.com
 
 ## 📈 Monitoramento de serviços
 
-<p align="justify">Nosso servidor de produção é monitorado constantemente, você pode visualizar em tempo real o consumo de recursos como: cpu, memória entre outros dados. Clique na imagem abaixo.</p>
+<p align="justify">Nossos servidores de homologação e produção são monitorados constantemente, você pode visualizar em tempo real o consumo de recursos como: cpu, memória entre outros dados. Clique na imagem abaixo.</p>
 
 - ### Status do sistema
 
@@ -33,7 +33,7 @@ Gostou do projeto e gostria de contribuir? Acesse [Contribua](https://github.com
 
 <p><a href="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is94_ferramenta_monitoramento/Monitoramento/analises.md" target="_blank"><img width="900"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/monitor.gif"></a></p>
 
-Obs: O serviço ainda está sendo configurado.
+Obs: O serviço ainda está sendo configurado, apresentando até o momento apenas algumas informações básicas.
 <br>
 
 
