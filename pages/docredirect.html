@@ -4,16 +4,15 @@ title: Documentação
 permalink: /doc/
 icon: glyphicon-play
 ---
-<div class="container">
-  <div class="row align-items-center">
-    <div class="col">
-      <button><a href="{{ site.baseurl }}/demo3" class="btn ">Engenharia de Produto</a></button>
-    </div>
-    <div class="col">
-      <button><a href="{{ site.baseurl }}/demo2" class="btn ">Métodos de Desenvolvimento de Software</a></button>
-    </div>
-    <div class="col">
-      <button><a href="{{ site.baseurl }}/sprints" class="btn ">Sprints</a></button>
-    </div>
-  </div>
-</div>
+
+<style >
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: #1abc9c !important;
+  border-width: 0px;
+  box-shadow: 3px 3px 3px grey;
+}
+</style>
+
+<button type="button" href="{{ site.baseurl }}/demo3" class="btn btn-primary btn-lg btn-block">Engenharia de Produto</button>
+<button type="button" href="{{ site.baseurl }}/demo2" class="btn btn-primary btn-lg btn-block">Métodos de Desenvolvimento de Software</button>
+<button type="button" href="{{ site.baseurl }}/sprints" class="btn btn-primary btn-lg btn-block">Sprints</button>
