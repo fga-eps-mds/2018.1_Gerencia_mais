@@ -21,7 +21,7 @@ export default class HomePage extends Component {
          		<div className="col-lg-12">
          			<div className="content ">
          				<h1 className='whitewash aumenta'>Gerencia +</h1>
-         				<h3 className='whitewash aumentamenos'>Aplicação web destinada a gerenciar servidores de hospitais publicos do distrito federal.</h3>
+         				<h3 className='whitewash aumentamenos'>Aplicação web destinada a gerenciar servidores de hospitais públicos do Distrito Federal.</h3>
          			</div>
          		</div>
          	</div>

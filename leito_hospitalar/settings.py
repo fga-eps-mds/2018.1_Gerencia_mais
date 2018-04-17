@@ -29,6 +29,11 @@ ALLOWED_HOSTS = ['gicsaude.herokuapp.com', '*']
 
 # Application definition
 
+ADMINS =[
+    ('victor','victor@gmail.com'),
+    ('caio','caio@gmail.com'),
+]
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,8 +45,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'schedule',
     'tests',
-    'django.contrib.sites',
-    'django.contrib.humanize',
 ]
 
 REST_FRAMEWORK = {
@@ -51,8 +54,7 @@ REST_FRAMEWORK = {
 }
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware', 
-    'django.middleware.common.CommonMiddleware', 
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.common.BrokenLinkEmailsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
