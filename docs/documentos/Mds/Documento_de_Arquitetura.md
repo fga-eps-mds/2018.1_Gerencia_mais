@@ -13,6 +13,7 @@
 |15/04/2018 |1.1   |Adição de mais especificações do tópico 2| Victor |
 |15/04/2018 |1.2   |Mudança do nome do projeto| Victor |
 |15/04/2018 |1.3   |Corrigir erro do último tópico | Victor  |
+|16/04/2018 |1.4   |Corrigir erros ortográficos | João Vitor  |
 # Sumário
 1. [Introdução](#1)
   * 1.1 [Finalidade](#1.1)
@@ -84,7 +85,7 @@ Este documento é dividido nas seguintes secções:
 *      __Restrições e Metas de Arquitetura__: Mostra os requisitos de usabilidade do software o os objetivos que impactam significativamente a aplicação.
 
 
-*    __Visão de Casos de Uso__: Mostra todos casos de uso da aplicação.
+*    __Visão de Casos de Uso__: Mostra todos os casos de uso da aplicação.
 
 *    __Visão Geral__: Apresenta como será implementado a arquitetura no sistema e partes importantes do projeto do ponto de vista da arquitetura e da modelagem do design.
 
@@ -96,20 +97,20 @@ Este documento é dividido nas seguintes secções:
 ____
 
 ## <a name="2"></a>2. Representação da Arquitetura
-O modelo de arquitetura MVC (model , view, controller) proporciona aos desenvolvedores uma manutenção mais fácil e o maior reaproveitamento de classes em partes do projeto no futuro. Esse modelo é muito adotado em projetos web assim como em projetos que demandão uma grande manutabilidade nos seus códigos. A seguir estão as funções de cada uma das camadas do modelo:
-  - *Model*: É responsável pela gerência de dados, as lógicas e as regras de negócios relacionado ao bando de dados do sistema da aplicação.
+O modelo de arquitetura MVC (model , view, controller) proporciona aos desenvolvedores uma manutenção mais fácil e o maior reaproveitamento de classes em partes do projeto no futuro. Esse modelo é muito adotado em projetos web assim como em projetos que demandam uma grande manutenibilidade nos seus códigos. A seguir estão as funções de cada uma das camadas do modelo:
+  - *Model*: É responsável pela gerência de dados, as lógicas e as regras de negócios relacionado ao banco de dados do sistema da aplicação.
 
   - *View*: É responsável pela interface gráfica do sistema assim sendo a parte da aplicação que terá contato direto com o usuário da aplicação.
 
-  - *Controller*: Responsável por receber as requisições que o usuário fez na view e controla assim as ações dentro da aplicação relacionadas a requições feitas. A controller é a intermediadora entre a view e a model. Nessa camada todas as requisções feitas são convertidas em ações que irão interagir entre sí na maioria das vezes elas são feitas pela model para view ou da view para a model.
+  - *Controller*: Responsável por receber as requisições que o usuário fez na view e controla assim as ações dentro da aplicação relacionadas a requisições feitas. A controller é a intermediadora entre a view e a model. Nessa camada todas as requisções feitas são convertidas em ações que irão interagir entre sí na maioria das vezes elas são feitas pela model para view ou da view para a model.
 
-O framework usado como backend do nosso *webapp*, o Django, é baseado no modelo anterior, porém sua estrutura tem algumas alterações. O Django usa o modelo MVT (model , view, template) que será adotado no projeto, mas na parte do template será substituída por outro framework, do facebook, chamado React para fazer a interface gráfica.  Para a comunicação entre os frameworks será usado o rest-framework para serialização dos dados. A seguir será explicado mais sobre  o funcionamento dos pacotes do Django bem como a interação deles com as API's do projeto e o React:
+O framework usado como backend do nosso *webapp*, o Django, é baseado no modelo anterior, porém sua estrutura tem algumas alterações. O Django usa o modelo MVT (model , view, template) que será adotado no projeto, mas na parte do template será substituída por outro framework, do facebook, chamado React para fazer a interface gráfica. Para a comunicação entre os frameworks será usado o rest-framework para serialização dos dados. A seguir será explicado mais sobre o funcionamento dos pacotes do Django bem como a interação deles com as API's do projeto e o React:
 
 *  *Model*: É a camada onde é definido as ações com o banco de dados da aplicação, nela também são feitas a escrita, leitura e a validação das informações do fluxo de dados. Sendo assim, a model é onde se controla tudo do banco de dados na aplicação bem como suas regras e comportamento.
 
 * *Template*: Template é a camada que faz o papel da view no modelo anterior, ou seja, nela que o usuário irá interagir. No nosso caso trocamos a camada do template padrão do Django e adicionamos outro framework chamado react feito pelo facebook para fins de interface gráfica. Para o Django se comunicar com o React usamos uma API chamada Rest framework para transformar as informações da aplicação para um json que será usado no react para criar a interface gráfica do projeto.
 
-- *View*: A view no caso do Djando faz o papel da controller uma fez que ela é quem faz as interações entre a model e a template. Neste caso as ações que ocorrerão no template serão passadas pelo Rest framework para o react que também fará o papel intermediário entre model e template.
+- *View*: A view no caso do Django faz o papel da controller uma vez que ela é quem faz as interações entre a model e a template. Neste caso as ações que ocorrerão no template serão passadas pelo Rest framework para o react que também fará o papel intermediário entre model e template.
 
 
   ![Documento de Arquitetura][logo]
@@ -121,7 +122,7 @@ O framework usado como backend do nosso *webapp*, o Django, é baseado no modelo
 
   ## <a name="3"></a>3. Metas e Restrições da arquitetura
   ### <a name="3.1"></a>3.1 Metas
-  O sistema a ser desenvolvido deve ter uma interface amigável ao usuário, responder as requisições em poucos segundos, além de seguir um padrão de arquitetura que ajude na manutenabilidade do software.
+  O sistema a ser desenvolvido deve ter uma interface amigável ao usuário, responder as requisições em poucos segundos, além de seguir um padrão de arquitetura que ajude na manutenibilidade do software.
 
   ### <a name="3.2"></a>3.2 Restrições
   Este sistema será desenvolvido ultilizando o framework Django 2.0.3, que tem como base a linguagem de programação python. Além disso, será utilizado o React 16.2.0, que estará voltado ao frontend da nossa aplicação.
@@ -132,7 +133,7 @@ O framework usado como backend do nosso *webapp*, o Django, é baseado no modelo
 
 
 ## <a name="4"></a>4.  Visão de Casos de Uso
-Nosso software vai manipular informações relacionadas aos médicos do hospital regional do Gama, logo a quantidade de dados que devemos processar é mediana, logo o sistema não deverá ter dificuldade na manipulação dos dados. O desempenho dependerá também do aparelho que o sistema será usado e pelo navegador.
+Nosso software vai manipular informações relacionadas aos médicos do hospital regional do Gama, logo a quantidade de dados que devemos processar é mediana, então o sistema não deverá ter dificuldade na manipulação dos dados. O desempenho dependerá também do aparelho que o sistema será usado e pelo navegador.
 
 ## <a name="4.1"></a>4.1  Atores
 | Ator| Descrição |
@@ -146,7 +147,7 @@ Nosso software vai manipular informações relacionadas aos médicos do hospital
 | Caso de Uso | Descrição |
 | - | - |
 | UC01 - Cadastrar médico na tabela de horários |  Este caso de uso permite ao administrador cadastrar um médico presente na api e todos os dados requisitados na tabela de horários para visualização posterior. |
-| UC02 - Atualizar horário do médico |    Este caso permite administrador atualizar uma informação previamente informada. |
+| UC02 - Atualizar horário do médico |    Este caso permite ao administrador atualizar uma informação previamente informada. |
 | UC03 - Atualizar status do médico | Este caso permite ao administrador atualizar o status de disponibilidade do médico. |
 | UC04 - Visualizar tabela | Este caso permite ao administrador visualizar a tabela de horários de acordo com os dados passados anteriormente. |
 | UC05 - Realizar Login | Este caso permite ao administrador a realização de login e logout, ou seja, permite a entrada e saída do sistema. |
@@ -164,7 +165,7 @@ Visão geral da aplicação do ponto de vista de pacotes e aplicativos dentro da
 [diag]:../imagens/Documento_de_arquitetura/PackageDiagram.png "Documento de Arquitetura"
   ___
 ## <a name="6"></a>6.  Desempenho
-Nosso software vai manipular informações relacionadas aos médicos do hospital regional do Gama, logo a quantidade de dados que devemos processar é mediana, logo o sistema não deverá ter dificuldade na manipulação dos dados. O desempenho dependerá também do aparelho que o sistema será usado e pelo navegador.
+Nosso software vai manipular informações relacionadas aos médicos do hospital regional do Gama, logo a quantidade de dados que devemos processar é mediana, então o sistema não deverá ter dificuldade na manipulação dos dados. O desempenho dependerá também do aparelho que o sistema será usado e pelo navegador.
 
 ___
 
