@@ -37,14 +37,6 @@
 
 Obs: A imagem apresentada mostra o quadro geral do projeto para esse documento deve ser apenas analisado os dados da semana 4.
 
-
-### 🔵 Quadro e gráfico de horas trabalhadas EPS
-
-![Quadro de horas trabalhadas EPS.]()
-![Gráfico de horas trabalhadas EPS.]()
-
-Obs: As horas trabalhadas pela equipe de EPS é descrita pela linha "Semana 4".
-
 ## 3 - Tarefas
 
 ***Technical Stories***
