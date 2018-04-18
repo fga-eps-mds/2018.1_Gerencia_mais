@@ -57,7 +57,7 @@ Dentro da prática DevOps é pregado a automatização das área de operações,
 |---------|---------|---------------|
 |15/0007329|Caio Gabriel Araújo Medeiros|***DevOps member***|
 |14/0168192|Eduardo Júnio Veloso Rodrigues|***DevOps member***|
-|15/0012934|João Gabriel Saliba Ribeiro|***???***|
+|15/0012934|João Gabriel Saliba Ribeiro|***Product Owner***|
 |10/0120181|Rafael Bragança|***Software Architect***|
 |13/0136026|Ulysses Bernard Mendes Lara|***Scrum Master***|
 

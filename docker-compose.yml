@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  backend: 
+    build: .
+    volumes:
+      - ./:/code
+    ports:
+      - 8000:8000
+    tty: true
+    command: /bin/bash -l -c 'pip install django-webpack-loader && python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0:8000'  
+    depends_on:
+      - frontend 
+  frontend:
+    image: node:8.1
+    volumes:
+      - ./:/code
+    ports: 
+      - 3000:3000
+    command: bash -c 'cd /code/ && npm install &&  npm install -g create-react-app && cd /code/ && npm run start '    
+    

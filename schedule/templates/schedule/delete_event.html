@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block body %}
+<h1>{% trans "Delete" %}</h1>
+{% trans "Você tem certeza que quer deletar esse evento ?" %}
+
+<form action="" method="post">{% csrf_token %}
+    <input type="submit" value="Confirmar">
+    <input type="submit" name="cancel" value="Cancelar">
+</form>
+{% endblock %}
