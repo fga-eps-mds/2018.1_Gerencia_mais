@@ -1,10 +1,3 @@
----
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: default
----
-
 
 ### ✅ Introdução
 
@@ -20,7 +13,7 @@ Em reuniões efetuadas com a Gestora do HRG, houve discussões sobre o TrakCare,
 <br>
 ## ✅ Solução Proposta -> [**Gerencia Mais**](https://gerenciamais.herokuapp.com/)
 
-Com isso  foi decidido fazer a implementação de outro App, “Gerencia Mais”, onde essa supriria a necessidade da Gestora do HRG de ficar fazendo planilhas de forma manual para o controle dos horários entre outras informações relacionadas. No app sera possível fazer o gerenciamento do quadro horário médico do HRG, assim como o controle de horas trabalhadas, horas restantes, quantos profissionais estão alocados em cada turno, e também o status de disponibilidade dos servidores (disponível, férias, atestado).
+Com isso  foi decidido fazer a implementação de outro App, “Gerencia Mais”, onde essa supriria a necessidade da Gestora do HRG de ficar fazendo planilhas de forma manual para o controle dos horários entre outras informações relacionadas. No app será possível fazer o gerenciamento do quadro horário médico do HRG, assim como o controle de horas trabalhadas, horas restantes, quantos profissionais estão alocados em cada turno, e também o status de disponibilidade dos servidores (disponível, férias, atestado).
 
 <br>
 
