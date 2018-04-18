@@ -2,7 +2,7 @@
 
 |Data|Versão|Descrição|Autor(es)|           
 |-----|------|---------|----------|            
-|05/03/2018|0.1| Versão Inicial |Caio Gabriel|
+|05/04/2018|0.1| Versão Inicial |Caio Gabriel|
 
 
 ## 1 - Introdução
@@ -15,7 +15,7 @@ De acordo com Reichel C.W.(2006), EVM é um método que permite que um gerente o
 ### 1.1 - Objetivo
 
 <p align="justify">
-O EVM é usado para avaliar o cronograma e o desempenho de custo de um projeto, desse modo, o objetivo da equipe é saber exatamente se o projeto esta adiantado e atrasado ou se orcamento esta inferior ou acima do aferido.
+O EVM é usado para avaliar o cronograma e o desempenho de custo de um projeto, desse modo, o objetivo da equipe é saber exatamente se o projeto esta adiantado ou atrasado e se orcamento esta inferior ou acima do aferido.
 </p>
 
 
