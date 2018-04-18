@@ -82,7 +82,7 @@ Este documento é dividido nas seguintes secções:
 
 *    __Representação de Arquitetura__: Demonstra a arquitetura que usaremos no sistema.
 
-*      __Restrições e Metas de Arquitetura__: Mostra os requisitos de usabilidade do software o os objetivos que impactam significativamente a aplicação.
+*    __Restrições e Metas de Arquitetura__: Mostra os requisitos de usabilidade do software o os objetivos que impactam significativamente a aplicação.
 
 
 *    __Visão de Casos de Uso__: Mostra todos os casos de uso da aplicação.
@@ -141,7 +141,7 @@ Nosso software vai manipular informações relacionadas aos médicos do hospital
 | Administrador da Plataforma (Servidor) | O administrador da plataforma será capaz de acessar as funcionalidades do aplicativo web. Eles farão o cadastro de médicos na tabela, podendo alterar seu status a qualquer momento e também visualizar a tabela. |
 
 ## <a name="4.2"></a>4.2  Diagrama de Casos de Uso
-![Image of Yaktocat](https://i.imgur.com/tqp3Swb.png)
+![Casos de uso](https://i.imgur.com/tqp3Swb.png)
 
 ## <a name="4.3"></a>4.3  Descrições de Casos de Uso
 | Caso de Uso | Descrição |
