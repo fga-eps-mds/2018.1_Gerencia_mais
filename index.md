@@ -1,8 +1,9 @@
-
-----
-layout: default
-----
-
+---
+# You don't need to edit this file, it's empty on purpose.	 # You don't need to edit this file, it's empty on purpose.
+# Edit theme's home layout instead if you wanna make some changes	 # Edit theme's home layout instead if you wanna make some changes
+# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults	 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+layout: default	
+---
 ### ✅ Introdução
 
 O sistema utilizado atualmente não só pelo HRG(hospital Regional do Gama), mas  pela grande maioria dos hospitais da rede publica do DF é o TrakCare. App que traz maior engajamento do paciente como grande aliado para o processo de tratamento do mesmo. E também utilizado pelos Médicos e Gestores para melhorias em segurança de dados, resultados clínicos, controles de custos, redução de erros de prescrição, agilidade no faturamento, otimização de recursos e também para alcançar demais iniciativas estratégicas.
