@@ -14,7 +14,7 @@
 |:--:|:--:|
 |**Número da sprint**|4|
 |**Data de início**|31/03/2017|
-|**Data de término**|07/03/2017|
+|**Data de término**|07/04/2017|
 |**Duração**|7 dias|
 |**Pontos planejados**|40|
 |**Pontos concluidos**|37|
