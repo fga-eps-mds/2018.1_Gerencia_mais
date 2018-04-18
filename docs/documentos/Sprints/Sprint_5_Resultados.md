@@ -21,19 +21,21 @@
 
 ## 2 - Coleta de dados da equipe
 
- ### 🔵 Quadro e gráfico de horas trabalhadas MDS
+***quadro de horas***
 
-![Quadro de horas trabalhadas MDS.](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/docs/docs/documentos/imagens/sprint2/tabela-horas-MDS-sprint2.png)
-![Gráfico de horas trabalhadas MDS.](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/docs/docs/documentos/imagens/sprint2/grafico-horas-MDS-sprint2.png)
+* MDS
 
-Obs: As horas trabalhadas pela equipe de mds é descrita pela linha "Semana 4".
+![Quadro_de_horas_eps.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/horas_eps.png)
 
-### 🔵 Quadro e gráfico de horas trabalhadas EPS
+![Grafico_de_horas_eps.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/grafico_eps.png)
 
-![Quadro de horas trabalhadas EPS.]()
-![Gráfico de horas trabalhadas EPS.]()
+* EPS
 
-Obs: As horas trabalhadas pela equipe de EPS é descrita pela linha "Semana 4".
+![Quadro_de_horas_mds.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/horas_mds.png)
+
+![Grafico_de_horas_mds.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/grafico_mds.png)
+
+Obs: A imagem apresentada mostra o quadro geral do projeto para esse documento deve ser apenas analisado os dados da semana 5.
 
 ## 3 - Tarefas
 
@@ -63,7 +65,7 @@ Obs: As horas trabalhadas pela equipe de EPS é descrita pela linha "Semana 4".
 
 
 ## 4 - Retrospectiva da Sprint
-![Retrospectiva]()
+![Retrospectiva](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/Sprint5/retrospectiva.png)
 
 ## 5 - Riscos
 
@@ -76,5 +78,9 @@ Foi tomada a desição pelo grupo de EPS de coletar o conhecimento do time no pe
 ***Quadro de conhecimento inicial***
 ![conhecimento_inicial.png]()
 
-***Quadro de conhecimento release 1*** 
+***Quadro de conhecimento release 1***
 ![conhecimento_inicial.png]()
+
+## 6 - Burndown
+
+![burndown.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/Sprint5/burndown.png)
