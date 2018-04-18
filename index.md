@@ -2,7 +2,7 @@
 # You don't need to edit this file, it's empty on purpose.	 # You don't need to edit this file, it's empty on purpose.
 # Edit theme's home layout instead if you wanna make some changes	 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults	 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: default	
+layout: default
 ---
 ### ✅ Introdução
 
@@ -22,4 +22,23 @@ Com isso  foi decidido fazer a implementação de outro App, “Gerencia Mais”
 
 <br>
 
+#### Homepage
 <img src="https://i.imgur.com/yZDRSTX.jpg">
+<br>
+<br>
+#### Cadastro de Horário dos médicos
+<img src="https://i.imgur.com/Ast3FS1.jpg">
+<br>
+<br>
+#### Quadro de Horários
+<img src="https://i.imgur.com/SSONUnH.jpg">
+<br>
+<br>
+#### Alteração de status
+<img src="https://i.imgur.com/S1vcy3c.jpg">
+<br>
+<br>
+#### Atualização de Horários
+<img src="https://i.imgur.com/rCqPGE2.jpg">
+<br>
+<br>

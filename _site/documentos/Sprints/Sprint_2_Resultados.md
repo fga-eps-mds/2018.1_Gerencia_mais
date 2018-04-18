@@ -22,17 +22,27 @@
 
  ### 🔵 Quadro e gráfico de horas trabalhadas MDS
 
-![Quadro de horas trabalhadas MDS.](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/docs/docs/documentos/imagens/sprint2/tabela-horas-MDS-sprint2.png)
-![Gráfico de horas trabalhadas MDS.](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/docs/docs/documentos/imagens/sprint2/grafico-horas-MDS-sprint2.png)
 
 Obs: As horas trabalhadas pela equipe de mds é descrita pela linha "Semana 2".
 
 ### 🔵 Quadro e gráfico de horas trabalhadas EPS
 
-![Quadro de horas trabalhadas EPS.](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/docs/docs/documentos/imagens/sprint2/tabela-horas-eps-sprint2.png)
-![Gráfico de horas trabalhadas EPS.](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/docs/docs/documentos/imagens/sprint2/grafico-horas-EPS-sprint2.png)
+***quadro de horas***
 
-Obs: As horas trabalhadas pela equipe de EPS é descrita pela linha "Semana 2".
+* MDS
+
+![Quadro_de_horas_eps.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/horas_eps.png)
+
+![Grafico_de_horas_eps.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/grafico_eps.png)
+
+* EPS
+
+![Quadro_de_horas_mds.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/horas_mds.png)
+
+![Grafico_de_horas_mds.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/grafico_mds.png)
+
+Obs: A imagem apresentada mostra o quadro geral do projeto para esse documento deve ser apenas analisado os dados da semana 2.
+
 
 ## 3 - Tarefas
 
@@ -40,11 +50,21 @@ Obs: As horas trabalhadas pela equipe de EPS é descrita pela linha "Semana 2".
 |----|-----|------------------|-----|
 |[#26](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/issues/26)|Integração contínua (travis)|Caio Gabriel|Concluído|
 |[#24](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/issues/24)|Modificar docker para integrar Django e React|Eduardo Júnio|Concluído|
+|[#15](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/15)|Dojo de React|Ulysses Lara|Concluído|
 
 
-* Resultados
 
 ## 4 - Retrospectiva da Sprint
 ![Retrospectiva](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/docs/docs/documentos/imagens/sprint2/retrospectiva.png)
 
+##5 - Riscos
 
+Na Sprint 2 o risco relevante ao escopo percistiu no projeto, para reduzir seu impacto continuou-se com a mesma estrategia realizada na sprint 1, de focar em aspectos independentes do escopo.
+
+## 6 - Burndown
+
+![burndown.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/sprint2/retrospectiva.png)
+
+O grafico gerado nessa sprint teve uma queda apenas no final por se tratar de poucas historias, onde foram finalizadas apenas no final da sprint.
+
+A pontuação dessa sprint se apresentou baixa pois ocorreu o problema de falta de escopo, o que acabou tornando o suporte ao conhecimento de MDS prioridade.

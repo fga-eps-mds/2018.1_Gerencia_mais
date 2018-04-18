@@ -15,7 +15,8 @@
 |**Data de início**|10/03/2017|
 |**Data de término**|17/03/2017|
 |**Duração**|7 dias|
-|**Pontos planejados**|0|
+|**Pontos planejados**|9|
+
 
 ## 2 - Pareamento
 
