@@ -40,8 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'schedule',
     'tests',
-    'django.contrib.sites',
-    'django.contrib.humanize',
+    'corsheaders',
 ]
 
 REST_FRAMEWORK = {
@@ -51,8 +50,8 @@ REST_FRAMEWORK = {
 }
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware', 
-    'django.middleware.common.CommonMiddleware', 
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.common.BrokenLinkEmailsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -63,9 +62,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = (
-    'localhost:3000/'
+    'http://localhost:3000/DoctorStatus',
 )
 
 ROOT_URLCONF = 'leito_hospitalar.urls'
