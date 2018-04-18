@@ -18,7 +18,6 @@ from django.utils.translation import ugettext_lazy as _
 
 from schedule.models.calendars import Calendar
 from schedule.models.rules import Rule
-from schedule.utils import OccurrenceReplacer
 
 freq_dict_order = {
     'YEARLY': 0,
@@ -114,68 +113,6 @@ class Event(models.Model):
     def get_absolute_url(self):
         return reverse('event', args=[self.id])
 
-    def get_occurrences(self, start, end, clear_prefetch=True):
-        """
-        >>> rule = Rule(frequency = "MONTHLY", name = "Monthly")
-        >>> rule.save()
-        >>> event = Event(rule=rule, start=datetime.datetime(2008,1,1,tzinfo=pytz.utc), end=datetime.datetime(2008,1,2))
-        >>> event.rule
-        <Rule: Monthly>
-        >>> occurrences = event.get_occurrences(datetime.datetime(2008,1,24), datetime.datetime(2008,3,2))
-        >>> ["%s to %s" %(o.start, o.end) for o in occurrences]
-        ['2008-02-01 00:00:00+00:00 to 2008-02-02 00:00:00+00:00', '2008-03-01 00:00:00+00:00 to 2008-03-02 00:00:00+00:00']
-
-        Ensure that if an event has no rule, that it appears only once.
-
-        >>> event = Event(start=datetime.datetime(2008,1,1,8,0), end=datetime.datetime(2008,1,1,9,0))
-        >>> occurrences = event.get_occurrences(datetime.datetime(2008,1,24), datetime.datetime(2008,3,2))
-        >>> ["%s to %s" %(o.start, o.end) for o in occurrences]
-        []
-        """
-
-        # Explanation of clear_prefetch:
-        #
-        # Periods, and their subclasses like Week, call
-        # prefetch_related('occurrence_set') on all events in their
-        # purview. This reduces the database queries they make from
-        # len()+1 to 2. However, having a cached occurrence_set on the
-        # Event model instance can sometimes cause Events to have a
-        # different view of the state of occurrences than the Period
-        # managing them.
-        #
-        # E.g., if you create an unsaved occurrence, move it to a
-        # different time [which saves the event], keep a reference to
-        # the moved occurrence, & refetch all occurrences from the
-        # Period without clearing the prefetch cache, you'll end up
-        # with two Occurrences for the same event but different moved
-        # states. It's a complicated scenario, but can happen. (See
-        # tests/test_occurrence.py#test_moved_occurrences, which caught
-        # this bug in the first place.)
-        #
-        # To prevent this, we clear the select_related cache by default
-        # before we call an event's get_occurrences, but allow Period
-        # to override this cache clear since it already fetches all
-        # occurrence_sets via prefetch_related in its get_occurrences.
-        if clear_prefetch:
-            persisted_occurrences = self.occurrence_set.select_related(None).all()
-        else:
-            persisted_occurrences = self.occurrence_set.all()
-        occ_replacer = OccurrenceReplacer(persisted_occurrences)
-        occurrences = self._get_occurrence_list(start, end)
-        final_occurrences = []
-        for occ in occurrences:
-            # replace occurrences with their persisted counterparts
-            if occ_replacer.has_occurrence(occ):
-                p_occ = occ_replacer.get_occurrence(occ)
-                # ...but only if they are within this period
-                if p_occ.start < end and p_occ.end >= start:
-                    final_occurrences.append(p_occ)
-            else:
-                final_occurrences.append(occ)
-        # then add persisted occurrences which originated outside of this period but now
-        # fall within it
-        final_occurrences += occ_replacer.get_additional_occurrences(start, end)
-        return final_occurrences
 
     def get_rrule_object(self, tzinfo):
         if self.rule is None:
@@ -308,25 +245,6 @@ class Event(models.Model):
                 yield self._create_occurrence(o_start, o_end)
 
             loop_counter += 1
-
-    def occurrences_after(self, after=None, max_occurrences=None):
-        """
-        returns a generator that produces occurrences after the datetime
-        ``after``.  Includes all of the persisted Occurrences. (Optionally) This generator will return up to
-        ``max_occurrences`` occurrences or has reached ``self.end_recurring_period``, whichever is smallest.
-        """
-        if after is None:
-            after = timezone.now()
-        occ_replacer = OccurrenceReplacer(self.occurrence_set.all())
-        generator = self._occurrences_after_generator(after)
-        trickies = list(self.occurrence_set.filter(original_start__lte=after, start__gte=after).order_by('start'))
-        for index, nxt in enumerate(generator):
-            if max_occurrences and index > max_occurrences - 1:
-                break
-            if (len(trickies) > 0 and (nxt is None or nxt.start > trickies[0].start)):
-                yield trickies.pop(0)
-            yield occ_replacer.get_occurrence(nxt)
-
     @property
     def event_start_params(self):
         start = self.start
