@@ -52,7 +52,7 @@ O EVM consiste nos seguintes elementos de dados primários e derivados. Cada val
 ### 3 - Planilha EVM
 
 <p align="center">
-<img src="https://i.imgur.com/M43qwLK.jpg">
+
 </p>
 
 Link para a planilha -> [EVM](https://docs.google.com/spreadsheets/d/1AkEWmBIE79ULfsWTXpxpCET_zgmMRfLFKNF1h5lR20I/edit?usp=sharing)
