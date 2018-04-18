@@ -25,7 +25,9 @@ export default class DoctorForm extends Component {
       status: null,
       description: '',
       hospital:'',
-      calendar: 'calendario-medico',
+      creator: '1',
+      rule: null,
+      calendar: '1',
     }
      this.onChange = this.onChange.bind(this);
      this.onChange2 = this.onChange2.bind(this);
@@ -42,6 +44,17 @@ export default class DoctorForm extends Component {
       {[title]: e.target.checked}
     )
   }
+  handleSubmit = e => {
+    e.preventDefault();
+    const {title , registration, start, end, CPF, status, hospital, calendar, creator} = this.state;
+    const lead = {title , registration, start, end, CPF, status, hospital, calendar,creator};
+    const conf = {
+      method: "POST",
+      body: JSON.stringify(lead),
+      headers: new Headers({ "Content-Type": "application/json" })
+    };
+    fetch('http://localhost:8000/schedule/api-event/', conf).then(response => console.log(response));
+}
 
   render(){
       let statusmensager;
@@ -94,9 +107,7 @@ export default class DoctorForm extends Component {
                   <h1>{this.state.end}</h1>
                   <h1>{this.state.time_end}</h1>
               </fieldset>
-              <input type="submit" value="Apply"
-                disabled={!this.state.formValid}
-                onClick={this.sendInfo}/>
+              <input type="submit" value="Apply" onClick={this.handleSubmit}/>
             </form>
             </div>
         </div>
