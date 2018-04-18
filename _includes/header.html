@@ -1,5 +1,6 @@
 <header>
 
+
 <style>
 .navbar {
   margin-bottom: 0;
@@ -67,7 +68,7 @@
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-left">
+      <ul style="padding-top:1px" class="nav navbar-nav navbar-left">
 
 
         {% if page.url == "/index.html" %}
@@ -77,9 +78,13 @@
           <li style="width: 200px; padding-left:50px"><a href="{{ site.baseurl }}/projectabout" style="width:180px">Sobre o Projeto</a></li>
         {% endif %}
 
-
-
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+            <li style="width:150px;"><a href="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais" class="glyphicon glyphicon-wrench">
+                  Github
+              </a>
+            </li>
+            </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
