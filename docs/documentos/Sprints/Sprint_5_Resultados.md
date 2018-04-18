@@ -41,8 +41,9 @@ Obs: A imagem apresentada mostra o quadro geral do projeto para esse documento d
 
 ***Technical Stories***
 
+
 |ID|História|Pontos|Responsáveis|Status|
-|:-:|:-----:|:----:|:----------:||:-----:|
+|:-:|:-----:|:----:|:----------:|:----:|
 |[TS12](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/68)|Elaborar roadmap DeVops|3|Eduardo Junior|Aceito|
 |[TS13](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/83)|Modificar travis para o deploy contínuo dos dois ambientes |3|Eduardo Junior|Aceito|
 |[TS14](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/74)|Desenvolver a página do projeto (git pages)|3|Caio Gabriel|Aceito|
@@ -65,6 +66,7 @@ Obs: A imagem apresentada mostra o quadro geral do projeto para esse documento d
 
 
 ## 4 - Retrospectiva da Sprint
+
 ![Retrospectiva](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/Sprint5/retrospectiva.png)
 
 ## 5 - Riscos
