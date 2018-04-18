@@ -1,4 +1,8 @@
 
+----
+-layout: default
+----
+
 ### ✅ Introdução
 
 O sistema utilizado atualmente não só pelo HRG(hospital Regional do Gama), mas  pela grande maioria dos hospitais da rede publica do DF é o TrakCare. App que traz maior engajamento do paciente como grande aliado para o processo de tratamento do mesmo. E também utilizado pelos Médicos e Gestores para melhorias em segurança de dados, resultados clínicos, controles de custos, redução de erros de prescrição, agilidade no faturamento, otimização de recursos e também para alcançar demais iniciativas estratégicas.
