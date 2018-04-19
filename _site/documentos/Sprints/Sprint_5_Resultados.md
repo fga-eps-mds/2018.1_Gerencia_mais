@@ -1,6 +1,6 @@
 
 
-# ✅ Resultados da Sprint 4
+# ✅ Resultados da Sprint 5
 
 ## Sumário
 
@@ -67,7 +67,7 @@ Obs: A imagem apresentada mostra o quadro geral do projeto para esse documento d
 
 ## 4 - Retrospectiva da Sprint
 
-![Retrospectiva](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/Sprint5/retrospectiva.png)
+<img src="{{ site.baseurl }}/documentos/imagens/Sprint5/retrospectiva.png">
 
 ## 5 - Riscos
 
@@ -78,10 +78,11 @@ Nessa sprint não houve o pareamento de MDS com EPS devido ao fato do grupo de M
 Foi tomada a desição pelo grupo de EPS de coletar o conhecimento do time no periodo dado por releases ja que as sprints possuem tamanhos muito curtos.
 
 ***Quadro de conhecimento inicial***
-![conhecimento_inicial.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/sprint0/conhecimento_Inicial.png)
+
+<img src="{{ site.baseurl }}/documentos/imagens/sprint0/conhecimento_Inicial.png">
 
 ***Quadro de conhecimento release 1***
-![conhecimento_inicial.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/Sprint5/quadro_de_conhecimento_r1.png)
+<img src="{{ site.baseurl }}/documentos/imagens/Sprint5/quadro_de_conhecimento_r1.png>
 
 ## 6 - Burndown
 

@@ -25,15 +25,17 @@
 
 * MDS
 
-![Quadro_de_horas_eps.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/horas_eps.png)
+* MDS
 
-![Grafico_de_horas_eps.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/grafico_eps.png)
+<img src="{{ site.baseurl }}/documentos/imagens/horas_trabalhadas/horas_eps.png">
+
+<img src="{{ site.baseurl }}/documentos/imagens/horas_trabalhadas/grafico_eps.png">
 
 * EPS
 
-![Quadro_de_horas_mds.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/horas_mds.png)
+<img src="{{ site.baseurl }}/documentos/imagens/horas_trabalhadas/horas_mds.png">
 
-![Grafico_de_horas_mds.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/grafico_mds.png)
+<img src="{{ site.baseurl }}/documentos/imagens/horas_trabalhadas/grafico_mds.png">
 
 Obs: A imagem apresentada mostra o quadro geral do projeto para esse documento deve ser apenas analisado os dados da semana 4.
 
@@ -59,7 +61,7 @@ Obs: A imagem apresentada mostra o quadro geral do projeto para esse documento d
 
 
 ## 4 - Retrospectiva da Sprint
-![Retrospectiva](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/Sprint4/retrospectiva.png)
+<img src="{{ site.baseurl }}/documentos/imagens/Sprint4/retrospectiva.png">
 
 ## 5 - Riscos
 
@@ -69,6 +71,6 @@ Nessa Sprint o risco de conhecimento como na sprint anterior se mostrou desfavor
 
 ## 6 - Burndown
 
-![burndown.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/Sprint4/burndown.png)
+<img src="{{ site.baseurl }}/documentos/imagens/Sprint4/burndown.png">
 
 Nessa Sprint ocorreu falha no uso da ferramenta ZenHub onde a equipe negligenciou o fechamento das issues resultando no grafico apresentado acima.

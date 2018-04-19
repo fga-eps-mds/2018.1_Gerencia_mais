@@ -50,9 +50,13 @@ Dr. Down. Foi decidido pela professora Carla que o grupo iria realizar o projeto
 ## 4 - Coleta de dados da equipe
 
 Para se ter um conhecimento inicial da equipe foram elaborada planilhas, que servirão para acompanhar o crescimento do membros, na plataforma do Google Drive. São elas:
-* [Quadro de conhecimento.](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/docs/docs/documentos/imagens/sprint0/conhecimento_Inicial.png)
-* [Quadro de disponibilidade.](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/docs/docs/documentos/imagens/sprint0/quadro_de_disponibilidade.pdf)
-* [Quadro de horas trabalhadas.](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/docs/docs/documentos/imagens/sprint0/planilha_de_horas_trabalhadas.pdf)
+
+<img src="{{ site.baseurl }}/documentos/imagens/sprint0/conhecimento_Inicial.png>
+
+<img src="{{ site.baseurl }}/documentos/imagens/sprint0/quadro_de_disponibilidade.pdf>
+
+<img src="{{ site.baseurl }}/documentos/imagens/sprint0/planilha_de_horas_trabalhadas.pdf>
+
 
 ## 5 - Instruções e aplicação de Dojos
 

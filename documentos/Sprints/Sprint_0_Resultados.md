@@ -18,7 +18,7 @@
 
 ## 2 - Coleta de dados da equipe
 
-![Quadro de Conhecimento.](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/docs/docs/documentos/imagens/sprint0/conhecimento_Inicial.png)
+<img src="{{ site.baseurl }}/documentos/imagens/sprint0/conhecimento_Inicial.png>
 
 
 Por ser uma coleta inicial do conhecimento dos membros da equipe, nenhuma mudança foi percebida. Podemos observar no segundo quadro o engajamento da equipe no estudo e obtenção de conhecimento.
@@ -27,15 +27,15 @@ Por ser uma coleta inicial do conhecimento dos membros da equipe, nenhuma mudan�
 
 * MDS
 
-![Quadro_de_horas_eps.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/horas_eps.png)
+<img src="{{ site.baseurl }}/documentos/imagens/horas_trabalhadas/horas_eps.png">
 
-![Grafico_de_horas_eps.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/grafico_eps.png)
+<img src="{{ site.baseurl }}/documentos/imagens/horas_trabalhadas/grafico_eps.png">
 
 * EPS
 
-![Quadro_de_horas_mds.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/horas_mds.png)
+<img src="{{ site.baseurl }}/documentos/imagens/horas_trabalhadas/horas_mds.png">
 
-![Grafico_de_horas_mds.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/grafico_mds.png)
+<img src="{{ site.baseurl }}/documentos/imagens/horas_trabalhadas/grafico_mds.png">
 
 Obs: A imagem apresentada mostra o quadro geral do projeto para esse documento deve ser apenas analisado os dados da semana 0.
 
@@ -56,6 +56,8 @@ Obs: A imagem apresentada mostra o quadro geral do projeto para esse documento d
   Os Dojos serviram como uma introdução à algumas das tecnologias que pretendemos utilizar no projeto. Não foi possível concluir o dojo referente à Django/React pela falta de tempo na reunião.
 
 ## 4 - Burndown
+
+<img src="{{ site.baseurl }}/documentos/imagens/sprint0/burndown.png">
 
 ![burndown.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/sprint0/burndown.png)
 
