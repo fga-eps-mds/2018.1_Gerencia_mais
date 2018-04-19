@@ -116,7 +116,8 @@ O framework usado como backend do nosso *webapp*, o Django, é baseado no modelo
   ![Documento de Arquitetura][logo]
 
 
-<img src="{{site.baseurl}}/documentos/imagens/imagens/Documento_de_arquitetura/snippod-boilerplate-stack.png">
+<img src="{{site.baseurl}}/documentos/imagens/Documento_de_arquitetura/snippod-boilerplate-stack.png">
+
 <br>
  "Documento de Arquitetura"
   Figura 1- Diagrama do um MTV com react, retirado no site em 27/03/2018.
@@ -147,11 +148,20 @@ Nosso software vai manipular informações relacionadas aos médicos do hospital
 ## 4.3  Descrições de Casos de Uso
 | Caso de Uso | Descrição |
 | - | - |
-| UC01 - Cadastrar médico na tabela de horários |  Este caso de uso permite ao administrador cadastrar um médico presente na api e todos os dados requisitados na tabela de horários para visualização posterior. |
+| UC01 - Cadastrar médicos|  Este caso de uso permite ao administrador cadastrar um médico presente na api e todos os dados requisitados na tabela de horários para visualização posterior. |
 | UC02 - Atualizar horário do médico |    Este caso permite ao administrador atualizar uma informação previamente informada. |
+| UC02 - Visualizar médicos | Este caso permite ao administrador visualizar os médicos. |
 | UC03 - Atualizar status do médico | Este caso permite ao administrador atualizar o status de disponibilidade do médico. |
+| UC03 - Atualizar horários|    Este caso permite ao administrador atualizar uma informação previamente informada. |
 | UC04 - Visualizar tabela | Este caso permite ao administrador visualizar a tabela de horários de acordo com os dados passados anteriormente. |
+| UC04 - Atualizar status| Este caso permite ao administrador atualizar o status de disponibilidade do médico. |
 | UC05 - Realizar Login | Este caso permite ao administrador a realização de login e logout, ou seja, permite a entrada e saída do sistema. |
+| UC05 - Deletar médicos | Este caso permite ao administrador remover um médico do sistema.|
+| UC06 - Visualizar quadro horário | Este caso permite ao administrador visualizar a tabela de horários de acordo com os dados passados anteriormente. |
+| UC07 - Logar no Sistema | Este caso permite ao administrador a realização de login e logout, ou seja, permite a entrada e saída do sistema. |
+| UC08 - Manter Perfil de administrador | Este caso permite ao administrador o gerenciamento da conta de administrador.|
+| UC09 - Gerenciar Administradores | Este caso permite ao administrador da plataforma gerir os demais administradores que vão atuar na plataforma. |
+| UC10 - Manter Aplicação | Este caso permite ao administrador poder dar manutenção ao banco de dados. |
   ___
 ## 5.  Visão Lógica
 
@@ -163,8 +173,11 @@ Visão geral da aplicação do ponto de vista de pacotes e aplicativos dentro da
 
 ![Documento de Arquitetura][diag]
 
+
 <img src="{{site.baseurl}}/documentos/imagens/Documento_de_arquitetura/PackageDiagram.png">
-  ___
+
+
+
 ## 6.  Desempenho
 Nosso software vai manipular informações relacionadas aos médicos do hospital regional do Gama, logo a quantidade de dados que devemos processar é mediana, então o sistema não deverá ter dificuldade na manipulação dos dados. O desempenho dependerá também do aparelho que o sistema será usado e pelo navegador.
 
