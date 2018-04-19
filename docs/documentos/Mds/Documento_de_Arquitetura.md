@@ -14,6 +14,7 @@
 |15/04/2018 |1.2   |Mudança do nome do projeto| Victor |
 |15/04/2018 |1.3   |Corrigir erro do último tópico | Victor  |
 |16/04/2018 |1.4   |Corrigir erros ortográficos | João Vitor  |
+|17/04/2018 |1.5   |Correções no tópico 4 | Guilherme Aguiar |
 # Sumário
 1. [Introdução](#1)
   * 1.1 [Finalidade](#1.1)
@@ -138,19 +139,26 @@ Nosso software vai manipular informações relacionadas aos médicos do hospital
 ## <a name="4.1"></a>4.1  Atores
 | Ator| Descrição |
 |-|-|
-| Administrador da Plataforma (Servidor) | O administrador da plataforma será capaz de acessar as funcionalidades do aplicativo web. Eles farão o cadastro de médicos na tabela, podendo alterar seu status a qualquer momento e também visualizar a tabela. |
+| Administrador da Plataforma| O administrador da plataforma será o responsável pelo gerenciamento dos outros servidores, bem como o manutenibilidade da plataforma. |
+| Administrador | O administrador será capaz de acessar as funcionalidades do aplicativo web. Eles farão o cadastro de médicos na tabela, podendo alterar seu status a qualquer momento e também visualizar a tabela. | |
 
 ## <a name="4.2"></a>4.2  Diagrama de Casos de Uso
-![Casos de uso](https://i.imgur.com/tqp3Swb.png)
+![Casos de uso](https://i.imgur.com/liR4hI0.png)
 
 ## <a name="4.3"></a>4.3  Descrições de Casos de Uso
 | Caso de Uso | Descrição |
 | - | - |
-| UC01 - Cadastrar médico na tabela de horários |  Este caso de uso permite ao administrador cadastrar um médico presente na api e todos os dados requisitados na tabela de horários para visualização posterior. |
-| UC02 - Atualizar horário do médico |    Este caso permite ao administrador atualizar uma informação previamente informada. |
-| UC03 - Atualizar status do médico | Este caso permite ao administrador atualizar o status de disponibilidade do médico. |
-| UC04 - Visualizar tabela | Este caso permite ao administrador visualizar a tabela de horários de acordo com os dados passados anteriormente. |
-| UC05 - Realizar Login | Este caso permite ao administrador a realização de login e logout, ou seja, permite a entrada e saída do sistema. |
+| UC01 - Cadastrar médicos|  Este caso de uso permite ao administrador cadastrar um médico presente na api e todos os dados requisitados na tabela de horários para visualização posterior. |
+| UC02 - Visualizar médicos | Este caso permite ao administrador visualizar os médicos. |
+| UC03 - Atualizar horários|    Este caso permite ao administrador atualizar uma informação previamente informada. |
+| UC04 - Atualizar status| Este caso permite ao administrador atualizar o status de disponibilidade do médico. |
+| UC05 - Deletar médicos | Este caso permite ao administrador remover um médico do sistema.|
+| UC06 - Visualizar quadro horário | Este caso permite ao administrador visualizar a tabela de horários de acordo com os dados passados anteriormente. |
+| UC07 - Logar no Sistema | Este caso permite ao administrador a realização de login e logout, ou seja, permite a entrada e saída do sistema. |
+| UC08 - Manter Perfil de administrador | Este caso permite ao administrador o gerenciamento da conta de administrador.|
+| UC09 - Gerenciar Administradores | Este caso permite ao administrador da plataforma gerir os demais administradores que vão atuar na plataforma. |
+| UC10 - Manter Aplicação | Este caso permite ao administrador poder dar manutenção ao banco de dados. |
+
   ___
 ## <a name="5"></a>5.  Visão Lógica
 
