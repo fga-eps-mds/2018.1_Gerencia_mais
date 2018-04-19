@@ -113,12 +113,12 @@ O framework usado como backend do nosso *webapp*, o Django, é baseado no modelo
 - *View*: A view no caso do Django faz o papel da controller uma vez que ela é quem faz as interações entre a model e a template. Neste caso as ações que ocorrerão no template serão passadas pelo Rest framework para o react que também fará o papel intermediário entre model e template.
 
 
+
   ![Documento de Arquitetura][logo]
 
 
-<img src="{{site.baseurl}}/documentos/imagens/Documento_de_arquitetura/snippod-boilerplate-stack.png">
+<img src="https://i.imgur.com/sJZ9n30.png">
 
-<br>
  "Documento de Arquitetura"
   Figura 1- Diagrama do um MTV com react, retirado no site em 27/03/2018.
 
