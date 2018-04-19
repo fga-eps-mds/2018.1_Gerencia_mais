@@ -21,7 +21,7 @@ Gostou do projeto e gostria de contribuir? Acesse [Contribua](https://github.com
 
 ## 📈 Monitoramento de serviços
 
-<p align="justify">Nosso servidor de produção é monitorado constantemente, você pode visualizar em tempo real o consumo de recursos como: cpu, memória entre outros dados. Clique na imagem abaixo.</p>
+<p align="justify">Nossos servidores de homologação e produção são monitorados constantemente, você pode visualizar em tempo real o consumo de recursos como: cpu, memória entre outros dados. Clique na imagem abaixo.</p>
 
 - ### Status do sistema
 
@@ -31,9 +31,9 @@ Gostou do projeto e gostria de contribuir? Acesse [Contribua](https://github.com
 
 
 
-<p><a href="https://app.datadoghq.com/dash/host/457413069?live=true&from_ts=1523759448318&to_ts=1523763048318&page=0&is_auto=false&tile_size=l&abstraction_level=1&aggregate_up=false&per_page=30&use_date_happened=true&display_timeline=false" target="_blank"><img width="900"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/monitor.gif"></a></p>
+<p><a href="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is94_ferramenta_monitoramento/Monitoramento/analises.md" target="_blank"><img width="900"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/monitor.gif"></a></p>
 
-Obs: O serviço ainda está sendo configurado.
+Obs: O serviço ainda está sendo configurado, apresentando até o momento apenas algumas informações básicas.
 <br>
 
 
@@ -58,7 +58,9 @@ Obs: O serviço ainda está sendo configurado.
  </a>
  <a href="image" target="_blank"><img width="100"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/ColourContrastAnalyserPortable_128.png"></a>
  <a href="image" target="_blank"><img width="150"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/datadog.png"></a>
+   <a href="image" target="_blank"><img width="100"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is94_ferramenta_monitoramento/docs/documentos/imagens/Tecnologias/mon.png"></a>
  <a href="image" target="_blank"><img width="100"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/coveralls-logo.png"></a>
+
 
 <br>
 
@@ -147,6 +149,15 @@ __3º No terminal digite (opcional):__
   coverage html
 ```
 Esse comando irá gerar uma pasta contendo um arquivo html(index.html) que apresenta a cobertura de testes.
+
+##  ℹ️ Deploy
+
+<p align="justify">O deploy da aplicação é feito de forma automatizada por meio da integração contínua (Travis CI) que é responsável por verificar a cobertura de teste ,que não pode ser inferior a 95% , e realizar o deploy junto ao servidor de hospedagem Heroku. Na configuração da integração incluimos os ambientes de homologação e produção que são descritos logo em seguida.
+
+- Deploy ambiente de homologação: Para esse ambiente, usamos a brach __development__. O deploy ocorre de forma automatizada. toda vez que alguma alteração é feita nessa branch, que tem como filtro os testes implementados durante o desenvolvimento.
+- Deploy ambiente de produção: Quando lançada uma nova versão estável do sistema, um novo deploy é realizado de forma automatizada. Para isso usamos a brach __master__, onde a nova versão devidamente testada e obedecendo os critérios de qualidade estabelecidos no [Plano de qualidade](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/Eps/Plano_de_Gerenciamento_de_Qualidade.md) é entregue aos clientes de forma contínua.
+ No tópico a seguir apresentamos os dois ambientes usados para validação e entrega ao cliente.
+</p>
 
 ## 🌎 Acessando a aplicação
 
