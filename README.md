@@ -26,6 +26,7 @@ Gostou do projeto e gostria de contribuir? Acesse [Contribua](https://github.com
 - ### Status do sistema
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__Homologação__   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __Produção__  
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fed58419a8a84d6da70143186b6e68a3)](https://app.codacy.com/app/Eduardojvr/2018.1_Gerencia_mais?utm_source=github.com&utm_medium=referral&utm_content=fga-gpp-mds/2018.1_Gerencia_mais&utm_campaign=badger)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Heroku App Status](http://heroku-shields.herokuapp.com/gicsaude)](https://gicsaude.herokuapp.com) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Heroku App Status](http://heroku-shields.herokuapp.com/gerenciamais)](https://gerenciamais.herokuapp.com)
 
 
