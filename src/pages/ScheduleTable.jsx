@@ -206,7 +206,7 @@ export default class ScheduleTable extends Component {
                     </div>
                 </ToggleButtonGroup>
             </ButtonToolbar>
-	    
+
                 {this.state.content}
           </div>
         </div>

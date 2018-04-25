@@ -8,26 +8,34 @@ import SideBar from '../components/SideBar';
 import FormErrors from '../components/FormErrors';
 import {Carousel} from 'react-bootstrap';
 import InfiniteCalendar from 'react-infinite-calendar';
+import { Redirect } from 'react-router-dom';
 
-var date = new Date("Dec 25,1995");
+var date = new Date().toISOString();
 console.log(date);
+// status = True, title= 'Mauricio', start='2018-04-17T17:25:32Z', end='2018-04-20T17:25:34Z', calendar = calendar
 export default class DoctorForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      id:null,
+      color_event:"#ff0000",
       title: '',
       registration: '',
-      start: '',
+      start: date ,
       time_start:'',
-      end: '',
+      end: date,
       time_end:'',
       CPF: '',
-      status: null,
+      description:'',
+      created_on:date,
+      updated_on:date,
+      end_recurring_period:date,
+      status: true,
       description: '',
       hospital:'',
       creator: '1',
       rule: null,
-      calendar: '1',
+      calendar:'1',
     }
      this.onChange = this.onChange.bind(this);
      this.onChange2 = this.onChange2.bind(this);
@@ -46,25 +54,21 @@ export default class DoctorForm extends Component {
   }
   handleSubmit = e => {
     e.preventDefault();
-    const {title , registration, start, end, CPF, status, hospital, calendar, creator} = this.state;
-    const lead = {title , registration, start, end, CPF, status, hospital, calendar,creator};
+    const {id,color_event,start, end, title, hospital, registration, CPF, status, description, created_on, updated_on, end_recurring_period, creator, rule, calendar} = this.state;
+    console.log({id,color_event,start, end, title, hospital, registration, CPF, status, description, created_on, updated_on, end_recurring_period, creator, rule, calendar} );
+    const lead = {id,color_event,start, end, title, hospital, registration, CPF, status, description, created_on, updated_on, end_recurring_period, creator, rule, calendar} ;
+    const temp = JSON.stringify(lead)
+    console.log(temp);
     const conf = {
       method: "POST",
-      body: JSON.stringify(lead),
+      body: temp,
       headers: new Headers({ "Content-Type": "application/json" })
     };
-    fetch('http://localhost:8000/schedule/api-event/', conf).then(response => console.log(response));
+    fetch('http://localhost:8000/schedule/gp_list/', conf).then(response => console.log(response));
 }
 
+
   render(){
-      let statusmensager;
-      if(this.state.status === true){
-       statusmensager=(<h1>True</h1>)
-      }
-      else if (this.state.status === false)
-      {
-      statusmensager = ( <h1>False</h1>)
-      }
     return(
       <div>
       <NavBar></NavBar>
@@ -77,37 +81,28 @@ export default class DoctorForm extends Component {
 
               <legend><span class="number">1</span> Nome</legend>
               <input id="titleID" type="text" title="title" value={this.state.title} onChange = {this.onChange} placeholder="Digite o nome aqui" />
-              <h1>{this.state.title}</h1>
 
               <legend><span class="number">2</span> Numero de Identificação</legend>
               <input id="idID" type="text" title="registration" value={this.state.registration} onChange = {this.onChange} placeholder="Digite o numero aqui"/>
-              <h1>{this.state.registration}</h1>
 
               <legend><span class="number">3</span>CPF</legend>
               <input id="CPFID" type="text" title="CPF" value={this.state.CPF} onChange = {this.onChange} placeholder="Digite o CPF"/>
-              <h1>{this.state.CPF}</h1>
 
               <legend><span class="number">4</span>Hospital</legend>
               <input id="hospitalID" type="text" title="hospital" value={this.state.hospital} onChange = {this.onChange} placeholder="Digite o Hospital"/>
-              <h1>{this.state.hospital}</h1>
 
              <legend><span class="number">5</span>Status</legend>
               <input id="statusID" type="checkbox" title="status" value={this.state.status} onChange = {this.onChange2} placeholder="Disponível"/>
-              {statusmensager}
 
               <legend><span class="number">6</span>Data e Hora de Entrada</legend>
               <input id="edID" type="date" title="start" value = {this.state.start} onChange={this.onChange} placeholder="" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
               <input id="edID" type="time" title="time_start" value = {this.state.time_start} onChange = {this.onChange}/>
-              <h1>{this.state.start}</h1>
-              <h1>{this.state.time_start}</h1>
 
               <legend><span class="number">7</span>Data e Hora de Saída</legend>
                 <input id="edID" type="date" title="end" value = {this.state.end} onChange={this.onChange} placeholder="" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
                 <input id="edID" type="time" title="time_end" value = {this.state.time_end} onChange = {this.onChange}/>
-                  <h1>{this.state.end}</h1>
-                  <h1>{this.state.time_end}</h1>
               </fieldset>
-              <input type="submit" value="Apply" onClick={this.handleSubmit}/>
+            <input type="submit" value="Apply" onClick={this.handleSubmit}/>
             </form>
             </div>
         </div>

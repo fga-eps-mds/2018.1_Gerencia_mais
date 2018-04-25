@@ -1,11 +1,14 @@
 import datetime
-from schedule.models.calendars import Calendar
-from schedule.models.events import Event
-from schedule.models.rules import Rule
+
+from schedule.models import Calendar, Event, Occurrence, Rule
+
 from .serializer import CalendarSerializer, EventSerializer, RuleSerializer
+
 from rest_framework import generics
-from schedule.models import Calendar, Event, Occurrence
-from schedule.periods import weekday_names
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
+
 
 
 class ListCalendar(generics.ListCreateAPIView):
@@ -20,10 +23,17 @@ class ListRule(generics.ListCreateAPIView):
     queryset = Rule.objects.all()
     serializer_class = RuleSerializer
 
-
-def get_rest_list(request,):
-    """Return Json list of all Calendars"""
+@api_view(['GET','POST'])
+def event_list(request):
+    "Get all event's list."
     if request.method == "GET":
-        rest_list = Calendar.objects.order_by('-title')
-        serializer = CalendarSerializer(rest_list,many=True)
-        return JsonResponse(serializer.data, safe = False)
+        events = Event.objects.all()
+        serializer = EventSerializer(events, many=True)
+        return Response(serializer.data)
+
+    elif request.method == "POST":
+        serializer = EventSerializer(data= request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
