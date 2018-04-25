@@ -33,6 +33,9 @@ export default class NavBar extends Component {
            <li className="nav-item divider-vertical">
              {this.setNavBar(false)}
            </li>
+           <li className="nav-item active divider-vertical">
+             <a className="nav-link topicos active title" href="/RegistrationAdmin">Cadastrar</a>
+           </li>
          </ul>
        </div>
       </nav>
