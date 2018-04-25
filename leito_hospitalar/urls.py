@@ -6,6 +6,7 @@ from django.urls import path, re_path
 from django.contrib import admin
 from django.views.generic import TemplateView
 from schedule import urls
+from administrator import urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -15,4 +16,5 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name="index.html")),
     re_path(r'^(?P<username>[\w.@+-]+)/$', TemplateView.as_view(template_name='index.html')),
     re_path(r'^$', TemplateView.as_view(template_name="index.html")),
+    path('administrator/',include('administrator.urls')),
 ]

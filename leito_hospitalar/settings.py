@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'schedule',
     'tests',
     'corsheaders',
+    'administrator',
 ]
 
 REST_FRAMEWORK = {
