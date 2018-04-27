@@ -16,127 +16,58 @@ export default class LoginPage extends Component {
     super(props);
     this.state = {
       name: '',
-      id: '',
-      status:'' ,
-      comments: '',
-      formErrors: {name: '', id: '', entry_date: '', entry_time: '', departure_date: '', departure_time: ''},
-      name_valid: false,
-      id_valid: false,
-      form_valid: false,
-      api: [
-        {reg_name: 'Paulo', reg_ids: '1', status:true, comments:''},
-        {reg_name: 'Sabino', reg_ids: '2', status:true, comments:''},
-        {reg_name: 'Marcos', reg_ids: '3', status:true, comments:''},
-        {reg_name: 'Valquiria', reg_ids: '4', status:true, comments:''},
-      ],
+      password: '',
+      todos:[],
+      valid: false,
     }
   }
+
+  async componentDidMount() {
+      try {
+
+        const res = await fetch('http://localhost:8000/administrator/gp-admin-list/');
+        const todos = await res.json();
+        this.setState({todos});
+        // console.log(todos);
+      } catch (e) {
+        console.log(e);
+      }
+    }
 
 
   handleUserInput (e) {
     const name = e.target.name;
     const value = e.target.value;
-    this.setState({[name]: value},
-                  () => { this.validateField(name, value) });
+    this.setState({[name]: value});
   }
 
-
-
-  validateField(fieldName, value) {
-    let fieldValidationErrors = this.state.formErrors;
-    let name_valid = this.state.name_valid;
-    let id_valid = this.state.id_valid;
-    // let entry_date_ =  this.state.entry_date;
-    // let departure_date_valid = this.state.departure_date_valid;
-    let name = this.state.name;
-    let id = this.state.id;
-    let api = this.state.api;
-    switch(fieldName) {
-      case 'name':
-        for(var nn = 0; nn < api.length; nn++){
-          if(api[nn].reg_name.toLowerCase() == value.toLowerCase()){
-            name_valid = true;
-            break;
-          }else {
-            name_valid = false;
-          }
-        }
-        if(id){
-          if(name_valid == true){
-            console.log(api[nn].reg_ids);
-            console.log(id);
-            if(api[nn].reg_ids != id){
-              name_valid = false;
-              id_valid = false;
-              console.log('false');
-            }
-            else{
-              name_valid = true;
-              id_valid = true;
-              console.log('true');
-            }
-          }
-          fieldValidationErrors.id = id_valid ? '' : 'Erro: Id não correspondente' ;
-        }
-        fieldValidationErrors.name = name_valid ? '' : 'Erro: Nome não correspondente' ;
-        this.setState({formErrors: fieldValidationErrors,
-                        name_valid: name_valid,
-                        id_valid: id_valid,
-                      }, this.validateForm);
-        break;
-
-        case 'id':
-          for(var nn = 0; nn < api.length;  nn++){
-            if(api[nn].reg_ids == value){
-              id_valid = true;
-              break;
-            }else {
-              id_valid = false;
-            }
-          }
-          if(name){
-            if(id_valid == true){
-              console.log(api[nn].reg_name);
-              console.log(name);
-              if(api[nn].reg_name.toLowerCase() != name.toLowerCase()){
-                name_valid = false;
-                id_valid = false;
-                console.log('false');
-              }
-              else{
-                name_valid = true;
-                id_valid = true;
-                console.log('true');
-              }
-               fieldValidationErrors.name = name_valid ? '' : 'Erro: Nome não correspondente' ;
-            }
-          }
-          fieldValidationErrors.id = id_valid ? '' : 'Erro: Id não correspondente' ;
-          this.setState({formErrors: fieldValidationErrors,
-                          name_valid: name_valid,
-                          id_valid: id_valid,
-                        }, this.validateForm);
-        break;
-
-        // case 'departure_date':
-        //   if(value > entry_date){
-        //     departure_date_valid = true;
-        //   }else{
-        //     departure_date_valid = false;
-        //   }
-        //   fieldValidationErrors.id = id_valid ? '' : 'Erro: Data de saída menor que a data de entrada' ;
-        //   this.setState({formErrors: fieldValidationErrors,
-        //                   departure_date_valid: departure_date_valid,
-        //                 }, this.validateForm);
-      }
-  }
-
-  validateForm() {
-    this.setState({formValid: this.state.name_valid});
-  }
 
 
   render(){
+    var list_item = [];
+    this.state.todos.map(item =>(
+      list_item.push([item.name , item.password])
+    ));
+
+    let message_login;
+    for(var i=0; i < list_item.length;i++){
+      if(this.state.name === list_item[i][0] && this.state.password === list_item[i][1])
+      {
+        message_login =(
+          <div>
+          </div>
+        );
+        break;
+      }
+      else{
+        message_login =(
+          <div>
+            <p>Nome ou senha incorretos.</p>
+          </div>
+        );
+      }
+  }
+
     return(
       <div>
       <NavBar></NavBar>
@@ -150,12 +81,11 @@ export default class LoginPage extends Component {
               <input id="nameID" type="text" name="name" value={this.state.name} placeholder="Digite o username aqui"
                 onChange={(event) => this.handleUserInput(event)}/>
               <legend><span class="number">2</span> Senha</legend>
-              <input className="form-control" id="idID" type="password" name="id" value={this.state.id} placeholder="Digite a senha aqui"
+              <input className="form-control" id="idID" type="password" name="password" value={this.state.password} placeholder="Digite a senha aqui"
                 onChange={(event) => this.handleUserInput(event)}/>
-              <legend><FormErrors formErrors={this.state.formErrors} /></legend>
+              {message_login}
               </fieldset>
               <input type="submit" value="Entrar"
-                disabled={!this.state.formValid}
                 onClick={this.sendInfo}/>
             </form>
             </div>
