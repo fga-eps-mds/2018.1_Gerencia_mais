@@ -27,6 +27,7 @@ class ListRule(generics.ListCreateAPIView):
 def event_list(request):
     "Get all event's list."
     if request.method == "GET":
+        is105_Integrar_tabelas_de_quadros_de_horarios
         events = Event.objects.all()
         serializer = EventSerializer(events, many=True)
         return Response(serializer.data)
