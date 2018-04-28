@@ -3,7 +3,7 @@ h1 {
   text-align: center;
   line-height: 70px;
   text-indent: 3px;
-  color:#fff;
+  color: white;
 }
 th {
   text-align: center;
@@ -27,7 +27,7 @@ button .butaum{
 
 .wallpaper .th{
   width:150%;
-  margin-right:0px; 
+  margin-right:0px;
   background-color:white;
 }
 .espace{
