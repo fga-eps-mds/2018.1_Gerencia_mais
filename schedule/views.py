@@ -215,8 +215,8 @@ class EditEventView(EventEditMixin, UpdateView):
             minutes=int((event.end - old_event.end).total_seconds() / 60)
         )
         event.occurrence_set.all().update(
-            original_start=F('original_start') + dts,
-            original_end=F('original_end') + dte,
+            original_start=F('original_begin') + dts,
+            original_end=F('original_ending') + dte,
         )
         event.save()
         return super(EditEventView, self).form_valid(form)
