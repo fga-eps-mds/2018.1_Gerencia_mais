@@ -39,6 +39,7 @@ export default class DoctorStatus extends Component {
   }
   async componentDidMount() {
       try {
+
         const res = await fetch('http://127.0.0.1:8000/schedule/api-event/?format=json');
         const todos = await res.json();
         this.setState({todos});
@@ -150,30 +151,6 @@ export default class DoctorStatus extends Component {
         <div className="top-space espaco espaco-acima">
           <div className="form-style-5">
             <form>
-	  {/*
-	      <table>
-                <thead>
-                <tr>
-                <th>Nome</th>
-                <th>Hospital</th>
-                <th>Matrícula</th>
-                <th>CPF</th>
-                <th>Descrição</th>
-                </tr>
-                </thead>
-                {this.state.todos.map(item => (
-                <tbody>
-                <tr key={item.id} className="success">
-                 <td>{item.title}</td>
-                 <td>{item.hospital}</td>
-                 <td>{item.registration}</td>
-                 <td>{item.CPF}</td>
-                 <td>{item.description}</td>
-                </tr>
-              </tbody>
-              ))}
-        </table>
-	   */}
               <h3>Alterar Status do Médico</h3>
               <fieldset>
               <legend><span className="number">1</span> Nome</legend>
