@@ -4,6 +4,7 @@
 |-----|------|---------|----------|            
 |12/03/2018|0.1| Versão Inicial |Eduardo Júnio, Ulysses Lara| 
 |15/04/2018|0.2| Atualização geral do documento |Eduardo Júnio| 
+|28/04/2018|0.3| Atualização de tecnologias usadas| Eduardo Júnio|
 
  
 
@@ -33,7 +34,7 @@ O identificação do documento deve ser igual ao título do documento.</p>
 
 ### 2.3. Versão dos Artefatos
 
-<p align="justify">Os artefatos produzidos serão criados no google driver, e quando finalizados serão disponibilizados na área definida no tópico 2.2, onde toda evolução do documento será traçada na tabela de versão do documento .</p>
+<p align="justify">Os artefatos produzidos serão criados no google drive, e quando finalizados serão disponibilizados na área definida no tópico 2.2, onde toda evolução do documento será traçada na tabela de versão do documento .</p>
 
 ### 2.4. Baseline do Projeto
 
@@ -61,7 +62,7 @@ Pull requests nessa branch podem ser feitos por qualquer membro da equipe porém
 Criação ou Pull requests dessas branchs são liberados para qualquer membro da equipe de MDS ou EPS.  
 </p>
 
-* **Documentation** 
+* **Docs** 
 
 <p align="justify">Essa branch é derivada da master é possui a única funcionalidade de armazenar os documentos desenvolvidos na disciplina.   
 Pull requests dessa branch com a master só poderá ocorrer após a revisão dos documentos contidos nela.
@@ -136,11 +137,12 @@ A tabela abaixo apresenta as ferramentas utilizadas no projeto
 | Gunicorn| 19.7.1 | Ferramenta de configuraço para o ambiente de produção|
 | Whitenoise| 3.3.1 | Provê uma forma mais eficiente de manipular arquivos estáticos em produção |
 | Coverage/Coveralls | 4.4.1 | Cobertura de teste|
-| Pytest| -- |Ferramenta de teste|
 | Codeclimate| -- | Ferramenta de análise de código (manutenabilidade, folha de estilo e etc)|
 | Heroku| 1.13 | Ambiente de hospedagem da aplicação|
 | ZenHub| 31.7 | Ferramenta de gerenciamento de projeto ágil|
-| Datadog| 5.0 | Ferramenta de manitoramento de servidores de hospedagem da aplicação|
+| Papertrail| n/a | Ferramenta de manitoramento de servidores de hospedagem da aplicação via log|
+|Selenium| 2.0 | Ferramenta de teste funcional web|
+| Monique.io| n/a | Ferramenta de manitoramento de servidores de hospedagem da aplicação, apresenta gráficos do comportamento dos servidores|
 | Rest Framework| 3.7.7 | Framework de criaço de api rest|
 | React| 16.3.1| Framework de desenvolvimento do frontend|
 
