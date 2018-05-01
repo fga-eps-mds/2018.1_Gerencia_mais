@@ -35,15 +35,17 @@
 
 ## 3 - Pareamento
 
-O pareamento abaixo foi definido baseado no [quadro de conhecimentos](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/master/docs/documentos/imagens/Sprint6/quadro_conhecimento.png) a fim de garantir o cumprimento das Histórias de Usuário durante a *sprint*. Focamos em colocar pessoas com maior conhecimento com pessoas que possuem menor conhecimento, a fim de distribuir e equalizar o nível da equipe.
+O pareamento abaixo foi definido baseado no quadro de conhecimento apresentado abaixo.
+![quadro de conhecimentos](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is144_sprint_6/docs/documentos/imagens/Sprint6/quadro_conhecimento.png) 
+A fim de garantir o cumprimento das Histórias de Usuário durante a *sprint*. Focamos em colocar pessoas com maior conhecimento com pessoas que possuem menor conhecimento, a fim de distribuir e equalizar o nível da equipe. Abaixo apresentamos o quadro de pareamento obtido a apartir das observações apresentadas anteriormente.
 
-![pareamento](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/Sprint6/pareamento_s6.png)
+![pareamento](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is144_sprint_6/docs/documentos/imagens/Sprint6/pareamento_s6.png)
 
 ## 4 - Histórias planejadas
 
 ### 4.1 - Sprint anteriores
 
-Na execução da [Sprint 5](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/master/docs/documentos/Sprints/Sprint_5_Planejamento.md),ocorreu uma única dívida que foi resolvida nessa sprint.
+Na execução da [Sprint 5](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/master/docs/documentos/Sprints/Sprint_5_Planejamento.md), ocorreu uma única dívida que foi resolvida na sprint 6.
 
 ### 4.2 - Novas histórias
 
