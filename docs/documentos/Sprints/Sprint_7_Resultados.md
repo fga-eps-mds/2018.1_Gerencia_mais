@@ -16,12 +16,12 @@
 
 | | |
 |:--:|:--:|
-|**Número da sprint**|6|
-|**Data de início**|14/04/2018|
-|**Data de término**|21/04/2018|
+|**Número da sprint**|7
+|**Data de início**|21/04/2018|
+|**Data de término**|28/04/2018|
 |**Duração**|7 dias|
-|**Pontos planejados**|34|
-|**Pontos concluidos**|31|
+|**Pontos planejados**|17|
+|**Pontos concluidos**|12|
 
 
 ## 2 - Tarefas
@@ -32,7 +32,7 @@
 |ID|História|Pontos|Responsáveis| Status|
 |:-:|:-----:|:----:|:----------:|:-------:|
 |[TS](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/137)|Popular o Banco|5|Adrielly,Caio César e Guilherme| Não Aceito|
-|[TS](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/pull/141)|Popular Backand|5|Adrielly,Caio César e Guilherme| Não Aceito|
+|[TS](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/pull/141)|Popular Backand|5|Adrielly,Caio César e Guilherme|  Aceito|
 |[TS26](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/142)|Atualizar documento de GCS|2|Eduardo Júnio| Aceito|
 
 
@@ -69,7 +69,7 @@ Foi tomada a decisição pelo grupo de EPS de coletar o conhecimento do time no 
 ![burndown.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is147_Sprint_7/docs/documentos/imagens/Sprint7/burndown_s7.png)
 
 <p align="justify">O burndown apresenta a quantidade de pontos que foram planejados e sua “queima” durante a sprint que tem duração de uma semana. Para a sprint 7, a equipe planejou realizar 17 pontos que foram distribuídos em 4 histórias .
-Ao término da sprint, a equipe de desenvolvimento entregou 7 pontos, cerca de 2 histórias de usuário, ficando como dívida técnica para a sprint seguinte 7 pontos (2 história).</p>
+Ao término da sprint, a equipe de desenvolvimento entregou 12 pontos, cerca de 3 história, ficando como dívida técnica para a sprint seguinte 5 pontos (1 história).</p>
 
 
 ## 7 - Velocity
