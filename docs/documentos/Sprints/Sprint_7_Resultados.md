@@ -1,6 +1,6 @@
 
 
-# ✅ Resultados da Sprint 6
+# ✅ Resultados da Sprint 7
 
 ## Sumário
 
