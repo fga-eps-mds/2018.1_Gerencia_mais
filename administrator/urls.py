@@ -6,13 +6,21 @@ from rest_framework import generics
 from rest_framework.urlpatterns import format_suffix_patterns
 
 from administrator import views
+from administrator.views import (
+        ListAdministrator,
+        ListDetailAdministrator,
+        CreateAdministratorAPI,
+)
 
 
 
 
 urlpatterns = [
     # API serializers
-    path('gp-admin-list/', views.administrator_list),
+    # path('gp-admin-list/', views.administrator_list),
+    url(r'^api-admin/create/$',CreateAdministratorAPI.as_view(),name = "create-admin"),
+    url(r'^api-admin/(?P<name>[\w-]+)/$',ListDetailAdministrator.as_view(),name="admin-detail-list"),
+    url(r'^api-admin/',ListAdministrator.as_view(),name = "admin-list"),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

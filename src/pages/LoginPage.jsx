@@ -23,7 +23,7 @@ export default class LoginPage extends Component {
   async componentDidMount() {
       try {
 
-        const res = await fetch('http://localhost:8000/administrator/gp-admin-list/');
+        const res = await fetch('http://localhost:8000/administrator/api-admin/');
         const todos = await res.json();
         this.setState({todos});
         // console.log(todos);
