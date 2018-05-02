@@ -1,0 +1,92 @@
+<header>
+
+
+<style>
+.navbar {
+  margin-bottom: 0;
+  background-color: #443850;
+  z-index: 9999;
+  border: 0;
+  font-size: 12px !important;
+  line-height: 1.42857143 !important;
+  letter-spacing: 4px;
+  border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+  color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+  color: #1abc9c !important;
+  background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  color: #fff !important;
+}
+
+.navbar-brand-centered {
+  position: absolute;
+  left: 50%;
+  display: block;
+  width: 160px;
+  text-align: center;
+  background-color: transparent;
+}
+.navbar>.container .navbar-brand-centered,
+.navbar>.container-fluid .navbar-brand-centered {
+  margin-left: -80px;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- navbar -->
+  <nav class="navbar navbar-inverse">
+  <div style="padding-top:0"class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul style="padding-top:1px" class="nav navbar-nav navbar-left">
+
+
+        {% if page.url == "/index.html" %}
+          <li class="active">
+          {% else %}
+          <li><a href="{{ site.baseurl }}/doc" style="width: 160px;">Documentação</a></li>
+          <li style="width: 200px; padding-left:50px"><a href="{{ site.baseurl }}/projectabout" style="width:180px">Sobre o Projeto</a></li>
+        {% endif %}
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+            <li style="width:150px;"><a href="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais" class="glyphicon glyphicon-wrench">
+                  Github
+              </a>
+            </li>
+            </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+</header>
