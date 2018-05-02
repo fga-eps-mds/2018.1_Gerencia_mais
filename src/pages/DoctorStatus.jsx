@@ -5,8 +5,6 @@ import '../css/DoctorForm.css';
 import NavBar from '../components/NavBar';
 import SideBar from '../components/SideBar';
 import Footer from '../components/Footer'
-import FormErrors from '../components/FormErrors'
-import {Carousel} from 'react-bootstrap';
 
 
 
@@ -50,7 +48,7 @@ export default class DoctorStatus extends Component {
     switch(fieldName) {
       case 'name':
         for(var nn = 0; nn < api.length; nn++){
-          if(api[nn].reg_name.toLowerCase() == value.toLowerCase()){
+          if(api[nn].reg_name.toLowerCase() === value.toLowerCase()){
             name_valid = true;
             break;
           }else {
@@ -58,10 +56,10 @@ export default class DoctorStatus extends Component {
           }
         }
         if(id){
-          if(name_valid == true){
+          if(name_valid === true){
             console.log(api[nn].reg_ids);
             console.log(id);
-            if(api[nn].reg_ids != id){
+            if(api[nn].reg_ids !== id){
               name_valid = false;
               id_valid = false;
               console.log('false');
@@ -82,8 +80,8 @@ export default class DoctorStatus extends Component {
         break;
 
         case 'id':
-          for(var nn = 0; nn < api.length;  nn++){
-            if(api[nn].reg_ids == value){
+          for(nn = 0; nn < api.length;  nn++){
+            if(api[nn].reg_ids === value){
               id_valid = true;
               break;
             }else {
@@ -91,10 +89,10 @@ export default class DoctorStatus extends Component {
             }
           }
           if(name){
-            if(id_valid == true){
+            if(id_valid === true){
               console.log(api[nn].reg_name);
               console.log(name);
-              if(api[nn].reg_name.toLowerCase() != name.toLowerCase()){
+              if(api[nn].reg_name.toLowerCase() !== name.toLowerCase()){
                 name_valid = false;
                 id_valid = false;
                 console.log('false');
@@ -141,9 +139,9 @@ export default class DoctorStatus extends Component {
               <input id="idID" type="text" name="id" value={this.state.id} placeholder="Digite o numero aqui"
                 onChange={(event) => this.handleUserInput(event)}/>
               <legend><span className="number">3</span> Status</legend>
-              <input id="stsID" type="radio" name="status" value={this.state.status = true}
+              <input id="stsID" type="radio" name="status" value={this.state.status.setState(true)}
                 onChange={(event) => this.handleUserInput(event)}/> Disponível <br></br>
-              <input id="stnID" type="radio" name="status" value={this.state.status = false}
+              <input id="stnID" type="radio" name="status" value={this.state.status.setState(false)}
                   onChange={(event) => this.handleUserInput(event)}/> Indisponível <br></br>
                 Descrição: (Opcional)
               <textarea name='comments' value={this.state.comments} rows="4" cols="50"

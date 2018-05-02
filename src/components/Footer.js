@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 //import {Link} from 'react-router-dom';
 import '../css/bootstrap.css';
-import {Carousel} from 'react-bootstrap';
+// import {Carousel} from 'react-bootstrap';
 
 class Footer extends Component {
   render(){

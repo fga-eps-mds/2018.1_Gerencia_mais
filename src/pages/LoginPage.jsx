@@ -5,8 +5,6 @@ import '../css/DoctorForm.css';
 import NavBar from '../components/NavBar';
 import SideBar from '../components/SideBar';
 import Footer from '../components/Footer'
-import FormErrors from '../components/FormErrors'
-import {Carousel} from 'react-bootstrap';
 
 
 
@@ -73,14 +71,14 @@ export default class LoginPage extends Component {
       <NavBar></NavBar>
       <SideBar></SideBar>
         <div className="top-space espaco espaco-acima">
-          <div class="form-style-5">
+          <div className="form-style-5">
             <form>
               <h3>Login</h3>
               <fieldset>
-              <legend><span class="number">1</span> Username</legend>
+              <legend><span className="number">1</span> Username</legend>
               <input id="nameID" type="text" name="name" value={this.state.name} placeholder="Digite o username aqui"
                 onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span class="number">2</span> Senha</legend>
+              <legend><span className="number">2</span> Senha</legend>
               <input className="form-control" id="idID" type="password" name="password" value={this.state.password} placeholder="Digite a senha aqui"
                 onChange={(event) => this.handleUserInput(event)}/>
               {message_login}

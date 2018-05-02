@@ -5,7 +5,6 @@ import '../css/HomePage.css';
 import NavBar from '../components/NavBar';
 import SideBar from '../components/SideBar';
 import Footer from '../components/Footer'
-import {Carousel} from 'react-bootstrap';
 
 
 

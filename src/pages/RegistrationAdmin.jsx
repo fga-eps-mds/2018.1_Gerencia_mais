@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 //import {Link} from 'react-router-dom';
 import '../css/bootstrap.css';
 import '../css/HomePage.css';
-import Popup from "reactjs-popup";
 import NavBar from '../components/NavBar';
 import SideBar from '../components/SideBar';
 import Footer from '../components/Footer'
-import {Carousel} from 'react-bootstrap';
 import {Popover} from 'react-bootstrap';
 import {OverlayTrigger} from 'react-bootstrap'
 export default class RegistrationAdmin extends Component{
@@ -39,19 +37,19 @@ export default class RegistrationAdmin extends Component{
       case 'password':
         if ( this.state.password === this.state.password_confirm )
         {
-          this.state.password_valid = true;
+          this.state.password_valid.setState(true);
         }
         else{
-          this.state.password_valid = false;
+          this.state.password_valid.setState(false);
         }
         break;
 
       case 'key':
         if(this.state.key === "E50E99E54C369B23DD04"){
-          this.state.keyword_valid = true;
+          this.state.keyword_valid.setState(true);
         }
         else{
-          this.state.keyword_valid = false;
+          this.state.keyword_valid.setState(false);
         }
         break;
 
@@ -144,28 +142,28 @@ render(){
     <NavBar></NavBar>
     <SideBar></SideBar>
       <div classtitle="top-space espaco espaco-acima">
-        <div class="form-style-5">
+        <div className="form-style-5">
           <form>
             <h3>Cadastro de Administradores</h3>
             <fieldset>
 
-            <legend><span class="number">1</span> Nome</legend>
+            <legend><span className="number">1</span> Nome</legend>
             <input id="titleID" type="text" title="name" value={this.state.name} onChange = {this.onChange} placeholder="Digite o nome aqui" />
 
-            <legend><span class="number">2</span> Endereço</legend>
+            <legend><span className="number">2</span> Endereço</legend>
             <input id="titleID" type="text" title="adress" value={this.state.adress} onChange = {this.onChange} placeholder="Digite o endereço aqui" />
 
-            <legend><span class="number">3</span> Telefone</legend>
+            <legend><span className="number">3</span> Telefone</legend>
             <input id="titleID" type="text" title="phone" value={this.state.phone} onChange = {this.onChange} placeholder="Digite o telefone aqui" />
 
-            <legend><span class="number">4</span> Senha</legend>
-            <input className="form-control" id="titleID" type="password" name="password" title="password" value={this.state.password} placeholder="Digite a senha aqui" onChange={this.onChange}/>
+            <legend><span className="number">4</span> Senha</legend>
+            <input classNameName="form-control" id="titleID" type="password" name="password" title="password" value={this.state.password} placeholder="Digite a senha aqui" onChange={this.onChange}/>
             {message_password_length}
-            <legend><span class="number">5</span> Confirmar senha </legend>
-            <input className="form-control" id="titleID" type="password" name="password_confirm" title="password_confirm" value={this.state.password_confirm} placeholder="Digite a senha novamente" onChange={this.onChange}/>
+            <legend><span className="number">5</span> Confirmar senha </legend>
+            <input classNameName="form-control" id="titleID" type="password" name="password_confirm" title="password_confirm" value={this.state.password_confirm} placeholder="Digite a senha novamente" onChange={this.onChange}/>
             {message_password}
 
-          <legend><span class="number">6</span> Chave de validação</legend>
+          <legend><span className="number">6</span> Chave de validação</legend>
             <input id="titleID" type="text" title="key" value={this.state.key} onChange = {this.onChange} placeholder="Digite a chave aqui" />
             {message_key}
             </fieldset>

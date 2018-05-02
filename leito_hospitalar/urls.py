@@ -10,7 +10,7 @@ from administrator import urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api-auth/', include('rest_framework.urls')),
+    path('api/api-auth/', include('rest_framework.urls')),
     path('schedule/',include('schedule.urls')),
     url(r'^(?P<username>[\w.@+-]+)/$', TemplateView.as_view(template_name="index.html")),
     url(r'^$', TemplateView.as_view(template_name="index.html")),
