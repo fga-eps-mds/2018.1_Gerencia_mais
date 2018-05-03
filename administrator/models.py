@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils.translation import ugettext
+
 
 class Administrator(models.Model):
     name = models.CharField(max_length = 255)
@@ -9,4 +11,8 @@ class Administrator(models.Model):
     key = models.CharField(max_length = 100)
 
     def __str__(self):
-        return name
+        return ugettext('%(name)s: %(email)s - %(phone)s') % {
+            'name': self.name,
+            'email':self.email,
+            'phone':self.phone,
+        }

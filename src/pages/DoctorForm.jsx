@@ -50,8 +50,8 @@ export default class DoctorForm extends Component {
   }
 
   handleSubmit = e => {
-    this.state.start.setState(this.state.start + "T" + this.state.time_start + "Z");
-    this.state.end.setState(this.state.end + "T" + this.state.time_end + "Z");
+    this.state.start = this.state.start + "T" + this.state.time_start + "Z";
+    this.state.end = this.state.end + "T" + this.state.time_end + "Z";
     this.state.is_valid.setState(true);
     console.log(this.state.start + " " + this.state.end);
     e.preventDefault();

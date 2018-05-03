@@ -10,34 +10,40 @@ from administrator.serializer import (
 from rest_framework import generics
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from rest_framework import status, permissions
+from rest_framework import status
 from rest_framework.generics import (
     ListCreateAPIView,
     RetrieveAPIView,
     CreateAPIView,
     UpdateAPIView,
+    RetrieveUpdateAPIView,
+)
+from rest_framework.permissions import (
+    AllowAny,
+    IsAdminUser,
+    IsAuthenticated,
+    IsAuthenticatedOrReadOnly,
 )
 
 
 class ListAdministrator(generics.ListCreateAPIView):
-    permission_classes = (permissions.AllowAny,)
+    permission_classes = [AllowAny, IsAdminUser]
     queryset = Administrator.objects.all()
     serializer_class = AdministratorListSerializer
 
 class CreateAdministratorAPI(generics.CreateAPIView):
-    permission_classes = (permissions.AllowAny,)
+    permission_classes = [AllowAny, IsAdminUser]
     queryset = Administrator.objects.all()
     serializer_class = AdministratorCreateUpdateSerializer
 
 class ListDetailAdministrator(generics.RetrieveAPIView):
-    # permission_classes = (permissions.IsAdminUser,)
-    permission_classes = (permissions.AllowAny,)
+    permission_classes = [AllowAny, IsAdminUser]
     queryset = Administrator.objects.all()
     serializer_class = AdministratorSerializer
     lookup_field = 'name'
 
-class UpdateAdministratorAPI(generics.UpdateAPIView):
-    permission_classes = (permissions.AllowAny,)
+class UpdateAdministratorAPI(generics.RetrieveUpdateAPIView):
+    permission_classes = [AllowAny, IsAdminUser]
     queryset = Administrator.objects.all()
     serializer_class = AdministratorCreateUpdateSerializer
     lookup_field = 'name'

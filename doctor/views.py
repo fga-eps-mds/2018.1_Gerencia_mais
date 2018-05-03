@@ -10,7 +10,13 @@ from doctor.serializer import (
 from rest_framework import generics
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from rest_framework import status, permissions
+from rest_framework import status
+from rest_framework.permissions import(
+    IsAdminUser,
+    AllowAny,
+    IsAuthenticated,
+    IsAuthenticatedOrReadOnly,
+)
 from rest_framework.generics import (
     ListCreateAPIView,
     RetrieveAPIView,
@@ -20,23 +26,23 @@ from rest_framework.generics import (
 
 
 class ListDoctor(generics.ListCreateAPIView):
-    permission_classes = (permissions.IsAdminUser,)
+    permission_classes = [IsAdminUser]
     queryset = Doctors.objects.all()
     serializer_class = DoctorListSerializer
 
 class CreateDoctorAPI(generics.CreateAPIView):
-    permission_classes = (permissions.IsAdminUser,)
+    permission_classes = [IsAdminUser]
     queryset = Doctors.objects.all()
     serializer_class = DoctorCreateUpdateSerializer
 
 class ListDetailDoctor(generics.RetrieveAPIView):
-    permission_classes = (permissions.IsAdminUser,)
+    permission_classes = [IsAdminUser]
     queryset = Doctors.objects.all()
     serializer_class = DoctorSerializer
     lookup_field = 'name'
 
 class UpdateDoctorAPI(generics.UpdateAPIView):
-    permission_classes = (permissions.IsAdminUser,)
+    permission_classes = [IsAdminUser]
     queryset = Doctors.objects.all()
     serializer_class = DoctorCreateUpdateSerializer
     lookup_field = 'name'
