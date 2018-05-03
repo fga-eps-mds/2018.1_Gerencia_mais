@@ -18,8 +18,8 @@ from schedule.views import (
 
 urlpatterns = [
     # API serializers
-    url(r'^api-event/(?P<registration>[\w-]+)/$', EventDetailAPIView.as_view(),name='detail'),
-    url(r'^api-event/update/(?P<registration>[\w-]+)/$', EventUpdateAPIView.as_view(),name='update'),
+    url(r'^api-event/(?P<doctor>[\w-]+)/$', EventDetailAPIView.as_view(),name='detail'),
+    url(r'^api-event/update/(?P<doctor>[\w-]+)/$', EventUpdateAPIView.as_view(),name='update'),
     path('api-calendar/',ListCalendar.as_view()),
     path('api-event/', ListEvent.as_view()),
     path('api-rule/', ListRule.as_view()),

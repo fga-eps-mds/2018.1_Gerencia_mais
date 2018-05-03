@@ -22,6 +22,7 @@ from rest_framework.generics import (
     RetrieveAPIView,
     CreateAPIView,
     UpdateAPIView,
+    RetrieveUpdateAPIView,
 )
 
 
@@ -31,7 +32,7 @@ class ListDoctor(generics.ListCreateAPIView):
     serializer_class = DoctorListSerializer
 
 class CreateDoctorAPI(generics.CreateAPIView):
-    permission_classes = [AllowAny]
+    permission_classes = [IsAdminUser]
     queryset = Doctors.objects.all()
     serializer_class = DoctorCreateUpdateSerializer
 
@@ -41,8 +42,8 @@ class ListDetailDoctor(generics.RetrieveAPIView):
     serializer_class = DoctorSerializer
     lookup_field = 'name'
 
-class UpdateDoctorAPI(generics.UpdateAPIView):
+class UpdateDoctorAPI(generics.RetrieveUpdateAPIView):
     permission_classes = [AllowAny]
     queryset = Doctors.objects.all()
     serializer_class = DoctorCreateUpdateSerializer
-    lookup_field = 'name'
+    lookup_field = 'registration'

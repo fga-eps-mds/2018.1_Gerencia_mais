@@ -32,25 +32,10 @@ class EventDetailAPIView(generics.RetrieveAPIView):
     permission_classes = (permissions.IsAdminUser,)
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-    lookup_field = 'registration'
+    lookup_field = 'doctor'
 
 class EventUpdateAPIView(generics.UpdateAPIView):
     permission_classes = (permissions.IsAdminUser,)
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-    lookup_field = 'registration'
-
-# @api_view(['GET','POST'])
-# def event_list(request):
-#     "Get all event's list."
-#     if request.method == "GET":
-#         events = Event.objects.all()
-#         serializer = EventSerializer(events, many=True)
-#         return Response(serializer.data)
-#
-#     elif request.method == "POST":
-#         serializer = EventSerializer(data= request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    lookup_field = 'doctor'
