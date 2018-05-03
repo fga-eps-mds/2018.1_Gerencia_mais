@@ -3,7 +3,8 @@ from django.shortcuts import render
 from administrator.models import Administrator
 from administrator.serializer import (
     AdministratorSerializer,
-    AdministratorCreateSerializer,
+    AdministratorCreateUpdateSerializer,
+    AdministratorListSerializer
     )
 
 from rest_framework import generics
@@ -14,23 +15,31 @@ from rest_framework.generics import (
     ListCreateAPIView,
     RetrieveAPIView,
     CreateAPIView,
+    UpdateAPIView,
 )
 
 
 class ListAdministrator(generics.ListCreateAPIView):
     permission_classes = (permissions.AllowAny,)
     queryset = Administrator.objects.all()
-    serializer_class = AdministratorSerializer
+    serializer_class = AdministratorListSerializer
 
 class CreateAdministratorAPI(generics.CreateAPIView):
     permission_classes = (permissions.AllowAny,)
     queryset = Administrator.objects.all()
-    serializer_class = AdministratorCreateSerializer
+    serializer_class = AdministratorCreateUpdateSerializer
 
 class ListDetailAdministrator(generics.RetrieveAPIView):
-    permission_classes = (permissions.IsAdminUser,)
+    # permission_classes = (permissions.IsAdminUser,)
+    permission_classes = (permissions.AllowAny,)
     queryset = Administrator.objects.all()
     serializer_class = AdministratorSerializer
+    lookup_field = 'name'
+
+class UpdateAdministratorAPI(generics.UpdateAPIView):
+    permission_classes = (permissions.AllowAny,)
+    queryset = Administrator.objects.all()
+    serializer_class = AdministratorCreateUpdateSerializer
     lookup_field = 'name'
 
 @api_view(['GET','POST'])

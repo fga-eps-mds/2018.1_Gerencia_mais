@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'tests',
     'corsheaders',
     'administrator',
+    'doctor',
 ]
 
 REST_FRAMEWORK = {

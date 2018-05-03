@@ -6,7 +6,7 @@ class AdministratorSerializer(serializers.ModelSerializer):
         model = Administrator
         fields = '__all__'
 
-class AdministratorCreateSerializer(serializers.ModelSerializer):
+class AdministratorCreateUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Administrator
         fields = [
@@ -16,4 +16,15 @@ class AdministratorCreateSerializer(serializers.ModelSerializer):
             'password',
             'phone',
             'key',
+        ]
+
+class AdministratorListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Administrator
+        fields = [
+            'name',
+            'email',
+            'adress',
+            'password',
+            'phone',
         ]
