@@ -27,6 +27,8 @@ Gostou do projeto e gostria de contribuir? Acesse [Contribua](https://github.com
 
 - ### Status do sistema
 
+<a href="https://www.statuscake.com" title="Website Uptime Monitoring"><img src="https://app.statuscake.com/button/index.php?Track=Mb9FgfkVUa&Days=1000&Design=2" /></a>
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__Homologação__   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __Produção__  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Heroku App Status](http://heroku-shields.herokuapp.com/gicsaude)](https://gicsaude.herokuapp.com) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Heroku App Status](http://heroku-shields.herokuapp.com/gerenciamais)](https://gerenciamais.herokuapp.com)
 
