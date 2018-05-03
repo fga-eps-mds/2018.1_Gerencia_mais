@@ -27,38 +27,23 @@ from rest_framework.permissions import (
 
 
 class ListAdministrator(generics.ListCreateAPIView):
-    permission_classes = [AllowAny, IsAdminUser]
+    permission_classes = [AllowAny,]
     queryset = Administrator.objects.all()
     serializer_class = AdministratorListSerializer
 
 class CreateAdministratorAPI(generics.CreateAPIView):
-    permission_classes = [AllowAny, IsAdminUser]
+    permission_classes = [AllowAny,]
     queryset = Administrator.objects.all()
     serializer_class = AdministratorCreateUpdateSerializer
 
 class ListDetailAdministrator(generics.RetrieveAPIView):
-    permission_classes = [AllowAny, IsAdminUser]
+    permission_classes = [AllowAny,]
     queryset = Administrator.objects.all()
     serializer_class = AdministratorSerializer
     lookup_field = 'name'
 
 class UpdateAdministratorAPI(generics.RetrieveUpdateAPIView):
-    permission_classes = [AllowAny, IsAdminUser]
+    permission_classes = [AllowAny,]
     queryset = Administrator.objects.all()
     serializer_class = AdministratorCreateUpdateSerializer
     lookup_field = 'name'
-
-@api_view(['GET','POST'])
-def administrator_list(request):
-    "Get all administrator's list."
-    if request.method == "GET":
-        events = Administrator.objects.all()
-        serializer = AdministratorSerializer(events, many=True)
-        return Response(serializer.data)
-
-    elif request.method == "POST":
-        serializer = AdministratorSerializer(data= request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
