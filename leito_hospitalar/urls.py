@@ -1,12 +1,10 @@
-
-
-
 from django.conf.urls import url,include
 from django.urls import path, re_path
 from django.contrib import admin
 from django.views.generic import TemplateView
-from schedule import urls
-from administrator import urls
+
+import schedule
+import administrator
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

@@ -1,5 +1,3 @@
-from django.shortcuts import render
-
 from doctor.models import Doctors
 from doctor.serializer import (
     DoctorSerializer,
@@ -8,14 +6,9 @@ from doctor.serializer import (
     )
 
 from rest_framework import generics
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from rest_framework import status
 from rest_framework.permissions import(
     IsAdminUser,
     AllowAny,
-    IsAuthenticated,
-    IsAuthenticatedOrReadOnly,
 )
 from rest_framework.generics import (
     ListCreateAPIView,

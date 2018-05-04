@@ -1,5 +1,3 @@
-from django.shortcuts import render
-
 from administrator.models import Administrator
 from administrator.serializer import (
     AdministratorSerializer,
@@ -8,21 +6,14 @@ from administrator.serializer import (
     )
 
 from rest_framework import generics
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from rest_framework import status
 from rest_framework.generics import (
     ListCreateAPIView,
     RetrieveAPIView,
     CreateAPIView,
-    UpdateAPIView,
     RetrieveUpdateAPIView,
 )
 from rest_framework.permissions import (
     AllowAny,
-    IsAdminUser,
-    IsAuthenticated,
-    IsAuthenticatedOrReadOnly,
 )
 
 
