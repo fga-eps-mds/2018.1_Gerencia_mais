@@ -39,11 +39,12 @@ class GridCell extends Component {
       modal
       closeOnDocumentClick
       >
-      <div className="popupShape">
+      <div className="popupShape ">
         <div className="pre-scrollable">
+          <h4 className='modal-header whitename'>Médicos</h4>
           {
             this.state.contacts != null ? this.state.contacts.map(user =>
-              <div><span>{user.name.first + " " + user.name.last}</span><br></br></div>
+              <div><strong>Nome: </strong> <span>{user.name.first + " " + user.name.last}</span><br></br><strong>Função: </strong>Médico<br></br><br></br></div>
             )
             : null
           }
@@ -109,16 +110,18 @@ export default class ScheduleTable extends Component {
 
     resolveButtonMonth(){
       var popup = (
-        <Popup
+        <Popup className='size'
         trigger={<button className="btn btn-outline-primary">Relatorio Diario</button>}
         modal
         closeOnDocumentClick
         >
-        <div className="popupShape">
+
+        <div className="popupShape ">
           <div className="pre-scrollable">
+            <h4 className='modal-header whitename'>Médicos</h4>
             {
               this.state.contacts != null ? this.state.contacts.map(user =>
-                <div><span>{user.name.first + " " + user.name.last}</span><br></br></div>
+                <div><strong>Nome: </strong> <span>{user.name.first + " " + user.name.last}</span><br></br><strong>Função: </strong>Médico<br></br><br></br></div>
               )
               : null
             }

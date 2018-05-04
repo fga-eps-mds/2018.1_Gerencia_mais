@@ -137,6 +137,7 @@ export default class DoctorStatus extends Component {
               <input type="submit" value="Apply"
                 onClick={this.handleSubmit}/>
             </form>
+
             </div>
         </div>
         <Footer ></Footer>
