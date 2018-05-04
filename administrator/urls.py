@@ -18,7 +18,6 @@ from administrator.views import (
 
 urlpatterns = [
     # API serializers
-    # path('gp-admin-list/', views.administrator_list),
     url(r'^api-admin/create/$',CreateAdministratorAPI.as_view(),name = "create-admin"),
     url(r'^api-admin/update/(?P<name>[\w-]+)/$',UpdateAdministratorAPI.as_view(), name="admin-update"),
     url(r'^api-admin/(?P<name>[\w-]+)/$',ListDetailAdministrator.as_view(),name="admin-detail-list"),

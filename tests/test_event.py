@@ -13,7 +13,6 @@ from schedule.models import Calendar, Event, EventRelation, Rule
 class TestEvent(TestCase):
     def __create_event(self, title, start, end, cal, status):
         return Event.objects.create(
-	    status = status,
             title=title,
             start=start,
             end=end,
