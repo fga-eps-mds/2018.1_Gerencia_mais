@@ -10,13 +10,6 @@ from rest_framework.permissions import(
     IsAdminUser,
     AllowAny,
 )
-from rest_framework.generics import (
-    ListCreateAPIView,
-    RetrieveAPIView,
-    CreateAPIView,
-    UpdateAPIView,
-    RetrieveUpdateAPIView,
-)
 
 
 class ListDoctor(generics.ListCreateAPIView):

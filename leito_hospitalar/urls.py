@@ -3,8 +3,8 @@ from django.urls import path, re_path
 from django.contrib import admin
 from django.views.generic import TemplateView
 
-import schedule
-import administrator
+from schedule import urls
+from administrator import urls as url1
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
