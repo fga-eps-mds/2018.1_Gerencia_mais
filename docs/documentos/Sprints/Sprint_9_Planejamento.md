@@ -14,7 +14,7 @@
 |**Data de início**|05/05/2018|
 |**Data de término**|12/05/2018|
 |**Duração**|7 dias|
-|**Pontos planejados**|40|
+|**Pontos planejados**|42|
 |**Pontos de dívidas Técnicas**|17|
 
 ## 2 - Papéis
@@ -74,6 +74,7 @@ Devido a grande quantidade de dívidas técnicas acumuladas, foi criada apenas u
 |ID|História|Pontos|Responsáveis|
 |:-:|:-----:|:----:|:----------:|
 |[TS29](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/146)|Encriptar chave do deploy|2|Eduardo Júnio|  
+|[TS33](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/163)|Planejamento da sprint 9|2|Eduardo Júnio|  
 |[TS34](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/164)|Planejamento e resultados da sprint 8|2|Rafael Bragança|  
 
       
