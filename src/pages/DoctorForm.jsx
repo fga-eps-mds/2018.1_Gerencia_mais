@@ -80,13 +80,14 @@ export default class DoctorForm extends Component {
       headers: new Headers({ "Content-Type": "application/json" })
     };
     fetch('http://localhost:8000/schedule/api-event/', conf).then(response => console.log(response));
+    this.setState({['is_valid']:true});
 }
   render(){
     let reload;
     if(this.state.is_valid){
       reload = (
         <div>
-          {window.location.reload()}
+          {window.location.href='http://localhost:3000/ScheduleTable'}
         </div>
       );
     }
