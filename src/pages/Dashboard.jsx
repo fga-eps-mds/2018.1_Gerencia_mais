@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import NavBar from '../components/NavBar';
-import SideBar from '../components/SideBar';
+// import SideBar from '../components/SideBar';
 import {ListGroup,ListGroupItem} from 'react-bootstrap';
 import "../css/bootstrap.min.css";
 
 export default class Dashboard extends Component {
-    constructor(){
-      super();
-    }
     render() {
 	return (
 	    <div>

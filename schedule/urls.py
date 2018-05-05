@@ -12,14 +12,18 @@ from schedule.views import (
     ListCalendar,
     ListEvent,
     ListRule,
+    EventDetailAPIView,
+    EventUpdateAPIView,
 )
 
 urlpatterns = [
     # API serializers
+    url(r'^api-event/(?P<doctor>[\w-]+)/$', EventDetailAPIView.as_view(),name='detail'),
+    url(r'^api-event/update/(?P<doctor>[\w-]+)/$', EventUpdateAPIView.as_view(),name='update'),
     path('api-calendar/',ListCalendar.as_view()),
     path('api-event/', ListEvent.as_view()),
     path('api-rule/', ListRule.as_view()),
-    path('gp_list/', views.event_list),
+    # path('gp-list/', views.event_list),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

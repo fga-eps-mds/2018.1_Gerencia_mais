@@ -16,6 +16,8 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext
 from django.utils.translation import ugettext_lazy as _
 
+from doctor.models import Doctors
+
 from schedule.models.calendars import Calendar
 from schedule.models.rules import Rule
 
@@ -51,14 +53,17 @@ class Event(models.Model):
     This model stores meta data for a date.  You can relate this data to many
     other models.
     '''
-    color_event = models.CharField(_("Cor do evento"), blank=True, max_length=10)
     start = models.DateTimeField(_("Inicio"), db_index=True)
     end = models.DateTimeField(_("Fim"), db_index=True, help_text=_("O horário de término deve ser posterior ao horário de início."))
-    title = models.CharField(_("Nome"), max_length=255)
+    doctor = models.ForeignKey(
+        Doctors,
+        on_delete=models.CASCADE,
+        null = True,
+        blank = True,
+        verbose_name =_("doctor"),
+        related_name='doctor')
+    title = models.CharField(_("title"),max_length=100)
     hospital = models.CharField(_("Hospital"), max_length=100)
-    registration = models. CharField(_("Matrícula"), max_length=50)
-    CPF = models.CharField(_("CPF"), max_length=100)
-    status = models.NullBooleanField()
     description = models.TextField(_("Descrição"), blank=True)
     created_on = models.DateTimeField(_("Criado em"), auto_now_add=True)
     updated_on = models.DateTimeField(_("Atualizado em"), auto_now=True)

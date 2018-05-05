@@ -6,7 +6,6 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import SideBar from '../components/SideBar';
 import FormErrors from '../components/FormErrors';
-import {Carousel} from 'react-bootstrap';
 
 
 export default class UpdateSchedule extends Component {
@@ -55,7 +54,7 @@ export default class UpdateSchedule extends Component {
     switch(fieldName) {
       case 'name':
         for(var nn = 0; nn < api.length; nn++){
-          if(api[nn].reg_name.toLowerCase() == value.toLowerCase()){
+          if(api[nn].reg_name.toLowerCase() === value.toLowerCase()){
             name_valid = true;
             break;
           }else {
@@ -63,10 +62,10 @@ export default class UpdateSchedule extends Component {
           }
         }
         if(id){
-          if(name_valid == true){
+          if(name_valid === true){
             console.log(api[nn].reg_ids);
             console.log(id);
-            if(api[nn].reg_ids != id){
+            if(api[nn].reg_ids !== id){
               name_valid = false;
               id_valid = false;
               console.log('false');
@@ -87,8 +86,8 @@ export default class UpdateSchedule extends Component {
         break;
 
         case 'id':
-          for(var nn = 0; nn < api.length;  nn++){
-            if(api[nn].reg_ids == value){
+          for(nn = 0; nn < api.length;  nn++){
+            if(api[nn].reg_ids === value){
               id_valid = true;
               break;
             }else {
@@ -96,10 +95,10 @@ export default class UpdateSchedule extends Component {
             }
           }
           if(name){
-            if(id_valid == true){
+            if(id_valid === true){
               console.log(api[nn].reg_name);
               console.log(name);
-              if(api[nn].reg_name.toLowerCase() != name.toLowerCase()){
+              if(api[nn].reg_name.toLowerCase() !== name.toLowerCase()){
                 name_valid = false;
                 id_valid = false;
                 console.log('false');
@@ -118,6 +117,8 @@ export default class UpdateSchedule extends Component {
                           id_valid: id_valid,
                         }, this.validateForm);
         break;
+        default:
+        break;
 
       }
   }
@@ -133,7 +134,7 @@ export default class UpdateSchedule extends Component {
     var new_entry_time = document.getElementById("etID").value;
     var new_departure_date = document.getElementById("ddID").value;
     var new_departure_time = document.getElementById("dtID").value;
-    var info = new Array();
+    var info = [];
     info.push(name);
     info.push(id);
     info.push(new_entry_date);
@@ -151,20 +152,20 @@ export default class UpdateSchedule extends Component {
       <NavBar></NavBar>
       <SideBar></SideBar>
       <div className="top-space espaco espaco-acima">
-          <div class="form-style-5">
+          <div className="form-style-5">
             <form>
               <h3>Atualização de horário de médicos</h3>
               <fieldset>
-              <legend><span class="number">1</span> Nome</legend>
+              <legend><span className="number">1</span> Nome</legend>
               <input id="nameID" type="text" name="name" value={this.state.name} placeholder="Digite o nome aqui"
                 onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span class="number">2</span> Numero de Identificação</legend>
+              <legend><span className="number">2</span> Numero de Identificação</legend>
               <input id="idID" type="text" name="id" value={this.state.id} placeholder="Digite o numero aqui"
                 onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span class="number">3</span>Nova Data de Entrada</legend>
+              <legend><span className="number">3</span>Nova Data de Entrada</legend>
               <input id="edID" type="date" name="new_entry_date" value={this.state.new_entry_date}
                 onChange={(event) => this.handleUserInput(event)}/>
-                          <legend><span class="number">4</span>Novo Horário</legend>
+                          <legend><span className="number">4</span>Novo Horário</legend>
                     <table id="t01" className="tabelatamanho">
                     <tr>
                       <th>Horário</th>

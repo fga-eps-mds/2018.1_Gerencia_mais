@@ -5,7 +5,6 @@ import '../css/HomePage.css';
 import NavBar from '../components/NavBar';
 import SideBar from '../components/SideBar';
 import Footer from '../components/Footer'
-import {Carousel} from 'react-bootstrap';
 
 
 
@@ -21,7 +20,7 @@ export default class HomePage extends Component {
          		<div className="col-lg-12">
          			<div className="content ">
          				<h1 className='whitewash aumenta'>Gerencia +</h1>
-         				<h3 className='whitewash aumentamenos'>Aplicação web destinada a gerenciar servidores de hospitais publicos do distrito federal.</h3>
+         				<h3 className='whitewash aumentamenos'>Aplicação web destinada a gerenciar médicos de hospitais públicos do Distrito Federal.</h3>
          			</div>
          		</div>
          	</div>

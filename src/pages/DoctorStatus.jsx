@@ -4,9 +4,8 @@ import '../css/bootstrap.css';
 import '../css/DoctorForm.css';
 import NavBar from '../components/NavBar';
 import SideBar from '../components/SideBar';
-import Footer from '../components/Footer'
-import FormErrors from '../components/FormErrors'
-import {Carousel} from 'react-bootstrap';
+import Footer from '../components/Footer';
+import {Button,ListGroup,ListGroupItem} from 'react-bootstrap';
 
 
 
@@ -15,135 +14,109 @@ export default class DoctorStatus extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      id: '',
-      entry_date: '',
-      entry_time: '',
-      departure_date: '',
-      departure_time: '',
-      formErrors: {name: '', id: '', entry_date: '', entry_time: '', departure_date: '', departure_time: ''},
-      name_valid: false,
-      id_valid: false,
-      entry_date_valid: false,
-      entry_time_valid: false,
-      departure_date_valid: false,
-      departure_time_valid: false,
-      form_valid: false,
-      api: [
-        {reg_name: 'Paulo', reg_ids: '1', status:true},
-        {reg_name: 'Sabino', reg_ids: '2', status:true},
-        {reg_name: 'Marcos', reg_ids: '3', status:true},
-        {reg_name: 'Valquiria', reg_ids: '4', status:true},
-      ],
+      doctor:[],
+      name:'',
+      temp_registration:'',
+      status:null,
+      registration:'',
+      CPF:'',
+
     }
+     this.onClick = this.onClick.bind(this);
+     this.onChange = this.onChange.bind(this);
+     this.onChange2 = this.onChange2.bind(this);
   }
   async componentDidMount() {
       try {
-
-        const res = await fetch('http://127.0.0.1:8000/schedule/api-event/?format=json');
-        const todos = await res.json();
-        this.setState({todos});
+        const name = 'http://localhost:8000/doctor/api-doctor/update/' + this.state.registration +'/';
+        const res = await fetch(name);
+        console.log(res);
+        const doctor = await res.json();
+        console.log(doctor);
+        this.setState({doctor});
       } catch (e) {
         console.log(e);
       }
     }
 
-  handleUserInput (e) {
-    const name = e.target.name;
-    const value = e.target.value;
-    this.setState({[name]: value},
-                  () => { this.validateField(name, value) });
-  }
-
-
-
-  validateField(fieldName, value) {
-    let fieldValidationErrors = this.state.formErrors;
-    let name_valid = this.state.name_valid;
-    let id_valid = this.state.id_valid;
-    // let entry_date_ =  this.state.entry_date;
-    // let departure_date_valid = this.state.departure_date_valid;
-    let name = this.state.name;
-    let id = this.state.id;
-    let api = this.state.api;
-    switch(fieldName) {
-      case 'name':
-        for(var nn = 0; nn < api.length; nn++){
-          if(api[nn].reg_name.toLowerCase() == value.toLowerCase()){
-            name_valid = true;
-            break;
-          }else {
-            name_valid = false;
-          }
-        }
-        if(id){
-          if(name_valid == true){
-            console.log(api[nn].reg_ids);
-            console.log(id);
-            if(api[nn].reg_ids != id){
-              name_valid = false;
-              id_valid = false;
-              console.log('false');
-            }
-            else{
-              name_valid = true;
-              id_valid = true;
-              console.log('true');
-            }
-          }
-          fieldValidationErrors.id = id_valid ? '' : 'Erro: Id não correspondente' ;
-        }
-        fieldValidationErrors.name = name_valid ? '' : 'Erro: Nome não correspondente' ;
-        this.setState({formErrors: fieldValidationErrors,
-                        name_valid: name_valid,
-                        id_valid: id_valid,
-                      }, this.validateForm);
-        break;
-
-        case 'id':
-          for(var nn = 0; nn < api.length;  nn++){
-            if(api[nn].reg_ids == value){
-              id_valid = true;
-              break;
-            }else {
-              id_valid = false;
-            }
-          }
-          if(name){
-            if(id_valid == true){
-              console.log(api[nn].reg_name);
-              console.log(name);
-              if(api[nn].reg_name.toLowerCase() != name.toLowerCase()){
-                name_valid = false;
-                id_valid = false;
-                console.log('false');
-              }
-              else{
-                name_valid = true;
-                id_valid = true;
-                console.log('true');
-              }
-               fieldValidationErrors.name = name_valid ? '' : 'Erro: Nome não correspondente' ;
-            }
-          }
-          fieldValidationErrors.id = id_valid ? '' : 'Erro: Id não correspondente' ;
-          this.setState({formErrors: fieldValidationErrors,
-                          name_valid: name_valid,
-                          id_valid: id_valid,
-                        }, this.validateForm);
-        break;
-
-    default:
-	break;
+    onChange2(e){
+      const title = e.target.title;
+      this.setState(
+        {[title]: e.target.checked}
+      )
     }
+
+  onChange(e){
+    const title = e.target.title;
+    const value = e.target.value === 'checkbox' ? e.target.checked : e.target.value;
+    this.setState({[title] : value});
   }
 
-  validateForm() {
-    this.setState({formValid: this.state.name_valid});
+  async onClick(e) {
+    await this.setState({["registration"]:this.state.temp_registration});
+    await this.componentDidMount();
+    await this.setState({["status"]:this.state.doctor.status});
+    await this.setState({["name"]:this.state.doctor.name});
+    await this.setState({["CPF"]:this.state.doctor.CPF});
+}
+  relaod(e){
+    window.location.reload();
   }
 
+   handleSubmit = e => {
+    e.preventDefault();
+    const {name, registration, CPF, status} = this.state;
+    console.log({name, registration, CPF, status} );
+    const lead = {name, registration, CPF, status} ;
+    const temp = JSON.stringify(lead)
+    console.log(temp);
+    const conf = {
+      method: "PUT",
+      body: temp,
+      headers: new Headers({ "Content-Type": "application/json" })
+    };
+    fetch('http://localhost:8000/doctor/api-doctor/update/'+this.state.doctor.registration+'/', conf).then(response => console.log(response));
+}
 
   render(){
+    console.log("Temp:"+" "+this.state.temp_registration);
+    console.log("Temp:"+" "+this.state.registration);
+
+    let information;
+    let status;
+    if(this.state.doctor.status){
+    status = (
+      <ListGroupItem  bsStyle="success">Status: True</ListGroupItem>
+    );
+    }
+    else{
+      status = (
+      <ListGroupItem  bsStyle="success">Status: False</ListGroupItem>
+  );
+    }
+    var list = this.state.doctor;
+    console.log(this.state.status);
+    if(Object.keys(list).length > 0){
+      information=(
+        <div>
+        <ListGroup>
+          <ListGroupItem  bsStyle="success">Nome: {this.state.doctor.name}</ListGroupItem>
+          <ListGroupItem  bsStyle="success">Matrícula: {this.state.doctor.registration}</ListGroupItem>
+          <ListGroupItem  bsStyle="success">CPF: {this.state.doctor.CPF}</ListGroupItem>
+          {status}
+        </ListGroup>
+        <legend><span class="number">5</span>Status</legend>
+        <input id="statusID" type="checkbox" title="status" value={this.state.status} onChange = {this.onChange2} placeholder="Disponível"/>
+        </div>
+    );
+    }
+    else{
+      information=(
+        <div>
+          <p>Não encontrado</p>
+        </div>
+      );
+    }
     return(
       <div>
       <NavBar></NavBar>
@@ -153,28 +126,16 @@ export default class DoctorStatus extends Component {
             <form>
               <h3>Alterar Status do Médico</h3>
               <fieldset>
-              <legend><span className="number">1</span> Nome</legend>
-              <input id="nameID" type="text" name="name" value={this.state.name} placeholder="Digite o nome aqui"
-                onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span className="number">2</span> Numero de Identificação</legend>
-              <input id="idID" type="text" name="id" value={this.state.id} placeholder="Digite o numero aqui"
-                onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span className="number">3</span> Status</legend>
-              <input id="stsID" type="radio" name="status" value={this.state.status = true}
-                onChange={(event) => this.handleUserInput(event)}/> Disponível <br></br>
-              <input id="stnID" type="radio" name="status" value={this.state.status = false}
-                  onChange={(event) => this.handleUserInput(event)}/> Indisponível <br></br>
-                Descrição: (Opcional)
-              <textarea name='comments' value={this.state.comments} rows="4" cols="50"
-               onChange={(event) => this.handleUserInput(event)}
-              >
-              </textarea>
-              <legend>  </legend>
-              </fieldset>
-              <legend><FormErrors formErrors={this.state.formErrors} /></legend>
+                <legend><span className="number">1</span> Buscar médico </legend>
+                <input id="titleID" type="text" title="temp_registration" value={this.state.temp_registration} onChange={this.onChange} placeholder="Digite o nome do médico aqui" />
+
+                <Button title="registration" onClick={this.onClick}>Buscar</Button>
+
+                {information}
+
+            </fieldset>
               <input type="submit" value="Apply"
-                disabled={!this.state.formValid}
-                onClick={this.sendInfo}/>
+                onClick={this.handleSubmit}/>
             </form>
 
             </div>

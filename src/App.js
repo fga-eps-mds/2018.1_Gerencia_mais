@@ -8,6 +8,7 @@ import DoctorForm from "./pages/DoctorForm";
 import DoctorStatus from "./pages/DoctorStatus";
 import LoginPage from "./pages/LoginPage";
 import UpdateSchedule from "./pages/UpdateSchedule";
+import RegistrationAdmin from "./pages/RegistrationAdmin";
 
 
 
@@ -25,6 +26,7 @@ class App extends Component {
       <Route exact path="/ScheduleTable" component={ScheduleTable} />
       <Route exact path="/dashboard" component={Dashboard} />
       <Route exact path="/UpdateSchedule" component={UpdateSchedule} />
+      <Route exact path="/RegistrationAdmin" component={RegistrationAdmin} />
       <Route component={NotFound} />
     </Switch>
     </BrowserRouter>

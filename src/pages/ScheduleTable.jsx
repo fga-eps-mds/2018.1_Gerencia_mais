@@ -4,7 +4,7 @@ import SideBar from '../components/SideBar';
 import Footer from '../components/Footer';
 import Popup from "reactjs-popup";
 import "../css/ScheduleTable.css";
-import {Table,Button,ButtonToolbar,ToggleButtonGroup,ToggleButton} from 'react-bootstrap';
+import {Table,ButtonToolbar,ToggleButtonGroup,ToggleButton} from 'react-bootstrap';
 import "../css/popup.css";
 import "../css/bootstrap.min.css";
 import InfiniteCalendar from 'react-infinite-calendar';
@@ -12,7 +12,7 @@ import 'react-infinite-calendar/styles.css';
 
 class GridCell extends Component {
   constructor(props){
-    super();
+    super(props);
     this.state = {"line":props.line,"column":props.column};
   }
 
@@ -140,7 +140,7 @@ export default class ScheduleTable extends Component {
                                   layout: 'landscape'
                                     }}
                                     width={600}
-                                height={350} onSelect={()=>this.resolveButtonMonth()}
+                                    height={350} onSelect={()=>this.resolveButtonMonth()}
 		  theme={{
 		      selectionColor: '#1abc9c',
 		      textColor: {
@@ -159,7 +159,7 @@ export default class ScheduleTable extends Component {
           )
     }
       else {
-        var content = (
+        content = (
 
 <Table className="wallpaper" striped bordered condensed hover>
          <thead>
