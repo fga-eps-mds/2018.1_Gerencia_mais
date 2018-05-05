@@ -12,8 +12,6 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils.six.moves.builtins import str
 from django.utils.translation import ugettext_lazy as _
 
-from schedule.settings import USE_FULLCALENDAR
-from schedule.utils import EventListManager
 
 
 class CalendarManager(models.Manager):
@@ -173,14 +171,7 @@ class Calendar(models.Model):
         5.
         """
         return self.events.order_by('-start').filter(start__lt=timezone.now())[:amount]
-
-    def occurrences_after(self, date=None):
-        return EventListManager(self.events.all()).occurrences_after(date)
-
-    def get_absolute_url(self):
-        if USE_FULLCALENDAR:
-            return reverse('fullcalendar', kwargs={'calendar_slug': self.slug})
-        return reverse('calendar_home', kwargs={'calendar_slug': self.slug})
+        
 
 
 class CalendarRelationManager(models.Manager):
