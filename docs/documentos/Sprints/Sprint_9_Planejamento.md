@@ -14,8 +14,8 @@
 |**Data de início**|05/05/2018|
 |**Data de término**|12/05/2018|
 |**Duração**|7 dias|
-|**Pontos planejados**|36|
-|**Dívidas Técnicas**|17|
+|**Pontos planejados**|40|
+|**Pontos de dívidas Técnicas**|17|
 
 ## 2 - Papéis
 
@@ -35,11 +35,12 @@
 
 ## 3 - Pareamento
        
-O pareamento abaixo foi definido baseado no quadro de conhecimento apresentado abaixo.
+O pareamento apresentado abaixo foi definido baseado no quadro de conhecimento apresentado logo em seguida.
 ![quadro de conhecimentos](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is144_sprint_6/docs/documentos/imagens/Sprint6/quadro_conhecimento.png) 
-A fim de garantir o cumprimento das Histórias de Usuário durante a *sprint*, focamos em colocar pessoas com maior conhecimento com pessoas que possuem menor conhecimento, a fim de distribuir e equalizar o nível da equipe. Abaixo apresentamos o quadro de pareamento obtido a apartir das observações apresentadas anteriormente.
+A fim de garantir o cumprimento das Histórias de Usuário durante a *sprint*. Focamos em colocar pessoas com maior conhecimento com pessoas que possuem menor conhecimento, a fim de distribuir e equalizar o nível da equipe. Abaixo apresentamos o quadro de pareamento obtido a apartir das observações apresentadas anteriormente.
 
-![pareamento]()
+![pareamento](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is163_sprint9_planning/docs/documentos/imagens/Sprint_9/pareamentos9.png)
+
 
 ## 4 - Histórias planejadas
 
@@ -66,4 +67,14 @@ Devido a grande quantidade de dívidas técnicas acumuladas, foi criada apenas u
 |ID|História|Pontos|Responsáveis|
 |:-:|:-----:|:----:|:----------:|
 |[US16](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/166)|Implementar bot de ajuda ao usuário|13|Victor Coelho e Caio Beleza|
+
+  ***Technical Stories***
+  
+
+|ID|História|Pontos|Responsáveis|
+|:-:|:-----:|:----:|:----------:|
+|[TS29](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/146)|Encriptar chave do deploy|2|Eduardo Júnio|  
+|[TS34](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/164)|Planejamento e resultados da sprint 8|2|Rafael Bragança|  
+
+      
 
