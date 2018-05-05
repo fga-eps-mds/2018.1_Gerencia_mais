@@ -12,13 +12,13 @@ from rest_framework.permissions import(
 )
 
 
-class ListDoctor(generics.ListCreateAPIView):
+class ListDoctor(generics.ListAPIView):
     permission_classes = [AllowAny]
     queryset = Doctors.objects.all()
     serializer_class = DoctorListSerializer
 
 class CreateDoctorAPI(generics.CreateAPIView):
-    permission_classes = [IsAdminUser]
+    permission_classes = [AllowAny]
     queryset = Doctors.objects.all()
     serializer_class = DoctorCreateUpdateSerializer
 
