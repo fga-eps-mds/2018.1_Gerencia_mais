@@ -27,14 +27,16 @@ button .butaum{
 
 .wallpaper .th{
   width:150%;
-  margin-right:0px; 
+  margin-right:0px;
   background-color:white;
 }
 .espace{
   margin-bottom: 5em;
 }
 
-
+.sidebar-nav-fixed {
+	width:200px;
+}
 
 
 .form-style-5{

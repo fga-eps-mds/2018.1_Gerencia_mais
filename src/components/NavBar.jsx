@@ -9,14 +9,6 @@ export default class NavBar extends Component {
     super(props);
     this.state = {}
   }
-  setNavBar(logged){
-    if (logged) {
-        return <a onClick={()=>this.setNavBar(true)} className="nav-link topicos title active" href="/">Sair</a>
-    } else {
-        return <a className="nav-link topicos title active" href="/LoginPage">Login</a>
-
-    }
-  }
     render(){
 	return(
       <nav className="navbar navbar-expand-sm navbar-dark new-bg-dark fixed-top">
@@ -31,7 +23,7 @@ export default class NavBar extends Component {
              <a className="nav-link topicos active title" href="/">Home</a>
            </li>
            <li className="nav-item divider-vertical">
-             {this.setNavBar(false)}
+             <a className="nav-link topicos title active" href="/LoginPage">Login</a>
            </li>
            <li className="nav-item active divider-vertical">
              <a className="nav-link topicos active title" href="/RegistrationAdmin">Cadastrar</a>

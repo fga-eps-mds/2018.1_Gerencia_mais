@@ -67,7 +67,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff;
+  background-color: blue;
 }
 
 [tabindex="-1"]:focus {
@@ -186,7 +186,9 @@ a:not([href]):not([tabindex]):hover, a:not([href]):not([tabindex]):focus {
 a:not([href]):not([tabindex]):focus {
   outline: 0;
 }
-
+.upperSpace {
+  margin-bottom: 5%;
+}
 pre,
 code,
 kbd,

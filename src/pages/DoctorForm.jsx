@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 //import {Link} from 'react-router-dom';
 import '../css/bootstrap.css';
 import '../css/DoctorForm.css';
-import NavBar from '../components/NavBar';
+import NavBarLogged from '../components/NavBarLogged';
 import Footer from '../components/Footer';
 import SideBar from '../components/SideBar';
 // import Select from 'react-select';
@@ -98,9 +98,9 @@ export default class DoctorForm extends Component {
     }
     return(
       <div>
-      <NavBar></NavBar>
+      <NavBarLogged></NavBarLogged>
       <SideBar></SideBar>
-        <div classtitle="top-space espaco espaco-acima">
+        <div className="top-space espaco espaco-acima">
           <div className="form-style-5">
             <form>
               <h3>Cadastro de horário de médicos</h3>

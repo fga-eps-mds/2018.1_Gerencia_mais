@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NavBar from '../components/NavBar';
+import NavBarLogged from '../components/NavBarLogged';
 import SideBar from '../components/SideBar';
 import Footer from '../components/Footer';
 import Popup from "reactjs-popup";
@@ -190,13 +190,11 @@ export default class ScheduleTable extends Component {
 
 	return (
 	  <div>
-	    <NavBar></NavBar>
-            <SideBar></SideBar>
-	    <h1>Quadro de Horários</h1>
-        <div className="container" style={{marginTop:"70px", marginLeft:"120px"}}>
+	    <NavBarLogged></NavBarLogged>
+      <SideBar></SideBar>
+        <div className="container top-space espaco-acima" style={{marginLeft:"auto"}}>
           <div className="jumbotron">
-    	      <h1 style={{marginTop:"70px"}}>Quadro de Horários</h1>
-
+    	      <h1 style={{marginTop:""}}>Quadro de Horários</h1>
             <ButtonToolbar>
                 <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
                   <ToggleButton className="btn btn-outline-primary" value={1} onClick={()=>this.changeTable(false)}>Semanal</ToggleButton>

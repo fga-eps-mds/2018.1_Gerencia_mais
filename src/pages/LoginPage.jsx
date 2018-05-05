@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 import '../css/bootstrap.css';
 import '../css/DoctorForm.css';
 import NavBar from '../components/NavBar';
-import SideBar from '../components/SideBar';
-import Footer from '../components/Footer'
+import Footer from '../components/Footer';
+import {Popover} from 'react-bootstrap';
+import {OverlayTrigger} from 'react-bootstrap'
 
 
 
@@ -31,7 +32,10 @@ export default class LoginPage extends Component {
         console.log(e);
       }
     }
-
+    setWindow(){
+      console.log("foda-se");
+      window.location.href = "http://localhost:3000/dashboard";
+    }
 
   handleUserInput (e) {
     const name = e.target.name;
@@ -39,18 +43,18 @@ export default class LoginPage extends Component {
     this.setState({[name]: value});
   }
 
-
-
   render(){
     var list_item = [];
     this.state.todos.map(item =>(
       list_item.push([item.name , item.password])
     ));
-
+    let submit;
     let message_login;
+    let valid;
     for(var i=0; i < list_item.length;i++){
       if(this.state.name === list_item[i][0] && this.state.password === list_item[i][1])
       {
+        valid = true;
         message_login =(
           <div>
           </div>
@@ -58,18 +62,39 @@ export default class LoginPage extends Component {
         break;
       }
       else{
+        valid = false;
         message_login =(
           <div>
             <p>Nome ou senha incorretos.</p>
           </div>
         );
       }
-  }
+    }
+    const popoverLeft = (
+    <Popover id="popover-positioned-left" title="">
+      <h3>Login ou senha incorretos</h3>
+    </Popover>
+    );
+    if(!valid){
+      submit = (
+        <div>
+            <OverlayTrigger trigger="click" placement="left" overlay={popoverLeft}>
+              <button type="button" class="btn btn-success btn-lg btn-block" onClick={() => this.setWindow()}>Entrar</button>
+            </OverlayTrigger>
+        </div>
+      );
+    }
 
+    else {
+      submit = (
+      <div>
+        <button type="button" class="btn btn-success btn-lg btn-block" onClick={() => this.setWindow()}>Entrar</button>
+      </div>
+    );
+    }
     return(
       <div>
       <NavBar></NavBar>
-      <SideBar></SideBar>
         <div className="top-space espaco espaco-acima">
           <div className="form-style-5">
             <form>
@@ -83,8 +108,7 @@ export default class LoginPage extends Component {
                 onChange={(event) => this.handleUserInput(event)}/>
               {message_login}
               </fieldset>
-              <input type="submit" value="Entrar"
-                onClick={this.sendInfo}/>
+              {submit}
             </form>
             </div>
         </div>

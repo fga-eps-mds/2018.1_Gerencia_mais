@@ -1,30 +1,56 @@
 import React, { Component } from 'react';
-import NavBar from '../components/NavBar';
-// import SideBar from '../components/SideBar';
-import {ListGroup,ListGroupItem} from 'react-bootstrap';
-import "../css/bootstrap.min.css";
+//import {Link} from 'react-router-dom';
+import '../css/bootstrap.css';
+import '../css/DoctorForm.css';
+import NavBarLogged from '../components/NavBarLogged';
+import Footer from '../components/Footer';
+import SideBar from '../components/SideBar';
+// import Select from 'react-select';
 
-export default class Dashboard extends Component {
-    render() {
-	return (
-	    <div>
+var date = new Date().toISOString();
+console.log(date);
+// status = True, title= 'Mauricio', start='2018-04-17T17:25:32Z', end='2018-04-20T17:25:34Z', calendar = calendar
+export default class DoctorForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {}
+  }
 
-	      <NavBar></NavBar>
-	      <h1>Menu</h1>
-          <ListGroup>
-              <a href="/doctorform" className="btn btn-secondary">Cadastrar horários</a>
-            <ListGroupItem href="/scheduletable">
-              <button className="btn btn-outline-secondary">Visualizar tabela de horários</button>
-            </ListGroupItem>
-            <ListGroupItem href="/doctorstatus">
-              <button className="btn btn-outline-secondary">Alterar status de disponibilidade de médicos</button>
-            </ListGroupItem>
-            <ListGroupItem href="/updateschedule">
-              <button className="btn btn-outline-secondary">Atualizar horário</button>
-            </ListGroupItem>
-          </ListGroup>;
+  selectWindow(windows){
+    switch (windows) {
+      case 1:
+         window.location.href = "http://localhost:3000/DoctorForm";
+        break;
+      case 2:
+         window.location.href = "http://localhost:3000/ScheduleTable";
+        break;
+      case 3:
+         window.location.href = "http://localhost:3000/DoctorStatus";
+        break;
+      case 4:
+         window.location.href = "http://localhost:3000/updateschedule";
 
-	    </div>
-	);
+
     }
+  }
+  render(){
+    return(
+      <div>
+      <NavBarLogged></NavBarLogged>
+        <div className="top-space espaco espaco-acima">
+          <div className="form-style-5">
+              <h3>Dashboard</h3>
+              <button type="button" class="btn btn-success btn-lg btn-block" onClick={() => this.selectWindow(1)}> Cadastrar médico</button>
+              <button type="button" class="btn btn-success btn-lg btn-block" onClick={() => this.selectWindow(2)}> Visualizar tabela</button>
+              <button type="button" class="btn btn-success btn-lg btn-block" onClick={() => this.selectWindow(3)}> Alterar status</button>
+              <button type="button" class="btn btn-success btn-lg btn-block" onClick={() => this.selectWindow(4)}> Atualizar horário</button>
+            </div>
+        </div>
+        <Footer ></Footer>
+      </div>
+
+
+    );
+
+  }
 }

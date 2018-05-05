@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 //import {Link} from 'react-router-dom';
 import '../css/bootstrap.css';
 import '../css/DoctorForm.css';
-import NavBar from '../components/NavBar';
+import NavBarLogged from '../components/NavBarLogged';
 import SideBar from '../components/SideBar';
 import Footer from '../components/Footer';
 import {Button,ListGroup,ListGroupItem} from 'react-bootstrap';
@@ -119,7 +119,7 @@ export default class DoctorStatus extends Component {
     }
     return(
       <div>
-      <NavBar></NavBar>
+      <NavBarLogged></NavBarLogged>
       <SideBar></SideBar>
         <div className="top-space espaco espaco-acima">
           <div className="form-style-5">

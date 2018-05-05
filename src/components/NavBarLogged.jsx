@@ -16,11 +16,14 @@ export default class NavBarLogged extends Component {
        <div className="collapse navbar-collapse" id="navbarSupportedContent">
          <ul className="navbar-nav mr-auto">
            <li className="nav-item active divider-vertical">
-             <a className="nav-link topicos active title" href="/">Home</a>
+             <a className="nav-link topicos active title" href="/dashboard">Dashboard</a>
            </li>
            <li className="nav-item divider-vertical">
-             <a onClick={logged = false} className="nav-link topicos title active" href="/">Sair</a>
+             <a className="nav-link topicos title active" href="/">Sair</a>
            </li>
          </ul>
        </div>
       </nav>
+    );
+      }
+  }
