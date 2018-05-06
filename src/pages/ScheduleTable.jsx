@@ -17,14 +17,8 @@ class GridCell extends Component {
   }
 
     resolveButton(line,column){
-      /*
-        change this url to project API's url.
-        line == periods
-        column == days of the week
-      */
-      fetch("https://randomuser.me/api/?results=50&nat=us,dk,fr,br")
+      fetch("http://localhost:8000/doctor/api-doctor/?format=json")
       .then(response => response.json())
-      .then(parsedJSON =>parsedJSON.results)
       .then(contacts => this.setState({
         contacts
       }))
@@ -39,12 +33,12 @@ class GridCell extends Component {
       modal
       closeOnDocumentClick
       >
-      <div className="popupShape ">
+      <div className="popupShape">
         <div className="pre-scrollable">
           <h4 className='modal-header whitename'>Médicos</h4>
           {
             this.state.contacts != null ? this.state.contacts.map(user =>
-              <div><strong>Nome: </strong> <span>{user.name.first + " " + user.name.last}</span><br></br><strong>Função: </strong>Médico<br></br><br></br></div>
+              <div><strong>Nome: </strong> <span>{user.name}</span><br></br><strong>Função: </strong>Médico<br></br><br></br></div>
             )
             : null
           }
