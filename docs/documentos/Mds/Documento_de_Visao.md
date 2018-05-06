@@ -1,22 +1,22 @@
 # Controle de versão:
 
-|Data|Versão|Descrição|Autor|
-|--- |---   |---      |---  |
-|21/03/2018|0.1|Adição dos primeiros passos do documento de visão| Victor |
-|21/03/2018|0.2|Construção do escopo do documento de visão| Victor |
-|22/03/2018|0.3|Adição dos perfis dos envolvidos|Guilherme Aguiar |
-|22/03/2018|0.4|Adição do Posicionamento|Caio César, Victor|
-|22/03/2018|0.5|Adição do tópico 1 do sumário a Introdução|Victor, Caio |
-|23/03/2018|0.6|Adição do tópico 4 do sumário a Visão Geral do Produto|Victor|
-|24/03/2018|0.7|Adição do tópico 5 do sumário os Recursos do Produto| Victor |
-|24/03/2018|0.8|Adição do tópico 6 do sumário as Restrições e correção de bug de interface|Victor|
-|24/03/2018|0.9|Adição de três subtópicos da descrição da parte interessada e dos usuários| Guilherme Aguiar|
-|25/03/2018|1.0|Adição do subtópico 3.5 sobre a parte interessada do usuário| Adrielly Rodrigues |
-|25/03/2018|1.1|Adição do subtópico 3.6 sobre alternativas e concorrências| Adrielly Rodrigues |
-|16/04/2018|1.2|Correção de escopo| Victor   |
-|26/04/2018|1.3|Modificação do subtópico 3.5| Adrielly Rodrigues |
-|26/04/2018|1.4|Correção ortográfica| Adrielly Rodrigues |
-|26/04/2018|1.5|Algumas alterações| Adrielly Rodrigues |
+| Data|Versão|Descrição|Autor|
+| --- |---   |---      |---  |
+| 21/03/2018|0.1|Adição dos primeiros passos do documento de visão| Victor |
+| 21/03/2018|0.2|Construção do escopo do documento de visão| Victor |
+| 22/03/2018|0.3|Adição dos perfis dos envolvidos|Guilherme Aguiar |
+| 22/03/2018|0.4|Adição do Posicionamento|Caio César, Victor|
+| 22/03/2018|0.5|Adição do tópico 1 do sumário a Introdução|Victor, Caio |
+| 23/03/2018|0.6|Adição do tópico 4 do sumário a Visão Geral do Produto|Victor|
+| 24/03/2018|0.7|Adição do tópico 5 do sumário os Recursos do Produto| Victor |
+| 24/03/2018|0.8|Adição do tópico 6 do sumário as Restrições e correção de bug de interface|Victor|
+| 24/03/2018|0.9|Adição de três subtópicos da descrição da parte interessada e dos usuários| Guilherme Aguiar|
+| 25/03/2018|1.0|Adição do subtópico 3.5 sobre a parte interessada do usuário| Adrielly Rodrigues |
+| 25/03/2018|1.1|Adição do subtópico 3.6 sobre alternativas e concorrências| Adrielly Rodrigues |
+| 16/04/2018|1.2|Correção de escopo| Victor   |
+| 26/04/2018|1.3|Modificação do subtópico 3.5| Adrielly Rodrigues |
+| 26/04/2018|1.4|Correção ortográfica| Adrielly Rodrigues |
+| 26/04/2018|1.5|Algumas alterações| Adrielly Rodrigues |
 
 # Sumário
 1. [Introdução](#1)
@@ -181,6 +181,7 @@ O software será uma plataforma web responsiva, isto é, seu layout se adapta au
 | ---         |---       |---         |---          |---             |
 | Gerir a escala de servidores|Alta|O conflito de horários gerado pela falta de informação sobre a escala dos servidores do HRG|Programa datado e planilhas no excel emparelhado com trakcare|Uma plataforma *webapp* que gerencie a escala horária dos servidores do HRG, mostrando quem está trabalhando, de folga, de férias |
 
+
 ### <a name = "3.6"></a>3.6 Alternativas e Concorrências
 
 
@@ -211,15 +212,15 @@ ___
 
 ## <a name = "5"></a>5. Recursos do produto
 
-|ID |Descrição|Prioridade|
-|---|---      |---       |
-|RF01|Cadastrar horário de plantão|Alta |
-|RF02|Cadastrar carga horária do servidor|Alta |
-|RF03|Cadastrar férias do servidor|Alta |
-|RF04|Mostrar planilha de horas totais trabalhadas|Alta |
-|RF05|Mostrar servidores de plantão|Alta |
-|RF06|Mostrar quantidade de servidores por período do dia|Alta |
-|RF12|Mostrar perfil do servidor|Muito baixa |
+| ID | Descrição|Prioridade|
+| --- | ---     | ---       |
+| RF01| Cadastrar horário de plantão|Alta |
+| RF02| Cadastrar carga horária do servidor|Alta |
+| RF03| Cadastrar férias do servidor|Alta |
+| RF04| Mostrar planilha de horas totais trabalhadas|Alta |
+| RF05| Mostrar servidores de plantão|Alta |
+| RF06| Mostrar quantidade de servidores por período do dia|Alta |
+| RF12| Mostrar perfil do servidor|Muito baixa |
 
 ___
 ## <a name="6"></a>6. Restrições
