@@ -102,7 +102,7 @@ ___
 <p> Isso se dá ao fato do sistema utilizado nesses hopitais estar bastante ultrapassado e defasado, o que o torna não confiável e pouco prático. Além disso, é de dificil manutenção e não amigável com o usuário, tornando bastante dificil ensinar novos servidores a utilizá-lo.</p>   
 
 <p> Este projeto visa oferecer uma melhora significativa nesse sistema, para que fique mais simples e prática a alocação apropriada de profissionais da saúde de maneira satisfatória para o HRG.</p>
- 
+
 ### <a name="2.2"></a> 2.2 Descrição do Problema
 
 | | |
@@ -177,9 +177,10 @@ O software será uma plataforma web responsiva, isto é, seu layout se adapta au
 
 ### <a name = "3.5"></a> 3.5 Principais necessidades dos Usuários ou dos Envolvidos
 
-|Necessidade |Prioridade|Preocupações|Solução Atual|Solução Proposta|
-|---         |---       |---         |---          |---             |
-|Gerir a escala de servidores|Alta|O conflito de horários gerado pela falta de informação sobre a escala dos servidores do HRG|Programa datado e planilhas no excel emparelhado com trakcare|Uma plataforma *webapp* que gerencie a escala horária dos servidores do HRG, mostrando quem está trabalhando, de folga, de férias |
+| Necessidade |Prioridade|Preocupações|Solução Atual|Solução Proposta|
+| ---         |---       |---         |---          |---             |
+| Gerir a escala de servidores|Alta|O conflito de horários gerado pela falta de informação sobre a escala dos servidores do HRG|Programa datado e planilhas no excel emparelhado com trakcare|Uma plataforma *webapp* que gerencie a escala horária dos servidores do HRG, mostrando quem está trabalhando, de folga, de férias |
+
 
 ### <a name = "3.6"></a>3.6 Alternativas e Concorrências
 
