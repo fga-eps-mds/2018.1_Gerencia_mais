@@ -48,31 +48,31 @@ ___
 
 ### <a name="1.3"></a>1.3. Definições, acrônimos e abreviações
 * FGA - Faculdade do Gama.
-<br></br>
+<br>
 * UnB - Universidade de Brasília.
-<br></br>
+<br>
 * EPS - Engenharia de Projeto de Software.
-<br></br>
+<br>
 * GM - Gerencia Mais
-<br></br>
+<br>
 * Servidores - A quem compete prescrever medicamentos, exames e recomendações de saúde.
-<br></br>
+<br>
 * Recursos médicos - Equipamentos tais como seringas, luvas, remédios.
-<br></br>
+<br>
 * Recursos físicos - Salas de consulta, salas de cirurgia.
-<br></br>
+<br>
 * HRG - Hospital Regional do Gama.
-<br></br>
+<br>
 
 ### <a name="1.4"></a>1.4 Referências
 * Como documentar a Arquitetura de Software. Disponível em: http://www.linhadecodigo.com.br/artigo/3343/como-documentar-a-arquitetura-de-software.aspx. Acesso em: 27 mar. 2018;
-<br></br>
+<br>
 * FREIRE, Thiago; OLIVEIRA, Rodrigo; MORENO, Augusto; NASCIMENTO, Josué; AUGUSTO, Marcelo. Projeto WikiLegis: Documento de Arquitetura. Disponível em: https://github.com/fga-gpp-mds/2016.2-WikiLegis/wiki/Documento-de-Arquitetura. Acesso em 27 mar. 2018;
-<br></br>
+<br>
 * SILVA, Ana; DINIZ, Arthur; OLIVEIRA, Bruna; SILVA, Guilherme; LACERDA, GuilhermE. Projeto Trezentos: Documento de Arquitetura. Disponível em: https://github.com/fga-gpp-mds/2017.1-Trezentos/wiki/Documento-de-Arquitetura. Acesso em 27 mar. 2018;
-<br></br>
+<br><
 * BATISTA, Matheus; ARAÚJO, Igor; WILLER, Guilherme; OLIVEIRA, Vinícius; BARCELOS, Filipe; SOUSA, André. Projeto Escola X: Documento de Arquitetura. Disponível em: https://github.com/fga-gpp-mds/2017.1-Escola-X/wiki/Documento-de-Arquitetura. Acesso em 27 mar. 2018;
-<br></br>
+<br>
 * BORGES, Felipe; HIROSHI, Lucas; MARQUES, Guilherme; KISHIMA, Lucas; NASCIMENTO, Mateus; MARTINS, Michel; MARIA, Natália; Projeto Receituário Médico: Documento de Arquitetura. Disponível em: https://github.com/fga-gpp-mds/2017.2-Receituario-Medico/wiki/Documento-de-Arquitetura. Acesso em 27 mar. 2018.
 
 ### <a name="1.5"></a>1.5 Visão Geral
@@ -136,6 +136,7 @@ O framework usado como backend do nosso *webapp*, o Django, é baseado no modelo
 Nosso software vai manipular informações relacionadas aos médicos do hospital regional do Gama, logo a quantidade de dados que devemos processar é mediana, então o sistema não deverá ter dificuldade na manipulação dos dados. O desempenho dependerá também do aparelho que o sistema será usado e pelo navegador.
 
 ## <a name="4.1"></a>4.1  Atores
+
 | Ator| Descrição |
 |-|-|
 | Administrador da Plataforma (Servidor) | O administrador da plataforma será capaz de acessar as funcionalidades do aplicativo web. Eles farão o cadastro de médicos na tabela, podendo alterar seu status a qualquer momento e também visualizar a tabela. |
@@ -144,6 +145,7 @@ Nosso software vai manipular informações relacionadas aos médicos do hospital
 ![Casos de uso](https://i.imgur.com/tqp3Swb.png)
 
 ## <a name="4.3"></a>4.3  Descrições de Casos de Uso
+
 | Caso de Uso | Descrição |
 | - | - |
 | UC01 - Cadastrar médico na tabela de horários |  Este caso de uso permite ao administrador cadastrar um médico presente na api e todos os dados requisitados na tabela de horários para visualização posterior. |
