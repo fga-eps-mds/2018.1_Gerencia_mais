@@ -1,4 +1,5 @@
 # Controle de versão:
+
 | Data|Versão|Descrição|Autor|
 | --- |---   |---      |---  |
 | 21/03/2018|0.1|Adição dos primeiros passos do documento de visão| Victor |
@@ -175,6 +176,7 @@ O software será uma plataforma web responsiva, isto é, seu layout se adapta au
 | __ Comentários/Problemas__ | Possível sobrecarga de atividades para o administrador. |
 
 ### <a name = "3.5"></a> 3.5 Principais necessidades dos Usuários ou dos Envolvidos
+
 |Necessidade |Prioridade|Preocupações|Solução Atual|Solução Proposta|
 |---         |---       |---         |---          |---             |
 |Gerir a escala de servidores|Alta|O conflito de horários gerado pela falta de informação sobre a escala dos servidores do HRG|Programa datado e planilhas no excel emparelhado com trakcare|Uma plataforma *webapp* que gerencie a escala horária dos servidores do HRG, mostrando quem está trabalhando, de folga, de férias |
@@ -208,9 +210,9 @@ O aplicativo tem por expectativa atender de forma ótima as a gestão dentro do 
 ___
 
 ## <a name = "5"></a>5. Recursos do produto
-|    |         |          |
-| --- | ---     | ---       |
+
 | ID | Descrição|Prioridade|
+| --- | ---     | ---       |
 | RF01| Cadastrar horário de plantão|Alta |
 | RF02| Cadastrar carga horária do servidor|Alta |
 | RF03| Cadastrar férias do servidor|Alta |
