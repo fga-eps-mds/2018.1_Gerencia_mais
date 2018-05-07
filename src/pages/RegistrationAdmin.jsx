@@ -11,7 +11,7 @@ export default class RegistrationAdmin extends Component{
   constructor(props){
     super(props);
     this.state = {
-        name:'',
+        username:'',
         adress: '',
         email: '',
         phone: '',
@@ -32,8 +32,8 @@ export default class RegistrationAdmin extends Component{
 
   handleSubmit = e => {
     e.preventDefault();
-    const {name,email,adress,phone,password,key} = this.state;
-    const lead = {name,email,adress,phone,password,key};
+    const {username,email,password} = this.state;
+    const lead = {username,email,password};
     const temp = JSON.stringify(lead)
     console.log(temp);
     const conf = {
@@ -41,7 +41,7 @@ export default class RegistrationAdmin extends Component{
       body: temp,
       headers: new Headers({ "Content-Type": "application/json" })
     };
-    fetch('http://localhost:8000/administrator/api-admin/create/', conf).then(response => console.log(response));
+    fetch('http://localhost:8000/user/api-user/create/', conf).then(response => console.log(response));
 }
 
 
@@ -119,16 +119,10 @@ render(){
             <fieldset>
 
             <legend><span className="number">1</span> Nome</legend>
-            <input id="titleID" type="text" title="name" value={this.state.name} onChange = {this.onChange} placeholder="Digite o nome aqui" />
+            <input id="titleID" type="text" title="username" value={this.state.username} onChange = {this.onChange} placeholder="Digite o nome aqui" />
 
             <legend><span className="number">2</span> E-mail </legend>
             <input id="titleID" type="text" title="email" value={this.state.email} onChange = {this.onChange} placeholder="Digite seu e-mail aqui" />
-
-            <legend><span className="number">3</span> Endereço</legend>
-            <input id="titleID" type="text" title="adress" value={this.state.adress} onChange = {this.onChange} placeholder="Digite o endereço aqui" />
-
-            <legend><span className="number">4</span> Telefone</legend>
-            <input id="titleID" type="text" title="phone" value={this.state.phone} onChange = {this.onChange} placeholder="Digite o telefone aqui" />
 
             <legend><span className="number">5</span> Senha</legend>
             <input className="form-control" id="titleID" type="password" name="password" title="password" value={this.state.password} placeholder="Digite a senha aqui" onChange={this.onChange}/>
@@ -136,7 +130,6 @@ render(){
             <legend><span className="number">6</span> Confirmar senha </legend>
             <input className="form-control" id="titleID" type="password" name="password_confirm" title="password_confirm" value={this.state.password_confirm} placeholder="Digite a senha novamente" onChange={this.onChange}/>
             {message_password}
-
           <legend><span className="number">7</span> Chave de validação</legend>
             <input id="titleID" type="text" title="key" value={this.state.key} onChange = {this.onChange} placeholder="Digite a chave aqui" />
             {message_key}
