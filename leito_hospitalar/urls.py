@@ -3,6 +3,7 @@ from django.urls import path, re_path
 from django.contrib import admin
 from django.views.generic import TemplateView
 
+from chatterbot.ext.django_chatterbot import urls
 from schedule import urls
 from administrator import urls as url1
 
@@ -16,4 +17,5 @@ urlpatterns = [
     re_path(r'^$', TemplateView.as_view(template_name="index.html")),
     path('administrator/',include('administrator.urls')),
     path('doctor/',include('doctor.urls')),
+    url(r'^api/chatterbot/', include('chatterbot.ext.django_chatterbot.urls')),
 ]

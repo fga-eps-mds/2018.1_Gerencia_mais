@@ -44,7 +44,20 @@ INSTALLED_APPS = [
     'administrator',
     'doctor',
     'django_filters',
+    'leito_hospitalar',
+    'chatterbot.ext.django_chatterbot',
 ]
+
+# ChatterBot settings
+
+CHATTERBOT = {
+    'name': 'Django ChatterBot Example',
+    'trainer': 'chatterbot.trainers.ChatterBotCorpusTrainer',
+    'training_data': [
+        'chatterbot.corpus.english.greetings'
+    ],
+    'django_app_name': 'django_chatterbot'
+}
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [

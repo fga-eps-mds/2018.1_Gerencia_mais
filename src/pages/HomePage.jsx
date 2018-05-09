@@ -12,7 +12,7 @@ import Footer from '../components/Footer'
 export default class HomePage extends Component {
     render() {
 	return (
-	    <div className="top-space title-space fundo">
+	    <div className="top-space title-space fundo" >
 	      <NavBar></NavBar>
         <SideBar></SideBar>
           <div className="container espaco">
