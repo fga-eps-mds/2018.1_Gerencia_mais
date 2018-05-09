@@ -1,4 +1,5 @@
 # Controle de versão:
+
 |Data         |Versão|Descrição                              |Autor               |
 |---        |---   |---                                    |---                 |
 |21/03/2018 |0.1   |Abertura do Documento                  | Guilherme Aguiar   |
@@ -14,6 +15,7 @@
 |15/04/2018 |1.2   |Mudança do nome do projeto| Victor |
 |15/04/2018 |1.3   |Corrigir erro do último tópico | Victor  |
 |16/04/2018 |1.4   |Corrigir erros ortográficos | João Vitor  |
+
 # Sumário
 1. [Introdução](#1)
   * 1.1 [Finalidade](#1.1)
@@ -115,7 +117,8 @@ O framework usado como backend do nosso *webapp*, o Django, é baseado no modelo
 
   ![Documento de Arquitetura][logo]
 
-  [logo]:../imagens/Documento_de_arquitetura/snippod-boilerplate-stack.png "Documento de Arquitetura"
+  <img src="{{ site.baseurl }}/documentos/imagens/Documento_de_arquitetura/snippod-boilerplate-stack.png">
+  "Documento de Arquitetura"
   Figura 1- Diagrama do um MTV com react, retirado no site em 27/03/2018.
 
   ___
@@ -142,7 +145,8 @@ Nosso software vai manipular informações relacionadas aos médicos do hospital
 | Administrador da Plataforma (Servidor) | O administrador da plataforma será capaz de acessar as funcionalidades do aplicativo web. Eles farão o cadastro de médicos na tabela, podendo alterar seu status a qualquer momento e também visualizar a tabela. |
 
 ## <a name="4.2"></a>4.2  Diagrama de Casos de Uso
-![Casos de uso](https://i.imgur.com/tqp3Swb.png)
+<img src="https://i.imgur.com/tqp3Swb.png">
+
 
 ## <a name="4.3"></a>4.3  Descrições de Casos de Uso
 
@@ -164,7 +168,8 @@ Visão geral da aplicação do ponto de vista de pacotes e aplicativos dentro da
 
 ![Documento de Arquitetura][diag]
 
-[diag]:../imagens/Documento_de_arquitetura/PackageDiagram.png "Documento de Arquitetura"
+<img src="{{ site.baseurl }}/documentos/imagens/Documento_de_arquitetura/PackageDiagram.png">
+"Documento de Arquitetura"
   ___
 ## <a name="6"></a>6.  Desempenho
 Nosso software vai manipular informações relacionadas aos médicos do hospital regional do Gama, logo a quantidade de dados que devemos processar é mediana, então o sistema não deverá ter dificuldade na manipulação dos dados. O desempenho dependerá também do aparelho que o sistema será usado e pelo navegador.
