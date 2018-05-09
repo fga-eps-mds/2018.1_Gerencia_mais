@@ -41,7 +41,6 @@
 ___
 
 ## <a name="1"></a>1.  Introdução
-
 ### <a name="1.1"></a>1.1. Finalidade
 <p>Neste documento será apresentada a visão arquitetônica sobre a aplicação webapp de Gerencia mais- GM, com a finalidade de elucidar, explicar e formalizar como será modelada a arquitetura do software, tendo como base diferentes características do projeto para justificar as decisões tomadas pelos desenvolvedores.<p>
 
@@ -145,6 +144,7 @@ Nosso software vai manipular informações relacionadas aos médicos do hospital
 | Administrador da Plataforma (Servidor) | O administrador da plataforma será capaz de acessar as funcionalidades do aplicativo web. Eles farão o cadastro de médicos na tabela, podendo alterar seu status a qualquer momento e também visualizar a tabela. |
 
 ## <a name="4.2"></a>4.2  Diagrama de Casos de Uso
+
 <img src="https://i.imgur.com/tqp3Swb.png">
 
 
