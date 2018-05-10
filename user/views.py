@@ -27,3 +27,8 @@ class CreateUserAPI(generics.CreateAPIView):
     permission_classes = [AllowAny]
     queryset = User.objects.all()
     serializer_class = UserCreateUpdateSerializer
+
+    def perform_create(self, serializer):
+        instance = serializer.save()
+        instance.set_password(instance.password)
+        instance.save()

@@ -92,9 +92,8 @@ export default class ScheduleTable extends Component {
 
     fetchData(){
 
-      fetch("https://randomuser.me/api/?results=50&nat=us,dk,fr,br")
+      fetch("http://localhost:8000/doctor/api-doctor/?format=json")
       .then(response => response.json())
-      .then(parsedJSON =>parsedJSON.results)
       .then(contacts => this.setState({
         contacts
       }))
@@ -104,7 +103,7 @@ export default class ScheduleTable extends Component {
 
     resolveButtonMonth(){
       var popup = (
-        <Popup className='size'
+        <Popup
         trigger={<button className="btn btn-outline-primary">Relatorio Diario</button>}
         modal
         closeOnDocumentClick
@@ -115,7 +114,7 @@ export default class ScheduleTable extends Component {
             <h4 className='modal-header whitename'>Médicos</h4>
             {
               this.state.contacts != null ? this.state.contacts.map(user =>
-                <div><strong>Nome: </strong> <span>{user.name.first + " " + user.name.last}</span><br></br><strong>Função: </strong>Médico<br></br><br></br></div>
+                  <div><strong>Nome: </strong> <span>{user.name}</span><br></br><strong>Função: </strong>Médico<br></br><br></br></div>
               )
               : null
             }

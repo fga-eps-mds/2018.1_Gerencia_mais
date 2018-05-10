@@ -4,6 +4,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from user.views import ListUser, CreateUserAPI
 
 
+
 urlpatterns = [
     url(r'^obtain-auth-token/$', obtain_auth_token,name='obtain_auth_token'),
     url(r'^api-user/$',ListUser.as_view(),name = "user-list"),

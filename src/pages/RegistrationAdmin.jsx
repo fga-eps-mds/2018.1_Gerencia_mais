@@ -34,7 +34,7 @@ export default class RegistrationAdmin extends Component{
     e.preventDefault();
     const {username,email,password} = this.state;
     const lead = {username,email,password};
-    const temp = JSON.stringify(lead)
+    const temp = JSON.stringify(lead);
     console.log(temp);
     const conf = {
       method: "POST",
