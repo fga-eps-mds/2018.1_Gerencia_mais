@@ -16,3 +16,5 @@ django-filter
 #randon
 #duplication
 coveralls
+dj-database-url
+psycopg2
