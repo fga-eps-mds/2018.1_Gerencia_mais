@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from user.serializers import UserSerializer, UserCreateUpdateSerializer
 from rest_framework import generics
 from rest_framework.permissions import (
-    AllowAny,
+    AllowAny,IsAuthenticated
 )
 # Create your views here.
 class UserViewVSet(viewsets.ModelViewSet):

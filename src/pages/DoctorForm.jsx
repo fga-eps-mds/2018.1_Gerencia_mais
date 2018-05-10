@@ -77,7 +77,7 @@ export default class DoctorForm extends Component {
     const conf = {
       method: "POST",
       body: temp,
-      headers: new Headers({ "Content-Type": "application/json" })
+      headers: new Headers({ "Token": "c2809b94803790d5794e8499b09cfa22e6e111df" })
     };
     fetch('http://localhost:8000/schedule/api-event/', conf).then(response => console.log(response));
     this.setState({['is_valid']:true});
