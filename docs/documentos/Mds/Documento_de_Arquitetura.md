@@ -35,6 +35,7 @@
   * 5.1 [Visão Geral](#5.1)
   * 5.2 [Visão de Implantação](#5.2)
   * 5.3 [Pacotes de Design Significativos do Ponto de Vista da Arquitetura](#5.3)  
+  * 5.4 [Diagrama de Classe](#5.4) 
 6. [Desempenho](#6)
 7. [Qualidade](#7)
 
@@ -166,11 +167,17 @@ As principais classes do ponto de vista da arquitetura do software e as implemen
 ## <a name="5.2"></a>5.2  Visão de Implantação
 Visão geral da aplicação do ponto de vista de pacotes e aplicativos dentro da arquitetura do sistema.
 
+## <a name="5.3"></a>5.3 Pacotes de Design Significativos do Ponto de Vista da Arquitetura
+
 ![Documento de Arquitetura][diag]
 
 <img src="{{ site.baseurl }}/documentos/imagens/Documento_de_arquitetura/PackageDiagram.png">
 "Documento de Arquitetura"
-  ___
+ 
+## <a name="5.4"></a>5.4 Diagrama de Classe
+
+<img src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/52970c3e95a162bca3a869771a0205f4c3af05fe/docs/documentos/imagens/Documento_de_arquitetura/DiagramaClasse.png">
+ ___
 ## <a name="6"></a>6.  Desempenho
 Nosso software vai manipular informações relacionadas aos médicos do hospital regional do Gama, logo a quantidade de dados que devemos processar é mediana, então o sistema não deverá ter dificuldade na manipulação dos dados. O desempenho dependerá também do aparelho que o sistema será usado e pelo navegador.
 
