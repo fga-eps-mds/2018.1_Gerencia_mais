@@ -15,6 +15,8 @@
 |15/04/2018 |1.2   |Mudança do nome do projeto| Victor |
 |15/04/2018 |1.3   |Corrigir erro do último tópico | Victor  |
 |16/04/2018 |1.4   |Corrigir erros ortográficos | João Vitor  |
+|11/05/2018 |1.5   |Adição do tópico 5.4 com imagem | Adrielly Rodrigues|
+|11/05/2018 |1.6   |Correção de erro que quebrava o documento| Adrielly Rodrigues|
 
 # Sumário
 1. [Introdução](#1)
@@ -49,33 +51,47 @@ ___
 <p> Este documento tem como objetivo documentar a arquitetura a ser implementada no software, guiando os desenvolvedores na construção do projeto que auxilia o gerenciamento de servidores, recursos médicos e recursos físicos do Hospital Regional do Gama - HRG.  <p>
 
 ### <a name="1.3"></a>1.3. Definições, acrônimos e abreviações
+
 * FGA - Faculdade do Gama.
 <br>
+
 * UnB - Universidade de Brasília.
 <br>
+
 * EPS - Engenharia de Projeto de Software.
 <br>
+
 * GM - Gerencia Mais
 <br>
+
 * Servidores - A quem compete prescrever medicamentos, exames e recomendações de saúde.
 <br>
+
 * Recursos médicos - Equipamentos tais como seringas, luvas, remédios.
 <br>
+
 * Recursos físicos - Salas de consulta, salas de cirurgia.
 <br>
+
 * HRG - Hospital Regional do Gama.
 <br>
 
 ### <a name="1.4"></a>1.4 Referências
+
 * Como documentar a Arquitetura de Software. Disponível em: http://www.linhadecodigo.com.br/artigo/3343/como-documentar-a-arquitetura-de-software.aspx. Acesso em: 27 mar. 2018;
 <br>
+
 * FREIRE, Thiago; OLIVEIRA, Rodrigo; MORENO, Augusto; NASCIMENTO, Josué; AUGUSTO, Marcelo. Projeto WikiLegis: Documento de Arquitetura. Disponível em: https://github.com/fga-gpp-mds/2016.2-WikiLegis/wiki/Documento-de-Arquitetura. Acesso em 27 mar. 2018;
 <br>
+
 * SILVA, Ana; DINIZ, Arthur; OLIVEIRA, Bruna; SILVA, Guilherme; LACERDA, GuilhermE. Projeto Trezentos: Documento de Arquitetura. Disponível em: https://github.com/fga-gpp-mds/2017.1-Trezentos/wiki/Documento-de-Arquitetura. Acesso em 27 mar. 2018;
-<br><
+<br>
+
 * BATISTA, Matheus; ARAÚJO, Igor; WILLER, Guilherme; OLIVEIRA, Vinícius; BARCELOS, Filipe; SOUSA, André. Projeto Escola X: Documento de Arquitetura. Disponível em: https://github.com/fga-gpp-mds/2017.1-Escola-X/wiki/Documento-de-Arquitetura. Acesso em 27 mar. 2018;
 <br>
+
 * BORGES, Felipe; HIROSHI, Lucas; MARQUES, Guilherme; KISHIMA, Lucas; NASCIMENTO, Mateus; MARTINS, Michel; MARIA, Natália; Projeto Receituário Médico: Documento de Arquitetura. Disponível em: https://github.com/fga-gpp-mds/2017.2-Receituario-Medico/wiki/Documento-de-Arquitetura. Acesso em 27 mar. 2018.
+<br>
 
 ### <a name="1.5"></a>1.5 Visão Geral
 Este documento é dividido nas seguintes secções:
@@ -85,7 +101,6 @@ Este documento é dividido nas seguintes secções:
 *    __Representação de Arquitetura__: Demonstra a arquitetura que usaremos no sistema.
 
 *    __Restrições e Metas de Arquitetura__: Mostra os requisitos de usabilidade do software o os objetivos que impactam significativamente a aplicação.
-
 
 *    __Visão de Casos de Uso__: Mostra todos os casos de uso da aplicação.
 
@@ -114,14 +129,11 @@ O framework usado como backend do nosso *webapp*, o Django, é baseado no modelo
 
 - *View*: A view no caso do Django faz o papel da controller uma vez que ela é quem faz as interações entre a model e a template. Neste caso as ações que ocorrerão no template serão passadas pelo Rest framework para o react que também fará o papel intermediário entre model e template.
 
+<img src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/52970c3e95a162bca3a869771a0205f4c3af05fe/docs/documentos/imagens/Documento_de_arquitetura/snippod-boilerplate-stack.png">
 
-  ![Documento de Arquitetura][logo]
-
-  <img src="{{ site.baseurl }}/documentos/imagens/Documento_de_arquitetura/snippod-boilerplate-stack.png">
-  "Documento de Arquitetura"
   Figura 1- Diagrama do um MTV com react, retirado no site em 27/03/2018.
 
-  ___
+___
 
   ## <a name="3"></a>3. Metas e Restrições da arquitetura
   ### <a name="3.1"></a>3.1 Metas
@@ -130,10 +142,7 @@ O framework usado como backend do nosso *webapp*, o Django, é baseado no modelo
   ### <a name="3.2"></a>3.2 Restrições
   Este sistema será desenvolvido ultilizando o framework Django 2.0.3, que tem como base a linguagem de programação python. Além disso, será utilizado o React 16.2.0, que estará voltado ao frontend da nossa aplicação.
   O sistema será suportado por navegadores web tais como Mozilla Firefox e Google Chrome.
-
-
-
-
+___
 
 ## <a name="4"></a>4.  Visão de Casos de Uso
 Nosso software vai manipular informações relacionadas aos médicos do hospital regional do Gama, logo a quantidade de dados que devemos processar é mediana, então o sistema não deverá ter dificuldade na manipulação dos dados. O desempenho dependerá também do aparelho que o sistema será usado e pelo navegador.
@@ -158,7 +167,9 @@ Nosso software vai manipular informações relacionadas aos médicos do hospital
 | UC03 - Atualizar status do médico | Este caso permite ao administrador atualizar o status de disponibilidade do médico. |
 | UC04 - Visualizar tabela | Este caso permite ao administrador visualizar a tabela de horários de acordo com os dados passados anteriormente. |
 | UC05 - Realizar Login | Este caso permite ao administrador a realização de login e logout, ou seja, permite a entrada e saída do sistema. |
-  ___
+ 
+___
+   
 ## <a name="5"></a>5.  Visão Lógica
 
 ## <a name="5.1"></a>5.1  Visão Geral
@@ -169,15 +180,14 @@ Visão geral da aplicação do ponto de vista de pacotes e aplicativos dentro da
 
 ## <a name="5.3"></a>5.3 Pacotes de Design Significativos do Ponto de Vista da Arquitetura
 
-![Documento de Arquitetura][diag]
-
-<img src="{{ site.baseurl }}/documentos/imagens/Documento_de_arquitetura/PackageDiagram.png">
-"Documento de Arquitetura"
+<img src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/52970c3e95a162bca3a869771a0205f4c3af05fe/docs/documentos/imagens/Documento_de_arquitetura/PackageDiagram.png">
  
 ## <a name="5.4"></a>5.4 Diagrama de Classe
 
 <img src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/52970c3e95a162bca3a869771a0205f4c3af05fe/docs/documentos/imagens/Documento_de_arquitetura/DiagramaClasse.png">
- ___
+
+___
+
 ## <a name="6"></a>6.  Desempenho
 Nosso software vai manipular informações relacionadas aos médicos do hospital regional do Gama, logo a quantidade de dados que devemos processar é mediana, então o sistema não deverá ter dificuldade na manipulação dos dados. O desempenho dependerá também do aparelho que o sistema será usado e pelo navegador.
 
