@@ -180,5 +180,3 @@ venv.bak/
 # End of https://www.gitignore.io/api/emacs,python,django
 .DS_Store
 __pycache__
-
-package-lock.json
