@@ -3,9 +3,12 @@ from django.urls import path, re_path
 from django.contrib import admin
 from django.views.generic import TemplateView
 
-from chatterbot.ext.django_chatterbot import urls as urls2
+from chatterbot.ext.django_chatterbot import urls
 from schedule import urls
 from administrator import urls as url1
+
+var_code = urls
+print(urls)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
