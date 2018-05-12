@@ -7,6 +7,7 @@ import SideBar from '../components/SideBar';
 import Footer from '../components/Footer'
 import {Popover} from 'react-bootstrap';
 import {OverlayTrigger} from 'react-bootstrap'
+
 export default class RegistrationAdmin extends Component{
   constructor(props){
     super(props);

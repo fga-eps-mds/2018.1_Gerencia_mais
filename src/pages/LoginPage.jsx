@@ -4,12 +4,13 @@ import '../css/bootstrap.css';
 import '../css/DoctorForm.css';
 import NavBar from '../components/NavBar';
 import SideBar from '../components/SideBar';
-import Footer from '../components/Footer'
-
-
-
-
-export default class LoginPage extends Component {
+import Footer from '../components/Footer';
+import { createStore } from 'redux'
+import loggin from '../reducers/reducers'
+import isLogged from '../actions/actions'
+import {store} from '../components/store'
+console.log(store.getState())
+export class LoginPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -52,7 +53,12 @@ export default class LoginPage extends Component {
     };
     fetch('http://localhost:8000/user/obtain-auth-token/', conf).then(res => res.json()).then(res => {
     let token = res.token;
-    console.log("token: ", token);
+    if(res.non_field_errors == null && res.token != null)
+      store.dispatch(isLogged(true));
+    else
+      store.dispatch(isLogged(false));
+    console.log(store.getState())
+    console.log(token);
 });
 
 }

@@ -4,7 +4,7 @@ import '../css/bootstrap.css';
 import '../css/NavBar.css';
 
 
-export default class NavBarLogged extends Component {
+export default class NavBarged extends Component {
     render(){
 	return(
       <nav className="navbar navbar-expand-sm navbar-dark new-bg-dark fixed-top">
