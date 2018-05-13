@@ -1,10 +1,10 @@
-from django.shortcuts import render
-from rest_framework import viewsets, response, permissions
+#from django.shortcuts import render
+from rest_framework import viewsets, permissions
 from django.contrib.auth.models import User
 from user.serializers import UserSerializer, UserCreateUpdateSerializer
 from rest_framework import generics
 from rest_framework.permissions import (
-    AllowAny,IsAuthenticated
+    AllowAny
 )
 # Create your views here.
 class UserViewVSet(viewsets.ModelViewSet):
