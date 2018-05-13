@@ -24,10 +24,12 @@ class ListUser(generics.ListCreateAPIView):
     serializer_class = UserSerializer
 
 class CreateUserAPI(generics.CreateAPIView):
+    @classmethod
     permission_classes = [AllowAny]
     queryset = User.objects.all()
     serializer_class = UserCreateUpdateSerializer
 
+    @staticmethod
     def perform_create(self, serializer):
         instance = serializer.save()
         instance.set_password(instance.password)
