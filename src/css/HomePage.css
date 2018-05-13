@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Coustard|Encode+Sans');
 
 body {
-    background: url(https://wallpaperbrowse.com/media/images/black-wallpaper-5.jpg);
+    background: url('../images/black_wallpaper.jpg');
     background-size: cover;
     background-position: center;
 		background-repeat: no-repeat;
