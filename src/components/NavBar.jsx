@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 //import {Link} from 'react-router-dom';
 import '../css/bootstrap.css';
 import '../css/NavBar.css';
-
+import isLogged from '../actions/actions';
+import {store} from '../components/store';
 
 export default class NavBar extends Component {
   constructor(props) {
@@ -10,16 +11,22 @@ export default class NavBar extends Component {
     this.state = {}
   }
   setNavBar(logged){
-    if (logged) {
-        return <a onClick={()=>this.setNavBar(true)} className="nav-link topicos title active" href="/">Sair</a>
+    if (store.getState().status) {
+        return <a onClick={()=>store.dispatch(isLogged(false))} className="nav-link topicos title active" href="/">Sair</a>
     } else {
         return <a className="nav-link topicos title active" href="/LoginPage">Login</a>
 
     }
   }
+
+  setRegistration(logged){
+    if (!store.getState().status) {
+      return <a className="nav-link topicos active title" href="/RegistrationAdmin">Cadastrar</a>
+    }
+  }
     render(){
 	return(
-      <nav className="navbar navbar-expand-sm navbar-dark new-bg-dark fixed-top">
+      <nav className="navbar navbar-expand-sm navbar-dark new-bg-dark fixed-top topspace">
        <a className=" navbar-right" href="/">Gerencia Mais</a>
        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span className="navbar-toggler-icon"></span>
@@ -34,7 +41,7 @@ export default class NavBar extends Component {
              {this.setNavBar(false)}
            </li>
            <li className="nav-item active divider-vertical">
-             <a className="nav-link topicos active title" href="/RegistrationAdmin">Cadastrar</a>
+             {this.setRegistration(false)}
            </li>
          </ul>
        </div>

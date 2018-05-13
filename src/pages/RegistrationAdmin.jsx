@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import '../css/bootstrap.css';
 import '../css/HomePage.css';
 import NavBar from '../components/NavBar';
-import SideBar from '../components/SideBar';
 import Footer from '../components/Footer'
 import {Popover} from 'react-bootstrap';
 import {OverlayTrigger} from 'react-bootstrap'
@@ -112,7 +111,6 @@ render(){
   return(
     <div>
     <NavBar></NavBar>
-    <SideBar></SideBar>
       <div classtitle="top-space espaco espaco-acima">
         <div className="form-style-5">
           <form>
