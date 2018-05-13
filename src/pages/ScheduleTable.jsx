@@ -187,9 +187,9 @@ export default class ScheduleTable extends Component {
 	return (
 	  <div>
 	    <NavBar></NavBar>
-            <SideBar></SideBar>
+      <SideBar></SideBar>
 	    <h1>Quadro de Horários</h1>
-        <div className="container" style={{marginTop:"70px", marginLeft:"120px"}}>
+        <div className="container" style={{marginTop:"70px", marginLeft:"center"}}>
           <div className="jumbotron">
     	      <h1 style={{marginTop:"70px"}}>Quadro de Horários</h1>
 
