@@ -28,7 +28,7 @@ class CreateUserAPI(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserCreateUpdateSerializer
 
-    @staticmethod
+    @classmethod
     def perform_create(self, serializer):
         instance = serializer.save()
         instance.set_password(instance.password)

@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import '../css/bootstrap.css';
 import '../css/DoctorForm.css';
 import NavBar from '../components/NavBar';
-import NavBarged from '../components/NavBarLogged'
 import Footer from '../components/Footer';
 import SideBar from '../components/SideBar';
 // import Select from 'react-select';
