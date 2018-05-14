@@ -8,7 +8,6 @@ import SideBar from '../components/SideBar';
 // import Select from 'react-select';
 
 var date = new Date().toISOString();
-console.log(date);
 // status = True, title= 'Mauricio', start='2018-04-17T17:25:32Z', end='2018-04-20T17:25:34Z', calendar = calendar
 export default class DoctorForm extends Component {
   constructor(props) {
@@ -64,6 +63,7 @@ export default class DoctorForm extends Component {
   }
 
   handleSubmit = e => {
+    console.log("entrou");
     this.state.start = this.state.start + "T" + this.state.time_start + "Z";
     this.state.end = this.state.end + "T" + this.state.time_end + "Z";
     this.state.is_valid = true;
@@ -101,7 +101,7 @@ export default class DoctorForm extends Component {
       <div>
       <NavBar></NavBar>
       <SideBar></SideBar>
-        <div classtitle="top-space espaco espaco-acima">
+        <div className="espaco espaco-acima">
           <div className="form-style-5">
             <form>
               <h3>Cadastro de horário de médicos</h3>

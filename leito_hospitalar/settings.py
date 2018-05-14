@@ -38,11 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'webpack_loader',
     'rest_framework',
+    'rest_framework.authtoken',
     'schedule',
     'tests',
     'corsheaders',
     'administrator',
     'doctor',
+    'user',
     'django_filters',
 ]
 
@@ -50,6 +52,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
         'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ],
     'DEFAULT_FILTER_BACKENDS':

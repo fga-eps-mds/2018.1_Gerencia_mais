@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import '../css/bootstrap.css';
 import '../css/HomePage.css';
 import NavBar from '../components/NavBar';
-import SideBar from '../components/SideBar';
 import Footer from '../components/Footer'
 
 
@@ -14,7 +13,6 @@ export default class HomePage extends Component {
 	return (
 	    <div className="top-space title-space fundo">
 	      <NavBar></NavBar>
-        <SideBar></SideBar>
           <div className="container espaco">
          	<div className="row">
          		<div className="col-lg-12">
