@@ -24,7 +24,6 @@ class ListUser(generics.ListCreateAPIView):
     serializer_class = UserSerializer
 
 class CreateUserAPI(generics.CreateAPIView):
-    @classmethod
     permission_classes = [AllowAny]
     queryset = User.objects.all()
     serializer_class = UserCreateUpdateSerializer
