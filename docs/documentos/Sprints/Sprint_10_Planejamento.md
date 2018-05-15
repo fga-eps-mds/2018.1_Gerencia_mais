@@ -14,7 +14,7 @@
 |**Data de início**|12/05/2018|
 |**Data de término**|19/05/2018|
 |**Duração**|7 dias|
-|**Pontos planejados**|43|
+|**Pontos planejados**|41|
 |**Pontos de dívidas Técnicas**|6|
 
 ## 2 - Papéis
@@ -36,17 +36,17 @@
 ## 3 - Pareamento
 
 O pareamento apresentado abaixo foi definido baseado no quadro de conhecimento apresentado logo em seguida.
-![quadro de conhecimentos](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is178_sprint_10/docs/documentos/imagens/Sprint10/quadro_conhecimento.png)
+![quadro de conhecimentos](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Sprint10/quadro_conhecimento.png)
 A fim de garantir o cumprimento das Histórias de Usuário durante a *sprint*. Focamos em colocar pessoas com maior conhecimento com pessoas que possuem menor conhecimento, a fim de distribuir e equalizar o nível da equipe. Abaixo apresentamos o quadro de pareamento obtido a apartir das observações apresentadas anteriormente.
 
-![pareamento](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is178_sprint10_planning/docs/documentos/imagens/Sprint_10/pareamentos10.png)
+![pareamento](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Sprint_10/pareamentos10.png)
 
 
 ## 4 - Histórias planejadas
 
 ### 4.1 - Sprint anteriores
 
-Na execução das sprints anteriores, acumulou-se 5 dívidas técnicas que são apresentadas na tabela abaixo.
+Na execução das sprints anteriores, acumulou-se 8 pontos de dívidas técnicas que são apresentadas na tabela abaixo.
 
 |ID|História|Pontos|Responsáveis|
 |:-:|:-----:|:----:|:----------:|
@@ -57,7 +57,7 @@ A história técnicas TS36 está documentada como dívida técnica mas foi plane
 
 ### 4.2 - Novas histórias
 
-Devido a grande quantidade de dívidas técnicas acumuladas, foi criada apenas uma nova história de usuário.
+Embora existam algumas dividas técnicas, novas histórias de usuário foram planejadas para essa sprint. A produtividade da equipe deve ser elevada para que o projeto seja concluído em tempo hábil.
 
   ***User Stories***
 
@@ -74,6 +74,6 @@ Devido a grande quantidade de dívidas técnicas acumuladas, foi criada apenas u
 
 |ID|História|Pontos|Responsáveis|
 |:-:|:-----:|:----:|:----------:|
-|[TS29](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/146)|Encriptar chave do deploy|2|Eduardo Júnio|
-|[TS41](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/184)|Encriptar chave do deploy|2|Caio Gabriel|
+|[TS36](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/155)|Refatoração do Frontend de acordo com feedback de teste de usabilidade|5|Guilherme e João Vitor|
+|[TS41](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/184)|Retrospectiva da Sprint 9|2|Caio Gabriel|
 |[TS40](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/178)|Planejamento da Sprint 10|2|Rafael Bragança|
