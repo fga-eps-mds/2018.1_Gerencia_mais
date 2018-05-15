@@ -26,23 +26,23 @@
 
  * MDS
 
- ![Quadro_de_horas_eps.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/horas_eps.png)
+ <img src="{{site.baseurl}}/documentos/imagens/horas_trabalhadas/horas_eps.png">
 
- ![Grafico_de_horas_eps.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/grafico_eps.png)
+ <img src="{{site.baseurl}}/documentos/imagens/horas_trabalhadas/grafico_eps.png">
 
  * EPS
 
- ![Quadro_de_horas_mds.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/horas_mds.png)
+<img src="{{site.baseurl}}/documentos/imagens/horas_trabalhadas/horas_mds.png">
 
- ![Grafico_de_horas_mds.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/grafico_mds.png)
+<img src="{{site.baseurl}}/documentos/imagens/horas_trabalhadas/grafico_mds.png">
 
  Obs: A imagem apresentada mostra o quadro geral do projeto para esse documento deve ser apenas analisado os dados da semana 1.
 
 
 ### 🔵 Quadro e gráfico de horas trabalhadas EPS
 
-![Quadro de horas trabalhadas EPS.](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/docs/docs/documentos/imagens/sprint1/sprint_1.png)
-![Gráfico de horas trabalhadas EPS.](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/docs/docs/documentos/imagens/sprint1/graficos-horas-eps-sprint-1.png)
+<img src="{{site.baseurl}}/documentos/imagens/sprint1/sprint_1.png">
+<img src="{{site.baseurl}}/documentos/imagens/sprint1/graficos-horas-eps-sprint-1.png">
 
 Obs: As horas trabalhadas pela equipe de EPS é descrita pela linha "Semana 1".
 
@@ -60,7 +60,7 @@ Obs: As horas trabalhadas pela equipe de EPS é descrita pela linha "Semana 1".
   entregues no final da sprint, tarefas essas que podem ser observadas na tabela apresentada acima.
 
 ## 4 - Retrospectiva da Sprint
-![Retrospectiva](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/sprint1/retrospectiva.png)
+<img src="{{site.baseurl}}/documentos/imagens/sprint1/retrospectiva.png">
 
 ## 5 - Riscos
 
@@ -68,6 +68,6 @@ Nessa sprint houve a ocorrencia do risco de falta de escopo que prejudicou o tim
 
 ## 6 - Burndown
 
-![burndown.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/sprint1/burndown.png)
+<img src="{{site.baseurl}}/documentos/imagens/sprint1/burndown.png">
 
 O grafico gerado nessa sprint teve uma queda apenas no final por se tratar de historias grandes, o que levou o time a entregar apenas no ultimo prazo de entrega.

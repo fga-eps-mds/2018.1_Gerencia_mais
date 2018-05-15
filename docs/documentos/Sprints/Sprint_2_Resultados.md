@@ -31,15 +31,15 @@ Obs: As horas trabalhadas pela equipe de mds é descrita pela linha "Semana 2".
 
 * MDS
 
-![Quadro_de_horas_eps.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/horas_eps.png)
+<img src="{{site.baseurl}}/documentos/imagens/horas_trabalhadas/horas_eps.png">
 
-![Grafico_de_horas_eps.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/grafico_eps.png)
+<img src="{{site.baseurl}}/documentos/imagens/horas_trabalhadas/grafico_eps.png">
 
 * EPS
 
-![Quadro_de_horas_mds.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/horas_mds.png)
+<img src="{{site.baseurl}}/documentos/imagens/horas_trabalhadas/horas_mds.png">
 
-![Grafico_de_horas_mds.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/grafico_mds.png)
+<img src="{{site.baseurl}}/documentos/imagens/horas_trabalhadas/grafico_mds.png">
 
 Obs: A imagem apresentada mostra o quadro geral do projeto para esse documento deve ser apenas analisado os dados da semana 2.
 
@@ -55,7 +55,7 @@ Obs: A imagem apresentada mostra o quadro geral do projeto para esse documento d
 
 
 ## 4 - Retrospectiva da Sprint
-![Retrospectiva](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/docs/docs/documentos/imagens/sprint2/retrospectiva.png)
+<img src="{{site.baseurl}}/documentos/imagens/sprint2/retrospectiva.png">
 
 ##5 - Riscos
 
@@ -63,7 +63,7 @@ Na Sprint 2 o risco relevante ao escopo percistiu no projeto, para reduzir seu i
 
 ## 6 - Burndown
 
-![burndown.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/sprint2/retrospectiva.png)
+<img src="{{site.baseurl}}/documentos/imagens/sprint2/retrospectiva.png">
 
 O grafico gerado nessa sprint teve uma queda apenas no final por se tratar de poucas historias, onde foram finalizadas apenas no final da sprint.
 

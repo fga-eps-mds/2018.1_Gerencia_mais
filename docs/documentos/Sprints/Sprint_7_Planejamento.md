@@ -35,11 +35,11 @@
 ## 3 - Pareamento
 
 O pareamento abaixo foi definido baseado no quadro de conhecimento apresentado abaixo.
-![quadro de conhecimentos](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is147_Sprint_7/docs/documentos/imagens/Sprint7/conhecimento_s7.png) 
+<img src="{{site.baseurl}}/documentos/imagens/Sprint7/conhecimento_s7.png">
 
 A fim de garantir o cumprimento das Histórias de Usuário durante a *sprint*. Focamos em colocar pessoas com maior conhecimento com pessoas que possuem menor conhecimento, a fim de distribuir e equalizar o nível da equipe. Abaixo apresentamos o quadro de pareamento obtido a apartir das observações apresentadas anteriormente.
 
-![pareamento](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is147_Sprint_7/docs/documentos/imagens/Sprint7/pareamento_s6.png)
+<img src="{{site.baseurl}}/documentos/imagens/Sprint7/pareamento_s6.png">
 
 ## 4 - Histórias planejadas
 

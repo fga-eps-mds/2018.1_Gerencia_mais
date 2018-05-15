@@ -48,7 +48,7 @@
 
 ## 3 - Retrospectiva da Sprint
 
-![Retrospectiva](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is144_sprint_6/docs/documentos/imagens/Sprint6/retrospectiva_s6.png)
+<img src="{{site.baseurl}}/documentos/imagens/Sprint6/retrospectiva_s6.png">
 
 ## 4 - Riscos
 
@@ -64,11 +64,11 @@ Foi tomada a decisição pelo grupo de EPS de coletar o conhecimento do time no 
 
 ***Quadro de conhecimento Início release 2***
 
-![conhecimento_inicio_r1.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is144_sprint_6/docs/documentos/imagens/Sprint6/quadro_conhecimento.png)
+<img src="{{site.baseurl }}/documentos/imagens/Sprint6/quadro_conhecimento.png">
 
 ## 6 - Burndown
 
-![burndown.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is144_sprint_6/docs/documentos/imagens/Sprint6/burndown_s6.png)
+<img src="{{site.baseurl }}/documentos/imagens/Sprint6/burndown_s6.png">
 
 <p align="justify">O burndown apresenta a quantidade de pontos que foram planejados e sua “queima” durante a sprint que tem duração de uma semana. Para a sprint 6, a equipe planejou realizar 34 pontos que foram distribuídos em 8 histórias.
 Ao término da sprint, a equipe de desenvolvimento entregou 31 pontos, cerca de 7 histórias de usuário, ficando como dívida técnica para a sprint seguinte 3 pontos (1 história).</p>
@@ -76,7 +76,7 @@ Ao término da sprint, a equipe de desenvolvimento entregou 31 pontos, cerca de 
 
 ## 7 - Velocity
 
-![velocity.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is144_sprint_6/docs/documentos/imagens/Sprint6/velocity_s6.png)
+<img src="{{site.baseurl }}/documentos/imagens/Sprint6/velocity_s6.png">
 
 A velocidade de desenvolvimento da equipe continuou apresentando boa estabilidade mesmo com os riscos apresentados.
 
@@ -84,11 +84,9 @@ A velocidade de desenvolvimento da equipe continuou apresentando boa estabilidad
 
 ### 8.1 Complexidade e Duplicação (manutenibilidade)
 
-![Imgur](https://i.imgur.com/yIWssfX.png)
+<img src="https://i.imgur.com/yIWssfX.png">
+
 
 ### 8.2 Cobertura de testes
 
-![Imgur](https://i.imgur.com/85StwXk.png)
-
-
-
+<img src="https://i.imgur.com/85StwXk.png">

@@ -36,15 +36,17 @@
 
 ## 3 - Pareamento
 
-O pareamento abaixo foi definido baseado no [quadro de conhecimentos](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/master/docs/documentos/imagens/sprint0/conhecimento_Inicial.png) a fim de garantir o cumprimento das Histórias de Usuário durante a *sprint*. Focamos em colocar pessoas com maior conhecimento com pessoas que possuem menor conhecimento, a fim de distribuir e equalizar o nível da equipe.
+O pareamento abaixo foi definido baseado no
+<img src="{{site.baseurl}}/documentos/imagens/sprint0/conhecimento_Inicial.png">
+a fim de garantir o cumprimento das Histórias de Usuário durante a *sprint*. Focamos em colocar pessoas com maior conhecimento com pessoas que possuem menor conhecimento, a fim de distribuir e equalizar o nível da equipe.
 
-![pareamento](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/is46_sprint3_planejamento/docs/documentos/imagens/Sprint3/Pareamento.jpg)
+<img src="{{site.baseurl}}/documentos/imagens/Sprint3/Pareamento.jpg">
 
 ## 4 - Histórias planejadas
 
 ### 4.1 - Sprint anteriores
 
-Na execução da [Sprint 2](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/master/docs/documentos/Sprints/Sprint_2_Planejamento.md), todas as histórias definidas foram feitas e portanto não existem dívidas técnicas que se prorrogaram para esta *sprint*.
+<img src="{{site.baseurl}}/documentos/Sprints/Sprint_2_Planejamento.md">, todas as histórias definidas foram feitas e portanto não existem dívidas técnicas que se prorrogaram para esta *sprint*.
 
 ### 4.2 - Novas histórias
 

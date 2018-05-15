@@ -46,7 +46,7 @@
 
 ## 3 - Retrospectiva da Sprint
 
-![Retrospectiva](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is147_Sprint_7/docs/documentos/imagens/Sprint7/retrospectiva_s7.png)
+<img src="{{site.baseurl }}/documentos/imagens/Sprint7/retrospectiva_s7.png">
 
 ## 4 - Riscos
 
@@ -62,11 +62,11 @@ Foi tomada a decisição pelo grupo de EPS de coletar o conhecimento do time no 
 
 ***Quadro de conhecimento Início release 2***
 
-![conhecimento_inicio_r1.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is147_Sprint_7/docs/documentos/imagens/Sprint7/conhecimento_s7.png)
+<img src="{{site.baseurl }}/documentos/imagens/Sprint7/conhecimento_s7.png">
 
 ## 6 - Burndown
 
-![burndown.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is147_Sprint_7/docs/documentos/imagens/Sprint7/burndown_s7.png)
+<img src="{{site.baseurl }}/documentos/imagens/Sprint7/burndown_s7.png">
 
 <p align="justify">O burndown apresenta a quantidade de pontos que foram planejados e sua “queima” durante a sprint que tem duração de uma semana. Para a sprint 7, a equipe planejou realizar 17 pontos que foram distribuídos em 4 histórias .
 Ao término da sprint, a equipe de desenvolvimento entregou 12 pontos, cerca de 3 história, ficando como dívida técnica para a sprint seguinte 5 pontos (1 história).</p>
@@ -74,10 +74,6 @@ Ao término da sprint, a equipe de desenvolvimento entregou 12 pontos, cerca de 
 
 ## 7 - Velocity
 
-![velocity.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is147_Sprint_7/docs/documentos/imagens/Sprint7/velocity_s7.png)
+<img src="{{site.baseurl }}/documentos/imagens/Sprint7/velocity_s7.png">
 
 A velocidade de desenvolvimento da equipe continuou apresentando boa estabilidade mesmo com os riscos apresentados.
-
-
-
-

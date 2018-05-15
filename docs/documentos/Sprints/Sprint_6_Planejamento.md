@@ -36,16 +36,16 @@
 ## 3 - Pareamento
 
 O pareamento abaixo foi definido baseado no quadro de conhecimento apresentado abaixo.
-![quadro de conhecimentos](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is144_sprint_6/docs/documentos/imagens/Sprint6/quadro_conhecimento.png) 
+<img src="{{site.baseurl}}/documentos/imagens/Sprint6/quadro_conhecimento.png">
 A fim de garantir o cumprimento das Histórias de Usuário durante a *sprint*. Focamos em colocar pessoas com maior conhecimento com pessoas que possuem menor conhecimento, a fim de distribuir e equalizar o nível da equipe. Abaixo apresentamos o quadro de pareamento obtido a apartir das observações apresentadas anteriormente.
 
-![pareamento](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is144_sprint_6/docs/documentos/imagens/Sprint6/pareamento_s6.png)
+<img src="{{site.baseurl}}/documentos/imagens0/Sprint6/pareamento_s6.png">
 
 ## 4 - Histórias planejadas
 
 ### 4.1 - Sprint anteriores
 
-Na execução da [Sprint 5](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/master/docs/documentos/Sprints/Sprint_5_Planejamento.md), ocorreu uma única dívida que foi resolvida na sprint 6.
+<img src="{{site.baseurl}}/documentos/Sprints/Sprint_5_Planejamento.md">, ocorreu uma única dívida que foi resolvida na sprint 6.
 
 ### 4.2 - Novas histórias
 

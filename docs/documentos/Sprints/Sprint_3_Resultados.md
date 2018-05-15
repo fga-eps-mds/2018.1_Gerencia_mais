@@ -26,15 +26,15 @@
 
 * MDS
 
-![Quadro_de_horas_eps.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/horas_eps.png)
+<img src="{{site.baseurl}}/documentos/imagens/horas_trabalhadas/horas_eps.png">
 
-![Grafico_de_horas_eps.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/grafico_eps.png)
+<img src="{{site.baseurl}}/documentos/imagens/horas_trabalhadas/grafico_eps.png">
 
 * EPS
 
-![Quadro_de_horas_mds.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/horas_mds.png)
+<img src="{{site.baseurl}}/documentos/imagens/horas_trabalhadas/horas_mds.png">
 
-![Grafico_de_horas_mds.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/horas_trabalhadas/grafico_mds.png)
+<img src="{{site.baseurl}}/documentos/imagens/horas_trabalhadas/grafico_mds.png">
 
 Obs: A imagem apresentada mostra o quadro geral do projeto para esse documento deve ser apenas analisado os dados da semana 3.
 
@@ -80,7 +80,7 @@ Obs: As horas trabalhadas pela equipe de EPS é descrita pela linha "Semana 2".
 
 
 ## 4 - Retrospectiva da Sprint
-![Retrospectiva](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/Sprint3/retrospectiva.png)
+<img src="{{site.baseurl}}/documentos/imagens/Sprint3/retrospectiva.png">
 
 ## 5 - Riscos
 
@@ -90,6 +90,6 @@ Nessa Sprint o risco de conhecimento do time se mostrou desfavorável ao desenvo
 
 ## 6 - Burndown
 
-![burndown.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is69_Organizar_documenta%C3%A7%C3%A3o_das_sprints/docs/documentos/imagens/Sprint3/burndown.png)
+<img src="{{site.baseurl}}/documentos/imagens/Sprint3/burndown.png">
 
 Devido ao peso das historias e ao conhecimento do time a escada gerada no grafico não ficou a ideal, porem pode ser justificado devido ao conhecimento da equipe.
