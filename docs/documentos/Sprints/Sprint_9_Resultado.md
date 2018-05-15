@@ -81,4 +81,4 @@ Ao término da sprint, a equipe de desenvolvimento entregou 33 pontos, 2 histór
 
 <img src="{{site.baseurl }}/documentos/imagens/Sprint9/velocity_s9.png">
 
-A velocidade de desenvolvimento da equipe continuou apresentando boa estabilidade, mostrando um leve crescimento em relaçãp à sprint anterior mesmo com os riscos apresentados.
+A velocidade de desenvolvimento mostrou estabilidade, mostrando crescimentoe agregando uma maior pontuação em relação à sprint anterior mesmo com os riscos apresentados anteriormente.
