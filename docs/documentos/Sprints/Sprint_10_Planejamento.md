@@ -63,6 +63,11 @@ Devido a grande quantidade de dívidas técnicas acumuladas, foi criada apenas u
 
 |ID|História|Pontos|Responsáveis|
 |:-:|:-----:|:----:|:----------:|
+|[US16](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/166)|Implementar bot de ajuda ao usuário|13|Victor Coelho e Caio Beleza|
+|[US17](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/179)|Criar opção de legenda|5|Victor Coelho e João Vitor|
+|[US18](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/180)|Criar categoria para os medicos de acordo com especialidade|3|Victor Coelho e João Vitor|
+|[US19](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/181)|Melhorar a formatação da tabela de horários|3|Guilherme, Adrielly e Caio Beleza|
+|[US20](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/182)|Filtrar tabela de horários|5|Guilherme, Adrielly e Caio Beleza|
 
   ***Technical Stories***
 
