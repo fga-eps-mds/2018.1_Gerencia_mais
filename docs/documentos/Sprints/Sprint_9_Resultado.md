@@ -51,7 +51,7 @@
 
 ## 3 - Retrospectiva da Sprint
 
-![Retrospectiva](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is184_Resultado_Sprint_9/docs/documentos/imagens/Sprint9/retrospectiva_s9.png)
+<img src="{{site.baseurl }}/documentos/imagens/Sprint9/retrospectiva_s9.png">
 
 ## 4 - Riscos
 
@@ -67,18 +67,18 @@ Foi tomada a decisição pelo grupo de EPS de coletar o conhecimento do time no 
 
 ***Quadro de conhecimento Início release 2***
 
-![conhecimento_inicio_r1.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is165_Resultado_Sprint_8/docs/documentos/imagens/Sprint8/conhecimento_s8.png)
+<img src="{{site.baseurl}}/documentos/imagens/Sprint8/conhecimento_s8.png">
 
 ## 6 - Burndown
 
-![burndown.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is184_Resultado_Sprint_9/docs/documentos/imagens/Sprint9/burndown_s9.png)
+<img src="{{site.baseurl }}/documentos/imagens/Sprint9/burndown_s9.png">
 
-<p align="justify">O burndown apresenta a quantidade de pontos que foram planejados e sua “queima” durante a sprint que tem duração de uma semana. Para a sprint 8, a equipe planejou realizar 34 pontos que foram distribuídos em histórias e dividas técnicas.
+<p align="justify">O burndown apresenta a quantidade de pontos que foram planejados e sua “queima” durante a sprint que tem duração de uma semana. Para a sprint 9, a equipe planejou realizar 39 pontos que foram distribuídos em histórias de usuário e histórias técnicas.
 Ao término da sprint, a equipe de desenvolvimento entregou 33 pontos, 2 histórias e 5 histórias técnicas, ficando como dívida técnica para a sprint seguinte 3 pontos (1 história técnica) O gráfico apresentado mostra entregas irregulares e concentradas, justificáveis pelos motivos citados em [Riscos](#4---riscos).</p>
 
 
 ## 7 - Velocity
 
-![velocity.png](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is184_Resultado_Sprint_9/docs/documentos/imagens/Sprint9/velocity_s9.png)
+<img src="{{site.baseurl }}/documentos/imagens/Sprint9/velocity_s9.png">
 
 A velocidade de desenvolvimento da equipe continuou apresentando boa estabilidade, mostrando um leve crescimento em relaçãp à sprint anterior mesmo com os riscos apresentados.
