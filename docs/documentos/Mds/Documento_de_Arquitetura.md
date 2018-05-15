@@ -41,13 +41,17 @@
 ___
 
 ## <a name="1"></a>1.  Introdução
+
 ### <a name="1.1"></a>1.1. Finalidade
+
 <p>Neste documento será apresentada a visão arquitetônica sobre a aplicação webapp de Gerencia mais- GM, com a finalidade de elucidar, explicar e formalizar como será modelada a arquitetura do software, tendo como base diferentes características do projeto para justificar as decisões tomadas pelos desenvolvedores.<p>
 
 ### <a name="1.2"></a>1.2. Escopo
+
 <p> Este documento tem como objetivo documentar a arquitetura a ser implementada no software, guiando os desenvolvedores na construção do projeto que auxilia o gerenciamento de servidores, recursos médicos e recursos físicos do Hospital Regional do Gama - HRG.  <p>
 
 ### <a name="1.3"></a>1.3. Definições, acrônimos e abreviações
+
 * FGA - Faculdade do Gama.
 <br>
 * UnB - Universidade de Brasília.
@@ -66,6 +70,7 @@ ___
 <br>
 
 ### <a name="1.4"></a>1.4 Referências
+
 * Como documentar a Arquitetura de Software. Disponível em: http://www.linhadecodigo.com.br/artigo/3343/como-documentar-a-arquitetura-de-software.aspx. Acesso em: 27 mar. 2018;
 <br>
 * FREIRE, Thiago; OLIVEIRA, Rodrigo; MORENO, Augusto; NASCIMENTO, Josué; AUGUSTO, Marcelo. Projeto WikiLegis: Documento de Arquitetura. Disponível em: https://github.com/fga-gpp-mds/2016.2-WikiLegis/wiki/Documento-de-Arquitetura. Acesso em 27 mar. 2018;
@@ -77,6 +82,7 @@ ___
 * BORGES, Felipe; HIROSHI, Lucas; MARQUES, Guilherme; KISHIMA, Lucas; NASCIMENTO, Mateus; MARTINS, Michel; MARIA, Natália; Projeto Receituário Médico: Documento de Arquitetura. Disponível em: https://github.com/fga-gpp-mds/2017.2-Receituario-Medico/wiki/Documento-de-Arquitetura. Acesso em 27 mar. 2018.
 
 ### <a name="1.5"></a>1.5 Visão Geral
+
 Este documento é dividido nas seguintes secções:
 
 *    __Introdução__: Apresentação da finalidade e organização do documento.
@@ -98,6 +104,7 @@ Este documento é dividido nas seguintes secções:
 ____
 
 ## <a name="2"></a>2. Representação da Arquitetura
+
 O modelo de arquitetura MVC (model , view, controller) proporciona aos desenvolvedores uma manutenção mais fácil e o maior reaproveitamento de classes em partes do projeto no futuro. Esse modelo é muito adotado em projetos web assim como em projetos que demandam uma grande manutenibilidade nos seus códigos. A seguir estão as funções de cada uma das camadas do modelo:
   - *Model*: É responsável pela gerência de dados, as lógicas e as regras de negócios relacionado ao banco de dados do sistema da aplicação.
 
@@ -135,6 +142,7 @@ O framework usado como backend do nosso *webapp*, o Django, é baseado no modelo
 
 
 ## <a name="4"></a>4.  Visão de Casos de Uso
+
 Nosso software vai manipular informações relacionadas aos médicos do hospital regional do Gama, logo a quantidade de dados que devemos processar é mediana, então o sistema não deverá ter dificuldade na manipulação dos dados. O desempenho dependerá também do aparelho que o sistema será usado e pelo navegador.
 
 ## <a name="4.1"></a>4.1  Atores
@@ -161,9 +169,11 @@ Nosso software vai manipular informações relacionadas aos médicos do hospital
 ## <a name="5"></a>5.  Visão Lógica
 
 ## <a name="5.1"></a>5.1  Visão Geral
+
 As principais classes do ponto de vista da arquitetura do software e as implementações das funcionalidades são divididas pacotes que representam as camadas do modelo MTV, no caso, com o react substituindo o template padrão do Django. A divisão em pacotes está representada no diagrama abaixo.
 
 ## <a name="5.2"></a>5.2  Visão de Implantação
+
 Visão geral da aplicação do ponto de vista de pacotes e aplicativos dentro da arquitetura do sistema.
 
 ![Documento de Arquitetura][diag]
@@ -172,6 +182,7 @@ Visão geral da aplicação do ponto de vista de pacotes e aplicativos dentro da
 "Documento de Arquitetura"
   ___
 ## <a name="6"></a>6.  Desempenho
+
 Nosso software vai manipular informações relacionadas aos médicos do hospital regional do Gama, logo a quantidade de dados que devemos processar é mediana, então o sistema não deverá ter dificuldade na manipulação dos dados. O desempenho dependerá também do aparelho que o sistema será usado e pelo navegador.
 
 ___
