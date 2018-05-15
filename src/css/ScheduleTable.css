@@ -15,15 +15,8 @@ h3 {
   text-align: center;
   color:#000;
 }
-.botaum{
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
 
-}
-button .butaum{
-    color: #1abc9c;
-}
+
 
 .wallpaper .th{
   width:150%;
@@ -38,7 +31,7 @@ button .butaum{
 
 
 .form-style-5{
-    max-width: 500px;
+    max-width: 800px;
     padding: 10px 20px;
     background: #f4f7f8;
     margin: 10px auto;
@@ -141,4 +134,8 @@ button .butaum{
 }
 .espaco-acima {
   padding-top: 100px;
+}
+
+.jumbosize {
+  min-width: 1700px;
 }

@@ -142,7 +142,7 @@ export default class ScheduleTable extends Component {
     changeTable(isMonth){
       if(isMonth){
           var content = (
-            <div style={{marginTop:"25px", marginLeft:"220px"}}>
+            <div style={{marginTop:"25px"}}>
               <InfiniteCalendar onSelect={this.fetchData()} displayOptions={{
                                   layout: 'landscape'
                                     }}
@@ -203,8 +203,8 @@ export default class ScheduleTable extends Component {
 	    <NavBar></NavBar>
       <SideBar></SideBar>
 	    <h1>Quadro de Horários</h1>
-        <div className="container" style={{marginTop:"70px", marginLeft:"center"}}>
-          <div className="jumbotron">
+        <div className="container" style={{marginTop:"70px",marginRight:"35%",}}>
+          <div className="jumbotron jumbosize">
     	      <h1 style={{marginTop:"70px"}}>Quadro de Horários</h1>
 
             <ButtonToolbar>
@@ -212,9 +212,7 @@ export default class ScheduleTable extends Component {
                   <ToggleButton className="btn btn-outline-primary" title='update' value = '1' onClick={this.onClickUpdate}>Atualizar</ToggleButton>
                   <ToggleButton className="btn btn-outline-primary" value={1} onClick={()=>this.changeTable(false)}>Semanal</ToggleButton>
                   <ToggleButton className="btn btn-outline-primary" value={2} onClick={()=>this.changeTable(true)}>Mensal</ToggleButton>
-                    <div style={{marginLeft:"625px"}}>
-                      {this.state.popup}
-                    </div>
+
                 </ToggleButtonGroup>
             </ButtonToolbar>
 
