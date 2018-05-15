@@ -14,7 +14,7 @@
 |**Data de início**|12/05/2018|
 |**Data de término**|19/05/2018|
 |**Duração**|7 dias|
-|**Pontos planejados**|41|
+|**Pontos planejados**|28|
 |**Pontos de dívidas Técnicas**|6|
 
 ## 2 - Papéis
@@ -63,7 +63,6 @@ Embora existam algumas dividas técnicas, novas histórias de usuário foram pla
 
 |ID|História|Pontos|Responsáveis|
 |:-:|:-----:|:----:|:----------:|
-|[US16](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/166)|Implementar bot de ajuda ao usuário|13|Victor Coelho e Caio Beleza|
 |[US17](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/179)|Criar opção de legenda|5|Victor Coelho e João Vitor|
 |[US18](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/180)|Criar categoria para os medicos de acordo com especialidade|3|Victor Coelho e João Vitor|
 |[US19](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/181)|Melhorar a formatação da tabela de horários|3|Guilherme, Adrielly e Caio Beleza|
