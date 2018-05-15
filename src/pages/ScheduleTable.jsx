@@ -27,24 +27,20 @@ class GridCell extends Component {
 
   render(){
     return(
-      <td onClick = {()=> this.resolveButton(this.props.line,this.props.column)}>
-      <Popup
-      trigger={<button className="btn btn-success botaum">Servidores</button>}
-      modal
-      closeOnDocumentClick
-      >
-      <div className="popupShape">
-        <div className="pre-scrollable">
-          <h4 className='modal-header whitename'>Médicos</h4>
+      <td  >
+
+        {this.resolveButton(this.props.line,this.props.column)}
+      <div className="">
+        <div className="">
           {
             this.state.contacts != null ? this.state.contacts.map(user =>
-              <div><strong>Nome: </strong> <span>{user.name}</span><br></br><strong>Função: </strong>Médico<br></br><br></br></div>
+              <div className ="doctorName"><span>{user.name}</span><br></br><br></br></div>
             )
             : null
           }
         </div>
       </div>
-      </Popup>
+
       </td>
     )
   }
@@ -60,7 +56,7 @@ export default class ScheduleTable extends Component {
     TableList(number){
       var lists=[];
       var periods = [
-      "06:00-08:00",
+      "MANHA",
       "08:00-10:00",
       "10:00-12:00",
       "12:00-14:00",
