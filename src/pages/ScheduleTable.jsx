@@ -13,7 +13,8 @@ import 'react-infinite-calendar/styles.css';
 class GridCell extends Component {
   constructor(props){
     super(props);
-    this.state = {"line":props.line,"column":props.column};
+    this.state = {"line":props.line,"column":props.column,"update":1,};
+    this.onClickUpdate = this.onClickUpdate.bind(this);
   }
 
     resolveButton(line,column){
@@ -25,11 +26,31 @@ class GridCell extends Component {
       .catch(error => console.log("error to get data " + error));
     };
 
-  render(){
-    return(
-      <td  >
+    onClickUpdate(e){
+      const title = e.target.title;
+      const value = e.target.value;
+      this.setState(
+        {[title]:value,}
+      );
+    }
 
-        {this.resolveButton(this.props.line,this.props.column)}
+
+  render(){
+
+    let update;
+    if(this.state.update===1){
+      this.state.update = 0;
+      update = (
+        <div>{this.resolveButton(this.props.line,this.props.column)}</div>
+      )
+    }else {
+      update = (
+        <div></div>
+      )
+    }
+    return(
+      <td>
+      {update}
       <div className="">
         <div className="">
           {
@@ -53,36 +74,33 @@ export default class ScheduleTable extends Component {
     }
 
 
+
+    daysInMonth(month, year) {
+      return new Date(year, month, 0).getDate();
+    }
+
     TableList(number){
+      var date = new Date();
+      var month = date.getMonth() + 1;
+      var year = date.getYear();
       var lists=[];
       var periods = [
       "MANHA",
-      "08:00-10:00",
-      "10:00-12:00",
-      "12:00-14:00",
-      "14:00-16:00",
-      "16:00-18:00",
-      "18:00-20:00",
-      "20:00-22:00",
-      "22:00-00:00",
-      "00:00-02:00",
-      "02:00-04:00",
-      "04:00-06:00"
+      "TARDE",
+      "NOITE",
       ];
+      var rows = [];
+      for(var aux = 0; aux < this.daysInMonth(month,year); aux++){
+        rows.push(<GridCell line={3} column={aux}></GridCell>)
+      }
       for(var cont = 0;cont <= number; cont++){
         lists.push(
         <tr>
-        <td><h3>{periods[cont]}</h3></td>
-        <GridCell line={cont} column={0}></GridCell>
-        <GridCell line={cont} column={1}></GridCell>
-        <GridCell line={cont} column={2}></GridCell>
-        <GridCell line={cont} column={3}></GridCell>
-        <GridCell line={cont} column={4}></GridCell>
-        <GridCell line={cont} column={5}></GridCell>
-        <GridCell line={cont} column={6}></GridCell>
+        {rows}
         </tr>
         )
       }
+      console.log(lists);
     return lists;
     }
 
@@ -164,7 +182,7 @@ export default class ScheduleTable extends Component {
      </tr>
          </thead>
          <tbody>
-     {this.TableList(11)}
+     {this.TableList(2)}
 
          </tbody>
        </Table>
@@ -191,6 +209,7 @@ export default class ScheduleTable extends Component {
 
             <ButtonToolbar>
                 <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
+                  <ToggleButton className="btn btn-outline-primary" title='update' value = '1' onClick={this.onClickUpdate}>Atualizar</ToggleButton>
                   <ToggleButton className="btn btn-outline-primary" value={1} onClick={()=>this.changeTable(false)}>Semanal</ToggleButton>
                   <ToggleButton className="btn btn-outline-primary" value={2} onClick={()=>this.changeTable(true)}>Mensal</ToggleButton>
                     <div style={{marginLeft:"625px"}}>
