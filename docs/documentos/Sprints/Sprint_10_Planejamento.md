@@ -14,8 +14,8 @@
 |**Data de início**|12/05/2018|
 |**Data de término**|19/05/2018|
 |**Duração**|7 dias|
-|**Pontos planejados**|42|
-|**Pontos de dívidas Técnicas**|17|
+|**Pontos planejados**|43|
+|**Pontos de dívidas Técnicas**|6|
 
 ## 2 - Papéis
 
@@ -50,7 +50,6 @@ Na execução das sprints anteriores, acumulou-se 5 dívidas técnicas que são 
 
 |ID|História|Pontos|Responsáveis|
 |:-:|:-----:|:----:|:----------:|
-|[US12](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/156)|Permissões de Login|8|João Vitor e Guilherme|
 |[TS36](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/155)|Refatoração do Frontend de acordo com feedback de teste de usabilidade|5|Guilherme e João Vitor|
 |[TS32](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/152)|Atualizar diagrama de classe|3|Adrielly|
 
@@ -64,13 +63,12 @@ Devido a grande quantidade de dívidas técnicas acumuladas, foi criada apenas u
 
 |ID|História|Pontos|Responsáveis|
 |:-:|:-----:|:----:|:----------:|
-|[US16](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/166)|Implementar bot de ajuda ao usuário|13|Victor Coelho e Caio Beleza|
 
   ***Technical Stories***
 
 
 |ID|História|Pontos|Responsáveis|
 |:-:|:-----:|:----:|:----------:|
-|[TS29](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/146)|Encriptar chave do deploy|2|Eduardo Júnio|  
-|[TS33](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/163)|Planejamento da sprint 9|2|Eduardo Júnio|  
-|[TS34](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/164)|Planejamento e resultados da sprint 8|2|Rafael Bragança|  
+|[TS29](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/146)|Encriptar chave do deploy|2|Eduardo Júnio|
+|[TS41](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/184)|Encriptar chave do deploy|2|Caio Gabriel|
+|[TS40](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/178)|Planejamento da Sprint 10|2|Rafael Bragança|
