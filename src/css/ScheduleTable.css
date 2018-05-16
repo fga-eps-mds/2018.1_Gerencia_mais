@@ -181,8 +181,9 @@ td {
 }
 
 th {
-    background-color: #4CAF50;
+    background-color: #4cc486;
     color: white;
+    font-size: 15px;
 }
 
 tbody tr:nth-child(4){
@@ -200,4 +201,11 @@ tbody tr:hover{
 }
 .blue {
   background-color: rgba(0,0,255,.25);
+}
+.header-br {
+   display: block;
+   margin: -50px 0;
+}
+.leg-styling{
+  color: red;
 }

@@ -110,12 +110,11 @@ export default class ScheduleTable extends Component {
 
         <tr>
           <td><h3 className="toptobottom">{periods[cont]}</h3></td>
-          <td><h3 className="toptobottom">{leg[cont]}</h3></td>
+          <td><h3 className="toptobottom leg-styling">{leg[cont]}</h3></td>
           {rows}
           </tr>
         )
       }
-      console.log(lists);
     return lists;
     }
 
@@ -132,13 +131,12 @@ export default class ScheduleTable extends Component {
       for(var aux = 0; aux < this.daysInMonth(month,year); aux++){
         esp = new Date(year,month-1,aux+1);
         escolhido = days[esp.getDay()];
-        rows.push(<th>{escolhido} {aux+1}</th>)
+        rows.push(<th>{escolhido}<br className="header-br"></br> {aux+1}</th>)
       }
       return rows;
     }
     TableCols(){
-      var esp = new Date(2018,4,1);
-      var semana = esp.getDay();
+      var esp;
       var date = new Date();
       var days = ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sabado'];
       var month = date.getMonth() + 1;
@@ -149,15 +147,25 @@ export default class ScheduleTable extends Component {
       for(var aux = 0; aux < this.daysInMonth(month,year); aux++){
         esp = new Date(year,month-1,aux+1);
         escolhido = days[esp.getDay()];
-        console.log(days[esp.getDay()]);
         if(escolhido == "Sabado" || escolhido == "Domingo"){
-          console.log(days[esp.getDay()]);
           rows.push(<col className="blue"></col>);
         }else
           rows.push(<col></col>)
       }
       return rows;
+    }
 
+    getMonthYearName(){
+      var date = new Date();
+      var months = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+      var month = date.getMonth();
+      var year = date.getFullYear();
+      var title = [];
+      title.push(" - ");
+      title.push(months[month]);
+      title.push(" - ");
+      title.push(year);
+      return title;
     }
 
     fetchData(){
@@ -265,7 +273,7 @@ export default class ScheduleTable extends Component {
 	    <h1>Quadro de Horários</h1>
         <div className="container" style={{marginTop:"70px",marginRight:"35%",marginBottom:"70px",}}>
           <div className="jumbotron jumbosize ">
-    	      <h1 style={{marginTop:"70px"}}>Quadro de Horários</h1>
+    	      <h1 style={{marginTop:"70px"}}>Quadro de Horários {this.getMonthYearName()}</h1>
 
             <ButtonToolbar>
                 <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
