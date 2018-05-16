@@ -103,7 +103,7 @@ export default class ScheduleTable extends Component {
 
       for(var aux = 0; aux < this.daysInMonth(month,year); aux++){
 
-        rows.push(<GridCell line={3} column={aux}></GridCell>)
+        rows.push(<GridCell className="inc"  line={3} column={aux}></GridCell>)
       }
       for(var cont = 0;cont <= number; cont++){
         lists.push(
@@ -200,7 +200,8 @@ export default class ScheduleTable extends Component {
     }
       else {
         content = (
-<Table className="wallpaper table" striped bordered condensed hover>
+
+<table cellSpacing="220px" className="wallpaper inc customiza bsClass" striped bordered condensed hover>
          <thead>
            <tr>
             <th>Horário</th>
@@ -214,7 +215,7 @@ export default class ScheduleTable extends Component {
 
 
          </tbody>
-       </Table>
+       </table>
 
 
        )
@@ -235,7 +236,7 @@ export default class ScheduleTable extends Component {
       <SideBar></SideBar>
 	    <h1>Quadro de Horários</h1>
         <div className="container" style={{marginTop:"70px",marginRight:"35%",marginBottom:"70px",}}>
-          <div className="jumbotron jumbosize">
+          <div className="jumbotron jumbosize ">
     	      <h1 style={{marginTop:"70px"}}>Quadro de Horários</h1>
 
             <ButtonToolbar>
@@ -246,7 +247,6 @@ export default class ScheduleTable extends Component {
 
                 </ToggleButtonGroup>
             </ButtonToolbar>
-
                 {this.state.content}
           </div>
         </div>

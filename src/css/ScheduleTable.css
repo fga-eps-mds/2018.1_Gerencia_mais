@@ -159,8 +159,36 @@ h3 {
 .th-height {
   height: 4000px;
 }
-.table {
+.inc {
         display: block;
-        overflow-x: auto;
+        overflow-x: scroll;
         white-space: nowrap;
     }
+
+.headcol {
+  margin-left:4090px;
+  position: fixed;
+  background-color: white;
+}
+
+.customiza{
+  background:white;
+}
+td {
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 5px;
+}
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tbody tr:nth-child(4){
+  background-color: #fff58e;
+  color: #000;
+}
+.toptobottom{
+  width: 20px;
+  word-wrap: break-all;
+}
