@@ -136,6 +136,29 @@ export default class ScheduleTable extends Component {
       }
       return rows;
     }
+    TableCols(){
+      var esp = new Date(2018,4,1);
+      var semana = esp.getDay();
+      var date = new Date();
+      var days = ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sabado'];
+      var month = date.getMonth() + 1;
+      var year = date.getFullYear();
+      var rows = [];
+      var escolhido;
+      var cont = 0;
+      for(var aux = 0; aux < this.daysInMonth(month,year); aux++){
+        esp = new Date(year,month-1,aux+1);
+        escolhido = days[esp.getDay()];
+        console.log(days[esp.getDay()]);
+        if(escolhido == "Sabado" || escolhido == "Domingo"){
+          console.log(days[esp.getDay()]);
+          rows.push(<col className="blue"></col>);
+        }else
+          rows.push(<col></col>)
+      }
+      return rows;
+
+    }
 
     fetchData(){
 
@@ -201,16 +224,11 @@ export default class ScheduleTable extends Component {
       else {
         content = (
 
-<table cellSpacing="220px" className="wallpaper inc customiza bsClass" striped bordered condensed hover>
+<table className="wallpaper inc customiza bsClass" striped bordered condensed hover>
          <colgroup>
-          <col></col>
-          <col></col>
-          <col></col>
-          <col></col>
-          <col></col>
-          <col></col>
-          <col className="blue"></col>
-          <col className="blue"></col>
+           <col></col>
+           <col></col>
+          {this.TableCols()}
          </colgroup>
          <thead>
            <tr>
