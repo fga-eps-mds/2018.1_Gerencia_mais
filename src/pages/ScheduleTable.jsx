@@ -109,8 +109,8 @@ export default class ScheduleTable extends Component {
         lists.push(
 
         <tr>
-          <td><h3>{periods[cont]}</h3></td>
-          <td><h3>{leg[cont]}</h3></td>
+          <td><h3 className="toptobottom">{periods[cont]}</h3></td>
+          <td><h3 className="toptobottom">{leg[cont]}</h3></td>
           {rows}
           </tr>
         )
@@ -202,6 +202,16 @@ export default class ScheduleTable extends Component {
         content = (
 
 <table cellSpacing="220px" className="wallpaper inc customiza bsClass" striped bordered condensed hover>
+         <colgroup>
+          <col></col>
+          <col></col>
+          <col></col>
+          <col></col>
+          <col></col>
+          <col></col>
+          <col className="blue"></col>
+          <col className="blue"></col>
+         </colgroup>
          <thead>
            <tr>
             <th>Horário</th>
