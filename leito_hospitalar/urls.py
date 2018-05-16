@@ -18,4 +18,6 @@ urlpatterns = [
     path('administrator/',include('administrator.urls')),
     path('doctor/',include('doctor.urls')),
     path('subtitle/', include('subtitle.urls')),
+    path('user/',include('user.urls')),
+
 ]
