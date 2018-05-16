@@ -120,15 +120,19 @@ export default class ScheduleTable extends Component {
     }
 
     TableHeader(){
+      var esp = new Date(2018,4,1);
+      var semana = esp.getDay();
       var date = new Date();
-      var week = date.getDay() + 1;
+      var days = ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sabado'];
       var month = date.getMonth() + 1;
-      var year = date.getYear();
+      var year = date.getFullYear();
       var rows = [];
+      var escolhido;
 
       for(var aux = 0; aux < this.daysInMonth(month,year); aux++){
-
-        rows.push(<th>Domingo {aux+1}</th>)
+        esp = new Date(year,month-1,aux+1);
+        escolhido = days[esp.getDay()];
+        rows.push(<th>{escolhido} {aux+1}</th>)
       }
       return rows;
     }
@@ -200,7 +204,7 @@ export default class ScheduleTable extends Component {
          <thead>
            <tr>
             <th>Horário</th>
-            <th>Horário</th>
+            <th>Leg</th>
             {this.TableHeader()}
            </tr>
          </thead>
