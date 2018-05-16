@@ -30,7 +30,8 @@ after_script:
 
 deploy:
   provider: heroku
-  api_key: 0c8b9e98-a72b-4e0a-b091-568f4d4186e0
+  api_key:
+    secure: "ZuVTrmAiXU+/0RR8V2QzglNJ7XZ3McND35/LRVa4KKkZqJfzbhkBfUp9gieufqyTpQM4y+AixJyc4T4kEOwhqJ06wFE/QG7jRe75LEz8tWZnl+Ul41PvuEcqIgqDLh2c3h1EaB2dtFC/pBlA2nv9Hq4paGcsmQ63bmLgWOCoF6dWyhPyCJYtV70xEOfQi5ABiz7y7UWH5zhNrkkpbMiqAIoNeBqdtdkqv1DxZV51fTvd1j7PiDutoR1+ggbDekZ2Qp0ltM86wJ1YHBL3/66KpeyUhi/lsZo992/z9GauXizAMXmUlMfQG5llHrkelFE/B8HZa8TVqxRuGGmuy+VwzlbTtmhiBrUSfLzPJtuq4D7F2bNTv+6qZ2k4aVlAM2ZKlIWSf+8DxfaAk3vPJbXKuFnJpDq6tHBGs6//irm++e01K0zpMmyLzehr3fZQNR468Z7jFxE9WNrjlh5LMrhWuYVTzTxmZWxSgatv1rm0AWSdeYvzpYsq4/CdUzrlswETti0mScXxBq9xj6NNBqPpkTqGiFJIpAt6TVQVE/w131vm6cfQW0+McJ43OfDLjiA8/yN9AGA15ldxhKCJWeePEPukCut6fB+aes2jvemktxSr8zXBu4gLivD0UnnKwi92jTc4PwqWoUbiIAg2mo2vzVj+MzpKWnxyYOCjFoc13YM="
   app:
     development: gicsaude
     master: gerenciamais
