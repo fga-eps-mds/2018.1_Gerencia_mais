@@ -13,7 +13,26 @@ export default class DoctorStatus extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todos:[]
+      name: '',
+      id: '',
+      entry_date: '',
+      entry_time: '',
+      departure_date: '',
+      departure_time: '',
+      formErrors: {name: '', id: '', entry_date: '', entry_time: '', departure_date: '', departure_time: ''},
+      name_valid: false,
+      id_valid: false,
+      entry_date_valid: false,
+      entry_time_valid: false,
+      departure_date_valid: false,
+      departure_time_valid: false,
+      form_valid: false,
+      api: [
+        {reg_name: 'Paulo', reg_ids: '1', status:true},
+        {reg_name: 'Sabino', reg_ids: '2', status:true},
+        {reg_name: 'Marcos', reg_ids: '3', status:true},
+        {reg_name: 'Valquiria', reg_ids: '4', status:true},
+      ],
     }
   }
   async componentDidMount() {
@@ -150,10 +169,12 @@ export default class DoctorStatus extends Component {
               </textarea>
               <legend>  </legend>
               </fieldset>
+              <legend><FormErrors formErrors={this.state.formErrors} /></legend>
               <input type="submit" value="Apply"
                 disabled={!this.state.formValid}
                 onClick={this.sendInfo}/>
             </form>
+
             </div>
         </div>
         <Footer ></Footer>

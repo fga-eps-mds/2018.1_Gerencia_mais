@@ -1,0 +1,23 @@
+engines:
+  duplication:
+    enabled: true
+    checks:
+      Similar code:
+        enabled: false
+    config:
+      languages:
+      - python
+
+exclude_patterns:
+- "**.css"
+- "**.js"
+- "**.html"
+- "**/migrations/**"
+- "**/tests.py"
+- "src/**"
+- "docs/**"
+- "public/**"
+- "scripts/**"
+- "tests/**"
+- "config/**"
+
