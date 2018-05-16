@@ -139,3 +139,28 @@ h3 {
 .jumbosize {
   min-width: 1700px;
 }
+
+.vertical-text {
+	transform: rotate(90deg);
+	transform-origin: left top 0;
+}
+.display-span {
+  display: block;
+}
+.table-background{
+  background-color: white;
+  width: 50%;
+  margin-right:60%;
+}
+
+.mudah1{
+  min-width: 1800px;
+}
+.th-height {
+  height: 4000px;
+}
+.table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }

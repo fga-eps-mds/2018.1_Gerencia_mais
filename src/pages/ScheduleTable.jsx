@@ -85,23 +85,52 @@ export default class ScheduleTable extends Component {
       var year = date.getYear();
       var lists=[];
       var periods = [
-      "MANHA",
+      "MANHÃ",
+      "",
+      "",
       "TARDE",
       "NOITE",
       ];
+      var leg = [
+      "ENF",
+      "P2",
+      "PS",
+      "PS",
+      "PS",
+      ];
       var rows = [];
+      var contador = 0;
+
       for(var aux = 0; aux < this.daysInMonth(month,year); aux++){
+
         rows.push(<GridCell line={3} column={aux}></GridCell>)
       }
       for(var cont = 0;cont <= number; cont++){
         lists.push(
+
         <tr>
-        {rows}
-        </tr>
+          <td><h3>{periods[cont]}</h3></td>
+          <td><h3>{leg[cont]}</h3></td>
+          {rows}
+          </tr>
         )
       }
       console.log(lists);
     return lists;
+    }
+
+    TableHeader(){
+      var date = new Date();
+      var week = date.getDay() + 1;
+      var month = date.getMonth() + 1;
+      var year = date.getYear();
+      var rows = [];
+
+      for(var aux = 0; aux < this.daysInMonth(month,year); aux++){
+
+        rows.push(<th>Domingo {aux+1}</th>)
+      }
+      return rows;
     }
 
     fetchData(){
@@ -167,43 +196,41 @@ export default class ScheduleTable extends Component {
     }
       else {
         content = (
-
-<Table className="wallpaper" striped bordered condensed hover>
+<Table className="wallpaper table" striped bordered condensed hover>
          <thead>
-     <tr>
-      <th>Horário</th>
-       <th>Domingo</th>
-       <th>Segunda</th>
-       <th>Terça</th>
-       <th>Quarta</th>
-       <th>Quinta</th>
-       <th>Sexta</th>
-       <th>Sábado</th>
-     </tr>
+           <tr>
+            <th>Horário</th>
+            <th>Horário</th>
+            {this.TableHeader()}
+           </tr>
          </thead>
          <tbody>
-     {this.TableList(2)}
+            {this.TableList(4)}
+
+
 
          </tbody>
        </Table>
+
+
        )
 
       }
-      this.setState({"content":content})
-    }
+        this.setState({"content":content})
+      }
 
-    componentDidMount(){
-      this.changeTable(false)
-    }
+      componentDidMount(){
+        this.changeTable(false)
+      }
 
-    render() {
+      render() {
 
 	return (
 	  <div>
 	    <NavBar></NavBar>
       <SideBar></SideBar>
 	    <h1>Quadro de Horários</h1>
-        <div className="container" style={{marginTop:"70px",marginRight:"35%",}}>
+        <div className="container" style={{marginTop:"70px",marginRight:"35%",marginBottom:"70px",}}>
           <div className="jumbotron jumbosize">
     	      <h1 style={{marginTop:"70px"}}>Quadro de Horários</h1>
 
