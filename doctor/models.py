@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext
 
-//adicionado a categoria nas models 
+#adicionado a categoria nas models 
 
 class Doctors(models.Model):
     name = models.CharField(max_length=255)
