@@ -45,7 +45,7 @@
     "react-scripts": "^1.1.4",
     "react-sidebar": "^2.3.2",
     "reactjs-popup": "^1.0.5",
-    "redux": "^3.0.0",
+    "redux": "^3.7.2",
     "redux-persist": "^5.9.1",
     "style-loader": "0.19.0",
     "sw-precache-webpack-plugin": "0.11.4",

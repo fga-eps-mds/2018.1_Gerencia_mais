@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'schedule',
     'tests',
     'corsheaders',
-    'administrator',
     'doctor',
     'user',
     'django_filters',
