@@ -71,7 +71,6 @@ class Event(models.Model):
         blank = True,
         verbose_name =_("subtitle"),
         related_name='subtitle')
-    )
     hospital = models.CharField(_("Hospital"), max_length=100)
     description = models.TextField(_("Descrição"), blank=True)
     created_on = models.DateTimeField(_("Criado em"), auto_now_add=True)
