@@ -10,7 +10,7 @@ PATH = os.path.dirname(os.path.abspath(__file__))
 
 def get_own_conversation():
     path_conversation = os.path.join(PATH, 'my_conversation.yml')
-    conversation = yaml.load(path_conversation)
+    conversation = yaml.safe_load(path_conversation)
     return conversation
 
 
