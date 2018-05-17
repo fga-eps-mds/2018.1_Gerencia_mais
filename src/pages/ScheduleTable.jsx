@@ -13,7 +13,8 @@ import 'react-infinite-calendar/styles.css';
 class GridCell extends Component {
   constructor(props){
     super(props);
-    this.state = {"line":props.line,"column":props.column};
+    this.state = {"line":props.line,"column":props.column,"update":1,};
+    this.onClickUpdate = this.onClickUpdate.bind(this);
   }
 
     resolveButton(line,column){
@@ -25,26 +26,42 @@ class GridCell extends Component {
       .catch(error => console.log("error to get data " + error));
     };
 
+    onClickUpdate(e){
+      const title = e.target.title;
+      const value = e.target.value;
+      this.setState(
+        {[title]:value,}
+      );
+    }
+
+
   render(){
+
+    let update;
+    if(this.state.update===1){
+      this.state.update = 0;
+      update = (
+        <div>{this.resolveButton(this.props.line,this.props.column)}</div>
+      )
+    }else {
+      update = (
+        <div></div>
+      )
+    }
     return(
-      <td onClick = {()=> this.resolveButton(this.props.line,this.props.column)}>
-      <Popup
-      trigger={<button className="btn btn-success botaum">Servidores</button>}
-      modal
-      closeOnDocumentClick
-      >
-      <div className="popupShape">
-        <div className="pre-scrollable">
-          <h4 className='modal-header whitename'>Médicos</h4>
+      <td>
+      {update}
+      <div className="">
+        <div className="">
           {
             this.state.contacts != null ? this.state.contacts.map(user =>
-              <div><strong>Nome: </strong> <span>{user.name}</span><br></br><strong>Função: </strong>Médico<br></br><br></br></div>
+              <div className ="doctorName"><span>{user.name}</span><br></br><br></br></div>
             )
             : null
           }
         </div>
       </div>
-      </Popup>
+
       </td>
     )
   }
@@ -57,37 +74,98 @@ export default class ScheduleTable extends Component {
     }
 
 
+
+    daysInMonth(month, year) {
+      return new Date(year, month, 0).getDate();
+    }
+
     TableList(number){
+      var date = new Date();
+      var month = date.getMonth() + 1;
+      var year = date.getYear();
       var lists=[];
       var periods = [
-      "06:00-08:00",
-      "08:00-10:00",
-      "10:00-12:00",
-      "12:00-14:00",
-      "14:00-16:00",
-      "16:00-18:00",
-      "18:00-20:00",
-      "20:00-22:00",
-      "22:00-00:00",
-      "00:00-02:00",
-      "02:00-04:00",
-      "04:00-06:00"
+      "MANHÃ",
+      "",
+      "",
+      "TARDE",
+      "NOITE",
       ];
+      var leg = [
+      "ENF",
+      "P2",
+      "PS",
+      "PS",
+      "PS",
+      ];
+      var rows = [];
+      var contador = 0;
+
+      for(var aux = 0; aux < this.daysInMonth(month,year); aux++){
+
+        rows.push(<GridCell className="inc"  line={3} column={aux}></GridCell>)
+      }
       for(var cont = 0;cont <= number; cont++){
         lists.push(
+
         <tr>
-        <td><h3>{periods[cont]}</h3></td>
-        <GridCell line={cont} column={0}></GridCell>
-        <GridCell line={cont} column={1}></GridCell>
-        <GridCell line={cont} column={2}></GridCell>
-        <GridCell line={cont} column={3}></GridCell>
-        <GridCell line={cont} column={4}></GridCell>
-        <GridCell line={cont} column={5}></GridCell>
-        <GridCell line={cont} column={6}></GridCell>
-        </tr>
+          <td><h3 className="toptobottom">{periods[cont]}</h3></td>
+          <td><h3 className="toptobottom leg-styling">{leg[cont]}</h3></td>
+          {rows}
+          </tr>
         )
       }
     return lists;
+    }
+
+    TableHeader(){
+      var esp = new Date(2018,4,1);
+      var semana = esp.getDay();
+      var date = new Date();
+      var days = ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sabado'];
+      var month = date.getMonth() + 1;
+      var year = date.getFullYear();
+      var rows = [];
+      var escolhido;
+
+      for(var aux = 0; aux < this.daysInMonth(month,year); aux++){
+        esp = new Date(year,month-1,aux+1);
+        escolhido = days[esp.getDay()];
+        rows.push(<th>{escolhido}<br className="header-br"></br> {aux+1}</th>)
+      }
+      return rows;
+    }
+    TableCols(){
+      var esp;
+      var date = new Date();
+      var days = ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sabado'];
+      var month = date.getMonth() + 1;
+      var year = date.getFullYear();
+      var rows = [];
+      var escolhido;
+      var cont = 0;
+      for(var aux = 0; aux < this.daysInMonth(month,year); aux++){
+        esp = new Date(year,month-1,aux+1);
+        escolhido = days[esp.getDay()];
+        if(escolhido == "Sabado" || escolhido == "Domingo"){
+          rows.push(<col className="blue"></col>);
+        }else
+          rows.push(<col></col>)
+      }
+      return rows;
+    }
+
+    getMonthYearName(){
+      var date = new Date();
+      var months = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+      var month = date.getMonth();
+      var year = date.getFullYear();
+      var title = [];
+      title.push(" - ");
+      title.push(months[month]);
+      title.push(" - ");
+      title.push(year);
+      return title;
     }
 
     fetchData(){
@@ -128,7 +206,7 @@ export default class ScheduleTable extends Component {
     changeTable(isMonth){
       if(isMonth){
           var content = (
-            <div style={{marginTop:"25px", marginLeft:"220px"}}>
+            <div style={{marginTop:"25px"}}>
               <InfiniteCalendar onSelect={this.fetchData()} displayOptions={{
                                   layout: 'landscape'
                                     }}
@@ -154,55 +232,57 @@ export default class ScheduleTable extends Component {
       else {
         content = (
 
-<Table className="wallpaper" striped bordered condensed hover>
+<table className="wallpaper inc customiza bsClass" striped bordered condensed hover>
+         <colgroup>
+           <col></col>
+           <col></col>
+          {this.TableCols()}
+         </colgroup>
          <thead>
-     <tr>
-      <th>Horário</th>
-       <th>Domingo</th>
-       <th>Segunda</th>
-       <th>Terça</th>
-       <th>Quarta</th>
-       <th>Quinta</th>
-       <th>Sexta</th>
-       <th>Sábado</th>
-     </tr>
+           <tr>
+            <th>Horário</th>
+            <th>Leg</th>
+            {this.TableHeader()}
+           </tr>
          </thead>
          <tbody>
-     {this.TableList(11)}
+            {this.TableList(4)}
+
+
 
          </tbody>
-       </Table>
+       </table>
+
+
        )
 
       }
-      this.setState({"content":content})
-    }
+        this.setState({"content":content})
+      }
 
-    componentDidMount(){
-      this.changeTable(false)
-    }
+      componentDidMount(){
+        this.changeTable(false)
+      }
 
-    render() {
+      render() {
 
 	return (
 	  <div>
 	    <NavBar></NavBar>
       <SideBar></SideBar>
 	    <h1>Quadro de Horários</h1>
-        <div className="container" style={{marginTop:"70px", marginLeft:"center"}}>
-          <div className="jumbotron">
-    	      <h1 style={{marginTop:"70px"}}>Quadro de Horários</h1>
+        <div className="container" style={{marginTop:"70px",marginRight:"35%",marginBottom:"70px",}}>
+          <div className="jumbotron jumbosize ">
+    	      <h1 style={{marginTop:"70px"}}>Quadro de Horários {this.getMonthYearName()}</h1>
 
             <ButtonToolbar>
                 <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
+                  <ToggleButton className="btn btn-outline-primary" title='update' value = '1' onClick={this.onClickUpdate}>Atualizar</ToggleButton>
                   <ToggleButton className="btn btn-outline-primary" value={1} onClick={()=>this.changeTable(false)}>Semanal</ToggleButton>
                   <ToggleButton className="btn btn-outline-primary" value={2} onClick={()=>this.changeTable(true)}>Mensal</ToggleButton>
-                    <div style={{marginLeft:"625px"}}>
-                      {this.state.popup}
-                    </div>
+
                 </ToggleButtonGroup>
             </ButtonToolbar>
-
                 {this.state.content}
           </div>
         </div>
