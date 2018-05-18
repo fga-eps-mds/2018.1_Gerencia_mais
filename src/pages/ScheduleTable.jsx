@@ -230,9 +230,11 @@ export default class ScheduleTable extends Component {
       this.setState({"component":this.changeTable(true), "popup":popup})
     }
 
-    changeTable(isMonth){
-      if(isMonth){
-          var content = (
+    changeTable(tableNumber){
+      var content;
+      switch(tableNumber){
+        case 1:
+           content = (
             <div style={{marginTop:"10px"}}>
               <table style={{display:"inline-block"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
                <thead>
@@ -258,8 +260,8 @@ export default class ScheduleTable extends Component {
             </table>
             </div>
           )
-    }
-      else {
+    break;
+      case 2:
         content = (
           <div>
           <h1 style={{marginTop:"20px"}}>Escala {this.getMonthYearName()} - PS ADULTO</h1>
@@ -283,13 +285,14 @@ export default class ScheduleTable extends Component {
 </div>
 
        )
+       break;
+     }
 
-      }
         this.setState({"content":content})
       }
 
       componentDidMount(){
-        this.changeTable(false)
+        this.changeTable(2)
       }
 
       render() {
@@ -304,9 +307,9 @@ export default class ScheduleTable extends Component {
 
 
             <ButtonToolbar>
-                <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
-                  <ToggleButton className="btn btn-outline-primary" value={1} onClick={()=>this.changeTable(false)}>Pronto Socorro</ToggleButton>
-                  <ToggleButton className="btn btn-outline-primary" value={2} onClick={()=>this.changeTable(true)}>Psiquiatria</ToggleButton>
+                <ToggleButtonGroup type="radio" name="options" defaultValue={2}>
+                  <ToggleButton className="btn btn-outline-primary" value={2} onClick={()=>this.changeTable(2)}>Pronto Socorro</ToggleButton>
+                  <ToggleButton className="btn btn-outline-primary" value={1} onClick={()=>this.changeTable(1)}>Psiquiatria</ToggleButton>
 
                 </ToggleButtonGroup>
             </ButtonToolbar>
