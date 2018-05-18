@@ -193,6 +193,10 @@ th {
     font-size: 15px;
 }
 
+.parecer-th{
+  background-color: #4785e8;
+}
+
 tbody tr:nth-child(4){
   background-color: #fff58e;
   color: #000;

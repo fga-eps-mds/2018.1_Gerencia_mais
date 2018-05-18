@@ -233,19 +233,29 @@ export default class ScheduleTable extends Component {
     changeTable(isMonth){
       if(isMonth){
           var content = (
-            <div style={{marginTop:"25px"}}>
-              <table align="center" className="wallpaper customiza bsClass" striped bordered condensed hover>
-
-                       <thead>
-                         <th colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - PSIQUIATRIA - CONSULTA</th>
-                         <tr>
-                          {this.TableHeader(false)}
-                         </tr>
-                       </thead>
-                       <tbody>
-                          {this.TableList(4,false)}
-                       </tbody>
-                     </table>
+            <div style={{marginTop:"10px"}}>
+              <table style={{display:"inline-block"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+               <thead>
+                 <th colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - PSIQUIATRIA - CONSULTA</th>
+                 <tr>
+                  {this.TableHeader(false)}
+                 </tr>
+               </thead>
+               <tbody>
+                  {this.TableList(4,false)}
+               </tbody>
+                </table>
+             <table style={{float:"right"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+              <thead className="parecer-th">
+                <th className="parecer-th" colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - PSIQUIATRIA - PARECER</th>
+                <tr>
+                 {this.TableHeader(false)}
+                </tr>
+              </thead>
+              <tbody>
+                 {this.TableList(0,false)}
+              </tbody>
+            </table>
             </div>
           )
     }
