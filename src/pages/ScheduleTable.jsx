@@ -262,7 +262,7 @@ export default class ScheduleTable extends Component {
       else {
         content = (
           <div>
-          <h1 style={{marginTop:"70px"}}>Escala {this.getMonthYearName()} - PS ADULTO</h1>
+          <h1 style={{marginTop:"20px"}}>Escala {this.getMonthYearName()} - PS ADULTO</h1>
         <table className="wallpaper inc customiza bsClass" striped bordered condensed hover>
                  <colgroup>
                    <col></col>
@@ -305,9 +305,8 @@ export default class ScheduleTable extends Component {
 
             <ButtonToolbar>
                 <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
-                  <ToggleButton className="btn btn-outline-primary" title='update' value = '1' onClick={this.onClickUpdate}>Atualizar</ToggleButton>
-                  <ToggleButton className="btn btn-outline-primary" value={1} onClick={()=>this.changeTable(false)}>Semanal</ToggleButton>
-                  <ToggleButton className="btn btn-outline-primary" value={2} onClick={()=>this.changeTable(true)}>Mensal</ToggleButton>
+                  <ToggleButton className="btn btn-outline-primary" value={1} onClick={()=>this.changeTable(false)}>Pronto Socorro</ToggleButton>
+                  <ToggleButton className="btn btn-outline-primary" value={2} onClick={()=>this.changeTable(true)}>Psiquiatria</ToggleButton>
 
                 </ToggleButtonGroup>
             </ButtonToolbar>
