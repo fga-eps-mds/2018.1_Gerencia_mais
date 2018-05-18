@@ -79,7 +79,7 @@ export default class ScheduleTable extends Component {
       return new Date(year, month, 0).getDate();
     }
 
-    TableList(number){
+    TableList(number,type){
       var date = new Date();
       var month = date.getMonth() + 1;
       var year = date.getYear();
@@ -101,20 +101,38 @@ export default class ScheduleTable extends Component {
       var rows = [];
       var contador = 0;
 
-      for(var aux = 0; aux < this.daysInMonth(month,year); aux++){
+      if(type){
+        for(var aux = 0; aux < this.daysInMonth(month,year); aux++){
 
-        rows.push(<GridCell className="inc"  line={3} column={aux}></GridCell>)
-      }
-      for(var cont = 0;cont <= number; cont++){
-        lists.push(
+          rows.push(<GridCell className="inc"  line={3} column={aux}></GridCell>)
+        }
+        for(var cont = 0;cont <= number; cont++){
+          lists.push(
 
-        <tr>
-          <td><h3 className="toptobottom">{periods[cont]}</h3></td>
-          <td><h3 className="toptobottom leg-styling">{leg[cont]}</h3></td>
-          {rows}
-          </tr>
-        )
+          <tr>
+            <td><h3 className="toptobottom">{periods[cont]}</h3></td>
+            <td><h3 className="toptobottom leg-styling">{leg[cont]}</h3></td>
+            {rows}
+            </tr>
+          )
+        }
+      }else{
+        for(var aux = 0; aux < 1; aux++){
+
+          rows.push(<GridCell className="inc"  line={4} column={aux}></GridCell>)
+          rows.push(<td>TERÇA FEIRA</td>)
+          rows.push(<td>11,13,23</td>)
+          rows.push(<td>7-12</td>)
+        }
+        for(var cont = 0;cont <= number; cont++){
+          lists.push(
+            <tr>
+              {rows}
+            </tr>
+          )
+        }
       }
+
     return lists;
     }
 
@@ -135,7 +153,10 @@ export default class ScheduleTable extends Component {
           rows.push(<th>{escolhido}<br className="header-br"></br> {aux+1}</th>)
         }
       }else {
-        rows.push(<th>{escolhido} {aux+1}</th>)
+        rows.push(<th className="especialidade-td">Profissional</th>)
+        rows.push(<th className="especialidade-td">Dia da Semana</th>)
+        rows.push(<th className="especialidade-td">Data</th>)
+        rows.push(<th className="especialidade-td">Horário</th>)
       }
 
 
@@ -213,14 +234,16 @@ export default class ScheduleTable extends Component {
       if(isMonth){
           var content = (
             <div style={{marginTop:"25px"}}>
-              <table className="wallpaper inc customiza bsClass" striped bordered condensed hover>
+              <table align="center" className="wallpaper customiza bsClass" striped bordered condensed hover>
+
                        <thead>
+                         <th colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - PSIQUIATRIA - CONSULTA</th>
                          <tr>
-                          {this.TableHeader()}
+                          {this.TableHeader(false)}
                          </tr>
                        </thead>
                        <tbody>
-                          {this.TableList(4)}
+                          {this.TableList(4,false)}
                        </tbody>
                      </table>
             </div>
@@ -230,25 +253,22 @@ export default class ScheduleTable extends Component {
         content = (
           <div>
           <h1 style={{marginTop:"70px"}}>Escala {this.getMonthYearName()} - PS ADULTO</h1>
-<table className="wallpaper inc customiza bsClass" striped bordered condensed hover>
-         <colgroup>
-           <col></col>
-           <col></col>
-          {this.TableCols()}
-         </colgroup>
-         <thead>
-           <tr>
-            <th>Horário</th>
-            <th>Leg</th>
-            {this.TableHeader()}
-           </tr>
-         </thead>
-         <tbody>
-            {this.TableList(4)}
-
-
-
-         </tbody>
+        <table className="wallpaper inc customiza bsClass" striped bordered condensed hover>
+                 <colgroup>
+                   <col></col>
+                   <col></col>
+                  {this.TableCols()}
+                 </colgroup>
+                 <thead>
+                   <tr>
+                    <th>Horário</th>
+                    <th>Leg</th>
+                    {this.TableHeader(true)}
+                   </tr>
+                 </thead>
+                 <tbody>
+                    {this.TableList(4,true)}
+                 </tbody>
        </table>
 </div>
 
