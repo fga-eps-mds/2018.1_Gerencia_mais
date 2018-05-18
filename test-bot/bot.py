@@ -28,7 +28,6 @@ def get_feedback():
         return get_feedback()
 
 
-"""Create a firt bot with english corpus trainer getting a best accurancy answer with 90."""
 chatbot = ChatBot(
     'First',
     trainer='chatterbot.trainers.ChatterBotCorpusTrainer',
