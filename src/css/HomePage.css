@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Coustard|Encode+Sans');
 
 body {
+<<<<<<< HEAD
+=======
+    background: url('../images/black_wallpaper.jpg');
+>>>>>>> 2cfb389f480a45c69cf5e4acf10ce22259cd4bcc
     background-size: cover;
     background-position: center;
 		background-repeat: no-repeat;

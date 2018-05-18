@@ -20,5 +20,9 @@ urlpatterns = [
     re_path(r'^$', TemplateView.as_view(template_name="index.html")),
     path('administrator/',include('administrator.urls')),
     path('doctor/',include('doctor.urls')),
+<<<<<<< HEAD
     url(r'^api/chatterbot/', include('chatterbot.ext.django_chatterbot.urls')),
+=======
+    path('user/',include('user.urls')),
+>>>>>>> 2cfb389f480a45c69cf5e4acf10ce22259cd4bcc
 ]
