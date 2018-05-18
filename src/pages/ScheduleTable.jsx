@@ -118,7 +118,7 @@ export default class ScheduleTable extends Component {
     return lists;
     }
 
-    TableHeader(){
+    TableHeader(type){
       var esp = new Date(2018,4,1);
       var semana = esp.getDay();
       var date = new Date();
@@ -128,11 +128,17 @@ export default class ScheduleTable extends Component {
       var rows = [];
       var escolhido;
 
-      for(var aux = 0; aux < this.daysInMonth(month,year); aux++){
-        esp = new Date(year,month-1,aux+1);
-        escolhido = days[esp.getDay()];
-        rows.push(<th>{escolhido}<br className="header-br"></br> {aux+1}</th>)
+      if(type){
+        for(var aux = 0; aux < this.daysInMonth(month,year); aux++){
+          esp = new Date(year,month-1,aux+1);
+          escolhido = days[esp.getDay()];
+          rows.push(<th>{escolhido}<br className="header-br"></br> {aux+1}</th>)
+        }
+      }else {
+        rows.push(<th>{escolhido} {aux+1}</th>)
       }
+
+
       return rows;
     }
     TableCols(){
@@ -163,7 +169,7 @@ export default class ScheduleTable extends Component {
       var title = [];
       title.push(" - ");
       title.push(months[month]);
-      title.push(" - ");
+      title.push(" De ");
       title.push(year);
       return title;
     }
@@ -207,31 +213,23 @@ export default class ScheduleTable extends Component {
       if(isMonth){
           var content = (
             <div style={{marginTop:"25px"}}>
-              <InfiniteCalendar onSelect={this.fetchData()} displayOptions={{
-                                  layout: 'landscape'
-                                    }}
-                                    width={600}
-                                    height={350} onSelect={()=>this.resolveButtonMonth()}
-		  theme={{
-		      selectionColor: '#1abc9c',
-		      textColor: {
-			  default: '#333',
-			  active: '#FFF'
-		      },
-		      weekdayColor: '#1abc9c',
-		      headerColor: '#1abc9c',
-		      floatingNav: {
-			  background: 'rgba(81, 67, 138, 0.96)',
-			  color: '#FFF',
-			  chevron: '#FFA726'
-		      }
-   }}/>
+              <table className="wallpaper inc customiza bsClass" striped bordered condensed hover>
+                       <thead>
+                         <tr>
+                          {this.TableHeader()}
+                         </tr>
+                       </thead>
+                       <tbody>
+                          {this.TableList(4)}
+                       </tbody>
+                     </table>
             </div>
           )
     }
       else {
         content = (
-
+          <div>
+          <h1 style={{marginTop:"70px"}}>Escala {this.getMonthYearName()} - PS ADULTO</h1>
 <table className="wallpaper inc customiza bsClass" striped bordered condensed hover>
          <colgroup>
            <col></col>
@@ -252,7 +250,7 @@ export default class ScheduleTable extends Component {
 
          </tbody>
        </table>
-
+</div>
 
        )
 
@@ -273,7 +271,7 @@ export default class ScheduleTable extends Component {
 	    <h1>Quadro de Horários</h1>
         <div className="container" style={{marginTop:"70px",marginRight:"35%",marginBottom:"70px",}}>
           <div className="jumbotron jumbosize ">
-    	      <h1 style={{marginTop:"70px"}}>Quadro de Horários {this.getMonthYearName()}</h1>
+
 
             <ButtonToolbar>
                 <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
