@@ -286,6 +286,23 @@ export default class ScheduleTable extends Component {
 
        )
        break;
+
+       case 3:
+       content = (
+         <div style={{marginTop:"10px"}}>
+           <table style={{display:"inline-block"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+            <thead>
+              <th colSpan="7">Unidade Médica Interna{this.getMonthYearName()} - ENDOCRINOLOGISTA - CONSULTA/PARECER</th>
+              <tr>
+               {this.TableHeader(false)}
+              </tr>
+            </thead>
+            <tbody>
+               {this.TableList(7,false)}
+            </tbody>
+          </table>
+      </div>
+       )
      }
 
         this.setState({"content":content})
@@ -310,6 +327,7 @@ export default class ScheduleTable extends Component {
                 <ToggleButtonGroup type="radio" name="options" defaultValue={2}>
                   <ToggleButton className="btn btn-outline-primary" value={2} onClick={()=>this.changeTable(2)}>Pronto Socorro</ToggleButton>
                   <ToggleButton className="btn btn-outline-primary" value={1} onClick={()=>this.changeTable(1)}>Psiquiatria</ToggleButton>
+                  <ToggleButton className="btn btn-outline-primary" value={3} onClick={()=>this.changeTable(3)}>Endocrinologia</ToggleButton>
 
                 </ToggleButtonGroup>
             </ButtonToolbar>
