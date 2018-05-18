@@ -303,6 +303,47 @@ export default class ScheduleTable extends Component {
           </table>
       </div>
        )
+       break;
+
+       case 4:
+       content = (
+         <div style={{marginTop:"10px"}}>
+           <table style={{display:"inline-block", marginBottom:"10px"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+            <thead>
+              <th colSpan="7">Unidade Médica Interna{this.getMonthYearName()} - GASTROENTEROLOGIA - CONSULTA/PARECER</th>
+              <tr>
+               {this.TableHeader(false)}
+              </tr>
+            </thead>
+            <tbody>
+               {this.TableList(7,false)}
+            </tbody>
+          </table>
+          <table style={{display:"inline-block", float:"right"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+           <thead>
+             <th colSpan="7">Unidade Médica Interna{this.getMonthYearName()} - GASTROENTEROLOGIA - ENDOSCOPIA</th>
+             <tr>
+              {this.TableHeader(false)}
+             </tr>
+           </thead>
+           <tbody>
+              {this.TableList(7,false)}
+           </tbody>
+         </table>
+         <table style={{display:"inline-block"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+          <thead>
+            <th colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - GASTROENTEROLOGIA - COLONOSCOPIA</th>
+            <tr>
+             {this.TableHeader(false)}
+            </tr>
+          </thead>
+          <tbody>
+             {this.TableList(4,false)}
+          </tbody>
+        </table>
+      </div>
+       )
+       break;
      }
 
         this.setState({"content":content})
@@ -328,6 +369,7 @@ export default class ScheduleTable extends Component {
                   <ToggleButton className="btn btn-outline-primary" value={2} onClick={()=>this.changeTable(2)}>Pronto Socorro</ToggleButton>
                   <ToggleButton className="btn btn-outline-primary" value={1} onClick={()=>this.changeTable(1)}>Psiquiatria</ToggleButton>
                   <ToggleButton className="btn btn-outline-primary" value={3} onClick={()=>this.changeTable(3)}>Endocrinologia</ToggleButton>
+                  <ToggleButton className="btn btn-outline-primary" value={4} onClick={()=>this.changeTable(4)}>Gastroenterologia</ToggleButton>
 
                 </ToggleButtonGroup>
             </ButtonToolbar>
