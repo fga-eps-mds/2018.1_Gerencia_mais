@@ -14,8 +14,10 @@ export default class DoctorForm extends Component {
     super(props);
     this.state = {
       is_valid : false,
-      title: '',
+      all_subtitle: [],
       doctor:'0',
+      subtitle: '0',
+      load_subtitle: [],
       start: date ,
       time_start:'',
       end: date,
@@ -31,6 +33,30 @@ export default class DoctorForm extends Component {
      this.onChange2 = this.onChange2.bind(this);
   }
 
+  async componentDidMount2() {
+      try {
+
+        const res = await fetch('http://localhost:8000/subtitle/api-subtitle/');
+        const all_subtitle = await res.json();
+        console.log(all_subtitle);
+        this.setState({all_subtitle});
+      } catch (e) {
+        console.log(e);
+      }
+    }
+
+    async componentDidMount3() {
+        try {
+
+          const res = await fetch('http://localhost:8000/subtitle/api-subtitle/'+this.state.subtitle+'/');
+          const load_subtitle = await res.json();
+          console.log(load_subtitle);
+          this.setState({load_subtitle});
+        } catch (e) {
+          console.log(e);
+        }
+      }
+
   async componentDidMount() {
       try {
 
@@ -41,7 +67,9 @@ export default class DoctorForm extends Component {
       } catch (e) {
         console.log(e);
       }
+      await this.componentDidMount2();
     }
+
 
   onChange(e) {
     const title = e.target.title;
@@ -61,6 +89,18 @@ export default class DoctorForm extends Component {
       doctor: e.target.value
     })
   }
+  async handleChange2(e){
+     await this.setState({
+      subtitle: e.target.value
+    });
+    await this.componentDidMount3();
+    await this.setState({
+      time_start: this.state.load_subtitle.begin
+    });
+    await this.setState({
+      time_end: this.state.load_subtitle.finish
+    })
+  }
 
   handleSubmit = e => {
     console.log("entrou");
@@ -69,9 +109,9 @@ export default class DoctorForm extends Component {
     this.state.is_valid = true;
     console.log(this.state.start + " " + this.state.end);
     e.preventDefault();
-    const {start, end, title, hospital, description, creator, rule, calendar, doctor} = this.state;
-    console.log({start, end, title, hospital, description,creator, rule, calendar, doctor} );
-    const lead = {start, end, title, hospital, description, creator, rule, calendar,doctor} ;
+    const {start, end, hospital, subtitle, creator, rule, calendar, doctor} = this.state;
+    console.log({start, end, hospital, subtitle,creator, rule, calendar, doctor} );
+    const lead = {start, end, hospital, subtitle,creator, rule, calendar,doctor} ;
     const temp = JSON.stringify(lead)
     console.log(temp);
     const conf = {
@@ -100,35 +140,41 @@ export default class DoctorForm extends Component {
     return(
       <div>
       <NavBar></NavBar>
-      <SideBar></SideBar>
         <div className="espaco espaco-acima">
           <div className="form-style-5">
             <form>
               <h3>Cadastro de horário de médicos</h3>
               <fieldset>
 
-                <legend><span className="number">0</span> Médicos </legend>
-                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" onChange={this.handleChange.bind(this)} value={this.state.doctor}>
+                <legend><span className="number">1</span> Médicos </legend>
+                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" onChange={this.handleChange.bind(this)} value={this.state.doctor} title="doctor">
                 <option selected>Escolha um médico...</option>
                 {this.state.all_doctors.map(item =>(
                 <option value={item.id}> {item.name} - {item.registration}</option>
 
+
             ))}
               </select>
+              <legend><span className="number">2</span> Legenda </legend>
+              <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" onChange={this.handleChange2.bind(this)} value={this.state.subtitle}>
+              <option selected>Escolha uma Legenda...</option>
+              {this.state.all_subtitle.map(item =>(
+              <option value={item.id}> {item.code} - {item.begin} - {item.finish} - {item.description} </option>
 
-              <legend><span className="number">1</span> Titulo do evento </legend>
-              <input id="titleID" type="text" title="title" value={this.state.title} onChange = {this.onChange} placeholder="Digite o nome aqui" />
 
-              <legend><span className="number">4</span>Hospital</legend>
+
+          ))}
+            </select>
+
+              <legend><span className="number">3</span>Hospital</legend>
               <input id="hospitalID" type="text" title="hospital" value={this.state.hospital} onChange = {this.onChange} placeholder="Digite o Hospital"/>
 
-              <legend><span className="number">6</span>Data e Hora de Entrada</legend>
+              <legend><span className="number">4</span>Data de Entrada</legend>
               <input id="edID" type="date" title="start" value = {this.state.start} onChange={this.onChange} placeholder="" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
-              <input id="edID" type="time" title="time_start" value = {this.state.time_start} onChange = {this.onChange}/>
 
-              <legend><span className="number">7</span>Data e Hora de Saída</legend>
+              <legend><span className="number">5</span>Data de Saída</legend>
               <input id="edID" type="date" title="end" value = {this.state.end} onChange={this.onChange} placeholder="" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
-              <input id="edID" type="time" title="time_end" value = {this.state.time_end} onChange = {this.onChange}/>
+
               {reload}
               </fieldset>
             <input type="submit" value="Apply" onClick={this.handleSubmit}/>
