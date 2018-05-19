@@ -46,7 +46,20 @@ INSTALLED_APPS = [
     'user',
     'django_filters',
     'subtitle',
+    'leito_hospitalar',
+    'chatterbot.ext.django_chatterbot',
 ]
+
+# ChatterBot settings
+
+CHATTERBOT = {
+    'name': 'Django ChatterBot Example',
+    'trainer': 'chatterbot.trainers.ChatterBotCorpusTrainer',
+    'training_data': [
+        'chatterbot.corpus.english.greetings'
+    ],
+    'django_app_name': 'django_chatterbot'
+}
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
@@ -106,7 +119,7 @@ WSGI_APPLICATION = 'leito_hospitalar.wsgi.application'
 #            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-# 
+#
 
 DATABASES = {
     'default': {
@@ -115,7 +128,7 @@ DATABASES = {
         'USER': 'xhpfyinrdmyeca',
         'PASSWORD': '70d69b99aa7d4c95f6edaa8e64ec1fb9029e9a29594ff7753ac27623709fb3f0',
         'HOST': 'ec2-174-129-206-173.compute-1.amazonaws.com',
-        'PORT': '5432', 
+        'PORT': '5432',
     }
 }
 # Password validation

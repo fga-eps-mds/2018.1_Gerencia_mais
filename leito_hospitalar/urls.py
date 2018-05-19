@@ -3,8 +3,12 @@ from django.urls import path, re_path
 from django.contrib import admin
 from django.views.generic import TemplateView
 
+from chatterbot.ext.django_chatterbot import urls
 from schedule import urls
 from subtitle import urls as url2
+
+var_code = urls
+print(urls)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -17,5 +21,5 @@ urlpatterns = [
     path('doctor/',include('doctor.urls')),
     path('subtitle/', include('subtitle.urls')),
     path('user/',include('user.urls')),
-
+    url(r'^api/chatterbot/', include('chatterbot.ext.django_chatterbot.urls')),
 ]

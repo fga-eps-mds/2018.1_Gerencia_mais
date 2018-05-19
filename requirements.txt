@@ -14,6 +14,7 @@ python-dateutil
 django-filter
 psycopg2
 psycopg2-binary
+chatterbot
 #codeclimate
 #randon
 #duplication
