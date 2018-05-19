@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.translation import ugettext 
+from django.utils.translation import ugettext
 
 class Doctors(models.Model):
     name = models.CharField(max_length=255)
