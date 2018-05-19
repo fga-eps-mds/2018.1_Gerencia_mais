@@ -387,6 +387,17 @@ export default class ScheduleTable extends Component {
                {this.TableList(4,false)}
             </tbody>
              </table>
+             <table style={{float:"right"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+              <thead className="parecer-th">
+                <th className="parecer-th" colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - REUMATOLOGIA - PARECER</th>
+                <tr>
+                 {this.TableHeader(false)}
+                </tr>
+              </thead>
+              <tbody>
+                 {this.TableList(4,false)}
+              </tbody>
+            </table>
          </div>
        )
        break;
