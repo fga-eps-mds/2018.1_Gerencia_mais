@@ -346,33 +346,50 @@ export default class ScheduleTable extends Component {
        break;
 
        case 5:
-       content = (
-        <div style={{marginTop:"10px"}}>
-          <table style={{display:"inline-block"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
-           <thead>
-             <th colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - NEUROLOGIA - CONSULTA</th>
-             <tr>
-              {this.TableHeader(false)}
-             </tr>
-           </thead>
-           <tbody>
-              {this.TableList(4,false)}
-           </tbody>
-            </table>
-         <table style={{float:"right"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
-          <thead className="parecer-th">
-            <th className="parecer-th" colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - NEUROLOGIA - PARECER</th>
-            <tr>
-             {this.TableHeader(false)}
-            </tr>
-          </thead>
-          <tbody>
-             {this.TableList(4,false)}
-          </tbody>
-        </table>
-        </div>
-      )
-break;
+         content = (
+          <div style={{marginTop:"10px"}}>
+            <table style={{display:"inline-block"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+             <thead>
+               <th colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - NEUROLOGIA - CONSULTA</th>
+               <tr>
+                {this.TableHeader(false)}
+               </tr>
+             </thead>
+             <tbody>
+                {this.TableList(4,false)}
+             </tbody>
+              </table>
+           <table style={{float:"right"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+            <thead className="parecer-th">
+              <th className="parecer-th" colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - NEUROLOGIA - PARECER</th>
+              <tr>
+               {this.TableHeader(false)}
+              </tr>
+            </thead>
+            <tbody>
+               {this.TableList(4,false)}
+            </tbody>
+          </table>
+          </div>
+        )
+      break;
+      case 6:
+        content = (
+         <div style={{marginTop:"10px"}}>
+           <table style={{display:"inline-block"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+            <thead>
+              <th colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - REUMATOLOGIA - CONSULTA</th>
+              <tr>
+               {this.TableHeader(false)}
+              </tr>
+            </thead>
+            <tbody>
+               {this.TableList(4,false)}
+            </tbody>
+             </table>
+         </div>
+       )
+       break;
      }
 
         this.setState({"content":content})
@@ -399,7 +416,8 @@ break;
                   <ToggleButton className="btn btn-outline-primary" value={1} onClick={()=>this.changeTable(1)}>Psiquiatria</ToggleButton>
                   <ToggleButton className="btn btn-outline-primary" value={3} onClick={()=>this.changeTable(3)}>Endocrinologia</ToggleButton>
                   <ToggleButton className="btn btn-outline-primary" value={4} onClick={()=>this.changeTable(4)}>Gastroenterologia</ToggleButton>
-                  <ToggleButton className="btn btn-outline-primary" value={5} onClick={()=>this.changeTable(5)}>neurologia</ToggleButton>
+                  <ToggleButton className="btn btn-outline-primary" value={5} onClick={()=>this.changeTable(5)}>Neurologia</ToggleButton>
+                  <ToggleButton className="btn btn-outline-primary" value={6} onClick={()=>this.changeTable(6)}>Reumatologia</ToggleButton>
 
                 </ToggleButtonGroup>
             </ButtonToolbar>
