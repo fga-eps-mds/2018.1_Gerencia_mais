@@ -247,7 +247,7 @@ export default class ScheduleTable extends Component {
                   {this.TableList(4,false)}
                </tbody>
                 </table>
-             <table style={{float:"right"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+             <table style={{display:"inline-block", float:"right"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
               <thead className="parecer-th">
                 <th className="parecer-th" colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - PSIQUIATRIA - PARECER</th>
                 <tr>
@@ -359,7 +359,7 @@ export default class ScheduleTable extends Component {
                 {this.TableList(4,false)}
              </tbody>
               </table>
-           <table style={{float:"right"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+           <table style={{display:"inline-block", float:"right"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
             <thead className="parecer-th">
               <th className="parecer-th" colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - NEUROLOGIA - PARECER</th>
               <tr>
@@ -387,7 +387,7 @@ export default class ScheduleTable extends Component {
                {this.TableList(4,false)}
             </tbody>
              </table>
-             <table style={{float:"right"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+             <table style={{display:"inline-block", float:"right"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
               <thead className="parecer-th">
                 <th className="parecer-th" colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - REUMATOLOGIA - PARECER</th>
                 <tr>
