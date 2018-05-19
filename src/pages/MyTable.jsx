@@ -146,22 +146,22 @@ export default class DoctorForm extends Component {
       <div>
       <NavBar></NavBar>
       <div className="top-space espaco espaco-acima">
-          <div class="form-style-5">
+          <div className="form-style-5">
             <form>
               <h3>Atualização de horário de médicos</h3>
               <fieldset>
-              <legend><span class="number">1</span> Nome: </legend>
-              <legend><span class="number">2</span> Numero de Identificação: </legend>
-              <legend><span class="number">3</span>Nova Data de Entrada</legend>
+              <legend><span className="number">1</span> Nome: </legend>
+              <legend><span className="number">2</span> Numero de Identificação: </legend>
+              <legend><span className="number">3</span>Nova Data de Entrada</legend>
               <input id="edID" type="date" name="new_entry_date" value={this.state.new_entry_date}
                 onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span class="number">4</span>Novo Horário de Entrada</legend>
+              <legend><span className="number">4</span>Novo Horário de Entrada</legend>
               <input id="etID" type="time" name="new_entry_time" value={this.state.new_entry_time} placeholder="Digite o numero aqui"
                 onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span class="number">5</span>Nova Data de Saída</legend>
+              <legend><span className="number">5</span>Nova Data de Saída</legend>
               <input id="ddID" type="date" name="new_departure_date" value={this.state.new_departure_date}
                 onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span class="number">6</span>Novo Horário de Saída</legend>
+              <legend><span className="number">6</span>Novo Horário de Saída</legend>
               <input id="dtID" type="time" name="new_departure_time" value={this.state.new_departure_time} placeholder="Digite o numero aqui"
                 onChange={(event) => this.handleUserInput(event)}/>
               <legend><FormErrors formErrors={this.state.formErrors} /></legend>
