@@ -42,10 +42,10 @@ INSTALLED_APPS = [
     'schedule',
     'tests',
     'corsheaders',
-    'administrator',
     'doctor',
     'user',
     'django_filters',
+    'subtitle',
     'leito_hospitalar',
     'chatterbot.ext.django_chatterbot',
 ]
@@ -110,18 +110,27 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'leito_hospitalar.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+#
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd6am9lm80csuij',
+        'USER': 'xhpfyinrdmyeca',
+        'PASSWORD': '70d69b99aa7d4c95f6edaa8e64ec1fb9029e9a29594ff7753ac27623709fb3f0',
+        'HOST': 'ec2-174-129-206-173.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 

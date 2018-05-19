@@ -18,6 +18,8 @@ from django.utils.translation import ugettext_lazy as _
 
 from doctor.models import Doctors
 
+from subtitle.models import Subtitles
+
 from schedule.models.calendars import Calendar
 from schedule.models.rules import Rule
 
@@ -57,12 +59,18 @@ class Event(models.Model):
     end = models.DateTimeField(_("Fim"), db_index=True, help_text=_("O horário de término deve ser posterior ao horário de início."))
     doctor = models.ForeignKey(
         Doctors,
-        on_delete=models.CASCADE,
+        on_delete=None,
         null = True,
         blank = True,
         verbose_name =_("doctor"),
         related_name='doctor')
-    title = models.CharField(_("title"),max_length=100)
+    subtitle = models.ForeignKey(
+        Subtitles,
+        on_delete=None,
+        null = True,
+        blank = True,
+        verbose_name =_("subtitle"),
+        related_name='subtitle')
     hospital = models.CharField(_("Hospital"), max_length=100)
     description = models.TextField(_("Descrição"), blank=True)
     created_on = models.DateTimeField(_("Criado em"), auto_now_add=True)

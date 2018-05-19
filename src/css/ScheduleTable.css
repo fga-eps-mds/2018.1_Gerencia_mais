@@ -173,17 +173,28 @@ h3 {
 
 .customiza{
   background:white;
+  align-self: center;
+}
+.especialidade-td{
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size:20px;
 }
 td {
   padding-left: 6px;
   padding-right: 6px;
   padding-top: 5px;
+  font-size:12px;
 }
 
 th {
     background-color: #4cc486;
     color: white;
     font-size: 15px;
+}
+
+.parecer-th{
+  background-color: #4785e8;
 }
 
 tbody tr:nth-child(4){

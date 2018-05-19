@@ -5,7 +5,7 @@ from django.views.generic import TemplateView
 
 from chatterbot.ext.django_chatterbot import urls
 from schedule import urls
-from administrator import urls as url1
+from subtitle import urls as url2
 
 var_code = urls
 print(urls)
@@ -18,8 +18,8 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name="index.html")),
     re_path(r'^(?P<username>[\w.@+-]+)/$', TemplateView.as_view(template_name='index.html')),
     re_path(r'^$', TemplateView.as_view(template_name="index.html")),
-    path('administrator/',include('administrator.urls')),
     path('doctor/',include('doctor.urls')),
+    path('subtitle/', include('subtitle.urls')),
     path('user/',include('user.urls')),
     url(r'^api/chatterbot/', include('chatterbot.ext.django_chatterbot.urls')),
 ]
