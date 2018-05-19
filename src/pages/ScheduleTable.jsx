@@ -79,7 +79,7 @@ export default class ScheduleTable extends Component {
       return new Date(year, month, 0).getDate();
     }
 
-    TableList(number){
+    TableList(number,type){
       var date = new Date();
       var month = date.getMonth() + 1;
       var year = date.getYear();
@@ -101,24 +101,42 @@ export default class ScheduleTable extends Component {
       var rows = [];
       var contador = 0;
 
-      for(var aux = 0; aux < this.daysInMonth(month,year); aux++){
+      if(type){
+        for(var aux = 0; aux < this.daysInMonth(month,year); aux++){
 
-        rows.push(<GridCell className="inc"  line={3} column={aux}></GridCell>)
-      }
-      for(var cont = 0;cont <= number; cont++){
-        lists.push(
+          rows.push(<GridCell className="inc"  line={3} column={aux}></GridCell>)
+        }
+        for(var cont = 0;cont <= number; cont++){
+          lists.push(
 
-        <tr>
-          <td><h3 className="toptobottom">{periods[cont]}</h3></td>
-          <td><h3 className="toptobottom leg-styling">{leg[cont]}</h3></td>
-          {rows}
-          </tr>
-        )
+          <tr>
+            <td><h3 className="toptobottom">{periods[cont]}</h3></td>
+            <td><h3 className="toptobottom leg-styling">{leg[cont]}</h3></td>
+            {rows}
+            </tr>
+          )
+        }
+      }else{
+        for(var aux = 0; aux < 1; aux++){
+
+          rows.push(<GridCell className="inc"  line={4} column={aux}></GridCell>)
+          rows.push(<td>TERÇA FEIRA</td>)
+          rows.push(<td>11,13,23</td>)
+          rows.push(<td>7-12</td>)
+        }
+        for(var cont = 0;cont <= number; cont++){
+          lists.push(
+            <tr>
+              {rows}
+            </tr>
+          )
+        }
       }
+
     return lists;
     }
 
-    TableHeader(){
+    TableHeader(type){
       var esp = new Date(2018,4,1);
       var semana = esp.getDay();
       var date = new Date();
@@ -128,11 +146,20 @@ export default class ScheduleTable extends Component {
       var rows = [];
       var escolhido;
 
-      for(var aux = 0; aux < this.daysInMonth(month,year); aux++){
-        esp = new Date(year,month-1,aux+1);
-        escolhido = days[esp.getDay()];
-        rows.push(<th>{escolhido}<br className="header-br"></br> {aux+1}</th>)
+      if(type){
+        for(var aux = 0; aux < this.daysInMonth(month,year); aux++){
+          esp = new Date(year,month-1,aux+1);
+          escolhido = days[esp.getDay()];
+          rows.push(<th>{escolhido}<br className="header-br"></br> {aux+1}</th>)
+        }
+      }else {
+        rows.push(<th className="especialidade-td">Profissional</th>)
+        rows.push(<th className="especialidade-td">Dia da Semana</th>)
+        rows.push(<th className="especialidade-td">Data</th>)
+        rows.push(<th className="especialidade-td">Horário</th>)
       }
+
+
       return rows;
     }
     TableCols(){
@@ -163,7 +190,7 @@ export default class ScheduleTable extends Component {
       var title = [];
       title.push(" - ");
       title.push(months[month]);
-      title.push(" - ");
+      title.push(" De ");
       title.push(year);
       return title;
     }
@@ -203,65 +230,184 @@ export default class ScheduleTable extends Component {
       this.setState({"component":this.changeTable(true), "popup":popup})
     }
 
-    changeTable(isMonth){
-      if(isMonth){
-          var content = (
-            <div style={{marginTop:"25px"}}>
-              <InfiniteCalendar onSelect={this.fetchData()} displayOptions={{
-                                  layout: 'landscape'
-                                    }}
-                                    width={600}
-                                    height={350} onSelect={()=>this.resolveButtonMonth()}
-		  theme={{
-		      selectionColor: '#1abc9c',
-		      textColor: {
-			  default: '#333',
-			  active: '#FFF'
-		      },
-		      weekdayColor: '#1abc9c',
-		      headerColor: '#1abc9c',
-		      floatingNav: {
-			  background: 'rgba(81, 67, 138, 0.96)',
-			  color: '#FFF',
-			  chevron: '#FFA726'
-		      }
-   }}/>
+    changeTable(tableNumber){
+      var content;
+      switch(tableNumber){
+        case 1:
+           content = (
+            <div style={{marginTop:"10px"}}>
+              <table style={{display:"inline-block"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+               <thead>
+                 <th colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - PSIQUIATRIA - CONSULTA</th>
+                 <tr>
+                  {this.TableHeader(false)}
+                 </tr>
+               </thead>
+               <tbody>
+                  {this.TableList(4,false)}
+               </tbody>
+                </table>
+             <table style={{display:"inline-block", float:"right"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+              <thead className="parecer-th">
+                <th className="parecer-th" colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - PSIQUIATRIA - PARECER</th>
+                <tr>
+                 {this.TableHeader(false)}
+                </tr>
+              </thead>
+              <tbody>
+                 {this.TableList(0,false)}
+              </tbody>
+            </table>
             </div>
           )
-    }
-      else {
+    break;
+      case 2:
         content = (
-
-<table className="wallpaper inc customiza bsClass" striped bordered condensed hover>
-         <colgroup>
-           <col></col>
-           <col></col>
-          {this.TableCols()}
-         </colgroup>
-         <thead>
-           <tr>
-            <th>Horário</th>
-            <th>Leg</th>
-            {this.TableHeader()}
-           </tr>
-         </thead>
-         <tbody>
-            {this.TableList(4)}
-
-
-
-         </tbody>
+          <div>
+          <h1 style={{marginTop:"20px"}}>Escala {this.getMonthYearName()} - PS ADULTO</h1>
+        <table className="wallpaper inc customiza bsClass" striped bordered condensed hover>
+                 <colgroup>
+                   <col></col>
+                   <col></col>
+                  {this.TableCols()}
+                 </colgroup>
+                 <thead>
+                   <tr>
+                    <th>Horário</th>
+                    <th>Leg</th>
+                    {this.TableHeader(true)}
+                   </tr>
+                 </thead>
+                 <tbody>
+                    {this.TableList(4,true)}
+                 </tbody>
        </table>
-
+</div>
 
        )
+       break;
 
-      }
+       case 3:
+       content = (
+         <div style={{marginTop:"10px"}}>
+           <table style={{display:"inline-block"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+            <thead>
+              <th colSpan="7">Unidade Médica Interna{this.getMonthYearName()} - ENDOCRINOLOGISTA - CONSULTA/PARECER</th>
+              <tr>
+               {this.TableHeader(false)}
+              </tr>
+            </thead>
+            <tbody>
+               {this.TableList(7,false)}
+            </tbody>
+          </table>
+      </div>
+       )
+       break;
+
+       case 4:
+       content = (
+         <div style={{marginTop:"10px"}}>
+           <table style={{display:"inline-block", marginBottom:"10px"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+            <thead>
+              <th colSpan="7">Unidade Médica Interna{this.getMonthYearName()} - GASTROENTEROLOGIA - CONSULTA/PARECER</th>
+              <tr>
+               {this.TableHeader(false)}
+              </tr>
+            </thead>
+            <tbody>
+               {this.TableList(7,false)}
+            </tbody>
+          </table>
+          <table style={{display:"inline-block", float:"right"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+           <thead>
+             <th colSpan="7">Unidade Médica Interna{this.getMonthYearName()} - GASTROENTEROLOGIA - ENDOSCOPIA</th>
+             <tr>
+              {this.TableHeader(false)}
+             </tr>
+           </thead>
+           <tbody>
+              {this.TableList(7,false)}
+           </tbody>
+         </table>
+         <table style={{display:"inline-block"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+          <thead>
+            <th colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - GASTROENTEROLOGIA - COLONOSCOPIA</th>
+            <tr>
+             {this.TableHeader(false)}
+            </tr>
+          </thead>
+          <tbody>
+             {this.TableList(4,false)}
+          </tbody>
+        </table>
+      </div>
+       )
+       break;
+
+       case 5:
+         content = (
+          <div style={{marginTop:"10px"}}>
+            <table style={{display:"inline-block"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+             <thead>
+               <th colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - NEUROLOGIA - CONSULTA</th>
+               <tr>
+                {this.TableHeader(false)}
+               </tr>
+             </thead>
+             <tbody>
+                {this.TableList(4,false)}
+             </tbody>
+              </table>
+           <table style={{display:"inline-block", float:"right"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+            <thead className="parecer-th">
+              <th className="parecer-th" colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - NEUROLOGIA - PARECER</th>
+              <tr>
+               {this.TableHeader(false)}
+              </tr>
+            </thead>
+            <tbody>
+               {this.TableList(4,false)}
+            </tbody>
+          </table>
+          </div>
+        )
+      break;
+      case 6:
+        content = (
+         <div style={{marginTop:"10px"}}>
+           <table style={{display:"inline-block"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+            <thead>
+              <th colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - REUMATOLOGIA - CONSULTA</th>
+              <tr>
+               {this.TableHeader(false)}
+              </tr>
+            </thead>
+            <tbody>
+               {this.TableList(4,false)}
+            </tbody>
+             </table>
+             <table style={{display:"inline-block", float:"right"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+              <thead className="parecer-th">
+                <th className="parecer-th" colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - REUMATOLOGIA - PARECER</th>
+                <tr>
+                 {this.TableHeader(false)}
+                </tr>
+              </thead>
+              <tbody>
+                 {this.TableList(4,false)}
+              </tbody>
+            </table>
+         </div>
+       )
+       break;
+     }
+
         this.setState({"content":content})
       }
 
       componentDidMount(){
-        this.changeTable(false)
+        this.changeTable(2)
       }
 
       render() {
@@ -273,13 +419,16 @@ export default class ScheduleTable extends Component {
 	    <h1>Quadro de Horários</h1>
         <div className="container" style={{marginTop:"70px",marginRight:"35%",marginBottom:"70px",}}>
           <div className="jumbotron jumbosize ">
-    	      <h1 style={{marginTop:"70px"}}>Quadro de Horários {this.getMonthYearName()}</h1>
+
 
             <ButtonToolbar>
-                <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
-                  <ToggleButton className="btn btn-outline-primary" title='update' value = '1' onClick={this.onClickUpdate}>Atualizar</ToggleButton>
-                  <ToggleButton className="btn btn-outline-primary" value={1} onClick={()=>this.changeTable(false)}>Semanal</ToggleButton>
-                  <ToggleButton className="btn btn-outline-primary" value={2} onClick={()=>this.changeTable(true)}>Mensal</ToggleButton>
+                <ToggleButtonGroup type="radio" name="options" defaultValue={2}>
+                  <ToggleButton className="btn btn-outline-primary" value={2} onClick={()=>this.changeTable(2)}>Pronto Socorro</ToggleButton>
+                  <ToggleButton className="btn btn-outline-primary" value={1} onClick={()=>this.changeTable(1)}>Psiquiatria</ToggleButton>
+                  <ToggleButton className="btn btn-outline-primary" value={3} onClick={()=>this.changeTable(3)}>Endocrinologia</ToggleButton>
+                  <ToggleButton className="btn btn-outline-primary" value={4} onClick={()=>this.changeTable(4)}>Gastroenterologia</ToggleButton>
+                  <ToggleButton className="btn btn-outline-primary" value={5} onClick={()=>this.changeTable(5)}>Neurologia</ToggleButton>
+                  <ToggleButton className="btn btn-outline-primary" value={6} onClick={()=>this.changeTable(6)}>Reumatologia</ToggleButton>
 
                 </ToggleButtonGroup>
             </ButtonToolbar>
