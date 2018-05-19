@@ -25,7 +25,7 @@ class ListDetailSubtitles(generics.RetrieveAPIView):
     permission_classes = [AllowAny]
     queryset = Subtitles.objects.all()
     serializer_class = SubtitlesSerializer
-    lookup_field = 'code'
+    lookup_field = 'id'
 
 class UpdateSubtitlesAPI(generics.RetrieveUpdateAPIView):
     permission_classes = [AllowAny]
