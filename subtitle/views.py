@@ -2,7 +2,6 @@ from subtitle.models import Subtitles
 
 from subtitle.serializer import (
     SubtitlesSerializer,
-    SubtitlesListSerializer,
     SubtitlesCreateUpdateSerializer
 )
 
