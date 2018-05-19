@@ -18,12 +18,26 @@
 
 ## 2 - Coleta de dados da equipe
 
-![Quadro de Conhecimento.](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/docs/docs/documentos/imagens/sprint0/conhecimento_Inicial.png)
+<img src="{{site.baseurl}}/documentos/imagens/sprint0/conhecimento_Inicial.png">
 
-
-![Quadro de horas trabalhadas.](https://github.com/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/blob/docs/docs/documentos/imagens/sprint0/planilha_de_horas_trabalhadas.pdf)
 
 Por ser uma coleta inicial do conhecimento dos membros da equipe, nenhuma mudança foi percebida. Podemos observar no segundo quadro o engajamento da equipe no estudo e obtenção de conhecimento.
+
+***quadro de horas***
+
+* MDS
+
+<img src="{{site.baseurl}}/documentos/imagens/horas_trabalhadas/horas_eps.png">
+
+<img src="{{site.baseurl}}/documentos/imagens/horas_trabalhadas/grafico_eps.png">
+
+* EPS
+
+<img src="{{site.baseurl}}/documentos/imagens/horas_trabalhadas/horas_mds.png">
+
+<img src="{{site.baseurl}}/documentos/imagens/horas_trabalhadas/grafico_mds.png">
+
+Obs: A imagem apresentada mostra o quadro geral do projeto para esse documento deve ser apenas analisado os dados da semana 0.
 
 ## 3 - Instruções e aplicação de Dojos
 
@@ -40,3 +54,9 @@ Por ser uma coleta inicial do conhecimento dos membros da equipe, nenhuma mudan�
 * Resultados
 
   Os Dojos serviram como uma introdução à algumas das tecnologias que pretendemos utilizar no projeto. Não foi possível concluir o dojo referente à Django/React pela falta de tempo na reunião.
+
+## 4 - Burndown
+
+<img src="{{site.baseurl}}/documentos/imagens/sprint0/burndown.png">
+
+O burndown dessa sprint apresentou um comportamento ruim pois os pontos foram fechados apenas no final da sprint, esse fato ocorreu pois as historias propostas foram todas dojos e so ouve a possibilidade de resolvelas no sabado.

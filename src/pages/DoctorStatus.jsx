@@ -20,7 +20,6 @@ export default class DoctorStatus extends Component {
       status:null,
       registration:'',
       CPF:'',
-
     }
      this.onClick = this.onClick.bind(this);
      this.onChange = this.onChange.bind(this);
@@ -130,21 +129,15 @@ export default class DoctorStatus extends Component {
                 <input id="titleID" type="text" title="temp_registration" value={this.state.temp_registration} onChange={this.onChange} placeholder="Digite o nome do médico aqui" />
 
                 <Button title="registration" onClick={this.onClick}>Buscar</Button>
-
                 {information}
-
             </fieldset>
               <input type="submit" value="Apply"
                 onClick={this.handleSubmit}/>
             </form>
-
             </div>
         </div>
         <Footer ></Footer>
       </div>
-
-
     );
-
   }
 }
