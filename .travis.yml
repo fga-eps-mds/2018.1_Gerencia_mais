@@ -19,7 +19,7 @@ before_script:
 script:
   - python manage.py makemigrations --noinput
   - python manage.py migrate
-  - coverage run -m django test --settings=tests.settings
+#  - coverage run -m django test --settings=tests.settings
   - docker-compose down
 
 after_success:
