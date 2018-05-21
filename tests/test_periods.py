@@ -9,13 +9,15 @@ from django.utils.six.moves.builtins import range, zip
 from schedule.models import Calendar, Event, Rule
 from schedule.periods import Day, Month, Period, Week, Year
 
+from subtitle.models import Subtitles
 
+subtitle = Subtitles(3)
 class TestPeriod(TestCase):
     def setUp(self):
         rule = Rule.objects.create(frequency="WEEKLY")
         cal = Calendar.objects.create(name="MyCal")
         Event.objects.create(
-            title='Recent Event',
+            subtitle=subtitle,
             start=datetime.datetime(2008, 1, 5, 8, 0, tzinfo=pytz.utc),
             end=datetime.datetime(2008, 1, 5, 9, 0, tzinfo=pytz.utc),
             end_recurring_period=datetime.datetime(2008, 5, 5, 0, 0, tzinfo=pytz.utc),
@@ -99,7 +101,7 @@ class TestMonth(TestCase):
         rule = Rule.objects.create(frequency="WEEKLY")
         cal = Calendar.objects.create(name="MyCal")
         Event.objects.create(
-            title='Recent Event',
+            subtitle=subtitle,
             start=datetime.datetime(2008, 1, 5, 8, 0, tzinfo=pytz.utc),
             end=datetime.datetime(2008, 1, 5, 9, 0, tzinfo=pytz.utc),
             end_recurring_period=datetime.datetime(2008, 5, 5, 0, 0, tzinfo=pytz.utc),
@@ -278,7 +280,7 @@ class TestOccurrencePool(TestCase):
         rule = Rule.objects.create(frequency="WEEKLY")
         cal = Calendar.objects.create(name="MyCal")
         self.recurring_event = Event.objects.create(
-            title='Recent Event',
+            subtitle=subtitle,
             start=datetime.datetime(2008, 1, 5, 8, 0, tzinfo=pytz.utc),
             end=datetime.datetime(2008, 1, 5, 9, 0, tzinfo=pytz.utc),
             end_recurring_period=datetime.datetime(2008, 5, 5, 0, 0, tzinfo=pytz.utc),
@@ -305,7 +307,7 @@ class TestOccurrencesInTimezone(TestCase):
         cal = Calendar.objects.create(name="MyCal")
         rule = Rule.objects.create(frequency="DAILY", params="byweekday:SA", name="Saturdays")
         Event.objects.create(
-            title='Every Saturday Event',
+            subtitle=subtitle,
             start=self.MVD.localize(datetime.datetime(2017, 1, 7, 22, 0)),
             end=self.MVD.localize(datetime.datetime(2017, 1, 7, 23, 0)),
             end_recurring_period=self.MVD.localize(datetime.datetime(2017, 2, 1)),
@@ -349,7 +351,7 @@ class TestWeeklyOccurrences(TestCase):
         cal = Calendar.objects.create(name="MyCal")
         rule = Rule.objects.create(frequency="DAILY", name="daily")
         Event.objects.create(
-            title='Test event',
+            subtitle=subtitle,
             start=self.MVD.localize(datetime.datetime(2017, 1, 13, 15, 0)),
             end=self.MVD.localize(datetime.datetime(2017, 1, 14, 15, 0)),
             end_recurring_period=self.MVD.localize(datetime.datetime(2017, 1, 20)),
@@ -378,7 +380,7 @@ class TestWeeklyOccurrences(TestCase):
     #     self.assertEqual(["%s to %s" % (o.start, o.end) for o in period.occurrences], [])
     #
     # def test_occurrences_no_end(self):
-    #     event = Event.objects.filter(title='Test event').get()
+    #     event = Event.objects.filter(subtitle='Test event').get()
     #     event.end_recurring_period = None
     #     start = self.MVD.localize(datetime.datetime(2018, 1, 13))
     #
@@ -399,7 +401,7 @@ class TestWeeklyOccurrences(TestCase):
     #     )
     #
     # def test_occurrences_end_in_diff_tz(self):
-    #     event = Event.objects.filter(title='Test event').get()
+    #     event = Event.objects.filter(subtitle='Test event').get()
     #     AMSTERDAM = pytz.timezone('Europe/Amsterdam')
     #     # 2017-01-14 00:00 CET = 2017-01-13 21:00 UYT
     #     event.end_recurring_period = AMSTERDAM.localize(datetime.datetime(2017, 1, 14, 0, 0))
@@ -419,7 +421,7 @@ class TestAwareDay(TestCase):
         start = self.timezone.localize(datetime.datetime(2008, 2, 7, 0, 20))
         end = self.timezone.localize(datetime.datetime(2008, 2, 7, 0, 21))
         self.event = Event.objects.create(
-            title='One minute long event on january seventh 2008 at 00:20 in Amsterdam.',
+            subtitle=subtitle,
             start=start,
             end=end,
             calendar=Calendar.objects.create(name="MyCal"),
