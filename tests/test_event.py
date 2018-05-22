@@ -39,7 +39,7 @@ class TestEvent(TestCase):
         calendar = Calendar.objects.create(name="MyCal")
         rule = Rule.objects.create(frequency="WEEKLY")
 
-        event = self.__create_recurring_event(
+        event = self.create_recurring_event(
             datetime.datetime(2008, 1, 5, 8, 0, tzinfo=pytz.utc),
             datetime.datetime(2008, 1, 5, 9, 0, tzinfo=pytz.utc),
             datetime.datetime(2008, 5, 5, 0, 0, tzinfo=pytz.utc),
@@ -51,7 +51,7 @@ class TestEvent(TestCase):
 
     @override_settings(USE_TZ=False)
     def test_prevent_type_error_when_comparing_dates_when_tz_off(self):
-        cal = Calendar.objects.create(name="MyCal")
+        # cal = Calendar.objects.create(name="MyCal")
         rule = Rule.objects.create(frequency="WEEKLY")
 
         event = self.__create_recurring_event(
@@ -72,7 +72,7 @@ class TestEvent(TestCase):
         Rule.objects.create(frequency="DAILY")
         cal = Calendar.objects.create(name='MyCal')
         cal = calendar
-        event = self.__create_event(
+        event = self.create_event(
             datetime.datetime(2013, 1, 5, 8, 0, tzinfo=pytz.utc),
             datetime.datetime(2013, 1, 5, 9, 0, tzinfo=pytz.utc),
             cal,
