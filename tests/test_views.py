@@ -16,17 +16,18 @@ from schedule.models.events import Event, Occurrence
 from schedule.models.rules import Rule
 
 from doctor.models import Doctors
-
+from subtitle.models import Subtitles
 
 class TestViewAPI(TestCase):
     def setUp(self):
-        doctor = Doctors(name = 'Victor', registration= '112020122',CPF='1637615253',status =True)
+        doctor = Doctors(name = 'Victor', registration= '112020122',CPF='1637615253',status =True, category='1231233212')
         doctor.save()
         calendar = Calendar(name = 'Test Calendar')
         calendar.save()
+        subtitle = Subtitles(1)
         self.event_attr = {
             'id':1,
-            'title': 'victor',
+            'subtitle': subtitle,
             'start': datetime.datetime(2013, 1, 5, 8, 0, tzinfo=pytz.utc),
             'end': datetime.datetime(2013, 1, 5, 9, 0, tzinfo=pytz.utc),
             'doctor': doctor,
@@ -35,7 +36,7 @@ class TestViewAPI(TestCase):
 
         self.serializer_data = {
             'id':0,
-            'title':'joão',
+            'subtitle':subtitle,
             'start': datetime.datetime(2013, 1, 5, 8, 0, tzinfo=pytz.utc),
             'end': datetime.datetime(2013, 1, 5, 9, 0, tzinfo=pytz.utc),
             'doctor':doctor,
@@ -46,7 +47,7 @@ class TestViewAPI(TestCase):
 
     def test_contains_expected_fields(self):
         data = self.serializer.data
-        self.assertEqual(set(['title', 'updated_on', 'hospital', 'calendar', 'created_on', 'rule', 'end', 'description', 'end_recurring_period', 'start','doctor', 'creator', 'id']),set(data.keys()))
+        self.assertEqual(set(['subtitle', 'doctor', 'rule', 'id', 'end_recurring_period', 'hospital', 'updated_on', 'end', 'calendar', 'creator', 'description', 'created_on', 'start']),set(data.keys()))
 
     # def test_fields_content(self):
     #     data = self.serializer.data
