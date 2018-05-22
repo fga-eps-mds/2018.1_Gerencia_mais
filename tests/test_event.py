@@ -15,7 +15,7 @@ subtitle = Subtitles(3)
 calendar = Calendar(1)
 
 class TestEvent(TestCase):
-    def __create_event(self, start, end, calendar):
+    def create_event(self, start, end, calendar):
         calendar = Calendar(1)
         return Event.objects.create(
             subtitle=subtitle,
@@ -24,7 +24,7 @@ class TestEvent(TestCase):
             calendar=calendar,
         )
 
-    def __create_recurring_event(self, start, end, end_recurring, rule, calendar):
+    def create_recurring_event(self, start, end, end_recurring, rule, calendar):
         return Event.objects.create(
             subtitle=subtitle,
             start=start,
