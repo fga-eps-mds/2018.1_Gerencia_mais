@@ -11,11 +11,15 @@ services:
     command: /bin/bash -l -c 'pip install django-webpack-loader && python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0:8000'  
     depends_on:
       - frontend 
+      - db
+  db:
+    image: postgres:10.1
+
   frontend:
     image: node:8.1
     volumes:
       - ./:/code
     ports: 
       - 3000:3000
-    command: bash -c 'cd /code/ && npm install &&  npm install -g create-react-app && cd /code/ && npm run start '    
+    command: bash -c 'cd /code/ && npm install && npm install --save react-redux  && npm install -g create-react-app && npm install redux && npm install --save redux-persist && cd /code/ && npm run start '    
     

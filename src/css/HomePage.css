@@ -2,10 +2,15 @@
 @import url('https://fonts.googleapis.com/css?family=Coustard|Encode+Sans');
 
 body {
-    background: url(https://wallpaper.wiki/wp-content/uploads/2017/05/Dark-Navy-Blue-Wallpaper.jpg);
+    background: url('../images/black_wallpaper.jpg');
     background-size: cover;
     background-position: center;
 		background-repeat: no-repeat;
+    background-color: #002e4D;
+}
+
+.fundo{
+  background-color: #002e4D;
 }
 
 h1 {

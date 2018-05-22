@@ -14,7 +14,6 @@ from django.utils.six.moves.builtins import range
 from django.utils.translation import ugettext
 
 from schedule.models import Occurrence
-from schedule.settings import SHOW_CANCELLED_OCCURRENCES
 
 weekday_names = []
 weekday_abbrs = []
@@ -102,27 +101,6 @@ class Period(object):
         else:
             self._persisted_occurrences = Occurrence.objects.filter(event__in=self.events)
             return self._persisted_occurrences
-
-    def classify_occurrence(self, occurrence):
-        if occurrence.cancelled and not SHOW_CANCELLED_OCCURRENCES:
-            return
-        if occurrence.start > self.end or occurrence.end < self.start:
-            return None
-        started = False
-        ended = False
-        if self.utc_start <= occurrence.start < self.utc_end:
-            started = True
-        if self.utc_start <= occurrence.end < self.utc_end:
-            ended = True
-        if started and ended:
-            return {'occurrence': occurrence, 'class': 1}
-        elif started:
-            return {'occurrence': occurrence, 'class': 0}
-        elif ended:
-            return {'occurrence': occurrence, 'class': 3}
-        # it existed during this period but it didn't begin or end within it
-        # so it must have just continued
-        return {'occurrence': occurrence, 'class': 2}
 
     def get_occurrence_partials(self):
         occurrence_dicts = []

@@ -5,307 +5,181 @@ import '../css/DoctorForm.css';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import SideBar from '../components/SideBar';
-import FormErrors from '../components/FormErrors';
-import {Carousel} from 'react-bootstrap';
+// import Select from 'react-select';
 
-
+var date = new Date().toISOString();
+// status = True, title= 'Mauricio', start='2018-04-17T17:25:32Z', end='2018-04-20T17:25:34Z', calendar = calendar
 export default class DoctorForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      id: '',
-      entry_date: '',
-      entry_time: '',
-      departure_date: '',
-      departure_time: '',
-      formErrors: {name: '', id: '', entry_date: '', entry_time: '', departure_date: '', departure_time: ''},
-      name_valid: false,
-      id_valid: false,
-      entry_date_valid: false,
-      entry_time_valid: false,
-      departure_date_valid: false,
-      departure_time_valid: false,
-      form_valid: false,
-      api: [
-        {reg_name: 'Paulo', reg_ids: '1', status:true},
-        {reg_name: 'Sabino', reg_ids: '2', status:true},
-        {reg_name: 'Marcos', reg_ids: '3', status:true},
-        {reg_name: 'Valquiria', reg_ids: '4', status:true},
-      ],
+      is_valid : false,
+      all_subtitle: [],
+      doctor:'0',
+      subtitle: '0',
+      load_subtitle: [],
+      start: date ,
+      time_start:'',
+      end: date,
+      time_end:'',
+      description:'',
+      hospital:'',
+      creator: '1',
+      rule: null,
+      calendar:'1',
+      all_doctors: [],
     }
+     this.onChange = this.onChange.bind(this);
+     this.onChange2 = this.onChange2.bind(this);
   }
 
+  async componentDidMount2() {
+      try {
 
-  handleUserInput (e) {
-    const name = e.target.name;
-    const value = e.target.value;
-    this.setState({[name]: value},
-                  () => { this.validateField(name, value) });
-  }
-
-
-
-  validateField(fieldName, value) {
-    let fieldValidationErrors = this.state.formErrors;
-    let name_valid = this.state.name_valid;
-    let id_valid = this.state.id_valid;
-    // let entry_date_ =  this.state.entry_date;
-    // let departure_date_valid = this.state.departure_date_valid;
-    let name = this.state.name;
-    let id = this.state.id;
-    let api = this.state.api;
-    switch(fieldName) {
-      case 'name':
-        for(var nn = 0; nn < api.length; nn++){
-          if(api[nn].reg_name.toLowerCase() == value.toLowerCase()){
-            name_valid = true;
-            break;
-          }else {
-            name_valid = false;
-          }
-        }
-        if(id){
-          if(name_valid == true){
-            console.log(api[nn].reg_ids);
-            console.log(id);
-            if(api[nn].reg_ids != id){
-              name_valid = false;
-              id_valid = false;
-              console.log('false');
-            }
-            else{
-              name_valid = true;
-              id_valid = true;
-              console.log('true');
-            }
-          }
-          fieldValidationErrors.id = id_valid ? '' : 'Erro: Id não correspondente' ;
-        }
-        fieldValidationErrors.name = name_valid ? '' : 'Erro: Nome não correspondente' ;
-        this.setState({formErrors: fieldValidationErrors,
-                        name_valid: name_valid,
-                        id_valid: id_valid,
-                      }, this.validateForm);
-        break;
-
-        case 'id':
-          for(var nn = 0; nn < api.length;  nn++){
-            if(api[nn].reg_ids == value){
-              id_valid = true;
-              break;
-            }else {
-              id_valid = false;
-            }
-          }
-          if(name){
-            if(id_valid == true){
-              console.log(api[nn].reg_name);
-              console.log(name);
-              if(api[nn].reg_name.toLowerCase() != name.toLowerCase()){
-                name_valid = false;
-                id_valid = false;
-                console.log('false');
-              }
-              else{
-                name_valid = true;
-                id_valid = true;
-                console.log('true');
-              }
-               fieldValidationErrors.name = name_valid ? '' : 'Erro: Nome não correspondente' ;
-            }
-          }
-          fieldValidationErrors.id = id_valid ? '' : 'Erro: Id não correspondente' ;
-          this.setState({formErrors: fieldValidationErrors,
-                          name_valid: name_valid,
-                          id_valid: id_valid,
-                        }, this.validateForm);
-        break;
-
-        // case 'departure_date':
-        //   if(value > entry_date){
-        //     departure_date_valid = true;
-        //   }else{
-        //     departure_date_valid = false;
-        //   }
-        //   fieldValidationErrors.id = id_valid ? '' : 'Erro: Data de saída menor que a data de entrada' ;
-        //   this.setState({formErrors: fieldValidationErrors,
-        //                   departure_date_valid: departure_date_valid,
-        //                 }, this.validateForm);
+        const res = await fetch('http://localhost:8000/subtitle/api-subtitle/');
+        const all_subtitle = await res.json();
+        console.log(all_subtitle);
+        this.setState({all_subtitle});
+      } catch (e) {
+        console.log(e);
       }
+    }
+
+    async componentDidMount3() {
+        try {
+
+          const res = await fetch('http://localhost:8000/subtitle/api-subtitle/'+this.state.subtitle+'/');
+          const load_subtitle = await res.json();
+          console.log(load_subtitle);
+          this.setState({load_subtitle});
+        } catch (e) {
+          console.log(e);
+        }
+      }
+
+  async componentDidMount() {
+      try {
+
+        const res = await fetch('http://localhost:8000/doctor/api-doctor/');
+        const all_doctors = await res.json();
+        console.log(all_doctors);
+        this.setState({all_doctors});
+      } catch (e) {
+        console.log(e);
+      }
+      await this.componentDidMount2();
+    }
+
+
+  onChange(e) {
+    const title = e.target.title;
+    const value = e.target.value === 'checkbox' ? e.target.checked : e.target.value;
+    this.setState({[title] : value});
+}
+
+  onChange2(e){
+    const title = e.target.title;
+    this.setState(
+      {[title]: e.target.checked}
+    )
   }
 
-  validateForm() {
-    this.setState({formValid: this.state.name_valid});
+  handleChange(e){
+    this.setState({
+      doctor: e.target.value
+    })
+  }
+  async handleChange2(e){
+     await this.setState({
+      subtitle: e.target.value
+    });
+    await this.componentDidMount3();
+    await this.setState({
+      time_start: this.state.load_subtitle.begin
+    });
+    await this.setState({
+      time_end: this.state.load_subtitle.finish
+    })
   }
 
-  sendInfo(){
-    var name = document.getElementById("nameID").value;
-    var id = document.getElementById("idID").value;
-    var entry_date = document.getElementById("edID").value;
-    var entry_time = document.getElementById("etID").value;
-    var departure_date = document.getElementById("ddID").value;
-    var departure_time = document.getElementById("dtID").value;
-    var info = new Array();
-    info.push(name);
-    info.push(id);
-    info.push(entry_date);
-    info.push(entry_time);
-    info.push(departure_date);
-    info.push(departure_time);
-    var dictstring = JSON.stringify(info);
-    console.log(dictstring);
-  }
-
-
+  handleSubmit = e => {
+    console.log("entrou");
+    this.state.start = this.state.start + "T" + this.state.time_start + "Z";
+    this.state.end = this.state.end + "T" + this.state.time_end + "Z";
+    this.state.is_valid = true;
+    console.log(this.state.start + " " + this.state.end);
+    e.preventDefault();
+    const {start, end, hospital, subtitle, creator, rule, calendar, doctor} = this.state;
+    console.log({start, end, hospital, subtitle,creator, rule, calendar, doctor} );
+    const lead = {start, end, hospital, subtitle,creator, rule, calendar,doctor} ;
+    const temp = JSON.stringify(lead)
+    console.log(temp);
+    const conf = {
+      method: "POST",
+      body: temp,
+      headers: new Headers({ "Content-Type": "application/json" })
+    };
+    fetch('http://localhost:8000/schedule/api-event/', conf).then(response => console.log(response));
+    this.setState({['is_valid']:true});
+}
   render(){
+    let reload;
+    if(this.state.is_valid){
+      reload = (
+        <div>
+          {window.location.href='http://localhost:3000/ScheduleTable'}
+        </div>
+      );
+    }
+    else{
+      reload = (
+        <div>
+        </div>
+      );
+    }
     return(
       <div>
       <NavBar></NavBar>
-      <SideBar></SideBar>
-        <div className="top-space espaco espaco-acima">
-          <div class="form-style-5">
+        <div className="espaco espaco-acima">
+          <div className="form-style-5">
             <form>
               <h3>Cadastro de horário de médicos</h3>
               <fieldset>
-              <legend><span class="number">1</span> Nome</legend>
-              <input id="nameID" type="text" name="name" value={this.state.name} placeholder="Digite o nome aqui"
-                onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span class="number">2</span> Numero de Identificação</legend>
-              <input id="idID" type="text" name="id" value={this.state.id} placeholder="Digite o numero aqui"
-                onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span class="number">3</span>Data de Entrada</legend>
-              <input id="edID" type="date" name="entry_date" value={this.state.entry_date}
-                onChange={(event) => this.handleUserInput(event)}/>
-              <legend><span class="number">4</span>Horário</legend>
-                <table id="t01" className="tabelatamanho">
-                <tr>
-                  <th>Horário</th>
-                  <th>Dom</th>
-                  <th>Seg</th>
-                  <th>Ter</th>
-                  <th>Qua</th>
-                  <th>Qui</th>
-                  <th>Sex</th>
-                  <th>Sab</th>
-                </tr>
-                <tr>
-                  <td>06:00-08:00</td>
-                  <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                  <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                  <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                  <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                  <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                  <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                  <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                </tr>
-                <tr>
-                  <td>10:00-12:00</td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                </tr>
-                <tr>
-                  <td>12:00-14:00</td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                </tr>
-                <tr>
-                  <td>14:00-16:00</td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                </tr>
-                <tr>
-                  <td>16:00-18:00</td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                </tr>
-                <tr>
-                  <td>18:00-20:00</td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                </tr>
-                <tr>
-                  <td>20:00-22:00</td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                </tr>
-                <tr>
-                  <td>22:00-00:00</td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                </tr>
-                <tr>
-                  <td>00:00-02:00</td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                </tr>
-                <tr>
-                  <td>02:00-04:00</td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                </tr>
-                <tr>
-                  <td>04:00-06:00</td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                    <td><input type="checkbox" name="vehicle" value="Bike"/></td>
-                </tr>
-              </table>
-              <legend><FormErrors formErrors={this.state.formErrors} /></legend>
+
+                <legend><span className="number">1</span> Médicos </legend>
+                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" onChange={this.handleChange.bind(this)} value={this.state.doctor} title="doctor">
+                <option selected>Escolha um médico...</option>
+                {this.state.all_doctors.map(item =>(
+                <option value={item.id}> {item.name} - {item.registration}</option>
+
+
+            ))}
+              </select>
+              <legend><span className="number">2</span> Legenda </legend>
+              <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" onChange={this.handleChange2.bind(this)} value={this.state.subtitle}>
+              <option selected>Escolha uma Legenda...</option>
+              {this.state.all_subtitle.map(item =>(
+              <option value={item.id}> {item.code} - {item.begin} - {item.finish} - {item.description} </option>
+
+
+
+          ))}
+            </select>
+
+              <legend><span className="number">3</span>Hospital</legend>
+              <input id="hospitalID" type="text" title="hospital" value={this.state.hospital} onChange = {this.onChange} placeholder="Digite o Hospital"/>
+
+              <legend><span className="number">4</span>Data de Entrada</legend>
+              <input id="edID" type="date" title="start" value = {this.state.start} onChange={this.onChange} placeholder="" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
+
+              <legend><span className="number">5</span>Data de Saída</legend>
+              <input id="edID" type="date" title="end" value = {this.state.end} onChange={this.onChange} placeholder="" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
+
+              {reload}
               </fieldset>
-              <input type="submit" value="Apply"
-                disabled={!this.state.formValid}
-                onClick={this.sendInfo}/>
-            </form>
+            <input type="submit" value="Apply" onClick={this.handleSubmit}/>
+
+          </form>
             </div>
         </div>
         <Footer ></Footer>

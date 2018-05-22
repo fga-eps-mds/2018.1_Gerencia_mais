@@ -13,3 +13,6 @@ omit =
     schedule/forms.py
     schedule/settings.py
     schedule/periods.py
+    tests/test_event.py
+    tests/test_occurrence.py
+    schedule/models/events.py
