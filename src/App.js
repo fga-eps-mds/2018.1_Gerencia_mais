@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Route, Switch, BrowserRouter} from 'react-router-dom';
 import HomePage from "./pages/HomePage";
 import ScheduleTable from "./pages/ScheduleTable";
+import NewScheduleTable from "./pages/NewScheduleTable";
 import NotFound from "./pages/NotFound";
 import Dashboard from "./pages/Dashboard";
 import DoctorForm from "./pages/DoctorForm";
@@ -32,6 +33,7 @@ class App extends Component {
           <Route exact path="/dashboard" component={Dashboard} />
           <PrivateRoute exact path="/UpdateSchedule" component={UpdateSchedule} />
           <Route exact path="/RegistrationAdmin" component={RegistrationAdmin} />
+          <PrivateRoute exact path="/NewScheduleTable" component={NewScheduleTable} />
           <Route component={NotFound} />
         </Switch>
         </BrowserRouter>

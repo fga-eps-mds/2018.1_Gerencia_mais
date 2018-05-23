@@ -9,146 +9,55 @@ import "../css/popup.css";
 import "../css/bootstrap.min.css";
 import InfiniteCalendar from 'react-infinite-calendar';
 import 'react-infinite-calendar/styles.css';
-
-class GridCell extends Component {
-  constructor(props){
-    super(props);
-    this.state = {"line":props.line,"column":props.column,"update":1,};
-    this.onClickUpdate = this.onClickUpdate.bind(this);
-  }
-
-    resolveButton(line,column){
-      fetch("http://localhost:8000/doctor/api-doctor/?format=json")
-      .then(response => response.json())
-      .then(contacts => this.setState({
-        contacts
-      }))
-      .catch(error => console.log("error to get data " + error));
-    };
-
-    onClickUpdate(e){
-      const title = e.target.title;
-      const value = e.target.value;
-      this.setState(
-        {[title]:value,}
-      );
-    }
+import Calendar from "react-big-calendar";
+import moment from "moment";
+import "react-big-calendar/lib/css/react-big-calendar.css";
 
 
-  render(){
-
-    let update;
-    if(this.state.update===1){
-      this.state.update = 0;
-      update = (
-        <div>{this.resolveButton(this.props.line,this.props.column)}</div>
-      )
-    }else {
-      update = (
-        <div></div>
-      )
-    }
-    return(
-      <td>
-      {update}
-      <div className="">
-        <div className="">
-          {
-            this.state.contacts != null ? this.state.contacts.map(user =>
-              <div className ="doctorName"><span>{user.name}</span><br></br><br></br></div>
-            )
-            : null
-          }
-        </div>
-      </div>
-
-      </td>
-    )
-  }
-}
+Calendar.setLocalizer(Calendar.momentLocalizer(moment));
 
 export default class NewScheduleTable extends Component {
     constructor(){
       super();
-      this.state={"content":"Selecione uma opcao", "popup":"", "contacts":""};
+      this.state={
+        events: [
+          {
+            start: new Date(),
+            end: new Date(moment().add(13, "hours")),
+            title: "Marcos Paulin"
+          },
+          {
+            start: new Date(2018,4,26,10),
+            end: new Date(2018,4,26,12),
+            title: "Paulin Sergio"
+          }
+        ]
+      };
     }
-
-
-
-    daysInMonth(month, year) {
-      return new Date(year, month, 0).getDate();
-    }
-
-    fetchData(){
-
-      fetch("http://localhost:8000/doctor/api-doctor/?format=json")
-      .then(response => response.json())
-      .then(contacts => this.setState({
-        contacts
-      }))
-      .catch(error => console.log("error to get data " + error));
-    }
-
-
-    resolveButtonMonth(){
-      var popup = (
-        <Popup
-        trigger={<button className="btn btn-outline-primary">Relatorio Diario</button>}
-        modal
-        closeOnDocumentClick
-        >
-
-        <div className="popupShape ">
-          <div className="pre-scrollable">
-            <h4 className='modal-header whitename'>Médicos</h4>
-            {
-              this.state.contacts != null ? this.state.contacts.map(user =>
-                  <div><strong>Nome: </strong> <span>{user.name}</span><br></br><strong>Função: </strong>Médico<br></br><br></br></div>
-              )
-              : null
-            }
-          </div>
-        </div>
-        </Popup>
-      )
-      this.setState({"component":this.changeTable(true), "popup":popup})
-    }
-
-
-
     render() {
+    	return (
+    	  <div>
+    	    <NavBar></NavBar>
+          <SideBar></SideBar>
+            <div  className="container">
+                <div style={{marginTop:"70px",marginBottom:"100px"}} className="jumbotron">
 
-	return (
-	  <div>
-	    <NavBar></NavBar>
-      <SideBar></SideBar>
-        <div className="container mudah1">
-            <h1 style={{marginTop:"70px"}}>Quadro de Horários</h1>
+                    <div className="App">
+                      <header className="App-header">
+                        <h1 >Quadro de Horários</h1>
+                      </header>
+                      <Calendar
+                        defaultDate={new Date()}
+                        defaultView="month"
+                        events={this.state.events}
+                        style={{ height: "100vh" }}
+                      />
+                    </div>
 
-              <table className="wallpaper table-background" striped bordered rounded hover>
-                <thead className="th-height">
-                   <tr>
-                    <th>.</th>
-                    <th>.</th>
-                    <th className="th-height">TESTEEDOMI 5 </th>
-                    <th>TESTEEDOMI 5 </th>
-                    <th>TESTEEDOMI</th>
-                    <th>TESTEEDOMI 5</th>
-                    <th>TESTEEDOMI</th>
-                    <th>TESTEEDOMI</th>
-                    <th>TESTEEDOMI</th>
-                   </tr>
-                </thead>
-                       <tbody>
-
-
-                       </tbody>
-                     </table>
-        </div>
-
-
-       <Footer></Footer>
-	    </div>
-	);
+                </div>
+            </div>
+            <Footer></Footer>
+    	    </div>
+    	);
     }
-}
+ }
