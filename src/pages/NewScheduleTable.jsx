@@ -15,26 +15,91 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 
 
 Calendar.setLocalizer(Calendar.momentLocalizer(moment));
-
+var ds = new Date(2018,5,22,8);
+ds = ds.toISOString();
+var de = new Date(2018,5,22,10);
+de = de.toISOString();
 export default class NewScheduleTable extends Component {
     constructor(){
       super();
       this.state={
+        doctor_events_list: [],
+        all_events: [],
+        all_doctors: [],
         events: [
           {
-            start: new Date(),
-            end: new Date(moment().add(13, "hours")),
-            title: "Marcos Paulin"
-          },
-          {
-            start: new Date(2018,4,26,10),
-            end: new Date(2018,4,26,12),
-            title: "Paulin Sergio"
-          }
+        start:ds ,
+        end:de ,
+        title: "Some title"
+}
         ]
       };
     }
+
+    async componentDidMount() {
+        try {
+          const name = 'http://localhost:8000/doctor/api-doctor/';
+          const res = await fetch(name);
+          console.log(res);
+          const all_doctors = await res.json();
+          console.log(all_doctors);
+          this.setState({all_doctors});
+        } catch (e) {
+          console.log(e);
+        }
+        await this.componentDidMount2();
+        await this.createEventDoctorList();
+      }
+
+      async componentDidMount2() {
+          try {
+            const name = 'http://localhost:8000/schedule/api-event/';
+            const res = await fetch(name);
+            console.log(res);
+            const all_events = await res.json();
+            console.log(all_events);
+            this.setState({all_events});
+          } catch (e) {
+            console.log(e);
+          }
+        }
+      createEventDoctorList(){
+        var title,start,end;
+
+        this.state.all_events.map(each => (
+          console.log(each.doctor),
+          title = this.getDoctorId(each.doctor),
+          console.log(title),
+          start = new Date(each.start),
+          end = new Date(each.end),
+          this.state.doctor_events_list.push({'title':title,'start':start,'end':end})
+        ))
+      }
+
+      getDoctorId(id){
+        var name = "";
+        this.state.all_doctors.map(each =>(
+           console.log(id),
+           name = this.compareId(each.id,id,each.name, name)
+        )
+        )
+        return name;
+      }
+
+      compareId(id,id2,doctorName,realName){
+        if(id === id2){
+          var name = doctorName;
+        }
+        else{
+          var name = realName;
+        }
+        return name;
+      }
+
+
     render() {
+      console.log(this.state.events[0].start);
+      console.log(this.state.doctor_events_list);
     	return (
     	  <div>
     	    <NavBar></NavBar>
@@ -49,7 +114,7 @@ export default class NewScheduleTable extends Component {
                       <Calendar
                         defaultDate={new Date()}
                         defaultView="month"
-                        events={this.state.events}
+                        events={this.state.doctor_events_list}
                         style={{ height: "100vh" }}
                       />
                     </div>

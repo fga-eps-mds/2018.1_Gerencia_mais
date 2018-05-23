@@ -123,20 +123,6 @@ export default class DoctorForm extends Component {
     this.setState({['is_valid']:true});
 }
   render(){
-    let reload;
-    if(this.state.is_valid){
-      reload = (
-        <div>
-          {window.location.href='http://localhost:3000/ScheduleTable'}
-        </div>
-      );
-    }
-    else{
-      reload = (
-        <div>
-        </div>
-      );
-    }
     return(
       <div>
       <NavBar></NavBar>
@@ -174,8 +160,6 @@ export default class DoctorForm extends Component {
 
               <legend><span className="number">5</span>Data de Saída</legend>
               <input id="edID" type="date" title="end" value = {this.state.end} onChange={this.onChange} placeholder="" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
-
-              {reload}
               </fieldset>
             <input type="submit" value="Apply" onClick={this.handleSubmit}/>
 
