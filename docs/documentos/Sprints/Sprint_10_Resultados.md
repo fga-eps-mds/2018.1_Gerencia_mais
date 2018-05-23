@@ -82,7 +82,8 @@ Foi tomada a decisição pelo grupo de EPS de coletar o conhecimento do time no 
 
 <img src="{{site.baseurl }}/documentos/imagens/Sprint9/burndown_s11.png">
 
-
+<p align="justify">O burndown apresenta a quantidade de pontos que foram planejados e sua “queima” durante a sprint que tem duração de uma semana. Para a sprint 10, a equipe planejou realizar 32 pontos que foram distribuídos em histórias de usuário e histórias técnicas.
+Ao término da sprint, a equipe de desenvolvimento entregou todos os 32 pontos,42 histórias e 5 histórias técnicas. O gráfico apresentado mostra entregas quase regulares, melhor que as entregas das sprints passadas, justificáveis pelos motivos citados em [Riscos](#4---riscos).</p>
 
 ## 7 - Velocity
 
