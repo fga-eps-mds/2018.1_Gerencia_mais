@@ -16,12 +16,12 @@
 
 | | |
 |:--:|:--:|
-|**Número da sprint**|9|
-|**Data de início**|06/05/2018|
-|**Data de término**|12/05/2018|
+|**Número da sprint**|10|
+|**Data de início**|12/05/2018|
+|**Data de término**|19/05/2018|
 |**Duração**|7 dias|
-|**Pontos planejados**|39|
-|**Pontos concluidos**|33|
+|**Pontos planejados**|32|
+|**Pontos concluidos**|32|
 
 
 ## 2 - Tarefas
@@ -31,8 +31,11 @@
 
 |ID|História|Pontos|Responsáveis|Status|
 |:-:|:-----:|:----:|:----------:|:----:|
-|[]()|   |   |   |   |
-
+|[TS36](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/155)| Refatorar Frontend de acordo com feedback de teste de usabilidade 1 |  5 | Guilherme e Joao Victor| Aceito  |
+|[TS43](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/193)| Atualizar banco para PostGreSQL | 3 | Victor e Eduardo | Aceito |
+|[TS40](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/178)| Planejamento da Sprint 10 | 2 | Rafael | Aceito     |
+|[TS41](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/184)| Restrospectiva da Sprint 9 | 2 | Caio Gabriel            | Aceito     |
+|[TS42](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/188)| Atualização de Dependência | 1 |  Eduardo           | Aceito     |
 
 
 
@@ -40,7 +43,10 @@
 
 |ID|História|Pontos|Responsáveis|Status|
 |:-:|:-----:|:----:|:----------:|:----:|
-|[]()|      |     |             |      |
+|[US18](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/180)| Criar categoria para os médicos de acordo com a especialidade | 3 | Victor e Joao Victor | Aceito     |
+|[US20](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/182)| Filtrar tabela de horários | 5 | Caio Beleza, Adrielly e Guilherme | Aceito |
+|[US17](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/179)| Criar opção de legenda | 5 | Victor e Joao Victor | Aceito |
+|[US19]()https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/181| Criar escala clínica | 3 | Caio Beleza, Adrielly e Guilherme | Aceito |
 
 
 
