@@ -57,7 +57,17 @@
 
 ## 4 - Riscos
 
+- Nessa sprint não houve o pareamento de MDS com EPS novamente devido ao fato do grupo de MDS ter elevado seu conhecimento ao ponto de adquirir independencia no conteudo técnico.
 
+- Alguns integrantes estão enfrentando problemas com outros integrantes do grupo, devido a falta de compromisso, de estudo e de entrega. 
+
+- Alguns Integrantes agregando muitas pontuações, enquanto outros estão sendo pouco produtivos. Desse modo, todos os integrantes foram alertados que esse fator gerou uma queda no burndonw da equipe. A fim de corrigir o gráfico, as histórias foram melhor filtradas em questão de dificuldade, e o pareamento também está sendo melhor filtrado para uma efetiva distribuição de conhecimento. Tendo em vista esses problemas e essas correções, todos os pontos planejados da Sprint foram entregues.
+
+-Muitos integrantes não estão respeitando o compromisso de presença nas reuniões semanais, gerando uma reunião menos produtiva. Desse modo, será adicionada lista de chamada em todas as documentações das Sprints, com o intuito de controlar a presença dos integrantes.
+
+-Em relação ao escopo a equipe conseguiu um bom direcionamento, mas não tem total conhecimento do que a cliente deseja. Desse modo, será feito outro teste funcional com o stakeholder, para que possamos entregar um produto eficaz e eficiente.
+
+-Como a interface está pouco intuitiva, como foi passado para a equipe, nas proximas sprints serão feitos outros teste de usabilidade.
 
 
 ## 5 - Quadro de conhecimentos
