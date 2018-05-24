@@ -32,3 +32,9 @@ class UpdateDoctorAPI(generics.RetrieveUpdateAPIView):
     queryset = Doctors.objects.all()
     serializer_class = DoctorCreateUpdateSerializer
     lookup_field = 'registration'
+
+class ListDoctorCategory(generics.RetrieveAPIView):
+    permission_classes = [AllowAny]
+    queryset = Doctors.objects.all()
+    serializer_class = DoctorSerializer
+    lookup_field = 'category'

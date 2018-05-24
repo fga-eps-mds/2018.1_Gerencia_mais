@@ -7,6 +7,7 @@ from doctor.views import (
         ListDetailDoctor,
         CreateDoctorAPI,
         UpdateDoctorAPI,
+        ListDoctorCategory,
 )
 
 urlpatterns = [
@@ -15,6 +16,7 @@ urlpatterns = [
     url(r'^api-doctor/update/(?P<registration>[\w-]+)/$',UpdateDoctorAPI.as_view(), name="admin-update"),
     url(r'^api-doctor/(?P<name>[\w-]+)/$',ListDetailDoctor.as_view(),name="admin-detail-list"),
     url(r'^api-doctor/$',ListDoctor.as_view(),name = "admin-list"),
+    url(r'^api-doctor/list/(?P<category>[\w-]+)/$',ListDoctorCategory.as_view(),name="admin-category-list")
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
