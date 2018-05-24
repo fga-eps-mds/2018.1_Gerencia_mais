@@ -1,8 +1,5 @@
 from django.conf.urls import url
-from django.urls import path
-from django.views.generic.list import ListView
 
-from rest_framework import generics
 from rest_framework.urlpatterns import format_suffix_patterns
 
 from doctor.views import (
