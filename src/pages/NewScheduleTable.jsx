@@ -15,23 +15,23 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 
 
 Calendar.setLocalizer(Calendar.momentLocalizer(moment));
-var ds = new Date(2018,5,22,8);
+var ds = new Date(2018,4,22,8);
 ds = ds.toISOString();
-var de = new Date(2018,5,22,10);
+var de = new Date(2018,4,22,10);
 de = de.toISOString();
 export default class NewScheduleTable extends Component {
-    constructor(){
-      super();
+    constructor(props){
+      super(props);
       this.state={
         doctor_events_list: [],
         all_events: [],
         all_doctors: [],
         events: [
           {
-        start:ds ,
-        end:de ,
-        title: "Some title"
-}
+            start:ds ,
+            end:de ,
+            title: "Some title"
+          }
         ]
       };
     }
@@ -48,7 +48,7 @@ export default class NewScheduleTable extends Component {
           console.log(e);
         }
         await this.componentDidMount2();
-        await this.createEventDoctorList();
+
       }
 
       async componentDidMount2() {
@@ -62,27 +62,26 @@ export default class NewScheduleTable extends Component {
           } catch (e) {
             console.log(e);
           }
-        }
+          await this.createEventDoctorList();
+      }
       createEventDoctorList(){
         var title,start,end;
-
         this.state.all_events.map(each => (
-          console.log(each.doctor),
           title = this.getDoctorId(each.doctor),
-          console.log(title),
           start = new Date(each.start),
           end = new Date(each.end),
-          this.state.doctor_events_list.push({'title':title,'start':start,'end':end})
-        ))
+          this.state.doctor_events_list.push({'start':start,'end':end,'title':title})
+        ));
+        this.setState({
+            doctor_events_list: this.state.doctor_events_list,
+        })
       }
 
       getDoctorId(id){
         var name = "";
         this.state.all_doctors.map(each =>(
-           console.log(id),
            name = this.compareId(each.id,id,each.name, name)
-        )
-        )
+        ));
         return name;
       }
 
@@ -95,18 +94,14 @@ export default class NewScheduleTable extends Component {
         }
         return name;
       }
-
-
     render() {
-      console.log(this.state.events[0].start);
-      console.log(this.state.doctor_events_list);
     	return (
+
     	  <div>
     	    <NavBar></NavBar>
           <SideBar></SideBar>
             <div  className="container">
                 <div style={{marginTop:"70px",marginBottom:"100px"}} className="jumbotron">
-
                     <div className="App">
                       <header className="App-header">
                         <h1 >Quadro de Horários</h1>
@@ -118,7 +113,6 @@ export default class NewScheduleTable extends Component {
                         style={{ height: "100vh" }}
                       />
                     </div>
-
                 </div>
             </div>
             <Footer></Footer>
