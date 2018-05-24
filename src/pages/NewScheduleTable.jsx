@@ -15,10 +15,10 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 
 
 Calendar.setLocalizer(Calendar.momentLocalizer(moment));
-var ds = new Date(2018,4,22,8);
-ds = ds.toISOString();
-var de = new Date(2018,4,22,10);
-de = de.toISOString();
+var test;
+var ds = new Date(Date.UTC(2018,4,1,7));
+console.log(ds);
+var de = new Date(Date.UTC(2018,4,1,13));
 export default class NewScheduleTable extends Component {
     constructor(props){
       super(props);
@@ -28,7 +28,7 @@ export default class NewScheduleTable extends Component {
         all_doctors: [],
         events: [
           {
-            start:ds ,
+            start:ds,
             end:de ,
             title: "Some title"
           }
@@ -57,24 +57,32 @@ export default class NewScheduleTable extends Component {
             const res = await fetch(name);
             console.log(res);
             const all_events = await res.json();
-            console.log(all_events);
             this.setState({all_events});
           } catch (e) {
             console.log(e);
           }
           await this.createEventDoctorList();
       }
+
+      parseISOLocal(s) {
+        var b = s.split(/\D/);
+        return new Date(b[0], b[1]-1, b[2], b[3], b[4], b[5]);
+      }
+
       createEventDoctorList(){
+        var s,e;
         var title,start,end;
         this.state.all_events.map(each => (
           title = this.getDoctorId(each.doctor),
-          start = new Date(each.start),
-          end = new Date(each.end),
+          start = this.parseISOLocal(each.start),
+          end = this.parseISOLocal(each.end),
           this.state.doctor_events_list.push({'start':start,'end':end,'title':title})
         ));
         this.setState({
-            doctor_events_list: this.state.doctor_events_list,
+             doctor_events_list: this.state.doctor_events_list,
         })
+        console.log(this.state.doctor_events_list);
+        console.log(this.state.events);
       }
 
       getDoctorId(id){
@@ -94,6 +102,7 @@ export default class NewScheduleTable extends Component {
         }
         return name;
       }
+
     render() {
     	return (
 
@@ -107,6 +116,7 @@ export default class NewScheduleTable extends Component {
                         <h1 >Quadro de Horários</h1>
                       </header>
                       <Calendar
+                        views={['month', 'week', 'day']}
                         defaultDate={new Date()}
                         defaultView="month"
                         events={this.state.doctor_events_list}
