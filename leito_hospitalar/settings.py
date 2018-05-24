@@ -121,24 +121,13 @@ WSGI_APPLICATION = 'leito_hospitalar.wsgi.application'
 # }
 #
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'd6am9lm80csuij',
-#         'USER': 'xhpfyinrdmyeca',
-#         'PASSWORD': '70d69b99aa7d4c95f6edaa8e64ec1fb9029e9a29594ff7753ac27623709fb3f0',
-#         'HOST': 'ec2-174-129-206-173.compute-1.amazonaws.com',
-#         'PORT': '5432',
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'db',
+        'NAME': 'd6am9lm80csuij',
+        'USER': 'xhpfyinrdmyeca',
+        'PASSWORD': '70d69b99aa7d4c95f6edaa8e64ec1fb9029e9a29594ff7753ac27623709fb3f0',
+        'HOST': 'ec2-174-129-206-173.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
