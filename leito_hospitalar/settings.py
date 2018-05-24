@@ -46,9 +46,7 @@ INSTALLED_APPS = [
     'user',
     'django_filters',
     'subtitle',
-    'administrator',
     'leito_hospitalar',
-    'administrator',
     'chatterbot.ext.django_chatterbot',
 ]
 
