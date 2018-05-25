@@ -9,38 +9,42 @@ from django.utils import timezone
 
 from schedule.models import Calendar, Event, EventRelation, Rule
 
+from subtitle.models import Subtitles
+
+subtitle = Subtitles(3)
+calendar = Calendar(1)
 
 class TestEvent(TestCase):
-    def __create_event(self, title, start, end, cal, status):
+    def __create_event(self, start, end, calendar):
+        calendar = Calendar(1)
         return Event.objects.create(
-            title=title,
+            subtitle=subtitle,
             start=start,
             end=end,
-            calendar=cal,
+            calendar=calendar,
         )
 
-    def __create_recurring_event(self, title, start, end, end_recurring, rule, cal):
+    def __create_recurring_event(self, start, end, end_recurring, rule, calendar):
         return Event.objects.create(
-            title=title,
+            subtitle=subtitle,
             start=start,
             end=end,
             end_recurring_period=end_recurring,
             rule=rule,
-            calendar=cal,
+            calendar=calendar,
         )
 
     def test_prevent_type_error_when_comparing_naive_and_aware_dates(self):
         # this only test if the TypeError is raised
-        cal = Calendar.objects.create(name="MyCal")
+        calendar = Calendar.objects.create(name="MyCal")
         rule = Rule.objects.create(frequency="WEEKLY")
 
         event = self.__create_recurring_event(
-            'Recurrent event test get_occurrence',
             datetime.datetime(2008, 1, 5, 8, 0, tzinfo=pytz.utc),
             datetime.datetime(2008, 1, 5, 9, 0, tzinfo=pytz.utc),
             datetime.datetime(2008, 5, 5, 0, 0, tzinfo=pytz.utc),
             rule,
-            cal,
+            calendar,
         )
         naive_date = datetime.datetime(2008, 1, 20, 0, 0)
         self.assertIsNone(event.get_occurrence(naive_date))
@@ -51,12 +55,11 @@ class TestEvent(TestCase):
         rule = Rule.objects.create(frequency="WEEKLY")
 
         event = self.__create_recurring_event(
-            'Recurrent event test get_occurrence',
             datetime.datetime(2008, 1, 5, 8, 0),
             datetime.datetime(2008, 1, 5, 9, 0),
             datetime.datetime(2008, 5, 5, 0, 0),
             rule,
-            cal,
+            calendar,
         )
         naive_date = datetime.datetime(2008, 1, 20, 0, 0)
         self.assertIsNone(event.get_occurrence(naive_date))
@@ -68,12 +71,11 @@ class TestEvent(TestCase):
 
         Rule.objects.create(frequency="DAILY")
         cal = Calendar.objects.create(name='MyCal')
+        cal = calendar
         event = self.__create_event(
-            'event test',
             datetime.datetime(2013, 1, 5, 8, 0, tzinfo=pytz.utc),
             datetime.datetime(2013, 1, 5, 9, 0, tzinfo=pytz.utc),
             cal,
-            status = None,
         )
         events = list(Event.objects.get_for_object(user, 'owner', inherit=False))
         self.assertEqual(len(events), 0)
