@@ -9,146 +9,124 @@ import "../css/popup.css";
 import "../css/bootstrap.min.css";
 import InfiniteCalendar from 'react-infinite-calendar';
 import 'react-infinite-calendar/styles.css';
-
-class GridCell extends Component {
-  constructor(props){
-    super(props);
-    this.state = {"line":props.line,"column":props.column,"update":1,};
-    this.onClickUpdate = this.onClickUpdate.bind(this);
-  }
-
-    resolveButton(line,column){
-      fetch("http://localhost:8000/doctor/api-doctor/?format=json")
-      .then(response => response.json())
-      .then(contacts => this.setState({
-        contacts
-      }))
-      .catch(error => console.log("error to get data " + error));
-    };
-
-    onClickUpdate(e){
-      const title = e.target.title;
-      const value = e.target.value;
-      this.setState(
-        {[title]:value,}
-      );
-    }
+import Calendar from "react-big-calendar";
+import moment from "moment";
+import "react-big-calendar/lib/css/react-big-calendar.css";
 
 
-  render(){
-
-    let update;
-    if(this.state.update===1){
-      this.state.update = 0;
-      update = (
-        <div>{this.resolveButton(this.props.line,this.props.column)}</div>
-      )
-    }else {
-      update = (
-        <div></div>
-      )
-    }
-    return(
-      <td>
-      {update}
-      <div className="">
-        <div className="">
-          {
-            this.state.contacts != null ? this.state.contacts.map(user =>
-              <div className ="doctorName"><span>{user.name}</span><br></br><br></br></div>
-            )
-            : null
-          }
-        </div>
-      </div>
-
-      </td>
-    )
-  }
-}
-
+Calendar.setLocalizer(Calendar.momentLocalizer(moment));
+var test;
+var ds = new Date(Date.UTC(2018,4,1,7));
+console.log(ds);
+var de = new Date(Date.UTC(2018,4,1,13));
 export default class NewScheduleTable extends Component {
-    constructor(){
-      super();
-      this.state={"content":"Selecione uma opcao", "popup":"", "contacts":""};
+    constructor(props){
+      super(props);
+      this.state={
+        doctor_events_list: [],
+        all_events: [],
+        all_doctors: [],
+        events: [
+          {
+            start:ds,
+            end:de ,
+            title: "Some title"
+          }
+        ]
+      };
     }
 
+    async componentDidMount() {
+        try {
+          const name = 'http://localhost:8000/doctor/api-doctor/';
+          const res = await fetch(name);
+          console.log(res);
+          const all_doctors = await res.json();
+          console.log(all_doctors);
+          this.setState({all_doctors});
+        } catch (e) {
+          console.log(e);
+        }
+        await this.componentDidMount2();
 
+      }
 
-    daysInMonth(month, year) {
-      return new Date(year, month, 0).getDate();
-    }
+      async componentDidMount2() {
+          try {
+            const name = 'http://localhost:8000/schedule/api-event/';
+            const res = await fetch(name);
+            console.log(res);
+            const all_events = await res.json();
+            this.setState({all_events});
+          } catch (e) {
+            console.log(e);
+          }
+          await this.createEventDoctorList();
+      }
 
-    fetchData(){
+      parseISOLocal(s) {
+        var b = s.split(/\D/);
+        return new Date(b[0], b[1]-1, b[2], b[3], b[4], b[5]);
+      }
 
-      fetch("http://localhost:8000/doctor/api-doctor/?format=json")
-      .then(response => response.json())
-      .then(contacts => this.setState({
-        contacts
-      }))
-      .catch(error => console.log("error to get data " + error));
-    }
+      createEventDoctorList(){
+        var s,e;
+        var title,start,end;
+        this.state.all_events.map(each => (
+          title = this.getDoctorId(each.doctor),
+          start = this.parseISOLocal(each.start),
+          end = this.parseISOLocal(each.end),
+          this.state.doctor_events_list.push({'start':start,'end':end,'title':title})
+        ));
+        this.setState({
+             doctor_events_list: this.state.doctor_events_list,
+        })
+        console.log(this.state.doctor_events_list);
+        console.log(this.state.events);
+      }
 
+      getDoctorId(id){
+        var name = "";
+        this.state.all_doctors.map(each =>(
+           name = this.compareId(each.id,id,each.name, name)
+        ));
+        return name;
+      }
 
-    resolveButtonMonth(){
-      var popup = (
-        <Popup
-        trigger={<button className="btn btn-outline-primary">Relatorio Diario</button>}
-        modal
-        closeOnDocumentClick
-        >
-
-        <div className="popupShape ">
-          <div className="pre-scrollable">
-            <h4 className='modal-header whitename'>Médicos</h4>
-            {
-              this.state.contacts != null ? this.state.contacts.map(user =>
-                  <div><strong>Nome: </strong> <span>{user.name}</span><br></br><strong>Função: </strong>Médico<br></br><br></br></div>
-              )
-              : null
-            }
-          </div>
-        </div>
-        </Popup>
-      )
-      this.setState({"component":this.changeTable(true), "popup":popup})
-    }
-
-
+      compareId(id,id2,doctorName,realName){
+        if(id === id2){
+          var name = doctorName;
+        }
+        else{
+          var name = realName;
+        }
+        return name;
+      }
 
     render() {
+    	return (
 
-	return (
-	  <div>
-	    <NavBar></NavBar>
-      <SideBar></SideBar>
-        <div className="container mudah1">
-            <h1 style={{marginTop:"70px"}}>Quadro de Horários</h1>
-
-              <table className="wallpaper table-background" striped bordered rounded hover>
-                <thead className="th-height">
-                   <tr>
-                    <th>.</th>
-                    <th>.</th>
-                    <th className="th-height">TESTEEDOMI 5 </th>
-                    <th>TESTEEDOMI 5 </th>
-                    <th>TESTEEDOMI</th>
-                    <th>TESTEEDOMI 5</th>
-                    <th>TESTEEDOMI</th>
-                    <th>TESTEEDOMI</th>
-                    <th>TESTEEDOMI</th>
-                   </tr>
-                </thead>
-                       <tbody>
-
-
-                       </tbody>
-                     </table>
-        </div>
-
-
-       <Footer></Footer>
-	    </div>
-	);
+    	  <div>
+    	    <NavBar></NavBar>
+          <SideBar></SideBar>
+            <div  className="container">
+                <div style={{marginTop:"70px",marginBottom:"100px"}} className="jumbotron">
+                    <div className="App">
+                      <header className="App-header">
+                        <h1 >Quadro de Horários</h1>
+                      </header>
+                      <Calendar
+                        views={['month', 'week', 'day']}
+                        defaultDate={new Date()}
+                        defaultView="month"
+                        events={this.state.doctor_events_list}
+                        style={{ height: "100vh" }}
+                      />
+                    </div>
+                </div>
+            </div>
+            <Footer></Footer>
+    	    </div>
+    	);
     }
-}
+ }
