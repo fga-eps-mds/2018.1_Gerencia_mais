@@ -2,6 +2,7 @@ from subtitle.models import Subtitles
 
 from subtitle.serializer import (
     SubtitlesSerializer,
+    SubtitlesListSerializer,
     SubtitlesCreateUpdateSerializer
 )
 
@@ -25,7 +26,7 @@ class ListDetailSubtitles(generics.RetrieveAPIView):
     permission_classes = [AllowAny]
     queryset = Subtitles.objects.all()
     serializer_class = SubtitlesSerializer
-    lookup_field = 'id'
+    lookup_field = 'code'
 
 class UpdateSubtitlesAPI(generics.RetrieveUpdateAPIView):
     permission_classes = [AllowAny]
