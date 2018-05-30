@@ -14,8 +14,8 @@
 |**Data de início**|28/05/2018|
 |**Data de término**|02/06/2018|
 |**Duração**|7 dias|
-|**Pontos planejados**| |
-|**Pontos de dívidas Técnicas**| |
+|**Pontos planejados**|33|
+|**Pontos de dívidas Técnicas**|15|
 
 ## 2 - Papéis
 
@@ -35,21 +35,17 @@
 
 ## 3 - Pareamento
 
+O pareamento apresentado abaixo foi definido baseado no quadro de conhecimento apresentado logo em seguida.
+<img src="{{site.baseurl}}/documentos/imagens/Sprint11/conhecimento_s11.png">
+A fim de garantir o cumprimento das Histórias de Usuário durante a *sprint*. Focamos em colocar pessoas com maior conhecimento com pessoas que possuem menor conhecimento, a fim de distribuir e equalizar o nível da equipe. Abaixo apresentamos o quadro de pareamento obtido a apartir das observações apresentadas anteriormente.
 
-
-
-
+<img src="{{site.baseurl}}/documentos/imagens/Sprint11/pareamento_s12.png">
 
 ## 4 - Histórias planejadas
 
 ### 4.1 - Sprint anteriores
 
-
-
-|ID|História|Pontos|Responsáveis|
-|:-:|:-----:|:----:|:----------:|
-|[]()|      |       |
-
+Na execução das sprints anteriores, não houve histórias pendentes, ou seja, não hove débitos. Isso se deve ao fato de que a equipe se planejou e gerenciou riscos de uma melhor forma, afim de melhorar os indicadores.
 
 ### 4.2 - Novas histórias
 
