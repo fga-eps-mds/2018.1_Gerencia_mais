@@ -23,22 +23,32 @@ export default class NewScheduleTable extends Component {
     constructor(props){
       super(props);
       this.state={
+        content: ("Selecione uma opcao"),
         doctor_events_list: [],
         all_events: [],
         all_doctors: [],
+        category : '',
         events: [
           {
             start:ds,
             end:de ,
-            title: "Some title"
+            title: "carregando"
           }
         ]
       };
     }
 
     async componentDidMount() {
+      this.changeTable(1);
+      await this.componentDidMount1();
+    }
+    async componentDidMount3() {
+      this.changeTable(1);
+    }
+
+    async componentDidMount1() {
         try {
-          const name = 'http://localhost:8000/doctor/api-doctor/';
+          const name = 'http://localhost:8000/doctor/api-doctor/list-doctor/1/?category='+this.state.category;
           const res = await fetch(name);
           console.log(res);
           const all_doctors = await res.json();
@@ -48,6 +58,7 @@ export default class NewScheduleTable extends Component {
           console.log(e);
         }
         await this.componentDidMount2();
+        await this.componentDidMount3();
 
       }
 
@@ -103,9 +114,40 @@ export default class NewScheduleTable extends Component {
         return name;
       }
 
+      changeTable(tableNumber){
+        var content;
+        switch(tableNumber){
+          case 1:
+             content = (
+               <Calendar
+                 views={['month', 'week', 'day']}
+                 defaultDate={new Date()}
+                 defaultView="month"
+                 events={this.state.doctor_events_list}
+                 style={{ height: "100vh" }}
+               />
+            )
+          break;
+        case 2:
+          content = (
+            <Calendar
+              views={['month', 'week', 'day']}
+              defaultDate={new Date()}
+              defaultView="month"
+              events={this.state.events}
+              style={{ height: "100vh" }}
+            />
+         )
+         break;
+
+       }
+
+          this.setState({"content": content})
+        }
+
+
     render() {
     	return (
-
     	  <div>
     	    <NavBar></NavBar>
           <SideBar></SideBar>
@@ -113,15 +155,16 @@ export default class NewScheduleTable extends Component {
                 <div style={{marginTop:"70px",marginBottom:"100px"}} className="jumbotron">
                     <div className="App">
                       <header className="App-header">
+
+                        <ButtonToolbar>
+                            <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
+                              <ToggleButton className="btn btn-outline-primary" value={1} onClick={()=>this.changeTable(1)}>Geral</ToggleButton>
+                              <ToggleButton className="btn btn-outline-primary" value={2} onClick={()=>this.changeTable(2)}>Outro</ToggleButton>
+                            </ToggleButtonGroup>
+                        </ButtonToolbar>
                         <h1 >Quadro de Horários</h1>
                       </header>
-                      <Calendar
-                        views={['month', 'week', 'day']}
-                        defaultDate={new Date()}
-                        defaultView="month"
-                        events={this.state.doctor_events_list}
-                        style={{ height: "100vh" }}
-                      />
+                      {this.state.content}
                     </div>
                 </div>
             </div>
