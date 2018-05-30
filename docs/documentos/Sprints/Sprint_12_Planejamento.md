@@ -14,8 +14,8 @@
 |**Data de início**|28/05/2018|
 |**Data de término**|02/06/2018|
 |**Duração**|7 dias|
-|**Pontos planejados**|33|
-|**Pontos de dívidas Técnicas**|15|
+|**Pontos planejados**|35|
+|**Pontos de dívidas Técnicas**|0|
 
 ## 2 - Papéis
 
@@ -63,6 +63,7 @@ Na execução das sprints anteriores, não houve histórias pendentes, ou seja, 
 
 |ID|História|Pontos|Responsáveis|
 |:-:|:-----:|:----:|:----------:|
+|[TS52](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/228)| Retrospectiva da Sprint 11| 2 | Eduardo |
 |[TS51](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/225)| Planejamento da Sprint 12| 2 | Caio Gabriel |
 |[TS50](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/221)| Teste de Frontend| 3 | Caio Beleza, Victor Hugo e Adrielly |
 |[TS49](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/219)| Atualizar Documento de Riscos | 2 | Caio Gabriel e Joao Gabriel |
