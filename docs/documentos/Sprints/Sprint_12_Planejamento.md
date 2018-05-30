@@ -54,7 +54,9 @@ Na execução das sprints anteriores, não houve histórias pendentes, ou seja, 
 
 |ID|História|Pontos|Responsáveis|
 |:-:|:-----:|:----:|:----------:|
-|[]()|       |  |   |
+|[US27](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/220)| Melhorar Frontend | 8 | Caio Beleza, Victor Hugo e Adrielly  |
+|[US28](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/222)| Aumentar cobertura de teste do backend | 5 | Guilherme e Joao Victor |
+|[US29](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/223)| Integrar back e front na funcionalidade de filtro “categoria de médico” | 5 | Guilherme e Joao Victor  |
 
 
   ***Technical Stories***
