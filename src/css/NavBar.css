@@ -5,7 +5,7 @@
   font-family: 'Coustard', sans-serif;
 }
 .title:hover {
-  background-color: #389e8e;
+  background-color: #4DACFB;
 }
 .uls {
   padding-left: 50px;
@@ -13,7 +13,7 @@
 .navbar-right {
   font-family: 'Coustard', sans-serif;
   font-size: 2.5em;
-  margin-left: 16%;
+  margin-left: 8%;
   padding-right: 20px;
 }
 .navbar-right:hover {

@@ -1,16 +1,11 @@
 
 @import url('https://fonts.googleapis.com/css?family=Coustard|Encode+Sans');
 
-body {
-    background: url('../images/black_wallpaper.jpg');
-    background-size: cover;
-    background-position: center;
-		background-repeat: no-repeat;
-    background-color: #002e4D;
-}
+
 
 .fundo{
-  background-color: #002e4D;
+  background: linear-gradient(#40AED2,#20C3D3);
+  background-repeat: no-repeat;
 }
 
 h1 {
@@ -41,7 +36,7 @@ h1 {
 }
 
 .espaco{
-  padding-bottom: 200px;
+  padding-bottom: 550px;
 }
 
 .top-space {
