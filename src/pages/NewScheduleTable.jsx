@@ -23,11 +23,12 @@ export default class NewScheduleTable extends Component {
     constructor(props){
       super(props);
       this.state={
-        content: ("Selecione uma opcao"),
         doctor_events_list: [],
         all_events: [],
         all_doctors: [],
-        zerado : [],
+        all_category : [
+          "geral", "outra","essa"
+        ],
         category : '',
         events: [
           {
@@ -75,6 +76,9 @@ export default class NewScheduleTable extends Component {
       createEventDoctorList(){
         var s,e;
         var title,start,end;
+        this.setState({
+          doctor_events_list : [],
+        })
         this.state.all_events.map(each => (
           title = this.getDoctorId(each.doctor),
           start = this.parseISOLocal(each.start),
@@ -82,15 +86,17 @@ export default class NewScheduleTable extends Component {
           this.state.doctor_events_list.push({'start':start,'end':end,'title':title})
         ));
         for(var i = this.state.doctor_events_list.length - 1; i >= 0; i--) {
-    if(this.state.doctor_events_list[i].title === '') {
-       this.state.doctor_events_list.splice(i, 1);
-    }
-}
+          if(this.state.doctor_events_list[i].title === '') {
+            this.state.doctor_events_list.splice(i, 1);
+          }
+        }
+
         this.setState({
              doctor_events_list: this.state.doctor_events_list,
-        })
+        });
+        console.log(this.state.all_doctors);
+        console.log(this.state.all_events);
         console.log(this.state.doctor_events_list);
-        console.log(this.state.events);
       }
 
       getDoctorId(id){
@@ -111,32 +117,34 @@ export default class NewScheduleTable extends Component {
         return name;
       }
 
-      async changeTable(tableNumber){
-        switch(tableNumber){
-          case 1:
-           await this.setState({
-            category: "essa",
-            all_doctors: [],
-            all_events: [],
-            doctor_events_list: [],
-          })
-          await this.componentDidMount()
-          break;
-        case 2:
-        await this.setState({
-          category: "outra",
+      changeTable(tableNumber){
+        if (tableNumber === 0) {
+          this.setState({
+          category : "",
           all_doctors: [],
           all_events: [],
-          doctor_events_list: [],
-        })
-          await this.componentDidMount()
-         break;
+          })
+        }
+        else {
+          this.setState({
+          category : this.state.all_category[tableNumber],
+          all_doctors: [],
+          all_events: [],
+          })
+        }
 
-       }
+        this.componentDidMount()
+
     }
 
 
-    render() {
+    render(){
+        let toolBar = []
+        for(let i=0; i<this.state.all_category.length; i++){
+          toolBar.push(
+             <ToggleButton className="btn btn-outline-primary" value={i} onClick={()=>this.changeTable(i)}>{this.state.all_category[i]}</ToggleButton>
+           )
+        }
     	return (
     	  <div>
     	    <NavBar></NavBar>
@@ -147,9 +155,8 @@ export default class NewScheduleTable extends Component {
                       <header className="App-header">
 
                         <ButtonToolbar>
-                            <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
-                              <ToggleButton className="btn btn-outline-primary" value={1} onClick={()=>this.changeTable(1)}>Geral</ToggleButton>
-                              <ToggleButton className="btn btn-outline-primary" value={2} onClick={()=>this.changeTable(2)}>Outro</ToggleButton>
+                            <ToggleButtonGroup type="radio" name="options" defaultValue={0}>
+                              {toolBar}
                             </ToggleButtonGroup>
                         </ButtonToolbar>
                         <h1 >Quadro de Horários</h1>
