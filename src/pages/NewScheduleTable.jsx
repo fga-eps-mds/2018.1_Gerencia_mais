@@ -27,6 +27,7 @@ export default class NewScheduleTable extends Component {
         doctor_events_list: [],
         all_events: [],
         all_doctors: [],
+        zerado : [],
         category : '',
         events: [
           {
@@ -39,14 +40,6 @@ export default class NewScheduleTable extends Component {
     }
 
     async componentDidMount() {
-      this.changeTable(1);
-      await this.componentDidMount1();
-    }
-    async componentDidMount3() {
-      this.changeTable(1);
-    }
-
-    async componentDidMount1() {
         try {
           const name = 'http://localhost:8000/doctor/api-doctor/list-doctor/1/?category='+this.state.category;
           const res = await fetch(name);
@@ -58,7 +51,6 @@ export default class NewScheduleTable extends Component {
           console.log(e);
         }
         await this.componentDidMount2();
-        await this.componentDidMount3();
 
       }
 
@@ -89,6 +81,11 @@ export default class NewScheduleTable extends Component {
           end = this.parseISOLocal(each.end),
           this.state.doctor_events_list.push({'start':start,'end':end,'title':title})
         ));
+        for(var i = this.state.doctor_events_list.length - 1; i >= 0; i--) {
+    if(this.state.doctor_events_list[i].title === '') {
+       this.state.doctor_events_list.splice(i, 1);
+    }
+}
         this.setState({
              doctor_events_list: this.state.doctor_events_list,
         })
@@ -114,36 +111,29 @@ export default class NewScheduleTable extends Component {
         return name;
       }
 
-      changeTable(tableNumber){
-        var content;
+      async changeTable(tableNumber){
         switch(tableNumber){
           case 1:
-             content = (
-               <Calendar
-                 views={['month', 'week', 'day']}
-                 defaultDate={new Date()}
-                 defaultView="month"
-                 events={this.state.doctor_events_list}
-                 style={{ height: "100vh" }}
-               />
-            )
+           await this.setState({
+            category: "essa",
+            all_doctors: [],
+            all_events: [],
+            doctor_events_list: [],
+          })
+          await this.componentDidMount()
           break;
         case 2:
-          content = (
-            <Calendar
-              views={['month', 'week', 'day']}
-              defaultDate={new Date()}
-              defaultView="month"
-              events={this.state.events}
-              style={{ height: "100vh" }}
-            />
-         )
+        await this.setState({
+          category: "outra",
+          all_doctors: [],
+          all_events: [],
+          doctor_events_list: [],
+        })
+          await this.componentDidMount()
          break;
 
        }
-
-          this.setState({"content": content})
-        }
+    }
 
 
     render() {
@@ -164,7 +154,13 @@ export default class NewScheduleTable extends Component {
                         </ButtonToolbar>
                         <h1 >Quadro de Horários</h1>
                       </header>
-                      {this.state.content}
+                      <Calendar
+                        views={['month', 'week', 'day']}
+                        defaultDate={new Date()}
+                        defaultView="month"
+                        events={this.state.doctor_events_list}
+                        style={{ height: "100vh" }}
+                      />
                     </div>
                 </div>
             </div>
