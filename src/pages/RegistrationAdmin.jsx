@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 //import {Link} from 'react-router-dom';
 import '../css/bootstrap.css';
-import '../css/HomePage.css';
+import '../css/DoctorForm.css';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer'
 import {Popover} from 'react-bootstrap';
@@ -111,7 +111,7 @@ render(){
   return(
     <div>
     <NavBar></NavBar>
-      <div classtitle="top-space espaco espaco-acima">
+        <div className="top-space espaco espaco-acima">
         <div className="form-style-5">
           <form>
             <h3>Cadastro de Administradores</h3>

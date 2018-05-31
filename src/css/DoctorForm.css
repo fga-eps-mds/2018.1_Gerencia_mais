@@ -1,5 +1,8 @@
 
-
+body{
+  background: linear-gradient(#40AED2,#20C3D3);
+  background-repeat: no-repeat;
+}
 
 .form-style-5{
     max-width: 500px;
@@ -7,7 +10,6 @@
     background: #f4f7f8;
     margin: 10px auto;
     padding: 20px;
-    background: #f4f7f8;
     border-radius: 8px;
     font-family: Georgia, "Times New Roman", Times, serif;
 }
@@ -22,9 +24,7 @@
     display: block;
     margin-bottom: 8px;
 }
-.fundo{
-  
-}
+
 
 .form-style-5 input[type="text"],
 .form-style-5 input[type="date"],
@@ -111,7 +111,7 @@
   background-color: black;
 }
 .espaco-acima {
-  padding-top: 100px;
+  padding-top: 10px;
 }
 
 table, th, td {

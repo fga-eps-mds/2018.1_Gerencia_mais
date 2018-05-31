@@ -1,7 +1,13 @@
 
 @import url('https://fonts.googleapis.com/css?family=Coustard|Encode+Sans');
 
-
+/*body {
+    background: url('../images/black_wallpaper.jpg');
+    background-size: auto;
+    background-position: center;
+		background-repeat: no-repeat;
+    background-color: #002e4D;
+}*/
 
 .fundo{
   background: linear-gradient(#40AED2,#20C3D3);
@@ -22,6 +28,7 @@ h1 {
 }
 
 .image {
+
   height: 120px;
   width: 120px;
   text-align: center;
@@ -43,7 +50,9 @@ h1 {
   margin-top: 62px;
 }
 
-.title-space{}
+.title-space{
+  margin-top: 62px;
+}
 
 .aumenta {
 	font-size: 10em;
