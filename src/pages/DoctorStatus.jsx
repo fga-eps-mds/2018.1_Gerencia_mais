@@ -78,8 +78,7 @@ export default class DoctorStatus extends Component {
 }
 
   render(){
-    console.log("Temp:"+" "+this.state.temp_registration);
-    console.log("Temp:"+" "+this.state.registration);
+
 
     let information;
     let status;
