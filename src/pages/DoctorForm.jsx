@@ -4,7 +4,6 @@ import '../css/bootstrap.css';
 import '../css/DoctorForm.css';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import SideBar from '../components/SideBar';
 // import Select from 'react-select';
 
 var date = new Date().toISOString();
@@ -104,9 +103,12 @@ export default class DoctorForm extends Component {
 
   handleSubmit = e => {
     console.log("entrou");
-    this.state.start = this.state.start + "T" + this.state.time_start + "Z";
-    this.state.end = this.state.end + "T" + this.state.time_end + "Z";
-    this.state.is_valid = true;
+    this.setState({"start":this.state.start + "T" + this.state.time_start + "Z"})
+    // this.state.start = this.state.start + "T" + this.state.time_start + "Z";
+    this.setState({"end":this.state.end + "T" + this.state.time_end + "Z"})
+    // this.state.end = this.state.end + "T" + this.state.time_end + "Z";
+    this.setState({"is_valid":true})
+    // this.state.is_valid = true;
     console.log(this.state.start + " " + this.state.end);
     e.preventDefault();
     const {start, end, hospital, subtitle, creator, rule, calendar, doctor} = this.state;
@@ -120,7 +122,7 @@ export default class DoctorForm extends Component {
       headers: new Headers({ "Content-Type": "application/json" })
     };
     fetch('http://localhost:8000/schedule/api-event/', conf).then(response => console.log(response));
-    this.setState({['is_valid']:true});
+    this.setState({'is_valid':true});
 }
   render(){
     return(
