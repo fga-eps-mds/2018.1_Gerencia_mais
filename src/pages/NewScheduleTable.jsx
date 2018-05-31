@@ -26,11 +26,15 @@ export default class NewScheduleTable extends Component {
         doctor_events_list: [],
         all_events: [],
         all_doctors: [],
+        all_category : [
+          "geral", "outra","essa"
+        ],
+        category : '',
         events: [
           {
             start:ds,
             end:de ,
-            title: "Some title"
+            title: "carregando"
           }
         ]
       };
@@ -38,7 +42,7 @@ export default class NewScheduleTable extends Component {
 
     async componentDidMount() {
         try {
-          const name = 'http://localhost:8000/doctor/api-doctor/';
+          const name = 'http://localhost:8000/doctor/api-doctor/list-doctor/1/?category='+this.state.category;
           const res = await fetch(name);
           console.log(res);
           const all_doctors = await res.json();
@@ -72,17 +76,27 @@ export default class NewScheduleTable extends Component {
       createEventDoctorList(){
         var s,e;
         var title,start,end;
+        this.setState({
+          doctor_events_list : [],
+        })
         this.state.all_events.map(each => (
           title = this.getDoctorId(each.doctor),
           start = this.parseISOLocal(each.start),
           end = this.parseISOLocal(each.end),
           this.state.doctor_events_list.push({'start':start,'end':end,'title':title})
         ));
+        for(var i = this.state.doctor_events_list.length - 1; i >= 0; i--) {
+          if(this.state.doctor_events_list[i].title === '') {
+            this.state.doctor_events_list.splice(i, 1);
+          }
+        }
+
         this.setState({
              doctor_events_list: this.state.doctor_events_list,
-        })
+        });
+        console.log(this.state.all_doctors);
+        console.log(this.state.all_events);
         console.log(this.state.doctor_events_list);
-        console.log(this.state.events);
       }
 
       getDoctorId(id){
@@ -103,9 +117,35 @@ export default class NewScheduleTable extends Component {
         return name;
       }
 
-    render() {
-    	return (
+      changeTable(tableNumber){
+        if (tableNumber === 0) {
+          this.setState({
+          category : "",
+          all_doctors: [],
+          all_events: [],
+          })
+        }
+        else {
+          this.setState({
+          category : this.state.all_category[tableNumber],
+          all_doctors: [],
+          all_events: [],
+          })
+        }
 
+        this.componentDidMount()
+
+    }
+
+
+    render(){
+        let toolBar = []
+        for(let i=0; i<this.state.all_category.length; i++){
+          toolBar.push(
+             <ToggleButton className="btn btn-outline-primary" value={i} onClick={()=>this.changeTable(i)}>{this.state.all_category[i]}</ToggleButton>
+           )
+        }
+    	return (
     	  <div>
     	    <NavBar></NavBar>
           <SideBar></SideBar>
@@ -113,6 +153,12 @@ export default class NewScheduleTable extends Component {
                 <div style={{marginTop:"70px",marginBottom:"100px"}} className="jumbotron">
                     <div className="App">
                       <header className="App-header">
+
+                        <ButtonToolbar>
+                            <ToggleButtonGroup type="radio" name="options" defaultValue={0}>
+                              {toolBar}
+                            </ToggleButtonGroup>
+                        </ButtonToolbar>
                         <h1 >Quadro de Horários</h1>
                       </header>
                       <Calendar
