@@ -330,7 +330,7 @@ export default class ScheduleTable extends Component {
               {this.TableList(7,false)}
            </tbody>
          </table>
-         <table style={{display:"inline-block"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
+         <table style={{display:"inline-block", align:"right"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
           <thead>
             <th colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - GASTROENTEROLOGIA - COLONOSCOPIA</th>
             <tr>

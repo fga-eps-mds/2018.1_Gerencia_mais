@@ -188,17 +188,17 @@ td {
 }
 
 th {
-    background-color: #4cc486;
+    background-color: #66a1ee;
     color: white;
     font-size: 15px;
 }
 
 .parecer-th{
-  background-color: #4785e8;
+  background-color: #66a1ee;
 }
 
 tbody tr:nth-child(4){
-  background-color: #fff58e;
+  background-color: #7166ee;
   color: #000;
 }
 tbody tr:hover{

@@ -112,6 +112,10 @@ body{
 }
 .espaco-acima {
   padding-top: 10px;
+  }
+
+.espaco-abaixo{
+  padding-bottom: 700px;
 }
 
 table, th, td {

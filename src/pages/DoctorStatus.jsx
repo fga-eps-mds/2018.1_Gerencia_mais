@@ -120,8 +120,8 @@ export default class DoctorStatus extends Component {
       <div>
       <NavBar></NavBar>
       <SideBar></SideBar>
-        <div className="top-space espaco espaco-acima">
-          <div className="form-style-5">
+      <div className="espaco espaco-acima top-space">
+        <div className="form-style-5">
             <form>
               <h3>Alterar Status do Médico</h3>
               <fieldset>

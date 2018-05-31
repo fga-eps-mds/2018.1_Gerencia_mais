@@ -185,8 +185,8 @@ export default class UpdateSchedule extends Component {
       <div>
       <NavBar></NavBar>
       <SideBar></SideBar>
-      <div className="top-space espaco espaco-acima">
-          <div className="form-style-5">
+      <div className="top-space espaco espaco-abaixo">
+        <div className="form-style-5">
             <form>
               <h3>Atualização de horário de médicos</h3>
               <fieldset>

@@ -140,7 +140,8 @@ export default class DoctorForm extends Component {
     return(
       <div>
       <NavBar></NavBar>
-        <div className="espaco espaco-acima">
+      <SideBar></SideBar>
+        <div className="top-space espaco espaco-acima">
           <div className="form-style-5">
             <form>
               <h3>Cadastro de horário de médicos</h3>
