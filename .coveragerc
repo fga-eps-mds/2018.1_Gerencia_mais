@@ -8,4 +8,3 @@ include =
 
 omit =
     /
-    tests/user_views.py

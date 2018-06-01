@@ -6,6 +6,14 @@ from django.utils import timezone
 from schedule.models import Calendar, CalendarRelation, Event, Rule
 
 class TestCalendar(TestCase):
+
+    def test_str_equal_to_name(self):
+        calendar = Calendar.objects.create(name='My Cal')
+        rule = Rule.objects.create()
+        calendar.create_relation(rule)
+        result = Calendar.objects.get_calendar_for_object(rule)
+        self.assertEqual(result.name, str(result))
+
     def test_get_recent_events_without_events_is_empty(self):
         calendar = Calendar()
         self.assertEqual(list(calendar.get_recent()), [])
