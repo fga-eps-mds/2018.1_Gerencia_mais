@@ -52,11 +52,11 @@ export default class DoctorStatus extends Component {
   }
 
   async onClick(e) {
-    await this.setState({["registration"]:this.state.temp_registration});
+    await this.setState({"registration":this.state.temp_registration});
     await this.componentDidMount();
-    await this.setState({["status"]:this.state.doctor.status});
-    await this.setState({["name"]:this.state.doctor.name});
-    await this.setState({["CPF"]:this.state.doctor.CPF});
+    await this.setState({"status":this.state.doctor.status});
+    await this.setState({"name":this.state.doctor.name});
+    await this.setState({"CPF":this.state.doctor.CPF});
 }
   relaod(e){
     window.location.reload();
@@ -78,8 +78,7 @@ export default class DoctorStatus extends Component {
 }
 
   render(){
-    console.log("Temp:"+" "+this.state.temp_registration);
-    console.log("Temp:"+" "+this.state.registration);
+
 
     let information;
     let status;

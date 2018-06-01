@@ -4,7 +4,6 @@ import '../css/bootstrap.css';
 import '../css/DoctorForm.css';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import { createStore } from 'redux'
 import isLogged from '../actions/actions'
 import {store} from '../components/store'
 console.log(store.getState())
