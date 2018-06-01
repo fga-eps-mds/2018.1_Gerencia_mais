@@ -3,13 +3,12 @@ import {
   BrowserRouter as Router,
   Route,
   Link,
+  withRouter,
   Redirect,
-  withRouter
 } from 'react-router-dom'
+import { store } from './store'
 import loggin from '../reducers/reducers'
 import isLogged from '../actions/actions'
-import { store } from './store'
-
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (

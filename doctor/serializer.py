@@ -13,7 +13,8 @@ class DoctorCreateUpdateSerializer(serializers.ModelSerializer):
             'name',
             'status',
             'registration',
-            'CPF'
+            'CPF',
+            'category'
             ]
 
 class DoctorListSerializer(serializers.ModelSerializer):
@@ -24,5 +25,6 @@ class DoctorListSerializer(serializers.ModelSerializer):
             'name',
             'status',
             'registration',
-            'CPF'
+            'CPF',
+            'category'
         ]
