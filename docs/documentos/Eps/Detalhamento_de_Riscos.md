@@ -17,6 +17,7 @@
 |RN07|Houver problemas na comunicação da equipe.	|Gerenciamento|Comunicação|Dificuldade no Gerenciamento|
 |RN08|Um membro da equipe desistir da disciplina.	|Organizacional|Recursos|Replanejamento|
 |RN09|Um membro da equipe ficar ausente.	|Organizacional|Recursos|Replanejamento|
+|RN10| Impossibilidade de ocorrer reuniões presenciais ao fim das Sprints | Planajamento | Replanejamento do prazo de entrga das Sprints |
 
 
 ### 2.2 Riscos Positivos
@@ -163,6 +164,21 @@ Os membros da equipe foram avisados a informar previamente caso tenham que se au
 * ***Resposta***
 
 Um membro de EPs auxiliará nos serviços do membro ausente.
+
+
+***RN10***
+
+|ID|Descrição|Probabilidade| Impacto|Prioridade|Estrategia|
+|----|----|---|----|---|-------|
+|RN10| Impossibilidade de ocorrer reuniões presenciais ao fim das Sprints	|Medio|Alto|Medio|Replanejar |
+
+* ***Monitoramento***
+
+Caso houver maioiria dos membros da equipe não puderem comparecer às reunião de fechamento das Sprints  que ocorrem aos sabados efetuar votação para adiamento.
+
+* ***Resposta***
+
+Replanejar e adequar para que a reunião ocorra, adiando a data em 1 ou dois dias.
 
 
 
