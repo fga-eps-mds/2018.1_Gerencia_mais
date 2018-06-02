@@ -3071,8 +3071,8 @@ fieldset:disabled a.btn {
 }
 
 .btn-lg, .btn-group-lg > .btn {
-  padding: 0.5rem 1rem;
-  font-size: 1.25rem;
+  padding: 3rem 3.5rem;
+  font-size: 1.5rem;
   line-height: 1.5;
   border-radius: 0.3rem;
 }
@@ -3394,8 +3394,8 @@ tbody.collapse.show {
 }
 
 .btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .btn-group-vertical {
@@ -3949,6 +3949,8 @@ tbody.collapse.show {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+  background: linear-gradient(#007095, #20C3D3);
+  color: white;
 }
 
 .navbar > .container,

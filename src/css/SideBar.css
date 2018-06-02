@@ -52,14 +52,8 @@ li {
 }
 
  li a {
-    color: #ffffff;
+  color: #ffffff;
   display: block;
-  text-decoration: none;
-}
-
-  li a:hover {
-  color: #fff;
-  background: #29846e;
   text-decoration: none;
 }
 
@@ -67,16 +61,3 @@ li a:active,
 .sidebar-nav li a:focus {
   text-decoration: none;
 }
-
-img {
-  height: 120px;
-  width: 120px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
-/* .sub_icon
-{
-    float:left;
-} */
