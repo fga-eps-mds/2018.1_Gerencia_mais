@@ -57,8 +57,6 @@ export class LoginPage extends Component {
         this.props.history.push("/ScheduleTable");
       } else
         store.dispatch(isLogged(false));
-      console.log(store.getState())
-      console.log(token);
     });
 
   }
@@ -78,7 +76,7 @@ export class LoginPage extends Component {
               <legend>
                 <span className="number">2</span>
                 Senha</legend>
-              <input className="form-control" id="idID" type="password" name="password" value={this.state.password} placeholder="Digite a senha aqui" onChange={(event) => this.handleUserInput(event)}/>
+                <input className="form-control" id="idID" type="password" name="password" value={this.state.password} placeholder="Digite a senha aqui" onChange={(event) => this.handleUserInput(event)}/>
             </fieldset>
             <input type="submit" value="Entrar" onClick={this.handleSubmit}/>
           </form>

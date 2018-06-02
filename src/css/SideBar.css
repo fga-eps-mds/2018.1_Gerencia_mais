@@ -31,3 +31,8 @@ svg{
 .bm-item-list li a{
   color: white;
 }
+
+.bm-burger-button{
+  position: fixed;
+
+}

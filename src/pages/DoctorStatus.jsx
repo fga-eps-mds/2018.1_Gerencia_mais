@@ -130,7 +130,7 @@ export default class DoctorStatus extends Component {
                 <Button title="registration" onClick={this.onClick}>Buscar</Button>
                 {information}
             </fieldset>
-              <input type="submit" value="Apply"
+              <input type="submit" value="Concluido"
                 onClick={this.handleSubmit}/>
             </form>
             </div>

@@ -101,12 +101,13 @@ export default class DoctorForm extends Component {
     await this.setState({
       time_end: this.state.load_subtitle.finish
     })
+    console.log(this.state.time_start,this.state.time_end);
   }
 
   handleSubmit = e => {
-    this.setState({"start":this.state.start + "T" + this.state.time_start + "Z"})
+    this.state.start=this.state.start + "T" + this.state.time_start + "Z";
     // this.state.start = this.state.start + "T" + this.state.time_start + "Z";
-    this.setState({"end":this.state.end + "T" + this.state.time_end + "Z"})
+    this.state.end=this.state.end + "T" + this.state.time_end + "Z";
     // this.state.end = this.state.end + "T" + this.state.time_end + "Z";
     this.setState({"is_valid":true})
     // this.state.is_valid = true;
@@ -165,7 +166,7 @@ export default class DoctorForm extends Component {
               <legend><span className="number">5</span>Data de Saída</legend>
               <input id="edID" type="date" title="end" value = {this.state.end} onChange={this.onChange} placeholder="" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
               </fieldset>
-            <input type="submit" value="Apply" onClick={this.handleSubmit}/>
+            <input type="submit" value="Concluido" onClick={this.handleSubmit}/>
 
           </form>
             </div>

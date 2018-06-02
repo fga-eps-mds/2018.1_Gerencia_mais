@@ -11,9 +11,15 @@ export default class NavBar extends Component {
     super(props);
     this.state = {}
   }
+
+  async logOut(){
+    await store.dispatch(isLogged(false));
+    window.location.href='/';
+  }
+
   setNavBar(logged) {
     if (store.getState().status) {
-      return <Button className='size_lg new-nav-font pull-right change-exit' onClick={() => store.dispatch(isLogged(false))}>Sair</Button>
+      return <Button className='size_lg new-nav-font pull-right change-exit' onClick={this.logOut} >Sair</Button>
     } else {
       return <Button className='size_lg new-nav-font' onClick={this.load} name='login'>Login</Button>
 
