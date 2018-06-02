@@ -21,7 +21,7 @@ export class LoginPage extends Component {
   async componentDidMount() {
     try {
 
-      const res = await fetch('http://localhost:8000/user/api-user');
+      const res = await fetch('https://gicsaude.herokuapp.com/user/api-user');
       const todos = await res.json();
       this.setState({todos});
       // console.log(todos);
@@ -50,7 +50,7 @@ export class LoginPage extends Component {
       body: temp,
       headers: new Headers({"Content-Type": "application/json"})
     };
-    fetch('http://localhost:8000/user/obtain-auth-token/', conf).then(res => res.json()).then(res => {
+    fetch('https://gicsaude.herokuapp.com/user/obtain-auth-token/', conf).then(res => res.json()).then(res => {
       let token = res.token;
       if (res.non_field_errors == null && res.token != null) {
         store.dispatch(isLogged(true));
