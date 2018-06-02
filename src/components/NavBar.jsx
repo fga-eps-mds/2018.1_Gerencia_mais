@@ -13,7 +13,7 @@ export default class NavBar extends Component {
   }
   setNavBar(logged) {
     if (store.getState().status) {
-      return <Button className='size_lg new-nav-font' onClick={() => store.dispatch(isLogged(false))}>Sair</Button>
+      return <Button className='size_lg new-nav-font pull-right change-exit' onClick={() => store.dispatch(isLogged(false))}>Sair</Button>
     } else {
       return <Button className='size_lg new-nav-font' onClick={this.load} name='login'>Login</Button>
 

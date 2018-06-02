@@ -43,9 +43,7 @@
   font-family: 'Coustard', sans-serif;
 }
 
-/* .navbar li a:hover {
-color: #fff;
-background: #007095;
-border-radius: 10px;
-text-decoration: none;
-} */
+.change-exit {
+  margin-right: -20%;
+  margin-left:  311.6%;
+}
