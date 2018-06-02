@@ -14,15 +14,13 @@ from subtitle.models import Subtitles
 subtitle = Subtitles(3)
 class TestPeriod(TestCase):
     def setUp(self):
-        rule = Rule.objects.create(frequency="WEEKLY")
-        cal = Calendar.objects.create(name="MyCal")
         Event.objects.create(
             subtitle=subtitle,
             start=datetime.datetime(2008, 1, 5, 8, 0, tzinfo=pytz.utc),
             end=datetime.datetime(2008, 1, 5, 9, 0, tzinfo=pytz.utc),
             end_recurring_period=datetime.datetime(2008, 5, 5, 0, 0, tzinfo=pytz.utc),
-            rule=rule,
-            calendar=cal,
+            rule=Rule.objects.create(frequency="WEEKLY"),
+            calendar=Calendar.objects.create(name="MyCal"),
         )
         self.period = Period(
             events=Event.objects.all(),
@@ -277,15 +275,13 @@ class TestDay(TestCase):
 class TestOccurrencePool(TestCase):
 
     def setUp(self):
-        rule = Rule.objects.create(frequency="WEEKLY")
-        cal = Calendar.objects.create(name="MyCal")
         self.recurring_event = Event.objects.create(
             subtitle=subtitle,
             start=datetime.datetime(2008, 1, 5, 8, 0, tzinfo=pytz.utc),
             end=datetime.datetime(2008, 1, 5, 9, 0, tzinfo=pytz.utc),
             end_recurring_period=datetime.datetime(2008, 5, 5, 0, 0, tzinfo=pytz.utc),
-            rule=rule,
-            calendar=cal,
+            rule=Rule.objects.create(frequency="WEEKLY"),
+            calendar=Calendar.objects.create(name="MyCal"),
         )
 
     # def testPeriodFromPool(self):
@@ -304,15 +300,13 @@ class TestOccurrencesInTimezone(TestCase):
 
     def setUp(self):
         self.MVD = pytz.timezone('America/Montevideo')
-        cal = Calendar.objects.create(name="MyCal")
-        rule = Rule.objects.create(frequency="DAILY", params="byweekday:SA", name="Saturdays")
         Event.objects.create(
             subtitle=subtitle,
             start=self.MVD.localize(datetime.datetime(2017, 1, 7, 22, 0)),
             end=self.MVD.localize(datetime.datetime(2017, 1, 7, 23, 0)),
             end_recurring_period=self.MVD.localize(datetime.datetime(2017, 2, 1)),
-            rule=rule,
-            calendar=cal,
+            rule=Rule.objects.create(frequency="DAILY", params="byweekday:SA", name="Saturdays"),
+            calendar=Calendar.objects.create(name="MyCal"),
         )
 
     # @override_settings(TIME_ZONE='America/Montevideo')
@@ -348,15 +342,13 @@ class TestWeeklyOccurrences(TestCase):
 
     def setUp(self):
         self.MVD = pytz.timezone('America/Montevideo')  # UTC-3
-        cal = Calendar.objects.create(name="MyCal")
-        rule = Rule.objects.create(frequency="DAILY", name="daily")
         Event.objects.create(
             subtitle=subtitle,
             start=self.MVD.localize(datetime.datetime(2017, 1, 13, 15, 0)),
             end=self.MVD.localize(datetime.datetime(2017, 1, 14, 15, 0)),
             end_recurring_period=self.MVD.localize(datetime.datetime(2017, 1, 20)),
-            rule=rule,
-            calendar=cal,
+            rule=Rule.objects.create(frequency="DAILY", name="daily"),
+            calendar=Calendar.objects.create(name="MyCal"),
         )
 
     # def test_occurrences_inside_recurrence_period(self):
