@@ -30,6 +30,20 @@ export default class NavBar extends Component {
       return <a href="/">Home</a>
     }
   }
+
+  load(e){
+  const local = e.target.name;
+  if( local === 'home'){
+    window.location.href='/';
+  }
+  if(local === 'login'){
+    window.location.href='/LoginPage';
+  }
+  if(local === 'signup'){
+    window.location.href='/RegistrationAdmin';
+  }
+  }
+
   render() {
     return (
       <Navbar fluid inverse collapseOnSelect fixedTop>
@@ -38,9 +52,9 @@ export default class NavBar extends Component {
         </Navbar.Header>
         <NavItem>
         <ButtonGroup className='size_lg' >
-            <Button className='size_lg new-nav-font' href="/">Home</Button>
-            <Button className='size_lg new-nav-font' href="/LoginPage">Login</Button>
-            <Button className='size_lg new-nav-font' href="/RegistrationAdmin">Cadastrar</Button>
+            <Button className='size_lg new-nav-font' onClick={this.load} name='home' >Home</Button>
+            <Button className='size_lg new-nav-font' onClick={this.load} name='login'>Login</Button>
+            <Button className='size_lg new-nav-font' onClick={this.load} name='signup'>Cadastrar</Button>
           </ButtonGroup>
         </NavItem>
       </Navbar>
