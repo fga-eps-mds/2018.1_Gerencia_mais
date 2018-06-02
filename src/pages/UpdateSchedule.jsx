@@ -128,8 +128,8 @@ export default class UpdateSchedule extends Component {
     let form_update;
     if(this.state.id > 0){
       form_update = (
-        <div classtitle="top-space espaco espaco-acima">
-          <div className="form-style-5">
+        <div className="top-space space-bottom space-top change-color">
+          <div className="form-style-5 ">
             <form>
               <h3>Atualização do horário do médico</h3>
               <fieldset>
@@ -185,7 +185,7 @@ export default class UpdateSchedule extends Component {
       <div>
       <NavBar></NavBar>
       <SideBar></SideBar>
-      <div className="top-space espaco espaco-abaixo">
+      <div className="top-space space-top space-bottom change-color">
         <div className="form-style-5">
             <form>
               <h3>Atualização de horário de médicos</h3>

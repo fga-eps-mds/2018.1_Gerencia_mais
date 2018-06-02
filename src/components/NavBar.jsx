@@ -13,21 +13,21 @@ export default class NavBar extends Component {
   }
   setNavBar(logged) {
     if (store.getState().status) {
-      return <a onClick={() => store.dispatch(isLogged(false))} className="nav-link topicos title active" href="/">Sair</a>
+      return <Button className='size_lg new-nav-font' onClick={() => store.dispatch(isLogged(false))}>Sair</Button>
     } else {
-      return <a href="/LoginPage">Login</a>
+      return <Button className='size_lg new-nav-font' onClick={this.load} name='login'>Login</Button>
 
     }
   }
 
   setRegistration(logged) {
     if (!store.getState().status) {
-      return <a href="/RegistrationAdmin">Cadastrar</a>
+      return <Button className='size_lg new-nav-font' onClick={this.load} name='signup'>Cadastrar</Button>
     }
   }
   setHome(logged) {
     if (!store.getState().status) {
-      return <a href="/">Home</a>
+      return <Button className='size_lg new-nav-font' onClick={this.load} name='home' >Home</Button>
     }
   }
 
@@ -52,9 +52,9 @@ export default class NavBar extends Component {
         </Navbar.Header>
         <NavItem>
         <ButtonGroup className='size_lg' >
-            <Button className='size_lg new-nav-font' onClick={this.load} name='home' >Home</Button>
-            <Button className='size_lg new-nav-font' onClick={this.load} name='login'>Login</Button>
-            <Button className='size_lg new-nav-font' onClick={this.load} name='signup'>Cadastrar</Button>
+            {this.setHome(false)}
+            {this.setRegistration(false)}
+            {this.setNavBar(false)}
           </ButtonGroup>
         </NavItem>
       </Navbar>

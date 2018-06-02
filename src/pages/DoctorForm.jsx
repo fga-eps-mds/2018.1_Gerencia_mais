@@ -104,7 +104,6 @@ export default class DoctorForm extends Component {
   }
 
   handleSubmit = e => {
-    console.log("entrou");
     this.setState({"start":this.state.start + "T" + this.state.time_start + "Z"})
     // this.state.start = this.state.start + "T" + this.state.time_start + "Z";
     this.setState({"end":this.state.end + "T" + this.state.time_end + "Z"})
@@ -131,7 +130,7 @@ export default class DoctorForm extends Component {
       <div>
       <NavBar></NavBar>
       <SideBar></SideBar>
-        <div className="top-space espaco espaco-acima">
+        <div className="top-space space-bottom space-top change-color">
           <div className="form-style-5">
             <form>
               <h3>Cadastro de horário de médicos</h3>

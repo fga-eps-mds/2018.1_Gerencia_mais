@@ -104,12 +104,12 @@
   color:black;
   background-color: black;
 }
-.espaco-acima {
+.space-top {
   padding-top: 10px;
   }
 
-.espaco-abaixo{
-  padding-bottom: 700px;
+.space-bottom{
+  padding-bottom: 200px;
 }
 
 
