@@ -7,7 +7,7 @@ import Footer from '../components/Footer'
 
 export default class HomePage extends Component {
   render() {
-    return (<div className="title-space fundo">
+    return (<div className="title-space background">
       <NavBar></NavBar>
       <div className="container espaco">
         <div className='row'>

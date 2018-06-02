@@ -3,7 +3,9 @@
 .navbar-brand{
   color: white;
 }
+
 .navbar{
+  width: 100%;
   font-size: 15px;
   list-style-type: none;
   border: none;

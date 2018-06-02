@@ -111,7 +111,7 @@ render(){
   return(
     <div>
     <NavBar></NavBar>
-        <div className="top-space espaco espaco-acima">
+        <div className="top-space espaco espaco-acima background">
         <div className="form-style-5">
           <form>
             <h3>Cadastro de Administradores</h3>

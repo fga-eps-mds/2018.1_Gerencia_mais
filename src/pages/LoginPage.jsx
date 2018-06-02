@@ -66,7 +66,7 @@ export class LoginPage extends Component {
   render() {
     return (<div>
       <NavBar></NavBar>
-      <div className="top-space espaco espaco-acima">
+      <div className="top-space espaco espaco-acima background">
         <div className="form-style-5">
           <form>
             <h3>Login</h3>
