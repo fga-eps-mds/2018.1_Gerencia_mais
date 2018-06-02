@@ -10,15 +10,13 @@ from schedule.periods import Period
 
 class TestOccurrence(TestCase):
     def setUp(self):
-        rule = Rule.objects.create(frequency="WEEKLY")
-        cal = Calendar.objects.create(name="MyCal")
         self.recurring_data = {
             'title': 'Recent Event',
             'start': datetime.datetime(2008, 1, 5, 8, 0, tzinfo=pytz.utc),
             'end': datetime.datetime(2008, 1, 5, 9, 0, tzinfo=pytz.utc),
             'end_recurring_period': datetime.datetime(2008, 5, 5, 0, 0, tzinfo=pytz.utc),
-            'rule': rule,
-            'calendar': cal
+            'rule': Rule.objects.create(frequency="WEEKLY"),
+            'calendar': Calendar.objects.create(name="MyCal")
         }
         self.recurring_event = Event.objects.create(**self.recurring_data)
         self.start = datetime.datetime(2008, 1, 12, 0, 0, tzinfo=pytz.utc)
