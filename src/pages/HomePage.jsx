@@ -13,8 +13,8 @@ export default class HomePage extends Component {
         <div className='row'>
           <div className="column ">
             <div className='content'>
-              <h3 className='whitewash aumenta'>Gerencia +</h3>
-              <h5 className='whitewash aumentamenos'>Aplicação web destinada a gerenciar médicos de hospitais públicos do Distrito Federal.</h5>
+              <h3 className='text-center text-white'>Gerencia +</h3>
+              <p className='text-justify text-white'>Aplicação web destinada a gerenciar médicos de hospitais públicos do Distrito Federal.</p>
             </div>
           </div>
           <div className='column'>

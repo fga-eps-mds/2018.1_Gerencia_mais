@@ -13,6 +13,7 @@
   border:1px solid #40AED2;
   border-radius: 8px;
   background-color: white;
+  padding: 10px;
 }
 .row{
   margin-top: 40px;
@@ -21,4 +22,13 @@
 .row::after{
   display: table;
   clear: both;
+}
+
+.content h3{
+  font-size: 40px;
+  font-family:'Coustard', sans-serif;
+}
+.content p{
+  font-size: 30px;
+  font-family:'Coustard', sans-serif;
 }
