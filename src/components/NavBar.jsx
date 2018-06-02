@@ -38,17 +38,9 @@ export default class NavBar extends Component {
         </Navbar.Header>
         <NavItem>
         <ButtonGroup className='size_lg' >
-            <Button className='size_lg' href="#">Home</Button>
-          </ButtonGroup>
-        </NavItem>
-        <NavItem>
-        <ButtonGroup className='size_lg'>
-            <Button className='size_lg' href="#">Login</Button>
-          </ButtonGroup>
-        </NavItem>
-        <NavItem>
-        <ButtonGroup className='size_lg' >
-            <Button className='size_lg' href="#">Cadastrar</Button>
+            <Button className='size_lg new-nav-font' href="/">Home</Button>
+            <Button className='size_lg new-nav-font' href="/LoginPage">Login</Button>
+            <Button className='size_lg new-nav-font' href="/RegistrationAdmin">Cadastrar</Button>
           </ButtonGroup>
         </NavItem>
       </Navbar>

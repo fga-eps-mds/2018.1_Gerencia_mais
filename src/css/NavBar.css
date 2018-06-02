@@ -13,17 +13,19 @@
   background-color: #007095;
 }
 .container-fluid > .navbar-header{
-  margin-left: -20%;
-  margin-right: -20%;
+  margin-left: -50%;
+  margin-right: -40%;
 }
 .navbar-header{
   margin-left: -40%;
 }
 
 .navbar-header a{
-  font-size: 20px;
+  font-size: 30px;
   color: white;
-  margin-left: -10%;
+  margin-left: -20%;
+  margin-right: -140px;
+  font-family: 'Coustard', sans-serif;
 }
 .navbar-header a:hover{
   color: white;
@@ -32,7 +34,11 @@
 }
 
 .size_lg{
-  width: 550%;
+  width: 520%;
+}
+
+.new-nav-font{
+  font-family: 'Coustard', sans-serif;
 }
 
 /* .navbar li a:hover {
