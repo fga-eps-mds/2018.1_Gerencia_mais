@@ -8,3 +8,5 @@ include =
 
 omit =
     /
+    schedule/models/events.py
+    schedule/periods.py
