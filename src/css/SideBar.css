@@ -25,14 +25,14 @@
 
 /* General sidebar styles */
 .bm-menu {
-  background: #40AED2;
+  background: linear-gradient(#12294E,#587685);
   padding: 2.5em 1.5em 0;
   font-size: 2em;
 }
 
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
-  fill: #40AED2;
+  fill: #12294E;
 }
 
 /* Wrapper for item list */
