@@ -3,12 +3,28 @@ import React, {Component} from 'react';
 import '../css/bootstrap.css';
 import '../css/HomePage.css';
 import NavBar from '../components/NavBar';
-import Footer from '../components/Footer'
+import Footer from '../components/Footer';
+import SideBar from '../components/SideBar';
+import isLogged from '../actions/actions';
+import {store} from '../components/store';
 
 export default class HomePage extends Component {
   render() {
+    let sidebar;
+    if (store.getState().status) {
+      sidebar=(
+        <SideBar></SideBar>
+      );
+    }
+    else{
+      sidebar=(
+        <div>
+        </div>
+      );
+    }
     return (<div className="title-space background">
       <NavBar></NavBar>
+      {sidebar}
       <div className="container espaco">
         <div className='row'>
           <div className="column ">
