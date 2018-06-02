@@ -3,13 +3,13 @@
   width: 36px;
   height: 30px;
   left: 15px;
-  top: 75px;
+  top: 86px;
   color: #fff !important;
 }
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #fff;
+  background: #606060;
 }
 
 /* Position and sizing of clickable cross button */
@@ -25,6 +25,7 @@
 
 /* General sidebar styles */
 .bm-menu {
+  margin-top: -34%;
   background: linear-gradient(#12294E,#587685);
   padding: 2.5em 1.5em 0;
   font-size: 2em;
