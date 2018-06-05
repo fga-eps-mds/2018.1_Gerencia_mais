@@ -1,0 +1,12 @@
+[run]
+include =
+    schedule/*
+    leito_hospitalar/*
+    tests/*
+    user/*
+    doctor/*
+
+omit =
+    /
+    schedule/models/events.py
+schedule/periods.py
