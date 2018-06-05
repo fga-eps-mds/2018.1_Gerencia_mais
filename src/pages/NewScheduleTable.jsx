@@ -27,22 +27,46 @@ export default class NewScheduleTable extends Component {
         all_events: [],
         all_doctors: [],
         all_category : [
-          "geral", "outra","essa"
+          "Geral"
         ],
         category : '',
-        events: [
-          {
-            start:ds,
-            end:de ,
-            title: "carregando"
-          }
-        ]
       };
     }
 
     async componentDidMount() {
         try {
-          const name = 'http://localhost:8000/doctor/api-doctor/list-doctor/1/?category='+this.state.category;
+          const name = 'http://localhost:8000/doctor/api-doctor/';
+          const res = await fetch(name);
+          console.log(res);
+          const all_doctors = await res.json();
+          console.log(all_doctors);
+          this.setState({all_doctors});
+        } catch (e) {
+          console.log(e);
+        }
+        await this.createCategoryList();
+        await this.componentDidMount1();
+
+      }
+
+      createCategoryList() {
+        var category;
+        this.state.all_doctors.map(each => (
+          category = this.categoryValidate(each.category),
+          this.pushCategoryValid(category)
+
+        ));
+
+        this.setState({
+             all_doctors: this.state.all_doctors,
+        });
+        console.log(this.state.all_doctors);
+      }
+
+    async componentDidMount1() {
+        try {
+          this.setState({all_doctors:""})
+          const name = 'http://localhost:8000/doctor/api-doctor/list-doctor/category/?category='+this.state.category;
           const res = await fetch(name);
           console.log(res);
           const all_doctors = await res.json();
@@ -74,7 +98,6 @@ export default class NewScheduleTable extends Component {
       }
 
       createEventDoctorList(){
-        var s,e;
         var title,start,end;
         this.setState({
           doctor_events_list : [],
@@ -83,13 +106,8 @@ export default class NewScheduleTable extends Component {
           title = this.getDoctorId(each.doctor),
           start = this.parseISOLocal(each.start),
           end = this.parseISOLocal(each.end),
-          this.state.doctor_events_list.push({'start':start,'end':end,'title':title})
+          this.pushEventValid(title,start,end)
         ));
-        for(var i = this.state.doctor_events_list.length - 1; i >= 0; i--) {
-          if(this.state.doctor_events_list[i].title === '') {
-            this.state.doctor_events_list.splice(i, 1);
-          }
-        }
 
         this.setState({
              doctor_events_list: this.state.doctor_events_list,
@@ -99,12 +117,42 @@ export default class NewScheduleTable extends Component {
         console.log(this.state.doctor_events_list);
       }
 
+      pushEventValid(title,start,end){
+        if (title !== "") {
+          this.state.doctor_events_list.push({'start':start,'end':end,'title':title})
+        }
+      }
+
       getDoctorId(id){
         var name = "";
         this.state.all_doctors.map(each =>(
            name = this.compareId(each.id,id,each.name, name)
         ));
         return name;
+      }
+
+      pushCategoryValid(category){
+        if(category !== ""){
+          this.state.all_category.push(category);
+        }
+      }
+
+      categoryValidate(category){
+        var aux = "";
+        this.state.all_category.map(each =>(
+           aux = this.compareCategory(each,aux,category)
+        ));
+        return aux;
+      }
+
+      compareCategory(categoryOfList,invalid,category){
+        if(category === categoryOfList){
+          var aux =  invalid;
+        }
+        else {
+          var aux = category;
+        }
+        return aux;
       }
 
       compareId(id,id2,doctorName,realName){
@@ -118,31 +166,30 @@ export default class NewScheduleTable extends Component {
       }
 
       changeTable(tableNumber){
+        this.setState({
+          all_events: [],
+        })
         if (tableNumber === 0) {
           this.setState({
           category : "",
-          all_doctors: [],
-          all_events: [],
           })
         }
         else {
           this.setState({
           category : this.state.all_category[tableNumber],
-          all_doctors: [],
-          all_events: [],
           })
         }
 
-        this.componentDidMount()
+        this.componentDidMount1()
 
     }
 
 
     render(){
         let toolBar = []
-        for(let i=0; i<this.state.all_category.length; i++){
+        for(let count=0; count<this.state.all_category.length; count++){
           toolBar.push(
-             <ToggleButton className="btn btn-outline-primary" value={i} onClick={()=>this.changeTable(i)}>{this.state.all_category[i]}</ToggleButton>
+             <ToggleButton className="btn btn-outline-primary" value={count} onClick={()=>this.changeTable(count)}>{this.state.all_category[count]}</ToggleButton>
            )
         }
     	return (
