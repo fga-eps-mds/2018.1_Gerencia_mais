@@ -138,21 +138,24 @@ export default class NewScheduleTable extends Component {
       }
 
       categoryValidate(category){
-        var aux = "";
+        var aux = 0;
         this.state.all_category.map(each =>(
-           aux = this.compareCategory(each,aux,category)
+           aux += this.compareCategory(each,category)
         ));
-        return aux;
+        if (aux === this.state.all_category.length) {
+          return category;
+        } else {
+          return "";
+        }
       }
 
-      compareCategory(categoryOfList,invalid,category){
+      compareCategory(categoryOfList,category){
         if(category === categoryOfList){
-          var aux =  invalid;
+          return 0;
         }
         else {
-          var aux = category;
+          return 1;
         }
-        return aux;
       }
 
       compareId(id,id2,doctorName,realName){
