@@ -4,7 +4,7 @@ import SideBar from '../components/SideBar';
 import Footer from '../components/Footer';
 import Popup from "reactjs-popup";
 import "../css/ScheduleTable.css";
-import {Table,ButtonToolbar,ToggleButtonGroup,ToggleButton} from 'react-bootstrap';
+import {Table,ButtonToolbar,ToggleButtonGroup,ToggleButton,Modal,Button} from 'react-bootstrap';
 import "../css/popup.css";
 import "../css/bootstrap.min.css";
 import InfiniteCalendar from 'react-infinite-calendar';
@@ -15,14 +15,55 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 
 
 Calendar.setLocalizer(Calendar.momentLocalizer(moment));
-var test;
-var ds = new Date(Date.UTC(2018,4,1,7));
-console.log(ds);
-var de = new Date(Date.UTC(2018,4,1,13));
+
+class MySmallModal extends React.Component {
+  render() {
+    return (
+      <Modal
+        {...this.props}
+        bsSize="small"
+        aria-labelledby="contained-modal-title-sm"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-sm">Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <h4>Wrapped Text</h4>
+          <p>
+            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
+            ac consectetur ac, vestibulum at eros.
+          </p>
+          <p>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+            auctor.
+          </p>
+          <p>
+            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
+            cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
+            dui. Donec ullamcorper nulla non metus auctor fringilla.
+          </p>
+          <p>
+            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
+            ac consectetur ac, vestibulum at eros.
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={this.props.onHide}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
+}
+
 export default class NewScheduleTable extends Component {
     constructor(props){
       super(props);
       this.state={
+        smShow: false,
+        lgShow: false,
         doctor_events_list: [],
         all_events: [],
         all_doctors: [],
@@ -30,13 +71,6 @@ export default class NewScheduleTable extends Component {
           "geral", "outra","essa"
         ],
         category : '',
-        events: [
-          {
-            start:ds,
-            end:de ,
-            title: "carregando"
-          }
-        ]
       };
     }
 
@@ -139,6 +173,7 @@ export default class NewScheduleTable extends Component {
 
 
     render(){
+        let smClose = () => this.setState({ smShow: false });
         let toolBar = []
         for(let i=0; i<this.state.all_category.length; i++){
           toolBar.push(
@@ -164,6 +199,8 @@ export default class NewScheduleTable extends Component {
                       <Calendar
                         views={['month', 'week', 'day']}
                         defaultDate={new Date()}
+                        selectable
+                        onSelectEvent={() => this.setState({ smShow: true })}
                         defaultView="month"
                         events={this.state.doctor_events_list}
                         style={{ height: "100vh" }}
@@ -171,6 +208,7 @@ export default class NewScheduleTable extends Component {
                     </div>
                 </div>
             </div>
+             <MySmallModal show={this.state.smShow} onHide={smClose} />
             <Footer></Footer>
     	    </div>
     	);
