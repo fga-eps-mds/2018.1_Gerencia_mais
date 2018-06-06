@@ -7,6 +7,7 @@ import "../css/ScheduleTable.css";
 import {Table,ButtonToolbar,ToggleButtonGroup,ToggleButton,Modal,Button} from 'react-bootstrap';
 import "../css/popup.css";
 import "../css/bootstrap.min.css";
+import "../css/bootstrap.css";
 import InfiniteCalendar from 'react-infinite-calendar';
 import 'react-infinite-calendar/styles.css';
 import Calendar from "react-big-calendar";
@@ -20,39 +21,23 @@ class MySmallModal extends React.Component {
   render() {
     return (
       <Modal
+        className="modal-height modal"
         {...this.props}
         bsSize="small"
         aria-labelledby="contained-modal-title-sm"
       >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-sm">Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="modal-content">
           <h4>Wrapped Text</h4>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-            ac consectetur ac, vestibulum at eros.
-          </p>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-            auctor.
-          </p>
-          <p>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
-            cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
-            dui. Donec ullamcorper nulla non metus auctor fringilla.
-          </p>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-            ac consectetur ac, vestibulum at eros.
-          </p>
+          <p>teste teste teste teste testeteste teste</p>
+          <p>teste teste teste teste testeteste teste</p>
+          <p>teste teste teste teste testeteste teste</p>
+            <p>teste teste teste teste testeteste teste</p>
+            <p>teste teste teste teste testeteste teste</p>
+            <p>teste teste teste teste testeteste teste</p>
+              <p>teste teste teste teste testeteste teste</p>
+              <p>teste teste teste teste testeteste teste</p>
+              <p>teste teste teste teste testeteste teste</p>
         </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={this.props.onHide}>Close</Button>
-        </Modal.Footer>
       </Modal>
     );
   }
@@ -208,7 +193,7 @@ export default class NewScheduleTable extends Component {
                     </div>
                 </div>
             </div>
-             <MySmallModal show={this.state.smShow} onHide={smClose} />
+            <MySmallModal show={this.state.smShow} onHide={smClose} />
             <Footer></Footer>
     	    </div>
     	);
