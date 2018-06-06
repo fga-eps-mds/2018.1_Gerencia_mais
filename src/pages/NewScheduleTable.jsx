@@ -4,7 +4,7 @@ import SideBar from '../components/SideBar';
 import Footer from '../components/Footer';
 import Popup from "reactjs-popup";
 import "../css/ScheduleTable.css";
-import {Table,ButtonToolbar,ToggleButtonGroup,ToggleButton} from 'react-bootstrap';
+import {Table,ButtonToolbar,ToggleButtonGroup,ToggleButton,Modal,Button} from 'react-bootstrap';
 import "../css/popup.css";
 import "../css/bootstrap.min.css";
 import InfiniteCalendar from 'react-infinite-calendar';
@@ -13,19 +13,79 @@ import Calendar from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
+class Example extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+
+    this.handleShow = this.handleShow.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+
+    this.state = {
+      show: false
+    };
+  }
+
+  handleClose() {
+    this.setState({ show: false });
+  }
+
+  handleShow() {
+    this.setState({ show: true });
+  }
+
+  render() {
+
+    return (
+      <div>
+
+        <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+          Launch demo modal
+        </Button>
+
+        <Modal className="top-espace" show={this.state.show} onHide={this.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>carga horaria</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <h4>Text in a modal</h4>
+            <p>
+              {NewScheduleTable.doctors_event}
+            </p>
+
+
+            <hr />
+
+            <h4>Overflowing text to show scroll behavior</h4>
+
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={this.handleClose}>Close</Button>
+          </Modal.Footer>
+        </Modal>
+      </div>
+    );
+  }
+}
+
+
+
 
 Calendar.setLocalizer(Calendar.momentLocalizer(moment));
 var test;
 var ds = new Date(Date.UTC(2018,4,1,7));
 console.log(ds);
 var de = new Date(Date.UTC(2018,4,1,13));
+
 export default class NewScheduleTable extends Component {
-    constructor(props){
+    constructor(props,context){
       super(props);
       this.state={
+        startDate: '',
+        endDate: '',
         doctor_events_list: [],
         all_events: [],
         all_doctors: [],
+        doctors_event: [],
         all_category : [
           "Geral"
         ],
@@ -89,16 +149,33 @@ export default class NewScheduleTable extends Component {
           } catch (e) {
             console.log(e);
           }
+          await this.setDate();
           await this.createEventDoctorList();
+          await this.listDoctorsHour();
       }
 
-      parseISOLocal(s) {
-        var b = s.split(/\D/);
+      setDate(){
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth();
+        this.setState({
+          startDate: new Date (year,month, 1),
+          endDate: new Date (year,month+1, 0),
+        })
+        console.log("1" + this.state.startDate + this.state.endDate);
+      }
+
+      parseISOLocal(start) {
+        var b = start.split(/\D/);
+        var dateStart = new Date(start);
+        if (dateStart <= this.state.startDate || dateStart >= this.state.endDate) {
+          return "";
+        }
         return new Date(b[0], b[1]-1, b[2], b[3], b[4], b[5]);
       }
 
       createEventDoctorList(){
-        var title,start,end;
+        var title,start,end,id;
         this.setState({
           doctor_events_list : [],
         })
@@ -106,7 +183,8 @@ export default class NewScheduleTable extends Component {
           title = this.getDoctorId(each.doctor),
           start = this.parseISOLocal(each.start),
           end = this.parseISOLocal(each.end),
-          this.pushEventValid(title,start,end)
+          id = each.doctor,
+          this.pushEventValid(title,start,end,id)
         ));
 
         this.setState({
@@ -117,9 +195,9 @@ export default class NewScheduleTable extends Component {
         console.log(this.state.doctor_events_list);
       }
 
-      pushEventValid(title,start,end){
-        if (title !== "") {
-          this.state.doctor_events_list.push({'start':start,'end':end,'title':title})
+      pushEventValid(title,start,end,id){
+        if (title !== "" && start !== "" && end !== "") {
+          this.state.doctor_events_list.push({'start':start,'end':end,'title':title,'id':id})
         }
       }
 
@@ -187,6 +265,51 @@ export default class NewScheduleTable extends Component {
 
     }
 
+    listDoctorsHour(){
+      var name,workload;
+      this.state.all_doctors.map(each => (
+        name = each.name,
+        workload = this.calculateWorkload(each.id),
+        this.state.doctors_event.push({name,workload})
+      ));
+    }
+
+    calculateWorkload(id){
+      var timeStart,timeEnd,idValid;
+      var all_doctor_events = [];
+      this.state.doctor_events_list.map(each => (
+        timeStart = each.start,
+        timeEnd = each.end,
+        idValid = this.idValidate(each.id,id),
+        this.pushAllDoctorEvents(all_doctor_events,timeStart,timeEnd,idValid)
+      ));
+    }
+
+    idValidate(listId,id){
+      if (id === listId) {
+        return id;
+      }
+      else{
+        return -1;
+      }
+    }
+
+    pushAllDoctorEvents(all_doctor_events,timeStart,timeEnd,idValid){
+      if (idValid >= 0) {
+        all_doctor_events.push({timeStart,timeEnd});
+      }
+    }
+
+    handleClose() {
+      this.setState({ show: false });
+    }
+
+    handleShow() {
+      this.setState({
+        show: true,
+       });
+    }
+
 
     render(){
         let toolBar = []
@@ -209,6 +332,13 @@ export default class NewScheduleTable extends Component {
                               {toolBar}
                             </ToggleButtonGroup>
                         </ButtonToolbar>
+                        <br></br>
+                        <div>
+                          <div>
+                            {console.log(this.state.doctors_event)}
+                          <Example/>
+                        </div>
+                        </div>
                         <h1 >Quadro de Horários</h1>
                       </header>
                       <Calendar
