@@ -45,12 +45,29 @@ A fim de garantir o cumprimento das Histórias de Usuário durante a *sprint*. F
 
 ### 4.1 - Sprint anteriores
 
+|ID|História|Pontos|Responsáveis|
+|:-:|:-----:|:----:|:----------:|
+|[TS50](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/221)| Teste de Frontend| 3 | Caio Beleza, Victor Hugo e Adrielly |
+|[TS49](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/219)| Atualizar Documento de Riscos | 2 | Caio Gabriel e Joao Gabriel |
+
 
 ### 4.2 - Novas histórias
 
 
   ***User Stories***
 
-
+|ID|História|Pontos|Responsáveis|
+|:-:|:-----:|:----:|:----------:|
+|[US31](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/111)| Mpstrar número de médicos alocados por turno | 3 | Caio Beleza, João Vitor e Adrielly  |
+|[US11](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/106)| Computar Carga horaria | 3 | Caio Beleza, João Vitor e Adrielly  |
+|[US30](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/234)| Alterar forma de atualizar evento médico | 8 | Guilherme e  Victor Hugo |
 
   ***Technical Stories***
+
+|ID|História|Pontos|Responsáveis|
+|:-:|:-----:|:----:|:----------:|
+|[TS52](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/)| Retrospectiva da Sprint 12| 2 | Caio Gabriel |
+|[TS55](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/239)| Planejamento da Sprint 13| 2 | Joao Gabriel |
+|[TS54](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/237)| Atualizar documentação referente as Sprints| 5 | Rafael Bragança|
+|[TS53](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/235)| Refatorar documento de arquitetura | 3  | Caio Beleza, João Vitor, Adrielly, Guilherme e  Victor Hugo |
+
