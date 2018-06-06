@@ -23,9 +23,14 @@ class MySmallModal extends React.Component {
       <Modal
         className="modal-height modal"
         {...this.props}
-        bsSize="small"
-        aria-labelledby="contained-modal-title-sm"
+        bsSize="large"
+        aria-labelledby="contained-modal-title-lg"
       >
+
+        <Modal.Header className="" >
+          <h1 className="modal-header-align ">Médico  </h1>
+
+        </Modal.Header>
         <Modal.Body className="modal-content">
           <h4>Wrapped Text</h4>
           <p>teste teste teste teste testeteste teste</p>
@@ -37,6 +42,7 @@ class MySmallModal extends React.Component {
               <p>teste teste teste teste testeteste teste</p>
               <p>teste teste teste teste testeteste teste</p>
               <p>teste teste teste teste testeteste teste</p>
+              <Button onClick={this.props.onHide}>Close</Button>
         </Modal.Body>
       </Modal>
     );

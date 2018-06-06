@@ -5408,6 +5408,10 @@ button.close {
   overflow: hidden;
   outline: 0;
 }
+.modal-header-align{
+  margin-right: auto;
+}
+
 
 .modal-open .modal {
   overflow-x: hidden;
@@ -5479,6 +5483,7 @@ button.close {
 .modal-backdrop.show {
   opacity: 0.5;
 }
+
 
 .modal-header {
   display: -webkit-box;
