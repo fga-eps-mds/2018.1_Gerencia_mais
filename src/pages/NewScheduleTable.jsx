@@ -18,6 +18,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 Calendar.setLocalizer(Calendar.momentLocalizer(moment));
 
 class MySmallModal extends React.Component {
+
   render() {
     return (
       <Modal
@@ -28,21 +29,16 @@ class MySmallModal extends React.Component {
       >
 
         <Modal.Header className="" >
-          <h1 className="modal-header-align ">Médico  </h1>
+          <h1 className="modal-header-align ">{this.props.currentdoctor}</h1>
 
         </Modal.Header>
         <Modal.Body className="modal-content">
-          <h4>Wrapped Text</h4>
-          <p>teste teste teste teste testeteste teste</p>
-          <p>teste teste teste teste testeteste teste</p>
-          <p>teste teste teste teste testeteste teste</p>
-            <p>teste teste teste teste testeteste teste</p>
-            <p>teste teste teste teste testeteste teste</p>
-            <p>teste teste teste teste testeteste teste</p>
-              <p>teste teste teste teste testeteste teste</p>
-              <p>teste teste teste teste testeteste teste</p>
-              <p>teste teste teste teste testeteste teste</p>
-              <Button onClick={this.props.onHide}>Close</Button>
+          <h4>Inicio</h4>
+          <h7>{this.props.currentstart}</h7>
+          <h4>Fim</h4>
+          <h7>{this.props.currentend}</h7>
+
+          <Button onClick={this.props.onHide}>Close</Button>
         </Modal.Body>
       </Modal>
     );
@@ -55,6 +51,9 @@ export default class NewScheduleTable extends Component {
       this.state={
         smShow: false,
         lgShow: false,
+        current_doctor:"",
+        current_start:"",
+        current_end:"",
         doctor_events_list: [],
         all_events: [],
         all_doctors: [],
@@ -164,6 +163,7 @@ export default class NewScheduleTable extends Component {
 
 
     render(){
+      console.log(this.state.current_doctor);
         let smClose = () => this.setState({ smShow: false });
         let toolBar = []
         for(let i=0; i<this.state.all_category.length; i++){
@@ -179,7 +179,6 @@ export default class NewScheduleTable extends Component {
                 <div style={{marginTop:"70px",marginBottom:"100px"}} className="jumbotron">
                     <div className="App">
                       <header className="App-header">
-
                         <ButtonToolbar>
                             <ToggleButtonGroup type="radio" name="options" defaultValue={0}>
                               {toolBar}
@@ -191,7 +190,8 @@ export default class NewScheduleTable extends Component {
                         views={['month', 'week', 'day']}
                         defaultDate={new Date()}
                         selectable
-                        onSelectEvent={() => this.setState({ smShow: true })}
+                        onSelectEvent={() => this.setState({ }),
+                                      (event) =>this.setState({smShow: true,current_doctor: event.title,current_start:event.start.toString(),current_end:event.end.toString()})}
                         defaultView="month"
                         events={this.state.doctor_events_list}
                         style={{ height: "100vh" }}
@@ -199,7 +199,8 @@ export default class NewScheduleTable extends Component {
                     </div>
                 </div>
             </div>
-            <MySmallModal show={this.state.smShow} onHide={smClose} />
+            <MySmallModal show={this.state.smShow} onHide={smClose} currentdoctor={this.state.current_doctor}
+                          currentstart={this.state.current_start} currentend={this.state.current_end}  />
             <Footer></Footer>
     	    </div>
     	);
