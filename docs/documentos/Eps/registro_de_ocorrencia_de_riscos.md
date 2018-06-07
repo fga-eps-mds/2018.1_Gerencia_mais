@@ -14,3 +14,11 @@ Responsável : Rafael Bragança
 
 ### Ocorrência : Falta de escopo 
 Relato:Escopo pré definido teve que sofrer alterações para se adequar a necessidade do cliente, o que era antes definido a ser gerenciamento de internações cirúrgicas, tornou-se gereciamento de quadro horários a fim de complementar o que o atual software em atividade (TRAKCARE).
+## Sprint 3
+
+Sem Ocorrencias
+
+## Sprint 4
+ Sem ocorrencias
+
+ 
