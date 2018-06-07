@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import SideBar from '../components/SideBar';
 import isLogged from '../actions/actions';
 import {store} from '../components/store';
+import IMG from '../images/hospital1.png';
 
 export default class HomePage extends Component {
   render() {
@@ -37,7 +38,7 @@ export default class HomePage extends Component {
           </div>
           <div className='column'>
             <img src="http://images.clipartpanda.com/hospital-clipart-hospital-png-830x747.png" className='img-fluid' alt="Calendar-image"/>
-          </div>
+        </div>
         </div>
       </div>
 

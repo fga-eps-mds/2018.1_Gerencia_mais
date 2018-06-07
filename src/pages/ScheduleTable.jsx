@@ -14,7 +14,7 @@ var test;
 var ds = new Date(Date.UTC(2018,4,1,7));
 console.log(ds);
 var de = new Date(Date.UTC(2018,4,1,13));
-export default class NewScheduleTable extends Component {
+export default class ScheduleTable extends Component {
     constructor(props){
       super(props);
       this.state={
