@@ -5,3 +5,9 @@ Responsável: Ullysses
 
 ### Ocorrência : Falta de escopo
 Relato: Busca da monitora responsável pelo grupo (EPS/MDS), a fim de se adequar a real necessidade do escopo
+
+## Sprint 2
+### Ocorrência : A maioria dos integrantes da equipe não possuía conhecimento sobre Python
+Relato: Dada a dificuldade dos integrantes sobre a linguagem adotada para o desenvolvimento da aplicação foi dada aula de conhecimento geral sobre a linguagem Python.
+Responsável : Rafael Bragança
+
