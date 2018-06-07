@@ -11,3 +11,6 @@ Relato: Busca da monitora responsável pelo grupo (EPS/MDS), a fim de se adequar
 Relato: Dada a dificuldade dos integrantes sobre a linguagem adotada para o desenvolvimento da aplicação foi dada aula de conhecimento geral sobre a linguagem Python.
 Responsável : Rafael Bragança
 
+
+### Ocorrência : Falta de escopo 
+Relato:Escopo pré definido teve que sofrer alterações para se adequar a necessidade do cliente, o que era antes definido a ser gerenciamento de internações cirúrgicas, tornou-se gereciamento de quadro horários a fim de complementar o que o atual software em atividade (TRAKCARE).
