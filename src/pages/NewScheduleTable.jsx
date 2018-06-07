@@ -13,8 +13,6 @@ import 'react-infinite-calendar/styles.css';
 import Calendar from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import 'rc-time-picker/assets/index.css';
-import TimePicker from 'rc-time-picker';
 
 
 Calendar.setLocalizer(Calendar.momentLocalizer(moment));
@@ -44,20 +42,8 @@ class MySmallModal extends React.Component {
           <div>
             <Button onClick={this.toggleStatus} bsSize="large" bsStyle="primary">Alterar Horário</Button><br></br><br></br><br></br>
             <h4>Inicio</h4>
-            <TimePicker
-              showSecond={false}
-              focusOnOpen
-              disabled={this.state.status}
-              hideDisabledOptions={true}
-            />
             <p>{this.props.currentstart}</p>
             <h4>Fim</h4>
-            <TimePicker
-                showSecond={false}
-                focusOnOpen
-                disabled={this.state.status}
-                hideDisabledOptions={false}
-            />
             <p>{this.props.currentend}</p><br></br><br></br><br></br>
             <Button bsSize="large" bsStyle="primary">Alterar Status</Button><br></br><br></br><br></br>
             <Button onClick={this.props.onHide} bsStyle="danger">Close</Button><br></br>
