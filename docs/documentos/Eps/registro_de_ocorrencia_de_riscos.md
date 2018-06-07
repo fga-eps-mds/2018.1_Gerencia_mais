@@ -19,6 +19,8 @@ Relato:Escopo pré definido teve que sofrer alterações para se adequar a neces
 Sem Ocorrencias
 
 ## Sprint 4
- Sem ocorrencias
+Sem ocorrencias
 
- 
+## Sprint 5
+## Ocorrência : Baixa usabilidade do software
+Relato:Devido a baixa usabilidade do software na atual data, foi feita um Tecnical Storie a fim de consertar tais empecilhos.
