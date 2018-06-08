@@ -4,439 +4,426 @@ import SideBar from '../components/SideBar';
 import Footer from '../components/Footer';
 import Popup from "reactjs-popup";
 import "../css/ScheduleTable.css";
-import {Table,ButtonToolbar,ToggleButtonGroup,ToggleButton} from 'react-bootstrap';
+import {Table,ButtonToolbar,ToggleButtonGroup,ToggleButton,Modal,Button} from 'react-bootstrap';
 import "../css/popup.css";
 import "../css/bootstrap.min.css";
-import InfiniteCalendar from 'react-infinite-calendar';
 import 'react-infinite-calendar/styles.css';
+import Calendar from "react-big-calendar";
+import moment from "moment";
+import "react-big-calendar/lib/css/react-big-calendar.css";
 
-class GridCell extends Component {
-  constructor(props){
-    super(props);
-    this.state = {"line":props.line,"column":props.column,"update":1,};
-    this.onClickUpdate = this.onClickUpdate.bind(this);
+moment.updateLocale('en-gb', {
+  week : {
+      doy : 4  // The week that contains Jan 4th is the first week of the year.
   }
+});
 
-    resolveButton(line,column){
-      fetch("http://localhost:8000/doctor/api-doctor/?format=json")
-      .then(response => response.json())
-      .then(contacts => this.setState({
-        contacts
-      }))
-      .catch(error => console.log("error to get data " + error));
-    };
+moment.locale('en-gb');
 
-    onClickUpdate(e){
-      const title = e.target.title;
-      const value = e.target.value;
-      this.setState(
-        {[title]:value,}
-      );
-    }
+Calendar.setLocalizer(Calendar.momentLocalizer(moment));
 
+class MySmallModal extends React.Component {
 
-  render(){
-
-    let update;
-    if(this.state.update===1){
-      this.state.update = 0;
-      update = (
-        <div>{this.resolveButton(this.props.line,this.props.column)}</div>
-      )
-    }else {
-      update = (
-        <div></div>
-      )
-    }
-    return(
-      <td>
-      {update}
-      <div className="">
-        <div className="">
-          {
-            this.state.contacts != null ? this.state.contacts.map(user =>
-              <div className ="doctorName"><span>{user.name}</span><br></br><br></br></div>
-            )
-            : null
-          }
+  render() {
+    let doctors = [];
+    let doctor;
+    for (var count = 0; count < this.props.doctors.length; count++) {
+      doctor = this.props.doctors[count];
+      doctors.push(
+        <div>
+          <h4>Doutor: {doctor.name} | Carga Horária: {doctor.workload}</h4>
+          <br></br>
         </div>
-      </div>
-
-      </td>
-    )
-  }
-}
-
-export default class ScheduleTable extends Component {
-    constructor(){
-      super();
-      this.state={"content":"Selecione uma opcao", "popup":"", "contacts":""};
-    }
-
-
-
-    daysInMonth(month, year) {
-      return new Date(year, month, 0).getDate();
-    }
-
-    TableList(number,type){
-      var date = new Date();
-      var month = date.getMonth() + 1;
-      var year = date.getYear();
-      var lists=[];
-      var periods = [
-      "MANHÃ",
-      "",
-      "",
-      "TARDE",
-      "NOITE",
-      ];
-      var leg = [
-      "ENF",
-      "P2",
-      "PS",
-      "PS",
-      "PS",
-      ];
-      var rows = [];
-      var contador = 0;
-
-      if(type){
-        for(var aux = 0; aux < this.daysInMonth(month,year); aux++){
-
-          rows.push(<GridCell className="inc"  line={3} column={aux}></GridCell>)
-        }
-        for(var cont = 0;cont <= number; cont++){
-          lists.push(
-
-          <tr>
-            <td><h3 className="toptobottom">{periods[cont]}</h3></td>
-            <td><h3 className="toptobottom leg-styling">{leg[cont]}</h3></td>
-            {rows}
-            </tr>
-          )
-        }
-      }else{
-        for(var aux = 0; aux < 1; aux++){
-
-          rows.push(<GridCell className="inc"  line={4} column={aux}></GridCell>)
-          rows.push(<td>TERÇA FEIRA</td>)
-          rows.push(<td>11,13,23</td>)
-          rows.push(<td>7-12</td>)
-        }
-        for(var cont = 0;cont <= number; cont++){
-          lists.push(
-            <tr>
-              {rows}
-            </tr>
-          )
-        }
-      }
-
-    return lists;
-    }
-
-    TableHeader(type){
-      var esp = new Date(2018,4,1);
-      var semana = esp.getDay();
-      var date = new Date();
-      var days = ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sabado'];
-      var month = date.getMonth() + 1;
-      var year = date.getFullYear();
-      var rows = [];
-      var escolhido;
-
-      if(type){
-        for(var aux = 0; aux < this.daysInMonth(month,year); aux++){
-          esp = new Date(year,month-1,aux+1);
-          escolhido = days[esp.getDay()];
-          rows.push(<th>{escolhido}<br className="header-br"></br> {aux+1}</th>)
-        }
-      }else {
-        rows.push(<th className="especialidade-td">Profissional</th>)
-        rows.push(<th className="especialidade-td">Dia da Semana</th>)
-        rows.push(<th className="especialidade-td">Data</th>)
-        rows.push(<th className="especialidade-td">Horário</th>)
-      }
-
-
-      return rows;
-    }
-    TableCols(){
-      var esp;
-      var date = new Date();
-      var days = ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sabado'];
-      var month = date.getMonth() + 1;
-      var year = date.getFullYear();
-      var rows = [];
-      var escolhido;
-      var cont = 0;
-      for(var aux = 0; aux < this.daysInMonth(month,year); aux++){
-        esp = new Date(year,month-1,aux+1);
-        escolhido = days[esp.getDay()];
-        if(escolhido == "Sabado" || escolhido == "Domingo"){
-          rows.push(<col className="blue"></col>);
-        }else
-          rows.push(<col></col>)
-      }
-      return rows;
-    }
-
-    getMonthYearName(){
-      var date = new Date();
-      var months = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
-      var month = date.getMonth();
-      var year = date.getFullYear();
-      var title = [];
-      title.push(" - ");
-      title.push(months[month]);
-      title.push(" De ");
-      title.push(year);
-      return title;
-    }
-
-    fetchData(){
-
-      fetch("http://localhost:8000/doctor/api-doctor/?format=json")
-      .then(response => response.json())
-      .then(contacts => this.setState({
-        contacts
-      }))
-      .catch(error => console.log("error to get data " + error));
-    }
-
-
-    resolveButtonMonth(){
-      var popup = (
-        <Popup
-        trigger={<button className="btn btn-outline-primary">Relatorio Diario</button>}
-        modal
-        closeOnDocumentClick
-        >
-
-        <div className="popupShape ">
-          <div className="pre-scrollable">
-            <h4 className='modal-header whitename'>Médicos</h4>
-            {
-              this.state.contacts != null ? this.state.contacts.map(user =>
-                  <div><strong>Nome: </strong> <span>{user.name}</span><br></br><strong>Função: </strong>Médico<br></br><br></br></div>
-              )
-              : null
-            }
-          </div>
-        </div>
-        </Popup>
       )
-      this.setState({"component":this.changeTable(true), "popup":popup})
     }
 
-    changeTable(tableNumber){
-      var content;
-      switch(tableNumber){
-        case 1:
-           content = (
-            <div style={{marginTop:"10px"}}>
-              <table style={{display:"inline-block"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
-               <thead>
-                 <th colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - PSIQUIATRIA - CONSULTA</th>
-                 <tr>
-                  {this.TableHeader(false)}
-                 </tr>
-               </thead>
-               <tbody>
-                  {this.TableList(4,false)}
-               </tbody>
-                </table>
-             <table style={{display:"inline-block", float:"right"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
-              <thead className="parecer-th">
-                <th className="parecer-th" colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - PSIQUIATRIA - PARECER</th>
-                <tr>
-                 {this.TableHeader(false)}
-                </tr>
-              </thead>
-              <tbody>
-                 {this.TableList(0,false)}
-              </tbody>
-            </table>
-            </div>
-          )
-    break;
-      case 2:
-        content = (
+    return (
+      <Modal
+        className="modal-height modal"
+        {...this.props}
+        bsSize="large"
+        aria-labelledby="contained-modal-title-lg"
+      >
+        <Modal.Header className="" >
+          <h1 className="modal-header-align ">Carga Horária</h1>
+        </Modal.Header>
+        <Modal.Body className="modal-content">
           <div>
-          <h1 style={{marginTop:"20px"}}>Escala {this.getMonthYearName()} - PS ADULTO</h1>
-        <table className="wallpaper inc customiza bsClass" striped bordered condensed hover>
-                 <colgroup>
-                   <col></col>
-                   <col></col>
-                  {this.TableCols()}
-                 </colgroup>
-                 <thead>
-                   <tr>
-                    <th>Horário</th>
-                    <th>Leg</th>
-                    {this.TableHeader(true)}
-                   </tr>
-                 </thead>
-                 <tbody>
-                    {this.TableList(4,true)}
-                 </tbody>
-       </table>
-</div>
+            <legend> Médicos </legend>
+                <select className="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                <option defaultValue={0} value={0}>Escolha um médico...</option>
+                {this.props.doctors.map(each =>(
+                <option>Doutor: {each.name} | Carga Horária: {each.workload}</option>
 
-       )
-       break;
-
-       case 3:
-       content = (
-         <div style={{marginTop:"10px"}}>
-           <table style={{display:"inline-block"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
-            <thead>
-              <th colSpan="7">Unidade Médica Interna{this.getMonthYearName()} - ENDOCRINOLOGISTA - CONSULTA/PARECER</th>
-              <tr>
-               {this.TableHeader(false)}
-              </tr>
-            </thead>
-            <tbody>
-               {this.TableList(7,false)}
-            </tbody>
-          </table>
-      </div>
-       )
-       break;
-
-       case 4:
-       content = (
-         <div style={{marginTop:"10px"}}>
-           <table style={{display:"inline-block", marginBottom:"10px"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
-            <thead>
-              <th colSpan="7">Unidade Médica Interna{this.getMonthYearName()} - GASTROENTEROLOGIA - CONSULTA/PARECER</th>
-              <tr>
-               {this.TableHeader(false)}
-              </tr>
-            </thead>
-            <tbody>
-               {this.TableList(7,false)}
-            </tbody>
-          </table>
-          <table style={{display:"inline-block", float:"right"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
-           <thead>
-             <th colSpan="7">Unidade Médica Interna{this.getMonthYearName()} - GASTROENTEROLOGIA - ENDOSCOPIA</th>
-             <tr>
-              {this.TableHeader(false)}
-             </tr>
-           </thead>
-           <tbody>
-              {this.TableList(7,false)}
-           </tbody>
-         </table>
-         <table style={{display:"inline-block"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
-          <thead>
-            <th colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - GASTROENTEROLOGIA - COLONOSCOPIA</th>
-            <tr>
-             {this.TableHeader(false)}
-            </tr>
-          </thead>
-          <tbody>
-             {this.TableList(4,false)}
-          </tbody>
-        </table>
-      </div>
-       )
-       break;
-
-       case 5:
-         content = (
-          <div style={{marginTop:"10px"}}>
-            <table style={{display:"inline-block"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
-             <thead>
-               <th colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - NEUROLOGIA - CONSULTA</th>
-               <tr>
-                {this.TableHeader(false)}
-               </tr>
-             </thead>
-             <tbody>
-                {this.TableList(4,false)}
-             </tbody>
-              </table>
-           <table style={{display:"inline-block", float:"right"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
-            <thead className="parecer-th">
-              <th className="parecer-th" colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - NEUROLOGIA - PARECER</th>
-              <tr>
-               {this.TableHeader(false)}
-              </tr>
-            </thead>
-            <tbody>
-               {this.TableList(4,false)}
-            </tbody>
-          </table>
+            ))}
+              </select>
+            {doctors}
+            <Button onClick={this.props.onHide} bsStyle="danger">Close</Button><br></br>
           </div>
-        )
-      break;
-      case 6:
-        content = (
-         <div style={{marginTop:"10px"}}>
-           <table style={{display:"inline-block"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
-            <thead>
-              <th colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - REUMATOLOGIA - CONSULTA</th>
-              <tr>
-               {this.TableHeader(false)}
-              </tr>
-            </thead>
-            <tbody>
-               {this.TableList(4,false)}
-            </tbody>
-             </table>
-             <table style={{display:"inline-block", float:"right"}} className="wallpaper customiza bsClass" striped bordered condensed hover>
-              <thead className="parecer-th">
-                <th className="parecer-th" colSpan="4">Unidade Médica Interna{this.getMonthYearName()} - REUMATOLOGIA - PARECER</th>
-                <tr>
-                 {this.TableHeader(false)}
-                </tr>
-              </thead>
-              <tbody>
-                 {this.TableList(4,false)}
-              </tbody>
-            </table>
-         </div>
-       )
-       break;
-     }
-
-        this.setState({"content":content})
-      }
-
-      componentDidMount(){
-        this.changeTable(2)
-      }
-
-      render() {
-
-	return (
-	  <div>
-	    <NavBar></NavBar>
-      <SideBar></SideBar>
-	    <h1>Quadro de Horários</h1>
-        <div className="container" style={{marginTop:"70px",marginRight:"35%",marginBottom:"70px",}}>
-          <div className="jumbotron jumbosize ">
-
-
-            <ButtonToolbar>
-                <ToggleButtonGroup type="radio" name="options" defaultValue={2}>
-                  <ToggleButton className="btn btn-outline-primary" value={2} onClick={()=>this.changeTable(2)}>Pronto Socorro</ToggleButton>
-                  <ToggleButton className="btn btn-outline-primary" value={1} onClick={()=>this.changeTable(1)}>Psiquiatria</ToggleButton>
-                  <ToggleButton className="btn btn-outline-primary" value={3} onClick={()=>this.changeTable(3)}>Endocrinologia</ToggleButton>
-                  <ToggleButton className="btn btn-outline-primary" value={4} onClick={()=>this.changeTable(4)}>Gastroenterologia</ToggleButton>
-                  <ToggleButton className="btn btn-outline-primary" value={5} onClick={()=>this.changeTable(5)}>Neurologia</ToggleButton>
-                  <ToggleButton className="btn btn-outline-primary" value={6} onClick={()=>this.changeTable(6)}>Reumatologia</ToggleButton>
-
-                </ToggleButtonGroup>
-            </ButtonToolbar>
-                {this.state.content}
-          </div>
-        </div>
-       <Footer></Footer>
-	    </div>
-	);
-    }
+        </Modal.Body>
+      </Modal>
+    );
+  }
 }
+
+export default class NewScheduleTable extends Component {
+    constructor(props){
+      super(props);
+      this.state={
+        smShow: false,
+        startDate: '',
+        endDate: '',
+        doctor_events_list: [],
+        all_events: [],
+        all_doctors: [],
+        doctors_workload: [],
+        all_category : [
+          "Geral"
+        ],
+        category : '',
+        turns: [],
+        turnStart: [
+          ["manhã",6],
+          ["tarde",12],
+          ["noite",18]
+        ],
+        current_date: new Date(),
+        current_view: 'month',
+      };
+
+      this.bindScopes([
+        'onView',
+        'onNavigate',
+        'updateTimes',
+      ]);
+
+      this.updateTimes();
+    }
+
+    async componentDidMount() {
+        try {
+          const name = 'http://localhost:8000/doctor/api-doctor/';
+          const res = await fetch(name);
+          console.log(res);
+          const all_doctors = await res.json();
+          this.setState({all_doctors});
+        } catch (e) {
+          console.log(e);
+        }
+        await this.createCategoryList();
+        await this.componentDidMount1();
+
+      }
+
+      createCategoryList() {
+        var category;
+        this.state.all_doctors.map(each => (
+          category = this.categoryValidate(each.category),
+          this.pushCategoryValid(category)
+
+        ));
+      }
+
+    async componentDidMount1() {
+        try {
+          this.state.all_doctors = [];
+          const name = 'http://localhost:8000/doctor/api-doctor/list-doctor/category/?category='+this.state.category;
+          const res = await fetch(name);
+          console.log(res);
+          const all_doctors = await res.json();
+          this.setState({all_doctors});
+        } catch (e) {
+          console.log(e);
+        }
+        await this.componentDidMount2();
+
+      }
+
+      async componentDidMount2() {
+          try {
+            const name = 'http://localhost:8000/schedule/api-event/';
+            const res = await fetch(name);
+            console.log(res);
+            const all_events = await res.json();
+            this.setState({all_events});
+          } catch (e) {
+            console.log(e);
+          }
+          await this.createEventDoctorList();
+      }
+
+      parseISOLocal(strDate) {
+        var b = strDate.split(/\D/);
+        var date = new Date(strDate);
+        if (date <= this.state.startDate || date >= this.state.endDate) {
+          return "";
+        }
+        return new Date(b[0], b[1]-1, b[2], b[3], b[4], b[5]);
+      }
+
+      parseISOLocalEnd(strDate) {
+        var b = strDate.split(/\D/);
+        return new Date(b[0], b[1]-1, b[2], b[3], b[4], b[5]);
+      }
+
+      createEventDoctorList(){
+        this.updateTimes();
+        var title,start,end,id;
+        this.state.doctor_events_list = [],
+        this.state.all_events.map(each => (
+          title = this.getDoctorId(each.doctor),
+          start = this.parseISOLocal(each.start),
+          end = this.parseISOLocalEnd(each.end),
+          id = each.doctor,
+          this.pushEventValid(title,start,end,id)
+        ));
+        this.listDoctorsHour();
+        this.calculateTurns();
+      }
+
+      pushEventValid(title,start,end,id){
+        if (title !== "" && start !== "" && end !== "") {
+          this.state.doctor_events_list.push({'start':start,'end':end,'title':title,'id':id})
+        }
+      }
+
+      getDoctorId(id){
+        var name = "";
+        this.state.all_doctors.map(each =>(
+           name = this.compareId(each.id,id,each.name, name)
+        ));
+        return name;
+      }
+
+      pushCategoryValid(category){
+        if(category !== ""){
+          this.state.all_category.push(category);
+        }
+      }
+
+      categoryValidate(category){
+        var aux = 0;
+        this.state.all_category.map(each =>(
+           aux += this.compareCategory(each,category)
+        ));
+        if (aux === this.state.all_category.length) {
+          return category;
+        } else {
+          return "";
+        }
+      }
+
+      compareCategory(categoryOfList,category){
+        if(category === categoryOfList){
+          return 0;
+        }
+        else {
+          return 1;
+        }
+      }
+
+      compareId(id,id2,doctorName,realName){
+        if(id === id2){
+          var name = doctorName;
+        }
+        else{
+          var name = realName;
+        }
+        return name;
+      }
+
+      changeTable(tableNumber){
+        this.setState({
+          all_events: [],
+        })
+        if (tableNumber === 0) {
+          this.setState({
+          category : "",
+          })
+        }
+        else {
+          this.setState({
+          category : this.state.all_category[tableNumber],
+          })
+        }
+        this.componentDidMount1()
+
+
+    }
+
+    listDoctorsHour(){
+      var name,workload;
+      this.state.doctors_workload = [];
+      this.state.all_doctors.map(each => (
+        name = each.name,
+        workload = this.calculateWorkload(each.id),
+        this.state.doctors_workload.push({'name' :name,'workload':workload})
+      ));
+    }
+
+    calculateWorkload(id){
+      var timeStart,timeEnd;
+      var timeTotal = 0;
+      var idVoid = 0;
+      this.state.doctor_events_list.map(each => (
+        timeStart = each.start,
+        timeEnd = each.end,
+        idVoid = this.idValidate(each.id,id),
+        timeTotal += this.allDoctorEvents(timeStart,timeEnd,idVoid)
+      ));
+      return timeTotal;
+    }
+
+    idValidate(listId,id){
+      if (id === listId) {
+        return id;
+      }
+      else{
+        return -1;
+      }
+    }
+
+    allDoctorEvents(timeStart,timeEnd,idValid){
+      if (idValid >= 0) {
+        var strStart = timeStart.toString().split(/\D/);
+        var strEnd = timeEnd.toString().split(/\D/);
+
+        if ((Number(strEnd[10]) - Number(strStart[10])) < 0) {
+          return Number(strEnd[10]) - Number(strStart[10] + 24);
+        }
+        return Number(strEnd[10]) - Number(strStart[10]);
+      }
+      return 0;
+    }
+
+    calculateTurns(){
+      var turns = [];
+      for (var count = 0; count < this.state.turnStart.length; count++) {
+        turns.push(0);
+      }
+      this.state.doctor_events_list.map(each =>(
+        this.verifyTurn(turns,each.start.toString().split(/\D/))
+      ));
+      this.setState({
+        'turns' : turns
+      })
+    }
+
+    verifyTurn(turns,eventStart){
+      var startHour =Number(eventStart[10]);
+      for (var count = 0; count < this.state.turnStart.length; count++) {
+        if (count === this.state.turnStart.length - 1) {
+          if ((startHour < this.state.turnStart[0][1]) || (startHour >= this.state.turnStart[count][1])) {
+            turns[count] += 1;
+          }
+        }else{
+          if ((startHour < this.state.turnStart[count+1][1]) && (startHour >= this.state.turnStart[count][1])) {
+            turns[count] += 1;
+          }
+        }
+      }
+    }
+
+    onView(view){
+      this.state.current_view = view;
+      this.createEventDoctorList();
+    }
+
+    updateTimes(){
+      let start, end;
+      if(this.state.current_view === 'day'){
+        start = moment(this.state.current_date).startOf('day').format();
+        end   = moment(this.state.current_date).endOf('day').format();
+      }
+      else if(this.state.current_view === 'week'){
+        start = moment(this.state.current_date).startOf('isoWeek').subtract(1, 'days').format();
+        end   = moment(this.state.current_date).endOf('isoWeek').subtract(1, 'days').format();
+      }
+      else if(this.state.current_view === 'month'){
+        start = moment(this.state.current_date).startOf('month').subtract(7, 'days').format();
+        end   = moment(this.state.current_date).endOf('month').add(7, 'days').format();
+      }
+        this.state.startDate = new Date(start);
+        this.state.endDate = new Date(end);
+    }
+
+    bindScopes(keys){
+      for(let key of keys){
+        this[key] = this[key].bind(this);
+      }
+    }
+
+    onNavigate(date, view){
+    const new_date = moment(date);
+    this.state.current_date = date
+    this.state.current_view = view
+    this.createEventDoctorList();
+  }
+
+    render(){
+        let smClose = () => this.setState({ smShow: false });
+        let toolBar = [];
+        let turnsInformation = [];
+        let turnstitle = [];
+        for(let count=0; count<this.state.all_category.length; count++){
+          toolBar.push(
+             <ToggleButton className="btn btn-outline-primary" value={count} onClick={()=>this.changeTable(count)}>{this.state.all_category[count]}</ToggleButton>
+           );
+        }
+        for (let count = 0; count < this.state.turnStart.length; count++) {
+          turnstitle.push(
+            <th>{this.state.turnStart[count][0]}</th>
+          );
+          turnsInformation.push(
+            <td>{this.state.turns[count]}</td>
+          );
+        }
+    	return(
+    	  <div>
+    	    <NavBar></NavBar>
+          <SideBar></SideBar>
+            <div  className="container">
+                <div style={{marginTop:"70px",marginBottom:"100px"}} className="jumbotron">
+                    <div className="App">
+                      <header className="App-header">
+
+                        <ButtonToolbar>
+                            <ToggleButtonGroup type="radio" name="options" defaultValue={0}>
+                                {toolBar}
+                            </ToggleButtonGroup>
+                        </ButtonToolbar>
+                        <br></br>
+                        <MySmallModal show={this.state.smShow} onHide={smClose} doctors={this.state.doctors_workload}/>
+                        <Button className="btn btn-outline-primary" onClick={() => this.setState({smShow: true})}>Carga Horária</Button>
+                        <br></br>
+                        <h1 >Quadro de Horários</h1>
+                          <Table striped bordered condensed hover>
+                            <thead>
+                              <tr>
+                                {turnstitle}
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                {turnsInformation}
+                              </tr>
+                            </tbody>
+                          </Table>
+                      </header>
+                      <Calendar
+                          views={['month', 'week', 'day']}
+                          onNavigate={this.onNavigate}
+                          onView={this.onView}
+                          defaultDate={new Date()}
+                          defaultView="month"
+                          events={this.state.doctor_events_list}
+                          style={{ height: "100vh" }}
+                        />
+                    </div>
+                </div>
+            </div>
+            <Footer></Footer>
+    	    </div>
+    	);
+    }
+ }
