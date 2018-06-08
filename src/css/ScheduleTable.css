@@ -16,7 +16,12 @@ h3 {
   color:#000;
 }
 
-
+.marginButton {
+  margin-right: 100%;
+}
+.btn-group{
+  margin-right: 100%;
+}
 
 .wallpaper .th{
   width:150%;

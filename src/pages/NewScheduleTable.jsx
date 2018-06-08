@@ -7,90 +7,97 @@ import "../css/ScheduleTable.css";
 import {Table,ButtonToolbar,ToggleButtonGroup,ToggleButton,Modal,Button} from 'react-bootstrap';
 import "../css/popup.css";
 import "../css/bootstrap.min.css";
-import InfiniteCalendar from 'react-infinite-calendar';
 import 'react-infinite-calendar/styles.css';
 import Calendar from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
-class Example extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-
-    this.handleShow = this.handleShow.bind(this);
-    this.handleClose = this.handleClose.bind(this);
-
-    this.state = {
-      show: false
-    };
+moment.updateLocale('en-gb', {
+  week : {
+      doy : 4  // The week that contains Jan 4th is the first week of the year.
   }
+});
 
-  handleClose() {
-    this.setState({ show: false });
-  }
+moment.locale('en-gb');
 
-  handleShow() {
-    this.setState({ show: true });
-  }
+Calendar.setLocalizer(Calendar.momentLocalizer(moment));
+
+class MySmallModal extends React.Component {
 
   render() {
+    let doctors = [];
+    let doctor;
+    for (var count = 0; count < this.props.doctors.length; count++) {
+      doctor = this.props.doctors[count];
+      doctors.push(
+        <div>
+          <h4>Doutor: {doctor.name} | Carga Horária: {doctor.workload}</h4>
+          <br></br>
+        </div>
+      )
+    }
 
     return (
-      <div>
+      <Modal
+        className="modal-height modal"
+        {...this.props}
+        bsSize="large"
+        aria-labelledby="contained-modal-title-lg"
+      >
+        <Modal.Header className="" >
+          <h1 className="modal-header-align ">Carga Horária</h1>
+        </Modal.Header>
+        <Modal.Body className="modal-content">
+          <div>
+            <legend> Médicos </legend>
+                <select className="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                <option selected>Escolha um médico...</option>
+                {this.props.doctors.map(each =>(
+                <option>Doutor: {each.name} | Carga Horária: {each.workload}</option>
 
-        <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-          Launch demo modal
-        </Button>
-
-        <Modal className="top-espace" show={this.state.show} onHide={this.handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>carga horaria</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <h4>Text in a modal</h4>
-            <p>
-              {NewScheduleTable.doctors_event}
-            </p>
-
-
-            <hr />
-
-            <h4>Overflowing text to show scroll behavior</h4>
-
-          </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={this.handleClose}>Close</Button>
-          </Modal.Footer>
-        </Modal>
-      </div>
+            ))}
+              </select>
+            {doctors}
+            <Button onClick={this.props.onHide} bsStyle="danger">Close</Button><br></br>
+          </div>
+        </Modal.Body>
+      </Modal>
     );
   }
 }
 
-
-
-
-Calendar.setLocalizer(Calendar.momentLocalizer(moment));
-var test;
-var ds = new Date(Date.UTC(2018,4,1,7));
-console.log(ds);
-var de = new Date(Date.UTC(2018,4,1,13));
-
 export default class NewScheduleTable extends Component {
-    constructor(props,context){
+    constructor(props){
       super(props);
       this.state={
+        smShow: false,
         startDate: '',
         endDate: '',
         doctor_events_list: [],
         all_events: [],
         all_doctors: [],
-        doctors_event: [],
+        doctors_workload: [],
         all_category : [
           "Geral"
         ],
         category : '',
+        turns: [],
+        turnStart: [
+          ["manhã",6],
+          ["tarde",12],
+          ["noite",18]
+        ],
+        current_date: new Date(),
+        current_view: 'month',
       };
+
+      this.bindScopes([
+        'onView',
+        'onNavigate',
+        'updateTimes',
+      ]);
+
+      this.updateTimes();
     }
 
     async componentDidMount() {
@@ -99,7 +106,6 @@ export default class NewScheduleTable extends Component {
           const res = await fetch(name);
           console.log(res);
           const all_doctors = await res.json();
-          console.log(all_doctors);
           this.setState({all_doctors});
         } catch (e) {
           console.log(e);
@@ -116,21 +122,15 @@ export default class NewScheduleTable extends Component {
           this.pushCategoryValid(category)
 
         ));
-
-        this.setState({
-             all_doctors: this.state.all_doctors,
-        });
-        console.log(this.state.all_doctors);
       }
 
     async componentDidMount1() {
         try {
-          this.setState({all_doctors:""})
+          this.state.all_doctors = [];
           const name = 'http://localhost:8000/doctor/api-doctor/list-doctor/category/?category='+this.state.category;
           const res = await fetch(name);
           console.log(res);
           const all_doctors = await res.json();
-          console.log(all_doctors);
           this.setState({all_doctors});
         } catch (e) {
           console.log(e);
@@ -149,50 +149,36 @@ export default class NewScheduleTable extends Component {
           } catch (e) {
             console.log(e);
           }
-          await this.setDate();
           await this.createEventDoctorList();
-          await this.listDoctorsHour();
       }
 
-      setDate(){
-        var date = new Date();
-        var year = date.getFullYear();
-        var month = date.getMonth();
-        this.setState({
-          startDate: new Date (year,month, 1),
-          endDate: new Date (year,month+1, 0),
-        })
-        console.log("1" + this.state.startDate + this.state.endDate);
-      }
-
-      parseISOLocal(start) {
-        var b = start.split(/\D/);
-        var dateStart = new Date(start);
-        if (dateStart <= this.state.startDate || dateStart >= this.state.endDate) {
+      parseISOLocal(strDate) {
+        var b = strDate.split(/\D/);
+        var date = new Date(strDate);
+        if (date <= this.state.startDate || date >= this.state.endDate) {
           return "";
         }
         return new Date(b[0], b[1]-1, b[2], b[3], b[4], b[5]);
       }
 
+      parseISOLocalEnd(strDate) {
+        var b = strDate.split(/\D/);
+        return new Date(b[0], b[1]-1, b[2], b[3], b[4], b[5]);
+      }
+
       createEventDoctorList(){
+        this.updateTimes();
         var title,start,end,id;
-        this.setState({
-          doctor_events_list : [],
-        })
+        this.state.doctor_events_list = [],
         this.state.all_events.map(each => (
           title = this.getDoctorId(each.doctor),
           start = this.parseISOLocal(each.start),
-          end = this.parseISOLocal(each.end),
+          end = this.parseISOLocalEnd(each.end),
           id = each.doctor,
           this.pushEventValid(title,start,end,id)
         ));
-
-        this.setState({
-             doctor_events_list: this.state.doctor_events_list,
-        });
-        console.log(this.state.all_doctors);
-        console.log(this.state.all_events);
-        console.log(this.state.doctor_events_list);
+        this.listDoctorsHour();
+        this.calculateTurns();
       }
 
       pushEventValid(title,start,end,id){
@@ -260,29 +246,32 @@ export default class NewScheduleTable extends Component {
           category : this.state.all_category[tableNumber],
           })
         }
-
         this.componentDidMount1()
+
 
     }
 
     listDoctorsHour(){
       var name,workload;
+      this.state.doctors_workload = [];
       this.state.all_doctors.map(each => (
         name = each.name,
         workload = this.calculateWorkload(each.id),
-        this.state.doctors_event.push({name,workload})
+        this.state.doctors_workload.push({'name' :name,'workload':workload})
       ));
     }
 
     calculateWorkload(id){
-      var timeStart,timeEnd,idValid;
-      var all_doctor_events = [];
+      var timeStart,timeEnd;
+      var timeTotal = 0;
+      var idVoid = 0;
       this.state.doctor_events_list.map(each => (
         timeStart = each.start,
         timeEnd = each.end,
-        idValid = this.idValidate(each.id,id),
-        this.pushAllDoctorEvents(all_doctor_events,timeStart,timeEnd,idValid)
+        idVoid = this.idValidate(each.id,id),
+        timeTotal += this.allDoctorEvents(timeStart,timeEnd,idVoid)
       ));
+      return timeTotal;
     }
 
     idValidate(listId,id){
@@ -294,31 +283,104 @@ export default class NewScheduleTable extends Component {
       }
     }
 
-    pushAllDoctorEvents(all_doctor_events,timeStart,timeEnd,idValid){
+    allDoctorEvents(timeStart,timeEnd,idValid){
       if (idValid >= 0) {
-        all_doctor_events.push({timeStart,timeEnd});
+        var strStart = timeStart.toString().split(/\D/);
+        var strEnd = timeEnd.toString().split(/\D/);
+
+        if ((Number(strEnd[10]) - Number(strStart[10])) < 0) {
+          return Number(strEnd[10]) - Number(strStart[10] + 24);
+        }
+        return Number(strEnd[10]) - Number(strStart[10]);
+      }
+      return 0;
+    }
+
+    calculateTurns(){
+      var turns = [];
+      for (var count = 0; count < this.state.turnStart.length; count++) {
+        turns.push(0);
+      }
+      this.state.doctor_events_list.map(each =>(
+        this.verifyTurn(turns,each.start.toString().split(/\D/))
+      ));
+      this.setState({
+        'turns' : turns
+      })
+    }
+
+    verifyTurn(turns,eventStart){
+      var startHour =Number(eventStart[10]);
+      for (var count = 0; count < this.state.turnStart.length; count++) {
+        if (count === this.state.turnStart.length - 1) {
+          if ((startHour < this.state.turnStart[0][1]) || (startHour >= this.state.turnStart[count][1])) {
+            turns[count] += 1;
+          }
+        }else{
+          if ((startHour < this.state.turnStart[count+1][1]) && (startHour >= this.state.turnStart[count][1])) {
+            turns[count] += 1;
+          }
+        }
       }
     }
 
-    handleClose() {
-      this.setState({ show: false });
+    onView(view){
+      this.state.current_view = view;
+      this.createEventDoctorList();
     }
 
-    handleShow() {
-      this.setState({
-        show: true,
-       });
+    updateTimes(){
+      let start, end;
+      if(this.state.current_view === 'day'){
+        start = moment(this.state.current_date).startOf('day').format();
+        end   = moment(this.state.current_date).endOf('day').format();
+      }
+      else if(this.state.current_view === 'week'){
+        start = moment(this.state.current_date).startOf('isoWeek').subtract(1, 'days').format();
+        end   = moment(this.state.current_date).endOf('isoWeek').subtract(1, 'days').format();
+      }
+      else if(this.state.current_view === 'month'){
+        start = moment(this.state.current_date).startOf('month').subtract(7, 'days').format();
+        end   = moment(this.state.current_date).endOf('month').add(7, 'days').format();
+      }
+        this.state.startDate = new Date(start);
+        this.state.endDate = new Date(end);
     }
 
+    bindScopes(keys){
+      for(let key of keys){
+        this[key] = this[key].bind(this);
+      }
+    }
+
+    onNavigate(date, view){
+    const new_date = moment(date);
+    this.state.current_date = date
+    this.state.current_view = view
+    this.createEventDoctorList();
+  }
 
     render(){
-        let toolBar = []
+        let smClose = () => this.setState({ smShow: false });
+        let toolBar = [];
+        let turnsInformation = [];
+        let turnstitle = [];
         for(let count=0; count<this.state.all_category.length; count++){
           toolBar.push(
              <ToggleButton className="btn btn-outline-primary" value={count} onClick={()=>this.changeTable(count)}>{this.state.all_category[count]}</ToggleButton>
-           )
+           );
         }
-    	return (
+        for (let count = 0; count < this.state.turnStart.length; count++) {
+          turnstitle.push(
+            <th>{this.state.turnStart[count][0]}</th>
+          );
+        }
+        for (let count = 0; count < this.state.turnStart.length; count++) {
+          turnsInformation.push(
+            <td>{this.state.turns[count]}</td>
+          );
+        }
+    	return(
     	  <div>
     	    <NavBar></NavBar>
           <SideBar></SideBar>
@@ -329,25 +391,37 @@ export default class NewScheduleTable extends Component {
 
                         <ButtonToolbar>
                             <ToggleButtonGroup type="radio" name="options" defaultValue={0}>
-                              {toolBar}
+                                {toolBar}
                             </ToggleButtonGroup>
                         </ButtonToolbar>
                         <br></br>
-                        <div>
-                          <div>
-                            {console.log(this.state.doctors_event)}
-                          <Example/>
-                        </div>
-                        </div>
+                        <MySmallModal show={this.state.smShow} onHide={smClose} doctors={this.state.doctors_workload}/>
+                        <Button className="btn btn-outline-primary" onClick={() => this.setState({smShow: true})}>Carga Horária</Button>
+                        <br></br>
                         <h1 >Quadro de Horários</h1>
+                          <Table striped bordered condensed hover>
+                            <thead>
+                              <tr>
+                                {turnstitle}
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                {turnsInformation}
+                              </tr>
+                            </tbody>
+                          </Table>
                       </header>
                       <Calendar
-                        views={['month', 'week', 'day']}
-                        defaultDate={new Date()}
-                        defaultView="month"
-                        events={this.state.doctor_events_list}
-                        style={{ height: "100vh" }}
-                      />
+                          views={['month', 'week', 'day']}
+                          onNavigate={this.onNavigate}
+                          onView={this.onView}
+                          defaultDate={new Date()}
+                          defaultView="month"
+                          events={this.state.doctor_events_list}
+                          style={{ height: "100vh" }}
+
+                        />
                     </div>
                 </div>
             </div>

@@ -3357,6 +3357,7 @@ tbody.collapse.show {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
+  overflow-x: scroll;
 }
 
 .btn-toolbar .input-group {
@@ -5304,6 +5305,7 @@ tbody.collapse.show {
   background-color: #ffeeba;
 }
 
+
 .list-group-item-warning.list-group-item-action:hover, .list-group-item-warning.list-group-item-action:focus {
   color: #856404;
   background-color: #ffe8a1;
@@ -5393,9 +5395,11 @@ button.close {
 .modal-open {
   overflow: hidden;
 }
-
+.modal-height{
+  padding-top: 200px;
+}
 .modal {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
@@ -5405,6 +5409,10 @@ button.close {
   overflow: hidden;
   outline: 0;
 }
+.modal-header-align{
+  margin-right: auto;
+}
+
 
 .modal-open .modal {
   overflow-x: hidden;
@@ -5467,6 +5475,7 @@ button.close {
   left: 0;
   z-index: 1040;
   background-color: #000;
+  opacity:0.6 !important;
 }
 
 .modal-backdrop.fade {
@@ -5476,6 +5485,7 @@ button.close {
 .modal-backdrop.show {
   opacity: 0.5;
 }
+
 
 .modal-header {
   display: -webkit-box;
