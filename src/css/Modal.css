@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Coustard|Encode+Sans');
+
 .height-modal{
   padding-top: 200px;
 
@@ -16,4 +18,28 @@
 }
 .modal-header-title {
   color:white;
+}
+
+.beautiful_text{
+  color:black;
+  font-family:'Coustard', sans-serif;
+  font-size: 16px;
+}
+
+.background-white{
+  background-color: #fff;
+  padding: 0px 0px 0px 0px;
+}
+
+.modal-backdrop{
+  background-color: #000;
+  opacity: 0.6 !important;
+}
+
+.modal-body{
+  margin-right: 0px;
+}
+
+.zero-padding{
+  padding: 0px;
 }

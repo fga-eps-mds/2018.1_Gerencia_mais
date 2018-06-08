@@ -9,6 +9,7 @@
   font-size: 10px;
   list-style-type: none;
   border: none;
+  position: fixed;
 }
 
 .navbar:hover{

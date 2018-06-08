@@ -1,12 +1,12 @@
 .bm-burger-button{
-  margin-top: -10px;
+  margin-top: 20px;
   width: 60px;
   height: 60px;
 }
 
 .bm-menu-wrap{
   background: #007095;
-  margin-top: -6%;
+  margin-top: 0%;
   margin-bottom: 10%;
 }
 
@@ -18,6 +18,9 @@ svg{
   background: #fff;
 }
 
+.margin-top-sidebar{
+}
+
 .bm-menu {
   background: #00000;
   padding: 2.5em 1.5em 0;
@@ -26,6 +29,8 @@ svg{
 
 .bm-morph-shape {
   fill: #007095;
+  margin-top: 30%;
+
 }
 
 .bm-item-list li a{
@@ -34,5 +39,6 @@ svg{
 
 .bm-burger-button{
   position: fixed;
+  margin-top: 5%;
 
 }

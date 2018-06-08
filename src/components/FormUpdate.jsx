@@ -129,8 +129,8 @@ export default class FormUpdate extends Component {
   render(){
     return(
       <div>
-        <div className="top-space space-bottom space-top change-color">
-          <div className="form-style-5">
+        <div className="top-space space-top background-white">
+          <div className="form-style-5 zero-padding">
             <form>
               <h3>Cadastro de horário de médicos</h3>
               <fieldset>
