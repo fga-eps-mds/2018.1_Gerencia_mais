@@ -374,8 +374,6 @@ export default class NewScheduleTable extends Component {
           turnstitle.push(
             <th>{this.state.turnStart[count][0]}</th>
           );
-        }
-        for (let count = 0; count < this.state.turnStart.length; count++) {
           turnsInformation.push(
             <td>{this.state.turns[count]}</td>
           );
