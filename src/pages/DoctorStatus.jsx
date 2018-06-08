@@ -74,7 +74,7 @@ export default class DoctorStatus extends Component {
       body: temp,
       headers: new Headers({ "Content-Type": "application/json" })
     };
-    fetch('http://localhost:8000/doctor/api-doctor/update/'+this.state.doctor.registration+'/', conf).then(response => console.log(response));
+    fetch('https://gicsaude.herokuapp.com/doctor/api-doctor/update/'+this.state.doctor.registration+'/', conf).then(response => console.log(response));
 }
 
   render(){

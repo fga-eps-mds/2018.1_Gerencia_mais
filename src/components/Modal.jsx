@@ -40,7 +40,7 @@ export default class MySmallModal extends React.Component {
 
   async componentDidMount4() {
     try {
-      const name = 'http://localhost:8000/doctor/api-doctor/list-doctor/1/?name=' + this.props.currentdoctor;
+      const name = 'https://gicsaude.herokuapp.com/doctor/api-doctor/list-doctor/1/?name=' + this.props.currentdoctor;
       console.log(name);
       const res = await fetch(name);
       console.log(res);
@@ -60,7 +60,7 @@ export default class MySmallModal extends React.Component {
     var newEnd = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
     var resultEnd = newEnd.toISOString();
     try {
-      const name = 'http://localhost:8000/schedule/api-event/list-doctor/?doctor=' + this.state.current_doctor_id + '&start=' + resultStart + '&end=' + resultEnd;
+      const name = 'https://gicsaude.herokuapp.com/schedule/api-event/list-doctor/?doctor=' + this.state.current_doctor_id + '&start=' + resultStart + '&end=' + resultEnd;
       console.log(name);
       const res = await fetch(name);
       console.log(res);
