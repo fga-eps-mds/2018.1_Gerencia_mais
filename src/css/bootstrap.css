@@ -5394,9 +5394,7 @@ button.close {
 .modal-open {
   overflow: hidden;
 }
-.modal-height{
-  padding-top: 200px;
-}
+
 .modal {
   position: absolute;
   top: 0;
@@ -5408,10 +5406,6 @@ button.close {
   overflow: hidden;
   outline: 0;
 }
-.modal-header-align{
-  margin-right: auto;
-}
-
 
 .modal-open .modal {
   overflow-x: hidden;

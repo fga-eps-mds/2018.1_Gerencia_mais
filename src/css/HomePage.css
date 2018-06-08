@@ -21,7 +21,7 @@
 }
 .row{
   margin-top: 40px;
-  background: linear-gradient(#007095,#20C3D3);
+    background: linear-gradient(#007095,#20C3D3);
 }
 .row::after{
   display: table;

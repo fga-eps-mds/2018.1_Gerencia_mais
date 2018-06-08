@@ -11,6 +11,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 
 
 
+
 Calendar.setLocalizer(Calendar.momentLocalizer(moment));
 var test;
 var ds = new Date(Date.UTC(2018,4,1,7));
@@ -43,7 +44,7 @@ export default class ScheduleTable extends Component {
 
     async componentDidMount() {
         try {
-          const name = 'https://gicsaude.herokuapp.com/doctor/api-doctor/list-doctor/1/?category='+this.state.category;
+          const name = 'http://localhost:8000/doctor/api-doctor/list-doctor/1/?category='+this.state.category;
           const res = await fetch(name);
           console.log(res);
           const all_doctors = await res.json();
@@ -58,7 +59,7 @@ export default class ScheduleTable extends Component {
 
       async componentDidMount2() {
           try {
-            const name = 'https://gicsaude.herokuapp.com/schedule/api-event/';
+            const name = 'http://localhost:8000/schedule/api-event/';
             const res = await fetch(name);
             console.log(res);
             const all_events = await res.json();
@@ -137,6 +138,8 @@ export default class ScheduleTable extends Component {
         this.componentDidMount()
 
     }
+
+    
 
 
     render(){
