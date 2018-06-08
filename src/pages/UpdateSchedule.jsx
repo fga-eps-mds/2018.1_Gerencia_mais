@@ -145,30 +145,30 @@ export default class UpdateSchedule extends Component {
             ))}
               </select>
 
-              <legend><span className="number">1</span> Titulo do evento </legend>
-              <input id="titleID" type="text" title="title" value={this.state.title} onChange = {this.onChange} placeholder="Digite o nome aqui" />
+                <legend><span className="number">1</span> Titulo do evento </legend>
+                <input id="titleID" type="text" title="title" value={this.state.title} onChange = {this.onChange} placeholder="Digite o nome aqui" />
 
-              <legend><span className="number">4</span>Hospital</legend>
-              <input id="hospitalID" type="text" title="hospital" value={this.state.hospital} onChange = {this.onChange} placeholder="Digite o Hospital"/>
+                <legend><span className="number">4</span>Hospital</legend>
+                <input id="hospitalID" type="text" title="hospital" value={this.state.hospital} onChange = {this.onChange} placeholder="Digite o Hospital"/>
+                </div>
               </div>
-            </div>
 
-            <div class="col-lg-6">
-              <div class="input-group">
-                <legend><span className="number">6</span>Data e Hora de Entrada</legend>
-                <input id="edID" type="date" title="start" value = {this.state.start} onChange={this.onChange} placeholder="" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
-                <input id="edID" type="time" title="time_start" value = {this.state.time_start} onChange = {this.onChange}/>
+              <div class="col-lg-6">
+                <div class="input-group">
+                  <legend><span className="number">6</span>Data e Hora de Entrada</legend>
+                  <input id="edID" type="date" title="start" value = {this.state.start} onChange={this.onChange} placeholder="" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
+                  <input id="edID" type="time" title="time_start" value = {this.state.time_start} onChange = {this.onChange}/>
 
-                <legend><span className="number">7</span>Data e Hora de Saída</legend>
-                <input id="edID" type="date" title="end" value = {this.state.end} onChange={this.onChange} placeholder="" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
-                <input id="edID" type="time" title="time_end" value = {this.state.time_end} onChange = {this.onChange}/>
+                  <legend><span className="number">7</span>Data e Hora de Saída</legend>
+                  <input id="edID" type="date" title="end" value = {this.state.end} onChange={this.onChange} placeholder="" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
+                  <input id="edID" type="time" title="time_end" value = {this.state.time_end} onChange = {this.onChange}/>
 
+                </div>
               </div>
-            </div>
-            </div>
-          </fieldset>
-          <input type="submit" value="Apply" onClick={this.handleSubmit}/>
-          </form>
+              </div>
+            </fieldset>
+            <input type="submit" value="Apply" onClick={this.handleSubmit}/>
+            </form>
             </div>
         </div>
 

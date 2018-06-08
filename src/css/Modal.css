@@ -1,13 +1,19 @@
-.modal-head{
-  margin-top: 20%;
-}
-.modal-height{
-  padding-top: 10px;
+.height-modal{
+  padding-top: 200px;
 
 }
-.modal-header-align{
+/* .modal-header-align{
   margin-right: auto;
-}
+} */
 .modal-header{
   background  : linear-gradient(#007095,#20C3D3);
+
+}
+
+.modal{
+  overflow: scroll;
+  position: fixed;
+}
+.modal-header-title {
+  color:white;
 }

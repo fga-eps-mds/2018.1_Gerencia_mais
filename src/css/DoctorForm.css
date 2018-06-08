@@ -121,6 +121,14 @@ table, th, td {
 .tabelatamanho {
   width: 100%;
 }
+.number{
+    background  :#007095;
+
+}
+.change-color{
+  background  : linear-gradient(#007095,#20C3D3);
+  border-radius: 10px;
+}
 
 table#t01 th {
     background-color: #1abc9c;

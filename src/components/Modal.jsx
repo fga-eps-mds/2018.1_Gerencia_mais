@@ -82,13 +82,13 @@ export default class MySmallModal extends React.Component {
     }
     return (
       <Modal
-        className="modal-height modal modal-head"
+        className="height-modal modal"
         {...this.props}
         bsSize="large"
         aria-labelledby="contained-modal-title-lg"
       >
-        <Modal.Header className="modal-header" >
-          <h1 className="">{this.props.currentdoctor}</h1>
+        <Modal.Header className="modal-header-align" >
+          <h2 className="modal-header-title">{this.props.currentdoctor}</h2>
         </Modal.Header>
         <Modal.Body className="modal-content">
           <div>

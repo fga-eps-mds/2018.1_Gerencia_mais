@@ -119,11 +119,11 @@ export default class FormUpdate extends Component {
     const temp = JSON.stringify(lead)
     console.log(temp);
     const conf = {
-      method: "POST",
+      method: "PUT",
       body: temp,
       headers: new Headers({ "Content-Type": "application/json" })
     };
-    fetch('http://localhost:8000/schedule/api-event/update/' + this.props.eventid, conf).then(response => console.log(response));
+    fetch('http://localhost:8000/schedule/api-event/update/' + this.props.eventid + '/', conf).then(response => console.log(response));
     this.setState({'is_valid':true});
 }
   render(){
