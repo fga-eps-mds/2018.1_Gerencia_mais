@@ -1,36 +1,50 @@
 @import url('https://fonts.googleapis.com/css?family=Coustard|Encode+Sans');
-.title {
-  margin-left: 15%;
-  font-size: 20px;
+
+.navbar-brand{
+  color: white;
+}
+
+.navbar{
+  width: 100%;
+  font-size: 10px;
+  list-style-type: none;
+  border: none;
+  position: fixed;
+}
+
+.navbar:hover{
+  background-color: #007095;
+}
+.container-fluid > .navbar-header{
+  margin-left: -50%;
+  margin-right: -40%;
+}
+.navbar-header{
+  margin-left: -40%;
+}
+
+.navbar-header a{
+  font-size: 30px;
+  color: white;
+  margin-left: -20%;
+  margin-right: -140px;
   font-family: 'Coustard', sans-serif;
 }
-.title:hover {
-  background-color: #389e8e;
-}
-.uls {
-  padding-left: 50px;
-}
-.navbar-right {
-  font-family: 'Coustard', sans-serif;
-  font-size: 2.5em;
-  margin-left: 16%;
-  padding-right: 20px;
-}
-.navbar-right:hover {
+.navbar-header a:hover{
+  color: white;
+  /* font-size: 30px; */
   text-decoration: none;
 }
-.navbar-right:active {
-  color:white;
+
+.size_lg{
+  width: 520%;
 }
-.navbar-right:link {
-  color:white;
+
+.new-nav-font{
+  font-family: 'Coustard', sans-serif;
 }
-.navbar-right:visited {
-  color:white;
-}
-.items-right{
-  margin-left: 30%;
-}
-.btw-items{
-  margin-left: 30px
+
+.change-exit {
+  margin-right: -20%;
+  margin-left:  311.6%;
 }

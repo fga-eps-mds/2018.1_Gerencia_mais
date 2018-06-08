@@ -2,12 +2,9 @@ import React, { Component } from 'react';
 import NavBar from '../components/NavBar';
 import SideBar from '../components/SideBar';
 import Footer from '../components/Footer';
-import Popup from "reactjs-popup";
-import "../css/ScheduleTable.css";
+import Modal as ModalComponent from '../components/Modal';
 import {Table,ButtonToolbar,ToggleButtonGroup,ToggleButton,Modal,Button} from 'react-bootstrap';
-import "../css/popup.css";
 import "../css/bootstrap.min.css";
-import 'react-infinite-calendar/styles.css';
 import Calendar from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
@@ -66,11 +63,14 @@ class MySmallModal extends React.Component {
   }
 }
 
-export default class NewScheduleTable extends Component {
+export default class ScheduleTable extends Component {
     constructor(props){
       super(props);
       this.state={
         smShow: false,
+        current_doctor:"",
+        current_start:"",
+        current_end:"",
         startDate: '',
         endDate: '',
         doctor_events_list: [],
@@ -378,15 +378,15 @@ export default class NewScheduleTable extends Component {
             <td>{this.state.turns[count]}</td>
           );
         }
-    	return(
+
+    	return (
     	  <div>
     	    <NavBar></NavBar>
           <SideBar></SideBar>
-            <div  className="container">
+            <div  className="container change-color">
                 <div style={{marginTop:"70px",marginBottom:"100px"}} className="jumbotron">
                     <div className="App">
                       <header className="App-header">
-
                         <ButtonToolbar>
                             <ToggleButtonGroup type="radio" name="options" defaultValue={0}>
                                 {toolBar}
@@ -414,6 +414,10 @@ export default class NewScheduleTable extends Component {
                           views={['month', 'week', 'day']}
                           onNavigate={this.onNavigate}
                           onView={this.onView}
+                          selectable
+                          onSelectEvent={() => this.setState({ }),
+                                       (event) =>this.setState({smShow: true,current_doctor: event.title,current_start:event.start.toString(),current_end:event.end.toString()})}
+
                           defaultDate={new Date()}
                           defaultView="month"
                           events={this.state.doctor_events_list}
@@ -422,6 +426,8 @@ export default class NewScheduleTable extends Component {
                     </div>
                 </div>
             </div>
+            <ModalComponent show={this.state.smShow} onHide={smClose} currentdoctor={this.state.current_doctor}
+                          currentstart={this.state.current_start} currentend={this.state.current_end} />
             <Footer></Footer>
     	    </div>
     	);

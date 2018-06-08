@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 //import {Link} from 'react-router-dom';
 import '../css/bootstrap.css';
-import '../css/HomePage.css';
+import '../css/DoctorForm.css';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer'
 import {Popover} from 'react-bootstrap';
@@ -41,7 +41,7 @@ export default class RegistrationAdmin extends Component{
       body: temp,
       headers: new Headers({ "Content-Type": "application/json" })
     };
-    fetch('http://localhost:8000/user/api-user/create/', conf).then(response => console.log(response));
+    fetch('https://gicsaude.herokuapp.com/user/api-user/create/', conf).then(response => console.log(response));
 }
 
 
@@ -111,7 +111,7 @@ render(){
   return(
     <div>
     <NavBar></NavBar>
-      <div classtitle="top-space espaco espaco-acima">
+        <div className="top-space espaco espaco-acima background">
         <div className="form-style-5">
           <form>
             <h3>Cadastro de Administradores</h3>
