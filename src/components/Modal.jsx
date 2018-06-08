@@ -12,7 +12,7 @@ import {
   Button
 } from 'react-bootstrap';
 
-export default class MySmallModal extends React.Component {
+export default class ModalComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NavBar from '../components/NavBar';
 import SideBar from '../components/SideBar';
 import Footer from '../components/Footer';
-import Modal as ModalComponent from '../components/Modal';
+import ModalComponent from '../components/Modal';
 import {Table,ButtonToolbar,ToggleButtonGroup,ToggleButton,Modal,Button} from 'react-bootstrap';
 import "../css/bootstrap.min.css";
 import Calendar from "react-big-calendar";
@@ -68,6 +68,7 @@ export default class ScheduleTable extends Component {
       super(props);
       this.state={
         smShow: false,
+        smLocalShow: false,
         current_doctor:"",
         current_start:"",
         current_end:"",
@@ -287,9 +288,8 @@ export default class ScheduleTable extends Component {
       if (idValid >= 0) {
         var strStart = timeStart.toString().split(/\D/);
         var strEnd = timeEnd.toString().split(/\D/);
-
         if ((Number(strEnd[10]) - Number(strStart[10])) < 0) {
-          return Number(strEnd[10]) - Number(strStart[10] + 24);
+          return Number(strEnd[10]) - Number(strStart[10]) + 24;
         }
         return Number(strEnd[10]) - Number(strStart[10]);
       }
@@ -362,6 +362,7 @@ export default class ScheduleTable extends Component {
 
     render(){
         let smClose = () => this.setState({ smShow: false });
+        let smLocalClose = () => this.setState({ smLocalShow: false });
         let toolBar = [];
         let turnsInformation = [];
         let turnstitle = [];
@@ -393,10 +394,10 @@ export default class ScheduleTable extends Component {
                             </ToggleButtonGroup>
                         </ButtonToolbar>
                         <br></br>
-                        <MySmallModal show={this.state.smShow} onHide={smClose} doctors={this.state.doctors_workload}/>
-                        <Button className="btn btn-outline-primary" onClick={() => this.setState({smShow: true})}>Carga Horária</Button>
+                        <MySmallModal show={this.state.smLocalShow} onHide={smLocalClose} doctors={this.state.doctors_workload}/>
+                        <Button className="btn btn-outline-primary" onClick={() => this.setState({smLocalShow: true})}>Carga Horária</Button>
                         <br></br>
-                        <h1 >Quadro de Horários</h1>
+                        <h1 style={{marginLeft:"25%"}}>Quadro de Horários</h1>
                           <Table striped bordered condensed hover>
                             <thead>
                               <tr>
