@@ -16,7 +16,7 @@ urlpatterns = [
     url(r'^api-doctor/update/(?P<registration>[\w-]+)/$',UpdateDoctorAPI.as_view(), name="admin-update"),
     url(r'^api-doctor/(?P<name>[\w-]+)/$',ListDetailDoctor.as_view(),name="admin-detail-list"),
     url(r'^api-doctor/$',ListDoctor.as_view(),name = "admin-list"),
-    url(r'^api-doctor/list-doctor/(?P<category>[\w-]+)/$', ListDoctorCategory.as_view(),name="admin-category-list")
+    url(r'^api-doctor/list-doctor/category/$', ListDoctorCategory.as_view(),name="admin-category-list")
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
