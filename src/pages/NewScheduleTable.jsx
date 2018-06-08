@@ -51,7 +51,7 @@ class MySmallModal extends React.Component {
           <div>
             <legend> Médicos </legend>
                 <select className="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                <option selected>Escolha um médico...</option>
+                <option defaultValue={0} value={0}>Escolha um médico...</option>
                 {this.props.doctors.map(each =>(
                 <option>Doutor: {each.name} | Carga Horária: {each.workload}</option>
 
@@ -420,7 +420,6 @@ export default class NewScheduleTable extends Component {
                           defaultView="month"
                           events={this.state.doctor_events_list}
                           style={{ height: "100vh" }}
-
                         />
                     </div>
                 </div>
