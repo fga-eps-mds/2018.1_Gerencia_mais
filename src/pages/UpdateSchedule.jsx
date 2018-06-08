@@ -37,7 +37,7 @@ export default class UpdateSchedule extends Component {
 
   async componentDidMount() {
       try {
-        const name = 'http://localhost:8000/doctor/api-doctor/';
+        const name = 'https://gicsaude.herokuapp.com/doctor/api-doctor/';
         const res = await fetch(name);
         console.log(res);
         const all_doctors = await res.json();
@@ -50,7 +50,7 @@ export default class UpdateSchedule extends Component {
 
     async componentDidMount3() {
         try {
-          const name = await 'http://localhost:8000/schedule/api-event/update/'+this.state.id+'/';
+          const name = await 'https://gicsaude.herokuapp.com/schedule/api-event/update/'+this.state.id+'/';
           const res = await fetch(name);
           console.log(res);
           const update_event = await res.json();
@@ -76,7 +76,7 @@ export default class UpdateSchedule extends Component {
 
     async componentDidMount2() {
         try {
-          const name = await 'http://localhost:8000/schedule/api-event/list-doctor/?doctor='+this.state.doctor;
+          const name = await 'https://gicsaude.herokuapp.com/schedule/api-event/list-doctor/?doctor='+this.state.doctor;
           const res = await fetch(name);
           console.log(res);
           const all_events = await res.json();
@@ -90,7 +90,7 @@ export default class UpdateSchedule extends Component {
      handleSubmit = e => {
       this.state.start = this.state.start + "T" + this.state.time_start + "Z";
       this.state.end = this.state.end + "T" + this.state.time_end + "Z";
-       const name ='http://localhost:8000/schedule/api-event/update/'+this.state.id+'/';
+       const name ='https://gicsaude.herokuapp.com/schedule/api-event/update/'+this.state.id+'/';
        this.state.doctor=this.state.doctor.toString();
        console.log(this.state.start + " " + this.state.end);
        e.preventDefault();
@@ -128,8 +128,8 @@ export default class UpdateSchedule extends Component {
     let form_update;
     if(this.state.id > 0){
       form_update = (
-        <div classtitle="top-space espaco espaco-acima">
-          <div className="form-style-5">
+        <div className="top-space space-bottom space-top change-color">
+          <div className="form-style-5 ">
             <form>
               <h3>Atualização do horário do médico</h3>
               <fieldset>
@@ -145,30 +145,30 @@ export default class UpdateSchedule extends Component {
             ))}
               </select>
 
-              <legend><span className="number">1</span> Titulo do evento </legend>
-              <input id="titleID" type="text" title="title" value={this.state.title} onChange = {this.onChange} placeholder="Digite o nome aqui" />
+                <legend><span className="number">1</span> Titulo do evento </legend>
+                <input id="titleID" type="text" title="title" value={this.state.title} onChange = {this.onChange} placeholder="Digite o nome aqui" />
 
-              <legend><span className="number">4</span>Hospital</legend>
-              <input id="hospitalID" type="text" title="hospital" value={this.state.hospital} onChange = {this.onChange} placeholder="Digite o Hospital"/>
+                <legend><span className="number">4</span>Hospital</legend>
+                <input id="hospitalID" type="text" title="hospital" value={this.state.hospital} onChange = {this.onChange} placeholder="Digite o Hospital"/>
+                </div>
               </div>
-            </div>
 
-            <div class="col-lg-6">
-              <div class="input-group">
-                <legend><span className="number">6</span>Data e Hora de Entrada</legend>
-                <input id="edID" type="date" title="start" value = {this.state.start} onChange={this.onChange} placeholder="" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
-                <input id="edID" type="time" title="time_start" value = {this.state.time_start} onChange = {this.onChange}/>
+              <div class="col-lg-6">
+                <div class="input-group">
+                  <legend><span className="number">6</span>Data e Hora de Entrada</legend>
+                  <input id="edID" type="date" title="start" value = {this.state.start} onChange={this.onChange} placeholder="" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
+                  <input id="edID" type="time" title="time_start" value = {this.state.time_start} onChange = {this.onChange}/>
 
-                <legend><span className="number">7</span>Data e Hora de Saída</legend>
-                <input id="edID" type="date" title="end" value = {this.state.end} onChange={this.onChange} placeholder="" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
-                <input id="edID" type="time" title="time_end" value = {this.state.time_end} onChange = {this.onChange}/>
+                  <legend><span className="number">7</span>Data e Hora de Saída</legend>
+                  <input id="edID" type="date" title="end" value = {this.state.end} onChange={this.onChange} placeholder="" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
+                  <input id="edID" type="time" title="time_end" value = {this.state.time_end} onChange = {this.onChange}/>
 
+                </div>
               </div>
-            </div>
-            </div>
-          </fieldset>
-          <input type="submit" value="Apply" onClick={this.handleSubmit}/>
-          </form>
+              </div>
+            </fieldset>
+            <input type="submit" value="Apply" onClick={this.handleSubmit}/>
+            </form>
             </div>
         </div>
 
@@ -185,8 +185,8 @@ export default class UpdateSchedule extends Component {
       <div>
       <NavBar></NavBar>
       <SideBar></SideBar>
-      <div className="top-space espaco espaco-acima">
-          <div className="form-style-5">
+      <div className="top-space space-top space-bottom change-color">
+        <div className="form-style-5">
             <form>
               <h3>Atualização de horário de médicos</h3>
               <fieldset>

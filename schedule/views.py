@@ -44,8 +44,8 @@ class EventDoctorListAPIView(generics.ListAPIView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
     filter_backends = (DjangoFilterBackend,)
-    filter_fields = ('doctor',)
-    search_fields = ('=doctor',)
+    filter_fields = ('doctor','start','end')
+    search_fields = ('=doctor','=start','=end')
 
 
 

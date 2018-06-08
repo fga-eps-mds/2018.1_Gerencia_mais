@@ -39,5 +39,5 @@ class ListDoctorCategory(generics.ListAPIView):
     queryset = Doctors.objects.all()
     serializer_class = DoctorSerializer
     filter_backends = (DjangoFilterBackend,)
-    filter_fields = ('category',)
-    search_fields = ('=category',)
+    filter_fields = ('category','name')
+    search_fields = ('=category','=name',)
