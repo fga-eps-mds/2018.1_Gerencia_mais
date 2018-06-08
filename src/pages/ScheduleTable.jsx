@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import NavBar from '../components/NavBar';
 import SideBar from '../components/SideBar';
 import Footer from '../components/Footer';
+import Modal from '../components/Modal';
 import "../css/ScheduleTable.css";
 import {Table,ButtonToolbar,ToggleButtonGroup,ToggleButton} from 'react-bootstrap';
 import Calendar from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
+
 
 
 Calendar.setLocalizer(Calendar.momentLocalizer(moment));
@@ -18,6 +20,10 @@ export default class ScheduleTable extends Component {
     constructor(props){
       super(props);
       this.state={
+        smShow: false,
+        current_doctor:"",
+        current_start:"",
+        current_end:"",
         doctor_events_list: [],
         all_events: [],
         all_doctors: [],
@@ -134,6 +140,7 @@ export default class ScheduleTable extends Component {
 
 
     render(){
+        let smClose = () => this.setState({ smShow: false });
         let toolBar = []
         for(let i=0; i<this.state.all_category.length; i++){
           toolBar.push(
@@ -159,13 +166,18 @@ export default class ScheduleTable extends Component {
                       <Calendar
                         views={['month', 'week', 'day']}
                         defaultDate={new Date()}
+                        selectable
+                        onSelectEvent={() => this.setState({ }),
+                                       (event) =>this.setState({smShow: true,current_doctor: event.title,current_start:event.start.toString(),current_end:event.end.toString()})}
                         defaultView="month"
                         events={this.state.doctor_events_list}
                         style={{ height: "100vh" }}
-                      />
+                    />
                     </div>
                 </div>
             </div>
+            <Modal show={this.state.smShow} onHide={smClose} currentdoctor={this.state.current_doctor}
+                          currentstart={this.state.current_start} currentend={this.state.current_end} />
             <Footer></Footer>
     	    </div>
     	);
