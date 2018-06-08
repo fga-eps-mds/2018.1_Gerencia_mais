@@ -5,6 +5,8 @@ import '../css/DoctorForm.css';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 // import Select from 'react-select';
+import SideBar from '../components/SideBar';
+
 
 var date = new Date().toISOString();
 // status = True, title= 'Mauricio', start='2018-04-17T17:25:32Z', end='2018-04-20T17:25:34Z', calendar = calendar
@@ -35,7 +37,7 @@ export default class DoctorForm extends Component {
   async componentDidMount2() {
       try {
 
-        const res = await fetch('http://localhost:8000/subtitle/api-subtitle/');
+        const res = await fetch('https://gicsaude.herokuapp.com/subtitle/api-subtitle/');
         const all_subtitle = await res.json();
         console.log(all_subtitle);
         this.setState({all_subtitle});
@@ -47,7 +49,7 @@ export default class DoctorForm extends Component {
     async componentDidMount3() {
         try {
 
-          const res = await fetch('http://localhost:8000/subtitle/api-subtitle/'+this.state.subtitle+'/');
+          const res = await fetch('https://gicsaude.herokuapp.com/subtitle/api-subtitle/'+this.state.subtitle+'/');
           const load_subtitle = await res.json();
           console.log(load_subtitle);
           this.setState({load_subtitle});
@@ -59,7 +61,7 @@ export default class DoctorForm extends Component {
   async componentDidMount() {
       try {
 
-        const res = await fetch('http://localhost:8000/doctor/api-doctor/');
+        const res = await fetch('https://gicsaude.herokuapp.com/doctor/api-doctor/');
         const all_doctors = await res.json();
         console.log(all_doctors);
         this.setState({all_doctors});
@@ -99,13 +101,13 @@ export default class DoctorForm extends Component {
     await this.setState({
       time_end: this.state.load_subtitle.finish
     })
+    console.log(this.state.time_start,this.state.time_end);
   }
 
   handleSubmit = e => {
-    console.log("entrou");
-    this.setState({"start":this.state.start + "T" + this.state.time_start + "Z"})
+    this.state.start=this.state.start + "T" + this.state.time_start + "Z";
     // this.state.start = this.state.start + "T" + this.state.time_start + "Z";
-    this.setState({"end":this.state.end + "T" + this.state.time_end + "Z"})
+    this.state.end=this.state.end + "T" + this.state.time_end + "Z";
     // this.state.end = this.state.end + "T" + this.state.time_end + "Z";
     this.setState({"is_valid":true})
     // this.state.is_valid = true;
@@ -121,14 +123,15 @@ export default class DoctorForm extends Component {
       body: temp,
       headers: new Headers({ "Content-Type": "application/json" })
     };
-    fetch('http://localhost:8000/schedule/api-event/', conf).then(response => console.log(response));
+    fetch('https://gicsaude.herokuapp.com/schedule/api-event/', conf).then(response => console.log(response));
     this.setState({'is_valid':true});
 }
   render(){
     return(
       <div>
       <NavBar></NavBar>
-        <div className="espaco espaco-acima">
+      <SideBar></SideBar>
+        <div className="top-space space-bottom space-top change-color">
           <div className="form-style-5">
             <form>
               <h3>Cadastro de horário de médicos</h3>
@@ -163,7 +166,7 @@ export default class DoctorForm extends Component {
               <legend><span className="number">5</span>Data de Saída</legend>
               <input id="edID" type="date" title="end" value = {this.state.end} onChange={this.onChange} placeholder="" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
               </fieldset>
-            <input type="submit" value="Apply" onClick={this.handleSubmit}/>
+            <input type="submit" value="Concluido" onClick={this.handleSubmit}/>
 
           </form>
             </div>

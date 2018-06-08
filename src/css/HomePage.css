@@ -1,74 +1,38 @@
-
 @import url('https://fonts.googleapis.com/css?family=Coustard|Encode+Sans');
 
-body {
-    background: url('../images/black_wallpaper.jpg');
-    background-size: cover;
-    background-position: center;
-		background-repeat: no-repeat;
-    background-color: #002e4D;
+* {
+  box-sizing: border-box;
 }
 
-.fundo{
-  background-color: #002e4D;
+.background{
+  background: url('../images/home-medicos.png');
 }
 
-h1 {
-	font-weight: 700;
-	font-size: 1000px;
-  color: white;
-}
-.content{
-  padding-top: 6%;
-	text-align: center;
-  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
-               0px 8px 13px rgba(0,0,0,0.1),
-               0px 18px 23px rgba(0,0,0,0.1);
+.column {
+  float: left;
+  width: 50%;
 }
 
-.image {
-  height: 120px;
-  width: 120px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  border-radius: 50%;
+.row{
+  border:1px solid #40AED2;
+  border-radius: 8px;
+  background-color: white;
+  padding: 15px;
+}
+.row{
+  margin-top: 40px;
+  background: linear-gradient(#007095,#20C3D3);
+}
+.row::after{
+  display: table;
+  clear: both;
 }
 
-.whitewash{
-  color:white;
+.content h3{
+  font-size: 40px;
+  font-family:'Coustard', sans-serif;
 }
-
-.espaco{
-  padding-bottom: 200px;
-}
-
-.top-space {
-  margin-top: 62px;
-}
-
-.title-space{}
-
-.aumenta {
-	font-size: 10em;
-  font-family: 'Coustard',sans-serif;
-}
-
-.aumentamenos{
-  font-size: 5em;
-  font-family: 'Coustard',sans-serif;
-}
-
-.aumentabemmenos {
-  font-size: 3em;
-  font-family: 'Coustard',sans-serif;
-}
-
-.aumentamenosainda {
-  word-wrap: break-word;
-   text-align: center;
-
-  font-size: 2em;
-  font-family: 'Coustard',sans-serif;
+.content p{
+  font-size: 24px;
+  font-family:'Coustard', sans-serif;
 }

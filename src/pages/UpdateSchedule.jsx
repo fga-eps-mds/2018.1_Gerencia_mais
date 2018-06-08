@@ -37,7 +37,7 @@ export default class UpdateSchedule extends Component {
 
   async componentDidMount() {
       try {
-        const name = 'http://localhost:8000/doctor/api-doctor/';
+        const name = 'https://gicsaude.herokuapp.com/doctor/api-doctor/';
         const res = await fetch(name);
         console.log(res);
         const all_doctors = await res.json();
@@ -50,7 +50,7 @@ export default class UpdateSchedule extends Component {
 
     async componentDidMount3() {
         try {
-          const name = await 'http://localhost:8000/schedule/api-event/update/'+this.state.id+'/';
+          const name = await 'https://gicsaude.herokuapp.com/schedule/api-event/update/'+this.state.id+'/';
           const res = await fetch(name);
           console.log(res);
           const update_event = await res.json();
@@ -76,7 +76,7 @@ export default class UpdateSchedule extends Component {
 
     async componentDidMount2() {
         try {
-          const name = await 'http://localhost:8000/schedule/api-event/list-doctor/?doctor='+this.state.doctor;
+          const name = await 'https://gicsaude.herokuapp.com/schedule/api-event/list-doctor/?doctor='+this.state.doctor;
           const res = await fetch(name);
           console.log(res);
           const all_events = await res.json();
@@ -90,7 +90,7 @@ export default class UpdateSchedule extends Component {
      handleSubmit = e => {
       this.state.start = this.state.start + "T" + this.state.time_start + "Z";
       this.state.end = this.state.end + "T" + this.state.time_end + "Z";
-       const name ='http://localhost:8000/schedule/api-event/update/'+this.state.id+'/';
+       const name ='https://gicsaude.herokuapp.com/schedule/api-event/update/'+this.state.id+'/';
        this.state.doctor=this.state.doctor.toString();
        console.log(this.state.start + " " + this.state.end);
        e.preventDefault();
@@ -128,8 +128,8 @@ export default class UpdateSchedule extends Component {
     let form_update;
     if(this.state.id > 0){
       form_update = (
-        <div classtitle="top-space espaco espaco-acima">
-          <div className="form-style-5">
+        <div className="top-space space-bottom space-top change-color">
+          <div className="form-style-5 ">
             <form>
               <h3>Atualização do horário do médico</h3>
               <fieldset>
@@ -185,8 +185,8 @@ export default class UpdateSchedule extends Component {
       <div>
       <NavBar></NavBar>
       <SideBar></SideBar>
-      <div className="top-space espaco espaco-acima">
-          <div className="form-style-5">
+      <div className="top-space space-top space-bottom change-color">
+        <div className="form-style-5">
             <form>
               <h3>Atualização de horário de médicos</h3>
               <fieldset>

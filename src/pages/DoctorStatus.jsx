@@ -27,7 +27,7 @@ export default class DoctorStatus extends Component {
   }
   async componentDidMount() {
       try {
-        const name = 'http://localhost:8000/doctor/api-doctor/update/' + this.state.registration +'/';
+        const name = 'https://gicsaude.herokuapp.com/doctor/api-doctor/update/' + this.state.registration +'/';
         const res = await fetch(name);
         console.log(res);
         const doctor = await res.json();
@@ -119,8 +119,8 @@ export default class DoctorStatus extends Component {
       <div>
       <NavBar></NavBar>
       <SideBar></SideBar>
-        <div className="top-space espaco espaco-acima">
-          <div className="form-style-5">
+      <div className="espaco espaco-acima top-space">
+        <div className="form-style-5">
             <form>
               <h3>Alterar Status do Médico</h3>
               <fieldset>
@@ -130,7 +130,7 @@ export default class DoctorStatus extends Component {
                 <Button title="registration" onClick={this.onClick}>Buscar</Button>
                 {information}
             </fieldset>
-              <input type="submit" value="Apply"
+              <input type="submit" value="Concluido"
                 onClick={this.handleSubmit}/>
             </form>
             </div>

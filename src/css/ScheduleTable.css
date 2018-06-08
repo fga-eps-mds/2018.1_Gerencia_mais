@@ -23,7 +23,7 @@ h3 {
   margin-right:0px;
   background-color:white;
 }
-.espace{
+.espace-bottom{
   margin-bottom: 5em;
 }
 
@@ -110,6 +110,11 @@ h3 {
     border-radius: 15px 15px 15px 0px;
 }
 
+.change-color{
+  background: linear-gradient(#007095,#20C3D3);
+  border-radius: 10px;
+}
+
 .form-style-5 input[type="submit"],
 .form-style-5 input[type="button"]
 {
@@ -188,21 +193,21 @@ td {
 }
 
 th {
-    background-color: #4cc486;
+    background-color: #66a1ee;
     color: white;
     font-size: 15px;
 }
 
 .parecer-th{
-  background-color: #4785e8;
+  background-color: #66a1ee;
 }
 
 tbody tr:nth-child(4){
-  background-color: #fff58e;
+  background-color: #7166ee;
   color: #000;
 }
 tbody tr:hover{
-  background-color:#7fe8be;
+  background-color:#9cc2f4;
 }
 .toptobottom{
   margin-top: 50px;
