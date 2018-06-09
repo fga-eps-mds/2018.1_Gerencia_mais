@@ -58,9 +58,10 @@ A fim de garantir o cumprimento das Histórias de Usuário durante a *sprint*. F
 
 |ID|História|Pontos|Responsáveis|
 |:-:|:-----:|:----:|:----------:|
-|[US31](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/111)| Mpstrar número de médicos alocados por turno | 3 | Caio Beleza, João Vitor e Adrielly  |
+|[US31](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/111)| Mostrar número de médicos alocados por turno | 3 | Caio Beleza, João Vitor e Adrielly  |
 |[US11](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/106)| Computar Carga horaria | 3 | Caio Beleza, João Vitor e Adrielly  |
 |[US30](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/234)| Alterar forma de atualizar evento médico | 8 | Guilherme e  Victor Hugo |
+|[US32](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/236)| Implementar microserviço de relatórios | 5 | Ullysses e Eduardo |
 
   ***Technical Stories***
 
