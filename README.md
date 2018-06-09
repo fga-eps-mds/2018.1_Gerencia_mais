@@ -166,6 +166,20 @@ Esse comando irá gerar uma pasta contendo um arquivo html(index.html) que apres
  No tópico a seguir apresentamos os dois ambientes usados para validação e entrega ao cliente.
 </p>
 
+##  ℹ️ Micro Serviços
+
+<p align="justify">
+A aplicação utiliza dois serviços que funcionam de maneira independente.
+Gerencia report: Serviço de geração de relatório.
+Notifica mais: Serviço de notificação via email.
+
+Ambos serviços necessitam apenas de dados em formato json. Informações mais detalhadas podem ser acessadas nos links abaixo:
+* Notifica mais: https://github.com/Eduardojvr/notifica_mais
+* Gerencia report : https://github.com/Eduardojvr/gerencia_report
+</p>
+
+<br>
+
 ## 🌎 Acessando a aplicação
 
 <p align="justify">O gerencia mais possui dois ambientes, ambiente de homologação que é usado para testar e verificar se as funcionalidade implementadas mantêm o ambiente estável e o ambiente de produção, onde apresentamos as novas funcionalidades verificadas e validadas aos clientes. Os dois ambiente podem ser acessados através dos endereços apresentados abaixo:</p>
