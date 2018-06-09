@@ -21,7 +21,7 @@
 |**Data de término**|02/06/2018|
 |**Duração**|7 dias|
 |**Pontos planejados**|35|
-|**Pontos concluidos**|35|
+|**Pontos concluidos**|30|
 
 
 ## 2 - Tarefas
@@ -54,7 +54,7 @@
 
 - Não houve pareamento de MDS com EPS novamente devido ao fato do grupo de MDS ter elevado seu conhecimento ao ponto de adquirir independencia no conteudo técnico.
 
-- O cliente solicitou que o escopo do projeto fosse expandido para mais áreas do sistema hospitalar. Devido ao tempo e esforços necessários para implementar as mudanças que permitissem atender a solicitação, foi decidido não atender ao pedido.
+- Apesar da equipe ter definido um escopo reduzido em relação ao pedido do cliente, algumas dívidas técnicas podem consumir bastante tempo da equipe.
 
 - Foi exigido que o frontend da aplicação seja testado. Tal exigência será tratada na próxima sprint.
 
@@ -69,13 +69,13 @@ Foi tomada a decisição pelo grupo de EPS de coletar o conhecimento do time no 
 
 ## 6 - Burndown
 
-<img src="{{site.baseurl }}/documentos/imagens/Sprint11/b11.png">
+<img src="{{site.baseurl }}/documentos/imagens/Sprint12/burndown_s12.png">
 
-<p align="justify">O burndown apresenta a quantidade de pontos que foram planejados e sua “queima” durante a sprint que tem duração de uma semana. Para a sprint 11, a equipe planejou realizar 35 pontos que foram distribuídos em histórias de usuário e histórias técnicas.
-Ao término da sprint, a equipe de desenvolvimento entregou todos os 35 pontos, 2 histórias de usuário e 5 histórias técnicas. O gráfico abaixo apresenta entregas irregulares, houve apenas uma entrega no decorrer da semana da sprint e uma entrega maior ao final da sprint.</p>
+<p align="justify">O burndown apresenta a quantidade de pontos que foram planejados e sua “queima” durante a sprint que tem duração de uma semana. Para a sprint 12, a equipe planejou realizar 35 pontos que foram distribuídos em histórias de usuário e histórias técnicas.
+Ao término da sprint, a equipe de desenvolvimento entregou 30 pontos, 3 histórias de usuário e 3 histórias técnicas. 5 pontos não foram concluídos durante a sprint e foram repassados para a sprint 13 como dívida técnica. O gráfico acima apresenta entregas mais regulares do que as apresentadas na sprint 11. Apesar de grande parte da entrega se concentrar mais no final da sprint, podemos considerar um bom desempenho da equipe. </p>
 
 ## 7 - Velocity
 
-<img src="{{site.baseurl }}/documentos/imagens/Sprint11/v11.png">
+<img src="{{site.baseurl }}/documentos/imagens/Sprint12/velocity_s12.png">
 
-<p align="justify">Nota-se que a equipe começou a estabilizar a velocidade de desenvolvimento que, nas sprints anteriores,  apresentavam grandes oscilações.</p>
+<p align="justify">Nota-se que apesar de apresentar uma pequena queda do gráfico em relação ao velocity da sprint 11, a equipe conseguiu manter sua velocidade de produção. Isso indica um amadurecimento e maior estabilidade na capacidade de entregar funcionalidades e incrementos ao produto.</p>
