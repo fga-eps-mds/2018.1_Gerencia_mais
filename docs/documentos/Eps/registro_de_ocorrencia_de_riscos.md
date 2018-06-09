@@ -45,10 +45,12 @@ Ação: Começou a ser conversado com cada integrante do grupo sobre sua serieda
 Ação: A entrega de pontos na sprint em questão foi extremamente baixa, ou seja, diminuindo o velocity drasticamente. Desse modo sera feito a rotação do pareamento para equilibrar conhecimento.
 
 ## Sprint 8
-
+###Ocorrência: Baixa produtividade da equipe.
+Ação: A entrega de pontos na sprint em questão foi extremamente baixa, ou seja, diminuindo o velocity drasticamente. Desse modo sera feito a rotação do pareamento para equilibrar conhecimento.
 
 ## Sprint 9
-
+###Ocorrência: A Equipe apresentar alta produtividade.
+Ação: A partir desta ocorrência o velocity voltou para os padrões normais, evidênciando que a equipe aprensentou alta produtividade em relação a sprint anterios.
 
 ## Sprint 10
 
