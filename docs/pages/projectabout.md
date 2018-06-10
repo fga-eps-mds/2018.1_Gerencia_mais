@@ -11,11 +11,13 @@ icon: glyphicon-play
 
 
 <p align="center">
-  <a href="https://travis-ci.org/fga-gpp-mds/2018.1_Gerencia_mais"><img src="https://travis-ci.org/fga-gpp-mds/2018.1_Gerencia_mais.svg?branch=master" alt="Build"></a>
-<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
-  <a href="https://codeclimate.com/github/fga-gpp-mds/2018.1_Gerencia_mais/maintainability"><img src="https://api.codeclimate.com/v1/badges/4aff97e7847e842ef8be/maintainability" /></a>
+    <a href="https://travis-ci.org/fga-gpp-mds/2018.1_Gerencia_mais"><img src="https://travis-ci.org/fga-gpp-mds/2018.1_Gerencia_mais.svg?branch=master" alt="Build"></a>
+    <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
+    <a href="https://codeclimate.com/github/fga-gpp-mds/2018.1_Gestao_de_Internacoes_Cirurgicas_GIC/maintainability"><img src="https://api.codeclimate.com/v1/badges/10ad033f2a465e9a297f/maintainability" /></a>
+      <a href=''><img src='https://img.shields.io/npm/v/npm.svg' alt='Npm-version' /></a>
+      <a href='https://www.python.org/'><img src='https://img.shields.io/badge/Made%20with-Python-1f425f.svg' alt='python' /></a>
+     <a href='https://i.imgur.com/1eUkAob.jpg'><img src='https://i.imgur.com/1eUkAob.jpg' alt='python' /></a>
      <a href='https://coveralls.io/github/fga-gpp-mds/2018.1_Gerencia_mais?branch=is64_Integrar_Frontend_e_Backend'><img src='https://coveralls.io/repos/github/fga-gpp-mds/2018.1_Gerencia_mais/badge.svg?branch=is64_Integrar_Frontend_e_Backend' alt='Coverage Status' /></a>
-  <a href="https://codeclimate.com/github/fga-gpp-mds/2018.1_Gerencia_mais"><img src="https://codeclimate.com/github/fga-gpp-mds/2018.1_Gerencia_mais/badges/issue_count.svg" alt="Issue Count"></a> <a href='https://www.python.org/'><img src='https://img.shields.io/badge/Made%20with-Python-1f425f.svg' alt='python' /></a> <a href='https://i.imgur.com/1eUkAob.jpg'><img src='https://i.imgur.com/1eUkAob.jpg' alt='python' /></a>
 </p>
 
 
@@ -69,6 +71,11 @@ Obs: O serviço ainda está sendo configurado.
 <p align="center">
 <img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/coveralls-logo.png" width="200">
 <img src="{{ site.baseurl }}/documentos/imagens/Tecnologias/datadog.png" width="150">
+<img src=https://i.imgur.com/COBCEzz.png" width="150">
+<img src="https://i.imgur.com/CVlCfDX.png" width="150">
+<img src="https://i.imgur.com/6PNFiwL.jpg" width="150">
+<img src="https://i.imgur.com/c2We7zg.jpg" width="150">
+
 
 </p>
 
@@ -161,12 +168,12 @@ Esse comando irá gerar uma pasta contendo um arquivo html(index.html) que apres
 
 ##  ℹ️ Deploy
 
-<p align="justify">O deploy da aplicação é feito de forma automatizada por meio da integração contínua (Travis CI) que é responsável por verificar a cobertura de teste ,que não pode ser inferior a 95% , e realizar o deploy junto ao servidor de hospedagem Heroku. Na configuração da integração incluimos os ambientes de homologação e produção que são descritos logo em seguida.
+O deploy da aplicação é feito de forma automatizada por meio da integração contínua (Travis CI) que é responsável por verificar a cobertura de teste ,que não pode ser inferior a 95% , e realizar o deploy junto ao servidor de hospedagem Heroku. Na configuração da integração incluimos os ambientes de homologação e produção que são descritos logo em seguida.
 
 - Deploy ambiente de homologação: Para esse ambiente, usamos a brach __development__. O deploy ocorre de forma automatizada. toda vez que alguma alteração é feita nessa branch, que tem como filtro os testes implementados durante o desenvolvimento.
 - Deploy ambiente de produção: Quando lançada uma nova versão estável do sistema, um novo deploy é realizado de forma automatizada. Para isso usamos a brach __master__, onde a nova versão devidamente testada e obedecendo os critérios de qualidade estabelecidos no [Plano de qualidade](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/Eps/Plano_de_Gerenciamento_de_Qualidade.md) é entregue aos clientes de forma contínua.
  No tópico a seguir apresentamos os dois ambientes usados para validação e entrega ao cliente.
-</p>
+
 
 
 ## 🌎 Acessando a aplicação
