@@ -86,10 +86,8 @@ export default class ModalComponent extends React.Component {
   }
 
   render() {
-    console.log(this.state.is_visible);
-    console.log(this.props.onHide);
     let form;
-    if (this.state.is_visible) {  
+    if (this.state.is_visible) {
       form = (<FormUpdate eventid={this.state.doctor_events_list[0].id}></FormUpdate>);
     } else {
       form = (<div>
