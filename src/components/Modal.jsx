@@ -40,7 +40,7 @@ export default class ModalComponent extends React.Component {
 
   async componentDidMount4() {
     try {
-      const name = 'https://gicsaude.herokuapp.com/doctor/api-doctor/list-doctor/1/?name=' + this.props.currentdoctor;
+      const name = 'http://localhost:8000/doctor/api-doctor/list-doctor/category/?name=' + this.props.currentdoctor;
       console.log(name);
       const res = await fetch(name);
       console.log(res);
@@ -60,7 +60,7 @@ export default class ModalComponent extends React.Component {
     var newEnd = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
     var resultEnd = newEnd.toISOString();
     try {
-      const name = 'https://gicsaude.herokuapp.com/schedule/api-event/list-doctor/?doctor=' + this.state.current_doctor_id + '&start=' + resultStart + '&end=' + resultEnd;
+      const name = 'http://localhost:8000/schedule/api-event/list-doctor/?doctor=' + this.state.current_doctor_id + '&start=' + resultStart + '&end=' + resultEnd;
       console.log(name);
       const res = await fetch(name);
       console.log(res);
@@ -73,10 +73,11 @@ export default class ModalComponent extends React.Component {
   }
 
   async changeSchedule(e) {
+    console.log("entrou changeSchedule");
     await this.componentDidMount4();
     this.setState({current_doctor_id: this.state.doctor[0].id});
     await this.componentDidMount5();
-    this.setState({is_visible: true});
+    this.setState({is_visible: !this.state.is_visible});
   }
 
   onSetVisible(e){
@@ -86,8 +87,9 @@ export default class ModalComponent extends React.Component {
 
   render() {
     console.log(this.state.is_visible);
+    console.log(this.props.onHide);
     let form;
-    if (this.state.is_visible) {
+    if (this.state.is_visible) {  
       form = (<FormUpdate eventid={this.state.doctor_events_list[0].id}></FormUpdate>);
     } else {
       form = (<div>
@@ -98,7 +100,7 @@ export default class ModalComponent extends React.Component {
       </div>);
     }
     return (<Modal className="height-modal modal" {...this.props} bsSize="large" aria-labelledby="contained-modal-title-lg">
-      <Modal.Header className="modal-header-align">
+      <Modal.Header className="">
         <h2 className="modal-header-title">{this.props.currentdoctor}</h2>
       </Modal.Header>
       <Modal.Body className="modal-content">
