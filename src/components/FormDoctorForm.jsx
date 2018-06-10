@@ -104,8 +104,7 @@ export default class FormDoctorForm extends Component {
     console.log(this.state.time_start,this.state.time_end);
   }
 
-  handleSubmit = e => {
-
+   handleSubmit = e => {
     this.state.start = this.props.currentdate + this.state.time_start + "Z";
     this.state.end = this.props.currentdate + this.state.time_end + "Z";
     this.setState({"is_valid":true})
@@ -128,7 +127,7 @@ export default class FormDoctorForm extends Component {
   render(){
     return(
       <div>
-        <div className="top-space space-bottom space-top change-color">
+        <div className="top-space space-top">
           <div className="form-style-5">
             <form>
               <h3>Cadastro de horário de médicos</h3>
