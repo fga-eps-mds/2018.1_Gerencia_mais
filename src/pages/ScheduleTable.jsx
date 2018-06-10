@@ -67,6 +67,7 @@ export default class ScheduleTable extends Component {
     constructor(props){
       super(props);
       this.state={
+        teste: false,
         smShow: false,
         smLocalShow: false,
         current_doctor:"",
@@ -361,6 +362,7 @@ export default class ScheduleTable extends Component {
   }
 
     render(){
+      console.log(this.state.teste);
         let smClose = () => this.setState({ smShow: false });
         let smLocalClose = () => this.setState({ smLocalShow: false });
         let toolBar = [];
@@ -418,7 +420,13 @@ export default class ScheduleTable extends Component {
                           selectable
                           onSelectEvent={() => this.setState({ }),
                                        (event) =>this.setState({smShow: true,current_doctor: event.title,current_start:event.start.toString(),current_end:event.end.toString()})}
-
+                          onSelectSlot={(
+                            slotInfo: {
+                              start: Date,
+                              end: Date,
+                              action: "click"
+                            }
+                          ) => this.setState({teste:!this.state.teste})}
                           defaultDate={new Date()}
                           defaultView="month"
                           events={this.state.doctor_events_list}
