@@ -227,11 +227,12 @@ export default class ScheduleTable extends Component {
       }
 
       compareId(id,id2,doctorName,realName){
+        var name;
         if(id === id2){
-          var name = doctorName;
+          name = doctorName;
         }
         else{
-          var name = realName;
+          name = realName;
         }
         return name;
       }

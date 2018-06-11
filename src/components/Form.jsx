@@ -1,15 +1,8 @@
 import React, { Component } from 'react';
-//import {Link} from 'react-router-dom';
 import '../css/bootstrap.css';
 import '../css/DoctorForm.css';
-import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
-// import Select from 'react-select';
-import SideBar from '../components/SideBar';
-
 
 var date = new Date().toISOString();
-// status = True, title= 'Mauricio', start='2018-04-17T17:25:32Z', end='2018-04-20T17:25:34Z', calendar = calendar
 export default class Form extends Component {
   constructor(props) {
     super(props);
@@ -132,8 +125,8 @@ export default class Form extends Component {
               <fieldset>
 
                 <legend><span className="number">1</span> Médicos </legend>
-                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" onChange={this.handleChange.bind(this)} value={this.state.doctor} title="doctor">
-                <option selected>Escolha um médico...</option>
+                <select className="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" onChange={this.handleChange.bind(this)} value={this.state.doctor} title="doctor">
+                <option defaultValue={0} value={0}>Escolha um médico...</option>
                 {this.state.all_doctors.map(item =>(
                 <option value={item.id}> {item.name} - {item.registration}</option>
 
@@ -141,8 +134,8 @@ export default class Form extends Component {
             ))}
               </select>
               <legend><span className="number">2</span> Legenda </legend>
-              <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" onChange={this.handleChangeTwo.bind(this)} value={this.state.subtitle}>
-              <option selected>Escolha uma Legenda...</option>
+              <select className="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" onChange={this.handleChangeTwo.bind(this)} value={this.state.subtitle}>
+              <option defaultValue={0} value={0}>Escolha uma Legenda...</option>
               {this.state.all_subtitle.map(item =>(
               <option value={item.id}> {item.code} - {item.begin} - {item.finish} - {item.description} </option>
 

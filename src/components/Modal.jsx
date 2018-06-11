@@ -1,13 +1,8 @@
-import React, {Component} from 'react';
+import React from 'react';
 import '../css/bootstrap.css';
 import '../css/Modal.css';
-import UpdateSchedule from '../pages/UpdateSchedule';
 import FormUpdate from '../components/FormUpdate';
 import {
-  Table,
-  ButtonToolbar,
-  ToggleButtonGroup,
-  ToggleButton,
   Modal,
   Button
 } from 'react-bootstrap';
@@ -56,7 +51,7 @@ export default class ModalComponent extends React.Component {
     var date = new Date(this.props.currentstart);
     var newStart = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
     var resultStart = newStart.toISOString();
-    var date = new Date(this.props.currentend);
+    date = new Date(this.props.currentend);
     var newEnd = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
     var resultEnd = newEnd.toISOString();
     try {
@@ -103,7 +98,7 @@ export default class ModalComponent extends React.Component {
       </Modal.Header>
       <Modal.Body className="modal-content">
         <div>
-          <Button onClick={this.changeSchedule} bsSize="md" bsStyle="primary">Alterar evento</Button>
+          <Button onClick={this.changeSchedule} bsStyle="primary">Alterar evento</Button>
           <br></br>
           <br></br>
           <br></br>

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 //import {Link} from 'react-router-dom';
 import '../css/bootstrap.css';
-import {Navbar, Nav, NavItem, NavDropdown, MenuItem, ButtonGroup, Button} from 'react-bootstrap';
+import {Navbar, NavItem, ButtonGroup, Button} from 'react-bootstrap';
 import isLogged from '../actions/actions';
 import {store} from '../components/store';
 import "../css/NavBar.css";
