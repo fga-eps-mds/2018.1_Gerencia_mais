@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar';
 import SideBar from '../components/SideBar';
 import Footer from '../components/Footer';
 import ModalComponent from '../components/Modal';
+import ModalForm from '../components/ModalForm';
 import {Table,ButtonToolbar,ToggleButtonGroup,ToggleButton,Modal,Button} from 'react-bootstrap';
 import "../css/bootstrap.min.css";
 import Calendar from "react-big-calendar";
@@ -67,6 +68,8 @@ export default class ScheduleTable extends Component {
     constructor(props){
       super(props);
       this.state={
+        formShow:false,
+        formDay:"",
         smShow: false,
         smLocalShow: false,
         current_doctor:"",
@@ -360,8 +363,17 @@ export default class ScheduleTable extends Component {
     this.createEventDoctorList();
   }
 
+    correctDate(d){
+      var date = new Date(d);
+      var newStart = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
+      var resultStart = newStart.toISOString();
+      return resultStart;
+    }
+
     render(){
+        console.log(this.state.formDay);
         let smClose = () => this.setState({ smShow: false });
+        let formClose = () => this.setState({ formShow: false });
         let smLocalClose = () => this.setState({ smLocalShow: false });
         let toolBar = [];
         let turnsInformation = [];
@@ -418,7 +430,7 @@ export default class ScheduleTable extends Component {
                           selectable
                           onSelectEvent={() => this.setState({ }),
                                        (event) =>this.setState({smShow: true,current_doctor: event.title,current_start:event.start.toString(),current_end:event.end.toString()})}
-
+                          onSelectSlot={(event) => this.setState({formDay:this.correctDate(event.end), formShow:true})}
                           defaultDate={new Date()}
                           defaultView="month"
                           events={this.state.doctor_events_list}
@@ -427,6 +439,7 @@ export default class ScheduleTable extends Component {
                     </div>
                 </div>
             </div>
+            <ModalForm show={this.state.formShow} onHide={formClose} formday={this.state.formDay}></ModalForm>
             <ModalComponent show={this.state.smShow} onHide={smClose} currentdoctor={this.state.current_doctor}
                           currentstart={this.state.current_start} currentend={this.state.current_end} />
             <Footer></Footer>
