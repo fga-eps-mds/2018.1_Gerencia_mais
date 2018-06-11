@@ -39,7 +39,7 @@ export default class Form extends Component {
 
         const res = await fetch('https://gicsaude.herokuapp.com/subtitle/api-subtitle/');
         const all_subtitle = await res.json();
-        console.log(all_subtitle);
+        console.log(res);
         this.setState({all_subtitle});
       } catch (e) {
         console.log(e);
@@ -51,7 +51,7 @@ export default class Form extends Component {
 
           const res = await fetch('https://gicsaude.herokuapp.com/subtitle/api-subtitle/'+this.state.subtitle+'/');
           const load_subtitle = await res.json();
-          console.log(load_subtitle);
+          console.log(res);
           this.setState({load_subtitle});
         } catch (e) {
           console.log(e);
@@ -63,7 +63,7 @@ export default class Form extends Component {
 
         const res = await fetch('https://gicsaude.herokuapp.com/doctor/api-doctor/');
         const all_doctors = await res.json();
-        console.log(all_doctors);
+        console.log(res);
         this.setState({all_doctors});
       } catch (e) {
         console.log(e);
@@ -101,7 +101,6 @@ export default class Form extends Component {
     await this.setState({
       time_end: this.state.load_subtitle.finish
     })
-    console.log(this.state.time_start,this.state.time_end);
   }
 
   handleSubmit = e => {
@@ -111,13 +110,10 @@ export default class Form extends Component {
     // this.state.end = this.state.end + "T" + this.state.time_end + "Z";
     this.setState({"is_valid":true})
     // this.state.is_valid = true;
-    console.log(this.state.start + " " + this.state.end);
     e.preventDefault();
     const {start, end, hospital, subtitle, creator, rule, calendar, doctor} = this.state;
-    console.log({start, end, hospital, subtitle,creator, rule, calendar, doctor} );
     const lead = {start, end, hospital, subtitle,creator, rule, calendar,doctor} ;
     const temp = JSON.stringify(lead)
-    console.log(temp);
     const conf = {
       method: "POST",
       body: temp,
