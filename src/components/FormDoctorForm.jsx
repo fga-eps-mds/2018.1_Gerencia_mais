@@ -14,10 +14,9 @@ export default class FormDoctorForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      is_valid : false,
-      all_subtitle: [],
       doctor:'0',
       subtitle: '0',
+      is_valid : false,
       load_subtitle: [],
       start: date ,
       time_start:'',
@@ -26,6 +25,7 @@ export default class FormDoctorForm extends Component {
       description:'',
       hospital:'',
       creator: '1',
+      all_subtitle: [],
       rule: null,
       calendar:'1',
       all_doctors: [],

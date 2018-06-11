@@ -14,17 +14,17 @@ export default class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      is_valid : false,
-      all_subtitle: [],
       doctor:'0',
       subtitle: '0',
       load_subtitle: [],
       start: date ,
       time_start:'',
       end: date,
+      is_valid : false,
       time_end:'',
       description:'',
       hospital:'',
+      all_subtitle: [],
       creator: '1',
       rule: null,
       calendar:'1',
