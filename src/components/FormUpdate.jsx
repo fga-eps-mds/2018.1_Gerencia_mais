@@ -31,7 +31,7 @@ export default class FormUpdate extends Component {
       all_doctors: [],
     }
      this.onChange = this.onChange.bind(this);
-     this.onChange2 = this.onChange2.bind(this);
+     this.On2Change = this.On2Change.bind(this);
   }
 
   async componentDidMount2() {
@@ -74,11 +74,11 @@ export default class FormUpdate extends Component {
 
   onChange(e) {
     const title = e.target.title;
-    const value = e.target.value === 'checkbox' ? e.target.checked : e.target.value;
-    this.setState({[title] : value});
+    const valuei = e.target.value === 'checkbox' ? e.target.checked : e.target.value;
+    this.setState({[title] : valuei});
 }
 
-  onChange2(e){
+  On2Change(e){
     const title = e.target.title;
     this.setState(
       {[title]: e.target.checked}
@@ -90,7 +90,7 @@ export default class FormUpdate extends Component {
       doctor: e.target.value
     })
   }
-  async handleChange2(e){
+  async handle2change(e){
      await this.setState({
       subtitle: e.target.value
     });
@@ -141,7 +141,7 @@ export default class FormUpdate extends Component {
             ))}
               </select>
               <legend><span className="number">2</span> Legenda </legend>
-              <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" onChange={this.handleChange2.bind(this)} value={this.state.subtitle}>
+              <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" onChange={this.handle2change.bind(this)} value={this.state.subtitle}>
               <option selected>Escolha uma Legenda...</option>
               {this.state.all_subtitle.map(item =>(
               <option value={item.id}> {item.code} - {item.begin} - {item.finish} - {item.description} </option>

@@ -74,8 +74,8 @@ export default class FormDoctorForm extends Component {
 
   onChange(e) {
     const title = e.target.title;
-    const value = e.target.value === 'checkbox' ? e.target.checked : e.target.value;
-    this.setState({[title] : value});
+    const valueu = e.target.value === 'checkbox' ? e.target.checked : e.target.value;
+    this.setState({[title] : valueu});
 }
 
   onChange2(e){
@@ -110,8 +110,8 @@ export default class FormDoctorForm extends Component {
     // this.state.is_valid = true;
     e.preventDefault();
     const {start, end, hospital, subtitle, creator, rule, calendar, doctor} = this.state;
-    const lead = {start, end, hospital, subtitle,creator, rule, calendar,doctor} ;
-    const temp = JSON.stringify(lead)
+    const leade = {start, end, hospital, subtitle,creator, rule, calendar,doctor} ;
+    const temp = JSON.stringify(leade)
     const conf = {
       method: "POST",
       body: temp,
