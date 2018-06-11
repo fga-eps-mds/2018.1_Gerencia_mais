@@ -5,7 +5,6 @@ import ScheduleTable from "./pages/ScheduleTable";
 import NotFound from "./pages/NotFound";
 import DoctorForm from "./pages/DoctorForm";
 import DoctorStatus from "./pages/DoctorStatus";
-import UpdateSchedule from "./pages/UpdateSchedule";
 import RegistrationAdmin from "./pages/RegistrationAdmin";
 import PrivateRoute from "./components/PrivateRouter";
 import { LoginPage } from "./pages/LoginPage";
@@ -27,7 +26,6 @@ class App extends Component {
           <PrivateRoute exact path="/DoctorForm" component={DoctorForm} />
           <Route exact path="/LoginPage" component={LoginPage} />
           <PrivateRoute exact path="/ScheduleTable" component={ScheduleTable} />
-          <PrivateRoute exact path="/UpdateSchedule" component={UpdateSchedule} />
           <Route exact path="/RegistrationAdmin" component={RegistrationAdmin} />
           <Route component={NotFound} />
         </Switch>
