@@ -12,7 +12,7 @@ export class LoginPage extends Component {
     this.state = {
       username: '',
       password: '',
-      todos: [],
+      toDos: [],
       valid: false
     }
   }
@@ -21,9 +21,8 @@ export class LoginPage extends Component {
     try {
 
       const res = await fetch('https://gicsaude.herokuapp.com/user/api-user');
-      const todos = await res.json();
-      this.setState({todos});
-      // console.log(todos);
+      const toDos = await res.json();
+      this.setState({toDos});
     } catch (e) {
       console.log(e);
     }

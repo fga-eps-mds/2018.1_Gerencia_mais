@@ -4,11 +4,9 @@ import HomePage from "./pages/HomePage";
 import ScheduleTable from "./pages/ScheduleTable";
 import NotFound from "./pages/NotFound";
 import DoctorForm from "./pages/DoctorForm";
-import DoctorStatus from "./pages/DoctorStatus";
 import RegistrationAdmin from "./pages/RegistrationAdmin";
 import PrivateRoute from "./components/PrivateRouter";
 import { LoginPage } from "./pages/LoginPage";
-
 import {store, persistor} from './components/store';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';

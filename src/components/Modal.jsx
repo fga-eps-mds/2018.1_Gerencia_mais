@@ -29,18 +29,15 @@ export default class ModalComponent extends React.Component {
 
   parseISOLocal(s) {
     let b = s.split(/\D/);
-    console.log(b);
     return new Date(b[0], b[1] - 1, b[2], b[3], b[4], b[5]);
   }
 
   async componentDidMount4() {
     try {
       const name = 'http://localhost:8000/doctor/api-doctor/list-doctor/category/?name=' + this.props.currentdoctor;
-      console.log(name);
       const res = await fetch(name);
       console.log(res);
       const doctor = await res.json();
-      console.log(doctor);
       this.setState({doctor});
     } catch (e) {
       console.log(e);
@@ -56,11 +53,9 @@ export default class ModalComponent extends React.Component {
     var resultEnd = newEnd.toISOString();
     try {
       const name = 'http://localhost:8000/schedule/api-event/list-doctor/?doctor=' + this.state.current_doctor_id + '&start=' + resultStart + '&end=' + resultEnd;
-      console.log(name);
       const res = await fetch(name);
       console.log(res);
       const doctor_events_list = await res.json();
-      console.log(doctor_events_list);
       this.setState({doctor_events_list});
     } catch (e) {
       console.log(e);
@@ -68,7 +63,6 @@ export default class ModalComponent extends React.Component {
   }
 
   async changeSchedule(e) {
-    console.log("entrou changeSchedule");
     await this.componentDidMount4();
     this.setState({current_doctor_id: this.state.doctor[0].id});
     await this.componentDidMount5();

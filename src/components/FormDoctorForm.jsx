@@ -33,7 +33,7 @@ export default class FormDoctorForm extends Component {
 
         const res = await fetch('http://localhost:8000/subtitle/api-subtitle/');
         const all_subtitle = await res.json();
-        console.log(res);
+        console.log(all_subtitle);
         this.setState({all_subtitle});
       } catch (e) {
         console.log(e);
@@ -45,7 +45,7 @@ export default class FormDoctorForm extends Component {
 
           const res = await fetch('http://localhost:8000/subtitle/api-subtitle/'+this.state.subtitle+'/');
           const load_subtitle = await res.json();
-          console.log(res);
+          console.log(load_subtitle);
           this.setState({load_subtitle});
         } catch (e) {
           console.log(e);
@@ -57,7 +57,7 @@ export default class FormDoctorForm extends Component {
 
         const res = await fetch('http://localhost:8000/doctor/api-doctor/');
         const all_doctors = await res.json();
-        console.log(res);
+        console.log(all_doctors);
         this.setState({all_doctors});
       } catch (e) {
         console.log(e);

@@ -372,7 +372,6 @@ export default class ScheduleTable extends Component {
     }
 
     render(){
-        console.log(this.state.formDay);
         let smClose = () => this.setState({ smShow: false });
         let formClose = () => this.setState({ formShow: false });
         let smLocalClose = () => this.setState({ smLocalShow: false });
