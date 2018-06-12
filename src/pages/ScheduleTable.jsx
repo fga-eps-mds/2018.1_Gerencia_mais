@@ -227,11 +227,12 @@ export default class ScheduleTable extends Component {
       }
 
       compareId(id,id2,doctorName,realName){
+        var name;
         if(id === id2){
-          var name = doctorName;
+          name = doctorName;
         }
         else{
-          var name = realName;
+          name = realName;
         }
         return name;
       }
@@ -371,7 +372,6 @@ export default class ScheduleTable extends Component {
     }
 
     render(){
-        console.log(this.state.formDay);
         let smClose = () => this.setState({ smShow: false });
         let formClose = () => this.setState({ formShow: false });
         let smLocalClose = () => this.setState({ smLocalShow: false });

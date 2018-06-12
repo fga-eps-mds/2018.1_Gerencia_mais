@@ -1,13 +1,8 @@
-import React, {Component} from 'react';
+import React from 'react';
 import '../css/bootstrap.css';
 import '../css/Modal.css';
-import UpdateSchedule from '../pages/UpdateSchedule';
 import FormDoctorForm from '../components/FormDoctorForm';
 import {
-  Table,
-  ButtonToolbar,
-  ToggleButtonGroup,
-  ToggleButton,
   Modal,
   Button
 } from 'react-bootstrap';

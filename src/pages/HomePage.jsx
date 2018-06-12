@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-//import {Link} from 'react-router-dom';
 import '../css/bootstrap.css';
 import '../css/HomePage.css';
 import NavBar from '../components/NavBar';

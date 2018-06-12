@@ -1,15 +1,8 @@
 import React, { Component } from 'react';
-//import {Link} from 'react-router-dom';
 import '../css/bootstrap.css';
 import '../css/DoctorForm.css';
-import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
-// import Select from 'react-select';
-import SideBar from '../components/SideBar';
-
 
 var date = new Date().toISOString();
-// status = True, title= 'Mauricio', start='2018-04-17T17:25:32Z', end='2018-04-20T17:25:34Z', calendar = calendar
 export default class FormUpdate extends Component {
   constructor(props) {
     super(props);
@@ -31,13 +24,13 @@ export default class FormUpdate extends Component {
       all_doctors: [],
     }
      this.onChange = this.onChange.bind(this);
-     this.onChange2 = this.onChange2.bind(this);
+     this.On2Change = this.On2Change.bind(this);
   }
 
   async componentDidMount2() {
       try {
 
-        const res = await fetch('https://gicsaude.herokuapp.com/subtitle/api-subtitle/');
+        const res = await fetch('http://localhost:8000/subtitle/api-subtitle/');
         const all_subtitle = await res.json();
         console.log(all_subtitle);
         this.setState({all_subtitle});
@@ -49,7 +42,7 @@ export default class FormUpdate extends Component {
     async componentDidMount3() {
         try {
 
-          const res = await fetch('https://gicsaude.herokuapp.com/subtitle/api-subtitle/'+this.state.subtitle+'/');
+          const res = await fetch('http://localhost:8000/subtitle/api-subtitle/'+this.state.subtitle+'/');
           const load_subtitle = await res.json();
           console.log(load_subtitle);
           this.setState({load_subtitle});
@@ -61,7 +54,7 @@ export default class FormUpdate extends Component {
   async componentDidMount() {
       try {
 
-        const res = await fetch('https://gicsaude.herokuapp.com/doctor/api-doctor/');
+        const res = await fetch('http://localhost:8000/doctor/api-doctor/');
         const all_doctors = await res.json();
         console.log(all_doctors);
         this.setState({all_doctors});
@@ -74,11 +67,11 @@ export default class FormUpdate extends Component {
 
   onChange(e) {
     const title = e.target.title;
-    const value = e.target.value === 'checkbox' ? e.target.checked : e.target.value;
-    this.setState({[title] : value});
+    const valuei = e.target.value === 'checkbox' ? e.target.checked : e.target.value;
+    this.setState({[title] : valuei});
 }
 
-  onChange2(e){
+  On2Change(e){
     const title = e.target.title;
     this.setState(
       {[title]: e.target.checked}
@@ -90,7 +83,7 @@ export default class FormUpdate extends Component {
       doctor: e.target.value
     })
   }
-  async handleChange2(e){
+  async handle2change(e){
      await this.setState({
       subtitle: e.target.value
     });
@@ -101,29 +94,22 @@ export default class FormUpdate extends Component {
     await this.setState({
       time_end: this.state.load_subtitle.finish
     })
-    console.log(this.state.time_start,this.state.time_end);
   }
 
   handleSubmit = e => {
     this.state.start=this.state.start + "T" + this.state.time_start + "Z";
-    // this.state.start = this.state.start + "T" + this.state.time_start + "Z";
     this.state.end=this.state.end + "T" + this.state.time_end + "Z";
-    // this.state.end = this.state.end + "T" + this.state.time_end + "Z";
     this.setState({"is_valid":true})
-    // this.state.is_valid = true;
-    console.log(this.state.start + " " + this.state.end);
     e.preventDefault();
     const {start, end, hospital, subtitle, creator, rule, calendar, doctor} = this.state;
-    console.log({start, end, hospital, subtitle,creator, rule, calendar, doctor} );
     const lead = {start, end, hospital, subtitle,creator, rule, calendar,doctor} ;
     const temp = JSON.stringify(lead)
-    console.log(temp);
     const conf = {
       method: "PUT",
       body: temp,
       headers: new Headers({ "Content-Type": "application/json" })
     };
-    fetch('https://gicsaude.herokuapp.com/schedule/api-event/update/' + this.props.eventid + '/', conf).then(response => console.log(response));
+    fetch('http://localhost:8000/schedule/api-event/update/' + this.props.eventid + '/', conf).then(response => console.log(response));
     this.setState({'is_valid':true});
 }
   render(){
@@ -136,8 +122,8 @@ export default class FormUpdate extends Component {
               <fieldset>
 
                 <legend><span className="number">1</span> Médicos </legend>
-                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" onChange={this.handleChange.bind(this)} value={this.state.doctor} title="doctor">
-                <option selected>Escolha um médico...</option>
+                <select className="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" onChange={this.handleChange.bind(this)} value={this.state.doctor} title="doctor">
+                <option defaultValue={0} value={0}>Escolha um médico...</option>
                 {this.state.all_doctors.map(item =>(
                 <option value={item.id}> {item.name} - {item.registration}</option>
 
@@ -145,8 +131,8 @@ export default class FormUpdate extends Component {
             ))}
               </select>
               <legend><span className="number">2</span> Legenda </legend>
-              <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" onChange={this.handleChange2.bind(this)} value={this.state.subtitle}>
-              <option selected>Escolha uma Legenda...</option>
+              <select className="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" onChange={this.handle2change.bind(this)} value={this.state.subtitle}>
+              <option defaultValue={0} value={0}>Escolha uma Legenda...</option>
               {this.state.all_subtitle.map(item =>(
               <option value={item.id}> {item.code} - {item.begin} - {item.finish} - {item.description} </option>
 

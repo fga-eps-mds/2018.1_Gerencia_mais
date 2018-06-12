@@ -1,13 +1,8 @@
-import React, {Component} from 'react';
+import React from 'react';
 import '../css/bootstrap.css';
 import '../css/Modal.css';
-import UpdateSchedule from '../pages/UpdateSchedule';
 import FormUpdate from '../components/FormUpdate';
 import {
-  Table,
-  ButtonToolbar,
-  ToggleButtonGroup,
-  ToggleButton,
   Modal,
   Button
 } from 'react-bootstrap';
@@ -34,18 +29,15 @@ export default class ModalComponent extends React.Component {
 
   parseISOLocal(s) {
     let b = s.split(/\D/);
-    console.log(b);
     return new Date(b[0], b[1] - 1, b[2], b[3], b[4], b[5]);
   }
 
   async componentDidMount4() {
     try {
       const name = 'http://localhost:8000/doctor/api-doctor/list-doctor/category/?name=' + this.props.currentdoctor;
-      console.log(name);
       const res = await fetch(name);
       console.log(res);
       const doctor = await res.json();
-      console.log(doctor);
       this.setState({doctor});
     } catch (e) {
       console.log(e);
@@ -56,16 +48,14 @@ export default class ModalComponent extends React.Component {
     var date = new Date(this.props.currentstart);
     var newStart = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
     var resultStart = newStart.toISOString();
-    var date = new Date(this.props.currentend);
+    date = new Date(this.props.currentend);
     var newEnd = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
     var resultEnd = newEnd.toISOString();
     try {
       const name = 'http://localhost:8000/schedule/api-event/list-doctor/?doctor=' + this.state.current_doctor_id + '&start=' + resultStart + '&end=' + resultEnd;
-      console.log(name);
       const res = await fetch(name);
       console.log(res);
       const doctor_events_list = await res.json();
-      console.log(doctor_events_list);
       this.setState({doctor_events_list});
     } catch (e) {
       console.log(e);
@@ -73,7 +63,6 @@ export default class ModalComponent extends React.Component {
   }
 
   async changeSchedule(e) {
-    console.log("entrou changeSchedule");
     await this.componentDidMount4();
     this.setState({current_doctor_id: this.state.doctor[0].id});
     await this.componentDidMount5();
@@ -103,7 +92,7 @@ export default class ModalComponent extends React.Component {
       </Modal.Header>
       <Modal.Body className="modal-content">
         <div>
-          <Button onClick={this.changeSchedule} bsSize="md" bsStyle="primary">Alterar evento</Button>
+          <Button onClick={this.changeSchedule} bsStyle="primary">Alterar evento</Button>
           <br></br>
           <br></br>
           <br></br>

@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-//import {Link} from 'react-router-dom';
 import '../css/bootstrap.css';
 import '../css/DoctorForm.css';
 import NavBar from '../components/NavBar';
@@ -13,7 +12,7 @@ export class LoginPage extends Component {
     this.state = {
       username: '',
       password: '',
-      todos: [],
+      toDos: [],
       valid: false
     }
   }
@@ -22,9 +21,8 @@ export class LoginPage extends Component {
     try {
 
       const res = await fetch('https://gicsaude.herokuapp.com/user/api-user');
-      const todos = await res.json();
-      this.setState({todos});
-      // console.log(todos);
+      const toDos = await res.json();
+      this.setState({toDos});
     } catch (e) {
       console.log(e);
     }
