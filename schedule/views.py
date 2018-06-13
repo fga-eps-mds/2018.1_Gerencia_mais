@@ -1,5 +1,6 @@
 import datetime
-
+import requests
+import json
 from schedule.models import Calendar, Event, Occurrence, Rule
 
 from .serializer import CalendarSerializer, EventSerializer, RuleSerializer
@@ -12,7 +13,8 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.permissions import (
     AllowAny,IsAuthenticated
 )
-
+from django.http import HttpResponse
+from django.core import serializers
 
 
 class ListCalendar(generics.ListCreateAPIView):
@@ -54,3 +56,20 @@ class EventUpdateAPIView(generics.RetrieveUpdateAPIView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
     lookup_field = 'id'
+
+
+def generate_pdf(request,month):
+    events = Event.objects.all();
+    doctors = []
+    for event in events:
+        if event.is_this_month(int(month)):
+            inicio_fim = str(event.start.hour) + '-' + str(event.end.hour)
+            aux = {'Nome': event.doctor.name, 'Registro': event.doctor.registration, 'Categoria': event.doctor.category, 'Horário':inicio_fim}
+            doctors.append(aux)
+    data = json.dumps(doctors)
+    print(data)
+    req = requests.post('https://gerencia-report.herokuapp.com/report/all_doctors',str(data))
+    response = HttpResponse(content_type = 'application/pdf')
+    response['Content-Disposition'] = 'inline;filename=all_doctors.pdf'
+    response.write(req.text)
+    return response
