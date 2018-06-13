@@ -23,6 +23,7 @@ export default class ModalForm extends React.Component {
   }
 
   render() {
+    console.log(this.props.formday);
     let form = (<FormDoctorForm currentdate={this.parseISOLocal(this.props.formday)}> </FormDoctorForm>);
     return (<Modal className="height-modal modal" {...this.props} bsSize="large" aria-labelledby="contained-modal-title-lg">
       <Modal.Header className="">

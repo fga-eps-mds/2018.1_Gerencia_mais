@@ -111,6 +111,12 @@ class Event(models.Model):
             'end': date(self.end, django_settings.DATE_FORMAT),
         }
 
+    def is_this_month(self,month):
+        if self.start.month == month or self.end.month == month:
+            return True
+        else:
+            return False
+
     @property
     def seconds(self):
         return (self.end - self.start).total_seconds()

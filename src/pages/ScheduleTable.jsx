@@ -344,8 +344,8 @@ export default class ScheduleTable extends Component {
         end   = moment(this.state.current_date).endOf('isoWeek').subtract(1, 'days').format();
       }
       else if(this.state.current_view === 'month'){
-        start = moment(this.state.current_date).startOf('month').subtract(7, 'days').format();
-        end   = moment(this.state.current_date).endOf('month').add(7, 'days').format();
+        start = moment(this.state.current_date).startOf('month').format();
+        end   = moment(this.state.current_date).endOf('month').format();
       }
         this.state.startDate = new Date(start);
         this.state.endDate = new Date(end);
@@ -369,6 +369,11 @@ export default class ScheduleTable extends Component {
       var newStart = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
       var resultStart = newStart.toISOString();
       return resultStart;
+    }
+
+    parseISOLocalTitle(s) {
+      let b = s.split(/\D/);
+      return b[1];
     }
 
     render(){
@@ -408,6 +413,7 @@ export default class ScheduleTable extends Component {
                         <br></br>
                         <MySmallModal show={this.state.smLocalShow} onHide={smLocalClose} doctors={this.state.doctors_workload}/>
                         <Button className="btn btn-outline-primary" onClick={() => this.setState({smLocalShow: true})}>Carga Horária</Button>
+                        <a href={"http://localhost:8000/schedule/generate-pdf/" + (moment(this.state.current_date).month()+1) } target="_blank_" className="btn btn-outline-primary">Gerar PDF Mensal</a>
                         <br></br>
                         <h1 style={{marginLeft:"25%"}}>Quadro de Horários</h1>
                           <Table striped bordered condensed hover>
