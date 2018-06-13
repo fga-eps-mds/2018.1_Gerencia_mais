@@ -14,7 +14,6 @@ from rest_framework.permissions import (
     AllowAny,IsAuthenticated
 )
 from django.http import HttpResponse
-from django.core import serializers
 
 
 class ListCalendar(generics.ListCreateAPIView):
@@ -58,7 +57,7 @@ class EventUpdateAPIView(generics.RetrieveUpdateAPIView):
     lookup_field = 'id'
 
 
-def generate_pdf(request,month):
+def generate_pdf(request,month):# pragma: no cover
     events = Event.objects.all();
     doctors = []
     for event in events:
@@ -67,7 +66,6 @@ def generate_pdf(request,month):
             aux = {'Nome': event.doctor.name, 'Registro': event.doctor.registration, 'Categoria': event.doctor.category, 'Horário':inicio_fim}
             doctors.append(aux)
     data = json.dumps(doctors)
-    print(data)
     req = requests.post('https://gerencia-report.herokuapp.com/report/all_doctors',str(data))
     response = HttpResponse(content_type = 'application/pdf')
     response['Content-Disposition'] = 'inline;filename=all_doctors.pdf'
