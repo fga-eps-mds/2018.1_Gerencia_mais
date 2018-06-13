@@ -14,12 +14,9 @@ from schedule.serializer import EventSerializer
 from schedule.models.calendars import Calendar
 from schedule.models.events import Event, Occurrence
 from schedule.models.rules import Rule
-from schedule.views import generate_pdf
 
 from doctor.models import Doctors
 from subtitle.models import Subtitles
-from rest_framework.response import Response
-from django.http import HttpResponse
 
 class TestViewAPI(TestCase):
     def setUp(self):
