@@ -22,9 +22,6 @@ export default class DoctorForm extends Component {
       <Form></Form>
       <Footer ></Footer>
       </div>
-
-
     );
-
   }
 }
