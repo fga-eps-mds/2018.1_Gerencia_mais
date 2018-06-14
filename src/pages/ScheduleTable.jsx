@@ -77,6 +77,7 @@ export default class ScheduleTable extends Component {
         current_end:"",
         startDate: '',
         endDate: '',
+        doctor_detail:[],
         doctor_events_list: [],
         all_events: [],
         all_doctors: [],
@@ -84,6 +85,8 @@ export default class ScheduleTable extends Component {
         all_category : [
           "Geral"
         ],
+        week_emails:[],
+        week_doctors:[],
         category : '',
         turns: [],
         turnStart: [
@@ -154,6 +157,36 @@ export default class ScheduleTable extends Component {
             console.log(e);
           }
           await this.createEventDoctorList();
+          var names = this.setNamesInDoctorEventList(this.state.doctor_events_list);
+          this.setState({['week_doctors']:names});
+      }
+
+      async componentDidMount3(doctor_name){
+        try {
+          const name = 'http://localhost:8000/doctor/api-doctor/'+doctor_name;
+          const res = await fetch(name);
+          console.log(res);
+          const doctor_detail = await res.json();
+          this.setState({doctor_detail});
+        } catch (e) {
+          console.log(e);
+        }
+      }
+      getDayName(date){
+        var weekday = new Array(7);
+        weekday[0] = "domingo";
+        weekday[1] = "segunda";
+        weekday[2] = "terca";
+        weekday[3] = "quarta";
+        weekday[4] = "quinta";
+        weekday[5] = "sexta";
+        weekday[6] = "sabado";
+        var day = weekday[date]
+        return day;
+      }
+
+      getEmailWeek(doctor_name){
+
       }
 
       parseISOLocal(strDate) {
@@ -371,6 +404,14 @@ export default class ScheduleTable extends Component {
       return resultStart;
     }
 
+    setNamesInDoctorEventList(doctor_events_list){
+      const temp_list = []
+      this.state.doctor_events_list.map(each => (
+        temp_list.push(each.title)
+      ));
+      return new Set(temp_list)
+    }
+
     render(){
         let smClose = () => this.setState({ smShow: false });
         let formClose = () => this.setState({ formShow: false });
@@ -391,7 +432,9 @@ export default class ScheduleTable extends Component {
             <td>{this.state.turns[count]}</td>
           );
         }
-
+        var date = new Date(2018, 5, 15, 10, 33, 30, 0);
+        console.log(date);
+        console.log(this.getDayName(date.getDay()));
     	return (
     	  <div>
     	    <NavBar></NavBar>
