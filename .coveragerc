@@ -1,7 +1,9 @@
 [run]
 include =
+    /
     schedule/*
     leito_hospitalar/*
     tests/*
     user/*
     subtitle/*
+    doctor/*
