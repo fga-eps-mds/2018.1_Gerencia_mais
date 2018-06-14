@@ -3,16 +3,5 @@ include =
     schedule/*
     leito_hospitalar/*
     tests/*
-
-omit =
-    /
-    schedule/templatetags/scheduletags.py
-    schedule/views.py
-    schedule/widgets.py
-    schedule/utils.py
-    schedule/forms.py
-    schedule/settings.py
-    schedule/periods.py
-    tests/test_event.py
-    tests/test_occurrence.py
-    schedule/models/events.py
+    user/*
+    subtitle/*
