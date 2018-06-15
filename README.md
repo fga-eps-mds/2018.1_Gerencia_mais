@@ -4,7 +4,7 @@
   <a href="https://travis-ci.org/fga-gpp-mds/2018.1_Gerencia_mais"><img src="https://travis-ci.org/fga-gpp-mds/2018.1_Gerencia_mais.svg?branch=master" alt="Build"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
   <a href="https://codeclimate.com/github/fga-gpp-mds/2018.1_Gerencia_mais/maintainability"><img src="https://api.codeclimate.com/v1/badges/4aff97e7847e842ef8be/maintainability" /></a>
-     <a href='https://coveralls.io/github/fga-gpp-mds/2018.1_Gerencia_mais?branch=is64_Integrar_Frontend_e_Backend'><img src='https://coveralls.io/repos/github/fga-gpp-mds/2018.1_Gerencia_mais/badge.svg?branch=is64_Integrar_Frontend_e_Backend' alt='Coverage Status' /></a>
+    <a href='https://coveralls.io/github/fga-gpp-mds/2018.1_Gerencia_mais?branch=development'><img src='https://coveralls.io/repos/github/fga-gpp-mds/2018.1_Gerencia_mais/badge.svg?branch=development' alt='Coverage Status' /></a>
      [![Codacy Badge](https://api.codacy.com/project/badge/Grade/b6ba54118ec74854bf82605dc1760a8f)](https://www.codacy.com/app/Eduardojvr/2018.1_Gerencia_mais?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=fga-gpp-mds/2018.1_Gerencia_mais&amp;utm_campaign=Badge_Grade)
   <a href="https://codeclimate.com/github/fga-gpp-mds/2018.1_Gerencia_mais"><img src="https://codeclimate.com/github/fga-gpp-mds/2018.1_Gerencia_mais/badges/issue_count.svg" alt="Issue Count"></a> <a href='https://www.python.org/'><img src='https://img.shields.io/badge/Made%20with-Python-1f425f.svg' alt='python' /></a> 
  
