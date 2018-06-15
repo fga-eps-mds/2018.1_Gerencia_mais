@@ -56,3 +56,7 @@ class TestViewAPI(TestCase):
     def test_field_response_start(self):
        data = self.serializer.data
        self.assertEqual(self.serializer_data['start'],self.event_attr['start'])
+
+    def test_field_response_end(self):
+       data = self.serializer.data
+       self.assertEqual(self.serializer_data['end'],self.event_attr['end'])
