@@ -64,3 +64,7 @@ class TestViewAPI(TestCase):
     def test_field_response_doctor(self):
        data = self.serializer.data
        self.assertEqual(self.serializer_data['doctor'],self.event_attr['doctor'])
+
+    def test_field_response_calendar(self):
+       data = self.serializer.data
+       self.assertEqual(self.serializer_data['calendar'],self.event_attr['calendar'])
