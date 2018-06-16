@@ -10,13 +10,13 @@ import Calendar from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
-moment.updateLocale('en-gb', {
+moment.updateLocale('pt-gb', {
   week : {
       doy : 4  // The week that contains Jan 4th is the first week of the year.
   }
 });
 
-moment.locale('en-gb');
+moment.locale('pt-gb');
 
 Calendar.setLocalizer(Calendar.momentLocalizer(moment));
 
@@ -75,8 +75,9 @@ export default class ScheduleTable extends Component {
         current_doctor:"",
         current_start:"",
         current_end:"",
-        startDate: '',
-        endDate: '',
+        startDate: "",
+        endDate: "",
+        doctor_detail:[],
         doctor_events_list: [],
         all_events: [],
         all_doctors: [],
@@ -84,6 +85,18 @@ export default class ScheduleTable extends Component {
         all_category : [
           "Geral"
         ],
+        submit_doctor:{
+          "email":"",
+          "segunda":"",
+          "terca":"",
+          "quarta":"",
+          "quinta":"",
+          "sexta":"",
+          "sabado":"",
+          "domingo":"",
+        },
+        week_emails:[],
+        week_doctors:[],
         category : '',
         turns: [],
         turnStart: [
@@ -100,7 +113,7 @@ export default class ScheduleTable extends Component {
         'onNavigate',
         'updateTimes',
       ]);
-
+      this.onClick = this.onClick.bind(this);
       this.updateTimes();
     }
 
@@ -154,6 +167,82 @@ export default class ScheduleTable extends Component {
             console.log(e);
           }
           await this.createEventDoctorList();
+          var names = this.setNamesInDoctorEventList(this.state.doctor_events_list);
+          this.setState({['week_doctors']:names});
+      }
+
+      async componentDidMount3(doctor_name){
+        try {
+          const name = 'http://localhost:8000/doctor/api-doctor/'+doctor_name;
+          const res = await fetch(name);
+          console.log(res);
+          const doctor_detail = await res.json();
+          this.setState({doctor_detail});
+        } catch (e) {
+          console.log(e);
+        }
+      }
+
+      compareDoctors(id, actual_id, start, end){
+        if(id === actual_id){
+          var hour_start = start.toISOString().split(/\D/);
+          var hour_end = end.toISOString().split(/\D/);
+          var name = this.getDayName(start.getDay());
+          var string_hour = " "+ hour_start[3] + ":" +hour_start[4] + " "+"~"+" "+hour_end[3]+":"+hour_end[4];
+          this.state.submit_doctor[name] = string_hour;
+        }
+      }
+
+      makeListEvents(id){
+        this.state.doctor_events_list.map(each =>(
+          this.compareDoctors(id, each.id, each.start, each.end)
+        ))
+      }
+
+      onClick(){
+        this.state.all_doctors.map(each =>(
+          this.state.submit_doctor['email'] = each.email,
+          this.makeListEvents(each.id),
+          this.submitEmail()
+        ));
+      }
+
+      submitEmail = e => {
+        const {email ,segunda, terca, quarta, quinta, sexta, sabado, domingo} = this.state.submit_doctor;
+        const lead = {email ,segunda, terca, quarta, quinta, sexta, sabado, domingo}
+        const temp = JSON.stringify(lead);
+        console.log('temp' + temp);
+        const conf = {
+          method: "POST",
+          body: temp,
+          mode: 'no-cors',
+          headers: new Headers({ "Content-Type": "application/x-www-form-urlencoded",
+                                 "Access-Control-Allow-Origin": "*"})
+        };
+        fetch('https://notificamais.herokuapp.com/notifyEvent/data_mensage', conf).then(response => console.log(response));
+        this.state.submit_doctor ={
+          "email":"",
+          "segunda":"",
+          "terca":"",
+          "quarta":"",
+          "quinta":"",
+          "sexta":"",
+          "sabado":"",
+          "domingo":"",
+        }
+    }
+
+      getDayName(date){
+        var weekday = new Array(7);
+        weekday[0] = "domingo";
+        weekday[1] = "segunda";
+        weekday[2] = "terca";
+        weekday[3] = "quarta";
+        weekday[4] = "quinta";
+        weekday[5] = "sexta";
+        weekday[6] = "sabado";
+        var day = weekday[date]
+        return day;
       }
 
       parseISOLocal(strDate) {
@@ -172,23 +261,40 @@ export default class ScheduleTable extends Component {
 
       createEventDoctorList(){
         this.updateTimes();
-        var title,start,end,id;
+        var title,start,end,id,email;
         this.state.doctor_events_list = [],
         this.state.all_events.map(each => (
           title = this.getDoctorId(each.doctor),
           start = this.parseISOLocal(each.start),
           end = this.parseISOLocalEnd(each.end),
           id = each.doctor,
-          this.pushEventValid(title,start,end,id)
+          email = this.getDoctorEmail(each.id),
+          this.pushEventValid(title,start,end,id,email)
         ));
         this.listDoctorsHour();
         this.calculateTurns();
       }
 
-      pushEventValid(title,start,end,id){
+      pushEventValid(title,start,end,id, email){
         if (title !== "" && start !== "" && end !== "") {
-          this.state.doctor_events_list.push({'start':start,'end':end,'title':title,'id':id})
+          this.state.doctor_events_list.push({'start':start,'end':end,'title':title,'id':id,'email':email})
         }
+      }
+
+      getEmail(id, actual_id, email, actual_email){
+        if(id === actual_id){
+          return actual_email;
+        }
+
+        return email;
+      }
+
+      getDoctorEmail(id){
+        var email = '';
+        this.state.all_doctors.map(each =>(
+          email = this.getEmail(id, each.id, email, each.email)
+        ));
+        return email;
       }
 
       getDoctorId(id){
@@ -255,6 +361,8 @@ export default class ScheduleTable extends Component {
 
 
     }
+
+
 
     listDoctorsHour(){
       var name,workload;
@@ -375,6 +483,13 @@ export default class ScheduleTable extends Component {
       let b = s.split(/\D/);
       return b[1];
     }
+    setNamesInDoctorEventList(doctor_events_list){
+      const temp_list = []
+      this.state.doctor_events_list.map(each => (
+        temp_list.push(each.title)
+      ));
+      return new Set(temp_list)
+    }
 
     render(){
         let smClose = () => this.setState({ smShow: false });
@@ -396,7 +511,20 @@ export default class ScheduleTable extends Component {
             <td>{this.state.turns[count]}</td>
           );
         }
-
+        let button;
+        if(this.state.current_view === 'week'){
+          button=(
+            <div>
+              <Button className="btn btn-outline-primary" onClick={this.onClick}>Enviar horários</Button>
+            </div>
+          );
+        }
+        else{
+          button = (
+            <div>
+            </div>
+          );
+        }
     	return (
     	  <div>
     	    <NavBar></NavBar>
@@ -414,6 +542,7 @@ export default class ScheduleTable extends Component {
                         <MySmallModal show={this.state.smLocalShow} onHide={smLocalClose} doctors={this.state.doctors_workload}/>
                         <Button className="btn btn-outline-primary" onClick={() => this.setState({smLocalShow: true})}>Carga Horária</Button>
                         <a href={"http://localhost:8000/schedule/generate-pdf/" + (moment(this.state.current_date).month()+1) } target="_blank_" className="btn btn-outline-primary">Gerar PDF Mensal</a>
+                        {button}
                         <br></br>
                         <h1 style={{marginLeft:"25%"}}>Quadro de Horários</h1>
                           <Table striped bordered condensed hover>
