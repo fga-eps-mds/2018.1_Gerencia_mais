@@ -113,7 +113,7 @@ export default class ScheduleTable extends Component {
         'onNavigate',
         'updateTimes',
       ]);
-
+      this.onClick = this.onClick.bind(this);
       this.updateTimes();
     }
 
@@ -199,7 +199,7 @@ export default class ScheduleTable extends Component {
         ))
       }
 
-      getDoctorEvents(){
+      onClick(){
         this.state.all_doctors.map(each =>(
           this.state.submit_doctor['email'] = each.email,
           this.makeListEvents(each.id),
@@ -515,7 +515,7 @@ export default class ScheduleTable extends Component {
         if(this.state.current_view === 'week'){
           button=(
             <div>
-              <Button className="btn btn-outline-primary" onClick={this.getDoctorEvents()}>Enviar horários</Button>
+              <Button className="btn btn-outline-primary" onClick={this.onClick}>Enviar horários</Button>
             </div>
           );
         }
