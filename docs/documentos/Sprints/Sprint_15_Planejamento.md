@@ -35,7 +35,11 @@
 
 ## 3 - Pareamento
 
+O pareamento apresentado abaixo foi definido baseado no quadro de conhecimento apresentado logo em seguida.
+<img src="{{site.baseurl}}/documentos/imagens/Sprint13/cPAreamento Sprint 13.png">
+A fim de garantir o cumprimento das Histórias de Usuário durante a *sprint*. Focamos em colocar pessoas com maior conhecimento com pessoas que possuem menor conhecimento, a fim de distribuir e equalizar o nível da equipe. Abaixo apresentamos o quadro de pareamento obtido a apartir das observações apresentadas anteriormente.
 
+<img src="{{site.baseurl}}/documentos/imagens/Sprint15/pareamento s15.png">
 
 ## 4 - Histórias planejadas
 
