@@ -15,7 +15,7 @@
 |**Data de término**| 16/06/2018|
 |**Duração**|7 dias|
 |**Pontos planejados**|39|
-|**Pontos de dívidas Técnicas**|3|
+|**Pontos de dívidas Técnicas**|0|
 
 ## 2 - Papéis
 
@@ -48,7 +48,9 @@ A fim de garantir o cumprimento das Histórias de Usuário durante a *sprint*. F
 
 |ID|História|Pontos|Responsáveis|
 |:-:|:-----:|:----:|:----------:|
-|[TS54](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/237)|Atualizar documentos Sprints|3|Rafael Bragança|
+|[-]()|-|-|-|
+
+Não houve issue remanescente da sprint anterior.
 
 
 ### 4.2 - Novas histórias
