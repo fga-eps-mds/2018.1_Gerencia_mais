@@ -1,56 +1,70 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 //import {Link} from 'react-router-dom';
 import '../css/bootstrap.css';
-import '../css/NavBar.css';
+import {Navbar, NavItem, ButtonGroup, Button} from 'react-bootstrap';
 import isLogged from '../actions/actions';
 import {store} from '../components/store';
+import "../css/NavBar.css";
 
 export default class NavBar extends Component {
   constructor(props) {
     super(props);
     this.state = {}
   }
-  setNavBar(logged){
+
+  async logOut(){
+    await store.dispatch(isLogged(false));
+    window.location.href='/';
+  }
+
+  setNavBar(logged) {
     if (store.getState().status) {
-        return <a onClick={()=>store.dispatch(isLogged(false))} className="nav-link topicos title active" href="/">Sair</a>
+      return <Button className='size_lg new-nav-font pull-right change-exit' onClick={this.logOut} >Sair</Button>;
     } else {
-        return <a className="nav-link topicos title active" href="/LoginPage">Login</a>
+      return <Button className='size_lg new-nav-font' onClick={this.load} name='login'>Login</Button>;
 
     }
   }
 
-  setRegistration(logged){
+  setRegistration(logged) {
     if (!store.getState().status) {
-      return <a className="nav-link topicos active title" href="/RegistrationAdmin">Cadastrar</a>
+      return <Button className='size_lg new-nav-font' onClick={this.load} name='signup'>Cadastrar</Button>;
     }
   }
-  setHome(logged){
+  setHome(logged) {
     if (!store.getState().status) {
-      return <a className="nav-link topicos active title" href="/">Home</a>
+      return <Button className='size_lg new-nav-font' onClick={this.load} name='home' >Home</Button>;
     }
   }
-    render(){
-	return(
-      <nav className="navbar navbar-expand-sm navbar-dark new-bg-dark fixed-top topspace">
-       <a className=" navbar-right" href="/">Gerencia Mais</a>
-       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-         <span className="navbar-toggler-icon"></span>
-       </button>
 
-       <div className="collapse navbar-collapse" id="navbarSupportedContent">
-         <ul className="navbar-nav mr-auto">
-           <li className="nav-item active divider-vertical">
-             {this.setHome(false)}
-           </li>
-           <li className="nav-item divider-vertical">
-             {this.setNavBar(false)}
-           </li>
-           <li className="nav-item active divider-vertical">
-             {this.setRegistration(false)}
-           </li>
-         </ul>
-       </div>
-      </nav>
-	);
-    }
+  load(e){
+  const local = e.target.name;
+  if( local === "home"){
+    window.location.href='/';
+  }
+  if(local === "login"){
+    window.location.href="/LoginPage";
+  }
+  if(local === "signup"){
+    window.location.href="/RegistrationAdmin";
+  }
+  }
+
+  render() {
+    return (
+      <Navbar fluid inverse collapseOnSelect fixedTop>
+        <Navbar.Header>
+            <a className='nav-link' href='/'>Gerencia +</a>
+        </Navbar.Header>
+        <NavItem>
+        <ButtonGroup className='size_lg' >
+            {this.setHome(false)}
+            {this.setRegistration(false)}
+            {this.setNavBar(false)}
+          </ButtonGroup>
+        </NavItem>
+      </Navbar>
+
+      );
+  }
 }

@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Coustard|Encode+Sans');
+
+.bg-dark{
+  background: linear-gradient(#007095,#20C3D3);
+}
+.fixed-bottom{
+  position: unset;
+}

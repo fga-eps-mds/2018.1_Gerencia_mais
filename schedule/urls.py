@@ -25,6 +25,7 @@ urlpatterns = [
     path('api-calendar/',ListCalendar.as_view()),
     path('api-event/', ListEvent.as_view()),
     path('api-rule/', ListRule.as_view()),
+    url(r'^generate-pdf/(?P<month>[\w-]+)/$',views.generate_pdf,name='generate_pdf'),
     # path('gp-list/', views.event_list),
 ]
 

@@ -15,6 +15,7 @@
 |15/04/2018 |1.2   |Mudança do nome do projeto| Victor |
 |15/04/2018 |1.3   |Corrigir erro do último tópico | Victor  |
 |16/04/2018 |1.4   |Corrigir erros ortográficos | João Vitor  |
+|16/04/2018 |1.5   |Atualização das informações do documento | Guilherme Aguiar |
 
 # Sumário
 1. [Introdução](#1)
@@ -34,7 +35,7 @@
 5. [Visão Lógica](#5)
   * 5.1 [Visão Geral](#5.1)
   * 5.2 [Visão de Implantação](#5.2)
-  * 5.3 [Pacotes de Design Significativos do Ponto de Vista da Arquitetura](#5.3)  
+  * 5.3 [Diagrama de classes](#5.3)  
 6. [Desempenho](#6)
 7. [Qualidade](#7)
 
@@ -48,7 +49,7 @@ ___
 
 ### <a name="1.2"></a>1.2. Escopo
 
-<p> Este documento tem como objetivo documentar a arquitetura a ser implementada no software, guiando os desenvolvedores na construção do projeto que auxilia o gerenciamento de servidores, recursos médicos e recursos físicos do Hospital Regional do Gama - HRG.  <p>
+<p> Este documento tem como objetivo documentar a arquitetura a ser implementada no software, guiando os desenvolvedores na construção do projeto que auxilia o gerenciamento médicos do Hospital Regional do Gama - HRG.  <p>
 
 ### <a name="1.3"></a>1.3. Definições, acrônimos e abreviações
 
@@ -153,7 +154,7 @@ Nosso software vai manipular informações relacionadas aos médicos do hospital
 
 ## <a name="4.2"></a>4.2  Diagrama de Casos de Uso
 
-<img src="https://i.imgur.com/tqp3Swb.png">
+<img src="{{ site.baseurl }}/documentos/imagens/Documento_de_arquitetura/casosdeuso2.png">
 
 
 ## <a name="4.3"></a>4.3  Descrições de Casos de Uso
@@ -165,6 +166,8 @@ Nosso software vai manipular informações relacionadas aos médicos do hospital
 | UC03 - Atualizar status do médico | Este caso permite ao administrador atualizar o status de disponibilidade do médico. |
 | UC04 - Visualizar tabela | Este caso permite ao administrador visualizar a tabela de horários de acordo com os dados passados anteriormente. |
 | UC05 - Realizar Login | Este caso permite ao administrador a realização de login e logout, ou seja, permite a entrada e saída do sistema. |
+| UC06 - Gerar PDF do Quadro Horário | Este caso permite ao administrador, a partir do quadro de horários, criar e fazer o download de uma versão PDF do mesmo. |
+| UC07 - Enviar Quadro Horário Para o Médico | Este caso permite ao administrador selecionar um médico e enviar seu quadro horário particular para o email cadastrado do médico escolhido. |
   ___
 ## <a name="5"></a>5.  Visão Lógica
 
@@ -176,11 +179,12 @@ As principais classes do ponto de vista da arquitetura do software e as implemen
 
 Visão geral da aplicação do ponto de vista de pacotes e aplicativos dentro da arquitetura do sistema.
 
-![Documento de Arquitetura][diag]
-
 <img src="{{ site.baseurl }}/documentos/imagens/Documento_de_arquitetura/PackageDiagram.png">
-"Documento de Arquitetura"
-  ___
+
+## <a name="5.3"></a>5.3  Diagrama de Classes
+
+<img src="{{ site.baseurl }}/documentos/imagens/Documento_de_arquitetura/classdiagram.png">
+
 ## <a name="6"></a>6.  Desempenho
 
 Nosso software vai manipular informações relacionadas aos médicos do hospital regional do Gama, logo a quantidade de dados que devemos processar é mediana, então o sistema não deverá ter dificuldade na manipulação dos dados. O desempenho dependerá também do aparelho que o sistema será usado e pelo navegador.
