@@ -10,7 +10,7 @@
 
 | | |
 |:--:|:--:|
-|**Número da sprint**|13|
+|**Número da sprint**|14|
 |**Data de início**|09/06/2018|
 |**Data de término**| 16/06/2018|
 |**Duração**|7 dias|
