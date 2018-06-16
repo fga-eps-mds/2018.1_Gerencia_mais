@@ -10,12 +10,12 @@
 
 | | |
 |:--:|:--:|
-|**Número da sprint**|14|
-|**Data de início**|09/06/2018|
-|**Data de término**| 16/06/2018|
+|**Número da sprint**|15|
+|**Data de início**|16/06/2018|
+|**Data de término**| 23/06/2018|
 |**Duração**|7 dias|
-|**Pontos planejados**|39|
-|**Pontos de dívidas Técnicas**|0|
+|**Pontos planejados**| |
+|**Pontos de dívidas Técnicas**| |
 
 ## 2 - Papéis
 
@@ -39,35 +39,31 @@ O pareamento apresentado abaixo foi definido baseado no quadro de conhecimento a
 <img src="{{site.baseurl}}/documentos/imagens/Sprint13/cPAreamento Sprint 13.png">
 A fim de garantir o cumprimento das Histórias de Usuário durante a *sprint*. Focamos em colocar pessoas com maior conhecimento com pessoas que possuem menor conhecimento, a fim de distribuir e equalizar o nível da equipe. Abaixo apresentamos o quadro de pareamento obtido a apartir das observações apresentadas anteriormente.
 
-<img src="{{site.baseurl}}/documentos/imagens/Sprint14/pareamento_s14.png">
+<img src="{{site.baseurl}}/documentos/imagens/Sprint15/pareamento s15.png">
 
 ## 4 - Histórias planejadas
 
-
 ### 4.1 - Sprint anteriores
-
 |ID|História|Pontos|Responsáveis|
 |:-:|:-----:|:----:|:----------:|
-|[-]()|-|-|-|
-
-Não houve issue remanescente da sprint anterior.
-
+|[TS54](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/237)| Atualizar documento Sprints| 3 | Rafael |
 
 ### 4.2 - Novas histórias
 
 
   ***User Stories***
-
-|ID|História|Pontos|Responsáveis|
+  |ID|História|Pontos|Responsáveis|
 |:-:|:-----:|:----:|:----------:|
-|[US32](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/252)|Gerar pdf para baixar|5|Guilherme Aguiar, João Vitor e Adrielly|
-|[US33](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/253)|Cadastrar médico pela tabela|3|Guilherme Aguiar, João Vitor e Adrielly|
+|[US34](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/111)|Adaptar app para gerar .xlsx através do micro serviço | 3 | João Vitor e Caio Beleza |
+|[US35](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/122)| Ajuste de frontend | 5 | João Vitor e Caio Beleza  |
+|[US36](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/113)| Reparar bugs | 5 | Guilherme e  Victor Hugo |
+|[US37](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/112)| Apresentar mensagem de sucesso de envio de email | 2 | João Vitor e Caio Beleza |
+
 
   ***Technical Stories***
 
 |ID|História|Pontos|Responsáveis|
 |:-:|:-----:|:----:|:----------:|
-|[TS56](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/249)|Teste de backend|13|Victor Colho e Caio Beleza|
-|[TS57](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/250)|Implementar microserviço para enviar email|5|Eduardo Junior|
-|[TS58](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/251)|Adaptar código com micro serviço de enviar quadros horários|5|Victor Coelho|
-|[TS59](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/248)|Melhorar qualidade de código |5|Guilherme Aguiar, João Vitor e Adrielly|
+|[TS62](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/265)|Planejamento Sprint 15|2|João Saliba|
+|[TS63](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/121)| Gerar componentes no Front |3|João Vitor e Caio Beleza|
+|[TS61](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/114)|Teste de Backend |8 |Victor Coelho e Guilherme|
