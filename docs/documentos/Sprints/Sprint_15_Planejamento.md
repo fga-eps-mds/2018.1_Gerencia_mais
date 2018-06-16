@@ -43,8 +43,10 @@ A fim de garantir o cumprimento das Histórias de Usuário durante a *sprint*. F
 
 ## 4 - Histórias planejadas
 
-
 ### 4.1 - Sprint anteriores
+|ID|História|Pontos|Responsáveis|
+|:-:|:-----:|:----:|:----------:|
+|[TS54](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/237)| Atualizar documento Sprints| 3 | Rafael |
 
 
 
