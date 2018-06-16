@@ -62,3 +62,8 @@ A fim de garantir o cumprimento das Histórias de Usuário durante a *sprint*. F
 
   ***Technical Stories***
 
+|ID|História|Pontos|Responsáveis|
+|:-:|:-----:|:----:|:----------:|
+|[TS62](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/265)|Planejamento Sprint 15|2|João Saliba|
+|[TS63](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/121)| Gerar componentes no Front |3|João Vitor e Caio Beleza|
+|[TS61](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/114)|Teste de Backend |8 |Victor Coelho e Guilherme|
