@@ -215,8 +215,9 @@ export default class ScheduleTable extends Component {
         const conf = {
           method: "POST",
           body: temp,
-          headers: new Headers({ "Content-Type": "application/json",
-                                "Access-Control-Allow-Origin": "*"})
+          mode: 'no-cors',
+          headers: new Headers({ "Content-Type": "application/x-www-form-urlencoded",
+                                 "Access-Control-Allow-Origin": "*"})
         };
         fetch('https://notificamais.herokuapp.com/notifyEvent/data_mensage', conf).then(response => console.log(response));
         this.state.submit_doctor ={
@@ -481,6 +482,7 @@ export default class ScheduleTable extends Component {
     parseISOLocalTitle(s) {
       let b = s.split(/\D/);
       return b[1];
+    }
     setNamesInDoctorEventList(doctor_events_list){
       const temp_list = []
       this.state.doctor_events_list.map(each => (
