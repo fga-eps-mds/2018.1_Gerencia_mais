@@ -48,13 +48,16 @@ A fim de garantir o cumprimento das Histórias de Usuário durante a *sprint*. F
 |:-:|:-----:|:----:|:----------:|
 |[TS54](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/237)| Atualizar documento Sprints| 3 | Rafael |
 
-
-
-
 ### 4.2 - Novas histórias
 
 
   ***User Stories***
+  |ID|História|Pontos|Responsáveis|
+|:-:|:-----:|:----:|:----------:|
+|[US34](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/111)|Adaptar app para gerar .xlsx através do micro serviço | 3 | João Vitor e Caio Beleza |
+|[US35](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/122)| Ajuste de frontend | 5 | João Vitor e Caio Beleza  |
+|[US36](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/113)| Reparar bugs | 5 | Guilherme e  Victor Hugo |
+|[US37](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/112)| Apresentar mensagem de sucesso de envio de email | 2 | João Vitor e Caio Beleza |
 
 
   ***Technical Stories***
