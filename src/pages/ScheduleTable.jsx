@@ -118,7 +118,7 @@ export default class ScheduleTable extends Component {
 
     async componentDidMount() {
         try {
-          const name = 'http://localhost:8000/doctor/api-doctor/';
+          const name = 'https://gicsaude.herokuapp.com/doctor/api-doctor/';
           const res = await fetch(name);
           console.log(res);
           const all_doctors = await res.json();
@@ -143,7 +143,7 @@ export default class ScheduleTable extends Component {
     async componentDidMount1() {
         try {
           this.state.all_doctors = [];
-          const name = 'http://localhost:8000/doctor/api-doctor/list-doctor/category/?category='+this.state.category;
+          const name = 'https://gicsaude.herokuapp.com/doctor/api-doctor/list-doctor/category/?category='+this.state.category;
           const res = await fetch(name);
           console.log(res);
           const all_doctors = await res.json();
@@ -157,7 +157,7 @@ export default class ScheduleTable extends Component {
 
       async componentDidMount2() {
           try {
-            const name = 'http://localhost:8000/schedule/api-event/';
+            const name = 'https://gicsaude.herokuapp.com/schedule/api-event/';
             const res = await fetch(name);
             console.log(res);
             const all_events = await res.json();
@@ -172,7 +172,7 @@ export default class ScheduleTable extends Component {
 
       async componentDidMount3(doctor_name){
         try {
-          const name = 'http://localhost:8000/doctor/api-doctor/'+doctor_name;
+          const name = 'https://gicsaude.herokuapp.com/doctor/api-doctor/'+doctor_name;
           const res = await fetch(name);
           console.log(res);
           const doctor_detail = await res.json();
@@ -537,7 +537,7 @@ export default class ScheduleTable extends Component {
                         <br></br>
                         <MySmallModal show={this.state.smLocalShow} onHide={smLocalClose} doctors={this.state.doctors_workload}/>
                         <Button className="btn btn-outline-primary" onClick={() => this.setState({smLocalShow: true})}>Carga Horária</Button>
-                        <a href={"http://localhost:8000/schedule/generate-pdf/" + (moment(this.state.current_date).month()+1) } target="_blank_" className="btn btn-outline-primary">Gerar PDF Mensal</a>
+                        <a href={"https://gicsaude.herokuapp.com/schedule/generate-pdf/" + (moment(this.state.current_date).month()+1) } target="_blank_" className="btn btn-outline-primary">Gerar PDF Mensal</a>
                         {button}
                         <br></br>
                         <h1 style={{marginLeft:"25%"}}>Quadro de Horários</h1>
