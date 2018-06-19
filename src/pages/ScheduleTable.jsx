@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import NavBar from '../components/NavBar';
-import SideBar from '../components/SideBar';
 import Footer from '../components/Footer';
 import ModalComponent from '../components/Modal';
 import ModalForm from '../components/ModalForm';
-import {Table,ButtonToolbar,ToggleButtonGroup,ToggleButton,Modal,Button} from 'react-bootstrap';
+import {Table,ButtonToolbar,ToggleButtonGroup,ToggleButton,Modal,Button,Glyphicon} from 'react-bootstrap';
 import "../css/bootstrap.min.css";
 import Calendar from "react-big-calendar";
 import moment from "moment";
@@ -514,21 +513,18 @@ export default class ScheduleTable extends Component {
         let button;
         if(this.state.current_view === 'week'){
           button=(
-            <div>
               <Button className="btn btn-outline-primary" onClick={this.onClick}>Enviar horários</Button>
-            </div>
           );
         }
         else{
           button = (
             <div>
-            </div>
+          </div>
           );
         }
     	return (
     	  <div>
     	    <NavBar></NavBar>
-          <SideBar></SideBar>
             <div  className="container change-color">
                 <div style={{marginTop:"70px",marginBottom:"100px"}} className="jumbotron">
                     <div className="App">

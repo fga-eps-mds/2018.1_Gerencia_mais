@@ -30,10 +30,8 @@ export default class NavBar extends Component {
     if (!store.getState().status) {
       return <Button className='size_lg new-nav-font' onClick={this.load} name='signup'>Cadastrar</Button>;
     }
-  }
-  setHome(logged) {
-    if (!store.getState().status) {
-      return <Button className='size_lg new-nav-font' onClick={this.load} name='home' >Home</Button>;
+    else{
+      return <Button className='size_lg new-nav-font' onClick={this.load} name='table'>Tabela</Button>;
     }
   }
 
@@ -48,7 +46,10 @@ export default class NavBar extends Component {
   if(local === "signup"){
     window.location.href="/RegistrationAdmin";
   }
+  if(local === "table"){
+    window.location.href="/ScheduleTable";
   }
+}
 
   render() {
     return (
@@ -58,7 +59,7 @@ export default class NavBar extends Component {
         </Navbar.Header>
         <NavItem>
         <ButtonGroup className='size_lg' >
-            {this.setHome(false)}
+            <Button className='size_lg new-nav-font' onClick={this.load} name='home' >Home</Button>
             {this.setRegistration(false)}
             {this.setNavBar(false)}
           </ButtonGroup>
