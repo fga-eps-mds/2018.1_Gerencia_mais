@@ -3,7 +3,7 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import ModalComponent from '../components/Modal';
 import ModalForm from '../components/ModalForm';
-import {Table,ButtonToolbar,ToggleButtonGroup,ToggleButton,Modal,Button,Glyphicon} from 'react-bootstrap';
+import {Table,ButtonToolbar,ToggleButtonGroup,ToggleButton,Modal,Button} from 'react-bootstrap';
 import "../css/bootstrap.min.css";
 import Calendar from "react-big-calendar";
 import moment from "moment";
