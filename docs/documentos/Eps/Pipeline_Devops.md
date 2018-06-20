@@ -15,3 +15,12 @@
 ## ℹ️ Monitoramento
 
 <p align="justify">O monitoramento dos servidores é feito por meio de dois micro serviços instalados diretamente em cada um dos servidores da aplicação, provendo assim logs da aplicação, notificações via email de eventuais erros que possam ocorrer e dados relacionados ao uso de memória, erros ocorridos durante a utilização bem como outras informações que permitem aos desenvolvedores monitararem o funcionamento da aplicação.</p>
+
+## ℹ️ O modelo desenvolvido 
+
+<p align="justify">Optou-se por implementar o modelo de pipeline apresentado neste documemento por ser uma forma simples que permite maior rapidez na configuração de ambiente, fator que permitiu a reutilização das mesmas configurações para o desenvolvimento dos micro serviços que extendem a capacidade funcional da aplicação</p> 
+
+## ℹ️ Pipeline dos micro serviços
+ 
+<p align="justify">Devido a facilidade de adaptação da integração desenvolvida para a aplicação, optou-se por utilizar a mesma estrutura para os micro serviços, dessa forma os passos descritos no tópicos "Integração Contínua" também são aplicáveis aos micro serviços desenvolvidos.</p>
+
