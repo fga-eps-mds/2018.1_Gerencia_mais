@@ -49,6 +49,17 @@ class TestViewAPI(TestCase):
         data = self.serializer.data
         self.assertEqual(set(['subtitle', 'doctor', 'rule', 'id', 'end_recurring_period', 'hospital', 'updated_on', 'end', 'calendar', 'creator', 'description', 'created_on', 'start']),set(data.keys()))
 
-    # def test_fields_content(self):
-    #     data = self.serializer.data
-    #     self.assertEqual(data['title'],self.event_attr['title'])
+    def test_field_response_subtitle(self):
+        self.assertEqual(self.serializer_data['subtitle'],self.event_attr['subtitle'])
+
+    def test_field_response_start(self):
+       self.assertEqual(self.serializer_data['start'],self.event_attr['start'])
+
+    def test_field_response_end(self):
+       self.assertEqual(self.serializer_data['end'],self.event_attr['end'])
+
+    def test_field_response_doctor(self):
+       self.assertEqual(self.serializer_data['doctor'],self.event_attr['doctor'])
+
+    def test_field_response_calendar(self):
+       self.assertEqual(self.serializer_data['calendar'],self.event_attr['calendar'])

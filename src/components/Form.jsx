@@ -13,11 +13,11 @@ export default class Form extends Component {
       start: date ,
       time_start:'',
       end: date,
-      is_valid : false,
+      isValid : false,
       time_end:'',
       description:'',
       hospital:'',
-      all_subtitle: [],
+      allSubtitle: [],
       creator: '1',
       rule: null,
       calendar:'1',
@@ -30,10 +30,10 @@ export default class Form extends Component {
   async componentDidMount2() {
       try {
 
-        const res = await fetch('https://gicsaude.herokuapp.com/subtitle/api-subtitle/');
-        const all_subtitle = await res.json();
+        const res = await fetch("https://gicsaude.herokuapp.com/subtitle/api-subtitle/");
+        const allSubtitle = await res.json();
         console.log(res);
-        this.setState({all_subtitle});
+        this.setState({allSubtitle});
       } catch (e) {
         console.log(e);
       }
@@ -42,7 +42,7 @@ export default class Form extends Component {
     async componentDidMount3() {
         try {
 
-          const res = await fetch('https://gicsaude.herokuapp.com/subtitle/api-subtitle/'+this.state.subtitle+'/');
+          const res = await fetch("https://gicsaude.herokuapp.com/subtitle/api-subtitle/"+this.state.subtitle+'/');
           const load_subtitle = await res.json();
           console.log(res);
           this.setState({load_subtitle});
@@ -54,7 +54,7 @@ export default class Form extends Component {
   async componentDidMount() {
       try {
 
-        const res = await fetch('https://gicsaude.herokuapp.com/doctor/api-doctor/');
+        const res = await fetch("https://gicsaude.herokuapp.com/doctor/api-doctor/");
         const all_doctors = await res.json();
         console.log(res);
         this.setState({all_doctors});
@@ -67,7 +67,7 @@ export default class Form extends Component {
 
   onChange(e) {
     const title = e.target.title;
-    const valuee = e.target.value === 'checkbox' ? e.target.checked : e.target.value;
+    const valuee = e.target.value === "checkbox" ? e.target.checked : e.target.value;
     this.setState({[title] : valuee});
 }
 
@@ -99,7 +99,7 @@ export default class Form extends Component {
   handleSubmit = e => {
     this.state.start=this.state.start + "T" + this.state.time_start + "Z";
     this.state.end=this.state.end + "T" + this.state.time_end + "Z";
-    this.setState({"is_valid":true})
+    this.setState({"isValid":true});
     e.preventDefault();
     const {start, end, hospital, subtitle, creator, rule, calendar, doctor} = this.state;
     const lead = {start, end, hospital, subtitle,creator, rule, calendar,doctor} ;
@@ -109,8 +109,8 @@ export default class Form extends Component {
       body: temp,
       headers: new Headers({ "Content-Type": "application/json" })
     };
-    fetch('https://gicsaude.herokuapp.com/schedule/api-event/', conf).then(response => console.log(response));
-    this.setState({'is_valid':true});
+    fetch("https://gicsaude.herokuapp.com/schedule/api-event/", conf).then(response => (console.log(response)));
+    this.setState({"isValid":true});
 }
   render(){
     return(
@@ -133,7 +133,7 @@ export default class Form extends Component {
               <legend><span className="number">2</span> Legenda </legend>
               <select className="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" onChange={this.handleChangeTwo.bind(this)} value={this.state.subtitle}>
               <option defaultValue={0} value={0}>Escolha uma Legenda...</option>
-              {this.state.all_subtitle.map(item =>(
+              {this.state.allSubtitle.map(item =>(
               <option value={item.id}> {item.code} - {item.begin} - {item.finish} - {item.description} </option>
 
 

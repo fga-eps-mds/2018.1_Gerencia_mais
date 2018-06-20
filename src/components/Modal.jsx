@@ -1,11 +1,11 @@
-import React from 'react';
-import '../css/bootstrap.css';
-import '../css/Modal.css';
-import FormUpdate from '../components/FormUpdate';
+import React from "react";
+import "../css/bootstrap.css";
+import "../css/Modal.css";
+import FormUpdate from "../components/FormUpdate";
 import {
   Modal,
   Button
-} from 'react-bootstrap';
+} from "react-bootstrap";
 
 export default class ModalComponent extends React.Component {
   constructor(props) {
@@ -13,9 +13,9 @@ export default class ModalComponent extends React.Component {
     this.state = {
       status: true,
       doctor: [],
-      doctor_events_list: [],
-      current_doctor_id: '',
-      is_visible: false
+      doctorEventsList: [],
+      currentDoctorId: "",
+      isVisible: false
     };
     this.changeSchedule = this.changeSchedule.bind(this);
     this.onSetVisible = this.onSetVisible.bind(this);
@@ -34,7 +34,7 @@ export default class ModalComponent extends React.Component {
 
   async componentDidMount4() {
     try {
-      const name = 'https://gicsaude.herokuapp.com/doctor/api-doctor/list-doctor/category/?name=' + this.props.currentdoctor;
+      const name = "https://gicsaude.herokuapp.com/doctor/api-doctor/list-doctor/category/?name=" + this.props.currentdoctor;
       const res = await fetch(name);
       console.log(res);
       const doctor = await res.json();
@@ -52,11 +52,11 @@ export default class ModalComponent extends React.Component {
     var newEnd = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
     var resultEnd = newEnd.toISOString();
     try {
-      const name = 'https://gicsaude.herokuapp.com/schedule/api-event/list-doctor/?doctor=' + this.state.current_doctor_id + '&start=' + resultStart + '&end=' + resultEnd;
+      const name = "https://gicsaude.herokuapp.com/schedule/api-event/list-doctor/?doctor=" + this.state.currentDoctorId + '&start=' + resultStart + '&end=' + resultEnd;
       const res = await fetch(name);
       console.log(res);
-      const doctor_events_list = await res.json();
-      this.setState({doctor_events_list});
+      const doctorEventsList = await res.json();
+      this.setState({doctorEventsList});
     } catch (e) {
       console.log(e);
     }
@@ -64,20 +64,20 @@ export default class ModalComponent extends React.Component {
 
   async changeSchedule(e) {
     await this.componentDidMount4();
-    this.setState({current_doctor_id: this.state.doctor[0].id});
+    this.setState({currentDoctorId: this.state.doctor[0].id});
     await this.componentDidMount5();
-    this.setState({is_visible: !this.state.is_visible});
+    this.setState({isVisible: !this.state.isVisible});
   }
 
   onSetVisible(e){
 
-    this.setState({is_visible: false});
+    this.setState({isVisible: false});
   }
 
   render() {
     let form;
-    if (this.state.is_visible) {
-      form = (<FormUpdate eventid={this.state.doctor_events_list[0].id}></FormUpdate>);
+    if (this.state.isVisible) {
+      form = (<FormUpdate eventid={this.state.doctorEventsList[0].id}></FormUpdate>);
     } else {
       form = (<div>
         <h5 className='beautiful_text'>Inicio</h5>
