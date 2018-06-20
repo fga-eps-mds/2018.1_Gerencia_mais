@@ -14,4 +14,4 @@
 
 ## ℹ️ Monitoramento
 
-<p align="justify">O monitoramento dos servidores é feito por meio de dois micro serviços instalados diretamente em cada um dos servidores da aplicação, provendo assim logs, notificações via email e dados relacionados ao uso de memória, erros ocorridos durante a utilização bem como outras informações que permitem aos desenvolvedores monitararem o funcionamento da aplicação.</p>
+<p align="justify">O monitoramento dos servidores é feito por meio de dois micro serviços instalados diretamente em cada um dos servidores da aplicação, provendo assim logs da aplicação, notificações via email de eventuais erros que possam ocorrer e dados relacionados ao uso de memória, erros ocorridos durante a utilização bem como outras informações que permitem aos desenvolvedores monitararem o funcionamento da aplicação.</p>
