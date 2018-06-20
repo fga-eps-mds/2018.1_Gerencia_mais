@@ -1,11 +1,11 @@
-import React from 'react';
-import '../css/bootstrap.css';
-import '../css/Modal.css';
-import FormDoctorForm from '../components/FormDoctorForm';
+import React from "react";
+import "../css/bootstrap.css";
+import "../css/Modal.css";
+import FormDoctorForm from "../components/FormDoctorForm";
 import {
   Modal,
   Button
-} from 'react-bootstrap';
+} from "react-bootstrap";
 
 export default class ModalForm extends React.Component {
   constructor(props) {

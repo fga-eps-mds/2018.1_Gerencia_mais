@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
-import '../css/bootstrap.css';
-import '../css/HomePage.css';
-import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
-import isLogged from '../actions/actions';
-import {store} from '../components/store';
-import IMG from '../images/hospital-clipart.png';
+import React, {Component} from "react";
+import "../css/bootstrap.css";
+import "../css/HomePage.css";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import isLogged from "../actions/actions";
+import {store} from "../components/store";
+import IMG from "../images/hospital-clipart.png";
 
 export default class HomePage extends Component {
   render() {

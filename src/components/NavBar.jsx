@@ -14,7 +14,7 @@ export default class NavBar extends Component {
 
   async logOut(){
     await store.dispatch(isLogged(false));
-    window.location.href='/';
+    window.location.href="/";
   }
 
   setNavBar(logged) {
