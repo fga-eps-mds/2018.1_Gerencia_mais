@@ -35,7 +35,7 @@ Gostou do projeto e gostria de contribuir? Acesse [Contribua](https://github.com
 
 
 
-<p><a href="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is94_ferramenta_monitoramento/Monitoramento/analises.md" target="_blank"><img width="900"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/monitor.gif"></a></p>
+<p><a href="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/Monitoramento/analises.md" target="_blank"><img width="900"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/monitor.gif"></a></p>
 
 <br>
 
@@ -175,6 +175,7 @@ Notifica mais: Serviço de notificação via email.
 
 Ambos serviços necessitam apenas de dados em formato json. Informações mais detalhadas podem ser acessadas nos links abaixo:
 * Notifica mais: https://github.com/Eduardojvr/notifica_mais
+
 * Gerencia report : https://github.com/Eduardojvr/gerencia_report
 </p>
 
