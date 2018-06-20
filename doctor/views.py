@@ -1,12 +1,13 @@
 from doctor.models import Doctors
-from doctor.serializer import (
+from .serializer import (
     DoctorSerializer,
     DoctorCreateUpdateSerializer,
     DoctorListSerializer
     )
 
 from rest_framework import generics
-from rest_framework.permissions import(
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.permissions import (
     AllowAny,
 )
 
@@ -32,3 +33,11 @@ class UpdateDoctorAPI(generics.RetrieveUpdateAPIView):
     queryset = Doctors.objects.all()
     serializer_class = DoctorCreateUpdateSerializer
     lookup_field = 'registration'
+
+class ListDoctorCategory(generics.ListAPIView):
+    permission_classes = [AllowAny]
+    queryset = Doctors.objects.all()
+    serializer_class = DoctorSerializer
+    filter_backends = (DjangoFilterBackend,)
+    filter_fields = ('category','name')
+    search_fields = ('=category','=name',)

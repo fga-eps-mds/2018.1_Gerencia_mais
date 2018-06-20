@@ -1,4 +1,5 @@
-#!bin/bash
+# /
+
 echo "from django.contrib.auth.models import User; User.objects.create_superuser('victorhdcoelho', 'victor@example.com', 'pass')" | ./manage.py shell
 echo "from django.contrib.auth.models import User; from schedule.models import Calendar; Calendar.objects.create(name='Calendario_Medico', slug='calendario-medico')" | ./manage.py shell
 

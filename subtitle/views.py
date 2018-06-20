@@ -2,6 +2,7 @@ from subtitle.models import Subtitles
 
 from subtitle.serializer import (
     SubtitlesSerializer,
+    SubtitlesListSerializer,
     SubtitlesCreateUpdateSerializer
 )
 
@@ -31,4 +32,4 @@ class UpdateSubtitlesAPI(generics.RetrieveUpdateAPIView):
     permission_classes = [AllowAny]
     queryset = Subtitles.objects.all()
     serializer_class = SubtitlesCreateUpdateSerializer
-    lookup_field = 'code'
+    lookup_field = 'id'
