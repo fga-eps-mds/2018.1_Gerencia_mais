@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
-import '../css/bootstrap.css';
-import '../css/DoctorForm.css';
-import NavBar from '../components/NavBar';
-import Footer from '../components/Footer'
-import {Popover} from 'react-bootstrap';
-import {OverlayTrigger} from 'react-bootstrap'
+import React, { Component } from "react";
+import "../css/bootstrap.css";
+import "../css/DoctorForm.css";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer"
+import {Popover} from "react-bootstrap";
+import {OverlayTrigger} from "react-bootstrap"
 
 export default class RegistrationAdmin extends Component{
   constructor(props){
     super(props);
     this.state = {
-        username:'',
-        adress: '',
-        email: '',
-        phone: '',
-        password:'',
-        password_confirm:'',
-        key:'',
+        username:"",
+        adress: "",
+        email: "",
+        phone: "",
+        password:"",
+        password_confirm:"",
+        key:"",
         keyword_valid:false,
         password_valid: false,
     }
@@ -40,7 +40,7 @@ export default class RegistrationAdmin extends Component{
       body: temp,
       headers: new Headers({ "Content-Type": "application/json" })
     };
-    fetch('https://gicsaude.herokuapp.com/user/api-user/create/', conf).then(response => console.log(response));
+    fetch("https://gicsaude.herokuapp.com/user/api-user/create/", conf).then(response => (console.log(response)));
 }
 
 

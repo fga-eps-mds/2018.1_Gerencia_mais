@@ -1,22 +1,21 @@
-import React, { Component } from 'react';
-import NavBar from '../components/NavBar';
-import SideBar from '../components/SideBar';
-import Footer from '../components/Footer';
-import ModalComponent from '../components/Modal';
-import ModalForm from '../components/ModalForm';
-import {Table,ButtonToolbar,ToggleButtonGroup,ToggleButton,Modal,Button} from 'react-bootstrap';
+import React, { Component } from "react";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import ModalComponent from "../components/Modal";
+import ModalForm from "../components/ModalForm";
+import {Table,ButtonToolbar,ToggleButtonGroup,ToggleButton,Modal,Button} from "react-bootstrap";
 import "../css/bootstrap.min.css";
 import Calendar from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
-moment.updateLocale('pt-gb', {
+moment.updateLocale("pt-gb", {
   week : {
       doy : 4  // The week that contains Jan 4th is the first week of the year.
   }
 });
 
-moment.locale('pt-gb');
+moment.locale("pt-gb");
 
 Calendar.setLocalizer(Calendar.momentLocalizer(moment));
 
@@ -50,7 +49,7 @@ class MySmallModal extends React.Component {
             <legend> Médicos </legend>
                 <select className="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
                 <option defaultValue={0} value={0}>Escolha um médico...</option>
-                {this.props.doctors.map(each =>(
+                {this.props.doctors.map(each => (
                 <option>Doutor: {each.name} | Carga Horária: {each.workload}</option>
 
             ))}
@@ -72,20 +71,20 @@ export default class ScheduleTable extends Component {
         formDay:"",
         smShow: false,
         smLocalShow: false,
-        current_doctor:"",
-        current_start:"",
-        current_end:"",
+        currentDoctor:"",
+        currentStart:"",
+        currentEnd:"",
         startDate: "",
         endDate: "",
-        doctor_detail:[],
-        doctor_events_list: [],
-        all_events: [],
-        all_doctors: [],
-        doctors_workload: [],
-        all_category : [
+        doctorDetail:[],
+        doctorEventsList: [],
+        allEvents: [],
+        allDoctors: [],
+        doctorsWorkload: [],
+        allCategory : [
           "Geral"
         ],
-        submit_doctor:{
+        submitDoctor:{
           "email":"",
           "segunda":"",
           "terca":"",
@@ -96,22 +95,22 @@ export default class ScheduleTable extends Component {
           "domingo":"",
         },
         week_emails:[],
-        week_doctors:[],
-        category : '',
+        weekDoctors:[],
+        category : "",
         turns: [],
         turnStart: [
           ["manhã",6],
           ["tarde",12],
           ["noite",18]
         ],
-        current_date: new Date(),
-        current_view: 'month',
+        currentDate: new Date(),
+        currentView: "month",
       };
 
       this.bindScopes([
-        'onView',
-        'onNavigate',
-        'updateTimes',
+        "onView",
+        "onNavigate",
+        "updateTimes",
       ]);
       this.onClick = this.onClick.bind(this);
       this.updateTimes();
@@ -119,11 +118,11 @@ export default class ScheduleTable extends Component {
 
     async componentDidMount() {
         try {
-          const name = 'http://localhost:8000/doctor/api-doctor/';
+          const name = "https://gicsaude.herokuapp.com/doctor/api-doctor/";
           const res = await fetch(name);
           console.log(res);
-          const all_doctors = await res.json();
-          this.setState({all_doctors});
+          const allDoctors = await res.json();
+          this.setState({allDoctors});
         } catch (e) {
           console.log(e);
         }
@@ -134,7 +133,7 @@ export default class ScheduleTable extends Component {
 
       createCategoryList() {
         var category;
-        this.state.all_doctors.map(each => (
+        this.state.allDoctors.map(each => (
           category = this.categoryValidate(each.category),
           this.pushCategoryValid(category)
 
@@ -143,12 +142,12 @@ export default class ScheduleTable extends Component {
 
     async componentDidMount1() {
         try {
-          this.state.all_doctors = [];
-          const name = 'http://localhost:8000/doctor/api-doctor/list-doctor/category/?category='+this.state.category;
+          this.state.allDoctors = [];
+          const name = "https://gicsaude.herokuapp.com/doctor/api-doctor/list-doctor/category/?category="+this.state.category;
           const res = await fetch(name);
           console.log(res);
-          const all_doctors = await res.json();
-          this.setState({all_doctors});
+          const allDoctors = await res.json();
+          this.setState({allDoctors});
         } catch (e) {
           console.log(e);
         }
@@ -158,26 +157,26 @@ export default class ScheduleTable extends Component {
 
       async componentDidMount2() {
           try {
-            const name = 'http://localhost:8000/schedule/api-event/';
+            const name = "https://gicsaude.herokuapp.com/schedule/api-event/";
             const res = await fetch(name);
             console.log(res);
-            const all_events = await res.json();
-            this.setState({all_events});
+            const allEvents = await res.json();
+            this.setState({allEvents});
           } catch (e) {
             console.log(e);
           }
           await this.createEventDoctorList();
-          var names = this.setNamesInDoctorEventList(this.state.doctor_events_list);
-          this.setState({['week_doctors']:names});
+          var names = this.setNamesInDoctorEventList(this.state.doctorEventsList);
+          this.setState({["weekDoctors"]:names});
       }
 
       async componentDidMount3(doctor_name){
         try {
-          const name = 'http://localhost:8000/doctor/api-doctor/'+doctor_name;
+          const name = "https://gicsaude.herokuapp.com/doctor/api-doctor/"+doctor_name;
           const res = await fetch(name);
           console.log(res);
-          const doctor_detail = await res.json();
-          this.setState({doctor_detail});
+          const doctorDetail = await res.json();
+          this.setState({doctorDetail});
         } catch (e) {
           console.log(e);
         }
@@ -189,38 +188,38 @@ export default class ScheduleTable extends Component {
           var hour_end = end.toISOString().split(/\D/);
           var name = this.getDayName(start.getDay());
           var string_hour = " "+ hour_start[3] + ":" +hour_start[4] + " "+"~"+" "+hour_end[3]+":"+hour_end[4];
-          this.state.submit_doctor[name] = string_hour;
+          this.state.submitDoctor[name] = string_hour;
         }
       }
 
       makeListEvents(id){
-        this.state.doctor_events_list.map(each =>(
+        this.state.doctorEventsList.map(each => (
           this.compareDoctors(id, each.id, each.start, each.end)
         ))
       }
 
       onClick(){
-        this.state.all_doctors.map(each =>(
-          this.state.submit_doctor['email'] = each.email,
+        this.state.allDoctors.map(each => (
+          this.state.submitDoctor["email"] = each.email,
           this.makeListEvents(each.id),
           this.submitEmail()
         ));
       }
 
       submitEmail = e => {
-        const {email ,segunda, terca, quarta, quinta, sexta, sabado, domingo} = this.state.submit_doctor;
+        const {email ,segunda, terca, quarta, quinta, sexta, sabado, domingo} = this.state.submitDoctor;
         const lead = {email ,segunda, terca, quarta, quinta, sexta, sabado, domingo}
         const temp = JSON.stringify(lead);
-        console.log('temp' + temp);
+        console.log("temp" + temp);
         const conf = {
           method: "POST",
           body: temp,
-          mode: 'no-cors',
+          mode: "no-cors",
           headers: new Headers({ "Content-Type": "application/x-www-form-urlencoded",
                                  "Access-Control-Allow-Origin": "*"})
         };
-        fetch('https://notificamais.herokuapp.com/notifyEvent/data_mensage', conf).then(response => console.log(response));
-        this.state.submit_doctor ={
+        fetch("https://notificamais.herokuapp.com/notifyEvent/data_mensage", conf).then(response => console.log(response));
+        this.state.submitDoctor ={
           "email":"",
           "segunda":"",
           "terca":"",
@@ -262,8 +261,8 @@ export default class ScheduleTable extends Component {
       createEventDoctorList(){
         this.updateTimes();
         var title,start,end,id,email;
-        this.state.doctor_events_list = [],
-        this.state.all_events.map(each => (
+        this.state.doctorEventsList = [],
+        this.state.allEvents.map(each => (
           title = this.getDoctorId(each.doctor),
           start = this.parseISOLocal(each.start),
           end = this.parseISOLocalEnd(each.end),
@@ -277,7 +276,7 @@ export default class ScheduleTable extends Component {
 
       pushEventValid(title,start,end,id, email){
         if (title !== "" && start !== "" && end !== "") {
-          this.state.doctor_events_list.push({'start':start,'end':end,'title':title,'id':id,'email':email})
+          this.state.doctorEventsList.push({"start":start,"end":end,"title":title,"id":id,"email":email})
         }
       }
 
@@ -290,8 +289,8 @@ export default class ScheduleTable extends Component {
       }
 
       getDoctorEmail(id){
-        var email = '';
-        this.state.all_doctors.map(each =>(
+        var email = "";
+        this.state.allDoctors.map(each =>(
           email = this.getEmail(id, each.id, email, each.email)
         ));
         return email;
@@ -299,7 +298,7 @@ export default class ScheduleTable extends Component {
 
       getDoctorId(id){
         var name = "";
-        this.state.all_doctors.map(each =>(
+        this.state.allDoctors.map(each =>(
            name = this.compareId(each.id,id,each.name, name)
         ));
         return name;
@@ -307,16 +306,16 @@ export default class ScheduleTable extends Component {
 
       pushCategoryValid(category){
         if(category !== ""){
-          this.state.all_category.push(category);
+          this.state.allCategory.push(category);
         }
       }
 
       categoryValidate(category){
         var aux = 0;
-        this.state.all_category.map(each =>(
+        this.state.allCategory.map(each =>(
            aux += this.compareCategory(each,category)
         ));
-        if (aux === this.state.all_category.length) {
+        if (aux === this.state.allCategory.length) {
           return category;
         } else {
           return "";
@@ -345,8 +344,8 @@ export default class ScheduleTable extends Component {
 
       changeTable(tableNumber){
         this.setState({
-          all_events: [],
-        })
+          allEvents: [],
+        });
         if (tableNumber === 0) {
           this.setState({
           category : "",
@@ -354,7 +353,7 @@ export default class ScheduleTable extends Component {
         }
         else {
           this.setState({
-          category : this.state.all_category[tableNumber],
+          category : this.state.allCategory[tableNumber],
           })
         }
         this.componentDidMount1()
@@ -366,11 +365,11 @@ export default class ScheduleTable extends Component {
 
     listDoctorsHour(){
       var name,workload;
-      this.state.doctors_workload = [];
-      this.state.all_doctors.map(each => (
+      this.state.doctorsWorkload = [];
+      this.state.allDoctors.map(each => (
         name = each.name,
         workload = this.calculateWorkload(each.id),
-        this.state.doctors_workload.push({'name' :name,'workload':workload})
+        this.state.doctorsWorkload.push({"name" :name,"workload":workload})
       ));
     }
 
@@ -378,7 +377,7 @@ export default class ScheduleTable extends Component {
       var timeStart,timeEnd;
       var timeTotal = 0;
       var idVoid = 0;
-      this.state.doctor_events_list.map(each => (
+      this.state.doctorEventsList.map(each => (
         timeStart = each.start,
         timeEnd = each.end,
         idVoid = this.idValidate(each.id,id),
@@ -413,11 +412,11 @@ export default class ScheduleTable extends Component {
       for (var count = 0; count < this.state.turnStart.length; count++) {
         turns.push(0);
       }
-      this.state.doctor_events_list.map(each =>(
+      this.state.doctorEventsList.map(each =>(
         this.verifyTurn(turns,each.start.toString().split(/\D/))
       ));
       this.setState({
-        'turns' : turns
+        "turns" : turns
       })
     }
 
@@ -437,23 +436,23 @@ export default class ScheduleTable extends Component {
     }
 
     onView(view){
-      this.state.current_view = view;
+      this.state.currentView = view;
       this.createEventDoctorList();
     }
 
     updateTimes(){
       let start, end;
-      if(this.state.current_view === 'day'){
-        start = moment(this.state.current_date).startOf('day').format();
-        end   = moment(this.state.current_date).endOf('day').format();
+      if(this.state.currentView === "day"){
+        start = moment(this.state.currentDate).startOf("day").format();
+        end   = moment(this.state.currentDate).endOf("day").format();
       }
-      else if(this.state.current_view === 'week'){
-        start = moment(this.state.current_date).startOf('isoWeek').subtract(1, 'days').format();
-        end   = moment(this.state.current_date).endOf('isoWeek').subtract(1, 'days').format();
+      else if(this.state.currentView === "week"){
+        start = moment(this.state.currentDate).startOf("isoWeek").subtract(1, "days").format();
+        end   = moment(this.state.currentDate).endOf("isoWeek").subtract(1, "days").format();
       }
-      else if(this.state.current_view === 'month'){
-        start = moment(this.state.current_date).startOf('month').format();
-        end   = moment(this.state.current_date).endOf('month').format();
+      else if(this.state.currentView === "month"){
+        start = moment(this.state.currentDate).startOf("month").format();
+        end   = moment(this.state.currentDate).endOf("month").format();
       }
         this.state.startDate = new Date(start);
         this.state.endDate = new Date(end);
@@ -467,8 +466,8 @@ export default class ScheduleTable extends Component {
 
     onNavigate(date, view){
     const new_date = moment(date);
-    this.state.current_date = date
-    this.state.current_view = view
+    this.state.currentDate = date
+    this.state.currentView = view
     this.createEventDoctorList();
   }
 
@@ -483,9 +482,9 @@ export default class ScheduleTable extends Component {
       let b = s.split(/\D/);
       return b[1];
     }
-    setNamesInDoctorEventList(doctor_events_list){
+    setNamesInDoctorEventList(doctorEventsList){
       const temp_list = []
-      this.state.doctor_events_list.map(each => (
+      this.state.doctorEventsList.map(each => (
         temp_list.push(each.title)
       ));
       return new Set(temp_list)
@@ -498,9 +497,9 @@ export default class ScheduleTable extends Component {
         let toolBar = [];
         let turnsInformation = [];
         let turnstitle = [];
-        for(let count=0; count<this.state.all_category.length; count++){
+        for(let count=0; count<this.state.allCategory.length; count++){
           toolBar.push(
-             <ToggleButton className="btn btn-outline-primary" value={count} onClick={()=>this.changeTable(count)}>{this.state.all_category[count]}</ToggleButton>
+             <ToggleButton className="btn btn-outline-primary" value={count} onClick={()=>this.changeTable(count)}>{this.state.allCategory[count]}</ToggleButton>
            );
         }
         for (let count = 0; count < this.state.turnStart.length; count++) {
@@ -512,23 +511,20 @@ export default class ScheduleTable extends Component {
           );
         }
         let button;
-        if(this.state.current_view === 'week'){
+        if(this.state.currentView === "week"){
           button=(
-            <div>
               <Button className="btn btn-outline-primary" onClick={this.onClick}>Enviar horários</Button>
-            </div>
           );
         }
         else{
           button = (
             <div>
-            </div>
+          </div>
           );
         }
-    	return (
-    	  <div>
-    	    <NavBar></NavBar>
-          <SideBar></SideBar>
+        return (
+          <div>
+            <NavBar></NavBar>
             <div  className="container change-color">
                 <div style={{marginTop:"70px",marginBottom:"100px"}} className="jumbotron">
                     <div className="App">
@@ -539,9 +535,9 @@ export default class ScheduleTable extends Component {
                             </ToggleButtonGroup>
                         </ButtonToolbar>
                         <br></br>
-                        <MySmallModal show={this.state.smLocalShow} onHide={smLocalClose} doctors={this.state.doctors_workload}/>
+                        <MySmallModal show={this.state.smLocalShow} onHide={smLocalClose} doctors={this.state.doctorsWorkload}/>
                         <Button className="btn btn-outline-primary" onClick={() => this.setState({smLocalShow: true})}>Carga Horária</Button>
-                        <a href={"http://localhost:8000/schedule/generate-pdf/" + (moment(this.state.current_date).month()+1) } target="_blank_" className="btn btn-outline-primary">Gerar PDF Mensal</a>
+                        <a href={"https://gicsaude.herokuapp.com/schedule/generate-pdf/" + (moment(this.state.currentDate).month()+1) } target="_blank_" className="btn btn-outline-primary">Gerar PDF Mensal</a>
                         {button}
                         <br></br>
                         <h1 style={{marginLeft:"25%"}}>Quadro de Horários</h1>
@@ -559,24 +555,24 @@ export default class ScheduleTable extends Component {
                           </Table>
                       </header>
                       <Calendar
-                          views={['month', 'week', 'day']}
+                          views={["month", "week", "day"]}
                           onNavigate={this.onNavigate}
                           onView={this.onView}
                           selectable
                           onSelectEvent={() => this.setState({ }),
-                                       (event) =>this.setState({smShow: true,current_doctor: event.title,current_start:event.start.toString(),current_end:event.end.toString()})}
+                                       (event) =>this.setState({smShow: true,currentDoctor: event.title,currentStart:event.start.toString(),currentEnd:event.end.toString()})}
                           onSelectSlot={(event) => this.setState({formDay:this.correctDate(event.end), formShow:true})}
                           defaultDate={new Date()}
                           defaultView="month"
-                          events={this.state.doctor_events_list}
+                          events={this.state.doctorEventsList}
                           style={{ height: "100vh" }}
                         />
                     </div>
                 </div>
             </div>
             <ModalForm show={this.state.formShow} onHide={formClose} formday={this.state.formDay}></ModalForm>
-            <ModalComponent show={this.state.smShow} onHide={smClose} currentdoctor={this.state.current_doctor}
-                          currentstart={this.state.current_start} currentend={this.state.current_end} />
+            <ModalComponent show={this.state.smShow} onHide={smClose} currentdoctor={this.state.currentDoctor}
+                          currentstart={this.state.currentStart} currentend={this.state.currentEnd} />
             <Footer></Footer>
     	    </div>
     	);

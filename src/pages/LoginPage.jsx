@@ -1,17 +1,17 @@
-import React, {Component} from 'react';
-import '../css/bootstrap.css';
-import '../css/DoctorForm.css';
-import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
-import isLogged from '../actions/actions'
-import {store} from '../components/store'
+import React, {Component} from "react";
+import "../css/bootstrap.css";
+import "../css/DoctorForm.css";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import isLogged from "../actions/actions"
+import {store} from "../components/store"
 console.log(store.getState())
 export class LoginPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
-      password: '',
+      username: "",
+      password: "",
       toDos: [],
       valid: false
     }
@@ -20,7 +20,7 @@ export class LoginPage extends Component {
   async componentDidMount() {
     try {
 
-      const res = await fetch('https://gicsaude.herokuapp.com/user/api-user');
+      const res = await fetch("https://gicsaude.herokuapp.com/user/api-user");
       const toDos = await res.json();
       this.setState({toDos});
     } catch (e) {
@@ -48,13 +48,14 @@ export class LoginPage extends Component {
       body: temp,
       headers: new Headers({"Content-Type": "application/json"})
     };
-    fetch('https://gicsaude.herokuapp.com/user/obtain-auth-token/', conf).then(res => res.json()).then(res => {
+    fetch("https://gicsaude.herokuapp.com/user/obtain-auth-token/", conf).then(res => res.json()).then(res => {
       let token = res.token;
       if (res.non_field_errors == null && res.token != null) {
         store.dispatch(isLogged(true));
         this.props.history.push("/ScheduleTable");
-      } else
-        store.dispatch(isLogged(false));
+      } else{
+          store.dispatch(isLogged(false))
+        };
     });
 
   }

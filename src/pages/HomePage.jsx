@@ -1,30 +1,16 @@
-import React, {Component} from 'react';
-import '../css/bootstrap.css';
-import '../css/HomePage.css';
-import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
-import SideBar from '../components/SideBar';
-import isLogged from '../actions/actions';
-import {store} from '../components/store';
-import IMG from '../images/hospital1.png';
+import React, {Component} from "react";
+import "../css/bootstrap.css";
+import "../css/HomePage.css";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import isLogged from "../actions/actions";
+import {store} from "../components/store";
+import IMG from "../images/hospital-clipart.png";
 
 export default class HomePage extends Component {
   render() {
-    let sidebar;
-    if (store.getState().status) {
-      sidebar=(
-        <SideBar></SideBar>
-      );
-    }
-    else{
-      sidebar=(
-        <div>
-        </div>
-      );
-    }
     return (<div className="title-space background">
       <NavBar></NavBar>
-      {sidebar}
       <div className="container espaco">
         <div className='row'>
           <div className="column ">
@@ -36,7 +22,7 @@ export default class HomePage extends Component {
             </div>
           </div>
           <div className='column'>
-            <img src="http://images.clipartpanda.com/hospital-clipart-hospital-png-830x747.png" className='img-fluid' alt="Calendar-image"/>
+            <img src={IMG} className='img-fluid' alt="Calendar-image"/>
         </div>
         </div>
       </div>

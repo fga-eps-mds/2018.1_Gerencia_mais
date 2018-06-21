@@ -3,7 +3,6 @@ import {Route, Switch, BrowserRouter} from 'react-router-dom';
 import HomePage from "./pages/HomePage";
 import ScheduleTable from "./pages/ScheduleTable";
 import NotFound from "./pages/NotFound";
-import DoctorForm from "./pages/DoctorForm";
 import RegistrationAdmin from "./pages/RegistrationAdmin";
 import PrivateRoute from "./components/PrivateRouter";
 import { LoginPage } from "./pages/LoginPage";
@@ -21,7 +20,6 @@ class App extends Component {
         <BrowserRouter>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <PrivateRoute exact path="/DoctorForm" component={DoctorForm} />
           <Route exact path="/LoginPage" component={LoginPage} />
           <PrivateRoute exact path="/ScheduleTable" component={ScheduleTable} />
           <Route exact path="/RegistrationAdmin" component={RegistrationAdmin} />
