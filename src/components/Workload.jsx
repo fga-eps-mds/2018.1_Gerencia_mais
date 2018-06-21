@@ -13,7 +13,7 @@ export default class Workload extends Component {
           <h4>Doutor: {doctor.name} | Carga Horária: {doctor.workload}</h4>
           <br></br>
         </div>
-      )
+      );
     }
 
     return (
@@ -31,7 +31,7 @@ export default class Workload extends Component {
             <legend> Médicos </legend>
                 <select className="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
                 <option defaultValue={0} value={0}>Escolha um médico...</option>
-                {this.props.doctors.map(each => (
+                {this.props.doctors.map((each) => (
                 <option>Doutor: {each.name} | Carga Horária: {each.workload}</option>
 
             ))}
