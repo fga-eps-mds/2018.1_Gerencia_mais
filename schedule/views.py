@@ -71,3 +71,18 @@ def generate_pdf(request,month):# pragma: no cover
     response['Content-Disposition'] = 'inline;filename=all_doctors.pdf'
     response.write(req.text)
     return response
+
+def generate_xlsx(request,month):# pragma: no cover
+    events = Event.objects.all();
+    doctors = []
+    for event in events:
+        if event.is_this_month(int(month)):
+            inicio_fim = str(event.start.hour) + '-' + str(event.end.hour)
+            aux = {'Nome': event.doctor.name, 'Registro': event.doctor.registration, 'Categoria': event.doctor.category, 'Horário':inicio_fim}
+            doctors.append(aux)
+    data = json.dumps(doctors)
+    req = requests.post('https://gerencia-report.herokuapp.com/report/xsml_all_doctors',str(data))
+    response = HttpResponse(content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+    response['Content-Disposition'] = "attachment; filename=Relatorio.xlsx"
+    response.write(req.content)
+    return response
