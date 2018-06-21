@@ -1,7 +1,7 @@
 import datetime
 import requests
 import json
-from schedule.models import Calendar, Event, Occurrence, Rule
+from schedule.models import Calendar, Event, Rule
 
 from .serializer import CalendarSerializer, EventSerializer, RuleSerializer
 

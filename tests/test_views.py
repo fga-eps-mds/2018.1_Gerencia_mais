@@ -12,7 +12,7 @@ from django.utils import timezone
 from schedule.models import Calendar, CalendarRelation, Event, Rule
 from schedule.serializer import EventSerializer
 from schedule.models.calendars import Calendar
-from schedule.models.events import Event, Occurrence
+from schedule.models.events import Event
 from schedule.models.rules import Rule
 
 from doctor.models import Doctors

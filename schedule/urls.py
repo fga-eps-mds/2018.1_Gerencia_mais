@@ -6,7 +6,6 @@ from rest_framework import generics
 from rest_framework.urlpatterns import format_suffix_patterns
 
 from schedule.models import Calendar
-from schedule.periods import Day, Month, Week, Year
 from schedule import views
 from schedule.views import (
     ListCalendar,
