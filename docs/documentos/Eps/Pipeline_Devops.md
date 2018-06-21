@@ -1,4 +1,4 @@
-## ℹ️ Pipeline Devops
+# ✅ Pipeline de entrega
 
 <p align="justify">O deploy da aplicação é feito de forma automatizada por meio da integração contínua (Travis CI) que é responsável por verificar a cobertura de testes e as dependências necessárias para o funcionamento correto da aplicação. Os estágios deste pipeline podem ser observados na imagem abaixo e nos passos descritos logo em seguida. </p>
 
