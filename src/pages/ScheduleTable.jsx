@@ -538,6 +538,7 @@ export default class ScheduleTable extends Component {
                         <MySmallModal show={this.state.smLocalShow} onHide={smLocalClose} doctors={this.state.doctorsWorkload}/>
                         <Button className="btn btn-outline-primary" onClick={() => this.setState({smLocalShow: true})}>Carga Horária</Button>
                         <a href={"https://gicsaude.herokuapp.com/schedule/generate-pdf/" + (moment(this.state.currentDate).month()+1) } target="_blank_" className="btn btn-outline-primary">Gerar PDF Mensal</a>
+                        <a href={"/schedule/generate-xlsx/" + (moment(this.state.currentDate).month()+1) } target="_blank_" className="btn btn-outline-primary">Gerar XLSX Mensal</a>
                         {button}
                         <br></br>
                         <h1 style={{marginLeft:"25%"}}>Quadro de Horários</h1>

@@ -26,6 +26,7 @@ urlpatterns = [
     path('api-event/', ListEvent.as_view()),
     path('api-rule/', ListRule.as_view()),
     url(r'^generate-pdf/(?P<month>[\w-]+)/$',views.generate_pdf,name='generate_pdf'),
+    url(r'^generate-xlsx/(?P<month>[\w-]+)/$',views.generate_xlsx,name='generate_xlsx'),
     # path('gp-list/', views.event_list),
 ]
 
