@@ -171,7 +171,7 @@ class Calendar(models.Model):
         5.
         """
         return self.events.order_by('-start').filter(start__lt=timezone.now())[:amount]
-        
+
 
 
 class CalendarRelationManager(models.Manager):
@@ -223,6 +223,3 @@ class CalendarRelation(models.Model):
         verbose_name = _('calendar relation')
         verbose_name_plural = _('calendar relations')
         index_together = [('content_type', 'object_id')]
-
-    def __str__(self):
-        return '%s - %s' % (self.calendar, self.content_object)

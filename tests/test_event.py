@@ -7,7 +7,7 @@ from django.test.utils import override_settings
 from django.urls import reverse
 from django.utils import timezone
 
-from schedule.models import Calendar, Event, EventRelation, Rule
+from schedule.models import Calendar, Event, EventRelation
 
 from subtitle.models import Subtitles
 
@@ -24,13 +24,12 @@ class TestEvent(TestCase):
             calendar=calendar,
         )
 
-    def __create_recurring_event(self, start, end, end_recurring, rule, calendar):
+    def __create_recurring_event(self, start, end, end_recurring,  calendar):
         return Event.objects.create(
             subtitle=subtitle,
             start=start,
             end=end,
             end_recurring_period=end_recurring,
-            rule=rule,
             calendar=calendar,
         )
 
@@ -42,7 +41,6 @@ class TestEvent(TestCase):
         event_relations = list(Event.objects.get_for_object(user, 'owner', inherit=False))
         self.assertEqual(len(event_relations), 0)
 
-        Rule.objects.create(frequency="DAILY")
         cal = Calendar.objects.create(name='MyCal')
         cal = calendar
         event = self.__create_event(

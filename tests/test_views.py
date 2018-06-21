@@ -9,11 +9,10 @@ from django.test import TestCase, override_settings
 from django.urls import reverse
 from django.utils import timezone
 
-from schedule.models import Calendar, CalendarRelation, Event, Rule
+from schedule.models import Calendar, CalendarRelation, Event
 from schedule.serializer import EventSerializer
 from schedule.models.calendars import Calendar
 from schedule.models.events import Event
-from schedule.models.rules import Rule
 
 from doctor.models import Doctors
 from subtitle.models import Subtitles
@@ -47,7 +46,7 @@ class TestViewAPI(TestCase):
 
     def test_contains_expected_fields(self):
         data = self.serializer.data
-        self.assertEqual(set(['subtitle', 'doctor', 'rule', 'id', 'end_recurring_period', 'hospital', 'updated_on', 'end', 'calendar', 'creator', 'description', 'created_on', 'start']),set(data.keys()))
+        self.assertEqual(set(['subtitle', 'doctor', 'id', 'end_recurring_period', 'hospital', 'updated_on', 'end', 'calendar', 'creator', 'description', 'created_on', 'start']),set(data.keys()))
 
     def test_field_response_subtitle(self):
         self.assertEqual(self.serializer_data['subtitle'],self.event_attr['subtitle'])

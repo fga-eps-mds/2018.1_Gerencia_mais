@@ -1,9 +1,9 @@
 import datetime
 import requests
 import json
-from schedule.models import Calendar, Event, Rule
+from schedule.models import Calendar, Event
 
-from .serializer import CalendarSerializer, EventSerializer, RuleSerializer
+from .serializer import CalendarSerializer, EventSerializer
 
 from rest_framework import generics
 from rest_framework.decorators import api_view
@@ -26,13 +26,6 @@ class ListEvent(generics.ListCreateAPIView):
     # permission_classes = (permissions.IsAdminUser,)
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-
-class ListRule(generics.ListCreateAPIView):
-    permission_classes = [AllowAny]
-    queryset = Rule.objects.all()
-    serializer_class = RuleSerializer
-
-
 
 class EventDetailAPIView(generics.RetrieveAPIView):
     permission_classes = [AllowAny]

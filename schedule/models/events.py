@@ -21,7 +21,6 @@ from doctor.models import Doctors
 from subtitle.models import Subtitles
 
 from schedule.models.calendars import Calendar
-from schedule.models.rules import Rule
 
 freq_dict_order = {
     'YEARLY': 0,
@@ -82,13 +81,6 @@ class Event(models.Model):
         blank=True,
         verbose_name=_("creator"),
         related_name='creator')
-    rule = models.ForeignKey(
-        Rule,
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True,
-        verbose_name=_("rule"),
-        help_text=_("Select '----' for a one time only event."))
     end_recurring_period = models.DateTimeField(_("Período Final Recorrente"), null=True, blank=True, db_index=True,
                                                 help_text=_("Esta data é ignorada apenas para eventos únicos."))
     calendar = models.ForeignKey(
@@ -132,25 +124,6 @@ class Event(models.Model):
         return reverse('event', args=[self.id])
 
 
-    def get_rrule_object(self, tzinfo):
-        if self.rule is None:
-            return
-        params = self._event_params()
-        frequency = self.rule.rrule_frequency()
-        if timezone.is_naive(self.start):
-            dtstart = self.start
-        else:
-            dtstart = tzinfo.normalize(self.start).replace(tzinfo=None)
-
-        if self.end_recurring_period is None:
-            until = None
-        elif timezone.is_naive(self.end_recurring_period):
-            until = self.end_recurring_period
-        else:
-            until = tzinfo.normalize(
-                self.end_recurring_period.astimezone(tzinfo)).replace(tzinfo=None)
-
-        return rrule.rrule(frequency, dtstart=dtstart, until=until, **params)
 
 
     @property
@@ -168,34 +141,6 @@ class Event(models.Model):
         }
         return params
 
-    @property
-    def event_rule_params(self):
-        return self.rule.get_params()
-
-    def _event_params(self):
-        freq_order = freq_dict_order[self.rule.frequency]
-        rule_params = self.event_rule_params
-        start_params = self.event_start_params
-        event_params = {}
-
-        if len(rule_params) == 0:
-            return event_params
-
-        for param in rule_params:
-            # start date influences rule params
-            if (param in param_dict_order and param_dict_order[param] > freq_order and
-                    param in start_params):
-                sp = start_params[param]
-                if sp == rule_params[param] or (
-                        hasattr(rule_params[param], '__iter__') and
-                        sp in rule_params[param]):
-                    event_params[param] = [sp]
-                else:
-                    event_params[param] = rule_params[param]
-            else:
-                event_params[param] = rule_params[param]
-
-        return event_params
 
     @property
     def event_params(self):
