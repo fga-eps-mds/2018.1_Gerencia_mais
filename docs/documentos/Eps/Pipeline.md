@@ -5,6 +5,7 @@ Data|Responsável|Versão|Alteração
 19/06/2018|Eduardo Júnio|1.0| Criação do documento
 20/06/2018|Eduardo Júnio|1.1| Alteração nos tópicos de integração contínua
 21/06/2018|Eduardo Júnio|1.2| Adição de tópicos de deploy e versionamento
+21/06/2018|Eduardo Júnio|2.0| Adição de modelo simplificado de processos
 
 ## ℹ️ Objetivos
 
@@ -40,4 +41,8 @@ Data|Responsável|Versão|Alteração
 ## ℹ️ Pipeline dos micro serviços
  
 <p align="justify">Devido a facilidade de adaptação da integração desenvolvida para a aplicação, optou-se por utilizar a mesma estrutura para os micro serviços, dessa forma os passos descritos no tópicos "Integração Contínua" também são aplicáveis aos micro serviços desenvolvidos.</p>
+
+## ℹ️ Modelo simplificado de processos
+
+![Imgur](https://i.imgur.com/AnCUzwZ.png)
 
