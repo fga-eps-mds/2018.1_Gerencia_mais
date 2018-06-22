@@ -96,90 +96,12 @@ class Event(models.Model):
             ('start', 'end'),
         )
 
-    def __str__(self):
-        return ugettext('%(start)s - %(end)s') % {
-            'start': date(self.start, django_settings.DATE_FORMAT),
-            'end': date(self.end, django_settings.DATE_FORMAT),
-        }
 
     def is_this_month(self,month):
         if self.start.month == month or self.end.month == month:
             return True
         else:
             return False
-
-    @property
-    def seconds(self):
-        return (self.end - self.start).total_seconds()
-
-    @property
-    def minutes(self):
-        return float(self.seconds) / 60
-
-    @property
-    def hours(self):
-        return float(self.seconds) / 3600
-
-    def get_absolute_url(self):
-        return reverse('event', args=[self.id])
-
-
-
-
-    @property
-    def event_start_params(self):
-        start = self.start
-        params = {
-            'byyearday': start.timetuple().tm_yday,
-            'bymonth': start.month,
-            'bymonthday': start.day,
-            'byweekno': start.isocalendar()[1],
-            'byweekday': start.weekday(),
-            'byhour': start.hour,
-            'byminute': start.minute,
-            'bysecond': start.second
-        }
-        return params
-
-
-    @property
-    def event_params(self):
-        event_params = self._event_params()
-        start = self.effective_start
-        empty = False
-        if not start:
-            empty = True
-        elif self.end_recurring_period and start > self.end_recurring_period:
-            empty = True
-        return event_params, empty
-
-    @property
-    def effective_start(self):
-        if self.pk and self.end_recurring_period:
-            occ_generator = self._occurrences_after_generator(self.start)
-            try:
-                return next(occ_generator).start
-            except StopIteration:
-                pass
-        elif self.pk:
-            return self.start
-        return None
-
-    @property
-    def effective_end(self):
-        if self.pk and self.end_recurring_period:
-            params, empty = self.event_params
-            if empty or not self.effective_start:
-                return None
-            elif self.end_recurring_period:
-                occ = None
-                occ_generator = self._occurrences_after_generator(self.start)
-                for occ in occ_generator:
-                    pass
-                return occ.end
-        elif self.pk:
-            return datetime.datetime.max
-        return None
 
 
 class EventRelationManager(models.Manager):
