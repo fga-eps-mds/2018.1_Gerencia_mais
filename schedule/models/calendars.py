@@ -146,8 +146,6 @@ class Calendar(models.Model):
         verbose_name = _('calendar')
         verbose_name_plural = _('calendars')
 
-    def __str__(self):
-        return self.name
 
     @property
     def events(self):

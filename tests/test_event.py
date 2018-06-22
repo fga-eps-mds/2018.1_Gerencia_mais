@@ -24,14 +24,6 @@ class TestEvent(TestCase):
             calendar=calendar,
         )
 
-    def __create_recurring_event(self, start, end, end_recurring,  calendar):
-        return Event.objects.create(
-            subtitle=subtitle,
-            start=start,
-            end=end,
-            end_recurring_period=end_recurring,
-            calendar=calendar,
-        )
 
 
 
