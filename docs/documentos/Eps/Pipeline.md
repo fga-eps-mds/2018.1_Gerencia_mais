@@ -6,10 +6,16 @@ Data|Responsável|Versão|Alteração
 20/06/2018|Eduardo Júnio|1.1| Alteração nos tópicos de integração contínua
 21/06/2018|Eduardo Júnio|1.2| Adição de tópicos de deploy e versionamento
 21/06/2018|Eduardo Júnio|2.0| Adição de modelo simplificado de processos
+22/06/2018|Eduardo Júnio|2.1| Adição de tópico de Ambiente de desenvolvimento
+
 
 ## ℹ️ Objetivos
 
 <p align="justify">Este documento tem como objetivo apresentar uma estrutura que permita o fácil entendimento a respeito das etapas do pipeline do software Gerencia Mais desenvolvido durante as disciplinas de Engenharia de Produto de Software e Métodos de Desenvolvimento de Software do curso de Engenharia de Software da Universidade de Brasília.</p>
+
+## ℹ️ Ambiente de desenvolvimento
+
+<p align="justify">O desenvolvimento do sistema é feito através do ambiente de virtualização baseado em containers docker que, além de fornecer um ambiente estável de desenvolvimento, facilita na integração de novas funcionalidades por fornecer todas as tecnologias e dependências necessárias para o correto funcionamento da aplicação, não sendo necessário que cada desenvolvedor tenha que instalar ou configurar manualmente os recursos para o funcionamento do sistema. Dessa forma basta inserir as tecnologias nos arquivos de dependências do projeto que são: "requirements.txt" para dependências do python ou "package.json" para dependências do node.</p>
 
 ## ℹ️ Versionamento
 
