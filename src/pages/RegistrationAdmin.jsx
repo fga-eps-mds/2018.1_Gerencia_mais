@@ -80,6 +80,7 @@ export default class RegistrationAdmin extends Component {
       headers: new Headers({"Content-Type": "application/json"})
     };
     fetch("https://gicsaude.herokuapp.com/user/api-user/create/", conf).then(response => (console.log(response)));
+    this.props.history.push("/LoginPage");
   }
 
   validateInformation() {

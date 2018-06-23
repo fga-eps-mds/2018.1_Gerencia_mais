@@ -20,7 +20,6 @@ export default class FormDoctorForm extends Component {
       hospital:'',
       creator: '1',
       allSubtitle: [],
-      rule: null,
       calendar:'1',
       all_doctors: [],
     }
@@ -96,7 +95,11 @@ export default class FormDoctorForm extends Component {
       time_end: this.state.load_subtitle.finish
     })
   }
-
+  redirectPage(){
+    if(this.state.isValid === true){
+      window.location.href = '/ScheduleTable';
+      }
+  }
    handleSubmit = e => {
     this.state.start = this.props.currentdate + this.state.time_start + "Z";
     this.state.end = this.props.currentdate + this.state.time_end + "Z";
@@ -112,6 +115,7 @@ export default class FormDoctorForm extends Component {
     };
     fetch("https://gicsaude.herokuapp.com/schedule/api-event/", conf).then(response => (console.log(response)));
     this.setState({"isValid":true});
+    this.redirectPage();
 }
   render(){
     return(
