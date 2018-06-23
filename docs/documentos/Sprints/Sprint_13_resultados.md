@@ -41,13 +41,15 @@
 
 |ID|História|Pontos|Responsáveis| Status|
 |:-:|:-----:|:----:|:----------:|:---:|
-|[US32](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/252)|Gerar pdf para baixar|5|Guilherme Aguiar, João Vitor e Adrielly|Aceito|
-|[US33](https://github.com/fga-gpp-mds/2018.1_gerencia_mais/issues/253)|Cadastrar médico pela tabela|3|Guilherme Aguiar, João Vitor e Adrielly|Aceito|
+|[US31](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/111)| Mostrar número de médicos alocados por turno | 3 | Caio Beleza, João Vitor e Adrielly  | Aceito |
+|[US11](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/106)| Computar Carga horaria | 3 | Caio Beleza, João Vitor e Adrielly  | Aceito |
+|[US30](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/234)| Alterar forma de atualizar evento médico | 8 | Guilherme e  Victor Hugo | Aceito |
+|[US32](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/issues/236)| Implementar microserviço de relatórios | 5 | Ullysses e Eduardo | Aceito |
 
 
 ## 3 - Retrospectiva da Sprint
 
-<img src="{{site.baseurl }}/documentos/imagens/Sprint14/retrospectiva14.png">
+<img src="{{site.baseurl }}/documentos/imagens/Sprint13/retrospectiva13.png">
 
 ## 4 - Riscos
 
