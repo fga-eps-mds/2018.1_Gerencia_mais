@@ -101,8 +101,8 @@ export default class Form extends Component {
     this.state.end=this.state.end + "T" + this.state.time_end + "Z";
     this.setState({"isValid":true});
     e.preventDefault();
-    const {start, end, hospital, subtitle, creator, rule, calendar, doctor} = this.state;
-    const lead = {start, end, hospital, subtitle,creator, rule, calendar,doctor} ;
+    const {start, end, hospital, subtitle, creator, calendar, doctor} = this.state;
+    const lead = {start, end, hospital, subtitle,creator, calendar,doctor} ;
     const temp = JSON.stringify(lead)
     const conf = {
       method: "POST",

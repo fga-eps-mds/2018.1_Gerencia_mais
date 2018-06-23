@@ -102,8 +102,8 @@ export default class FormDoctorForm extends Component {
     this.state.end = this.props.currentdate + this.state.time_end + "Z";
     this.setState({"isValid":true});
     e.preventDefault();
-    const {start, end, hospital, subtitle, creator, rule, calendar, doctor} = this.state;
-    const leade = {start, end, hospital, subtitle,creator, rule, calendar,doctor} ;
+    const {start, end, hospital, subtitle, creator, calendar, doctor} = this.state;
+    const leade = {start, end, hospital, subtitle,creator, calendar,doctor} ;
     const temp = JSON.stringify(leade)
     const conf = {
       method: "POST",

@@ -1,9 +1,9 @@
 import datetime
 import requests
 import json
-from schedule.models import Calendar, Event, Occurrence, Rule
+from schedule.models import Calendar, Event
 
-from .serializer import CalendarSerializer, EventSerializer, RuleSerializer
+from .serializer import CalendarSerializer, EventSerializer
 
 from rest_framework import generics
 from rest_framework.decorators import api_view
@@ -26,13 +26,6 @@ class ListEvent(generics.ListCreateAPIView):
     # permission_classes = (permissions.IsAdminUser,)
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-
-class ListRule(generics.ListCreateAPIView):
-    permission_classes = [AllowAny]
-    queryset = Rule.objects.all()
-    serializer_class = RuleSerializer
-
-
 
 class EventDetailAPIView(generics.RetrieveAPIView):
     permission_classes = [AllowAny]
@@ -70,4 +63,19 @@ def generate_pdf(request,month):# pragma: no cover
     response = HttpResponse(content_type = 'application/pdf')
     response['Content-Disposition'] = 'inline;filename=all_doctors.pdf'
     response.write(req.text)
+    return response
+
+def generate_xlsx(request,month):# pragma: no cover
+    events = Event.objects.all();
+    doctors = []
+    for event in events:
+        if event.is_this_month(int(month)):
+            inicio_fim = str(event.start.hour) + '-' + str(event.end.hour)
+            aux = {'Nome': event.doctor.name, 'Registro': event.doctor.registration, 'Categoria': event.doctor.category, 'Horário':inicio_fim}
+            doctors.append(aux)
+    data = json.dumps(doctors)
+    req = requests.post('https://gerencia-report.herokuapp.com/report/xsml_all_doctors',str(data))
+    response = HttpResponse(content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+    response['Content-Disposition'] = "attachment; filename=Relatorio.xlsx"
+    response.write(req.content)
     return response

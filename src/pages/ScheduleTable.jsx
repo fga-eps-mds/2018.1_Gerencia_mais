@@ -8,6 +8,7 @@ import "../css/bootstrap.min.css";
 import Calendar from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
+import Workload from "../components/Workload";
 
 moment.updateLocale("pt-gb", {
   week : {
@@ -18,50 +19,6 @@ moment.updateLocale("pt-gb", {
 moment.locale("pt-gb");
 
 Calendar.setLocalizer(Calendar.momentLocalizer(moment));
-
-class MySmallModal extends React.Component {
-
-  render() {
-    let doctors = [];
-    let doctor;
-    for (var count = 0; count < this.props.doctors.length; count++) {
-      doctor = this.props.doctors[count];
-      doctors.push(
-        <div>
-          <h4>Doutor: {doctor.name} | Carga Horária: {doctor.workload}</h4>
-          <br></br>
-        </div>
-      )
-    }
-
-    return (
-      <Modal
-        className="modal-height modal"
-        {...this.props}
-        bsSize="large"
-        aria-labelledby="contained-modal-title-lg"
-      >
-        <Modal.Header className="" >
-          <h1 className="modal-header-align ">Carga Horária</h1>
-        </Modal.Header>
-        <Modal.Body className="modal-content">
-          <div>
-            <legend> Médicos </legend>
-                <select className="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                <option defaultValue={0} value={0}>Escolha um médico...</option>
-                {this.props.doctors.map(each => (
-                <option>Doutor: {each.name} | Carga Horária: {each.workload}</option>
-
-            ))}
-              </select>
-            {doctors}
-            <Button onClick={this.props.onHide} bsStyle="danger">Close</Button><br></br>
-          </div>
-        </Modal.Body>
-      </Modal>
-    );
-  }
-}
 
 export default class ScheduleTable extends Component {
     constructor(props){
@@ -535,9 +492,10 @@ export default class ScheduleTable extends Component {
                             </ToggleButtonGroup>
                         </ButtonToolbar>
                         <br></br>
-                        <MySmallModal show={this.state.smLocalShow} onHide={smLocalClose} doctors={this.state.doctorsWorkload}/>
+                        <Workload show={this.state.smLocalShow} onHide={smLocalClose} doctors={this.state.doctorsWorkload}/>
                         <Button className="btn btn-outline-primary" onClick={() => this.setState({smLocalShow: true})}>Carga Horária</Button>
                         <a href={"https://gicsaude.herokuapp.com/schedule/generate-pdf/" + (moment(this.state.currentDate).month()+1) } target="_blank_" className="btn btn-outline-primary">Gerar PDF Mensal</a>
+                        <a href={"/schedule/generate-xlsx/" + (moment(this.state.currentDate).month()+1) } target="_blank_" className="btn btn-outline-primary">Gerar XLSX Mensal</a>
                         {button}
                         <br></br>
                         <h1 style={{marginLeft:"25%"}}>Quadro de Horários</h1>
