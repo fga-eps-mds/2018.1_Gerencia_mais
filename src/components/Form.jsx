@@ -96,6 +96,12 @@ export default class Form extends Component {
     })
   }
 
+  redirectPage(){
+    if(this.state.isValid === true){
+      window.location.href = '/ScheduleTable';
+      }
+  }
+
   handleSubmit = e => {
     this.state.start=this.state.start + "T" + this.state.time_start + "Z";
     this.state.end=this.state.end + "T" + this.state.time_end + "Z";
@@ -111,6 +117,7 @@ export default class Form extends Component {
     };
     fetch("https://gicsaude.herokuapp.com/schedule/api-event/", conf).then(response => (console.log(response)));
     this.setState({"isValid":true});
+    this.redirectPage();
 }
   render(){
     return(

@@ -7,7 +7,7 @@ export default class FormUpdate extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      is_valid : false,
+      isValid : false,
       all_subtitle: [],
       doctor:'0',
       subtitle: '0',
@@ -96,10 +96,15 @@ export default class FormUpdate extends Component {
     })
   }
 
+  redirectPage(){
+    if(this.state.isValid === true){
+      window.location.href = '/ScheduleTable';
+      }
+  }
+
   handleSubmit = e => {
     this.state.start=this.state.start + "T" + this.state.time_start + "Z";
     this.state.end=this.state.end + "T" + this.state.time_end + "Z";
-    this.setState({"is_valid":true});
     e.preventDefault();
     const {start, end, hospital, subtitle, creator, calendar, doctor} = this.state;
     const lead = {start, end, hospital, subtitle,creator, calendar,doctor} ;
@@ -111,6 +116,8 @@ export default class FormUpdate extends Component {
     };
     fetch("https://gicsaude.herokuapp.com/schedule/api-event/update/" + this.props.eventid + '/', conf).then(response => (console.log(response)));
     this.setState({"is_valid":true});
+    this.redirectPage();
+
 }
   render(){
     return(
