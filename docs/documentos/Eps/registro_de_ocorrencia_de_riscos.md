@@ -65,7 +65,7 @@ Ação: Replanejar e adequar para que a reunião ocorra, adiando a data em 1 ou 
 Ocorrência: O cliente mudar o escopo.
 Ação: Para monitorar esse risco será marcada mais reuniões regulares durante a semana para confirmação do escopo.
 
-## #Sprint 12
+## Sprint 12
 Ocorrência: Impossibilidade de ocorrer reuniões presenciais ao fim das Sprints.
 Ação: Replanejar e adequar para que a reunião ocorra, adiando a data em 1 ou dois dias.
 
