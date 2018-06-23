@@ -23,7 +23,7 @@ Data|Responsável|Versão|Alteração
 
 ## ℹ️ Deploy
 
-<p align="justify">O deploy da aplicação é feito de forma automatizada por meio da integração contínua (Travis CI) que é responsável por verificar a cobertura de testes e as dependências necessárias para o funcionamento correto da aplicação. Os estágios deste pipeline podem ser observados na imagem abaixo e nos passos descritos logo em seguida. </p>
+<p align="justify">O deploy da aplicação é feito de forma automatizada por meio da integração contínua (Travis CI) que é responsável por verificar a cobertura de testes e as dependências necessárias para o funcionamento correto da aplicação. Os estágios deste pipeline podem ser observados na imagem abaixo e nos passos descritos logo em seguida.</p>
 
 
 ![Imgur](https://i.imgur.com/lYdATpc.png)
@@ -31,10 +31,10 @@ Data|Responsável|Versão|Alteração
 
 ## ℹ️ Integração contínua
 
-- __Passo 1__ <p align="justify">Para garantir que todas as dependência necessárias para o correto funcionamento do projeto estão funcionando como o esperado e que nenhum módulo do sistema possui erros, optou-se por incluir como "filtro" para a integração o ambiente de virtualização docker, dessa forma, ao ocorrer qualquer tipo de erro que impossibilite o funcionamento de algum módulo ou funcionalidade do sistema é indicado pela integração a falha no pipeline. </p>
+- __Passo 1__<p align="justify">Para garantir que todas as dependência necessárias para o correto funcionamento do projeto estão funcionando como o esperado e que nenhum módulo do sistema possui erros, optou-se por incluir como "filtro" para a integração o ambiente de virtualização docker, dessa forma, ao ocorrer qualquer tipo de erro que impossibilite o funcionamento de algum módulo ou funcionalidade do sistema é indicado pela integração a falha no pipeline.</p>
 - __Passo 2__<p align="justify">Além de executar o docker com os objetivos apresentados na passo anterior, incluiu-se como filtro a cobertura de testes que são verificados pela integração a cada novo commit ou pull request. A cobertura de teste mínima para uma contribuição ser aceita é de 90% (noventa por cento), caso determinada contribuição diminua a porcentagem de teste, mesmo que essa esteja acima dos 90% estabelecidos como mínimo aceitável, a integração contínua apresenta um alerta de falha no pipeline e a contribuição não é integrada aos ambientes de homologação ou produção até que os testes necessários sejam realizados.</p>
-- __Passo 3__ <p align="justify">Após a verficação dos passos anteriores e se essas verificações não apresentarem erros, uma nova versão do sistema é gerada e enviada aos servidores da aplicação que estão divididos em servidor de homologação e produção, o envio da nova versão para esses servidores é feita de acordo com a branch em que as alterações estão sendo inseridas. Para o ambiente de homologação utiza-se a branch "development" e para o ambiente de produção utiliza-se a branch "master". </p>
-- <p align="justify">Obs: Para as outras branchs, apenas os passos 1 e 2 citados nesse tópico são executados. </p>
+- __Passo 3__<p align="justify">Após a verficação dos passos anteriores e se essas verificações não apresentarem erros, uma nova versão do sistema é gerada e enviada aos servidores da aplicação que estão divididos em servidor de homologação e produção, o envio da nova versão para esses servidores é feita de acordo com a branch em que as alterações estão sendo inseridas. Para o ambiente de homologação utiza-se a branch "development" e para o ambiente de produção utiliza-se a branch "master". </p>
+- <p align="justify">Obs: Para as outras branchs, apenas os passos 1 e 2 citados nesse tópico são executados.</p>
 
 ## ℹ️ Monitoramento
 
