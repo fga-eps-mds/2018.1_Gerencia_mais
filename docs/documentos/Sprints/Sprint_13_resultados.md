@@ -55,14 +55,16 @@
 
 - Outras disciplinas cobram muito dos alunos no final do semestre.
 
-- Reunião semanal realizada de modo não ha distancia pelo aperto do final do semestre, acarretando falhas na comunicação.
+- A ausencia de membros nas reuniões não compromete, mas prejudica o nivelamento e planejamento das atividades a serem desenvolvidas na semana.
 
-- Integrante do time de mds que não participou distanciando de suas obrigações.
+- Integrante do time de mds extremamente ausente. Isso prejudica e sobrecarrega outros membros da equipe.
+
+- Possível desistência de um membro de mds.
 
 
 ## 5 - Quadro de conhecimentos
 
-Foi tomada a decisição pelo grupo de EPS de coletar o conhecimento do time no periodo dado por releases ja que as sprints possuem tamanhos muito curtos.
+Foi tomada a decisição pelo grupo de EPS de coletar o conhecimento do time no periodo dado por releases já que as sprints possuem tamanhos muito curtos.
 
 ***Quadro de conhecimento Início release 2***
 
@@ -70,13 +72,13 @@ Foi tomada a decisição pelo grupo de EPS de coletar o conhecimento do time no 
 
 ## 6 - Burndown
 
-<img src="{{site.baseurl }}/documentos/imagens/Sprint14/burndown14.png">
+<img src="{{site.baseurl }}/documentos/imagens/Sprint13/burndown13.png">
 
-<p align="justify">O burndown apresenta a quantidade de pontos que foram planejados e sua “queima” durante a sprint que tem duração de uma semana. Para a sprint 14, a equipe planejou realizar 39 pontos que foram distribuídos em histórias de usuário e histórias técnicas.
-Ao término da sprint, a equipe de desenvolvimento entregou todos os 39 pontos, 2 histórias de usuário e 5 histórias técnicas. O gráfico de burndown dessa sprint demonstra que o grupo esta atingindo uma maturidade maior com a metodologia aplicada, melhorando a queima da pontuação durante a semana.</p>
+<p align="justify">O burndown apresenta a quantidade de pontos que foram planejados e sua “queima” durante a sprint que tem duração de uma semana. Para a sprint 13, a equipe planejou realizar 33 pontos que foram distribuídos em histórias de usuário e histórias técnicas.
+Ao término da sprint, a equipe de desenvolvimento entregou todos os 33 pontos, 4 histórias de usuário e 4 histórias técnicas. O gráfico de burndown dessa sprint demonstra que o grupo esta atingindo uma maturidade maior com a metodologia aplicada, embora possamos observar que a maior parte das entregas acabou ficando para a segunda metade da semana. Isso se deve, em parte, ao fim do semestre e diversas entregas de outras disciplinas que acabam consumindo bastante tempo.</p>
 
 ## 7 - Velocity
 
-<img src="{{site.baseurl }}/documentos/imagens/Sprint14/velocity14.png">
+<img src="{{site.baseurl }}/documentos/imagens/Sprint13/velocity13.png">
 
-<p align="justify">Nota-se que a equipe começou a estabilizar a velocidade de desenvolvimento que, nas sprints anteriores,  apresentavam grandes oscilações.</p>
+<p align="justify">Nota-se que a equipe atingiu uma velocidade de desenvolvimento que satisfaz a média desejada. Isso significa que conseguimos manter uma constância de entregas e que a equipe esta nivelada quando ao planejamento das sprints.</p>
