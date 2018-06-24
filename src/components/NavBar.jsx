@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-//import {Link} from 'react-router-dom';
 import '../css/bootstrap.css';
 import {Navbar, NavItem, ButtonGroup, Button} from 'react-bootstrap';
 import isLogged from '../actions/actions';
