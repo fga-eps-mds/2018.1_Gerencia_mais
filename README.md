@@ -4,7 +4,7 @@
   <a href="https://travis-ci.org/fga-gpp-mds/2018.1_Gerencia_mais"><img src="https://travis-ci.org/fga-gpp-mds/2018.1_Gerencia_mais.svg?branch=master" alt="Build"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
   <a href="https://codeclimate.com/github/fga-gpp-mds/2018.1_Gerencia_mais/maintainability"><img src="https://api.codeclimate.com/v1/badges/4aff97e7847e842ef8be/maintainability" /></a>
-     <a href='https://coveralls.io/github/fga-gpp-mds/2018.1_Gerencia_mais?branch=is64_Integrar_Frontend_e_Backend'><img src='https://coveralls.io/repos/github/fga-gpp-mds/2018.1_Gerencia_mais/badge.svg?branch=is64_Integrar_Frontend_e_Backend' alt='Coverage Status' /></a>
+    <a href='https://coveralls.io/github/fga-gpp-mds/2018.1_Gerencia_mais?branch=development'><img src='https://coveralls.io/repos/github/fga-gpp-mds/2018.1_Gerencia_mais/badge.svg?branch=development' alt='Coverage Status' /></a>
      [![Codacy Badge](https://api.codacy.com/project/badge/Grade/b6ba54118ec74854bf82605dc1760a8f)](https://www.codacy.com/app/Eduardojvr/2018.1_Gerencia_mais?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=fga-gpp-mds/2018.1_Gerencia_mais&amp;utm_campaign=Badge_Grade)
   <a href="https://codeclimate.com/github/fga-gpp-mds/2018.1_Gerencia_mais"><img src="https://codeclimate.com/github/fga-gpp-mds/2018.1_Gerencia_mais/badges/issue_count.svg" alt="Issue Count"></a> <a href='https://www.python.org/'><img src='https://img.shields.io/badge/Made%20with-Python-1f425f.svg' alt='python' /></a> 
  
@@ -35,9 +35,8 @@ Gostou do projeto e gostria de contribuir? Acesse [Contribua](https://github.com
 
 
 
-<p><a href="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is94_ferramenta_monitoramento/Monitoramento/analises.md" target="_blank"><img width="900"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/monitor.gif"></a></p>
+<p><a href="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/Monitoramento/analises.md" target="_blank"><img width="900"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/monitor.gif"></a></p>
 
-Obs: O serviço ainda está sendo configurado, apresentando até o momento apenas algumas informações básicas.
 <br>
 
 
@@ -62,8 +61,12 @@ Obs: O serviço ainda está sendo configurado, apresentando até o momento apena
  </a>
  <a href="image" target="_blank"><img width="100"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/ColourContrastAnalyserPortable_128.png"></a>
  <a href="image" target="_blank"><img width="150"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/datadog.png"></a>
-   <a href="image" target="_blank"><img width="100"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/is94_ferramenta_monitoramento/docs/documentos/imagens/Tecnologias/mon.png"></a>
- <a href="image" target="_blank"><img width="100"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/coveralls-logo.png"></a>
+<a href="image" target="_blank"><img width="100"src="https://i.imgur.com/COBCEzz.png"></a>
+<a href="image" target="_blank"><img width="100"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/Tecnologias/coveralls-logo.png"></a>
+<a href="image" target="_blank"><img width="100"src="https://i.imgur.com/CVlCfDX.png"></a>
+<a href="image" target="_blank"><img width="100"src="https://i.imgur.com/6PNFiwL.jpg"></a>
+<a href="image" target="_blank"><img width="100"src="https://i.imgur.com/c2We7zg.jpg"></a>
+
 
 
 <br>
@@ -162,6 +165,21 @@ Esse comando irá gerar uma pasta contendo um arquivo html(index.html) que apres
 - Deploy ambiente de produção: Quando lançada uma nova versão estável do sistema, um novo deploy é realizado de forma automatizada. Para isso usamos a brach __master__, onde a nova versão devidamente testada e obedecendo os critérios de qualidade estabelecidos no [Plano de qualidade](https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/Eps/Plano_de_Gerenciamento_de_Qualidade.md) é entregue aos clientes de forma contínua.
  No tópico a seguir apresentamos os dois ambientes usados para validação e entrega ao cliente.
 </p>
+
+##  ℹ️ Micro Serviços
+
+<p align="justify">
+A aplicação utiliza dois serviços que funcionam de maneira independente.
+Gerencia report: Serviço de geração de relatório.
+Notifica mais: Serviço de notificação via email.
+
+Ambos serviços necessitam apenas de dados em formato json. Informações mais detalhadas podem ser acessadas nos links abaixo:
+* Notifica mais: https://github.com/Eduardojvr/notifica_mais
+
+* Gerencia report : https://github.com/Eduardojvr/gerencia_report
+</p>
+
+<br>
 
 ## 🌎 Acessando a aplicação
 
