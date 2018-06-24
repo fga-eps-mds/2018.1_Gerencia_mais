@@ -178,7 +178,7 @@ Visão geral da aplicação do ponto de vista de pacotes e aplicativos dentro da
 
 ## <a name="5.3"></a>5.3  Diagrama de Classes
 
-<img src="{{ site.baseurl }}/documentos/imagens/Documento_de_arquitetura/ClassDiagram2.png">
+<img src="https://i.imgur.com/rsbDkYd.png">
 
 ## 6.  Desempenho
 
