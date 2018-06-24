@@ -17,6 +17,8 @@
 |15/04/2018 |1.2   |Mudança do nome do projeto| Victor |
 |15/04/2018 |1.3   |Corrigir erro do último tópico | Victor  |
 |16/04/2018 |1.4   |Corrigir erros ortográficos | João Vitor  |
+|24/06/2018 |1.5   |Atualização do diagrama de classes | Caio Beleza, João Vitor  |
+
 
 
 ## Sumário
