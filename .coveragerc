@@ -5,6 +5,7 @@ include =
     tests/*
     user/*
     doctor/*
+    subtitle/*
 
 omit =
     /

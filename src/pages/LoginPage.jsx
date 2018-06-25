@@ -5,7 +5,7 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import isLogged from "../actions/actions"
 import {store} from "../components/store"
-console.log(store.getState())
+
 export class LoginPage extends Component {
   constructor(props) {
     super(props);
@@ -13,7 +13,7 @@ export class LoginPage extends Component {
       username: "",
       password: "",
       toDos: [],
-      valid: false
+      valid: true
     }
   }
 
@@ -42,7 +42,6 @@ export class LoginPage extends Component {
       password,
     };
     const temp = JSON.stringify(lead)
-    console.log(temp);
     const conf = {
       method: "POST",
       body: temp,
@@ -54,13 +53,35 @@ export class LoginPage extends Component {
         store.dispatch(isLogged(true));
         this.props.history.push("/ScheduleTable");
       } else{
-          store.dispatch(isLogged(false))
+          store.dispatch(isLogged(false));
+          this.setState({'valid':false});
+
         };
     });
 
   }
+  messageError(){
+    let message;
+    if(this.state.valid === false){
+      message = (
+        <div className="alert alert-danger" role="alert">
+            Login ou senha inválidos
+          </div>
+      );
+    }
+    else{
+      message = (
+        <div>
+          </div>
+      );
+    }
+    return message;
+  }
 
   render() {
+    let error_message;
+    error_message = this.messageError();
+
     return (<div>
       <NavBar></NavBar>
       <div className="top-space espaco espaco-acima background">
@@ -77,6 +98,7 @@ export class LoginPage extends Component {
                 Senha</legend>
                 <input className="form-control" id="idID" type="password" name="password" value={this.state.password} placeholder="Digite a senha aqui" onChange={(event) => this.handleUserInput(event)}/>
             </fieldset>
+            {error_message}
             <input type="submit" value="Entrar" onClick={this.handleSubmit}/>
           </form>
         </div>
