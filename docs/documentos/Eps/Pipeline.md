@@ -7,11 +7,14 @@ Data|Responsável|Versão|Alteração
 21/06/2018|Eduardo Júnio|1.2| Adição de tópicos de deploy e versionamento
 21/06/2018|Eduardo Júnio|2.0| Adição de modelo simplificado de processos
 22/06/2018|Eduardo Júnio|2.1| Adição de tópico de Ambiente de desenvolvimento
-
+25/06/2018|Eduardo Júnio|3.0| Refatoração de esquemático de pipeline e modelos de processo
 
 ## ℹ️ Objetivos
 
 <p align="justify">Este documento tem como objetivo apresentar uma estrutura que permita o fácil entendimento a respeito das etapas do pipeline do software Gerencia Mais desenvolvido durante as disciplinas de Engenharia de Produto de Software e Métodos de Desenvolvimento de Software do curso de Engenharia de Software da Universidade de Brasília.</p>
+
+## ℹ️ Comunicação e planejamento
+<p align="justify">Toda a parte de comunicação é feita por meio do software telegram ou via issues no próprio repositório do projeto. Alguns arquivos como : anotações de reuniões com clientes, quadros de pareamentos, técnicas de elicitação de requisitos entre outros, são mantidos também na plataforma google drive.</p>
 
 ## ℹ️ Ambiente de desenvolvimento
 
@@ -25,16 +28,15 @@ Data|Responsável|Versão|Alteração
 
 <p align="justify">O deploy da aplicação é feito de forma automatizada por meio da integração contínua (Travis CI) que é responsável por verificar a cobertura de testes e as dependências necessárias para o funcionamento correto da aplicação. Os estágios deste pipeline podem ser observados na imagem abaixo e nos passos descritos logo em seguida.</p>
 
-
-![Imgur](https://i.imgur.com/lYdATpc.png)
-
+![Imgur](https://i.imgur.com/wGNjU6t.png)
 
 ## ℹ️ Integração contínua
 
 - __Passo 1__<p align="justify">Para garantir que todas as dependência necessárias para o correto funcionamento do projeto estão funcionando como o esperado e que nenhum módulo do sistema possui erros, optou-se por incluir como "filtro" para a integração o ambiente de virtualização docker, dessa forma, ao ocorrer qualquer tipo de erro que impossibilite o funcionamento de algum módulo ou funcionalidade do sistema é indicado pela integração a falha no pipeline.</p>
 - __Passo 2__<p align="justify">Além de executar o docker com os objetivos apresentados na passo anterior, incluiu-se como filtro a cobertura de testes que são verificados pela integração a cada novo commit ou pull request. A cobertura de teste mínima para uma contribuição ser aceita é de 90% (noventa por cento), caso determinada contribuição diminua a porcentagem de teste, mesmo que essa esteja acima dos 90% estabelecidos como mínimo aceitável, a integração contínua apresenta um alerta de falha no pipeline e a contribuição não é integrada aos ambientes de homologação ou produção até que os testes necessários sejam realizados.</p>
-- __Passo 3__<p align="justify">Após a verficação dos passos anteriores e se essas verificações não apresentarem erros, uma nova versão do sistema é gerada e enviada aos servidores da aplicação que estão divididos em servidor de homologação e produção, o envio da nova versão para esses servidores é feita de acordo com a branch em que as alterações estão sendo inseridas. Para o ambiente de homologação utiza-se a branch "development" e para o ambiente de produção utiliza-se a branch "master". </p>
-- <p align="justify">Obs: Para as outras branchs, apenas os passos 1 e 2 citados nesse tópico são executados.</p>
+- __Passo 3__ <p align="justify">Após o término bem sucedido dos passos anteriores, são rodados ferramentas de análise estáticas (code climate e codacy) afim de verificar a qualidade do código que está sendo integrado ao sistema.</p>
+- __Passo 4__ <p align="justify">Após a verficação dos passos anteriores e se essas verificações não apresentarem erros, uma nova versão do sistema é gerada e enviada aos servidores da aplicação que estão divididos em servidor de homologação e produção, o envio da nova versão para esses servidores é feita de acordo com a branch em que as alterações estão sendo inseridas. Para o ambiente de homologação utiza-se a branch "development" e para o ambiente de produção utiliza-se a branch "master". </p>
+- <p align="justify">Obs: Para as outras branchs, apenas os passos 1, 2 e 3 citados nesse tópico são executados. </p>
 
 ## ℹ️ Monitoramento
 
@@ -50,5 +52,5 @@ Data|Responsável|Versão|Alteração
 
 ## ℹ️ Modelo simplificado de processos
 
-![Imgur](https://i.imgur.com/AnCUzwZ.png)
+![Imgur](https://i.imgur.com/XFkEHdA.png)
 
