@@ -16,6 +16,7 @@
 |15/04/2018 |1.3   |Corrigir erro do último tópico | Victor  |
 |16/04/2018 |1.4   |Corrigir erros ortográficos | João Vitor  |
 |16/04/2018 |1.5   |Atualização das informações do documento | Guilherme Aguiar |
+|25/06/2018 |1.6   |Atualização do diagrama de classes | Caio César, João Victor |
 
 # Sumário
 1. [Introdução](#1)

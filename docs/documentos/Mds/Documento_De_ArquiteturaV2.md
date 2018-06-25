@@ -1,6 +1,4 @@
-# Documento de Arquitetura
-
-## Controle de versão:
+# Controle de versão:
 
 |Data         |Versão|Descrição                              |Autor               |
 |---        |---   |---                                    |---                 |
@@ -17,11 +15,10 @@
 |15/04/2018 |1.2   |Mudança do nome do projeto| Victor |
 |15/04/2018 |1.3   |Corrigir erro do último tópico | Victor  |
 |16/04/2018 |1.4   |Corrigir erros ortográficos | João Vitor  |
-|24/06/2018 |1.5   |Atualização do diagrama de classes | Caio Beleza, João Vitor  |
+|16/04/2018 |1.5   |Atualização das informações do documento | Guilherme Aguiar |
+|25/06/2018 |1.6   |Atualização do diagrama de classes | Caio César, João Victor |
 
-
-
-## Sumário
+# Sumário
 1. [Introdução](#1)
   * 1.1 [Finalidade](#1.1)
   * 1.2 [Escopo](#1.2)
@@ -39,52 +36,54 @@
 5. [Visão Lógica](#5)
   * 5.1 [Visão Geral](#5.1)
   * 5.2 [Visão de Implantação](#5.2)
-  * 5.3 [Pacotes de Design Significativos do Ponto de Vista da Arquitetura](#5.3)  
+  * 5.3 [Diagrama de classes](#5.3)  
 6. [Desempenho](#6)
 7. [Qualidade](#7)
 
-## 1.  Introdução
+___
 
-### 1.1. Finalidade
+## <a name="1"></a>1.  Introdução
 
-Neste documento será apresentada a visão arquitetônica sobre a aplicação webapp de Gerencia mais- GM, com a finalidade de elucidar, explicar e formalizar como será modelada a arquitetura do software, tendo como base diferentes características do projeto para justificar as decisões tomadas pelos desenvolvedores.
+### <a name="1.1"></a>1.1. Finalidade
 
-### 1.2. Escopo
+<p>Neste documento será apresentada a visão arquitetônica sobre a aplicação webapp de Gerencia mais- GM, com a finalidade de elucidar, explicar e formalizar como será modelada a arquitetura do software, tendo como base diferentes características do projeto para justificar as decisões tomadas pelos desenvolvedores.<p>
 
-Este documento tem como objetivo documentar a arquitetura a ser implementada no software, guiando os desenvolvedores na construção do projeto que auxilia o gerenciamento de servidores, recursos médicos e recursos físicos do Hospital Regional do Gama - HRG.
+### <a name="1.2"></a>1.2. Escopo
 
-### 1.3. Definições, acrônimos e abreviações
+<p> Este documento tem como objetivo documentar a arquitetura a ser implementada no software, guiando os desenvolvedores na construção do projeto que auxilia o gerenciamento médicos do Hospital Regional do Gama - HRG.  <p>
+
+### <a name="1.3"></a>1.3. Definições, acrônimos e abreviações
 
 * FGA - Faculdade do Gama.
-
+<br>
 * UnB - Universidade de Brasília.
-
+<br>
 * EPS - Engenharia de Projeto de Software.
-
+<br>
 * GM - Gerencia Mais
-
+<br>
 * Servidores - A quem compete prescrever medicamentos, exames e recomendações de saúde.
-
+<br>
 * Recursos médicos - Equipamentos tais como seringas, luvas, remédios.
-
+<br>
 * Recursos físicos - Salas de consulta, salas de cirurgia.
-
+<br>
 * HRG - Hospital Regional do Gama.
+<br>
 
-### 1.4 Referências
+### <a name="1.4"></a>1.4 Referências
 
 * Como documentar a Arquitetura de Software. Disponível em: http://www.linhadecodigo.com.br/artigo/3343/como-documentar-a-arquitetura-de-software.aspx. Acesso em: 27 mar. 2018;
-
+<br>
 * FREIRE, Thiago; OLIVEIRA, Rodrigo; MORENO, Augusto; NASCIMENTO, Josué; AUGUSTO, Marcelo. Projeto WikiLegis: Documento de Arquitetura. Disponível em: https://github.com/fga-gpp-mds/2016.2-WikiLegis/wiki/Documento-de-Arquitetura. Acesso em 27 mar. 2018;
-
+<br>
 * SILVA, Ana; DINIZ, Arthur; OLIVEIRA, Bruna; SILVA, Guilherme; LACERDA, GuilhermE. Projeto Trezentos: Documento de Arquitetura. Disponível em: https://github.com/fga-gpp-mds/2017.1-Trezentos/wiki/Documento-de-Arquitetura. Acesso em 27 mar. 2018;
-
+<br><
 * BATISTA, Matheus; ARAÚJO, Igor; WILLER, Guilherme; OLIVEIRA, Vinícius; BARCELOS, Filipe; SOUSA, André. Projeto Escola X: Documento de Arquitetura. Disponível em: https://github.com/fga-gpp-mds/2017.1-Escola-X/wiki/Documento-de-Arquitetura. Acesso em 27 mar. 2018;
-
+<br>
 * BORGES, Felipe; HIROSHI, Lucas; MARQUES, Guilherme; KISHIMA, Lucas; NASCIMENTO, Mateus; MARTINS, Michel; MARIA, Natália; Projeto Receituário Médico: Documento de Arquitetura. Disponível em: https://github.com/fga-gpp-mds/2017.2-Receituario-Medico/wiki/Documento-de-Arquitetura. Acesso em 27 mar. 2018.
 
-
-## 1.5 Visão Geral
+### <a name="1.5"></a>1.5 Visão Geral
 
 Este documento é dividido nas seguintes secções:
 
@@ -106,7 +105,7 @@ Este documento é dividido nas seguintes secções:
 
 ____
 
-## 2. Representação da Arquitetura
+## <a name="2"></a>2. Representação da Arquitetura
 
 O modelo de arquitetura MVC (model , view, controller) proporciona aos desenvolvedores uma manutenção mais fácil e o maior reaproveitamento de classes em partes do projeto no futuro. Esse modelo é muito adotado em projetos web assim como em projetos que demandam uma grande manutenibilidade nos seus códigos. A seguir estão as funções de cada uma das camadas do modelo:
   - *Model*: É responsável pela gerência de dados, as lógicas e as regras de negócios relacionado ao banco de dados do sistema da aplicação.
@@ -124,17 +123,19 @@ O framework usado como backend do nosso *webapp*, o Django, é baseado no modelo
 - *View*: A view no caso do Django faz o papel da controller uma vez que ela é quem faz as interações entre a model e a template. Neste caso as ações que ocorrerão no template serão passadas pelo Rest framework para o react que também fará o papel intermediário entre model e template.
 
 
+  ![Documento de Arquitetura][logo]
+
   <img src="{{ site.baseurl }}/documentos/imagens/Documento_de_arquitetura/snippod-boilerplate-stack.png">
   "Documento de Arquitetura"
   Figura 1- Diagrama do um MTV com react, retirado no site em 27/03/2018.
 
+  ___
 
-  ## 3. Metas e Restrições da arquitetura
-
-  ### 3.1 Metas
+  ## <a name="3"></a>3. Metas e Restrições da arquitetura
+  ### <a name="3.1"></a>3.1 Metas
   O sistema a ser desenvolvido deve ter uma interface amigável ao usuário, responder as requisições em poucos segundos, além de seguir um padrão de arquitetura que ajude na manutenibilidade do software.
 
-  ### 3.2 Restrições
+  ### <a name="3.2"></a>3.2 Restrições
   Este sistema será desenvolvido ultilizando o framework Django 2.0.3, que tem como base a linguagem de programação python. Além disso, será utilizado o React 16.2.0, que estará voltado ao frontend da nossa aplicação.
   O sistema será suportado por navegadores web tais como Mozilla Firefox e Google Chrome.
 
@@ -142,21 +143,22 @@ O framework usado como backend do nosso *webapp*, o Django, é baseado no modelo
 
 
 
-## 4.  Visão de Casos de Uso
+## <a name="4"></a>4.  Visão de Casos de Uso
 
 Nosso software vai manipular informações relacionadas aos médicos do hospital regional do Gama, logo a quantidade de dados que devemos processar é mediana, então o sistema não deverá ter dificuldade na manipulação dos dados. O desempenho dependerá também do aparelho que o sistema será usado e pelo navegador.
 
-## 4.1  Atores
+## <a name="4.1"></a>4.1  Atores
 
 | Ator| Descrição |
 |-|-|
 | Administrador da Plataforma (Servidor) | O administrador da plataforma será capaz de acessar as funcionalidades do aplicativo web. Eles farão o cadastro de médicos na tabela, podendo alterar seu status a qualquer momento e também visualizar a tabela. |
 
-## 4.2  Diagrama de Casos de Uso
+## <a name="4.2"></a>4.2  Diagrama de Casos de Uso
 
-<img src="https://i.imgur.com/tqp3Swb.png">
+<img src="{{ site.baseurl }}/documentos/imagens/Documento_de_arquitetura/casosdeuso2.png">
 
-## 4.3  Descrições de Casos de Uso
+
+## <a name="4.3"></a>4.3  Descrições de Casos de Uso
 
 | Caso de Uso | Descrição |
 | - | - |
@@ -165,14 +167,16 @@ Nosso software vai manipular informações relacionadas aos médicos do hospital
 | UC03 - Atualizar status do médico | Este caso permite ao administrador atualizar o status de disponibilidade do médico. |
 | UC04 - Visualizar tabela | Este caso permite ao administrador visualizar a tabela de horários de acordo com os dados passados anteriormente. |
 | UC05 - Realizar Login | Este caso permite ao administrador a realização de login e logout, ou seja, permite a entrada e saída do sistema. |
+| UC06 - Gerar PDF do Quadro Horário | Este caso permite ao administrador, a partir do quadro de horários, criar e fazer o download de uma versão PDF do mesmo. |
+| UC07 - Enviar Quadro Horário Para o Médico | Este caso permite ao administrador selecionar um médico e enviar seu quadro horário particular para o email cadastrado do médico escolhido. |
+  ___
+## <a name="5"></a>5.  Visão Lógica
 
-## 5.  Visão Lógica
-
-## 5.1  Visão Geral
+## <a name="5.1"></a>5.1  Visão Geral
 
 As principais classes do ponto de vista da arquitetura do software e as implementações das funcionalidades são divididas pacotes que representam as camadas do modelo MTV, no caso, com o react substituindo o template padrão do Django. A divisão em pacotes está representada no diagrama abaixo.
 
-## 5.2  Visão de Implantação
+## <a name="5.2"></a>5.2  Visão de Implantação
 
 Visão geral da aplicação do ponto de vista de pacotes e aplicativos dentro da arquitetura do sistema.
 
@@ -180,14 +184,14 @@ Visão geral da aplicação do ponto de vista de pacotes e aplicativos dentro da
 
 ## <a name="5.3"></a>5.3  Diagrama de Classes
 
-<img src="https://i.imgur.com/rsbDkYd.png">
+<img src="{{ site.baseurl }}/documentos/imagens/Documento_de_arquitetura/classdiagram.png">
 
-## 6.  Desempenho
+## <a name="6"></a>6.  Desempenho
 
-Nosso software irá manipular informações relacionadas aos médicos do hospital regional do Gama, logo a quantidade de dados que devemos processar é mediana, então o sistema não deverá ter dificuldade na manipulação dos dados. O desempenho dependerá também do aparelho que o sistema será usado e pelo navegador.
+Nosso software vai manipular informações relacionadas aos médicos do hospital regional do Gama, logo a quantidade de dados que devemos processar é mediana, então o sistema não deverá ter dificuldade na manipulação dos dados. O desempenho dependerá também do aparelho que o sistema será usado e pelo navegador.
 
+___
 
-
-## 7.  Qualidade
+## <a name="7"></a>7.  Qualidade
 
 O padrão de arquitetura MVT organiza as camadas da aplicação de forma que elas se tornem mais independentes, proporcionando aos desenvolvedores uma manutenção mais fácil e o maior reaproveitamento de classes em partes do projeto no futuro. O uso do React proporciona uma grande reusabilidade dos componentes, evitando problemas de repetição no código, apesar de que a reusabilidade não pode ser obtida apenas por meio de tecnologia, ela exige processos implementados de forma consistente entre as equipes e compromisso em todos os níveis de uma organização.
