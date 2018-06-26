@@ -34,7 +34,7 @@ class EventDetailAPIView(generics.RetrieveAPIView):
     lookup_field = 'id'
 
 class EventDoctorListAPIView(generics.ListAPIView):
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
     queryset = Event.objects.all()
     serializer_class = EventSerializer
     filter_backends = (DjangoFilterBackend,)

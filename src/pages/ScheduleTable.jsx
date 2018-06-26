@@ -78,8 +78,11 @@ export default class ScheduleTable extends Component {
 
     async componentDidMount() {
         try {
+          const conf = {
+            headers: new Headers({"Authorization": "Token " + store.getState().status})
+          };
           const name = "http://localhost:8000/doctor/api-doctor/";
-          const res = await fetch(name);
+          const res = await fetch(name, conf);
           console.log(res);
           const allDoctors = await res.json();
           this.setState({allDoctors});
@@ -102,9 +105,12 @@ export default class ScheduleTable extends Component {
 
     async componentDidMount2() {
         try {
+          const conf = {
+            headers: new Headers({"Authorization": "Token " + store.getState().status})
+          };
           this.state.allDoctors = [];
           const name = "http://localhost:8000/doctor/api-doctor/list-doctor/category/?category="+this.state.category;
-          const res = await fetch(name);
+          const res = await fetch(name,conf);
           console.log(res);
           const allDoctors = await res.json();
           this.setState({allDoctors});

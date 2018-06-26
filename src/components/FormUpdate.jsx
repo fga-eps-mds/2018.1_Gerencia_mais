@@ -30,8 +30,10 @@ export default class FormUpdate extends Component {
 
   async componentDidMount2() {
       try {
-
-        const res = await fetch("http://localhost:8000/subtitle/api-subtitle/");
+        const conf = {
+          headers: new Headers({"Authorization": "Token " + store.getState().status})
+        };
+        const res = await fetch("http://localhost:8000/subtitle/api-subtitle/", conf);
         const all_subtitle = await res.json();
         console.log(all_subtitle);
         this.setState({all_subtitle});
@@ -42,8 +44,10 @@ export default class FormUpdate extends Component {
 
     async componentDidMount3() {
         try {
-
-          const res = await fetch("http://localhost:8000/subtitle/api-subtitle/"+this.state.subtitle+'/');
+          const conf = {
+            headers: new Headers({"Authorization": "Token " + store.getState().status})
+          };
+          const res = await fetch("http://localhost:8000/subtitle/api-subtitle/"+this.state.subtitle+'/', conf);
           const load_subtitle = await res.json();
           console.log(load_subtitle);
           this.setState({load_subtitle});
@@ -54,8 +58,10 @@ export default class FormUpdate extends Component {
 
   async componentDidMount() {
       try {
-
-        const res = await fetch("http://localhost:8000/doctor/api-doctor/");
+        const conf = {
+          headers: new Headers({"Authorization": "Token " + store.getState().status})
+        };
+        const res = await fetch("http://localhost:8000/doctor/api-doctor/",conf);
         const all_doctors = await res.json();
         console.log(all_doctors);
         this.setState({all_doctors});

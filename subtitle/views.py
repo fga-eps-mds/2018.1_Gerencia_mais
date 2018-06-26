@@ -9,11 +9,11 @@ from subtitle.serializer import (
 from rest_framework import generics
 
 from rest_framework.permissions import (
-    AllowAny,
+    AllowAny, IsAuthenticated
 )
 
 class ListSubtitles(generics.ListCreateAPIView):
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
     queryset = Subtitles.objects.all()
     serializer_class = SubtitlesSerializer
 
@@ -23,7 +23,7 @@ class CreateSubtitles(generics.CreateAPIView):
     serializer_class = SubtitlesCreateUpdateSerializer
 
 class ListDetailSubtitles(generics.RetrieveAPIView):
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
     queryset = Subtitles.objects.all()
     serializer_class = SubtitlesSerializer
     lookup_field = 'id'
