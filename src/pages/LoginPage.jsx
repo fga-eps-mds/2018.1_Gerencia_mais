@@ -55,7 +55,7 @@ export class LoginPage extends Component {
         console.log(store.getState());
         this.props.history.push("/ScheduleTable");
       } else{
-          store.dispatch(isLogged("false"));
+          store.dispatch(isLogged(false));
           this.setState({'valid':false});
 
         };

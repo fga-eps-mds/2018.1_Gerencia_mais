@@ -3,7 +3,7 @@ import {
 } from '../actions/actions'
 
 let initalState = {
-  status: "false"
+  status: false
 }
 
 export default function loggin(state = initalState, action){
