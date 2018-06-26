@@ -58,6 +58,8 @@ export default class ScheduleTable extends Component {
         weekDoctors:[],
         category : "",
         turns: [],
+        emails:{'sended':0,
+                'error':0,},
         turnStart: [
           ["manhã",6],
           ["tarde",12],
@@ -151,13 +153,14 @@ export default class ScheduleTable extends Component {
         ))
       }
 
-      onClick(){
-        this.setState({smEmailShow: true, message: "Carregando..."})
-        this.state.allDoctors.map(each => (
+    async  onClick(){
+        await this.setState({smEmailShow: true, message: "Carregando..."})
+        await this.state.allDoctors.map(each => (
           this.state.submitDoctor["email"] = each.email,
           this.makeListEvents(each.id),
           this.submitEmail()
         ));
+        await this.setState({'emails':{'sended':0, 'error':0}});
       }
 
       async submitEmail(e){
@@ -171,21 +174,23 @@ export default class ScheduleTable extends Component {
           headers: new Headers({ "Content-Type": "application/x-www-form-urlencoded",
                                  "Access-Control-Allow-Origin": "*",})
         };
-        var valid = false;
+        var isvalid = false;
         await fetch("https://notificamais.herokuapp.com/notifyEvent/data_mensage", conf).then(function(response){
-          console.log(response.status);
           if (response.status === 0) {
-            valid = true;
-          }else {
-            valid = false;
+            isvalid = true;
           }
-          console.log(response);
+          else {
+            isvalid = false;
+          }
         });
-        if (valid) {
-          this.setState({message: "Enviado!"});
-        }else {
-          this.setState({message: "Erro ao enviar email!"});
+        if(isvalid){
+          this.state.emails['sended'] = this.state.emails['sended'] + 1;
         }
+        else{
+          this.state.emails['error'] = this.state.emails['error'] + 1;
+        }
+
+        await this.setState({'message': "Enviados: " + this.state.emails["sended"] + " Não enviados: " + this.state.emails["error"]});
         this.state.submitDoctor ={
           "email":"",
           "segunda":"",
