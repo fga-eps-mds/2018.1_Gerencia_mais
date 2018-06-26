@@ -31,7 +31,7 @@ export default class Form extends Component {
   async componentDidMount2() {
       try {
 
-        const res = await fetch("http://localhost:8000/subtitle/api-subtitle/");
+        const res = await fetch("https://gicsaude.herokuapp.com/subtitle/api-subtitle/");
         const allSubtitle = await res.json();
         console.log(res);
         this.setState({allSubtitle});
@@ -43,7 +43,7 @@ export default class Form extends Component {
     async componentDidMount3() {
         try {
 
-          const res = await fetch("http://localhost:8000/subtitle/api-subtitle/"+this.state.subtitle+'/');
+          const res = await fetch("https://gicsaude.herokuapp.com/subtitle/api-subtitle/"+this.state.subtitle+'/');
           const load_subtitle = await res.json();
           console.log(res);
           this.setState({load_subtitle});
@@ -55,7 +55,7 @@ export default class Form extends Component {
   async componentDidMount() {
       try {
 
-        const res = await fetch("http://localhost:8000/doctor/api-doctor/");
+        const res = await fetch("https://gicsaude.herokuapp.com/doctor/api-doctor/");
         const all_doctors = await res.json();
         console.log(res);
         this.setState({all_doctors});
@@ -117,7 +117,7 @@ export default class Form extends Component {
       headers: new Headers({ "Content-Type": "application/json",
                               "Authorization": "Token " + store.getState().status})
     };
-    fetch("http://localhost:8000/schedule/api-event/", conf).then(response => (console.log(response)));
+    fetch("https://gicsaude.herokuapp.com/schedule/api-event/", conf).then(response => (console.log(response)));
     this.setState({"isValid":true});
     this.redirectPage();
 }

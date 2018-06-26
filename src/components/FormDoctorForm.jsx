@@ -33,7 +33,7 @@ export default class FormDoctorForm extends Component {
         const conf = {
           headers: new Headers({"Authorization": "Token " + store.getState().status})
         };
-        const res = await fetch("http://localhost:8000/subtitle/api-subtitle/", conf);
+        const res = await fetch("https://gicsaude.herokuapp.com/subtitle/api-subtitle/", conf);
         const allSubtitle = await res.json();
         console.log(allSubtitle);
         this.setState({allSubtitle});
@@ -47,7 +47,7 @@ export default class FormDoctorForm extends Component {
           const conf = {
             headers: new Headers({"Authorization": "Token " + store.getState().status})
           };
-          const res = await fetch("http://localhost:8000/subtitle/api-subtitle/"+this.state.subtitle+'/', conf);
+          const res = await fetch("https://gicsaude.herokuapp.com/subtitle/api-subtitle/"+this.state.subtitle+'/', conf);
           const load_subtitle = await res.json();
           console.log(load_subtitle);
           this.setState({load_subtitle});
@@ -61,7 +61,7 @@ export default class FormDoctorForm extends Component {
         const conf = {
           headers: new Headers({"Authorization": "Token " + store.getState().status})
         };
-        const res = await fetch("http://localhost:8000/doctor/api-doctor/",conf);
+        const res = await fetch("https://gicsaude.herokuapp.com/doctor/api-doctor/",conf);
         const all_doctors = await res.json();
         console.log(all_doctors);
         this.setState({all_doctors});
@@ -122,7 +122,7 @@ export default class FormDoctorForm extends Component {
                               "Authorization": "Token " + store.getState().status})
     };
     console.log("Token " + store.getState().status);
-    fetch("http://localhost:8000/schedule/api-event/", conf).then(response => (console.log(response)));
+    fetch("https://gicsaude.herokuapp.com/schedule/api-event/", conf).then(response => (console.log(response)));
     this.setState({"isValid":true});
     this.redirectPage();
 }

@@ -33,7 +33,7 @@ export default class FormUpdate extends Component {
         const conf = {
           headers: new Headers({"Authorization": "Token " + store.getState().status})
         };
-        const res = await fetch("http://localhost:8000/subtitle/api-subtitle/", conf);
+        const res = await fetch("https://gicsaude.herokuapp.com/subtitle/api-subtitle/", conf);
         const all_subtitle = await res.json();
         console.log(all_subtitle);
         this.setState({all_subtitle});
@@ -47,7 +47,7 @@ export default class FormUpdate extends Component {
           const conf = {
             headers: new Headers({"Authorization": "Token " + store.getState().status})
           };
-          const res = await fetch("http://localhost:8000/subtitle/api-subtitle/"+this.state.subtitle+'/', conf);
+          const res = await fetch("https://gicsaude.herokuapp.com/subtitle/api-subtitle/"+this.state.subtitle+'/', conf);
           const load_subtitle = await res.json();
           console.log(load_subtitle);
           this.setState({load_subtitle});
@@ -61,7 +61,7 @@ export default class FormUpdate extends Component {
         const conf = {
           headers: new Headers({"Authorization": "Token " + store.getState().status})
         };
-        const res = await fetch("http://localhost:8000/doctor/api-doctor/",conf);
+        const res = await fetch("https://gicsaude.herokuapp.com/doctor/api-doctor/",conf);
         const all_doctors = await res.json();
         console.log(all_doctors);
         this.setState({all_doctors});
@@ -122,7 +122,7 @@ export default class FormUpdate extends Component {
       headers: new Headers({ "Content-Type": "application/json",
                               "Authorization": "Token " + store.getState().status})
     };
-    fetch("http://localhost:8000/schedule/api-event/update/" + this.props.eventid + '/', conf).then(response => (console.log(response)));
+    fetch("https://gicsaude.herokuapp.com/schedule/api-event/update/" + this.props.eventid + '/', conf).then(response => (console.log(response)));
     this.setState({"is_valid":true});
     this.redirectPage();
 

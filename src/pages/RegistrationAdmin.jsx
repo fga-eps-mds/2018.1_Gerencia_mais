@@ -49,7 +49,7 @@ export default class RegistrationAdmin extends Component {
 
   async componentDidMount() {
     try {
-      const name = "http://localhost:8000/user/api-user/";
+      const name = "https://gicsaude.herokuapp.com/user/api-user/";
       const res = await fetch(name);
       const user = await res.json();
       this.setState({user});
@@ -79,7 +79,7 @@ export default class RegistrationAdmin extends Component {
       body: temp,
       headers: new Headers({"Content-Type": "application/json"})
     };
-    fetch("http://localhost:8000/user/api-user/create/", conf).then(response => (console.log(response)));
+    fetch("https://gicsaude.herokuapp.com/user/api-user/create/", conf).then(response => (console.log(response)));
     this.props.history.push("/LoginPage");
   }
 
