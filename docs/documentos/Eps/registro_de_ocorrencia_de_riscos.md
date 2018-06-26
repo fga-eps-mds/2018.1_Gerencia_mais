@@ -58,20 +58,33 @@ A partir do problema de usabilidade recente, um membro de MDS se dispôs a fazer
 * __Ocorrência__: Baixa produtividade da equipe.
 * __Ação__: A entrega de pontos na sprint em questão foi extremamente baixa, ou seja, diminuindo o velocity drasticamente. Desse modo sera feito a rotação do pareamento para equilibrar conhecimento.
 
+#### Relato de Ações da Sprint 6:
+Foi proposta a mudança de responsabilidade da parte da arquitetura, no entanto, permaneceu-se com o mesmo integrante, que se comprometeu a resolver esse problema, para que a parte arquitetural nao atrapalhe o andamento do projeto. Em relação ao escopo, a quipe marcou uma reunião com a cliente. Desse modo, foi possível se situar com relação aos requisitos, fazendo com que o projeto tenha um direcionamento correto.
+
+
 ### Sprint 8
 * __Ocorrência__: Baixa produtividade da equipe.
 * __Ação__: A entrega de pontos na sprint em questão foi extremamente baixa, ou seja, diminuindo o velocity drasticamente. Desse modo sera feito a rotação do pareamento para equilibrar conhecimento.
+
+#### Relato de Ações da Sprint 7:
+Devido a baixa produtividade e ausencia de certos integrantes, foi conversado individualmente de membro a membro com o SM, mostrando a importância da aplicação da metodologia na disciplina, ou em qualquer outro projeto que irão participar. Desse modo, os integrantes se comprometeram a trabalhar corretamente durante a semana e diminuir o número de débitos.
+
+
 
 ### Sprint 9
 * __Ocorrência__: A Equipe apresentar alta produtividade.
 * __Ação__: A partir desta ocorrência o velocity voltou para os padrões normais, evidênciando que a equipe aprensentou alta produtividade em relação a sprint anterios.
 
+#### Relato de Ações da Sprint 8:
+
+
 ### Sprint 10
 * __Ocorrência__: Membro da equipe ficar ausente.
 * __Ação__: Começou a ser conversado com cada integrante do grupo sobre sua seriedade. Desse modo um membro de EPs auxiliará nos serviços do membro ausente.
-
 * __Ocorrência__: O cliente mudar o escopo.
 * __Ação__: Para monitorar esse risco será marcada mais reuniões regulares durante a semana para confirmação do escopo.
+
+
 
 
 ### Sprint 11
@@ -80,6 +93,9 @@ A partir do problema de usabilidade recente, um membro de MDS se dispôs a fazer
 
 * __Ocorrência__: O cliente mudar o escopo.
 * __Ação__: Para monitorar esse risco será marcada mais reuniões regulares durante a semana para confirmação do escopo.
+
+
+
 
 ## #Sprint 12
 * __Ocorrência__: Impossibilidade de ocorrer reuniões presenciais ao fim das Sprints. Reunião ocorrou remotamente por meio da tecnologia Google Hangounts.
@@ -90,6 +106,8 @@ A partir do problema de usabilidade recente, um membro de MDS se dispôs a fazer
 
 ## Sprint 14
 
-Sem Ocorrencias
+__Sem ocorrencias__
 
 ## Sprint 15
+
+__Sem ocorrencias__
