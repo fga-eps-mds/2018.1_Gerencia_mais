@@ -83,7 +83,6 @@ export default class ScheduleTable extends Component {
           };
           const name = "https://gicsaude.herokuapp.com/doctor/api-doctor/";
           const res = await fetch(name, conf);
-          console.log(res);
           const allDoctors = await res.json();
           this.setState({allDoctors});
         } catch (e) {
@@ -111,7 +110,6 @@ export default class ScheduleTable extends Component {
           this.state.allDoctors = [];
           const name = "https://gicsaude.herokuapp.com/doctor/api-doctor/list-doctor/category/?category="+this.state.category;
           const res = await fetch(name,conf);
-          console.log(res);
           const allDoctors = await res.json();
           this.setState({allDoctors});
         } catch (e) {
@@ -129,7 +127,6 @@ export default class ScheduleTable extends Component {
             };
             const name = "https://gicsaude.herokuapp.com/schedule/api-event/";
             const res = await fetch(name,conf);
-            console.log(res);
             const allEvents = await res.json();
             this.setState({allEvents});
           } catch (e) {
@@ -163,7 +160,7 @@ export default class ScheduleTable extends Component {
         ));
       }
 
-      submitEmail = e => {
+      async submitEmail(e){
         const {email ,segunda, terca, quarta, quinta, sexta, sabado, domingo} = this.state.submitDoctor;
         const lead = {email ,segunda, terca, quarta, quinta, sexta, sabado, domingo}
         const temp = JSON.stringify(lead);
@@ -174,8 +171,17 @@ export default class ScheduleTable extends Component {
           headers: new Headers({ "Content-Type": "application/x-www-form-urlencoded",
                                  "Access-Control-Allow-Origin": "*",})
         };
-        var res = fetch("https://notificamais.herokuapp.com/notifyEvent/data_mensage", conf).then(response => console.log(response));
-        if (res.ok) {
+        var valid = false;
+        await fetch("https://notificamais.herokuapp.com/notifyEvent/data_mensage", conf).then(function(response){
+          console.log(response.status);
+          if (response.status === 0) {
+            valid = true;
+          }else {
+            valid = false;
+          }
+          console.log(response);
+        });
+        if (valid) {
           this.setState({message: "Enviado!"});
         }else {
           this.setState({message: "Erro ao enviar email!"});

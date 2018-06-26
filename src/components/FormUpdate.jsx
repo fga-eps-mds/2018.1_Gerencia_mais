@@ -103,12 +103,6 @@ export default class FormUpdate extends Component {
     })
   }
 
-  redirectPage(){
-    if(this.state.isValid === true){
-      window.location.href = '/ScheduleTable';
-      }
-  }
-
   async handleSubmit(e){
     this.state.start=this.state.start + "T" + this.state.time_start + "Z";
     this.state.end=this.state.end + "T" + this.state.time_end + "Z";
@@ -123,9 +117,6 @@ export default class FormUpdate extends Component {
                               "Authorization": "Token " + store.getState().status})
     };
     await fetch("https://gicsaude.herokuapp.com/schedule/api-event/update/" + this.props.eventid + '/', conf).then(response => (console.log(response)));
-    await this.setState({"is_valid":true});
-    await this.redirectPage();
-
 }
   render(){
     return(
