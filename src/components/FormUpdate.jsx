@@ -101,7 +101,7 @@ export default class FormUpdate extends Component {
   }
 
   reload(){
-    if(this.state.isValid === true){
+    if (this.state.isValid) {
       window.location.href = '/ScheduleTable';
     }
   }
@@ -119,10 +119,10 @@ export default class FormUpdate extends Component {
                               "Authorization": "Token " + store.getState().status})
     };
     fetch("https://gicsaude.herokuapp.com/schedule/api-event/update/" + this.props.eventid + '/', conf).then(response => (console.log(response)));
-    this.state.isValid = true;
+    this.setState({"isValid" : true});
     this.reload();
-
 }
+
   render(){
     return(
       <div>

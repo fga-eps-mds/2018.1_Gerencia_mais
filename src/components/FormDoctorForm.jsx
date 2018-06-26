@@ -43,9 +43,7 @@ export default class FormDoctorForm extends Component {
 
     async componentDidMount3() {
         try {
-          const conf = {
-            headers: new Headers({"Authorization": "Token " + store.getState().status})
-          };
+          const conf = {headers: new Headers({"Authorization": "Token " + store.getState().status})};
           const res = await fetch("https://gicsaude.herokuapp.com/subtitle/api-subtitle/"+this.state.subtitle+'/', conf);
           const load_subtitle = await res.json();
           this.setState({load_subtitle});
@@ -56,10 +54,8 @@ export default class FormDoctorForm extends Component {
 
   async componentDidMount() {
       try {
-        const conf = {
-          headers: new Headers({"Authorization": "Token " + store.getState().status})
-        };
-        const res = await fetch("https://gicsaude.herokuapp.com/doctor/api-doctor/",conf);
+        const confi = {headers: new Headers({"Authorization": "Token " + store.getState().status})};
+        const res = await fetch("https://gicsaude.herokuapp.com/doctor/api-doctor/",confi);
         const all_doctors = await res.json();
         this.setState({all_doctors});
       } catch (e) {

@@ -315,9 +315,6 @@ export default class ScheduleTable extends Component {
       }
 
       changeTable(tableNumber){
-        this.setState({
-          allEvents: [],
-        });
         if (tableNumber === 0) {
           this.setState({
           category : "",
@@ -329,10 +326,7 @@ export default class ScheduleTable extends Component {
           })
         }
         this.componentDidMount2();
-
-
     }
-
 
     listDoctorsHour(){
       var name,workload;
