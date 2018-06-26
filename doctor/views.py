@@ -8,12 +8,12 @@ from .serializer import (
 from rest_framework import generics
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.permissions import (
-    AllowAny,
+    AllowAny, IsAuthenticated
 )
 
 
 class ListDoctor(generics.ListAPIView):
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
     queryset = Doctors.objects.all()
     serializer_class = DoctorListSerializer
 
@@ -35,7 +35,7 @@ class UpdateDoctorAPI(generics.RetrieveUpdateAPIView):
     lookup_field = 'registration'
 
 class ListDoctorCategory(generics.ListAPIView):
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
     queryset = Doctors.objects.all()
     serializer_class = DoctorSerializer
     filter_backends = (DjangoFilterBackend,)

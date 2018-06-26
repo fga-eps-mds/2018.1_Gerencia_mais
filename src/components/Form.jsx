@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../css/bootstrap.css';
 import '../css/DoctorForm.css';
+import {store} from "../components/store"
 
 var date = new Date().toISOString();
 export default class Form extends Component {
@@ -113,7 +114,8 @@ export default class Form extends Component {
     const conf = {
       method: "POST",
       body: temp,
-      headers: new Headers({ "Content-Type": "application/json" })
+      headers: new Headers({ "Content-Type": "application/json",
+                              "Authorization": "Token " + store.getState().status})
     };
     fetch("https://gicsaude.herokuapp.com/schedule/api-event/", conf).then(response => (console.log(response)));
     this.setState({"isValid":true});

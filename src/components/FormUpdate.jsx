@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../css/bootstrap.css';
 import '../css/DoctorForm.css';
+import {store} from "../components/store"
 
 var date = new Date().toISOString();
 export default class FormUpdate extends Component {
@@ -29,8 +30,10 @@ export default class FormUpdate extends Component {
 
   async componentDidMount2() {
       try {
-
-        const res = await fetch("https://gicsaude.herokuapp.com/subtitle/api-subtitle/");
+        const conf = {
+          headers: new Headers({"Authorization": "Token " + store.getState().status})
+        };
+        const res = await fetch("https://gicsaude.herokuapp.com/subtitle/api-subtitle/", conf);
         const all_subtitle = await res.json();
         console.log(all_subtitle);
         this.setState({all_subtitle});
@@ -41,8 +44,10 @@ export default class FormUpdate extends Component {
 
     async componentDidMount3() {
         try {
-
-          const res = await fetch("https://gicsaude.herokuapp.com/subtitle/api-subtitle/"+this.state.subtitle+'/');
+          const conf = {
+            headers: new Headers({"Authorization": "Token " + store.getState().status})
+          };
+          const res = await fetch("https://gicsaude.herokuapp.com/subtitle/api-subtitle/"+this.state.subtitle+'/', conf);
           const load_subtitle = await res.json();
           console.log(load_subtitle);
           this.setState({load_subtitle});
@@ -53,8 +58,10 @@ export default class FormUpdate extends Component {
 
   async componentDidMount() {
       try {
-
-        const res = await fetch("https://gicsaude.herokuapp.com/doctor/api-doctor/");
+        const conf = {
+          headers: new Headers({"Authorization": "Token " + store.getState().status})
+        };
+        const res = await fetch("https://gicsaude.herokuapp.com/doctor/api-doctor/",conf);
         const all_doctors = await res.json();
         console.log(all_doctors);
         this.setState({all_doctors});
@@ -112,7 +119,8 @@ export default class FormUpdate extends Component {
     const conf = {
       method: "PUT",
       body: temp,
-      headers: new Headers({ "Content-Type": "application/json" })
+      headers: new Headers({ "Content-Type": "application/json",
+                              "Authorization": "Token " + store.getState().status})
     };
     fetch("https://gicsaude.herokuapp.com/schedule/api-event/update/" + this.props.eventid + '/', conf).then(response => (console.log(response)));
     this.setState({"is_valid":true});
