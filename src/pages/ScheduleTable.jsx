@@ -165,7 +165,7 @@ export default class ScheduleTable extends Component {
 
       async submitEmail(e){
         const {email ,segunda, terca, quarta, quinta, sexta, sabado, domingo} = this.state.submitDoctor;
-        const lead = {email ,segunda, terca, quarta, quinta, sexta, sabado, domingo}
+        const lead = {email,segunda,terca,quarta,quinta,sexta,sabado,domingo}
         const temp = JSON.stringify(lead);
         const conf = {
           method: "POST",

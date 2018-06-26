@@ -43,7 +43,7 @@ export default class FormUpdate extends Component {
 
     async componentDidMount3() {
         try {
-          const conf = {
+          const confi = {
             headers: new Headers({"Authorization": "Token " + store.getState().status})
           };
           const res = await fetch("https://gicsaude.herokuapp.com/subtitle/api-subtitle/"+this.state.subtitle+'/', conf);
