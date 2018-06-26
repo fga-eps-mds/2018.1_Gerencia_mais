@@ -7,7 +7,7 @@ import { store } from './store'
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
-    store.getState().status === true
+    store.getState().status !== "false"
       ? <Component {...props} />
     : <Redirect to='/LoginPage' />
   )} />

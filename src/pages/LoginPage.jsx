@@ -20,7 +20,7 @@ export class LoginPage extends Component {
   async componentDidMount() {
     try {
 
-      const res = await fetch("https://gicsaude.herokuapp.com/user/api-user");
+      const res = await fetch("http://localhost:8000/user/api-user");
       const toDos = await res.json();
       this.setState({toDos});
     } catch (e) {
@@ -47,13 +47,15 @@ export class LoginPage extends Component {
       body: temp,
       headers: new Headers({"Content-Type": "application/json"})
     };
-    fetch("https://gicsaude.herokuapp.com/user/obtain-auth-token/", conf).then(res => res.json()).then(res => {
+    fetch("http://localhost:8000/user/obtain-auth-token/", conf).then(res => res.json()).then(res => {
       let token = res.token;
+      console.log(token);
       if (res.non_field_errors == null && res.token != null) {
-        store.dispatch(isLogged(true));
+        store.dispatch(isLogged(token));
+        console.log(store.getState());
         this.props.history.push("/ScheduleTable");
       } else{
-          store.dispatch(isLogged(false));
+          store.dispatch(isLogged("false"));
           this.setState({'valid':false});
 
         };

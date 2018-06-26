@@ -34,7 +34,7 @@ export default class ModalComponent extends React.Component {
 
   async componentDidMount4() {
     try {
-      const name = "https://gicsaude.herokuapp.com/doctor/api-doctor/list-doctor/category/?name=" + this.props.currentdoctor;
+      const name = "http://localhost:8000/doctor/api-doctor/list-doctor/category/?name=" + this.props.currentdoctor;
       const res = await fetch(name);
       console.log(res);
       const doctor = await res.json();
@@ -52,7 +52,7 @@ export default class ModalComponent extends React.Component {
     var newEnd = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
     var resultEnd = newEnd.toISOString();
     try {
-      const name = "https://gicsaude.herokuapp.com/schedule/api-event/list-doctor/?doctor=" + this.state.currentDoctorId + '&start=' + resultStart + '&end=' + resultEnd;
+      const name = "http://localhost:8000/schedule/api-event/list-doctor/?doctor=" + this.state.currentDoctorId + '&start=' + resultStart + '&end=' + resultEnd;
       const res = await fetch(name);
       console.log(res);
       const doctorEventsList = await res.json();

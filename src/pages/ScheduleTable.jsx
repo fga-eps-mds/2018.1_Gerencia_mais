@@ -10,6 +10,7 @@ import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import Workload from "../components/Workload";
 import Loading from "../components/Loading";
+import {store} from "../components/store"
 
 moment.updateLocale("pt-gb", {
   week : {
@@ -77,7 +78,7 @@ export default class ScheduleTable extends Component {
 
     async componentDidMount() {
         try {
-          const name = "https://gicsaude.herokuapp.com/doctor/api-doctor/";
+          const name = "http://localhost:8000/doctor/api-doctor/";
           const res = await fetch(name);
           console.log(res);
           const allDoctors = await res.json();
@@ -102,7 +103,7 @@ export default class ScheduleTable extends Component {
     async componentDidMount2() {
         try {
           this.state.allDoctors = [];
-          const name = "https://gicsaude.herokuapp.com/doctor/api-doctor/list-doctor/category/?category="+this.state.category;
+          const name = "http://localhost:8000/doctor/api-doctor/list-doctor/category/?category="+this.state.category;
           const res = await fetch(name);
           console.log(res);
           const allDoctors = await res.json();
@@ -117,8 +118,11 @@ export default class ScheduleTable extends Component {
 
       async componentDidMount1() {
           try {
-            const name = "https://gicsaude.herokuapp.com/schedule/api-event/";
-            const res = await fetch(name);
+            const conf = {
+              headers: new Headers({"Authorization": "Token " + store.getState().status})
+            };
+            const name = "http://localhost:8000/schedule/api-event/";
+            const res = await fetch(name,conf);
             console.log(res);
             const allEvents = await res.json();
             this.setState({allEvents});
@@ -162,7 +166,7 @@ export default class ScheduleTable extends Component {
           body: temp,
           mode: "no-cors",
           headers: new Headers({ "Content-Type": "application/x-www-form-urlencoded",
-                                 "Access-Control-Allow-Origin": "*"})
+                                 "Access-Control-Allow-Origin": "*",})
         };
         var res = fetch("https://notificamais.herokuapp.com/notifyEvent/data_mensage", conf).then(response => console.log(response));
         if (res.ok) {
@@ -441,6 +445,7 @@ export default class ScheduleTable extends Component {
     }
 
     render(){
+
         let smClose = () => this.setState({ smShow: false });
         let formClose = () => this.setState({ formShow: false });
         let smLocalClose = () => this.setState({ smLocalShow: false });
@@ -489,7 +494,7 @@ export default class ScheduleTable extends Component {
                         <Workload show={this.state.smLocalShow} onHide={smLocalClose} doctors={this.state.doctorsWorkload}/>
                         <Loading show={this.state.smEmailShow} onHide={smEmailClose} message={this.state.message}/>
                         <Button className="btn btn-outline-primary" onClick={() => this.setState({smLocalShow: true})}>Carga Horária</Button>
-                        <a href={"https://gicsaude.herokuapp.com/schedule/generate-pdf/" + (moment(this.state.currentDate).month()+1) } target="_blank_" className="btn btn-outline-primary">Gerar PDF Mensal</a>
+                        <a href={"http://localhost:8000/schedule/generate-pdf/" + (moment(this.state.currentDate).month()+1) } target="_blank_" className="btn btn-outline-primary">Gerar PDF Mensal</a>
                         <a href={"/schedule/generate-xlsx/" + (moment(this.state.currentDate).month()+1) } target="_blank_" className="btn btn-outline-primary">Gerar XLSX Mensal</a>
                         {button}
                         <br></br>

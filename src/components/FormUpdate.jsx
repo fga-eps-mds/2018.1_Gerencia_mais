@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../css/bootstrap.css';
 import '../css/DoctorForm.css';
+import {store} from "../components/store"
 
 var date = new Date().toISOString();
 export default class FormUpdate extends Component {
@@ -30,7 +31,7 @@ export default class FormUpdate extends Component {
   async componentDidMount2() {
       try {
 
-        const res = await fetch("https://gicsaude.herokuapp.com/subtitle/api-subtitle/");
+        const res = await fetch("http://localhost:8000/subtitle/api-subtitle/");
         const all_subtitle = await res.json();
         console.log(all_subtitle);
         this.setState({all_subtitle});
@@ -42,7 +43,7 @@ export default class FormUpdate extends Component {
     async componentDidMount3() {
         try {
 
-          const res = await fetch("https://gicsaude.herokuapp.com/subtitle/api-subtitle/"+this.state.subtitle+'/');
+          const res = await fetch("http://localhost:8000/subtitle/api-subtitle/"+this.state.subtitle+'/');
           const load_subtitle = await res.json();
           console.log(load_subtitle);
           this.setState({load_subtitle});
@@ -54,7 +55,7 @@ export default class FormUpdate extends Component {
   async componentDidMount() {
       try {
 
-        const res = await fetch("https://gicsaude.herokuapp.com/doctor/api-doctor/");
+        const res = await fetch("http://localhost:8000/doctor/api-doctor/");
         const all_doctors = await res.json();
         console.log(all_doctors);
         this.setState({all_doctors});
@@ -112,9 +113,10 @@ export default class FormUpdate extends Component {
     const conf = {
       method: "PUT",
       body: temp,
-      headers: new Headers({ "Content-Type": "application/json" })
+      headers: new Headers({ "Content-Type": "application/json",
+                              "Authorization": "Token " + store.getState().status})
     };
-    fetch("https://gicsaude.herokuapp.com/schedule/api-event/update/" + this.props.eventid + '/', conf).then(response => (console.log(response)));
+    fetch("http://localhost:8000/schedule/api-event/update/" + this.props.eventid + '/', conf).then(response => (console.log(response)));
     this.setState({"is_valid":true});
     this.redirectPage();
 
