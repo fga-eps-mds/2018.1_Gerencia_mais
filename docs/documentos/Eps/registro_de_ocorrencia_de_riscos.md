@@ -76,6 +76,7 @@ Devido a baixa produtividade e ausencia de certos integrantes, foi conversado in
 * __Ação__: A partir desta ocorrência o velocity voltou para os padrões normais, evidênciando que a equipe aprensentou alta produtividade em relação a sprint anterios.
 
 #### Relato de Ações da Sprint 8:
+Ainda a respeito da produtividade, a equipe apresentou uma melhoria em relação a Sprint 7, porém não aumentou o suficiente para ser considerada aceitável para o projeto. O controle desse risco não foi considerado falho, pois apresentou melhoria. Logo, apresentando a mesma melhoria, na próxima sprint, os padrões de entrega estão de acordo com o correto.
 
 
 ### Sprint 10
@@ -84,6 +85,8 @@ Devido a baixa produtividade e ausencia de certos integrantes, foi conversado in
 * __Ocorrência__: O cliente mudar o escopo.
 * __Ação__: Para monitorar esse risco será marcada mais reuniões regulares durante a semana para confirmação do escopo.
 
+#### Relato de Ações da Sprint 9:
+A equipe continuou com a seriedade de entrega, fazendo com que a pontuação alcançasse padrões aceitáveis. Desse modo, pode-se inferir que a equipe apresentou alta produtividade em relação a duas sprints passadas.
 
 
 
@@ -94,6 +97,8 @@ Devido a baixa produtividade e ausencia de certos integrantes, foi conversado in
 * __Ocorrência__: O cliente mudar o escopo.
 * __Ação__: Para monitorar esse risco será marcada mais reuniões regulares durante a semana para confirmação do escopo.
 
+#### Relato de Ações da Sprint 10:
+Membros da equipe se ausentaram da reunião semanal presencia. Desse modo, para que o projeto e nem os integrantes sejam penalizados, foi revisada toda a pauta da reunião para os integrantes ausentes, não necessitando que ocorra outra reunião. Depois de ocorrer mais uma reunião com o cliente, nos mostraram mais uma mudança de escopo. Desse modo, a equipe conversou com a professora, no qual foi decidido manter o escopo antigo.
 
 
 
@@ -101,13 +106,25 @@ Devido a baixa produtividade e ausencia de certos integrantes, foi conversado in
 * __Ocorrência__: Impossibilidade de ocorrer reuniões presenciais ao fim das Sprints. Reunião ocorrou remotamente por meio da tecnologia Google Hangounts.
 * __Ação__: Replanejar e adequar para que a reunião ocorra, adiando a data em 1 ou dois dias.
 
+#### Relato de Ações da Sprint 11:
+Com base em algumas greves que ocorreram, consequentemente os meio de locomoção para os membros realizarem a reunião presencial semanal ficou impossibilitada. Desse modo, foi feita uma reunião semanal remota, por meio da tecnologia Google Hangouts. Mais uma vez, com outra reunião foram apresentadas novas funcionalidades que não pertenciam ao escopo principal do projeto. Desse modo, foi decidido não incluí-las no projeto.
+
+
 ## Sprint 13
+* __Ocorrência__: Impossibilidade de ocorrer reuniões presenciais ao fim das Sprints. Reunião ocorrou remotamente por meio da tecnologia Google Hangounts.
+* __Ação__: Replanejar e adequar para que a reunião ocorra, adiando a data em 1 ou dois dias.
+* __Ocorrência__: Membro da equipe ficar ausente.
+* __Ação__: Começou a ser conversado com cada integrante do grupo sobre sua seriedade. Desse modo um membro de EPs
+
+#### Relato de Ações da Sprint 12:
+Ainda com base em algumas greves que ocorreram, os meios de locomoção continuou dificultada e a reunião presencial semanal ficou impossibilitada, sendo novamente transferida para uma reunião remota por meio da tecnologia Google Hangouts
 
 
 ## Sprint 14
-
-__Sem ocorrencias__
+#### Relato de Ações da Sprint 13:
+Um integrante se mostrou bastante ausente no final do projeto, desse modo, foi decidido que o mesmo não precisaria continuar com sua participação, devido ao grande risco de reprovação na disciplina.
 
 ## Sprint 15
 
-__Sem ocorrencias__
+
+
