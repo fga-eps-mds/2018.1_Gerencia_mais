@@ -103,7 +103,9 @@ export default class FormDoctorForm extends Component {
     })
   }
   redirectPage(){
+    console.log("entrou func");
     if(this.state.isValid === true){
+      console.log("entrou if");
       window.location.href = '/ScheduleTable';
       }
   }
@@ -122,9 +124,13 @@ export default class FormDoctorForm extends Component {
                               "Authorization": "Token " + store.getState().status})
     };
     console.log("Token " + store.getState().status);
-    fetch("https://gicsaude.herokuapp.com/schedule/api-event/", conf).then(response => (console.log(response)));
-    this.setState({"isValid":true});
-    this.redirectPage();
+    fetch("https://gicsaude.herokuapp.com/schedule/api-event/", conf).then(res => {
+      console.log(res);
+      if(res.statusText === "Created"){
+        this.state.isValid = true;
+        this.redirectPage();
+      }
+    });
 }
   render(){
     return(

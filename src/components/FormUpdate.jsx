@@ -122,9 +122,14 @@ export default class FormUpdate extends Component {
       headers: new Headers({ "Content-Type": "application/json",
                               "Authorization": "Token " + store.getState().status})
     };
-    fetch("https://gicsaude.herokuapp.com/schedule/api-event/update/" + this.props.eventid + '/', conf).then(response => (console.log(response)));
-    this.setState({"is_valid":true});
-    this.redirectPage();
+    fetch("https://gicsaude.herokuapp.com/schedule/api-event/update/" + this.props.eventid + '/', conf).then(res => {
+      if(res.statusText === "OK"){
+        this.state.isValid = true;
+        this.redirectPage();
+      }
+    });
+
+
 
 }
   render(){
