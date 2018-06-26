@@ -121,10 +121,15 @@ Ainda com base em algumas greves que ocorreram, os meios de locomoção continuo
 
 
 ## Sprint 14
+
+__Sem Ocorrencias__
+
 #### Relato de Ações da Sprint 13:
 Um integrante se mostrou bastante ausente no final do projeto, desse modo, foi decidido que o mesmo não precisaria continuar com sua participação, devido ao grande risco de reprovação na disciplina.
 
 ## Sprint 15
+
+__Sem Ocorrencias__
 
 
 
