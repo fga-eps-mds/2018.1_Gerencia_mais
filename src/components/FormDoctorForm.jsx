@@ -99,9 +99,6 @@ export default class FormDoctorForm extends Component {
     if(this.state.isValid === true){
       window.location.href = '/ScheduleTable';
       }
-      else{
-        console.log('error');
-      }
   }
    handleSubmit = e => {
     this.state.start = this.props.currentdate + this.state.time_start + "Z";
@@ -116,9 +113,12 @@ export default class FormDoctorForm extends Component {
       headers: new Headers({ "Content-Type": "application/json",
                               "Authorization": "Token " + store.getState().status})
     };
-    fetch("https://gicsaude.herokuapp.com/schedule/api-event/", conf).then(response => (console.log(response)));
-    this.state.isValid=true;
-    this.redirectPage();
+    fetch("https://gicsaude.herokuapp.com/schedule/api-event/", conf).then((res) => {
+      if(res.statusText === "Created"){
+        this.state.isValid = true;
+        this.redirectPage();
+      }
+    });
 }
   render(){
     return(
