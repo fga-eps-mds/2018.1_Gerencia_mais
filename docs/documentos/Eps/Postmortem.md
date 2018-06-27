@@ -31,6 +31,11 @@ com uma boa interação o que possibilitou a entrega do produto.</p>
 <p align="justify"> Foi observado a ocorrência de conflitos entre alguns membros do grupo, ocasionado pela apatia desses membros com o projeto. 
 </p>
 
+- ***Falta de comprometimento de alguns membros***
+
+<p align="justify">Foi constatado que alguns membros não estavam cumprido com suas obrigações, principalmente membros da equipe de Engenharia de Produto de Software. Tal atitude fez com que houvesse a concentração de grande volume de trabalho ao restante dos membros.
+</p>
+
 -  ***Falta de compreensão com o que é pedido pela disciplina***
 
 <p align="justify"> Em alguns pontos do projeto a equipe de EPS sentiu dificuldade em compreender critérios impostos pela disciplina, onde muitas vezes não havia documentação de alguns pontos que o projeto, e apenas a palavra da professora ditava os artefatos de avaliação do grupo. </p>
