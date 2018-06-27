@@ -35,10 +35,8 @@ export default class FormUpdate extends Component {
         };
         const res = await fetch("https://gicsaude.herokuapp.com/subtitle/api-subtitle/", conf);
         const all_subtitle = await res.json();
-        console.log(all_subtitle);
         this.setState({all_subtitle});
       } catch (e) {
-        console.log(e);
       }
     }
 
@@ -49,10 +47,8 @@ export default class FormUpdate extends Component {
           };
           const res = await fetch("https://gicsaude.herokuapp.com/subtitle/api-subtitle/"+this.state.subtitle+'/', conf);
           const load_subtitle = await res.json();
-          console.log(load_subtitle);
           this.setState({load_subtitle});
         } catch (e) {
-          console.log(e);
         }
       }
 
@@ -63,10 +59,8 @@ export default class FormUpdate extends Component {
         };
         const res = await fetch("https://gicsaude.herokuapp.com/doctor/api-doctor/",conf);
         const all_doctors = await res.json();
-        console.log(all_doctors);
         this.setState({all_doctors});
       } catch (e) {
-        console.log(e);
       }
       await this.componentDidMount2();
     }
@@ -115,7 +109,6 @@ export default class FormUpdate extends Component {
     e.preventDefault();
     const {start, end, hospital, subtitle, creator, calendar, doctor} = this.state;
     const lead = {start, end, hospital, subtitle,creator, calendar,doctor} ;
-    console.log(lead);
     const temp = JSON.stringify(lead)
     const conf = {
       method: "PUT",
@@ -124,7 +117,6 @@ export default class FormUpdate extends Component {
                               "Authorization": "Token " + store.getState().status})
     };
     fetch("https://gicsaude.herokuapp.com/schedule/api-event/update/" + this.props.eventid + '/', conf).then(res => {
-      console.log(res);
       if(res.statusText === "OK"){
         this.state.isValid = true;
         this.redirectPage();
