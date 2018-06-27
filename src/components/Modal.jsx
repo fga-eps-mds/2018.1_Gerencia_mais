@@ -105,7 +105,7 @@ export default class ModalComponent extends React.Component {
       body: temp,
       headers: new Headers({"Content-Type": "application/json", "Authorization": "Token " + store.getState().status})
     };
-    fetch("http://localhost:8000/schedule/api-event/update/" + this.state.doctorEventsList[0].id + '/', conf).then((res) => {
+    fetch("https://gicsaude.herokuapp.com/schedule/api-event/update/" + this.state.doctorEventsList[0].id + '/', conf).then((res) => {
       console.log(res);
       if(res.statusText === "OK"){
         this.state.isValid = true;
