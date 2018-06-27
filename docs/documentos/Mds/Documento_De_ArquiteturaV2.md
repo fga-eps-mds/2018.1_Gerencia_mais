@@ -155,7 +155,7 @@ Nosso software vai manipular informações relacionadas aos médicos do hospital
 
 ## <a name="4.2"></a>4.2  Diagrama de Casos de Uso
 
-<img src="{{ site.baseurl }}/documentos/imagens/Documento_de_arquitetura/casosdeuso2.png">
+<img src="{{ site.baseurl }}/documentos/imagens/Documento_de_arquitetura/casosdeuso3.png">
 
 
 ## <a name="4.3"></a>4.3  Descrições de Casos de Uso
