@@ -46,7 +46,7 @@ export default class FormUpdate extends Component {
           const confi = {
             headers: new Headers({"Authorization": "Token " + store.getState().status})
           };
-          const res = await fetch("https://gicsaude.herokuapp.com/subtitle/api-subtitle/"+this.state.subtitle+'/', conf);
+          const res = await fetch("https://gicsaude.herokuapp.com/subtitle/api-subtitle/"+this.state.subtitle+'/', confi);
           const load_subtitle = await res.json();
           this.setState({load_subtitle});
         } catch (e) {
@@ -100,9 +100,13 @@ export default class FormUpdate extends Component {
     })
   }
 
-  reload(){
-    if (this.state.isValid) {
+  reload(count){
+    if (this.state.isValid || count === 5) {
       window.location.href = '/ScheduleTable';
+    }
+    else {
+      this.setState({"isValid" : true});
+      this.reload(count+1);
     }
   }
 
@@ -119,8 +123,7 @@ export default class FormUpdate extends Component {
                               "Authorization": "Token " + store.getState().status})
     };
     fetch("https://gicsaude.herokuapp.com/schedule/api-event/update/" + this.props.eventid + '/', conf).then(response => (console.log(response)));
-    this.setState({"isValid" : true});
-    this.reload();
+    this.reload(0);
 }
 
   render(){
