@@ -456,7 +456,33 @@ export default class ScheduleTable extends Component {
     }
 
     render(){
-
+        moment.defineLocale('pt-br', {
+          months : 'Janeiro_Fevereiro_Março_Abril_Maio_Junho_Julho_Agosto_Setembro_Outubro_Novembro_Dezembro'.split('_'),
+          monthsShort : 'Jan_Fev_Mar_Abr_Mai_Jun_Jul_Ago_Set_Out_Nov_Dez'.split('_'),
+          weekdays : 'Domingo_Segunda-feira_Terça-feira_Quarta-feira_Quinta-feira_Sexta-feira_Sábado'.split('_'),
+          weekdaysShort : 'Dom_Seg_Ter_Qua_Qui_Sex_Sáb'.split('_'),
+          weekdaysMin : 'dom_2ª_3ª_4ª_5ª_6ª_sáb'.split('_'),
+          longDateFormat : {
+              LT : 'HH:mm',
+              L : 'DD/MM/YYYY',
+              LL : 'D [de] MMMM [de] YYYY',
+              LLL : 'D [de] MMMM [de] YYYY [às] LT',
+              LLLL : 'dddd, D [de] MMMM [de] YYYY [às] LT'
+            }
+        });
+        const messages = {
+          allDay: 'journée',
+          previous: 'Anterior',
+          next: 'Próximo',
+          today: 'Hoje',
+          month: 'Mês',
+          week: 'Semana',
+          day: 'Dia',
+          agenda: 'Agenda',
+          date: 'Data',
+          time: 'Hora',
+          event: 'Doutor', // Or anything you want
+        }
         let smClose = () => this.setState({ smShow: false });
         let formClose = () => this.setState({ formShow: false });
         let smLocalClose = () => this.setState({ smLocalShow: false });
@@ -535,6 +561,7 @@ export default class ScheduleTable extends Component {
                           defaultView="month"
                           events={this.state.doctorEventsList}
                           style={{ height: "100vh" }}
+                          messages = {messages}
                         />
                     </div>
                 </div>
