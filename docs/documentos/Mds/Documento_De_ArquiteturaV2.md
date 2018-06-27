@@ -16,7 +16,8 @@
 |15/04/2018 |1.3   |Corrigir erro do último tópico | Victor  |
 |16/04/2018 |1.4   |Corrigir erros ortográficos | João Vitor  |
 |16/04/2018 |1.5   |Atualização das informações do documento | Guilherme Aguiar |
-|25/06/2018 |1.6   |Atualização do diagrama de classes | Caio César, João Victor |
+|25/06/2018 |1.6   |Atualização do diagrama de classes | Caio César Beleza, João Victor |
+|27/06/2018 |1.7   |Descrição dos micro serviços | Caio César Beleza |
 
 # Sumário
 1. [Introdução](#1)
@@ -175,6 +176,9 @@ Nosso software vai manipular informações relacionadas aos médicos do hospital
 ## <a name="5.1"></a>5.1  Visão Geral
 
 As principais classes do ponto de vista da arquitetura do software e as implementações das funcionalidades são divididas pacotes que representam as camadas do modelo MTV, no caso, com o react substituindo o template padrão do Django. A divisão em pacotes está representada no diagrama abaixo.
+Também foram integrados dois micro serviços, desenvolvidos pela equipe da disciplina de Engenharia de Produto de Software(EPS). O "Gerencia Report" foi um dos micro serviços implementados e tem como função gerar arquivos dos quadros mensais dos horários nos formatos PDF e xlsx.
+O outro micro serviço, "Notifica Mais", foi implementado com o objetivo de enviar, por e-mail, os horários semanais para os respectivos médicos.
+Ambos micro serviços se "comunicam" com a aplicação por meio de arquivos JSON.
 
 ## <a name="5.2"></a>5.2  Visão de Implantação
 
