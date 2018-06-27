@@ -17,7 +17,7 @@ from django.http import HttpResponse
 
 
 class ListCalendar(generics.ListCreateAPIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
     queryset = Calendar.objects.all()
     serializer_class = CalendarSerializer
 
@@ -28,7 +28,7 @@ class ListEvent(generics.ListCreateAPIView):
     serializer_class = EventSerializer
 
 class EventDetailAPIView(generics.RetrieveAPIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
     queryset = Event.objects.all()
     serializer_class = EventSerializer
     lookup_field = 'id'
