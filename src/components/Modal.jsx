@@ -17,10 +17,12 @@ export default class ModalComponent extends React.Component {
       doctor: [],
       doctorEventsList: [],
       currentDoctorId: "",
-      isVisible: false
+      isVisible: false,
+      isValid: false,
     };
     this.changeSchedule = this.changeSchedule.bind(this);
     this.onSetVisible = this.onSetVisible.bind(this);
+    this.componentDidMount4 = this.componentDidMount4.bind(this);
   }
 
   toggleStatus = () => {
@@ -68,11 +70,48 @@ export default class ModalComponent extends React.Component {
     }
   }
 
+
+
   async changeSchedule(e) {
     await this.componentDidMount4();
     this.setState({currentDoctorId: this.state.doctor[0].id});
     await this.componentDidMount5();
     this.setState({isVisible: !this.state.isVisible});
+  }
+
+
+  redirectPage(){
+    if(this.state.isValid === true){
+      window.location.href = '/ScheduleTable';
+      }
+  }
+
+  async handleDelete(e){
+    await this.componentDidMount5();
+    const start = "1000-06-27T08:00Z"
+    const end = "1000-06-27T13:00Z"
+    const hospital = "gg";
+    const subtitle = "2";
+    const creator = "1";
+    const calendar = "1";
+    const doctor = "1";
+    e.preventDefault();
+    const lead = {start, end, hospital, subtitle,creator, calendar,doctor} ;
+    console.log(lead);
+    const temp = JSON.stringify(lead)
+
+    const conf = {
+      method: "PUT",
+      body: temp,
+      headers: new Headers({"Content-Type": "application/json", "Authorization": "Token " + store.getState().status})
+    };
+    fetch("http://localhost:8000/schedule/api-event/update/" + this.state.doctorEventsList[0].id + '/', conf).then((res) => {
+      console.log(res);
+      if(res.statusText === "OK"){
+        this.state.isValid = true;
+        this.redirectPage();
+      }
+    });
   }
 
   onSetVisible(e){
@@ -100,6 +139,8 @@ export default class ModalComponent extends React.Component {
         <div>
           <Button onClick={this.changeSchedule} bsStyle="primary">Alterar evento</Button>
           <br></br>
+          <br></br>
+          <Button onClick={this.handleDelete.bind(this)} bsStyle="primary">Deletar evento</Button>
           <br></br>
           <br></br>
           {form}

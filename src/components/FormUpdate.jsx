@@ -115,6 +115,7 @@ export default class FormUpdate extends Component {
     e.preventDefault();
     const {start, end, hospital, subtitle, creator, calendar, doctor} = this.state;
     const lead = {start, end, hospital, subtitle,creator, calendar,doctor} ;
+    console.log(lead);
     const temp = JSON.stringify(lead)
     const conf = {
       method: "PUT",
