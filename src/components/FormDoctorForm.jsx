@@ -113,7 +113,7 @@ export default class FormDoctorForm extends Component {
       headers: new Headers({ "Content-Type": "application/json",
                               "Authorization": "Token " + store.getState().status})
     };
-    fetch("https://gicsaude.herokuapp.com/schedule/api-event/", conf).then(res => {
+    fetch("https://gicsaude.herokuapp.com/schedule/api-event/", conf).then((res) => {
       if(res.statusText === "Created"){
         this.state.isValid = true;
         this.redirectPage();
