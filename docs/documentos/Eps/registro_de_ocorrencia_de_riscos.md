@@ -101,7 +101,6 @@ A equipe continuou com a seriedade de entrega, fazendo com que a pontuação alc
 Membros da equipe se ausentaram da reunião semanal presencia. Desse modo, para que o projeto e nem os integrantes sejam penalizados, foi revisada toda a pauta da reunião para os integrantes ausentes, não necessitando que ocorra outra reunião. Depois de ocorrer mais uma reunião com o cliente, nos mostraram mais uma mudança de escopo. Desse modo, a equipe conversou com a professora, no qual foi decidido manter o escopo antigo.
 
 
-
 ## #Sprint 12
 * __Ocorrência__: Impossibilidade de ocorrer reuniões presenciais ao fim das Sprints. Reunião ocorrou remotamente por meio da tecnologia Google Hangounts.
 * __Ação__: Replanejar e adequar para que a reunião ocorra, adiando a data em 1 ou dois dias.
@@ -130,6 +129,3 @@ Um integrante se mostrou bastante ausente no final do projeto, desse modo, foi d
 ## Sprint 15
 
 __Sem Ocorrencias__
-
-
-

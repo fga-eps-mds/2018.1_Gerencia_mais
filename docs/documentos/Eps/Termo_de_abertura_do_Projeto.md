@@ -73,7 +73,7 @@ Falta de conhecimento dos membros responsáveis pelo DevOps| Cursos e estudos ex
 
 Todo o desenvolvimento do projeto durante as disciplinas de Métodos de desenvolvimento de software (MDS) e Engenharia de produto de software (EPS) possuem dois pontos principais de entrega (releases).
 
-A primeira release, marcada para o dia 19/04/2018, consiste na entrega parcial do produto em funcionamento. A segunda release, marcada para o dia xx/xx/xx, consiste na entrega final do produto em funcionamento.
+A primeira release, marcada para o dia 19/04/2018, consiste na entrega parcial do produto em funcionamento. A segunda release, marcada para o dia 28/06/2018, consiste na entrega final do produto em funcionamento.
 
 Além das duas entregas principais, há entregas ao final de cada ciclo de desenvolvimento (sprints) que possuem duração de 1 (uma) semana cada.
 
@@ -192,9 +192,9 @@ Cumprir com os requisitos levantados na etapa de elicitação do projeto e estar
 
 **Nome**|**Papel**|
 --|--|
-Eduardo Júnio Veloso Rodrigues|DevOps|
-Caio Araújo|DevOps|
-Ulysses Bernardes|Scrum Master|
+Eduardo Júnio Veloso Rodrigues|DevOps e Arquitetura|
+Caio Araújo|Scrum Master|
+Ulysses Bernardes|Arquitetura|
 João Saliba| Joker|
 Rafael Bragança|Arquitetura
 
