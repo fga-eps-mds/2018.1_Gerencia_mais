@@ -55,7 +55,9 @@ O EVM consiste nos seguintes elementos de dados primários e derivados. Cada val
 
 </p>
 
-Link para a planilha -> [EVM](https://docs.google.com/spreadsheets/d/1AkEWmBIE79ULfsWTXpxpCET_zgmMRfLFKNF1h5lR20I/edit?usp=sharing)
+Link para as planilhas -> 
+[EVM R1](https://docs.google.com/spreadsheets/d/1AkEWmBIE79ULfsWTXpxpCET_zgmMRfLFKNF1h5lR20I/edit#gid=1269961137)
+[EVM R2](https://docs.google.com/spreadsheets/d/1AkEWmBIE79ULfsWTXpxpCET_zgmMRfLFKNF1h5lR20I/edit#gid=1332969272)
 ### 4 - Referências
 
 * Project Management Institute. (2004) A Guide to the Project Management Body of Knowledge (PMBOK® Guide). (Third ed.) Newtown Square, PA: Project Management Institute
