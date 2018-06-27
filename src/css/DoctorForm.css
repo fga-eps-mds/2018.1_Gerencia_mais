@@ -6,7 +6,13 @@
     padding: 20px;
     border-radius: 8px;
     font-family: Georgia, "Times New Roman", Times, serif;
+    margin-top: 10%;
 }
+
+.container{
+  margin-top: 10%;
+}
+
 .form-style-5 fieldset{
     border: none;
 }

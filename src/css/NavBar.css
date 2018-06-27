@@ -16,12 +16,21 @@
   background-color: #007095;
 }
 .container-fluid > .navbar-header{
-  margin-left: -50%;
-  margin-right: -40%;
+  margin-left: -63%;
+  margin-right: -35%;
 }
 .navbar-header{
   margin-left: -40%;
 }
+/*
+.newcolor{
+  background: transparent;
+  border: 1px solid #606060;
+}
+
+.newborder{
+    border: 1px solid #606060;
+} */
 
 .navbar-header a{
   font-size: 30px;
@@ -36,6 +45,25 @@
   text-decoration: none;
 }
 
+.background-button{
+  background-color: transparent;
+}
+
+.color-text{
+  color: #20C3D3;
+}
+
+.btn-group .btn + .btn, .btn-group .btn + .btn-group, .btn-group .btn-group + .btn, .btn-group .btn-group + .btn-group, .btn-group-vertical .btn + .btn, .btn-group-vertical .btn + .btn-group, .btn-group-vertical .btn-group + .btn, .btn-group-vertical .btn-group + .btn-group{
+  /* background: transparent; */
+  font-family: 'Coustard', sans-serif;
+  font-size: 12px;
+}
+.btn-group > .btn:first-child{
+  font-family: 'Coustard', sans-serif;
+  /* background: transparent; */
+  font-size: 12px;
+}
+
 .size_lg{
   width: 520%;
 }
@@ -47,4 +75,7 @@
 .change-exit {
   margin-right: -20%;
   margin-left:  311.6%;
+}
+.nav-link{
+  margin-left: -10%;
 }

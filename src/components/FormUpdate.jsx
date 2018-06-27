@@ -35,7 +35,6 @@ export default class FormUpdate extends Component {
         };
         const res = await fetch("https://gicsaude.herokuapp.com/subtitle/api-subtitle/", conf);
         const all_subtitle = await res.json();
-        console.log(all_subtitle);
         this.setState({all_subtitle});
       } catch (e) {
         console.log(e);
@@ -44,12 +43,11 @@ export default class FormUpdate extends Component {
 
     async componentDidMount3() {
         try {
-          const conf = {
+          const confi = {
             headers: new Headers({"Authorization": "Token " + store.getState().status})
           };
-          const res = await fetch("https://gicsaude.herokuapp.com/subtitle/api-subtitle/"+this.state.subtitle+'/', conf);
+          const res = await fetch("https://gicsaude.herokuapp.com/subtitle/api-subtitle/"+this.state.subtitle+'/', confi);
           const load_subtitle = await res.json();
-          console.log(load_subtitle);
           this.setState({load_subtitle});
         } catch (e) {
           console.log(e);
@@ -63,7 +61,6 @@ export default class FormUpdate extends Component {
         };
         const res = await fetch("https://gicsaude.herokuapp.com/doctor/api-doctor/",conf);
         const all_doctors = await res.json();
-        console.log(all_doctors);
         this.setState({all_doctors});
       } catch (e) {
         console.log(e);
@@ -103,16 +100,15 @@ export default class FormUpdate extends Component {
     })
   }
 
-  redirectPage(){
+   redirectPage(){
     if(this.state.isValid === true){
       window.location.href = '/ScheduleTable';
       }
   }
 
   handleSubmit = e => {
-    this.state.start=this.state.start + "T" + this.state.time_start + "Z";
-    this.state.end=this.state.end + "T" + this.state.time_end + "Z";
-    e.preventDefault();
+    this.state.start = this.state.start + "T" + this.state.time_start + "Z";
+    this.state.end = this.state.end + "T" + this.state.time_end + "Z";
     const {start, end, hospital, subtitle, creator, calendar, doctor} = this.state;
     const lead = {start, end, hospital, subtitle,creator, calendar,doctor} ;
     const temp = JSON.stringify(lead)
@@ -122,17 +118,19 @@ export default class FormUpdate extends Component {
       headers: new Headers({ "Content-Type": "application/json",
                               "Authorization": "Token " + store.getState().status})
     };
+<<<<<<< HEAD
     fetch("https://gicsaude.herokuapp.com/schedule/api-event/update/" + this.props.eventid + '/', conf).then(res => {
       console.log(res);
+=======
+    fetch("https://gicsaude.herokuapp.com/schedule/api-event/update/" + this.props.eventid + '/', conf).then((res) => {
+>>>>>>> f4744c6b37a83eef7532da64ff2c43acfc37ae24
       if(res.statusText === "OK"){
         this.state.isValid = true;
         this.redirectPage();
       }
     });
-
-
-
 }
+
   render(){
     return(
       <div>

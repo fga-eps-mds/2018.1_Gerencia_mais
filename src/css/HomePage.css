@@ -20,7 +20,7 @@
   padding: 15px;
 }
 .row{
-  margin-top: 40px;
+  margin-top: 10%;
     background: linear-gradient(#007095,#20C3D3);
 }
 .row::after{

@@ -58,6 +58,8 @@ export default class ScheduleTable extends Component {
         weekDoctors:[],
         category : "",
         turns: [],
+        emails:{'sended':0,
+                'error':0,},
         turnStart: [
           ["manhã",6],
           ["tarde",12],
@@ -83,7 +85,6 @@ export default class ScheduleTable extends Component {
           };
           const name = "https://gicsaude.herokuapp.com/doctor/api-doctor/";
           const res = await fetch(name, conf);
-          console.log(res);
           const allDoctors = await res.json();
           this.setState({allDoctors});
         } catch (e) {
@@ -111,7 +112,6 @@ export default class ScheduleTable extends Component {
           this.state.allDoctors = [];
           const name = "https://gicsaude.herokuapp.com/doctor/api-doctor/list-doctor/category/?category="+this.state.category;
           const res = await fetch(name,conf);
-          console.log(res);
           const allDoctors = await res.json();
           this.setState({allDoctors});
         } catch (e) {
@@ -129,7 +129,6 @@ export default class ScheduleTable extends Component {
             };
             const name = "https://gicsaude.herokuapp.com/schedule/api-event/";
             const res = await fetch(name,conf);
-            console.log(res);
             const allEvents = await res.json();
             this.setState({allEvents});
           } catch (e) {
@@ -154,18 +153,19 @@ export default class ScheduleTable extends Component {
         ))
       }
 
-      onClick(){
-        this.setState({smEmailShow: true, message: "Carregando..."})
-        this.state.allDoctors.map(each => (
+    async  onClick(){
+        await this.setState({smEmailShow: true, message: "Carregando..."})
+        await this.state.allDoctors.map(each => (
           this.state.submitDoctor["email"] = each.email,
           this.makeListEvents(each.id),
           this.submitEmail()
         ));
+        await this.setState({'emails':{'sended':0, 'error':0}});
       }
 
-      submitEmail = e => {
+      async submitEmail(e){
         const {email ,segunda, terca, quarta, quinta, sexta, sabado, domingo} = this.state.submitDoctor;
-        const lead = {email ,segunda, terca, quarta, quinta, sexta, sabado, domingo}
+        const lead = {email,segunda,terca,quarta,quinta,sexta,sabado,domingo}
         const temp = JSON.stringify(lead);
         const conf = {
           method: "POST",
@@ -174,12 +174,23 @@ export default class ScheduleTable extends Component {
           headers: new Headers({ "Content-Type": "application/x-www-form-urlencoded",
                                  "Access-Control-Allow-Origin": "*",})
         };
-        var res = fetch("https://notificamais.herokuapp.com/notifyEvent/data_mensage", conf).then(response => console.log(response));
-        if (res.ok) {
-          this.setState({message: "Enviado!"});
-        }else {
-          this.setState({message: "Erro ao enviar email!"});
+        var isvalid = false;
+        await fetch("https://notificamais.herokuapp.com/notifyEvent/data_mensage", conf).then(function(response){
+          if (response.status === 0) {
+            isvalid = true;
+          }
+          else {
+            isvalid = false;
+          }
+        });
+        if(isvalid){
+          this.state.emails['sended'] = this.state.emails['sended'] + 1;
         }
+        else{
+          this.state.emails['error'] = this.state.emails['error'] + 1;
+        }
+
+        await this.setState({'message': "Enviados: " + this.state.emails["sended"] + " Não enviados: " + this.state.emails["error"]});
         this.state.submitDoctor ={
           "email":"",
           "segunda":"",
@@ -304,9 +315,6 @@ export default class ScheduleTable extends Component {
       }
 
       changeTable(tableNumber){
-        this.setState({
-          allEvents: [],
-        });
         if (tableNumber === 0) {
           this.setState({
           category : "",
@@ -318,10 +326,7 @@ export default class ScheduleTable extends Component {
           })
         }
         this.componentDidMount2();
-
-
     }
-
 
     listDoctorsHour(){
       var name,workload;
