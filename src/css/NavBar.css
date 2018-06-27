@@ -12,9 +12,6 @@
   position: fixed;
 }
 
-.navbar:hover{
-  background-color: #007095;
-}
 .container-fluid > .navbar-header{
   margin-left: -63%;
   margin-right: -35%;

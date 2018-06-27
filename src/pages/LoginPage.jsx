@@ -84,7 +84,8 @@ export class LoginPage extends Component {
 
     return (<div>
       <NavBar></NavBar>
-      <div className="top-space espaco espaco-acima background">
+      <div className="background">
+        <div className="paddingform login-padding">
         <div className="form-style-5">
           <form>
             <h3>Login</h3>
@@ -101,6 +102,7 @@ export class LoginPage extends Component {
             {error_message}
             <input type="submit" value="Entrar" onClick={this.handleSubmit}/>
           </form>
+        </div>
         </div>
       </div>
       <Footer ></Footer>
