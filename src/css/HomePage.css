@@ -4,8 +4,13 @@
   box-sizing: border-box;
 }
 
+.text-color {
+  color: #253f68 !important;
+}
+
 .background{
-  background: url('../images/home-medicos.png');
+  background: #d6e5ff;
+  background-size: 100%;
 }
 
 .column {
@@ -20,7 +25,6 @@
   padding: 15px;
 }
 .row{
-  margin-top: 10%;
     background: linear-gradient(#007095,#20C3D3);
 }
 .row::after{
@@ -35,4 +39,8 @@
 .content p{
   font-size: 24px;
   font-family:'Coustard', sans-serif;
+}
+
+.home-padding{
+  padding-top: 200px;
 }

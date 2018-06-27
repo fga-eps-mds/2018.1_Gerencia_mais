@@ -215,7 +215,8 @@ export default class RegistrationAdmin extends Component {
     let final_message = this.messageError();
     return (<div>
       <NavBar></NavBar>
-      <div className="top-space espaco espaco-acima background">
+      <div className=" background">
+        <div className=" paddingform">
         <div className="form-style-5">
           <form>
             <h3>Cadastro de Administradores</h3>
@@ -250,6 +251,7 @@ export default class RegistrationAdmin extends Component {
               {final_message}
             </fieldset>
           </form>
+        </div>
         </div>
       </div>
       <Footer ></Footer>

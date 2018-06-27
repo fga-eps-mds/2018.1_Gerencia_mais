@@ -11,6 +11,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import Workload from "../components/Workload";
 import Loading from "../components/Loading";
 import {store} from "../components/store"
+import "../css/HomePage.css";
 
 moment.updateLocale("pt-gb", {
   week : {
@@ -516,7 +517,7 @@ export default class ScheduleTable extends Component {
           );
         }
         return (
-          <div>
+          <div className="background">
             <NavBar></NavBar>
             <div  className="container change-color">
                 <div style={{marginTop:"70px",marginBottom:"100px"}} className="jumbotron">
