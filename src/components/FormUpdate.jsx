@@ -123,6 +123,7 @@ export default class FormUpdate extends Component {
                               "Authorization": "Token " + store.getState().status})
     };
     fetch("https://gicsaude.herokuapp.com/schedule/api-event/update/" + this.props.eventid + '/', conf).then(res => {
+      console.log(res);
       if(res.statusText === "OK"){
         this.state.isValid = true;
         this.redirectPage();
