@@ -49,10 +49,8 @@ export class LoginPage extends Component {
     };
     fetch("https://gicsaude.herokuapp.com/user/obtain-auth-token/", conf).then(res => res.json()).then(res => {
       let token = res.token;
-      console.log(token);
       if (res.non_field_errors == null && res.token != null) {
         store.dispatch(isLogged(token));
-        console.log(store.getState());
         this.props.history.push("/ScheduleTable");
       } else{
           store.dispatch(isLogged(false));

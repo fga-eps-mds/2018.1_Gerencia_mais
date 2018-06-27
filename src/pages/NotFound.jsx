@@ -14,7 +14,7 @@ const NotFound = () => {
                             <div className="clip"><div className="shadow"><span className="digit firstDigit">4</span></div></div>
                             <div className="msg">OH!<span className="triangle"></span></div>
                         </div>
-                        <h2 className="h1">Sorry! Page not found</h2>
+                        <h2 className="h1">Desculpa! Está página não é válida!</h2>
                     </div>
                 </div>
             </div>
