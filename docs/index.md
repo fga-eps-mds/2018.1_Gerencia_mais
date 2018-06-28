@@ -23,22 +23,26 @@ Com isso foi decidido fazer a implementação de outro App, o“ Gerencia Mais�
 <br>
 
 #### Homepage
-<img src="https://i.imgur.com/yZDRSTX.jpg">
+<img src="https://i.imgur.com/4lafQNM.png">
 <br>
 <br>
-#### Cadastro de Horário dos médicos
-<img src="https://i.imgur.com/Ast3FS1.jpg">
+#### Login
+<img src=https://i.imgur.com/4E0i6uC.png">
 <br>
 <br>
 #### Quadro de Horários
-<img src="https://i.imgur.com/SSONUnH.jpg">
+<img src="https://i.imgur.com/olGOtF8.png">
 <br>
 <br>
-#### Alteração de status
-<img src="https://i.imgur.com/S1vcy3c.jpg">
+#### Gerar PDF
+<img src="https://i.imgur.com/agaqcz0.png">
 <br>
 <br>
-#### Atualização de Horários
-<img src="https://i.imgur.com/rCqPGE2.jpg">
+#### Calculo de Carga Horário
+<img src="https://i.imgur.com/86EOmdd.png">
+<br>
+<br>
+#### Alterar Evento Médico
+<img src="https://i.imgur.com/I1vC41v.png">
 <br>
 <br>
