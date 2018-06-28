@@ -98,12 +98,8 @@ export default class ModalComponent extends React.Component {
       headers: new Headers({"Content-Type": "application/json", "Authorization": "Token " + store.getState().status})
     };
     fetch("https://gicsaude.herokuapp.com/schedule/api-event/delete/" +this.props.currentid + "/", conf).then((res) => {
-      if(res.statusText === "OK"){
         this.state.isValid = true;
         this.redirectPage();
-      }
-      else{
-      }
     });
   }
 
