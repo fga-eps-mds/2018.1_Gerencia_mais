@@ -32,6 +32,10 @@ class EventDetailAPIView(generics.RetrieveAPIView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
     lookup_field = 'id'
+    def delete(self, request):
+        event = self.get_object()
+        event.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 class EventDoctorListAPIView(generics.ListAPIView):
     permission_classes = [IsAuthenticated]

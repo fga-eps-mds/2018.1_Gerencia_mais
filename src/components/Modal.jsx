@@ -79,6 +79,12 @@ export default class ModalComponent extends React.Component {
     this.setState({isVisible: !this.state.isVisible});
   }
 
+    async changeSchedule2(e) {
+      await this.componentDidMount4();
+      this.setState({currentDoctorId: this.state.doctor[0].id});
+      await this.componentDidMount5();
+    }
+
 
   redirectPage(){
     if(this.state.isValid === true){
@@ -86,29 +92,14 @@ export default class ModalComponent extends React.Component {
       }
   }
 
-  async handleDelete(e){
-    await this.componentDidMount5();
-    const start = "1000-06-27T08:00Z";
-    const end = "1000-06-27T13:00Z";
-    const hospital = "gg";
-    const subtitle = "2";
-    const creator = "1";
-    const calendar = "1";
-    const doctor = "1";
-    e.preventDefault();
-    const lead = {start, end, hospital, subtitle,creator, calendar,doctor} ;
-    const temp = JSON.stringify(lead);
-
+  handleDelete = e => {
     const conf = {
-      method: "PUT",
-      body: temp,
+      method: "DELETE",
       headers: new Headers({"Content-Type": "application/json", "Authorization": "Token " + store.getState().status})
     };
-    fetch("https://gicsaude.herokuapp.com/schedule/api-event/update/" + this.state.doctorEventsList[0].id + "/", conf).then((res) => {
-      if(res.statusText === "OK"){
+    fetch("https://gicsaude.herokuapp.com/schedule/api-event/delete/" +this.props.currentid + "/", conf).then((res) => {
         this.state.isValid = true;
         this.redirectPage();
-      }
     });
   }
 

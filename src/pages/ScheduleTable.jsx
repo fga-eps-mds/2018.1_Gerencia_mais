@@ -37,6 +37,7 @@ export default class ScheduleTable extends Component {
         currentStart:"",
         currentEnd:"",
         startDate: "",
+        currentID:"",
         endDate: "",
         doctorEventsList: [],
         allEvents: [],
@@ -233,23 +234,24 @@ export default class ScheduleTable extends Component {
 
       createEventDoctorList(){
         this.updateTimes();
-        var title,start,end,id,email;
+        var title,start,end,id,email,id_event;
         this.state.doctorEventsList = [],
         this.state.allEvents.map(each => (
           title = this.getDoctorId(each.doctor),
           start = this.parseISOLocal(each.start),
           end = this.parseISOLocalEnd(each.end),
           id = each.doctor,
+          id_event = each.id,
           email = this.getDoctorEmail(each.id),
-          this.pushEventValid(title,start,end,id,email)
+          this.pushEventValid(title,start,end,id,email,id_event)
         ));
         this.listDoctorsHour();
         this.calculateTurns();
       }
 
-      pushEventValid(title,start,end,id, email){
+      pushEventValid(title,start,end,id, email, id_event){
         if (title !== "" && start !== "" && end !== "") {
-          this.state.doctorEventsList.push({"start":start,"end":end,"title":title,"id":id,"email":email})
+          this.state.doctorEventsList.push({"start":start,"end":end,"title":title,"id":id,"email":email, "id_event":id_event})
         }
       }
 
@@ -556,7 +558,7 @@ export default class ScheduleTable extends Component {
                           onView={this.onView}
                           selectable
                           onSelectEvent={() => this.setState({ }),
-                                       (event) =>this.setState({smShow: true,currentDoctor: event.title,currentStart:event.start.toString(),currentEnd:event.end.toString()})}
+                                       (event) =>this.setState({smShow: true,currentDoctor: event.title,currentStart:event.start.toString(),currentEnd:event.end.toString(), currentID:event.id_event})}
                           onSelectSlot={(event) => this.setState({formDay:this.correctDate(event.end), formShow:true})}
                           defaultDate={new Date()}
                           defaultView="month"
@@ -568,7 +570,7 @@ export default class ScheduleTable extends Component {
                 </div>
             </div>
             <ModalForm show={this.state.formShow} onHide={formClose} formday={this.state.formDay}></ModalForm>
-            <ModalComponent show={this.state.smShow} onHide={smClose} currentdoctor={this.state.currentDoctor}
+            <ModalComponent currentid={this.state.currentID} show={this.state.smShow} onHide={smClose} currentdoctor={this.state.currentDoctor}
                           currentstart={this.state.currentStart} currentend={this.state.currentEnd} />
             <Footer></Footer>
     	    </div>
