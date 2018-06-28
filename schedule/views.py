@@ -28,11 +28,11 @@ class ListEvent(generics.ListCreateAPIView):
     serializer_class = EventSerializer
 
 class EventDetailAPIView(generics.RetrieveAPIView):
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
     queryset = Event.objects.all()
     serializer_class = EventSerializer
     lookup_field = 'id'
-    def delete(self, request):
+    def delete(self, request, id):
         event = self.get_object()
         event.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
