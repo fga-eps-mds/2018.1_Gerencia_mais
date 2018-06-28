@@ -3950,7 +3950,7 @@ tbody.collapse.show {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0.5rem 1rem;
-  background: linear-gradient(#007095, #20C3D3);
+  background: #253f68;
   color: white;
 }
 
@@ -8833,9 +8833,7 @@ button.bg-dark:focus {
   font-style: italic !important;
 }
 
-.text-white {
-  color: #fff !important;
-}
+
 
 .text-primary {
   color: #007bff !important;

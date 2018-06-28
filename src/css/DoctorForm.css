@@ -7,6 +7,10 @@
     border-radius: 8px;
     font-family: Georgia, "Times New Roman", Times, serif;
 }
+
+.container{
+}
+
 .form-style-5 fieldset{
     border: none;
 }
@@ -134,8 +138,7 @@ table, th, td {
 
 }
 .change-color{
-  background  : linear-gradient(#007095,#20C3D3);
-  border-radius: 10px;
+
 }
 
 table#t01 th {
@@ -147,4 +150,14 @@ table#t01 tr:nth-child(even) {
 }
 table#t01 tr:nth-child(odd) {
    background-color: #fff;
+}
+
+.paddingform{
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+
+.login-padding{
+  padding-bottom: 350px;
 }

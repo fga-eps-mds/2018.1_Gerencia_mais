@@ -26,6 +26,16 @@
   font-size: 16px;
 }
 
+.margin-top-30{
+  margin-top: 30px;
+}
+
+.beautiful_text_white{
+  color:white;
+  font-family:'Coustard', sans-serif;
+  font-size: 16px;
+}
+
 .background-white{
   background-color: #fff;
   padding: 0px 0px 0px 0px;
@@ -42,4 +52,16 @@
 
 .zero-padding{
   padding: 0px;
+}
+
+.modal-header{
+  background  : linear-gradient(#007095,#20C3D3);
+
+}
+
+.newcolo{
+  background  : linear-gradient(#007095,#20C3D3);
+}
+.modal{
+  margin-top: 10px;
 }
