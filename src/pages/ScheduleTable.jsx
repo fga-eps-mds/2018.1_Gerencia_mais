@@ -10,6 +10,8 @@ import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import Workload from "../components/Workload";
 import Loading from "../components/Loading";
+import {store} from "../components/store"
+import "../css/HomePage.css";
 
 moment.updateLocale("pt-gb", {
   week : {
@@ -35,6 +37,7 @@ export default class ScheduleTable extends Component {
         currentStart:"",
         currentEnd:"",
         startDate: "",
+        currentID:"",
         endDate: "",
         doctorEventsList: [],
         allEvents: [],
@@ -57,6 +60,8 @@ export default class ScheduleTable extends Component {
         weekDoctors:[],
         category : "",
         turns: [],
+        emails:{'sended':0,
+                'error':0,},
         turnStart: [
           ["manhã",6],
           ["tarde",12],
@@ -77,9 +82,11 @@ export default class ScheduleTable extends Component {
 
     async componentDidMount() {
         try {
+          const conf = {
+            headers: new Headers({"Authorization": "Token " + store.getState().status})
+          };
           const name = "https://gicsaude.herokuapp.com/doctor/api-doctor/";
-          const res = await fetch(name);
-          console.log(res);
+          const res = await fetch(name, conf);
           const allDoctors = await res.json();
           this.setState({allDoctors});
         } catch (e) {
@@ -101,10 +108,12 @@ export default class ScheduleTable extends Component {
 
     async componentDidMount2() {
         try {
+          const conf = {
+            headers: new Headers({"Authorization": "Token " + store.getState().status})
+          };
           this.state.allDoctors = [];
           const name = "https://gicsaude.herokuapp.com/doctor/api-doctor/list-doctor/category/?category="+this.state.category;
-          const res = await fetch(name);
-          console.log(res);
+          const res = await fetch(name,conf);
           const allDoctors = await res.json();
           this.setState({allDoctors});
         } catch (e) {
@@ -117,9 +126,11 @@ export default class ScheduleTable extends Component {
 
       async componentDidMount1() {
           try {
+            const conf = {
+              headers: new Headers({"Authorization": "Token " + store.getState().status})
+            };
             const name = "https://gicsaude.herokuapp.com/schedule/api-event/";
-            const res = await fetch(name);
-            console.log(res);
+            const res = await fetch(name,conf);
             const allEvents = await res.json();
             this.setState({allEvents});
           } catch (e) {
@@ -144,32 +155,44 @@ export default class ScheduleTable extends Component {
         ))
       }
 
-      onClick(){
-        this.setState({smEmailShow: true, message: "Carregando..."})
-        this.state.allDoctors.map(each => (
+    async  onClick(){
+        await this.setState({smEmailShow: true, message: "Carregando..."})
+        await this.state.allDoctors.map(each => (
           this.state.submitDoctor["email"] = each.email,
           this.makeListEvents(each.id),
           this.submitEmail()
         ));
+        await this.setState({'emails':{'sended':0, 'error':0}});
       }
 
-      submitEmail = e => {
+      async submitEmail(e){
         const {email ,segunda, terca, quarta, quinta, sexta, sabado, domingo} = this.state.submitDoctor;
-        const lead = {email ,segunda, terca, quarta, quinta, sexta, sabado, domingo}
+        const lead = {email,segunda,terca,quarta,quinta,sexta,sabado,domingo}
         const temp = JSON.stringify(lead);
         const conf = {
           method: "POST",
           body: temp,
           mode: "no-cors",
           headers: new Headers({ "Content-Type": "application/x-www-form-urlencoded",
-                                 "Access-Control-Allow-Origin": "*"})
+                                 "Access-Control-Allow-Origin": "*",})
         };
-        var res = fetch("https://notificamais.herokuapp.com/notifyEvent/data_mensage", conf).then(response => console.log(response));
-        if (res.ok) {
-          this.setState({message: "Enviado!"});
-        }else {
-          this.setState({message: "Erro ao enviar email!"});
+        var isvalid = false;
+        await fetch("https://notificamais.herokuapp.com/notifyEvent/data_mensage", conf).then(function(response){
+          if (response.status === 0) {
+            isvalid = true;
+          }
+          else {
+            isvalid = false;
+          }
+        });
+        if(isvalid){
+          this.state.emails['sended'] = this.state.emails['sended'] + 1;
         }
+        else{
+          this.state.emails['error'] = this.state.emails['error'] + 1;
+        }
+
+        await this.setState({'message': "Enviados: " + this.state.emails["sended"] + " Não enviados: " + this.state.emails["error"]});
         this.state.submitDoctor ={
           "email":"",
           "segunda":"",
@@ -211,23 +234,24 @@ export default class ScheduleTable extends Component {
 
       createEventDoctorList(){
         this.updateTimes();
-        var title,start,end,id,email;
+        var title,start,end,id,email,id_event;
         this.state.doctorEventsList = [],
         this.state.allEvents.map(each => (
           title = this.getDoctorId(each.doctor),
           start = this.parseISOLocal(each.start),
           end = this.parseISOLocalEnd(each.end),
           id = each.doctor,
+          id_event = each.id,
           email = this.getDoctorEmail(each.id),
-          this.pushEventValid(title,start,end,id,email)
+          this.pushEventValid(title,start,end,id,email,id_event)
         ));
         this.listDoctorsHour();
         this.calculateTurns();
       }
 
-      pushEventValid(title,start,end,id, email){
+      pushEventValid(title,start,end,id, email, id_event){
         if (title !== "" && start !== "" && end !== "") {
-          this.state.doctorEventsList.push({"start":start,"end":end,"title":title,"id":id,"email":email})
+          this.state.doctorEventsList.push({"start":start,"end":end,"title":title,"id":id,"email":email, "id_event":id_event})
         }
       }
 
@@ -294,9 +318,6 @@ export default class ScheduleTable extends Component {
       }
 
       changeTable(tableNumber){
-        this.setState({
-          allEvents: [],
-        });
         if (tableNumber === 0) {
           this.setState({
           category : "",
@@ -308,10 +329,7 @@ export default class ScheduleTable extends Component {
           })
         }
         this.componentDidMount2();
-
-
     }
-
 
     listDoctorsHour(){
       var name,workload;
@@ -441,6 +459,33 @@ export default class ScheduleTable extends Component {
     }
 
     render(){
+        moment.defineLocale('pt-br', {
+          months : 'Janeiro_Fevereiro_Março_Abril_Maio_Junho_Julho_Agosto_Setembro_Outubro_Novembro_Dezembro'.split('_'),
+          monthsShort : 'Jan_Fev_Mar_Abr_Mai_Jun_Jul_Ago_Set_Out_Nov_Dez'.split('_'),
+          weekdays : 'Domingo_Segunda-feira_Terça-feira_Quarta-feira_Quinta-feira_Sexta-feira_Sábado'.split('_'),
+          weekdaysShort : 'Dom_Seg_Ter_Qua_Qui_Sex_Sáb'.split('_'),
+          weekdaysMin : 'dom_2ª_3ª_4ª_5ª_6ª_sáb'.split('_'),
+          longDateFormat : {
+              LT : 'HH:mm',
+              L : 'DD/MM/YYYY',
+              LL : 'D [de] MMMM [de] YYYY',
+              LLL : 'D [de] MMMM [de] YYYY [às] LT',
+              LLLL : 'dddd, D [de] MMMM [de] YYYY [às] LT'
+            }
+        });
+        const messages = {
+          allDay: 'journée',
+          previous: 'Anterior',
+          next: 'Próximo',
+          today: 'Hoje',
+          month: 'Mês',
+          week: 'Semana',
+          day: 'Dia',
+          agenda: 'Agenda',
+          date: 'Data',
+          time: 'Hora',
+          event: 'Doutor', // Or anything you want
+        }
         let smClose = () => this.setState({ smShow: false });
         let formClose = () => this.setState({ formShow: false });
         let smLocalClose = () => this.setState({ smLocalShow: false });
@@ -474,7 +519,7 @@ export default class ScheduleTable extends Component {
           );
         }
         return (
-          <div>
+          <div className="background">
             <NavBar></NavBar>
             <div  className="container change-color">
                 <div style={{marginTop:"70px",marginBottom:"100px"}} className="jumbotron">
@@ -513,18 +558,19 @@ export default class ScheduleTable extends Component {
                           onView={this.onView}
                           selectable
                           onSelectEvent={() => this.setState({ }),
-                                       (event) =>this.setState({smShow: true,currentDoctor: event.title,currentStart:event.start.toString(),currentEnd:event.end.toString()})}
+                                       (event) =>this.setState({smShow: true,currentDoctor: event.title,currentStart:event.start.toString(),currentEnd:event.end.toString(), currentID:event.id_event})}
                           onSelectSlot={(event) => this.setState({formDay:this.correctDate(event.end), formShow:true})}
                           defaultDate={new Date()}
                           defaultView="month"
                           events={this.state.doctorEventsList}
                           style={{ height: "100vh" }}
+                          messages = {messages}
                         />
                     </div>
                 </div>
             </div>
             <ModalForm show={this.state.formShow} onHide={formClose} formday={this.state.formDay}></ModalForm>
-            <ModalComponent show={this.state.smShow} onHide={smClose} currentdoctor={this.state.currentDoctor}
+            <ModalComponent currentid={this.state.currentID} show={this.state.smShow} onHide={smClose} currentdoctor={this.state.currentDoctor}
                           currentstart={this.state.currentStart} currentend={this.state.currentEnd} />
             <Footer></Footer>
     	    </div>
