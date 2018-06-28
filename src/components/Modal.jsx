@@ -92,19 +92,17 @@ export default class ModalComponent extends React.Component {
       }
   }
 
-  handleDelete = e =>{
+  handleDelete = e => {
     const conf = {
       method: "DELETE",
       headers: new Headers({"Content-Type": "application/json", "Authorization": "Token " + store.getState().status})
     };
-    console.log(this.props.currentid);
     fetch("https://gicsaude.herokuapp.com/schedule/api-event/delete/" +this.props.currentid + "/", conf).then((res) => {
       if(res.statusText === "OK"){
         this.state.isValid = true;
         this.redirectPage();
       }
       else{
-        console.log(res);
       }
     });
   }
