@@ -22,7 +22,7 @@ class ListCalendar(generics.ListCreateAPIView):
     serializer_class = CalendarSerializer
 
 class ListEvent(generics.ListCreateAPIView):
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
     # permission_classes = (permissions.IsAdminUser,)
     queryset = Event.objects.all()
     serializer_class = EventSerializer
@@ -38,7 +38,7 @@ class EventDetailAPIView(generics.RetrieveAPIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class EventDoctorListAPIView(generics.ListAPIView):
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
     queryset = Event.objects.all()
     serializer_class = EventSerializer
     filter_backends = (DjangoFilterBackend,)
@@ -48,7 +48,7 @@ class EventDoctorListAPIView(generics.ListAPIView):
 
 
 class EventUpdateAPIView(generics.RetrieveUpdateAPIView):
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
     queryset = Event.objects.all()
     serializer_class = EventSerializer
     lookup_field = 'id'
