@@ -1,7 +1,7 @@
 <p align="center"><a href="image" target="_blank"><img width="600"src="https://github.com/fga-gpp-mds/2018.1_Gerencia_mais/blob/master/docs/documentos/imagens/logo/logo.jpg"></a></p>
 <p align="center">
- 
-  <a href="https://travis-ci.org/fga-gpp-mds/2018.1_Gerencia_mais"><img src="https://travis-ci.org/fga-gpp-mds/2018.1_Gerencia_mais.svg?branch=master" alt="Build"></a>
+
+  <a href="https://travis-ci.org/fga-eps-mds/2018.1_Gerencia_mais"><img src="https://travis-ci.org/fga-eps-mds/2018.1_Gerencia_mais.svg?branch=master" alt="Build"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
   <a href="https://codeclimate.com/github/fga-gpp-mds/2018.1_Gerencia_mais/maintainability"><img src="https://api.codeclimate.com/v1/badges/4aff97e7847e842ef8be/maintainability" /></a>
     <a href='https://coveralls.io/github/fga-gpp-mds/2018.1_Gerencia_mais?branch=development'><img src='https://coveralls.io/repos/github/fga-gpp-mds/2018.1_Gerencia_mais/badge.svg?branch=development' alt='Coverage Status' /></a>
