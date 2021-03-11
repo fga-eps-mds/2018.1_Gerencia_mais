@@ -39,7 +39,7 @@
     "react-big-calendar": "^0.19.1",
     "react-bootstrap": "^0.32.1",
     "react-burger-menu": "^2.4.1",
-    "react-dev-utils": "^5.0.0",
+    "react-dev-utils": "^11.0.4",
     "react-dom": "^16.2.0",
     "react-infinite-calendar": "^2.3.1",
     "react-persist": "1.0.2",
